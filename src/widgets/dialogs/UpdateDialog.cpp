@@ -24,6 +24,7 @@
 #include "Config.h"
 #include "core/Common.h"
 #include "core/network/NetworkRequest.h"
+#include "core/plugins/Plugins.h"
 
 #include "UpdateDialog.h"
 #include "ui_UpdateDialog.h"
@@ -79,8 +80,8 @@ void UpdateDialog::changeEvent(QEvent *e)
 
 void UpdateDialog::download()
 {
-#if defined(DOWNLOAD_URL)
-    QString url(DOWNLOAD_URL);
+    if (!globalConfig || globalConfig->downloadUrl().isEmpty())
+        return;
 
 #if defined(Q_OS_WIN)
     QString platform = QString("windows/%1_%2_win%3.exe").arg(Tano::name(), _versionNew, Tano::is64bit() ? "64" : "32");
@@ -90,10 +91,7 @@ void UpdateDialog::download()
     QString platform = QString("src/%1_%2_src.tar.gz").arg(Tano::name(), _versionNew);
 #endif
 
-    QDesktopServices::openUrl(url + platform);
-#else
-    return;
-#endif
+    QDesktopServices::openUrl(globalConfig->downloadUrl() + platform);
 }
 
 void UpdateDialog::changelog()
@@ -108,14 +106,20 @@ void UpdateDialog::changelogBack()
 
 void UpdateDialog::check()
 {
+    if (!globalConfig)
+        return;
+
     _silent = false;
-    _currentReply = _request->getRequest(QNetworkRequest(QUrl(QString(UPDATE_URL) + "/update.xml")));
+    _currentReply = _request->getRequest(QNetworkRequest(QUrl(globalConfig->updateUrl() + "/update.xml")));
 }
 
 void UpdateDialog::checkSilent()
 {
+    if (!globalConfig)
+        return;
+
     _silent = true;
-    _currentReply = _request->getRequest(QNetworkRequest(QUrl(QString(UPDATE_URL) + "/update.xml")));
+    _currentReply = _request->getRequest(QNetworkRequest(QUrl(globalConfig->updateUrl() + "/update.xml")));
 }
 
 void UpdateDialog::processUpdate(const QStringList &update,
@@ -145,9 +149,8 @@ void UpdateDialog::processUpdate(const QStringList &update,
         ui->labelChangelog->setText(tr("<h3>Changes in %1</h3>").arg(update[1]));
         ui->main->setCurrentIndex(2);
 
-#if defined(DOWNLOAD_URL)
-        ui->buttonDownload->show();
-#endif
+        if (!globalConfig || !globalConfig->downloadUrl().isEmpty())
+            ui->buttonDownload->show();
 
         _versionNew = update[1];
     }

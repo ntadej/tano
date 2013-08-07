@@ -22,6 +22,7 @@
 #include <QtCore/QDate>
 
 #include "core/Common.h"
+#include "core/plugins/Plugins.h"
 
 #include "common/Backend.h"
 
@@ -37,7 +38,7 @@ AboutDialog::AboutDialog(QWidget *parent)
     ui->labelIcon->setPixmap(QIcon(":/logo/64x64/logo.png").pixmap(64));
     ui->labelIconBackend->setPixmap(QIcon(":/logo/24x24/vlc-qt.png").pixmap(24));
 
-    ui->labelTitle->setText(ui->labelTitle->text().arg(Tano::name(), Tano::version(), Tano::changeset(), Tano::is64bit() ? "64-bit" : "32-bit", Tano::url()));
+    ui->labelTitle->setText(ui->labelTitle->text().arg(Tano::name(), Tano::version(), Tano::changeset(), Tano::is64bit() ? "64-bit" : "32-bit", globalConfig ? globalConfig->projectUrl() : "http://projects.tano.si"));
     ui->labelTano->setText(ui->labelTano->text().arg(Tano::versionCore()));
     ui->labelBackend->setText(ui->labelBackend->text().arg(Tano::Backend::versionLibrary()));
     ui->labelCopyright->setText(ui->labelCopyright->text().arg(QDate::currentDate().toString("yyyy")));

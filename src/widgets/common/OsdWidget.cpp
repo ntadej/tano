@@ -17,7 +17,6 @@
 *****************************************************************************/
 
 #include "core/network/NetworkDownload.h"
-#include "core/platform/Features.h"
 
 #include "common/InfoBarWidget.h"
 

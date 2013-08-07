@@ -19,6 +19,7 @@
 #include "Config.h"
 
 #include "Common.h"
+#include "plugins/Plugins.h"
 #include "settings/Settings.h"
 
 Settings::Settings(QObject *parent)
@@ -26,100 +27,126 @@ Settings::Settings(QObject *parent)
                 QSettings::UserScope,
                 Tano::name(),
                 Tano::name(),
-                parent),
-      _disableInterface(false),
-      _disablePlayback(false),
-      _disablePlaylist(false),
-      _disableRecorder(false),
-      _disableSchedule(false)
+                parent)
 {
-    readSettings();
+    _map[KEY_LANGUAGE] = DEFAULT_LANGUAGE;
+    _map[KEY_PLAYLIST] = DEFAULT_PLAYLIST;
+    _map[KEY_PLAYLIST_UPDATE] = DEFAULT_PLAYLIST_UPDATE;
+    _map[KEY_PLAYLIST_UPDATE_URL] = DEFAULT_PLAYLIST_UPDATE_URL;
+    _map[KEY_RADIO_CATEGORY] = DEFAULT_RADIO_CATEGORY;
+    _map[KEY_HD_CATEGORY] = DEFAULT_HD_CATEGORY;
+    _map[KEY_UDPXY] = DEFAULT_UDPXY;
+    _map[KEY_UDPXY_URL] = DEFAULT_UDPXY_URL;
+    _map[KEY_UDPXY_PORT] = DEFAULT_UDPXY_PORT;
+    _map[KEY_WIDTH] = DEFAULT_WIDTH;
+    _map[KEY_HEIGHT] = DEFAULT_HEIGHT;
+    _map[KEY_POS_X] = DEFAULT_POS_X;
+    _map[KEY_POS_Y] = DEFAULT_POS_Y;
+    _map[KEY_OSD] = DEFAULT_OSD;
+    _map[KEY_TRAY_ENABLED] = DEFAULT_TRAY_ENABLED;
+    _map[KEY_HIDE_TO_TRAY] = DEFAULT_HIDE_TO_TRAY;
+    _map[KEY_MOUSE_WHEEL] = DEFAULT_MOUSE_WHEEL;
+    _map[KEY_REMEMBER_GUI_SESSION] = DEFAULT_REMEMBER_GUI_SESSION;
+    _map[KEY_ICONS] = DEFAULT_ICONS;
+    _map[KEY_VOUT] = DEFAULT_VOUT;
+    _map[KEY_AOUT] = DEFAULT_AOUT;
+    _map[KEY_YUV_TO_RGB] = DEFAULT_YUV_TO_RGB;
+    _map[KEY_SPDIF] = DEFAULT_SPDIF;
+    _map[KEY_REMEMBER_VIDEO_SETTINGS] = DEFAULT_REMEMBER_VIDEO_SETTINGS;
+    _map[KEY_REMEMBER_VIDEO_PER_CHANNEL] = DEFAULT_REMEMBER_VIDEO_PER_CHANNEL;
+    _map[KEY_ASPECT_RATIO] = DEFAULT_ASPECT_RATIO;
+    _map[KEY_CROP_RATIO] = DEFAULT_CROP_RATIO;
+    _map[KEY_DEINTERLACING] = DEFAULT_DEINTERLACING;
+    _map[KEY_AUDIO_LANGUAGE] = DEFAULT_AUDIO_LANGUAGE;
+    _map[KEY_SUBTITLE_LANGUAGE] = DEFAULT_SUBTITLE_LANGUAGE;
+    _map[KEY_MUTE_ON_MINIMIZE] = DEFAULT_MUTE_ON_MINIMIZE;
+    _map[KEY_TELETEXT] = DEFAULT_TELETEXT;
+    _map[KEY_RECORDER_DIRECTORY] = DEFAULT_RECORDER_DIRECTORY;
+    _map[KEY_SNAPSHOTS_DIRECTORY] = DEFAULT_SNAPSHOTS_DIRECTORY;
+    _map[KEY_SESSION_AUTOPLAY] = DEFAULT_SESSION_AUTOPLAY;
+    _map[KEY_SESSION_CHANNEL] = DEFAULT_SESSION_CHANNEL;
+    _map[KEY_SESSION_REMEMBER_VOLUME] = DEFAULT_SESSION_REMEMBER_VOLUME;
+    _map[KEY_SESSION_VOLUME] = DEFAULT_SESSION_VOLUME;
+    _map[KEY_XMLTV_UPDATE] = DEFAULT_XMLTV_UPDATE;
+    _map[KEY_XMLTV_UPDATE_LOCATION] = DEFAULT_XMLTV_UPDATE_LOCATION;
+    _map[KEY_XMLTV_UPDATE_REMOTE] = DEFAULT_XMLTV_UPDATE_REMOTE;
 
-#if BRANDING
-    _disableInterface = !bool(SETTINGS_INTERFACE);
-    _disablePlayback = !bool(SETTINGS_PLAYBACK);
-    _disablePlaylist = !bool(SETTINGS_PLAYLIST);
-    _disableRecorder = !bool(SETTINGS_RECORDER);
-    _disableSchedule = !bool(SETTINGS_SCHEDULE);
-#endif
+    readSettings();
 }
 
 Settings::~Settings() { }
 
 void Settings::writeSettings()
 {
-    setValue("session/language", language());
+    setValue(KEY_LANGUAGE, language());
 
-    setValue("session/autoplay", sessionAutoplay());
-    setValue("session/channel", sessionChannel());
-    setValue("session/remembervolume", sessionRememberVolume());
-    setValue("session/volume", sessionVolume());
+    setValue(KEY_SESSION_AUTOPLAY, sessionAutoplay());
+    setValue(KEY_SESSION_CHANNEL, sessionChannel());
+    setValue(KEY_SESSION_REMEMBER_VOLUME, sessionRememberVolume());
+    setValue(KEY_SESSION_VOLUME, sessionVolume());
 
-    if (!_disablePlaylist) {
-        setValue("channels/playlist", playlist());
-        setValue("channels/update", playlistUpdate());
-        setValue("channels/updateurl", playlistUpdateUrl());
-        setValue("channels/radio", radioCategory());
-        setValue("channels/hd", hdCategory());
-        setValue("channels/udpxy", udpxy());
-        setValue("channels/udpxyurl", udpxyUrl());
-        setValue("channels/udpxyport", udpxyPort());
-    } else {
+    if (globalConfig && globalConfig->disableSettings("channels")) {
         remove("channels");
+    } else {
+        setValue(KEY_PLAYLIST, playlist());
+        setValue(KEY_PLAYLIST_UPDATE, playlistUpdate());
+        setValue(KEY_PLAYLIST_UPDATE_URL, playlistUpdateUrl());
+        setValue(KEY_RADIO_CATEGORY, radioCategory());
+        setValue(KEY_HD_CATEGORY, hdCategory());
+        setValue(KEY_UDPXY, udpxy());
+        setValue(KEY_UDPXY_URL, udpxyUrl());
+        setValue(KEY_UDPXY_PORT, udpxyPort());
     }
 
-    if (!_disableInterface) {
-        setValue("start/width", width());
-        setValue("start/height", height());
-        setValue("start/posx", posX());
-        setValue("start/posy", posY());
-
-        setValue("gui/osd", osd());
-        setValue("gui/trayicon", trayEnabled());
-        setValue("gui/hidetotray", hideToTray());
-        setValue("gui/mousewheel", mouseWheel());
-        setValue("gui/session", rememberGuiSession());
-        setValue("gui/icons", icons());
-    } else {
-        remove("start");
+    if (globalConfig && globalConfig->disableSettings("gui")) {
         remove("gui");
+    } else {
+        setValue(KEY_WIDTH, width());
+        setValue(KEY_HEIGHT, height());
+        setValue(KEY_POS_X, posX());
+        setValue(KEY_POS_Y, posY());
+
+        setValue(KEY_OSD, osd());
+        setValue(KEY_TRAY_ENABLED, trayEnabled());
+        setValue(KEY_HIDE_TO_TRAY, hideToTray());
+        setValue(KEY_MOUSE_WHEEL, mouseWheel());
+        setValue(KEY_REMEMBER_GUI_SESSION, rememberGuiSession());
+        setValue(KEY_ICONS, icons());
     }
 
-    if (!_disablePlayback) {
-        setValue("backend/vout", vout());
-        setValue("backend/aout", aout());
-#if defined(Q_OS_WIN32)
-        setValue("backend/yuvToRgb", yuvToRgb());
-#endif
-        setValue("backend/spdif", spdif());
-
-        setValue("backend/videosettings", rememberVideoSettings());
-        setValue("backend/perchannel", rememberVideoPerChannel());
-        setValue("backend/aspectratio", aspectRatio());
-        setValue("backend/cropratio", cropRatio());
-        setValue("backend/deinterlacing", deinterlacing());
-        setValue("backend/audio", audioLanguage());
-        setValue("backend/subtitles", subtitleLanguage());
-
-        setValue("backend/muteOnMinimize", muteOnMinimize());
-        setValue("backend/teletext", teletext());
-    } else {
+    if (globalConfig && globalConfig->disableSettings("backend")) {
         remove("backend");
+    } else {
+        setValue(KEY_VOUT, vout());
+        setValue(KEY_AOUT, aout());
+        setValue(KEY_YUV_TO_RGB, yuvToRgb());
+        setValue(KEY_SPDIF, spdif());
+
+        setValue(KEY_REMEMBER_VIDEO_SETTINGS, rememberVideoSettings());
+        setValue(KEY_REMEMBER_VIDEO_PER_CHANNEL, rememberVideoPerChannel());
+        setValue(KEY_ASPECT_RATIO, aspectRatio());
+        setValue(KEY_CROP_RATIO, cropRatio());
+        setValue(KEY_DEINTERLACING, deinterlacing());
+        setValue(KEY_AUDIO_LANGUAGE, audioLanguage());
+        setValue(KEY_SUBTITLE_LANGUAGE, subtitleLanguage());
+
+        setValue(KEY_MUTE_ON_MINIMIZE, muteOnMinimize());
+        setValue(KEY_TELETEXT, teletext());
     }
 
-    if (!_disableRecorder) {
-        setValue("recorder/directory", recorderDirectory());
-        setValue("recorder/snapshots", snapshotsDirectory());
-    } else {
+    if (globalConfig && globalConfig->disableSettings("recorder")) {
         remove("recorder");
+    } else {
+        setValue(KEY_RECORDER_DIRECTORY, recorderDirectory());
+        setValue(KEY_SNAPSHOTS_DIRECTORY, snapshotsDirectory());
     }
 
-    if (!_disableSchedule) {
-        setValue("xmltv/update", xmltvUpdate());
-        setValue("xmltv/updatelocation", xmltvUpdateLocation());
-        setValue("xmltv/updateremote", xmltvUpdateRemote());
-    } else {
+    if (globalConfig && globalConfig->disableSettings("xmltv")) {
         remove("xmltv");
+    } else {
+        setValue(KEY_XMLTV_UPDATE, xmltvUpdate());
+        setValue(KEY_XMLTV_UPDATE_LOCATION, xmltvUpdateLocation());
+        setValue(KEY_XMLTV_UPDATE_REMOTE, xmltvUpdateRemote());
     }
 
     sync();
@@ -127,56 +154,62 @@ void Settings::writeSettings()
 
 void Settings::readSettings()
 {
-    setLanguage(value("session/language", DEFAULT_LANGUAGE).toString());
+    setLanguage(value(KEY_LANGUAGE, defaultValue(KEY_LANGUAGE)).toString());
 
-    setPlaylist(value("channels/playlist", DEFAULT_PLAYLIST).toString());
-    setPlaylistUpdate(value("channels/update", DEFAULT_PLAYLIST_UPDATE).toBool());
-    setPlaylistUpdateUrl(value("channels/updateurl", DEFAULT_PLAYLIST_UPDATE_URL).toString());
-    setRadioCategory(value("channels/radio", DEFAULT_RADIO_CATEGORY).toString());
-    setHdCategory(value("channels/hd", DEFAULT_HD_CATEGORY).toString());
-    setUdpxy(value("channels/udpxy", DEFAULT_UDPXY).toBool());
-    setUdpxyUrl(value("channels/udpxyurl", DEFAULT_UDPXY_URL).toString());
-    setUdpxyPort(value("channels/udpxyport", DEFAULT_UDPXY_PORT).toInt());
+    setPlaylist(value(KEY_PLAYLIST, defaultValue(KEY_PLAYLIST)).toString());
+    setPlaylistUpdate(value(KEY_PLAYLIST_UPDATE, defaultValue(KEY_PLAYLIST_UPDATE)).toBool());
+    setPlaylistUpdateUrl(value(KEY_PLAYLIST_UPDATE_URL, defaultValue(KEY_PLAYLIST_UPDATE_URL)).toString());
+    setRadioCategory(value(KEY_RADIO_CATEGORY, defaultValue(KEY_RADIO_CATEGORY)).toString());
+    setHdCategory(value(KEY_HD_CATEGORY, defaultValue(KEY_HD_CATEGORY)).toString());
+    setUdpxy(value(KEY_UDPXY, defaultValue(KEY_UDPXY)).toBool());
+    setUdpxyUrl(value(KEY_UDPXY_URL, defaultValue(KEY_UDPXY_URL)).toString());
+    setUdpxyPort(value(KEY_UDPXY_PORT, defaultValue(KEY_UDPXY_PORT)).toInt());
 
-    setWidth(value("start/width", DEFAULT_WIDTH).toInt());
-    setHeight(value("start/height", DEFAULT_HEIGHT).toInt());
-    setPosX(value("start/posx", DEFAULT_POS_X).toInt());
-    setPosY(value("start/posy", DEFAULT_POS_Y).toInt());
+    setWidth(value(KEY_WIDTH, defaultValue(KEY_WIDTH)).toInt());
+    setHeight(value(KEY_HEIGHT, defaultValue(KEY_HEIGHT)).toInt());
+    setPosX(value(KEY_POS_X, defaultValue(KEY_POS_X)).toInt());
+    setPosY(value(KEY_POS_Y, defaultValue(KEY_POS_Y)).toInt());
 
-    setOsd(value("gui/osd", DEFAULT_OSD).toBool());
-    setTrayEnabled(value("gui/trayicon", DEFAULT_TRAY_ENABLED).toBool());
-    setHideToTray(value("gui/hidetotray", DEFAULT_HIDE_TO_TRAY).toBool());
-    setMouseWheel(value("gui/mousewheel", DEFAULT_MOUSE_WHEEL).toString());
-    setRememberGuiSession(value("gui/session", DEFAULT_REMEMBER_GUI_SESSION).toBool());
-    setIcons(value("gui/icons", DEFAULT_ICONS).toString());
+    setOsd(value(KEY_OSD, defaultValue(KEY_OSD)).toBool());
+    setTrayEnabled(value(KEY_TRAY_ENABLED, defaultValue(KEY_TRAY_ENABLED)).toBool());
+    setHideToTray(value(KEY_HIDE_TO_TRAY, defaultValue(KEY_HIDE_TO_TRAY)).toBool());
+    setMouseWheel(value(KEY_MOUSE_WHEEL, defaultValue(KEY_MOUSE_WHEEL)).toString());
+    setRememberGuiSession(value(KEY_REMEMBER_GUI_SESSION, defaultValue(KEY_REMEMBER_GUI_SESSION)).toBool());
+    setIcons(value(KEY_ICONS, defaultValue(KEY_ICONS)).toString());
 
-    setVout(value("backend/vout", DEFAULT_VOUT).toInt());
-    setAout(value("backend/aout", DEFAULT_AOUT).toInt());
-#if defined(Q_OS_WIN32)
-    setYuvToRgb(value("backend/muteOnMinimize", DEFAULT_MUTE_ON_MINIMIZE).toBool());
-#endif
-    setSpdif(value("backend/spdif", DEFAULT_SPDIF).toBool());
+    setVout(value(KEY_VOUT, defaultValue(KEY_VOUT)).toInt());
+    setAout(value(KEY_AOUT, defaultValue(KEY_AOUT)).toInt());
+    setYuvToRgb(value(KEY_YUV_TO_RGB, defaultValue(KEY_MUTE_ON_MINIMIZE)).toBool());
+    setSpdif(value(KEY_SPDIF, defaultValue(KEY_SPDIF)).toBool());
 
-    setRememberVideoSettings(value("backend/videosettings", DEFAULT_REMEMBER_VIDEO_SETTINGS).toBool());
-    setRememberVideoPerChannel(value("backend/perchannel", DEFAULT_REMEMBER_VIDEO_PER_CHANNEL).toBool());
-    setAspectRatio(value("backend/aspectratio", DEFAULT_ASPECT_RATIO).toInt());
-    setCropRatio(value("backend/cropratio", DEFAULT_CROP_RATIO).toInt());
-    setDeinterlacing(value("backend/deinterlacing", DEFAULT_DEINTERLACING).toInt());
-    setAudioLanguage(value("backend/audio", DEFAULT_AUDIO_LANGUAGE).toString());
-    setSubtitleLanguage(value("backend/subtitles", DEFAULT_SUBTITLE_LANGUAGE).toString());
+    setRememberVideoSettings(value(KEY_REMEMBER_VIDEO_SETTINGS, defaultValue(KEY_REMEMBER_VIDEO_SETTINGS)).toBool());
+    setRememberVideoPerChannel(value(KEY_REMEMBER_VIDEO_PER_CHANNEL, defaultValue(KEY_REMEMBER_VIDEO_PER_CHANNEL)).toBool());
+    setAspectRatio(value(KEY_ASPECT_RATIO, defaultValue(KEY_ASPECT_RATIO)).toInt());
+    setCropRatio(value(KEY_CROP_RATIO, defaultValue(KEY_CROP_RATIO)).toInt());
+    setDeinterlacing(value(KEY_DEINTERLACING, defaultValue(KEY_DEINTERLACING)).toInt());
+    setAudioLanguage(value(KEY_AUDIO_LANGUAGE, defaultValue(KEY_AUDIO_LANGUAGE)).toString());
+    setSubtitleLanguage(value(KEY_SUBTITLE_LANGUAGE, defaultValue(KEY_SUBTITLE_LANGUAGE)).toString());
 
-    setMuteOnMinimize(value("backend/muteOnMinimize", DEFAULT_MUTE_ON_MINIMIZE).toBool());
-    setTeletext(value("backend/teletext", DEFAULT_TELETEXT).toBool());
+    setMuteOnMinimize(value(KEY_MUTE_ON_MINIMIZE, defaultValue(KEY_MUTE_ON_MINIMIZE)).toBool());
+    setTeletext(value(KEY_TELETEXT, defaultValue(KEY_TELETEXT)).toBool());
 
-    setRecorderDirectory(value("recorder/directory", DEFAULT_RECORDER_DIRECTORY).toString());
-    setSnapshotsDirectory(value("recorder/snapshots", DEFAULT_SNAPSHOTS_DIRECTORY).toString());
+    setRecorderDirectory(value(KEY_RECORDER_DIRECTORY, defaultValue(KEY_RECORDER_DIRECTORY)).toString());
+    setSnapshotsDirectory(value(KEY_SNAPSHOTS_DIRECTORY, defaultValue(KEY_SNAPSHOTS_DIRECTORY)).toString());
 
-    setSessionAutoplay(value("session/autoplay", DEFAULT_SESSION_AUTOPLAY).toBool());
-    setSessionChannel(value("session/channel", DEFAULT_SESSION_CHANNEL).toInt());
-    setSessionRememberVolume(value("session/remembervolume", DEFAULT_SESSION_REMEMBER_VOLUME).toBool());
-    setSessionVolume(value("session/volume", DEFAULT_SESSION_VOLUME).toInt());
+    setSessionAutoplay(value(KEY_SESSION_AUTOPLAY, defaultValue(KEY_SESSION_AUTOPLAY)).toBool());
+    setSessionChannel(value(KEY_SESSION_CHANNEL, defaultValue(KEY_SESSION_CHANNEL)).toInt());
+    setSessionRememberVolume(value(KEY_SESSION_REMEMBER_VOLUME, defaultValue(KEY_SESSION_REMEMBER_VOLUME)).toBool());
+    setSessionVolume(value(KEY_SESSION_VOLUME, defaultValue(KEY_SESSION_VOLUME)).toInt());
 
-    setXmltvUpdate(value("xmltv/update", DEFAULT_XMLTV_UPDATE).toBool());
-    setXmltvUpdateLocation(value("xmltv/updatelocation", DEFAULT_XMLTV_UPDATE_LOCATION).toString());
-    setXmltvUpdateRemote(value("xmltv/updateremote", DEFAULT_XMLTV_UPDATE_REMOTE).toBool());
+    setXmltvUpdate(value(KEY_XMLTV_UPDATE, defaultValue(KEY_XMLTV_UPDATE)).toBool());
+    setXmltvUpdateLocation(value(KEY_XMLTV_UPDATE_LOCATION, defaultValue(KEY_XMLTV_UPDATE_LOCATION)).toString());
+    setXmltvUpdateRemote(value(KEY_XMLTV_UPDATE_REMOTE, defaultValue(KEY_XMLTV_UPDATE_REMOTE)).toBool());
+}
+
+QVariant Settings::defaultValue(const QString &key) const
+{
+    if (globalConfig && globalConfig->defaultSettings().contains(key))
+        return globalConfig->defaultSettings().value(key);
+    else
+        return _map.value(key);
 }

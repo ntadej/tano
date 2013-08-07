@@ -16,10 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "Config.h"
-#include "core/Common.h"
-#include "core/Log.h"
-#include "core/network/NetworkRequest.h"
+#include <QtNetwork/QNetworkReply>
+
+#include "core/plugins/Plugins.h"
 #include "core/settings/SettingsPassword.h"
 
 #include "PasswordDialog.h"
@@ -28,17 +27,13 @@
 PasswordDialog::PasswordDialog(QWidget *parent)
     : QDialog(parent),
       ui(new Ui::PasswordDialog),
-      _request(new NetworkRequest(this)),
       _password("")
 {
     ui->setupUi(this);
 
-    QScopedPointer<SettingsPassword> settings(new SettingsPassword(this));
-    settings->setUid(Tano::uid());
-    settings->writeSettings();
-
     ui->labelIcon->setPixmap(QIcon(":/logo/128x128/logo.png").pixmap(128));
 
+    QScopedPointer<SettingsPassword> settings(new SettingsPassword(this));
     ui->editUsername->setText(settings->username());
     if (!settings->password().isEmpty()) {
         ui->editPassword->setText(settings->password());
@@ -47,8 +42,11 @@ PasswordDialog::PasswordDialog(QWidget *parent)
         validatePassword();
     }
 
-    connect(_request, SIGNAL(error(int, QNetworkReply *)), this, SLOT(validatePasswordResponse(int, QNetworkReply *)));
-    connect(_request, SIGNAL(result(QByteArray, QNetworkReply *)), this, SLOT(validatePasswordResponse(QByteArray, QNetworkReply *)));
+    if (globalNetwork) {
+        connect(globalNetwork, SIGNAL(passwordError(int)), this, SLOT(validatePasswordError(int)));
+        connect(globalNetwork, SIGNAL(passwordOk(QString)), this, SLOT(validatePasswordOk(QString)));
+    }
+
     connect(ui->buttonBox, SIGNAL(accepted()), this, SLOT(validatePassword()));
 }
 
@@ -71,25 +69,15 @@ void PasswordDialog::changeEvent(QEvent *e)
 
 void PasswordDialog::validatePassword(bool edit)
 {
-#if PASSWORD
-    QUrl validator = QUrl(QString(PASSWORD_VALIDATE));
     _edit = edit;
 
     ui->labelInfo->setText(tr("<b>Logging in ...</b>"));
-    QNetworkRequest nr(validator);
-    nr.setRawHeader("Authorization", "Basic " + QByteArray(QString("%1:%2").arg(ui->editUsername->text()).arg(ui->editPassword->text()).toLocal8Bit()).toBase64());
-    _request->getRequest(nr);
-#else
-    Q_UNUSED(edit)
-#endif
+
+    if (globalNetwork) globalNetwork->authentication(ui->editUsername->text(), ui->editPassword->text());
 }
 
-void PasswordDialog::validatePasswordResponse(int error,
-                                              QNetworkReply *reply)
+void PasswordDialog::validatePasswordError(int error)
 {
-    Q_UNUSED(reply)
-
-#if PASSWORD
     switch(error)
     {
     case QNetworkReply::AuthenticationRequiredError:
@@ -98,33 +86,20 @@ void PasswordDialog::validatePasswordResponse(int error,
     default:
         ui->labelInfo->setText(tr("<b>An unknown error has occured.\nPlease, try again.</b>"));
     }
-#else
-    Q_UNUSED(error)
-#endif
 }
 
-void PasswordDialog::validatePasswordResponse(const QByteArray &response,
-                                              QNetworkReply *reply)
+void PasswordDialog::validatePasswordOk(const QString &response)
 {
-    Q_UNUSED(reply)
+    QScopedPointer<SettingsPassword> settings(new SettingsPassword(this));
+    settings->setUsername(ui->editUsername->text());
+    settings->setPassword(ui->remember->isChecked() ? ui->editPassword->text() : "");
+    settings->setSessionId(response);
+    settings->writeSettings();
 
-#if PASSWORD
-    if (QString(response).contains(QString(PASSWORD_KEY))) {
-        QScopedPointer<SettingsPassword> settings(new SettingsPassword(this));
-        settings->setUsername(ui->editUsername->text());
-        settings->setPassword(ui->remember->isChecked() ? ui->editPassword->text() : "");
-        settings->writeSettings();
+    _password = ui->editPassword->text();
 
-        _password = ui->editPassword->text();
+    if (globalNetwork) globalNetwork->statusLogin();
 
-        Tano::Log::login();
-
-        if (!_edit)
-            accept();
-    } else {
-        validatePasswordResponse(99);
-    }
-#else
-    Q_UNUSED(response)
-#endif
+    if (!_edit)
+        accept();
 }

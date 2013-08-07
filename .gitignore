@@ -19,20 +19,6 @@ debian/tano/
 debian/tano-data/
 debian/tano-dbg/
 
-# Branding 
-branding/Branding*
-branding/ExtraConfig.h.in
-branding/FEATURES
-branding/logo
-branding/Log.*
-branding/SettingsDefaults.cpp
-branding/SettingsShortcutsDefaults.cpp
-branding/VERSION
-branding/windows
-branding/update.xml
-branding/tano.ico
-branding/Tano.iconset
-branding/tano.rc*
-branding/*.jpg
+# Branding
+src/branding/*/
 
-tt*

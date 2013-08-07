@@ -52,14 +52,14 @@
 #include "core/Log.h"
 #include "core/Resources.h"
 #include "core/network/NetworkDownload.h"
-#include "core/network/NetworkHttpAuth.h"
 #include "core/network/NetworkUdpxy.h"
 #include "core/playlist/PlaylistModel.h"
 #include "core/playlist/PlaylistUpdate.h"
 #include "core/playlist/containers/Channel.h"
-#include "core/platform/Features.h"
+#include "core/plugins/Plugins.h"
 #include "core/settings/Settings.h"
 #include "core/settings/SettingsChannel.h"
+#include "core/settings/SettingsPassword.h"
 #include "core/xmltv/XmltvManager.h"
 
 #include "common/Backend.h"
@@ -88,15 +88,10 @@
     #include "recorder/Recorder.h"
 #endif
 
-#if BRANDING
-    #include "branding/Branding.h"
-#endif
-
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
-MainWindow::MainWindow(Arguments *args,
-                       const QString &password)
+MainWindow::MainWindow(Arguments *args)
     : QMainWindow(),
       ui(new Ui::MainWindow),
       _hasPlaylist(false),
@@ -108,7 +103,6 @@ MainWindow::MainWindow(Arguments *args,
       _channel(0),
       _xmltv(new XmltvManager()),
       _previewTimer(new QTimer(this)),
-      _httpAuth(new NetworkHttpAuth(password)),
       _udpxy(new NetworkUdpxy()),
       _osdFloat(0)
 {
@@ -116,7 +110,7 @@ MainWindow::MainWindow(Arguments *args,
 
     ui->setupUi(this);
 
-#if FEATURE_UPDATE
+#if !defined(Q_OS_LINUX)
     _update = new UpdateDialog(this);
 #else
     ui->menuAbout->removeAction(ui->actionUpdate);
@@ -134,7 +128,7 @@ MainWindow::MainWindow(Arguments *args,
 
     qApp->installEventFilter(this);
 
-#if FEATURE_UPDATE
+#if !defined(Q_OS_LINUX)
     _update->checkSilent();
 #endif
 }
@@ -170,10 +164,10 @@ void MainWindow::exit()
             ui->actionMute->toggle();
         _trayIcon->hide();
         _mediaPlayer->writeSession();
-#if PASSWORD
-        Tano::Log::logout();
-#endif        
-	qApp->quit();
+
+        if (globalConfig && globalConfig->requiresAuthentication() && globalNetwork) globalNetwork->statusLogout();
+
+        qApp->quit();
         break;
     case QMessageBox::Cancel:
         break;
@@ -184,7 +178,11 @@ void MainWindow::exit()
 
 void MainWindow::exitLogout()
 {
-    _httpAuth->logout();
+    QScopedPointer<SettingsPassword> settings(new SettingsPassword());
+    settings->setUsername("");
+    settings->setPassword("");
+    settings->writeSettings();
+
     exit();
 }
 
@@ -307,7 +305,7 @@ void MainWindow::createGui()
     openPlaylist(true);
     setState(Vlc::Idle);
 
-#if !FEATURE_TELETEXT
+#if !defined(Q_OS_LINUX)
     ui->menuMedia->removeAction(ui->actionTeletext);
 #endif 
 
@@ -427,7 +425,7 @@ void MainWindow::createConnections()
     connect(ui->actionVolumeDown, SIGNAL(triggered()), _mediaPlayer->osd(), SLOT(volumeDown()));
     connect(ui->actionVolumeUp, SIGNAL(triggered()), _mediaPlayer->osd(), SLOT(volumeUp()));
 
-#if FEATURE_TELETEXT
+#if defined(Q_OS_LINUX)
     if (_mediaPlayer->teletextEnabled()) {
         connect(ui->actionTeletext, SIGNAL(triggered(bool)), _mediaPlayer->osd(), SLOT(teletext(bool)));
         connect(ui->actionTeletext, SIGNAL(triggered(bool)), _mediaPlayer, SLOT(teletext(bool)));
@@ -453,7 +451,7 @@ void MainWindow::createConnections()
     connect(_showInfoTab, SIGNAL(requestPrevious(QString, QString)), _xmltv, SLOT(requestProgrammePrevious(QString, QString)));
     connect(_playlistTab->playlist(), SIGNAL(scheduleRequested(Channel *)), _scheduleTab, SLOT(channel(Channel *)));
 
-#if FEATURE_UPDATE
+#if !defined(Q_OS_LINUX)
     connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
 #endif
 
@@ -507,13 +505,18 @@ void MainWindow::createMenus()
             ui->menuVideo->addMenu(menu);
     }
 
-#if BRANDING
-    Tano::Branding::processMenus(this, ui, _rightMenu);
-#endif
+    if (globalConfig && globalConfig->disableSettingsGui("channels")) {
+        ui->actionOpen->setDisabled(true);
+        ui->actionOpenFile->setDisabled(true);
+        ui->actionOpenUrl->setDisabled(true);
 
-#if PASSWORD
-    ui->menuFile->insertAction(ui->actionExit, ui->actionLogoutExit);
-#endif
+        ui->menuFile->removeAction(ui->actionOpen);
+        ui->menuFile->removeAction(ui->actionOpenFile);
+        ui->menuFile->removeAction(ui->actionOpenUrl);
+    }
+
+    if (globalConfig && globalConfig->requiresAuthentication())
+        ui->menuFile->insertAction(ui->actionExit, ui->actionLogoutExit);
 
     qDebug() << "Initialised: Menus";
 }
@@ -526,7 +529,7 @@ void MainWindow::createShortcuts()
              << ui->actionBack
              << ui->actionFullscreen
              << ui->actionMute
-#if FEATURE_TELETEXT
+#if defined(Q_OS_LINUX)
              << ui->actionTeletext
 #endif
              << ui->actionVolumeUp
@@ -580,7 +583,7 @@ void MainWindow::support()
 {
     QString subject = Tano::name() + " " + tr("Support");
     subject = subject.replace(" ", "%20");
-    QDesktopServices::openUrl(QUrl("mailto:" + Tano::email() + "?subject=" + subject));
+    QDesktopServices::openUrl(QUrl("mailto:" + (globalConfig ? globalConfig->email() : "info@tano.si" ) + "?subject=" + subject));
 }
 
 
@@ -594,7 +597,7 @@ void MainWindow::setState(const Vlc::State &state)
         ui->actionPlay->setText(tr("Pause"));
         ui->actionPlay->setToolTip(tr("Pause"));
         ui->actionMute->setEnabled(true);
-#if FEATURE_TELETEXT
+#if defined(Q_OS_LINUX)
         if (_mediaPlayer->teletextEnabled())
             ui->actionTeletext->setEnabled(true);
 #endif
@@ -611,7 +614,7 @@ void MainWindow::setState(const Vlc::State &state)
         ui->actionPlay->setText(tr("Play"));
         ui->actionPlay->setToolTip(tr("Play"));
         ui->actionMute->setEnabled(false);
-#if FEATURE_TELETEXT
+#if defined(Q_OS_LINUX)
         ui->actionTeletext->setEnabled(false);
 #endif
     default:
@@ -634,12 +637,10 @@ void MainWindow::playChannel(Channel *channel)
     _channel = channel;
 
     QString url = _udpxy->processUrl(_channel->url());
-    if (channel->passwordProtected())
-        url = _httpAuth->processUrl(url);
 
     _mediaPlayer->playUrl(url, true);
 
-    Tano::Log::playingChannel(channel->number());
+    if (globalNetwork) globalNetwork->statusPlay(channel->number());
 
     _scheduleTab->reset();
     _xmltv->request(_channel->xmltvId(), true);
@@ -681,7 +682,7 @@ void MainWindow::stop()
     tooltip();
     _trayIcon->changeToolTip(0);
 
-    Tano::Log::stopped();
+    if (globalNetwork) globalNetwork->statusStop();
 }
 
 // Open dialogs

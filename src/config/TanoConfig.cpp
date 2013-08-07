@@ -16,28 +16,47 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_NETWORKHTTPAUTH_H_
-#define TANO_NETWORKHTTPAUTH_H_
+#include "ConfigPlayer.h"
+#include "core/Common.h"
 
-#include <QtCore/QObject>
+#include "TanoConfig.h"
 
-#include "CoreSharedExport.h"
-
-class TANO_CORE_EXPORT NetworkHttpAuth : public QObject
+QString TanoConfig::applicationDataDir() const
 {
-Q_OBJECT
-public:
-    NetworkHttpAuth(const QString &password,
-                    QObject *parent = 0);
-    ~NetworkHttpAuth();
+    return QString(APP_DATA_DIR);
+}
 
-    void createSettings();
-    void logout();
-    QString processUrl(const QString &url) const;
+QString TanoConfig::name() const
+{
+    return "Tano";
+}
 
-private:
-    QString _username;
-    QString _password;
-};
+QString TanoConfig::version() const
+{
+    return Tano::versionCore();
+}
 
-#endif // TANO_NETWORKHTTPAUTH_H_
+QString TanoConfig::email() const
+{
+    return "info@tano.si";
+}
+
+QString TanoConfig::projectUrl() const
+{
+    return "http://projects.tano.si";
+}
+
+QString TanoConfig::updateUrl() const
+{
+    return "http://update.tano.si";
+}
+
+QString TanoConfig::downloadUrl() const
+{
+    return "http://update.tano.si";
+}
+
+bool TanoConfig::requiresAuthentication() const
+{
+    return false;
+}

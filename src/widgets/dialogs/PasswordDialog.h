@@ -19,17 +19,9 @@
 #ifndef TANO_PASSWORDDIALOG_H_
 #define TANO_PASSWORDDIALOG_H_
 
-#include <QtNetwork/QNetworkReply>
-
-#if QT_VERSION >= 0x050000
-    #include <QtWidgets/QDialog>
-#else
-    #include <QtGui/QDialog>
-#endif
+#include <QDialog>
 
 #include "WidgetsSharedExport.h"
-
-class NetworkRequest;
 
 namespace Ui {
     class PasswordDialog;
@@ -50,15 +42,12 @@ protected:
 
 private slots:
     void validatePassword(bool edit = false);
-    void validatePasswordResponse(int error,
-                                  QNetworkReply *reply = 0);
-    void validatePasswordResponse(const QByteArray &response,
-                                  QNetworkReply *reply = 0);
+    void validatePasswordError(int error);
+    void validatePasswordOk(const QString &response);
     
 private:
     Ui::PasswordDialog *ui;
 
-    NetworkRequest *_request;
     QString _password;
     bool _edit;
 };

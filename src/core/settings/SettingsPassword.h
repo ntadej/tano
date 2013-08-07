@@ -40,13 +40,14 @@ public:
     inline QString password() const { return _password; }
     inline void setPassword(const QString &s) { _password = s; }
 
-    inline QString uid() const { return _uid; }
-    inline void setUid(const QString &s) { _uid = s; }
+    inline QString sessionId() const { return _sessionId; }
+    inline void setSessionId(const QString &s) { _sessionId = s; }
 
 private:
     QString _username;
     QString _password;
     QString _uid;
+    QString _sessionId;
 
     SimpleCrypt *_crypt;
 };

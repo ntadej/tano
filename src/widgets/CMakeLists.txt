@@ -40,19 +40,10 @@ ENDIF(MINGW OR MSVC)
 # List of sources #
 ###################
 # Define the QRC source files used by Tano
-IF(BRANDING)
-    SET(Tano_Widgets_Resrcs
-        ../../branding/logo/logo.qrc
-        ../../data/misc/misc.qrc
-        ../../data/style/style.qrc
-    )
-ELSE(BRANDING)
-    SET(Tano_Widgets_Resrcs
-        ../../data/logo/logo.qrc
-        ../../data/misc/misc.qrc
-        ../../data/style/style.qrc
-    )
-ENDIF(BRANDING)
+SET(Tano_Widgets_Resrcs
+    ../../data/misc/misc.qrc
+    ../../data/style/style.qrc
+)
 
 # Define the UI source files used by Tano Widgets
 SET(Tano_Widgets_UIs
@@ -173,14 +164,6 @@ IF(FEATURE_RECORDER)
     )
 ENDIF(FEATURE_RECORDER)
 
-IF(BRANDING)
-    SET(Tano_Widgets_Srcs
-        ${Tano_Widgets_Srcs}
-
-        ../../branding/Branding.cpp
-    )
-ENDIF(BRANDING)
-
 
 ###############
 # Qt settings #
@@ -234,6 +217,7 @@ IF(STATIC)
 ELSE(STATIC)
     ADD_LIBRARY(${TANO_WIDGETS} SHARED ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs} ${Tano_Widgets_Resrcs_Srcs})
 ENDIF(STATIC)
+ADD_DEPENDENCIES(${TANO_WIDGETS} ${TANO_CORE})
 
 # MSVC: Avoid Debug/Release/... subfolders
 IF(MSVC)

@@ -16,32 +16,10 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_BRANDING_H_
-#define TANO_BRANDING_H_
+#ifndef TANO_CONFIGPLAYER_H_
+#define TANO_CONFIGPLAYER_H_
 
-#include <QtCore/QObject>
+// Settings
+#define APP_DATA_DIR "@APPLICATION_DATA_DIR@"
 
-#include "WidgetsSharedExport.h"
-
-class MainWindow;
-
-namespace Ui
-{
-    class MainWindow;
-    class SettingsDialog;
-}
-
-class QMenu;
-
-namespace Tano
-{
-    namespace Branding
-    {
-        TANO_WIDGETS_EXPORT void processMenus(MainWindow *main,
-                                              Ui::MainWindow *ui,
-                                              QMenu *right);
-        TANO_WIDGETS_EXPORT void processSettings(Ui::SettingsDialog *ui);
-    }
-}
-
-#endif // TANO_BRANDING_H_
+#endif // TANO_CONFIGPLAYER_H_

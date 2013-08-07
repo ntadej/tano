@@ -28,8 +28,9 @@ SettingsSchedule::SettingsSchedule(QWidget *parent)
 {
     ui->setupUi(this);
 
+    QScopedPointer<Settings> settings(new Settings(this));
     ui->location->setType(File::XmltvFile);
-    ui->location->setResetValue(Settings::DEFAULT_XMLTV_UPDATE_LOCATION);
+    ui->location->setResetValue(settings->defaultValue(Settings::KEY_XMLTV_UPDATE_LOCATION).toString());
 }
 
 SettingsSchedule::~SettingsSchedule()

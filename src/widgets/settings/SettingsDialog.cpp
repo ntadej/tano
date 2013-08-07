@@ -17,15 +17,11 @@
 *****************************************************************************/
 
 #include "Config.h"
-#include "core/platform/Features.h"
+#include "core/plugins/Plugins.h"
 #include "core/settings/Settings.h"
 
 #include "SettingsDialog.h"
 #include "ui_SettingsDialog.h"
-
-#if BRANDING
-    #include "branding/Branding.h"
-#endif
 
 SettingsDialog::SettingsDialog(QWidget *parent)
     : QDialog(parent),
@@ -56,9 +52,13 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     ui->buttonRecorder->hide();
 #endif
 
-#if BRANDING
-    Tano::Branding::processSettings(ui);
-#endif
+    if (globalConfig) {
+        if (globalConfig->disableSettingsGui("channels")) ui->buttonPlaylist->hide();
+        if (globalConfig->disableSettingsGui("gui")) ui->buttonInterface->hide();
+        if (globalConfig->disableSettingsGui("backend")) ui->buttonPlayback->hide();
+        if (globalConfig->disableSettingsGui("xmltv")) ui->buttonSchedule->hide();
+        if (globalConfig->disableSettingsGui("recorder")) ui->buttonRecorder->hide();
+    }
 }
 
 SettingsDialog::~SettingsDialog()
@@ -165,55 +165,55 @@ void SettingsDialog::apply()
 void SettingsDialog::defaults()
 {
     // General
-    ui->general->setSessionVolume(Settings::DEFAULT_SESSION_REMEMBER_VOLUME);
-    ui->general->setSessionAutoplay(Settings::DEFAULT_SESSION_AUTOPLAY);
-    ui->general->setLanguage(Settings::DEFAULT_LANGUAGE);
+    ui->general->setSessionVolume(_settings->defaultValue(Settings::KEY_SESSION_REMEMBER_VOLUME).toInt());
+    ui->general->setSessionAutoplay(_settings->defaultValue(Settings::KEY_SESSION_AUTOPLAY).toBool());
+    ui->general->setLanguage(_settings->defaultValue(Settings::KEY_LANGUAGE).toString());
 
     // Playlist
-    ui->playlist->setPlaylist(Settings::DEFAULT_PLAYLIST);
-    ui->playlist->setPlaylistUpdate(Settings::DEFAULT_PLAYLIST_UPDATE);
-    ui->playlist->setPlaylistUpdateUrl(Settings::DEFAULT_PLAYLIST_UPDATE_URL);
-    ui->playlist->setRadioCategory(Settings::DEFAULT_RADIO_CATEGORY);
-    ui->playlist->setHdCategory(Settings::DEFAULT_HD_CATEGORY);
-    ui->playlist->setUdpxy(Settings::DEFAULT_UDPXY);
-    ui->playlist->setUdpxyUrl(Settings::DEFAULT_UDPXY_URL);
-    ui->playlist->setUdpxyPort(Settings::DEFAULT_UDPXY_PORT);
+    ui->playlist->setPlaylist(_settings->defaultValue(Settings::KEY_PLAYLIST).toString());
+    ui->playlist->setPlaylistUpdate(_settings->defaultValue(Settings::KEY_PLAYLIST_UPDATE).toBool());
+    ui->playlist->setPlaylistUpdateUrl(_settings->defaultValue(Settings::KEY_PLAYLIST_UPDATE_URL).toString());
+    ui->playlist->setRadioCategory(_settings->defaultValue(Settings::KEY_RADIO_CATEGORY).toString());
+    ui->playlist->setHdCategory(_settings->defaultValue(Settings::KEY_HD_CATEGORY).toString());
+    ui->playlist->setUdpxy(_settings->defaultValue(Settings::KEY_UDPXY).toBool());
+    ui->playlist->setUdpxyUrl(_settings->defaultValue(Settings::KEY_UDPXY_URL).toString());
+    ui->playlist->setUdpxyPort(_settings->defaultValue(Settings::KEY_UDPXY_PORT).toInt());
 
     // GUI
-    ui->gui->setOsd(Settings::DEFAULT_OSD);
-    ui->gui->setTray(Settings::DEFAULT_TRAY_ENABLED);
-    ui->gui->setTrayHide(Settings::DEFAULT_HIDE_TO_TRAY);
-    ui->gui->setWheel(Settings::DEFAULT_MOUSE_WHEEL);
-    ui->gui->setRememberSize(Settings::DEFAULT_REMEMBER_GUI_SESSION);
-    ui->gui->setIcons(Settings::DEFAULT_ICONS);
+    ui->gui->setOsd(_settings->defaultValue(Settings::KEY_OSD).toBool());
+    ui->gui->setTray(_settings->defaultValue(Settings::KEY_TRAY_ENABLED).toBool());
+    ui->gui->setTrayHide(_settings->defaultValue(Settings::KEY_HIDE_TO_TRAY).toBool());
+    ui->gui->setWheel(_settings->defaultValue(Settings::KEY_MOUSE_WHEEL).toString());
+    ui->gui->setRememberSize(_settings->defaultValue(Settings::KEY_REMEMBER_GUI_SESSION).toBool());
+    ui->gui->setIcons(_settings->defaultValue(Settings::KEY_ICONS).toString());
 
     // Playback
-    ui->backend->setVout(Settings::DEFAULT_VOUT);
-    ui->backend->setAout(Settings::DEFAULT_AOUT);
+    ui->backend->setVout(_settings->defaultValue(Settings::KEY_VOUT).toInt());
+    ui->backend->setAout(_settings->defaultValue(Settings::KEY_AOUT).toInt());
 #if defined(Q_OS_WIN32)
-    ui->backend->setYuvToRgb(Settings::DEFAULT_YUV_TO_RGB);
+    ui->backend->setYuvToRgb(_settings->defaultValue(Settings::KEY_YUV_TO_RGB).toBool());
 #endif
-    ui->backend->setSpdif(Settings::DEFAULT_SPDIF);
+    ui->backend->setSpdif(_settings->defaultValue(Settings::KEY_SPDIF).toBool());
 
-    ui->backend->setRememberChannelSettings(Settings::DEFAULT_REMEMBER_VIDEO_SETTINGS);
-    ui->backend->setRememberPerChannel(Settings::DEFAULT_REMEMBER_VIDEO_PER_CHANNEL);
-    ui->backend->setAspectRatio(Settings::DEFAULT_ASPECT_RATIO);
-    ui->backend->setCropRatio(Settings::DEFAULT_CROP_RATIO);
-    ui->backend->setDeinterlacing(Settings::DEFAULT_DEINTERLACING);
-    ui->backend->setAudio(Settings::DEFAULT_AUDIO_LANGUAGE);
-    ui->backend->setSub(Settings::DEFAULT_SUBTITLE_LANGUAGE);
+    ui->backend->setRememberChannelSettings(_settings->defaultValue(Settings::KEY_REMEMBER_VIDEO_SETTINGS).toBool());
+    ui->backend->setRememberPerChannel(_settings->defaultValue(Settings::KEY_REMEMBER_VIDEO_PER_CHANNEL).toBool());
+    ui->backend->setAspectRatio(_settings->defaultValue(Settings::KEY_ASPECT_RATIO).toInt());
+    ui->backend->setCropRatio(_settings->defaultValue(Settings::KEY_CROP_RATIO).toInt());
+    ui->backend->setDeinterlacing(_settings->defaultValue(Settings::KEY_DEINTERLACING).toInt());
+    ui->backend->setAudio(_settings->defaultValue(Settings::KEY_AUDIO_LANGUAGE).toString());
+    ui->backend->setSub(_settings->defaultValue(Settings::KEY_SUBTITLE_LANGUAGE).toString());
 
-    ui->backend->setMute(Settings::DEFAULT_MUTE_ON_MINIMIZE);
-    ui->backend->setTeletext(Settings::DEFAULT_TELETEXT);
+    ui->backend->setMute(_settings->defaultValue(Settings::KEY_MUTE_ON_MINIMIZE).toBool());
+    ui->backend->setTeletext(_settings->defaultValue(Settings::KEY_TELETEXT).toBool());
 
     // Schedule
-    ui->schedule->setUpdate(Settings::DEFAULT_XMLTV_UPDATE);
-    ui->schedule->setLocation(Settings::DEFAULT_XMLTV_UPDATE_LOCATION);
-    ui->schedule->setRemote(Settings::DEFAULT_XMLTV_UPDATE_REMOTE);
+    ui->schedule->setUpdate(_settings->defaultValue(Settings::KEY_XMLTV_UPDATE).toBool());
+    ui->schedule->setLocation(_settings->defaultValue(Settings::KEY_XMLTV_UPDATE_LOCATION).toString());
+    ui->schedule->setRemote(_settings->defaultValue(Settings::KEY_XMLTV_UPDATE_REMOTE).toBool());
 
     // Recorder
-    ui->recorder->setDirectory(Settings::DEFAULT_RECORDER_DIRECTORY);
-    ui->recorder->setSnapshot(Settings::DEFAULT_SNAPSHOTS_DIRECTORY);
+    ui->recorder->setDirectory(_settings->defaultValue(Settings::KEY_RECORDER_DIRECTORY).toString());
+    ui->recorder->setSnapshot(_settings->defaultValue(Settings::KEY_SNAPSHOTS_DIRECTORY).toString());
 }
 
 void SettingsDialog::read()

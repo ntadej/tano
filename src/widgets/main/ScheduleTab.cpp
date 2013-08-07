@@ -39,7 +39,6 @@
     #include <QtGui/QVBoxLayout>
 #endif
 
-#include "core/platform/Features.h"
 #include "core/xmltv/XmltvCommon.h"
 #include "core/xmltv/containers/XmltvChannel.h"
 #include "core/xmltv/containers/XmltvProgramme.h"

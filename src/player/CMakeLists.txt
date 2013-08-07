@@ -17,18 +17,16 @@
 #############################################################################
 
 IF(MINGW OR MSVC)
-    IF(BRANDING)
-        CONFIGURE_FILE(
-            ${CMAKE_SOURCE_DIR}/branding/tano.rc.in
-            ${CMAKE_BINARY_DIR}/src/player/tano.rc
-        )
-    ELSE(BRANDING)
-        CONFIGURE_FILE(
-            ${CMAKE_SOURCE_DIR}/src/player/tano.rc.in
-            ${CMAKE_BINARY_DIR}/src/player/tano.rc
-        )
-    ENDIF(BRANDING)
+    CONFIGURE_FILE(
+        ${CMAKE_SOURCE_DIR}/src/player/tano.rc.in
+        ${CMAKE_BINARY_DIR}/src/player/tano.rc
+    )
 ENDIF(MINGW OR MSVC)
+
+# Define the QRC source files used by Tano
+SET(Tano_Resrcs
+    ../../data/logo/logo.qrc
+)
 
 SET(Tano_Srcs
     main.cpp
@@ -41,11 +39,7 @@ SET(Tano_SingleApplication_Srcs
 )
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    IF(BRANDING)
-        SET(Tano_Iconset ${CMAKE_SOURCE_DIR}/branding/Tano.iconset)
-    ELSE(BRANDING)
-        SET(Tano_Iconset ${CMAKE_SOURCE_DIR}/osx/Tano.iconset)
-    ENDIF(BRANDING)
+    SET(Tano_Iconset ${CMAKE_SOURCE_DIR}/osx/Tano.iconset)
 
     FIND_PROGRAM(ICONUTIL_EXECUTABLE NAMES iconutil)
     ADD_CUSTOM_COMMAND(
@@ -55,6 +49,17 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     )
     SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/osx/${PROJECT_NAME}.icns)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+
+
+###############
+# Qt settings #
+###############
+# This script runs the resources compiler rcc
+IF(QT5)
+    QT5_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})
+ELSE(QT5)
+    QT4_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})
+ENDIF(QT5)
 
 
 #####################
@@ -91,8 +96,8 @@ IF(MSVC)
 ENDIF(MSVC)
 
 # This line tells cmake to create the Tano program.
-ADD_EXECUTABLE(${PROJECT_NAME} MACOSX_BUNDLE WIN32 ${Tano_Srcs} ${Tano_SingleApplication_Srcs})
-ADD_DEPENDENCIES(${PROJECT_NAME} ${TANO_CORE} ${TANO_WIDGETS})
+ADD_EXECUTABLE(${PROJECT_NAME} MACOSX_BUNDLE WIN32 ${Tano_Srcs} ${Tano_Resrcs_Srcs} ${Tano_SingleApplication_Srcs})
+ADD_DEPENDENCIES(${PROJECT_NAME} ${TANO_CORE} ${TANO_WIDGETS} ${TANO_CONFIG})
 
 # MSVC: Avoid Debug/Release/... subfolders
 IF(MSVC)
@@ -108,9 +113,9 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
    SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES MACOSX_BUNDLE_INFO_PLIST "${CMAKE_BINARY_DIR}/osx/Info.plist")
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux" AND NOT BRANDING_NAME)
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
    SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME_LOWER})
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux" AND NOT BRANDING_NAME)
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 # Here the needed Libraries are added to the link command.
 IF(STATIC)
@@ -120,13 +125,13 @@ ENDIF(STATIC)
 
 IF(QT5)
     QT5_USE_MODULES(${PROJECT_NAME} Concurrent Gui Network Sql Widgets Xml)
-    TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${TANO_CORE_LIB} ${TANO_WIDGETS_LIB})
+    TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${TANO_CORE_LIB} ${TANO_WIDGETS_LIB} ${TANO_CONFIG_LIB})
     IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
         QT5_USE_MODULES(${PROJECT_NAME} MacExtras)
         TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${COREFOUNDATION_LIBRARY} ${IOKIT_LIBRARY})
     ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 ELSE(QT5)
-    TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${TANO_CORE_LIB} ${TANO_WIDGETS_LIB} ${QT_LIBRARIES})
+    TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${TANO_CORE_LIB} ${TANO_WIDGETS_LIB} ${TANO_CONFIG_LIB} ${QT_LIBRARIES})
 ENDIF(QT5)
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT STATIC)

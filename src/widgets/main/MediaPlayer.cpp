@@ -15,7 +15,6 @@
 #include <vlc-qt/WidgetVideo.h>
 
 #include "core/Arguments.h"
-#include "core/platform/Features.h"
 #include "core/settings/Settings.h"
 #include "core/settings/SettingsChannel.h"
 
@@ -75,7 +74,7 @@ MediaPlayer::MediaPlayer(Arguments *arguments,
     layout->addWidget(_osd);
     setLayout(layout);
 
-#if !FEATURE_TELETEXT
+#if !defined(Q_OS_LINUX)
     _osd->toggleTeletext(false);
 #else
     _osd->toggleTeletext(_teletext);
@@ -188,7 +187,7 @@ void MediaPlayer::writeSession()
     if (_sessionVolumeEnabled)
         settings->setSessionVolume(_osd->volumeSlider()->volume());
     else
-        settings->setSessionVolume(Settings::DEFAULT_SESSION_VOLUME);
+        settings->setSessionVolume(settings->defaultValue(Settings::KEY_SESSION_VOLUME).toInt());
 
     if (_sessionAutoplayEnabled)
         settings->setSessionChannel(_osd->lcd()->value());

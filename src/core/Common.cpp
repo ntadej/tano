@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -27,58 +27,33 @@
 
 #include "Config.h"
 #include "Common.h"
+#include "plugins/Plugins.h"
 
 QString Tano::name()
 {
-#if BRANDING && defined(BRAND_NAME)
-    return QString(BRAND_NAME);
-#else
-    return "Tano";
-#endif
+    return globalConfig ? globalConfig->name() : "Tano";
 }
 
 QString Tano::executable()
-{
-#if BRANDING && defined(BRAND_NAME)
-    return QString(BRAND_NAME).toLower();
+{   
+#if defined(Q_OS_LINUX)
+    return name().toLower();
 #else
-    return "tano";
+    return name();
 #endif
 }
 
 QString Tano::version()
 {
-#ifdef VERSION
-    return QString(VERSION);
-#else
-    return "Unknown";
-#endif
+    return globalConfig ? globalConfig->version() : versionCore();
 }
 
 QString Tano::versionCore()
 {
-#ifdef VERSION_CORE
-    return QString(VERSION_CORE);
+#ifdef VERSION
+    return QString(VERSION);
 #else
-    return version();
-#endif
-}
-
-QString Tano::email()
-{
-#ifdef APP_URL
-    return QString(APP_EMAIL);
-#else
-    return "info@tano.si";
-#endif
-}
-
-QString Tano::url()
-{
-#ifdef APP_URL
-    return QString(APP_URL);
-#else
-    return "http://projects.tano.si";
+    return "Unknown";
 #endif
 }
 

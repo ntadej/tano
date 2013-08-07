@@ -15,32 +15,5 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
-# Configuration #
-#################
-CONFIGURE_FILE(
-    ${CMAKE_SOURCE_DIR}/src/Config.h.in
-    ${CMAKE_BINARY_DIR}/src/Config.h
-)
-CONFIGURE_FILE(
-    ${CMAKE_SOURCE_DIR}/src/ConfigPlayer.h.in
-    ${CMAKE_BINARY_DIR}/src/ConfigPlayer.h
-)
 
-ADD_SUBDIRECTORY(core)
-
-IF(BUILD_PLAYER OR BUILD_EDITOR)
-    ADD_SUBDIRECTORY(widgets)
-ENDIF(BUILD_PLAYER OR BUILD_EDITOR)
-
-IF(BUILD_PLAYER)
-    IF(NOT BRANDING STREQUAL "")
-        ADD_SUBDIRECTORY(branding)
-    ELSE(NOT BRANDING STREQUAL "")
-        ADD_SUBDIRECTORY(config)
-        ADD_SUBDIRECTORY(player)
-    ENDIF(NOT BRANDING STREQUAL "")
-ENDIF(BUILD_PLAYER)
-
-IF(BUILD_EDITOR)
-    ADD_SUBDIRECTORY(editor)
-ENDIF(BUILD_EDITOR)
+ADD_SUBDIRECTORY(${BRANDING})

@@ -19,8 +19,8 @@
 #include <windows.h>
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION @TANO_CORE_VERSION_MAJOR@,@TANO_CORE_VERSION_MINOR@,@TANO_CORE_VERSION_BUGFIX@,0
- PRODUCTVERSION @TANO_CORE_VERSION_MAJOR@,@TANO_CORE_VERSION_MINOR@,@TANO_CORE_VERSION_BUGFIX@,0
+ FILEVERSION @TANO_VERSION_MAJOR@,@TANO_VERSION_MINOR@,@TANO_VERSION_BUGFIX@,0
+ PRODUCTVERSION @TANO_VERSION_MAJOR@,@TANO_VERSION_MINOR@,@TANO_VERSION_BUGFIX@,0
  FILEFLAGS 0x0L
  FILEFLAGSMASK 0x3fL
  FILEOS 0x00040004L
@@ -33,12 +33,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Tadej Novak"
             VALUE "FileDescription", "An open IP TV player"
-            VALUE "FileVersion", "@TANO_CORE_VERSION@"
+            VALUE "FileVersion", "@TANO_VERSION@"
             VALUE "LegalCopyright", "Copyright (C) 2013 Tadej Novak."
             VALUE "InternalName", "tanocore"
             VALUE "OriginalFilename", "tanocore.dll"
             VALUE "ProductName", "Tano"
-            VALUE "ProductVersion", "@TANO_CORE_VERSION@"
+            VALUE "ProductVersion", "@TANO_VERSION@"
         END
     END
     BLOCK "VarFileInfo"

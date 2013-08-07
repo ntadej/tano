@@ -16,8 +16,6 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/platform/Features.h"
-
 #include "common/Backend.h"
 
 #include "SettingsBackend.h"
@@ -52,7 +50,7 @@ SettingsBackend::SettingsBackend(QWidget *parent)
     ui->checkYTR->hide();
 #endif
 
-#if !FEATURE_TELETEXT
+#if !defined(Q_OS_LINUX)
     ui->checkTeletext->hide();
 #endif
 }

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -65,6 +65,8 @@ const int Settings::DEFAULT_VOUT = -1;
 const int Settings::DEFAULT_AOUT = -1;
 #if defined(Q_OS_WIN32)
 const bool Settings::DEFAULT_YUV_TO_RGB = true;
+#else
+const bool Settings::DEFAULT_YUV_TO_RGB = false;
 #endif
 const bool Settings::DEFAULT_SPDIF = false;
 
@@ -86,7 +88,7 @@ const bool Settings::DEFAULT_TELETEXT = false;
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/Videos";
 const QString Settings::DEFAULT_SNAPSHOTS_DIRECTORY = QDir::homePath() + "/Pictures";
 #elif defined(Q_OS_MAC)
-const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/Videos"; // Need to confirm
+const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/Movies";
 const QString Settings::DEFAULT_SNAPSHOTS_DIRECTORY = QDir::homePath() + "/Pictures";
 #elif defined(Q_OS_LINUX)
 const QString Settings::DEFAULT_RECORDER_DIRECTORY = QDir::homePath() + "/" + Tano::Linux::videoPath();
@@ -104,5 +106,5 @@ const int Settings::DEFAULT_SESSION_VOLUME = 50;
 
 // Schedule
 const bool Settings::DEFAULT_XMLTV_UPDATE = false;
-const QString Settings::DEFAULT_XMLTV_UPDATE_LOCATION = Tano::Resources::settingsPath() + "xmltv.xml";
+const QString Settings::DEFAULT_XMLTV_UPDATE_LOCATION = "xmltv.xml";
 const bool Settings::DEFAULT_XMLTV_UPDATE_REMOTE = false;

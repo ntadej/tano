@@ -27,8 +27,10 @@ SettingsRecorder::SettingsRecorder(QWidget *parent)
       ui(new Ui::SettingsRecorder)
 {
     ui->setupUi(this);
+
+    QScopedPointer<Settings> settings(new Settings(this));
     ui->edit->setType(File::Directory);
-    ui->edit->setResetValue(Settings::DEFAULT_RECORDER_DIRECTORY);
+    ui->edit->setResetValue(settings->defaultValue(Settings::KEY_RECORDER_DIRECTORY).toString());
 }
 
 SettingsRecorder::~SettingsRecorder()

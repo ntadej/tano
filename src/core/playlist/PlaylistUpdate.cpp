@@ -22,6 +22,7 @@
 #include "Resources.h"
 #include "network/NetworkDownload.h"
 #include "playlist/PlaylistModel.h"
+#include "plugins/Plugins.h"
 #include "settings/Settings.h"
 
 #include "PlaylistUpdate.h"
@@ -51,7 +52,7 @@ void PlaylistUpdate::processPlaylist(QFile *file)
     if (_save)
         _model->save(_playlist, _model->name());
 
-    Tano::Log::playlistLoaded();
+    if (globalNetwork) globalNetwork->statusPlaylist();
 
     emit done();
 
@@ -81,7 +82,7 @@ void PlaylistUpdate::update(const QString &playlist)
     if (settings->playlistUpdate()) {
         _downloader = new NetworkDownload(this);
         connect(_downloader, SIGNAL(file(QFile *)), this, SLOT(processPlaylist(QFile *)));
-        if (settings->playlistUpdateUrl().endsWith(".xml"))
+        if (settings->playlistUpdateUrl().contains("scaletv.com"))
             _type = File::GoTV;
         _downloader->getFile(settings->playlistUpdateUrl());
     } else {

@@ -25,6 +25,7 @@
 
 #include "Common.h"
 #include "Resources.h"
+#include "plugins/Plugins.h"
 #include "settings/Settings.h"
 
 QString Tano::Resources::path(const QString &file)
@@ -66,6 +67,14 @@ QString Tano::Resources::resource(const QString &file)
     else if (QFileInfo("/usr/bin/" + file).exists())
         path = QFileInfo("/usr/bin/" + file).absoluteFilePath();
 #endif
+
+#if defined(Q_OS_MAC)
+    else if (QFileInfo(QCoreApplication::applicationDirPath().replace("MacOS", "Resources") + "/" + file).exists())
+        path = QFileInfo(QCoreApplication::applicationDirPath().replace("MacOS", "Resources") + "/" + file).absoluteFilePath();
+#endif
+
+    else if (globalConfig && QFileInfo(globalConfig->applicationDataDir() + "/" + file).exists())
+        path = QFileInfo(globalConfig->applicationDataDir() + "/" + file).absoluteFilePath();
 
 #if defined(DATA_DIR)
     else if (QFileInfo(QString(DATA_DIR) + "/" + file).exists())

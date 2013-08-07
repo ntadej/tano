@@ -31,6 +31,7 @@
 #include "Config.h"
 
 #include "core/Resources.h"
+#include "core/plugins/Plugins.h"
 #include "core/settings/Settings.h"
 
 #include "style/Common.h"
@@ -84,13 +85,15 @@ void Tano::Style::setIconPaths()
 {
     QStringList paths = QIcon::themeSearchPaths();
     paths.prepend(QCoreApplication::applicationDirPath() + "/" + "icons");
+
+    if (globalConfig) paths.prepend(globalConfig->applicationDataDir() + "/" + "icons");
+
 #if defined(DATA_DIR)
     paths.prepend(QString(DATA_DIR) + "/" + "icons");
 #endif
+
 #if defined(Q_OS_MAC)
-    QDir i = QCoreApplication::applicationDirPath();
-    i.cdUp();
-    paths.prepend(i.absolutePath() + "/Resources/icons");
+    paths.prepend(QCoreApplication::applicationDirPath().replace("MacOS", "Resources") + "/icons");
 #endif
 
     QIcon::setThemeSearchPaths(paths);

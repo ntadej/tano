@@ -28,11 +28,6 @@ ELSE(STATIC)
     ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
 ENDIF(STATIC)
 
-CONFIGURE_FILE(
-    ${CMAKE_SOURCE_DIR}/src/core/platform/Features.h.in
-    ${CMAKE_BINARY_DIR}/src/core/platform/Features.h
-)
-
 IF(MINGW OR MSVC)
     CONFIGURE_FILE(
         ${CMAKE_SOURCE_DIR}/src/core/tano-core.rc.in
@@ -52,7 +47,6 @@ SET(Tano_Core_Resrcs
 # Define the C++ source files used by Tano Core
 SET(Tano_Core_Network_Srcs
     network/NetworkDownload.cpp
-    network/NetworkHttpAuth.cpp
     network/NetworkRequest.cpp
     network/NetworkUdpxy.cpp
 )
@@ -73,11 +67,19 @@ SET(Tano_Core_Playlist_Srcs
     playlist/handlers/JsHandler.cpp
     playlist/handlers/M3UHandler.cpp
 )
+SET(Tano_Core_Plugins_Srcs
+    plugins/ConfigPlugin.h
+    plugins/NetworkPlugin.h
+    plugins/Plugins.cpp
+)
 SET(Tano_Core_Settings_Srcs
     settings/Settings.cpp
     settings/SettingsChannel.cpp
+    settings/SettingsDefaults.cpp
+    settings/SettingsKeys.cpp
     settings/SettingsPassword.cpp
     settings/SettingsShortcuts.cpp
+    settings/SettingsShortcutsDefaults.cpp
 )
 SET(Tano_Core_Timers_Srcs
     timers/TimersSql.cpp
@@ -137,6 +139,7 @@ SET(Tano_Core_Srcs
 
     ${Tano_Core_Network_Srcs}
     ${Tano_Core_Playlist_Srcs}
+    ${Tano_Core_Plugins_Srcs}
     ${Tano_Core_Settings_Srcs}
     ${Tano_Core_Xmltv_Srcs}
 
@@ -151,23 +154,6 @@ IF(FEATURE_RECORDER)
         ${Tano_Core_Timers_Srcs}
     )
 ENDIF(FEATURE_RECORDER)
-
-IF(BRANDING)
-    SET(Tano_Core_Srcs
-        ${Tano_Core_Srcs}
-
-        ../../branding/Log.cpp
-        ../../branding/SettingsDefaults.cpp
-        ../../branding/SettingsShortcutsDefaults.cpp
-    )
-ELSE(BRANDING)
-    SET(Tano_Core_Srcs
-        ${Tano_Core_Srcs}
-
-        settings/SettingsDefaults.cpp
-        settings/SettingsShortcutsDefaults.cpp
-    )
-ENDIF(BRANDING)
 
 
 ###############

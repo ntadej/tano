@@ -16,22 +16,24 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_EXTRACONFIG_H_
-#define TANO_EXTRACONFIG_H_
+#ifndef TANO_PLUGINS_H_
+#define TANO_PLUGINS_H_
 
-// Settings
-#define BRAND_NAME "Brand"
-#define ENCRYPTION_KEY @ENCRYPTION_KEY@
-#define UPDATE_URL "http://update.tano.si/player"
+#include "plugins/ConfigPlugin.h"
+#include "plugins/NetworkPlugin.h"
 
-#define PASSWORD 1
-#define PASSWORD_VALIDATE "http://yourdomain.com/passcheck/"
-#define PASSWORD_KEY "ok"
+#include "CoreSharedExport.h"
 
-#define SETTINGS_INTERFACE 1
-#define SETTINGS_PLAYBACK 1
-#define SETTINGS_PLAYLIST 0
-#define SETTINGS_RECORDER 0
-#define SETTINGS_SCHEDULE 0
+extern ConfigPlugin *globalConfig;
+extern NetworkPlugin *globalNetwork;
 
-#endif // TANO_EXTRACONFIG_H_
+namespace Tano
+{
+    namespace Plugins
+    {
+        TANO_CORE_EXPORT void initConfig();
+        TANO_CORE_EXPORT void initNetwork();
+    }
+}
+
+#endif // TANO_PLUGINS_H_

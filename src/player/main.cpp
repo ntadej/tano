@@ -20,6 +20,7 @@
 
 #include <QtCore/QDir>
 #include <QtCore/QTextCodec>
+#include <QtCore/QtPlugin>
 
 #include "Config.h"
 #include "core/Arguments.h"
@@ -27,10 +28,13 @@
 #include "core/Log.h"
 #include "core/Out.h"
 #include "core/Resources.h"
+#include "core/plugins/Plugins.h"
 
 #include "widgets/MainWindow.h"
 #include "widgets/dialogs/PasswordDialog.h"
 #include "widgets/style/Common.h"
+
+Q_IMPORT_PLUGIN(TanoConfig)
 
 int main(int argc, char *argv[])
 {
@@ -41,6 +45,9 @@ int main(int argc, char *argv[])
     dir.cd("PlugIns");  // e.g. appdir/Contents/PlugIns
     QCoreApplication::setLibraryPaths(QStringList(dir.absolutePath()));
 #endif
+
+    Tano::Plugins::initConfig();
+    Tano::Plugins::initNetwork();
 
     QCoreApplication::setApplicationName(Tano::name());
     QCoreApplication::setApplicationVersion(Tano::version());
@@ -66,25 +73,20 @@ int main(int argc, char *argv[])
         Tano::Style::setIconPaths();
         Tano::Style::setIconName();
 
-#if PASSWORD
-        QString password;
-        PasswordDialog dialog;
-        switch (dialog.exec())
-        {
-        case QDialog::Accepted:
-            password = dialog.password();
-            break;
-        default:
-            return -10;
+        if (globalConfig && globalConfig->requiresAuthentication()) {
+            PasswordDialog dialog;
+            switch (dialog.exec())
+            {
+            case QDialog::Accepted:
+                break;
+            default:
+                return -10;
+                break;
+            }
         }
 
-        MainWindow mainWindow(args, password);
-#else
         MainWindow mainWindow(args);
-#endif
-
         instance.setActivationWindow(&mainWindow);
-
         mainWindow.show();
 
         return instance.exec();

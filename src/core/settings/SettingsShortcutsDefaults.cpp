@@ -16,7 +16,6 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "platform/Features.h"
 #include "settings/SettingsShortcuts.h"
 
 const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_KEYS =
@@ -26,7 +25,7 @@ const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_KEYS =
                       << "B"
                       << "F"
                       << "M"
-#if FEATURE_TELETEXT
+#if defined(Q_OS_LINUX)
                       << "T"
 #endif
                       << "Ctrl+Up"
@@ -64,7 +63,7 @@ const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_ACTIONS =
                       << "Back"
                       << "Fullscreen"
                       << "Mute"
-#if FEATURE_TELETEXT
+#if defined(Q_OS_LINUX)
                       << "Teletext"
 #endif
                       << "VolumeUp"

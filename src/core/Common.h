@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -37,10 +37,6 @@ namespace Tano
     TANO_CORE_EXPORT QString changeset();
     TANO_CORE_EXPORT bool is64bit();
     TANO_CORE_EXPORT QString uid();
-
-    // Info
-    TANO_CORE_EXPORT QString email();
-    TANO_CORE_EXPORT QString url();
 
     // Misc
     TANO_CORE_EXPORT QString recordingFileName(const QString &name,

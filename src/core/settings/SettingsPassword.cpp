@@ -41,7 +41,7 @@ void SettingsPassword::writeSettings()
 {
     setValue("username", username());
     setValue("password", _crypt->encryptToString(password()));
-    setValue("uid", uid());
+    setValue("session", sessionId());
 
     sync();
 }
@@ -50,5 +50,5 @@ void SettingsPassword::readSettings()
 {
     setUsername(value("username").toString());
     setPassword(_crypt->decryptToString(value("password").toString()));
-    setUid(value("uid").toString());
+    setSessionId(value("session").toString());
 }

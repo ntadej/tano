@@ -16,11 +16,31 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_FEATURES_H_
-#define TANO_FEATURES_H_
+#ifndef TANO_NETWORKPLUGIN_H_
+#define TANO_NETWORKPLUGIN_H_
 
-#define FEATURE_RECORDER @FEATURE_RECORDER@
-#define FEATURE_TELETEXT @FEATURE_TELETEXT@
-#define FEATURE_UPDATE @FEATURE_UPDATE@
+#include <QtCore/QObject>
+#include <QtCore/QString>
 
-#endif // TANO_FEATURES_H_
+class NetworkPlugin : public QObject
+{
+Q_OBJECT
+public:
+    NetworkPlugin(QObject *parent = 0) : QObject(parent) { }
+    virtual ~NetworkPlugin() { }
+
+    virtual void authentication(const QString &username,
+                                const QString &password) = 0;
+
+    virtual void statusLogin() = 0;
+    virtual void statusLogout() = 0;
+    virtual void statusPlaylist() = 0;
+    virtual void statusPlay(int id) = 0;
+    virtual void statusStop() = 0;
+
+signals:
+    void passwordOk(QString);
+    void passwordError(int);
+};
+
+#endif // TANO_NETWORKPLUGIN_H_

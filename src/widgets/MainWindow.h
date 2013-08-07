@@ -42,7 +42,6 @@ class DesktopShortcuts;
 class NetworkDownload;
 class LocaleManager;
 class MediaPlayer;
-class NetworkHttpAuth;
 class NetworkUdpxy;
 class ScheduleTab;
 class SettingsChannel;
@@ -69,8 +68,7 @@ class TANO_WIDGETS_EXPORT MainWindow : public QMainWindow
 {
 Q_OBJECT
 public:
-    explicit MainWindow(Arguments *args,
-                        const QString &password = "");
+    explicit MainWindow(Arguments *args);
     ~MainWindow();
 
 protected:
@@ -165,7 +163,6 @@ private:
     QString _playlistName;
     QTimer *_previewTimer;
     Timer *_recording;
-    NetworkHttpAuth *_httpAuth;
     NetworkUdpxy *_udpxy;
 
     //GUI

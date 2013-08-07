@@ -16,17 +16,26 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#include <QtCore/QPluginLoader>
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
-#define VERSION_X64 @BITS@
+#include "plugins/Plugins.h"
 
-// Settings
-#define LOGGING @LOGGING_SET@
-#define DATA_DIR "@DEFAULT_DATA_DIR@"
-#define ENCRYPTION_KEY @ENCRYPTION_KEY@
+ConfigPlugin *globalConfig = 0;
+NetworkPlugin *globalNetwork = 0;
 
-#endif // TANO_CONFIG_H_
+void Tano::Plugins::initConfig()
+{
+    foreach (QObject *plugin, QPluginLoader::staticInstances()) {
+        ConfigPlugin *load = qobject_cast<ConfigPlugin *>(plugin);
+        if (load) {
+            globalConfig = load;
+            return;
+        }
+    }
+}
+
+void Tano::Plugins::initNetwork()
+{
+    if (globalConfig)
+        globalNetwork = globalConfig->networkPlugin();
+}

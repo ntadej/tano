@@ -16,17 +16,34 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_CONFIG_H_
-#define TANO_CONFIG_H_
+#ifndef TANO_TANOCONFIG_H_
+#define TANO_TANOCONFIG_H_
 
-// Tano version
-#define VERSION "@TANO_VERSION@"
-#define VERSION_PATCH "@PROJECT_VERSION_PATCH@"
-#define VERSION_X64 @BITS@
+#include "core/plugins/ConfigPlugin.h"
 
-// Settings
-#define LOGGING @LOGGING_SET@
-#define DATA_DIR "@DEFAULT_DATA_DIR@"
-#define ENCRYPTION_KEY @ENCRYPTION_KEY@
+class TanoConfig : public QObject, public ConfigPlugin
+{
+Q_OBJECT
+Q_PLUGIN_METADATA(IID "si.tano.core.ConfigPlugin")
+Q_INTERFACES(ConfigPlugin)
 
-#endif // TANO_CONFIG_H_
+public:
+    QString applicationDataDir() const;
+
+    QString name() const;
+    QString version() const;
+    QString email() const;
+    QString projectUrl() const;
+    QString updateUrl() const;
+    QString downloadUrl() const;
+
+    bool requiresAuthentication() const;
+
+    QVariantMap defaultSettings() const { return QVariantMap(); }
+    bool disableSettings(const QString &category) const { Q_UNUSED(category) return false; }
+    bool disableSettingsGui(const QString &category) const { Q_UNUSED(category) return false; }
+
+    NetworkPlugin *networkPlugin() { return 0; }
+};
+
+#endif // TANO_TANOCONFIG_H_
