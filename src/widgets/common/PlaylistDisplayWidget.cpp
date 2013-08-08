@@ -45,8 +45,8 @@ PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
     _rightMenu = new QMenu(this);
     _play = new QAction(QIcon::fromTheme("media-playback-start"), tr("Play"), this);
     _schedule = new QAction(QIcon::fromTheme("x-office-calendar"), tr("Schedule"), this);
-	_rightMenu->addAction(_play);
-	_rightMenu->addAction(_schedule);
+    _rightMenu->addAction(_play);
+    _rightMenu->addAction(_schedule);
 
     connect(this, SIGNAL(activated(QModelIndex)), this, SLOT(channelSelected(QModelIndex)));
     connect(_play, SIGNAL(triggered()), this, SLOT(play()));
@@ -94,8 +94,9 @@ void PlaylistDisplayWidget::channelSelected(const QString &xmltvId)
 
 void PlaylistDisplayWidget::play()
 {
-    QModelIndex *channel = indexAt(_currentPos);
-    if (channel != NULL)
+    QModelIndex channel = indexAt(_currentPos);
+
+    if (channel != QModelIndex())
         channelSelected(channel);
 }
 
@@ -135,9 +136,10 @@ void PlaylistDisplayWidget::setPlaylistModel(PlaylistModel *model)
 
 void PlaylistDisplayWidget::showMenu(const QPoint &pos)
 {
-	_currentPos = pos;
+    _currentPos = pos;
 
-	_rightMenu->exec(QCursor::pos());
+    if (indexAt(_currentPos) != QModelIndex())
+        _rightMenu->exec(QCursor::pos());
 }
 
 void PlaylistDisplayWidget::updateSelection(Channel *channel)
