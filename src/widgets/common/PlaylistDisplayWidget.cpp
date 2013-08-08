@@ -94,7 +94,9 @@ void PlaylistDisplayWidget::channelSelected(const QString &xmltvId)
 
 void PlaylistDisplayWidget::play()
 {
-    channelSelected(indexAt(_currentPos));
+    QModelIndex *channel = indexAt(_currentPos);
+    if (channel != NULL)
+        channelSelected(channel);
 }
 
 void PlaylistDisplayWidget::playMode()
