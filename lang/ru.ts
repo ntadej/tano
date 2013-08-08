@@ -37,15 +37,15 @@
     </message>
     <message>
         <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano — кроссплатформенный IP TV плеер с открытым исходным кодом, предоставляющий полноценное проигрывание и запись IP TV с EPG.</translation>
     </message>
     <message>
         <source>Multimedia backend powered by VLC-Qt %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Мультимедийный бэкенд — VLC-Qt %1.</translation>
     </message>
     <message>
         <source>&lt;b&gt;This application is based on Tano %1.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Это приложение создано на основе Tano %1.&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -256,24 +256,25 @@
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished">О программе</translation>
+        <translation>О программе</translation>
     </message>
     <message>
         <source>Logout and Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Отключиться и выйти</translation>
     </message>
     <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы уверены, что хотите выйти?
+Это остановит процесс записи.</translation>
     </message>
     <message>
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Каналы</translation>
     </message>
     <message>
         <source>Show Info</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Информация о канале</translation>
     </message>
 </context>
 <context>
@@ -453,37 +454,39 @@ This will stop recording in progress.</source>
     <name>PasswordDialog</name>
     <message>
         <source>Login required</source>
-        <translation type="unfinished"></translation>
+        <translation>Требуется авторизация</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation>Логин:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Пароль:</translation>
     </message>
     <message>
         <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Авторизуйтесь для использования этого приложения.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Remember password</source>
-        <translation type="unfinished"></translation>
+        <translation>Запомнить пароль</translation>
     </message>
     <message>
         <source>&lt;b&gt;Your username or password is incorrect.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Неверный логин или пароль.
+Пожалуйста, попробуйте снова.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;An unknown error has occured.
 Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Неизвестная ошибка.
+Пожалуйста, попробуйте снова.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Авторизация...&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -875,11 +878,11 @@ You will lose any unsaved changes.</source>
     <name>PlaylistTab</name>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Все</translation>
     </message>
     <message>
         <source>TV</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ТВ</translation>
     </message>
     <message>
         <source>All categories</source>
@@ -1052,7 +1055,7 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Невозможно записать файл %1:
+        <translation type="unfinished">Невозможно записать файл %1:
 %2.</translation>
     </message>
     <message>
@@ -1533,19 +1536,19 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Try &apos;%1 %2&apos; for more information.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 %2 для подробной инфомрации.</translation>
     </message>
     <message>
         <source>GoTV channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>Список каналов GoTV</translation>
     </message>
     <message>
         <source>The file is not a GoTV channel list file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Этот файл не является списком каналов GoTV.</translation>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation type="unfinished"></translation>
+        <translation>Неизвестное название</translation>
     </message>
 </context>
 <context>
@@ -1724,11 +1727,11 @@ This operation is ireversible.</source>
     <name>ScheduleTab</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Изменить</translation>
     </message>
     <message>
         <source>Show information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Информация о канале</translation>
     </message>
     <message>
         <source>Record</source>
@@ -1736,15 +1739,15 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Current channel selected doesn&apos;t have any schedule information</source>
-        <translation type="unfinished"></translation>
+        <translation>Данный канал не содержит никаких сведений о расписании</translation>
     </message>
     <message>
         <source>Select channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбрат канал</translation>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет информации</translation>
     </message>
 </context>
 <context>
@@ -2097,7 +2100,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>You are using %1 version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы используете версию %1:</translation>
     </message>
 </context>
 <context>
@@ -2178,11 +2181,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Local file</source>
-        <translation type="unfinished"></translation>
+        <translation>Локальный файл</translation>
     </message>
     <message>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Настройки XMLTV требуют перезапуска.&lt;/i&gt;</translation>
     </message>
 </context>
 <context>
@@ -2241,18 +2244,18 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>OSD in fullscreen:</source>
-        <translation type="unfinished"></translation>
+        <translation>Полноэкранный OSD:</translation>
     </message>
 </context>
 <context>
     <name>ShowInfoTab</name>
     <message>
         <source>&lt;h3&gt;No show selected.&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h3&gt;Канал не выбран.&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Предыдущий</translation>
     </message>
     <message>
         <source>Record</source>
@@ -2264,7 +2267,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"></translation>
+        <translation>Нет информации</translation>
     </message>
 </context>
 <context>
@@ -2373,17 +2376,19 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Recording stopped.</source>
-        <translation type="unfinished"></translation>
+        <translation>Запись оставновлена.</translation>
     </message>
     <message>
         <source>Recording %1 to %2 
 Stop manually!</source>
-        <translation type="unfinished"></translation>
+        <translation>Запись %1 в %2 
+Остановка вручную!</translation>
     </message>
     <message>
         <source>Recording %1 to %2 
 End time: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Запись %1 в %2 
+Время окончания: %3</translation>
     </message>
 </context>
 <context>
@@ -2410,11 +2415,11 @@ End time: %3</source>
     </message>
     <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Вы используете последнюю версию!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Вы используете версию для разработчиков!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Close</source>
@@ -2422,23 +2427,23 @@ End time: %3</source>
     </message>
     <message>
         <source>Download</source>
-        <translation type="unfinished"></translation>
+        <translation>Скачать</translation>
     </message>
     <message>
         <source>Changelog:</source>
-        <translation type="unfinished"></translation>
+        <translation>Спиок изменений:</translation>
     </message>
     <message>
         <source>View</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Изменения в %1&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Доступно новое обновление!&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>
