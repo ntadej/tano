@@ -37,8 +37,8 @@ BEGIN
             VALUE "FileDescription", "An open IP TV player"
             VALUE "FileVersion", "@TANO_VERSION@"
             VALUE "LegalCopyright", "Copyright (C) 2013 Tadej Novak."
-            VALUE "InternalName", "tano"
-            VALUE "OriginalFilename", "tano.exe"
+            VALUE "InternalName", "Tano"
+            VALUE "OriginalFilename", "Tano.exe"
             VALUE "ProductName", "Tano"
             VALUE "ProductVersion", "@TANO_VERSION@"
         END

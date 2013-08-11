@@ -24,9 +24,11 @@
 #include <QtCore/QVariantMap>
 #include <QtCore/QtPlugin>
 
+#include "CoreSharedExport.h"
+
 class NetworkPlugin;
 
-class ConfigPlugin
+class TANO_CORE_EXPORT ConfigPlugin
 {
 public:
     virtual ~ConfigPlugin() { }

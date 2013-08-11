@@ -24,8 +24,8 @@
 
 #include "CoreSharedExport.h"
 
-extern ConfigPlugin *globalConfig;
-extern NetworkPlugin *globalNetwork;
+TANO_CORE_EXPORT extern ConfigPlugin *globalConfig;
+TANO_CORE_EXPORT extern NetworkPlugin *globalNetwork;
 
 namespace Tano
 {

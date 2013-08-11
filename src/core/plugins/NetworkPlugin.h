@@ -22,7 +22,9 @@
 #include <QtCore/QObject>
 #include <QtCore/QString>
 
-class NetworkPlugin : public QObject
+#include "CoreSharedExport.h"
+
+class TANO_CORE_EXPORT NetworkPlugin : public QObject
 {
 Q_OBJECT
 public:
