@@ -22,7 +22,8 @@ set -eu
 DEVEL=""
 TARGET=""
 BUILD="1"
-while getopts "hdt:b:" OPTION
+CUSTOM=""
+while getopts "hdt:b:c:" OPTION
 do
   case $OPTION in
       h)
@@ -31,6 +32,7 @@ do
           echo "Use -t to specify target (in targets directory)"
           echo "Use -d to ignore dependency requests"
           echo "Use -b to specify build number (defaults to 1)"
+          echo "Use -c to specify branded build name (defaults to disabled)"
           exit 0
           ;;
       d)
@@ -41,6 +43,9 @@ do
           ;;
       b)
           BUILD="$OPTARG"
+          ;;
+      c)
+          CUSTOM="$OPTARG"
           ;;
   esac
 done

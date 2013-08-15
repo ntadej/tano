@@ -23,6 +23,14 @@ IF(MINGW OR MSVC)
     )
 ENDIF(MINGW OR MSVC)
 
+SET(Tano_Desktop
+    ${CMAKE_SOURCE_DIR}/src/player/tano.desktop
+)
+
+SET(Tano_Logo
+    ${CMAKE_SOURCE_DIR}/src/player/tano.png
+)
+
 # Define the QRC source files used by Tano
 SET(Tano_Resrcs
     ../../data/logo/logo.qrc
@@ -150,3 +158,8 @@ INSTALL(TARGETS ${PROJECT_NAME}
     RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}
     BUNDLE DESTINATION .
 )
+
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    INSTALL(FILES ${Tano_Desktop} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
+    INSTALL(FILES ${Tano_Logo} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/icons")
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")

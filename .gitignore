@@ -11,13 +11,6 @@ CMakeLists.txt.user
 
 # Debian/build
 obj*
-debian/*debhelper*
-debian/*substvars*
-debian/files
-debian/tmp/
-debian/tano/
-debian/tano-data/
-debian/tano-dbg/
 
 # Branding
 src/branding/*/

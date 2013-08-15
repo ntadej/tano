@@ -16,6 +16,10 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
+IF(NOT DEFINED BRANDING)
+    SET(BRANDING "")
+ENDIF(NOT DEFINED BRANDING)
+
 IF(NOT BRANDING STREQUAL "")
     PROJECT(${BRANDING})
 ELSE(NOT BRANDING STREQUAL "")
@@ -294,14 +298,6 @@ SET(Tano_Icons
     data/icons/tano-default
 )
 
-SET(Tano_Desktop
-    src/player/tano.desktop
-)
-
-SET(Tano_Logo
-    src/player/tano.png
-)
-
 
 ################
 # Installation #
@@ -309,9 +305,4 @@ SET(Tano_Logo
 # Install data
 IF(BUILD_PLAYER OR BUILD_EDITOR)
     INSTALL(DIRECTORY ${Tano_Icons} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/icons")
-
-    IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-        INSTALL(FILES ${Tano_Desktop} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
-        INSTALL(FILES ${Tano_Logo} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/icons")
-    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 ENDIF(BUILD_PLAYER OR BUILD_EDITOR)

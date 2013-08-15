@@ -3,10 +3,23 @@ CHANGELOG=debian/changelog
 NOW=`date -R`
 #VER=`git describe | sed "s/\([0-9]*\)\.\([0-9]*\)-\([0-9]*\)-.*/\1.\2.\3/"`
 VER=`cat VERSION`
+TANO_EXPORT_BRANDING="-DBRANDING=${CUSTOM}"
 
 build() 
 {
-    echo >${CHANGELOG} "tano (${VER}-${BUILD}) unstable; urgency=low"
+    if [ "${CUSTOM}" != "" ]; then
+        echo "Branded build: ${CUSTOM}"
+
+        VER=`cat src/branding/${CUSTOM}/VERSION`
+        cp -r src/branding/${CUSTOM}/debian/ .
+
+        export TANO_EXPORT_BRANDING
+
+        echo >${CHANGELOG} "`echo ${CUSTOM} | awk '{print tolower($0)}'` (${VER}-${BUILD}) unstable; urgency=low"
+    else
+        echo >${CHANGELOG} "tano (${VER}-${BUILD}) unstable; urgency=low"
+    fi
+
     echo >>${CHANGELOG}
     echo >>${CHANGELOG} "  * The full changelog can be found in NEWS"
     echo >>${CHANGELOG} "    or by running 'git log' when using Git"
@@ -14,19 +27,11 @@ build()
     echo >>${CHANGELOG} " -- Tadej Novak <tadej@tano.si>  ${NOW}"
 
     dpkg-buildpackage -b -us -uc ${DEVEL}
-}
 
-clean() 
-{
-    for a in ../tano*${VER}*.deb; do
-	rm -f "$a"
-    done
+    git clean debian/ -fdx || { echo "Git is not installed. Debian directory will not be cleaned."; }
+    git checkout debian/ || { echo "Git is not installed. Debian directory will not be cleaned."; }
 
-    for a in ../tano*${VER}*.changes; do
-	rm -f "$a"
-    done
-
-    dh_clean
+    echo "Completed!"
 }
 
 deps() 
@@ -36,11 +41,6 @@ deps()
 	exit 1
     fi
     apt-get -y install ${BUILD_DEPS}
-}
-
-buildenv() 
-{
-    echo $BUILD_DEPS | shasum | awk '{print $1}'
 }
 
 eval build

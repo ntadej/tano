@@ -5,7 +5,7 @@ export DH_VERBOSE=1
 	dh $@
 
 override_dh_auto_configure:
-	dh_auto_configure -- -DCMAKE_SKIP_RPATH=ON -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo -DDEFAULT_DATA_DIR="/usr/share/tano"
+	dh_auto_configure -- -DCMAKE_SKIP_RPATH=ON -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo ${TANO_EXPORT_BRANDING}
 
 override_dh_strip:
 	dh_strip --dbg-package=tano-dbg
