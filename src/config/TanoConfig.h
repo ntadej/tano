@@ -24,7 +24,9 @@
 class TanoConfig : public QObject, public ConfigPlugin
 {
 Q_OBJECT
+#if QT_VERSION >= 0x050000
 Q_PLUGIN_METADATA(IID "si.tano.core.ConfigPlugin")
+#endif
 Q_INTERFACES(ConfigPlugin)
 
 public:
