@@ -131,6 +131,8 @@ MainWindow::MainWindow(Arguments *args)
 #if !defined(Q_OS_LINUX)
     _update->checkSilent();
 #endif
+
+    tooltip();
 }
 
 MainWindow::~MainWindow()

@@ -81,12 +81,16 @@ ScheduleTab::ScheduleTab(QWidget *parent)
     _toolbarTop->setMovable(false);
     _toolbarTop->setFloatable(false);
     _toolbarTop->setIconSize(QSize(16, 16));
+    _toolbarTop->setMinimumHeight(24);
+    _toolbarTop->setMaximumHeight(24);
     addToolBar(Qt::TopToolBarArea, _toolbarTop);
 
     _toolbarBottomSearch = new QToolBar(this);
     _toolbarBottomSearch->setMovable(false);
     _toolbarBottomSearch->setFloatable(false);
     _toolbarBottomSearch->setProperty("topBorder", true);
+    _toolbarBottomSearch->setMinimumHeight(24);
+    _toolbarBottomSearch->setMaximumHeight(24);
     addToolBar(Qt::BottomToolBarArea, _toolbarBottomSearch);
     insertToolBarBreak(_toolbarBottomSearch);
 
@@ -94,6 +98,8 @@ ScheduleTab::ScheduleTab(QWidget *parent)
     _toolbarBottomType->setMovable(false);
     _toolbarBottomType->setFloatable(false);
     _toolbarBottomType->setProperty("topBorder", true);
+    _toolbarBottomType->setMinimumHeight(24);
+    _toolbarBottomType->setMaximumHeight(24);
     addToolBar(Qt::BottomToolBarArea, _toolbarBottomType);
     insertToolBarBreak(_toolbarBottomType);
 
@@ -112,6 +118,11 @@ ScheduleTab::ScheduleTab(QWidget *parent)
     _toolbarBottomType->addWidget(_selectDate);
 
     _search = new FancyLineEdit(this);
+    _search->setButtonPixmap(FancyLineEdit::Left, QIcon::fromTheme("edit-find").pixmap(16));
+    _search->setButtonPixmap(FancyLineEdit::Right, QIcon::fromTheme("edit-clear").pixmap(16));
+    _search->setButtonVisible(FancyLineEdit::Left, true);
+    _search->setButtonVisible(FancyLineEdit::Right, true);
+    _search->setAutoHideButton(FancyLineEdit::Right, true);
     _toolbarBottomSearch->addWidget(_search);
 
     _noEpg = new QWidget(this);
@@ -123,7 +134,7 @@ ScheduleTab::ScheduleTab(QWidget *parent)
     _noEpgLabel->setAlignment(Qt::AlignCenter);
     _noEpgButton = new QPushButton(_noEpg);
     _noEpgButton->setIcon(QIcon::fromTheme("video-x-generic"));
-    _noEpgButton->setIconSize(QSize(24, 24));
+    _noEpgButton->setIconSize(QSize(16, 16));
 
     QVBoxLayout *layout = new QVBoxLayout(_noEpg);
     layout->addSpacerItem(new QSpacerItem(10, 10, QSizePolicy::Preferred, QSizePolicy::Expanding));
@@ -143,6 +154,7 @@ ScheduleTab::ScheduleTab(QWidget *parent)
     connect(_record, SIGNAL(triggered()), this, SLOT(record()));
     connect(_selectDate, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
     connect(_search, SIGNAL(textChanged(QString)), this, SLOT(processFilters()));
+    connect(_search, SIGNAL(rightButtonClicked()), _search, SLOT(clear()));
     connect(_playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(channel(Channel *)));
 }
 

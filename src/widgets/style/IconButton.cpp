@@ -38,7 +38,7 @@ IconButton::IconButton(QWidget *parent)
 void IconButton::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
-    QRect pixmapRect = QRect(0, 0, _pixmap.width(), _pixmap.height());
+    QRect pixmapRect = QRect(0, 0, _pixmap.width() / _pixmap.devicePixelRatio(), _pixmap.height() / _pixmap.devicePixelRatio());
     pixmapRect.moveCenter(rect().center());
 
     if (_autoHide)

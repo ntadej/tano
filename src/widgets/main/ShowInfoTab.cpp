@@ -48,6 +48,7 @@ ShowInfoTab::ShowInfoTab(QWidget *parent)
     _labelTitle->setAlignment(Qt::AlignCenter);
     ui->toolBarTop->insertWidget(ui->actionRecord, _labelTitle);
 
+    ui->toolBarBottom->setProperty("topBorder", true);
     ui->toolBarBottom->insertWidget(ui->actionPrevious, new SimpleSeparator(this));
     ui->toolBarBottom->addWidget(new SimpleSeparator(this));
 
@@ -90,7 +91,10 @@ void ShowInfoTab::clear()
     ui->stackedWidget->setCurrentIndex(1);
     _labelTitle->setText(tr("No information"));
 
+#if FEATURE_RECORDER
     ui->toolBarTop->removeAction(ui->actionRecord);
+#endif
+    ui->toolBarBottom->hide();
 }
 
 void ShowInfoTab::display(XmltvProgramme *programme)
@@ -126,7 +130,10 @@ void ShowInfoTab::display(XmltvProgramme *programme)
     _image->getFile(programme->icon());
 
     ui->stackedWidget->setCurrentIndex(0);
+#if FEATURE_RECORDER
     ui->toolBarTop->addAction(ui->actionRecord);
+#endif
+    ui->toolBarBottom->show();
 
     emit changeTo(this);
 }
