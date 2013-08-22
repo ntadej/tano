@@ -34,10 +34,6 @@ SET(Tano_Deploy
     ${CMAKE_BINARY_DIR}/osx/deploy.sh
 )
 
-SET(Tano_Icns
-    ${CMAKE_BINARY_DIR}/osx/${PROJECT_NAME}.icns
-)
-
 SET(Tano_VlcQt_Libs
     ${LIBVLCQT_LIB_DIR}/libvlc-qt-widgets.dylib
     ${LIBVLCQT_LIB_DIR}/libvlc-qt.dylib
@@ -61,7 +57,6 @@ SET(Tano_Retina_Icons
 # Installation #
 ################
 INSTALL(FILES ${Tano_Deploy} DESTINATION "${CMAKE_INSTALL_PREFIX}")
-INSTALL(FILES ${Tano_Icns} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}")
 IF(NOT STATIC)
     INSTALL(FILES ${Tano_VlcQt_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_LIB_DIR}")
 ENDIF(NOT STATIC)

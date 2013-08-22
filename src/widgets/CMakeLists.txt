@@ -78,9 +78,17 @@ ENDIF(FEATURE_RECORDER)
 
 # Define the C++ source files used by Tano Widgets
 SET(Tano_Widgets_Application_Srcs
+    application/Notifications.cpp
     application/SingleApplication.cpp
     application/TanoApplication.cpp
 )
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    SET(Tano_Widgets_Application_Srcs
+        ${Tano_Widgets_Application_Srcs}
+
+        application/NotificationsOSX.mm
+    )
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 SET(Tano_Widgets_Common_Srcs
     common/Backend.cpp
     common/BrowseWidget.cpp
@@ -95,6 +103,13 @@ SET(Tano_Widgets_Common_Srcs
     common/ScrollingWidget.cpp
     common/TrayIcon.cpp
 )
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    SET(Tano_Widgets_Common_Srcs
+        ${Tano_Widgets_Common_Srcs}
+
+        common/FreedesktopImage.cpp
+    )
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 SET(Tano_Widgets_Dialogs_Srcs
     dialogs/AboutDialog.cpp
     dialogs/PasswordDialog.cpp
@@ -186,6 +201,16 @@ ENDIF(QT5)
 #####################
 # Compiler settings #
 #####################
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    FIND_PATH(APPLICATIONSERVICES_INCLUDE_DIR ApplicationServices/ApplicationServices.h)
+    FIND_LIBRARY(APPLICATIONSERVICES_LIBRARY ApplicationServices)
+    FIND_PATH(COCOA_INCLUDE_DIR Cocoa/Cocoa.h)
+    FIND_LIBRARY(COCOA_LIBRARY Cocoa)
+
+    INCLUDE_DIRECTORIES(${APPLICATIONSERVICES_INCLUDE_DIR}/Headers)
+    SET_SOURCE_FILES_PROPERTIES(application/NotificationsOSX.cpp PROPERTIES COMPILE_FLAGS "-x objective-c++")
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+
 # This needs to be added in order for #include to work inside .cpp files
 INCLUDE_DIRECTORIES(
     ${CMAKE_SOURCE_DIR}
@@ -246,10 +271,17 @@ IF(QT5)
     IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
         QT5_USE_MODULES(${TANO_WIDGETS} MacExtras)
     ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+        QT5_USE_MODULES(${TANO_WIDGETS} DBus)
+    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${TANO_CORE_LIB} ${LIBVLCQT_LIBRARY} ${LIBVLCQT_WIDGETS_LIBRARY})
 ELSE(QT5)
     TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${QT_LIBRARIES} ${TANO_CORE_LIB} ${LIBVLCQT_LIBRARY} ${LIBVLCQT_WIDGETS_LIBRARY})
 ENDIF(QT5)
+
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${APPLICATIONSERVICES_LIBRARY} ${COCOA_LIBRARY})
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT STATIC)
     ADD_CUSTOM_COMMAND(TARGET ${TANO_WIDGETS} POST_BUILD COMMAND

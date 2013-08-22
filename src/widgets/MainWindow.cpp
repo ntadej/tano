@@ -61,6 +61,7 @@
 #include "core/settings/SettingsPassword.h"
 #include "core/xmltv/XmltvManager.h"
 
+#include "application/Notifications.h"
 #include "common/Backend.h"
 #include "common/ChannelSelect.h"
 #include "common/DesktopShortcuts.h"
@@ -103,7 +104,8 @@ MainWindow::MainWindow(Arguments *args)
       _xmltv(new XmltvManager()),
       _previewTimer(new QTimer(this)),
       _udpxy(new NetworkUdpxy()),
-      _osdFloat(0)
+      _osdFloat(0),
+      _trayIcon(0)
 {
     _arguments = args;
 
@@ -163,10 +165,12 @@ void MainWindow::exit()
 #endif
         if (ui->actionMute->isChecked())
             ui->actionMute->toggle();
-        _trayIcon->hide();
+        if (_trayIcon) _trayIcon->hide();
         _mediaPlayer->writeSession();
 
         if (globalConfig && globalConfig->requiresAuthentication() && globalNetwork) globalNetwork->statusLogout();
+
+        qDebug() << "Event:" << "Quit";
 
         qApp->quit();
         break;
@@ -269,11 +273,17 @@ void MainWindow::changeEvent(QEvent *e)
 
 void MainWindow::closeEvent(QCloseEvent *event)
 {
+    qDebug() << "Event:" << "Close";
+
+#if defined(Q_OS_MAC)
+    hide();
+    event->ignore();
+#else
     if (_hideToTray) {
-        qDebug() << "Event:" << "Close";
         tray();
         event->ignore();
     }
+#endif
 }
 
 void MainWindow::single()
@@ -336,10 +346,12 @@ void MainWindow::createSettings()
     _hideToTray = settings->trayEnabled() ? settings->hideToTray() : false;
 
     //GUI Settings
-    if (settings->trayEnabled())
-        _trayIcon->show();
-    else
-        _trayIcon->hide();
+    if (_trayIcon) {
+        if(settings->trayEnabled())
+            _trayIcon->show();
+        else
+            _trayIcon->hide();
+    }
 
     _wheelType = settings->mouseWheel();
     _rememberGui = settings->rememberGuiSession();
@@ -426,8 +438,10 @@ void MainWindow::createConnections()
     connect(_playlistTab->playlist(), SIGNAL(itemSelected(Channel *)), this, SLOT(playChannel(Channel *)));
     connect(_previewTimer, SIGNAL(timeout()), ui->actionNext, SLOT(trigger()));
 
-    connect(_trayIcon, SIGNAL(restoreClick()), this, SLOT(tray()));
-    connect(ui->actionTray, SIGNAL(triggered()), this, SLOT(tray()));
+    if (_trayIcon) {
+        connect(_trayIcon, SIGNAL(restoreClick()), this, SLOT(tray()));
+        connect(ui->actionTray, SIGNAL(triggered()), this, SLOT(tray()));
+    }
 
     connect(ui->actionFullscreen, SIGNAL(triggered(bool)), this, SLOT(toggleFullscreen(bool)));
 
@@ -499,15 +513,18 @@ void MainWindow::createMenus()
 #ifdef Q_OS_MAC
     QtMacExtras::setDockMenu(_rightMenu);
 
-    ui->actionAbout->setMenuRole(QAction::ApplicationSpecificRole);
-    ui->actionAboutQt->setMenuRole(QAction::ApplicationSpecificRole);
+    ui->actionAbout->setMenuRole(QAction::AboutRole);
+    ui->actionAboutQt->setMenuRole(QAction::AboutQtRole);
     ui->actionSettings->setMenuRole(QAction::PreferencesRole);
+    ui->actionExit->setMenuRole(QAction::QuitRole);
 
-    _macMenu = new QMenu();
-    _trayIcon = new TrayIcon(_rightMenu);
+    ui->actionTray->setDisabled(true);
+    ui->menuView->removeAction(ui->actionTray);
 #else
     _trayIcon = new TrayIcon(_rightMenu);
 #endif
+
+    notifications = new Notifications(_trayIcon, this);
 
     ui->menuAudio->addMenu(_mediaPlayer->menus()[0]);
     foreach(MenuCore *menu, _mediaPlayer->menus()) {
@@ -659,7 +676,7 @@ void MainWindow::playChannel(Channel *channel)
     _mediaPlayer->osd()->setLogo(_channel->logo());
 
     tooltip(_channel->name());
-    _trayIcon->changeToolTip(0, _channel->name());
+    if (_trayIcon) _trayIcon->changeToolTip(0, _channel->name());
 }
 
 void MainWindow::playRecording(Timer *recording)
@@ -690,7 +707,7 @@ void MainWindow::stop()
     _xmltv->stop();
 
     tooltip();
-    _trayIcon->changeToolTip(0);
+    if (_trayIcon) _trayIcon->changeToolTip(0);
 
     if (globalNetwork) globalNetwork->statusStop();
 }
@@ -809,7 +826,7 @@ void MainWindow::lite()
 
 void MainWindow::tray()
 {
-    if (!_trayIcon->isVisible())
+    if (!_trayIcon || !_trayIcon->isVisible())
         return;
 
     if (isHidden()) {

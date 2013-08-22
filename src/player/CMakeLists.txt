@@ -43,13 +43,14 @@ SET(Tano_Srcs
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     SET(Tano_Iconset ${CMAKE_SOURCE_DIR}/osx/Tano.iconset)
 
+    FILE(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/src/player/${PROJECT_NAME}.app/Contents/Resources)
     FIND_PROGRAM(ICONUTIL_EXECUTABLE NAMES iconutil)
     ADD_CUSTOM_COMMAND(
-        OUTPUT ${CMAKE_BINARY_DIR}/osx/${PROJECT_NAME}.icns
-        COMMAND ${ICONUTIL_EXECUTABLE} --convert icns --output ${CMAKE_BINARY_DIR}/osx/${PROJECT_NAME}.icns
+        OUTPUT ${CMAKE_BINARY_DIR}/src/player/${PROJECT_NAME}.app/Contents/Resources/${PROJECT_NAME}.icns
+        COMMAND ${ICONUTIL_EXECUTABLE} --convert icns --output ${CMAKE_BINARY_DIR}/src/player/${PROJECT_NAME}.app/Contents/Resources/${PROJECT_NAME}.icns
         ${Tano_Iconset}
     )
-    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/osx/${PROJECT_NAME}.icns)
+    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/player/${PROJECT_NAME}.app/Contents/Resources/${PROJECT_NAME}.icns)
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
 
