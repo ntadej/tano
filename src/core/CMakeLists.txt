@@ -144,8 +144,6 @@ SET(Tano_Core_Srcs
     ${Tano_Core_Xmltv_Srcs}
 
     ${Tano_Core_Platform_Srcs}
-
-    ../../lib/simplecrypt/simplecrypt.cpp
 )
 
 IF(FEATURE_RECORDER)

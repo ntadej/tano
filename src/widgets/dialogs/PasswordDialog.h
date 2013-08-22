@@ -35,13 +35,11 @@ public:
     explicit PasswordDialog(QWidget *parent = 0);
     ~PasswordDialog();
 
-    inline const QString password() { return _password; }
-
 protected:
     void changeEvent(QEvent *e);
 
 private slots:
-    void validatePassword(bool edit = false);
+    void validatePassword();
     void validatePasswordError(int error);
     void validatePasswordOk(const QString &response);
     
@@ -49,7 +47,6 @@ private:
     Ui::PasswordDialog *ui;
 
     QString _password;
-    bool _edit;
 };
 
 #endif // TANO_PASSWORDDIALOG_H_

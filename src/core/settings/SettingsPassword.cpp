@@ -17,10 +17,7 @@
 *****************************************************************************/
 
 #include "Common.h"
-#include "Config.h"
 #include "settings/SettingsPassword.h"
-
-#include "lib/simplecrypt/simplecrypt.h"
 
 SettingsPassword::SettingsPassword(QObject *parent)
     : QSettings(QSettings::IniFormat,
@@ -29,9 +26,6 @@ SettingsPassword::SettingsPassword(QObject *parent)
                 "Password",
                 parent)
 {
-    quint64 key = ENCRYPTION_KEY;
-    _crypt = new SimpleCrypt(key);
-
     readSettings();
 }
 
@@ -40,7 +34,7 @@ SettingsPassword::~SettingsPassword() { }
 void SettingsPassword::writeSettings()
 {
     setValue("username", username());
-    setValue("password", _crypt->encryptToString(password()));
+    setValue("password", password());
     setValue("session", sessionId());
 
     sync();
@@ -49,6 +43,6 @@ void SettingsPassword::writeSettings()
 void SettingsPassword::readSettings()
 {
     setUsername(value("username").toString());
-    setPassword(_crypt->decryptToString(value("password").toString()));
+    setPassword(value("password").toString());
     setSessionId(value("session").toString());
 }

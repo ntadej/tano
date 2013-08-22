@@ -16,6 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QCryptographicHash>
 #include <QtNetwork/QNetworkReply>
 
 #include "core/plugins/Plugins.h"
@@ -36,7 +37,7 @@ PasswordDialog::PasswordDialog(QWidget *parent)
     QScopedPointer<SettingsPassword> settings(new SettingsPassword(this));
     ui->editUsername->setText(settings->username());
     if (!settings->password().isEmpty()) {
-        ui->editPassword->setText(settings->password());
+        _password = settings->password();
         ui->remember->setChecked(true);
 
         validatePassword();
@@ -67,13 +68,13 @@ void PasswordDialog::changeEvent(QEvent *e)
     }
 }
 
-void PasswordDialog::validatePassword(bool edit)
+void PasswordDialog::validatePassword()
 {
-    _edit = edit;
-
     ui->labelInfo->setText(tr("<b>Logging in ...</b>"));
 
-    if (globalNetwork) globalNetwork->authentication(ui->editUsername->text(), ui->editPassword->text());
+    QString password = ui->editPassword->text().isEmpty() ? _password : QString(QCryptographicHash::hash(ui->editPassword->text().toLocal8Bit(), QCryptographicHash::Md5).toHex());
+
+    if (globalNetwork) globalNetwork->authentication(ui->editUsername->text(), password);
 }
 
 void PasswordDialog::validatePasswordError(int error)
@@ -92,14 +93,12 @@ void PasswordDialog::validatePasswordOk(const QString &response)
 {
     QScopedPointer<SettingsPassword> settings(new SettingsPassword(this));
     settings->setUsername(ui->editUsername->text());
-    settings->setPassword(ui->remember->isChecked() ? ui->editPassword->text() : "");
+    if (!ui->editPassword->text().isEmpty())
+        settings->setPassword(ui->remember->isChecked() ? QCryptographicHash::hash(ui->editPassword->text().toLocal8Bit(), QCryptographicHash::Md5).toHex() : "");
     settings->setSessionId(response);
     settings->writeSettings();
 
-    _password = ui->editPassword->text();
-
     if (globalNetwork) globalNetwork->statusLogin();
 
-    if (!_edit)
-        accept();
+    accept();
 }

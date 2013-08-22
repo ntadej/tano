@@ -23,8 +23,6 @@
 
 #include "CoreSharedExport.h"
 
-class SimpleCrypt;
-
 class TANO_CORE_EXPORT SettingsPassword : public QSettings
 {
 public:
@@ -48,8 +46,6 @@ private:
     QString _password;
     QString _uid;
     QString _sessionId;
-
-    SimpleCrypt *_crypt;
 };
 
 #endif // TANO_SETTINGS_H_
