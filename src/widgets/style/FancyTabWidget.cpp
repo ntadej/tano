@@ -420,6 +420,7 @@ FancyTabWidget::FancyTabWidget(QWidget *parent)
 void FancyTabWidget::addStaticWidget(QWidget *widget)
 {
     _splitterWidget->addWidget(widget);
+    _splitterWidget->setStretchFactor(1, 2);
 }
 
 void FancyTabWidget::setSelectionWidgetVisible(bool visible)

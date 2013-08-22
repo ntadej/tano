@@ -29,6 +29,7 @@
 #include <QDockWidget>
 #include <QLabel>
 #include <QLineEdit>
+#include <QMainWindow>
 #include <QMenuBar>
 #include <QPainter>
 #include <QPixmap>
@@ -823,6 +824,90 @@ void ManhattanStyle::drawControl(ControlElement element, const QStyleOption *opt
             }
         }
         break;
+
+#if defined(Q_OS_MAC)
+    case CE_ToolButtonLabel:
+        if (const QStyleOptionToolButton *tb = qstyleoption_cast<const QStyleOptionToolButton *>(option)) {
+            QStyleOptionToolButton myTb = *tb;
+            myTb.state &= ~State_AutoRaise;
+
+            QRect cr = tb->rect;
+            bool needText = false;
+            int alignment = 0;
+            bool down = tb->state & (State_Sunken | State_On);
+            // The down state is special for QToolButtons in a toolbar on the Mac
+            // The text is a bit bolder and gets a drop shadow and the icons are also darkened.
+            // This doesn't really fit into any particular case in QIcon, so we
+            // do the majority of the work ourselves.
+            if (!(tb->features & QStyleOptionToolButton::Arrow)) {
+                Qt::ToolButtonStyle tbstyle = tb->toolButtonStyle;
+                if (tb->icon.isNull() && !tb->text.isEmpty())
+                    tbstyle = Qt::ToolButtonTextOnly;
+
+                switch (tbstyle) {
+                case Qt::ToolButtonTextOnly: {
+                    needText = true;
+                    alignment = Qt::AlignCenter;
+                    break; }
+                case Qt::ToolButtonIconOnly:
+                case Qt::ToolButtonTextBesideIcon:
+                case Qt::ToolButtonTextUnderIcon: {
+                    QRect pr = cr;
+                    QIcon::Mode iconMode = (tb->state & State_Enabled) ? QIcon::Normal
+                                                                       : QIcon::Disabled;
+                    QIcon::State iconState = (tb->state & State_On) ? QIcon::On
+                                                                    : QIcon::Off;
+                    QPixmap pixmap = tb->icon.pixmap(tb->rect.size().boundedTo(tb->iconSize), iconMode, iconState);
+
+                    // Draw the text if it's needed.
+                    if (tb->toolButtonStyle != Qt::ToolButtonIconOnly) {
+                        needText = true;
+                        if (tb->toolButtonStyle == Qt::ToolButtonTextUnderIcon) {
+                            QMainWindow *mw = widget ? qobject_cast<QMainWindow *>(widget->window()) : 0;
+                            if (mw && mw->unifiedTitleAndToolBarOnMac()) {
+                                pr.setHeight(pixmap.size().height() / pixmap.devicePixelRatio());
+                                cr.adjust(0, pr.bottom() + 1, 0, 1);
+                            } else {
+                                pr.setHeight(pixmap.size().height() / pixmap.devicePixelRatio() + 6);
+                                cr.adjust(0, pr.bottom(), 0, -3);
+                            }
+                            alignment |= Qt::AlignCenter;
+                        } else {
+                            pr.setWidth(pixmap.width() / pixmap.devicePixelRatio() + 8);
+                            cr.adjust(pr.right(), 0, 0, 0);
+                            alignment |= Qt::AlignLeft | Qt::AlignVCenter;
+                        }
+                    }
+
+                    proxy()->drawItemPixmap(painter, pr, Qt::AlignCenter, pixmap);
+                    break; }
+                default:
+                    Q_ASSERT(false);
+                    break;
+                }
+
+                if (needText) {
+                    QPalette pal = tb->palette;
+                    QPalette::ColorRole role = QPalette::WindowText;
+                    if (!proxy()->styleHint(SH_UnderlineShortcut, tb, widget))
+                        alignment |= Qt::TextHideMnemonic;
+                    if (tbstyle == Qt::ToolButtonTextOnly || (tbstyle != Qt::ToolButtonTextOnly && !down)) {
+                        painter->drawText(cr, alignment, tb->text);
+                        if (down && tbstyle == Qt::ToolButtonTextOnly) {
+                            pal = QApplication::palette("QMenu");
+                            pal.setCurrentColorGroup(tb->palette.currentColorGroup());
+                            role = QPalette::HighlightedText;
+                        }
+                    }
+                    proxy()->drawItemText(painter, cr, alignment, pal,
+                                          tb->state & State_Enabled, tb->text, role);
+                }
+            } else {
+                QProxyStyle::drawControl(element, option, painter, widget);
+            }
+        }
+        break;
+#endif
 
     default:
         QProxyStyle::drawControl(element, option, painter, widget);

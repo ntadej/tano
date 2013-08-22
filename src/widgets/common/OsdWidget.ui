@@ -56,14 +56,14 @@
       <widget class="QLCDNumber" name="number">
        <property name="minimumSize">
         <size>
-         <width>70</width>
-         <height>42</height>
+         <width>50</width>
+         <height>34</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>70</width>
-         <height>42</height>
+         <width>50</width>
+         <height>34</height>
         </size>
        </property>
        <property name="frameShape">
@@ -75,19 +75,13 @@
        <property name="segmentStyle">
         <enum>QLCDNumber::Flat</enum>
        </property>
-       <property name="value" stdset="0">
-        <double>1.000000000000000</double>
+       <property name="intValue" stdset="0">
+        <number>1</number>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QToolButton" name="buttonPlay">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
        <property name="toolTip">
         <string>Play</string>
        </property>
@@ -101,20 +95,14 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QToolButton" name="buttonStop">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
        <property name="toolTip">
         <string>Stop</string>
        </property>
@@ -128,20 +116,14 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QToolButton" name="buttonBack">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
        <property name="toolTip">
         <string>Back</string>
        </property>
@@ -155,20 +137,14 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QToolButton" name="buttonNext">
-       <property name="minimumSize">
-        <size>
-         <width>40</width>
-         <height>40</height>
-        </size>
-       </property>
        <property name="toolTip">
         <string>Next</string>
        </property>
@@ -182,8 +158,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
@@ -206,8 +182,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
        <property name="checkable">
@@ -233,8 +209,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
       </widget>
@@ -254,8 +230,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
        <property name="checkable">
@@ -268,13 +244,13 @@
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>42</height>
+         <height>34</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>42</height>
+         <height>34</height>
         </size>
        </property>
        <property name="minimum">
@@ -320,8 +296,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>32</width>
-         <height>32</height>
+         <width>24</width>
+         <height>24</height>
         </size>
        </property>
        <property name="checkable">
