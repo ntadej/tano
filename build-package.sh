@@ -23,16 +23,18 @@ DEVEL=""
 TARGET=""
 BUILD="1"
 CUSTOM=""
-while getopts "hdt:b:c:" OPTION
+VLCQT=""
+while getopts "hdt:b:c:i:" OPTION
 do
   case $OPTION in
       h)
           echo "Quick build system for Tano."
           echo ""
           echo "Use -t to specify target (in targets directory)"
-          echo "Use -d to ignore dependency requests"
-          echo "Use -b to specify build number (defaults to 1)"
+          echo "Use -d to ignore dependency requests (Linux only)"
+          echo "Use -b to specify build number (defaults to 1, Linux only)"
           echo "Use -c to specify branded build name (defaults to disabled)"
+          echo "Use -i to specify VLC-QT include (OS X only)"
           exit 0
           ;;
       d)
@@ -46,6 +48,9 @@ do
           ;;
       c)
           CUSTOM="$OPTARG"
+          ;;
+      i)
+          VLCQT="$OPTARG"
           ;;
   esac
 done
