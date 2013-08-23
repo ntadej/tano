@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This file was based on the example classes of the Qt Toolkit.
 * Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
@@ -27,12 +27,6 @@
 
 class Timer;
 
-/*!
-    \class TimersHandler TimersHandler.h core/timers/old/TimersHandler.h
-    \brief Timers old XML parser
-
-    A parser for old Tano 1.* timers file
-*/
 class TimersHandler : public QXmlDefaultHandler
 {
 public:

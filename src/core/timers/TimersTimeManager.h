@@ -25,15 +25,17 @@
 #include "CoreSharedExport.h"
 
 class Timer;
-class TimersSql;
+class TimersModel;
+class TimersFilterModel;
 
 class TANO_CORE_EXPORT TimersTimeManager : public QObject
 {
 Q_OBJECT
 public:
-    TimersTimeManager(TimersSql *db,
-                      QObject *parent = 0);
+    TimersTimeManager(QObject *parent = 0);
     ~TimersTimeManager();
+
+    void setTimersModel(TimersModel *model);
 
 signals:
     void timer(Timer *);
@@ -43,7 +45,8 @@ private slots:
 
 private:
     QTimer *_timer;
-    TimersSql *_db;
+    TimersModel *_modelCore;
+    TimersFilterModel *_model;
 };
 
 #endif // TANO_TIMERSTIMEMANAGER_H_

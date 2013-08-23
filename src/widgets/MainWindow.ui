@@ -326,9 +326,6 @@
    </property>
   </action>
   <action name="actionRecorder">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
    <property name="icon">
     <iconset theme="media-record">
      <normaloff/>

@@ -56,6 +56,9 @@ public slots:
     void playLocal(const QString &path);
     void playUrl(const QString &url,
                  bool channel = false);
+    QString recordNow(const QString &name,
+                      const QString &output) const;
+    void recordNowStop();
     void stop();
     void takeSnapshot();
     void teletext(bool enabled);

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,31 +16,39 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "TimersEditorWidget.h"
-#include "ui_TimersEditorWidget.h"
-
-#if QT_VERSION >= 0x050000
+#if defined(Qt5)
     #include <QtWidgets/QMessageBox>
-#else
+#elif defined(Qt4)
     #include <QtGui/QMessageBox>
 #endif
 
-#include "core/timers/TimersSql.h"
 #include "core/timers/containers/Timer.h"
+#include "core/timers/models/TimersFilterModel.h"
+#include "core/timers/models/TimersModel.h"
 
-TimersEditorWidget::TimersEditorWidget(QWidget *parent)
+#include "RecorderTimersEditor.h"
+#include "ui_RecorderTimersEditor.h"
+
+RecorderTimersEditor::RecorderTimersEditor(QWidget *parent)
     : QWidget(parent),
-      ui(new Ui::TimersEditorWidget)
+      ui(new Ui::RecorderTimersEditor)
 {
     ui->setupUi(this);
+
+    _validateModel = new TimersFilterModel(this);
+    _validateModel->setDynamicSortFilter(true);
+    _validateModel->setSortRole(Timer::StartDateTimeRole);
+    _validateModel->setTimerState(Timer::Enabled);
+    _validateModel->setTimeFilter(true);
+    _validateModel->sort(0);
 }
 
-TimersEditorWidget::~TimersEditorWidget()
+RecorderTimersEditor::~RecorderTimersEditor()
 {
     delete ui;
 }
 
-void TimersEditorWidget::changeEvent(QEvent *e)
+void RecorderTimersEditor::changeEvent(QEvent *e)
 {
     QWidget::changeEvent(e);
     switch (e->type())
@@ -53,26 +61,25 @@ void TimersEditorWidget::changeEvent(QEvent *e)
     }
 }
 
-void TimersEditorWidget::edit(Timer *item)
+void RecorderTimersEditor::edit(Timer *item)
 {
     if (item == 0)
         return;
 
     _currentTimer = item;
 
-    ui->checkBoxDisabled->setChecked(_currentTimer->state() == Timer::Disabled);
+    ui->checkBoxEnabled->setChecked(_currentTimer->state() != Timer::Disabled);
     ui->editName->setText(_currentTimer->name());
     ui->editChannel->setText(_currentTimer->channel());
-    ui->editUrl->setText(_currentTimer->url());
     ui->editType->setCurrentIndex(_currentTimer->type());
     ui->editDate->setDate(_currentTimer->date());
     ui->editStartTime->setTime(_currentTimer->startTime());
     ui->editEndTime->setTime(_currentTimer->endTime());
 }
 
-bool TimersEditorWidget::save()
+bool RecorderTimersEditor::save()
 {
-    if (!ui->checkBoxDisabled->isChecked() && !validate())
+    if (ui->checkBoxEnabled->isChecked() && !validate())
         return false;
 
     _currentTimer->setName(ui->editName->text());
@@ -80,12 +87,18 @@ bool TimersEditorWidget::save()
     _currentTimer->setDate(ui->editDate->date());
     _currentTimer->setStartTime(ui->editStartTime->time());
     _currentTimer->setEndTime(ui->editEndTime->time());
-    _currentTimer->setState(ui->checkBoxDisabled->isChecked() ? Timer::Disabled : Timer::Enabled);
+    _currentTimer->setState(ui->checkBoxEnabled->isChecked() ? Timer::Enabled : Timer::Disabled);
 
     return true;
 }
 
-bool TimersEditorWidget::validate()
+void RecorderTimersEditor::setModel(TimersModel *model)
+{
+    _modelCore = model;
+    _validateModel->setSourceModel(model);
+}
+
+bool RecorderTimersEditor::validate()
 {
     if (ui->editDate->date() < QDate::currentDate()) {
         QMessageBox::warning(this, tr("Recorder"),
@@ -93,8 +106,7 @@ bool TimersEditorWidget::validate()
         return false;
     }
 
-    // TODO: Validate
-    /*_validateModel->setStartTime(QDateTime(ui->editDate->date(), ui->editStartTime->time()));
+    _validateModel->setStartTime(QDateTime(ui->editDate->date(), ui->editStartTime->time()));
     if (ui->editStartTime->time() > ui->editEndTime->time())
         _validateModel->setEndTime(QDateTime(ui->editDate->date().addDays(1), ui->editEndTime->time()));
     else
@@ -114,5 +126,5 @@ bool TimersEditorWidget::validate()
         QMessageBox::warning(this, tr("Recorder"),
                     tr("The recording is overlaping with others.\nYour changes will not be saved."));
         return false;
-    }*/
+    }
 }

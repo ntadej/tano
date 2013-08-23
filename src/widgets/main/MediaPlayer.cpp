@@ -48,6 +48,7 @@ MediaPlayer::MediaPlayer(Arguments *arguments,
     _videoWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     _mediaPlayer->setVideoWidget(_videoWidget);
 
+    // TODO: settings
     _audioController = new VlcControlAudio(_mediaPlayer, "", this); //_defaultAudioLanguage, this);
     _videoController = new VlcControlVideo(_mediaPlayer, "", this); //_defaultSubtitleLanguage, this);
 
@@ -270,6 +271,25 @@ void MediaPlayer::playUrl(const QString &url,
         delete _mediaItem;
     _mediaItem = new VlcMedia(url, _mediaInstance);
 
+    play();
+}
+
+QString MediaPlayer::recordNow(const QString &name,
+                               const QString &output) const
+{
+    _mediaPlayer->stop();
+    QString file = _mediaItem->duplicate(name, output, Vlc::TS);
+    _mediaPlayer->play();
+
+    return file;
+}
+
+void MediaPlayer::recordNowStop()
+{
+    _mediaPlayer->stop();
+    QString media = _mediaItem->currentLocation();
+    delete _mediaItem;
+    _mediaItem = new VlcMedia(media, _mediaInstance);
     play();
 }
 

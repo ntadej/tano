@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,20 +19,18 @@
 #ifndef TANO_RECORDERINFOWIDGET_H_
 #define TANO_RECORDERINFOWIDGET_H_
 
-#if defined(Qt5)
-    #include <QtWidgets/QStackedWidget>
-#elif defined(Qt4)
-    #include <QtGui/QStackedWidget>
-#endif
+#include <QMainWindow>
+
+class QLabel;
 
 class Timer;
-class TimersSql;
+class TimersModel;
 
 namespace Ui {
     class RecorderInfoWidget;
 }
 
-class RecorderInfoWidget : public QStackedWidget
+class RecorderInfoWidget : public QMainWindow
 {
 Q_OBJECT
 public:
@@ -40,10 +38,9 @@ public:
     ~RecorderInfoWidget();
 
     void setAction(QAction *action);
-    void setDatabase(TimersSql *db);
+    void setModel(TimersModel *model);
     void start(const QString &name,
                const QString &channel,
-               const QString &output,
                const QString &end = 0);
     void stop();
 
@@ -72,6 +69,7 @@ private:
     Ui::RecorderInfoWidget *ui;
 
     QAction *_actionRecord;
+    QLabel *_labelInfo;
 
     Timer *_currentTimer;
 };

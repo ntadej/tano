@@ -58,10 +58,6 @@ ShowInfoTab::ShowInfoTab(QWidget *parent)
     connect(ui->actionNext, SIGNAL(triggered()), this, SLOT(next()));
     connect(ui->actionRecord, SIGNAL(triggered()), this, SLOT(record()));
 
-#if !FEATURE_RECORDER
-    ui->toolBarTop->removeAction(ui->actionRecord);
-#endif
-
     clear();
 }
 

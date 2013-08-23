@@ -1,6 +1,10 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+*
+* This file was based on the example classes of the Qt Toolkit.
+* Copyright (C) 2008 Nokia Corporation and/or its subsidiary(-ies).
+* Contact: Qt Software Information (qt-info@nokia.com)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,46 +20,31 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_TIMERSEDITORWIDGET_H_
-#define TANO_TIMERSEDITORWIDGET_H_
+#ifndef TANO_TIMERSGENERATOR_H_
+#define TANO_TIMERSGENERATOR_H_
 
-#include <QtCore/QDate>
-
-#if QT_VERSION >= 0x050000
-    #include <QtWidgets/QWidget>
-#else
-    #include <QtGui/QWidget>
-#endif
+#include <QtCore/QFile>
+#include <QtCore/QTextStream>
 
 class Timer;
-class TimersSql;
+class TimersModel;
 
-namespace Ui
+class TimersGenerator
 {
-    class TimersEditorWidget;
-}
-
-class TimersEditorWidget : public QWidget
-{
-Q_OBJECT
 public:
-    explicit TimersEditorWidget(QWidget *parent = 0);
-    ~TimersEditorWidget();
+    TimersGenerator(const QString &file);
+    ~TimersGenerator();
 
-    void edit(Timer *item);
-    bool save();
-    inline void setDatabase(TimersSql *db) { _db = db; }
-
-protected:
-    void changeEvent(QEvent *e);
+    bool write(TimersModel *model);
 
 private:
-    bool validate();
+    static QString indent(const int &indentLevel);
+    static QString escapedText(const QString &str);
+    static QString escapedAttribute(const QString &str);
+    void generateItem(Timer *timer);
 
-    Ui::TimersEditorWidget *ui;
-
-    Timer *_currentTimer;
-    TimersSql *_db;
+    QFile *_file;
+    QTextStream _out;
 };
 
-#endif // TANO_TIMERSEDITORWIDGET_H_
+#endif // TANO_TIMERSGENERATOR_H_

@@ -39,7 +39,7 @@ class FancyTab : public QObject
 Q_OBJECT
 Q_PROPERTY(float fader READ fader WRITE setFader)
 public:
-    FancyTab(QWidget *tabbar) : enabled(false), tabbar(tabbar), _fader(0) {
+    FancyTab(QWidget *tabbar) : enabled(false), full(false), tabbar(tabbar), _fader(0) {
         animator.setPropertyName("fader");
         animator.setTargetObject(this);
     }
@@ -53,6 +53,7 @@ public:
     QString text;
     QString toolTip;
     bool enabled;
+    bool full;
 
 private:
     QPropertyAnimation animator;
@@ -87,10 +88,12 @@ public:
 
     void insertTab(int index,
                    const QIcon &icon,
-                   const QString &label) {
+                   const QString &label,
+                   bool full = false) {
         FancyTab *tab = new FancyTab(this);
         tab->icon = icon;
         tab->text = label;
+        tab->full = full;
         _tabs.insert(index, tab);
     }
     void setEnabled(int index, bool enabled);
@@ -104,6 +107,7 @@ public:
     void setTabToolTip(int index, QString toolTip) { _tabs[index]->toolTip = toolTip; }
     QString tabToolTip(int index) const { return _tabs.at(index)->toolTip; }
 
+    bool tabFull(int index) const { return _tabs.at(index)->full; }
     QIcon tabIcon(int index) const { return _tabs.at(index)->icon; }
     QString tabText(int index) const { return _tabs.at(index)->text; }
     void setTabText(int index, const QString &text) const { _tabs.at(index)->text = text; }
@@ -137,7 +141,8 @@ public:
     void addStaticWidget(QWidget *widget);
     void insertTab(int index, QWidget *tab,
                    const QIcon &icon,
-                   const QString &label);
+                   const QString &label,
+                   bool full = false);
     void removeTab(int index);
     void renameTab(int index, const QString &name);
     void setBackgroundBrush(const QBrush &brush);
@@ -163,6 +168,7 @@ public:
 signals:
     void currentAboutToShow(int index);
     void currentChanged(int index);
+    void currentChanged(QWidget *widget);
 
 public slots:
     void setCurrentIndex(int index);

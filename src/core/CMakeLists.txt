@@ -89,10 +89,10 @@ SET(Tano_Core_Settings_Srcs
     settings/SettingsShortcutsDefaults.cpp
 )
 SET(Tano_Core_Timers_Srcs
-    timers/TimersSql.cpp
+    timers/TimersGenerator.cpp
+    timers/TimersHandler.cpp
     timers/TimersTimeManager.cpp
     timers/containers/Timer.cpp
-    timers/old/TimersHandler.cpp
     timers/models/TimersFilterModel.cpp
     timers/models/TimersModel.cpp
 )
@@ -145,17 +145,11 @@ SET(Tano_Core_Srcs
     ${Tano_Core_Playlist_Srcs}
     ${Tano_Core_Plugins_Srcs}
     ${Tano_Core_Settings_Srcs}
+    ${Tano_Core_Timers_Srcs}
     ${Tano_Core_Xmltv_Srcs}
 
     ${Tano_Core_Platform_Srcs}
 )
-
-IF(FEATURE_RECORDER)
-    SET(Tano_Core_Srcs
-        ${Tano_Core_Srcs}
-        ${Tano_Core_Timers_Srcs}
-    )
-ENDIF(FEATURE_RECORDER)
 
 
 ###############

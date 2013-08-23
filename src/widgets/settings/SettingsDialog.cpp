@@ -47,11 +47,6 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     connect(ui->general, SIGNAL(resetDefaults()), this, SLOT(defaults()));
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
 
-#if !FEATURE_RECORDER
-    ui->buttonRecorder->setDisabled(true);
-    ui->buttonRecorder->hide();
-#endif
-
     if (globalConfig) {
         if (globalConfig->disableSettingsGui("channels")) ui->buttonPlaylist->hide();
         if (globalConfig->disableSettingsGui("gui")) ui->buttonInterface->hide();

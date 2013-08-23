@@ -19,13 +19,7 @@
 #ifndef TANO_RECORDERNEWDIALOG_H_
 #define TANO_RECORDERNEWDIALOG_H_
 
-#include <QtCore/QtGlobal>
-
-#if QT_VERSION >= 0x050000
-    #include <QtWidgets/QDialog>
-#else
-    #include <QtGui/QDialog>
-#endif
+#include <QDialog>
 
 class QMenu;
 class QWidgetAction;
@@ -33,7 +27,7 @@ class QWidgetAction;
 class Channel;
 class PlaylistModel;
 class Timer;
-class TimersSql;
+class TimersModel;
 class NetworkUdpxy;
 class XmltvProgramme;
 
@@ -45,27 +39,26 @@ class RecorderNewDialog : public QDialog
 {
 Q_OBJECT
 public:
-    explicit RecorderNewDialog(TimersSql *db,
+    explicit RecorderNewDialog(bool quick,
+                               TimersModel *timers,
+                               PlaylistModel *playlist,
                                QWidget *parent = 0);
     ~RecorderNewDialog();
-
-    void refreshPlaylistModel();
-    void setPlaylistModel(PlaylistModel *model);
 
     Timer *timer() { return _currentTimer; }
 
 public slots:
-    void newQuick();
-    void newTimer();
-    void newTimerFromSchedule(XmltvProgramme *programme);
+    Timer *newTimerFromSchedule(XmltvProgramme *programme);
     
 protected:
     void changeEvent(QEvent *e);
 
 private slots:
     void playlist(Channel* channel);
+    void processFilters();
     void processNewTimer();
     void processQuickRecord();
+    void validate();
 
 private:
     Ui::RecorderNewDialog *ui;
@@ -73,7 +66,7 @@ private:
     Channel *_currentChannel;
     Timer *_currentTimer;
 
-    TimersSql *_db;
+    TimersModel *_model;
     NetworkUdpxy *_udpxy;
 };
 

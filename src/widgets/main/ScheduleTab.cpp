@@ -73,9 +73,7 @@ ScheduleTab::ScheduleTab(QWidget *parent)
     _info = new QAction(QIcon::fromTheme("x-office-calendar"), tr("Show information"), this);
     _record = new QAction(QIcon::fromTheme("media-record"), tr("Record"), this);
     _rightMenu->addAction(_info);
-#if FEATURE_RECORDER
     _rightMenu->addAction(_record);
-#endif
 
     _toolbarTop = new QToolBar(this);
     _toolbarTop->setMovable(false);

@@ -39,7 +39,22 @@ Timer::Timer(const QString &name,
     min /= 15;
     _startTime = QTime(QTime::currentTime().hour() + qCeil(min)/4, (qCeil(min) * 15) % 60);
     _endTime = QTime(QTime::currentTime().hour() + 1 + qCeil(min)/4, (qCeil(min) * 15) % 60);
-    _state = Disabled;
+    _state = Enabled;
+}
+
+Timer::Timer(Timer *timer)
+    : ListItem(timer->parent())
+{
+    _file = "";
+    _state = Enabled;
+
+    _name = timer->name();
+    _channel = timer->channel();
+    _url = timer->url();
+    _date = timer->date();
+    _startTime = timer->startTime();
+    _endTime = timer->endTime();
+    _type = timer->type();
 }
 
 Timer::Timer(QObject *parent)
@@ -119,14 +134,6 @@ QPixmap Timer::decoration() const
         return QIcon::fromTheme("media-record").pixmap(16);
     else
         return QIcon::fromTheme("time-admin").pixmap(16);
-}
-
-void Timer::setId(int id)
-{
-    if (_id != id) {
-        _id = id;
-        emit dataChanged();
-    }
 }
 
 void Timer::setName(const QString &name)

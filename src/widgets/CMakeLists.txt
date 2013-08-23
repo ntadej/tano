@@ -53,6 +53,9 @@ SET(Tano_Widgets_UIs
     dialogs/PasswordDialog.ui
     dialogs/UpdateDialog.ui
     main/ShowInfoTab.ui
+    recorder/RecorderInfoWidget.ui
+    recorder/RecorderNewDialog.ui
+    recorder/RecorderTimersEditor.ui
     settings/SettingsBackend.ui
     settings/SettingsDialog.ui
     settings/SettingsGeneral.ui
@@ -62,19 +65,6 @@ SET(Tano_Widgets_UIs
     settings/SettingsDialogShortcuts.ui
     settings/SettingsUi.ui
 )
-SET(Tano_Widgets_Recorder_UIs
-    recorder/Recorder.ui
-    recorder/RecorderInfoWidget.ui
-    recorder/RecorderNewDialog.ui
-    timers/TimersDisplayWidget.ui
-    timers/TimersEditorWidget.ui
-)
-IF(FEATURE_RECORDER)
-    SET(Tano_Widgets_UIs
-        ${Tano_Widgets_UIs}
-        ${Tano_Widgets_Recorder_UIs}
-    )
-ENDIF(FEATURE_RECORDER)
 
 # Define the C++ source files used by Tano Widgets
 SET(Tano_Widgets_Application_Srcs
@@ -136,6 +126,8 @@ SET(Tano_Widgets_Recorder_Srcs
     recorder/RecorderCore.cpp
     recorder/RecorderInfoWidget.cpp
     recorder/RecorderNewDialog.cpp
+    recorder/RecorderTimersEditor.cpp
+    recorder/RecorderTimersWidget.cpp
 )
 SET(Tano_Widgets_Settings_Srcs
     settings/SettingsBackend.cpp
@@ -159,10 +151,7 @@ SET(Tano_Widgets_Style_Srcs
     style/StyledBar.cpp
     style/VolumeSlider.cpp
 )
-SET(Tano_Widgets_Timers_Srcs
-    timers/TimersDisplayWidget.cpp
-    timers/TimersEditorWidget.cpp
-)
+
 
 SET(Tano_Widgets_Srcs
     MainWindow.cpp
@@ -172,17 +161,10 @@ SET(Tano_Widgets_Srcs
     ${Tano_Widgets_Dialogs_Srcs}
     ${Tano_Widgets_Main_Srcs}
     ${Tano_Widgets_Menu_Srcs}
+    ${Tano_Widgets_Recorder_Srcs}
     ${Tano_Widgets_Settings_Srcs}
     ${Tano_Widgets_Style_Srcs}
 )
-
-IF(FEATURE_RECORDER)
-    SET(Tano_Widgets_Srcs
-        ${Tano_Widgets_Srcs}
-        ${Tano_Widgets_Recorder_Srcs}
-        ${Tano_Widgets_Timers_Srcs}
-    )
-ENDIF(FEATURE_RECORDER)
 
 
 ###############

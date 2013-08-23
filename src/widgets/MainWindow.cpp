@@ -59,6 +59,7 @@
 #include "core/settings/Settings.h"
 #include "core/settings/SettingsChannel.h"
 #include "core/settings/SettingsPassword.h"
+#include "core/timers/containers/Timer.h"
 #include "core/xmltv/XmltvManager.h"
 
 #include "application/Notifications.h"
@@ -77,16 +78,10 @@
 #include "main/ScheduleTab.h"
 #include "main/ShowInfoTab.h"
 #include "menu/MenuCore.h"
+#include "recorder/Recorder.h"
 #include "settings/SettingsDialog.h"
 #include "settings/SettingsDialogShortcuts.h"
 #include "style/VolumeSlider.h"
-
-#if FEATURE_RECORDER
-    #include "core/timers/TimersSql.h"
-    #include "core/timers/containers/Timer.h"
-
-    #include "recorder/Recorder.h"
-#endif
 
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
@@ -122,7 +117,6 @@ MainWindow::MainWindow(Arguments *args)
     createMenus();
     createSettings();
     createGui();
-    createRecorder();
     createShortcuts();
     createConnections();
     _mediaPlayer->createSession(_hasPlaylist && _model->validate());
@@ -139,12 +133,13 @@ MainWindow::MainWindow(Arguments *args)
 MainWindow::~MainWindow()
 {
     delete ui;
+
+    delete _recorder;
 }
 
 void MainWindow::exit()
 {
     int ret;
-#if FEATURE_RECORDER
     if (_recorder->isRecording()) {
         ret = QMessageBox::warning(this, Tano::name(),
                       tr("Are you sure you want to exit?\nThis will stop recording in progress."),
@@ -153,16 +148,12 @@ void MainWindow::exit()
     } else {
         ret = QMessageBox::Close;
     }
-#else
-    ret = QMessageBox::Close;
-#endif
 
     switch (ret)
     {
     case QMessageBox::Close:
-#if FEATURE_RECORDER
         _recorder->recordStop();
-#endif
+
         if (ui->actionMute->isChecked())
             ui->actionMute->toggle();
         if (_trayIcon) _trayIcon->hide();
@@ -265,6 +256,7 @@ void MainWindow::changeEvent(QEvent *e)
             ui->tabs->renameTab(0, tr("Channels"));
             ui->tabs->renameTab(1, tr("Schedule"));
             ui->tabs->renameTab(2, tr("Show Info"));
+            ui->tabs->renameTab(3, tr("Recorder"));
             break;
         default:
             break;
@@ -324,9 +316,18 @@ void MainWindow::createGui()
     ui->tabs->insertTab(2, _showInfoTab, QIcon::fromTheme("dialog-information"), tr("Show Info"));
     ui->tabs->setTabEnabled(2, true);
 
-    ui->tabs->setCurrentIndex(0);
+    _recorder = new Recorder();
+    _recorder->setWidgets(ui->actionRecord);
+    _recorder->setMediaInstance(_mediaPlayer->mediaInstance());
+    _recorder->createSettings();
+    _recorder->setPlaylistModel(_model);
+    ui->tabs->insertTab(3, _recorder, QIcon::fromTheme("media-record"), tr("Recorder"), true);
+    ui->tabs->setTabEnabled(3, true);
 
-    //ui->tabs->addCornerWidget(new FancyColorButton(this));
+    _recordNow = false;
+
+    ui->tabs->addStaticWidget(_mediaPlayer);
+    ui->tabs->setCurrentIndex(0);
 
     _osdFloat = new OsdFloat(this);
     _osdFloat->resize(_osdFloat->width(), _mediaPlayer->osd()->height());
@@ -345,7 +346,6 @@ void MainWindow::createGui()
 void MainWindow::createBackend()
 {
     _mediaPlayer = new MediaPlayer(_arguments, this);
-    ui->tabs->addStaticWidget(_mediaPlayer);
 
     qDebug() << "Initialised: Backend";
 }
@@ -393,32 +393,10 @@ void MainWindow::createDesktopStartup()
     qDebug() << "Initialised: Startup settings";
 }
 
-void MainWindow::createRecorder()
-{
-#if FEATURE_RECORDER
-    _recorder = new Recorder();
-    _recorder->setPlaylistModel(_model);
-    _recorder->setVisible(false);
-    _recorder->setWidgets(ui->actionRecord, _trayIcon);
-    _recorder->setMediaInstance(_mediaPlayer->mediaInstance());
-    _recorder->createSettings();
-    _recorder->refreshPlaylistModel();
-
-    // TODO: Recorder
-    //ui->layoutRecorder->addWidget(_recorder);
-
-    _recordNow = false;
-
-    connect(ui->actionRecordQuick, SIGNAL(triggered()), _recorder, SLOT(quickRecord()));
-    connect(ui->actionRecordTimer, SIGNAL(triggered()), _recorder, SLOT(newTimer()));
-    connect(_recorder, SIGNAL(play(Timer *)), this, SLOT(playRecording(Timer *)));
-#else
-    ui->menubar->removeAction(ui->menuRecorder->menuAction());
-#endif
-}
-
 void MainWindow::createConnections()
 {
+    connect(ui->tabs, SIGNAL(currentChanged(QWidget *)), this, SLOT(currentWidget(QWidget *)));
+    connect(ui->tabs, SIGNAL(currentChanged(QWidget *)), _recorder, SLOT(currentWidget(QWidget *)));
     connect(_playlistTab, SIGNAL(changeTo(QWidget *)), ui->tabs, SLOT(setCurrentWidget(QWidget *)));
     connect(_scheduleTab, SIGNAL(changeTo(QWidget *)), ui->tabs, SLOT(setCurrentWidget(QWidget *)));
     connect(_showInfoTab, SIGNAL(changeTo(QWidget *)), ui->tabs, SLOT(setCurrentWidget(QWidget *)));
@@ -492,13 +470,17 @@ void MainWindow::createConnections()
     connect(_mediaPlayer, SIGNAL(stateChanged(Vlc::State)), this, SLOT(setState(Vlc::State)));
     connect(_mediaPlayer, SIGNAL(vout(int)), this, SLOT(showVideo(int)));
 
-    connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(recorder(bool)));
+    connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(showRecorder()));
     connect(ui->actionRecordNow, SIGNAL(toggled(bool)), this, SLOT(recordNow(bool)));
     connect(ui->actionSnapshot, SIGNAL(triggered()), _mediaPlayer, SLOT(takeSnapshot()));
 
     connect(_showInfoTab, SIGNAL(requestRecord(QString)), _xmltv, SLOT(requestProgrammeRecord(QString)));
     connect(_scheduleTab, SIGNAL(requestRecord(QString)), _xmltv, SLOT(requestProgrammeRecord(QString)));
     connect(_xmltv, SIGNAL(programmeRecord(XmltvProgramme *)), this, SLOT(recordProgramme(XmltvProgramme *)));
+
+    connect(ui->actionRecordQuick, SIGNAL(triggered()), _recorder, SLOT(quickRecord()));
+    connect(ui->actionRecordTimer, SIGNAL(triggered()), _recorder, SLOT(newTimer()));
+    connect(_recorder, SIGNAL(play(Timer *)), this, SLOT(playRecording(Timer *)));
 
     connect(_mouseTimer, SIGNAL(timeout()), this, SLOT(toggleMouse()));
 
@@ -571,9 +553,7 @@ void MainWindow::createShortcuts()
 #endif
              << ui->actionVolumeUp
              << ui->actionVolumeDown
-#if FEATURE_RECORDER
              << ui->actionRecorder
-#endif
              << ui->actionSchedule
              << ui->actionScheduleCurrent
              << ui->actionOpenFile
@@ -584,10 +564,8 @@ void MainWindow::createShortcuts()
              << ui->actionTop
              << ui->actionLite
              << ui->actionTray
-#if FEATURE_RECORDER
              << ui->actionRecordNow
              << ui->actionSnapshot
-#endif
              << ui->actionPreview;
 
     foreach(MenuCore *menu, _mediaPlayer->menus())
@@ -621,6 +599,11 @@ void MainWindow::support()
     QString subject = Tano::name() + " " + tr("Support");
     subject = subject.replace(" ", "%20");
     QDesktopServices::openUrl(QUrl("mailto:" + (globalConfig ? globalConfig->email() : "info@tano.si" ) + "?subject=" + subject));
+}
+
+void MainWindow::currentWidget(QWidget *widget)
+{
+    ui->actionLite->setEnabled(widget != _recorder);
 }
 
 
@@ -686,24 +669,16 @@ void MainWindow::playChannel(Channel *channel)
     _mediaPlayer->osd()->setLogo(_channel->logo());
 
     tooltip(_channel->name());
-    if (_trayIcon) _trayIcon->changeToolTip(0, _channel->name());
 }
 
 void MainWindow::playRecording(Timer *recording)
 {
-#if FEATURE_RECORDER
-    recorder(false);
+    ui->tabs->setCurrentWidget(_playlistTab);
 
     _mediaPlayer->playLocal(recording->file());
 
     _mediaPlayer->osd()->setRecording(recording->name(), recording->display().replace(recording->name() + " - ",""));
     tooltip(recording->name());
-    _trayIcon->changeToolTip(0, recording->name());
-
-    delete recording;
-#else
-    Q_UNUSED(recording);
-#endif
 }
 
 void MainWindow::stop()
@@ -717,7 +692,6 @@ void MainWindow::stop()
     _xmltv->stop();
 
     tooltip();
-    if (_trayIcon) _trayIcon->changeToolTip(0);
 
     if (globalNetwork) globalNetwork->statusStop();
 }
@@ -782,6 +756,11 @@ void MainWindow::showSchedule()
 void MainWindow::showScheduleCurrent()
 {
     _xmltv->requestProgramme(_mediaPlayer->osd()->currentProgramme());
+}
+
+void MainWindow::showRecorder()
+{
+    ui->tabs->setCurrentWidget(_recorder);
 }
 
 void MainWindow::showSettings()
@@ -921,69 +900,27 @@ void MainWindow::preview(bool enabled)
 // Recorder
 void MainWindow::recordNow(bool start)
 {
-    //TODO: quick record
-/*#if FEATURE_RECORDER
     if (!start) {
-        QString media = _mediaItem->currentLocation();
         _recording->setEndTime(QTime::currentTime());
         _recording->setState(Timer::Finished);
-        _mediaPlayer->stop();
-        _recorder->database()->updateTimer(_recording);
-        delete _recording;
+        _recorder->writeTimers();
+        _recording = 0;
 
-        if (_mediaItem)
-            delete _mediaItem;
-        _mediaItem = new VlcMedia(media, _mediaInstance);
-        play();
+        _mediaPlayer->recordNowStop();
     } else {
-        _recording = _recorder->database()->createTimer(tr("Instant %1").arg(_channel->name()), _channel->name(), _channel->url(), Timer::Instant);
+        _recording = _recorder->newInstantTimer(_channel->name(), _channel->url());
         _recording->setDate(QDate::currentDate());
         _recording->setStartTime(QTime::currentTime());
         _recording->setState(Timer::Recording);
-        _mediaPlayer->stop();
-        _recording->setFile(_mediaItem->duplicate(Tano::recordingFileName(tr("Instant"), _channel->name(), _recording->date(), _recording->startTime()), _recorder->directory(), Vlc::TS));
-        _mediaPlayer->play();
-        _recorder->database()->updateTimer(_recording);
-        showVideo(1);
+        _recording->setFile(_mediaPlayer->recordNow(Tano::recordingFileName(tr("Instant"), _channel->name(), _recording->date(), _recording->startTime()), _recorder->directory()));
     }
 
     _recordNow = start;
-#else
-    Q_UNUSED(start)
-#endif*/
-}
-
-void MainWindow::recorder(bool enabled)
-{
-#if FEATURE_RECORDER
-    if (enabled) {
-        _recorder->setVisible(true);
-        // TODO: recorder
-        //ui->stackedWidget->setCurrentIndex(2);
-    } else {
-        _recorder->setVisible(false);
-
-        /*if (_mediaPlayer->hasVout()) {
-            ui->stackedWidget->setCurrentIndex(1);
-        } else {
-            ui->stackedWidget->setCurrentIndex(0);
-        }*/
-    }
-
-    ui->actionRecorder->setChecked(enabled);
-    ui->actionLite->setEnabled(!enabled);
-#else
-    Q_UNUSED(enabled)
-#endif
 }
 
 void MainWindow::recordProgramme(XmltvProgramme *programme)
 {
-#if FEATURE_RECORDER
-    recorder(true);
+    ui->tabs->setCurrentWidget(_recorder);
 
     _recorder->newTimerFromSchedule(programme);
-#else
-    Q_UNUSED(programme)
-#endif
 }

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,35 +19,43 @@
 #include <QtCore/qmath.h>
 #include <QtCore/QTime>
 
-#if defined(Qt5)
+#if QT_VERSION >= 0x050000
     #include <QtWidgets/QMessageBox>
-#elif defined(Qt4)
+#else
     #include <QtGui/QMessageBox>
 #endif
 
 #include "core/timers/containers/Timer.h"
 
+#include "style/StyledBar.h"
+
 #include "RecorderInfoWidget.h"
 #include "ui_RecorderInfoWidget.h"
 
 RecorderInfoWidget::RecorderInfoWidget(QWidget *parent)
-    : QStackedWidget(parent),
+    : QMainWindow(parent),
       ui(new Ui::RecorderInfoWidget),
       _actionRecord(0)
 {
     ui->setupUi(this);
-    ui->editor->hide();
-    ui->valueFile->removeBorder();
-    ui->valueRFile->removeBorder();
 
-    connect(ui->buttonRBack, SIGNAL(clicked()), this, SLOT(backToMain()));
-    connect(ui->buttonTBack, SIGNAL(clicked()), this, SLOT(backToMain()));
+    _labelInfo = new QLabel(this);
+    _labelInfo->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    _labelInfo->setAlignment(Qt::AlignCenter);
+    ui->toolbarTop->addWidget(_labelInfo);
 
-    connect(ui->buttonRDelete, SIGNAL(clicked()), this, SLOT(recordingDelete()));
-    connect(ui->buttonRPlay, SIGNAL(clicked()), this, SLOT(recordingPlay()));
+    ui->toolbarBottom->setProperty("topBorder", true);
+    ui->toolbarBottom->insertWidget(ui->actionRecording, new SimpleSeparator(this));
+    ui->toolbarBottom->addWidget(new SimpleSeparator(this));
 
-    connect(ui->buttonTDelete, SIGNAL(clicked()), this, SLOT(timerDelete()));
-    connect(ui->buttonTSave, SIGNAL(clicked()), this, SLOT(timerSave()));
+    connect(ui->actionBack, SIGNAL(triggered()), this, SLOT(backToMain()));
+    connect(ui->actionDiscard, SIGNAL(triggered()), this, SLOT(backToMain()));
+    connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(recordingDelete()));
+    connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(timerDelete()));
+    connect(ui->actionPlay, SIGNAL(triggered()), this, SLOT(recordingPlay()));
+    connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(timerSave()));
+
+    backToMain();
 }
 
 RecorderInfoWidget::~RecorderInfoWidget()
@@ -57,10 +65,11 @@ RecorderInfoWidget::~RecorderInfoWidget()
 
 void RecorderInfoWidget::changeEvent(QEvent *e)
 {
-    QStackedWidget::changeEvent(e);
+    QMainWindow::changeEvent(e);
     switch (e->type()) {
         case QEvent::LanguageChange:
             ui->retranslateUi(this);
+            _labelInfo->setText(tr("Recorder"));
             break;
         default:
             break;
@@ -71,12 +80,25 @@ void RecorderInfoWidget::backToMain()
 {
     _currentTimer = 0;
 
+    _labelInfo->setText(tr("Recorder"));
+
     ui->editor->hide();
-    setCurrentIndex(0);
+    ui->stack->setCurrentIndex(0);
+
+    ui->actionBack->setVisible(false);
+    ui->actionDelete->setVisible(false);
+    ui->actionDiscard->setVisible(false);
+    ui->actionPlay->setVisible(false);
+    ui->actionSave->setVisible(false);
+
+    ui->actionRecording->setVisible(true);
 }
 
 void RecorderInfoWidget::recordingDelete()
 {
+    if (ui->stack->currentWidget() != ui->pageRecording)
+        return;
+
     int r;
     r = QMessageBox::warning(this, tr("Recorder"),
                              tr("Are you sure you want to delete the recording?\nThis operation is ireversible."),
@@ -97,40 +119,47 @@ void RecorderInfoWidget::recordingDelete()
 
 void RecorderInfoWidget::recordingInfo(Timer *timer)
 {
-    setCurrentIndex(1);
+    ui->stack->setCurrentIndex(1);
+
+    _labelInfo->setText(tr("Recording information"));
+
+    ui->actionRecording->setVisible(false);
+    ui->actionDiscard->setVisible(false);
+    ui->actionSave->setVisible(false);
+    ui->actionDelete->setVisible(true);
+    ui->actionPlay->setVisible(true);
+    ui->actionBack->setVisible(true);
 
     _currentTimer = timer;
 
     qreal duration = timer->startTime().secsTo(timer->endTime());
 
     QString bold("<b>%1</b>");
-    ui->groupRecording->setTitle(timer->name());
     ui->valueRChannel->setText(bold.arg(timer->channel()));
     ui->valueRTime->setText(bold.arg(QString("%1 %2 %3").arg(timer->date().toString("dd.MM.yyyy"), tr("at"), timer->startTime().toString("hh:mm"))));
     ui->valueRDuration->setText(bold.arg(QTime(0, qCeil(duration/60)).toString("hh:mm")));
-    ui->valueRFile->setText(bold.arg(timer->file()));
 }
 
 void RecorderInfoWidget::recordingPlay()
 {
     emit playRecording(_currentTimer);
+
     backToMain();
 }
 
 void RecorderInfoWidget::setAction(QAction *action)
 {
     _actionRecord = action;
-    connect(ui->buttonRecordStop, SIGNAL(clicked()), _actionRecord, SLOT(trigger()));
+    connect(ui->actionRecording, SIGNAL(triggered()), _actionRecord, SLOT(trigger()));
 }
 
-void RecorderInfoWidget::setDatabase(TimersSql *db)
+void RecorderInfoWidget::setModel(TimersModel *model)
 {
-    ui->editor->setDatabase(db);
+    ui->editor->setModel(model);
 }
 
 void RecorderInfoWidget::start(const QString &name,
                                const QString &channel,
-                               const QString &output,
                                const QString &end)
 {
     QString bold("<b>%1</b>");
@@ -140,10 +169,9 @@ void RecorderInfoWidget::start(const QString &name,
         ui->valueEndTime->setText(bold.arg(end));
     else
         ui->valueEndTime->setText(bold.arg(tr("No timer - stop manually.")));
-    ui->valueFile->setText(bold.arg(output));
 
-    ui->buttonRecordStop->setEnabled(true);
-    ui->buttonRecordStop->setText(tr("Stop recording"));
+    ui->actionRecording->setEnabled(true);
+    ui->actionRecording->setText(tr("Stop recording"));
 }
 
 void RecorderInfoWidget::stop()
@@ -152,10 +180,9 @@ void RecorderInfoWidget::stop()
     ui->valueChannel->setText("");
     ui->valueTime->setText("");
     ui->valueEndTime->setText(tr(""));
-    ui->valueFile->setText("");
 
-    ui->buttonRecordStop->setEnabled(false);
-    ui->buttonRecordStop->setText(tr("Currently not recording."));
+    ui->actionRecording->setEnabled(false);
+    ui->actionRecording->setText(tr("Currently not recording."));
 }
 
 void RecorderInfoWidget::time(int time)
@@ -166,7 +193,16 @@ void RecorderInfoWidget::time(int time)
 
 void RecorderInfoWidget::timerInfo(Timer *timer)
 {
-    setCurrentIndex(2);
+    ui->stack->setCurrentIndex(2);
+
+    _labelInfo->setText(tr("Edit timer"));
+
+    ui->actionRecording->setVisible(false);
+    ui->actionBack->setVisible(false);
+    ui->actionPlay->setVisible(false);
+    ui->actionSave->setVisible(true);
+    ui->actionDelete->setVisible(true);
+    ui->actionDiscard->setVisible(true);
 
     _currentTimer = timer;
 
@@ -176,6 +212,9 @@ void RecorderInfoWidget::timerInfo(Timer *timer)
 
 void RecorderInfoWidget::timerDelete()
 {
+    if (ui->stack->currentWidget() != ui->pageTimer)
+        return;
+
     emit deleteTimer(_currentTimer);
 
     backToMain();

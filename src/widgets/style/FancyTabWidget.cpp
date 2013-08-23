@@ -420,7 +420,8 @@ FancyTabWidget::FancyTabWidget(QWidget *parent)
 void FancyTabWidget::addStaticWidget(QWidget *widget)
 {
     _splitterWidget->addWidget(widget);
-    _splitterWidget->setStretchFactor(1, 2);
+    _splitterWidget->setStretchFactor(1, 1);
+    _splitterWidget->setStretchFactor(0, 0);
 }
 
 void FancyTabWidget::setSelectionWidgetVisible(bool visible)
@@ -436,10 +437,11 @@ bool FancyTabWidget::isSelectionWidgetVisible() const
 void FancyTabWidget::insertTab(int index,
                                QWidget *tab,
                                const QIcon &icon,
-                               const QString &label)
+                               const QString &label,
+                               bool full)
 {
     _modesStack->insertWidget(index, tab);
-    _tabBar->insertTab(index, icon, label);
+    _tabBar->insertTab(index, icon, label, full);
 }
 
 void FancyTabWidget::removeTab(int index)
@@ -544,7 +546,10 @@ void FancyTabWidget::showWidget(int index)
 {
     emit currentAboutToShow(index);
     _modesStack->setCurrentIndex(index);
+    if (_splitterWidget->count() > 1)
+        _splitterWidget->widget(1)->setHidden(_tabBar->tabFull(index));
     emit currentChanged(index);
+    emit currentChanged(_modesStack->widget(index));
 }
 
 void FancyTabWidget::setTabToolTip(int index,

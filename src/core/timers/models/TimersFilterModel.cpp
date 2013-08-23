@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,28 +16,58 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include "timers/containers/Timer.h"
 #include "timers/models/TimersFilterModel.h"
-#include "timers/models/TimersModel.h"
 
 TimersFilterModel::TimersFilterModel(QObject *parent)
-    : QSortFilterProxyModel(parent),
-      _model(0) { }
+    : QSortFilterProxyModel(parent)
+{
+    _state = -1;
+    _timeFilter = false;
+    _startTime = QDateTime();
+    _endTime = QDateTime();
+}
 
 TimersFilterModel::~TimersFilterModel() { }
 
 bool TimersFilterModel::filterAcceptsRow(int sourceRow,
                                          const QModelIndex &sourceParent) const
 {
-    Q_UNUSED(sourceParent)
+    QModelIndex index = sourceModel()->index(sourceRow, 0, sourceParent);
 
-    bool name = _model->value(sourceRow, 1).toString().contains(filterRegExp());
+    bool name = sourceModel()->data(index, Timer::DisplayRole).toString().contains(filterRegExp());
+    bool state = sourceModel()->data(index, Timer::StateRole).toInt() == _state || _state == -1;
 
-    return name;
+    bool time = true;
+    if (_timeFilter) {
+        bool s = ((sourceModel()->data(index, Timer::StartDateTimeRole).toDateTime() <= startTime()) && (sourceModel()->data(index, Timer::EndDateTimeRole).toDateTime() >= startTime()));
+        bool e = ((sourceModel()->data(index, Timer::StartDateTimeRole).toDateTime() <= endTime()) && (sourceModel()->data(index, Timer::EndDateTimeRole).toDateTime() >= endTime()));
+        time = s || e;
+    }
+
+    return name && state && time;
 }
 
-void TimersFilterModel::setTimersModel(TimersModel *model)
+void TimersFilterModel::setTimerState(const int &state)
 {
-    _model = model;
-    setSourceModel(_model);
+    _state = state;
+    invalidateFilter();
+}
+
+void TimersFilterModel::setTimeFilter(const bool &timeFilter)
+{
+    _timeFilter = timeFilter;
+    invalidateFilter();
+}
+
+void TimersFilterModel::setStartTime(const QDateTime &startTime)
+{
+    _startTime = startTime;
+    invalidateFilter();
+}
+
+void TimersFilterModel::setEndTime(const QDateTime &endTime)
+{
+    _endTime = endTime;
     invalidateFilter();
 }

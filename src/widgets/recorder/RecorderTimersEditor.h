@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,26 +16,48 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_TRAYICON_H_
-#define TANO_TRAYICON_H_
+#ifndef TANO_RECORDERTIMERSEDITOR_H_
+#define TANO_RECORDERTIMERSEDITOR_H_
 
-#include <QSystemTrayIcon>
+#include <QtCore/QDate>
 
-class QMenu;
+#if defined(Qt5)
+    #include <QtWidgets/QWidget>
+#elif defined(Qt4)
+    #include <QtGui/QWidget>
+#endif
 
-class TrayIcon : public QSystemTrayIcon
+class Timer;
+class TimersFilterModel;
+class TimersModel;
+
+namespace Ui
+{
+    class RecorderTimersEditor;
+}
+
+class RecorderTimersEditor : public QWidget
 {
 Q_OBJECT
 public:
-    TrayIcon(QMenu *menu,
-             QObject *parent = 0);
-    ~TrayIcon();
+    explicit RecorderTimersEditor(QWidget *parent = 0);
+    ~RecorderTimersEditor();
 
-signals:
-    void restoreClick();
+    void edit(Timer *item);
+    bool save();
+    void setModel(TimersModel *model);
 
-private slots:
-    void iconActivated(const QSystemTrayIcon::ActivationReason reason);
+protected:
+    void changeEvent(QEvent *e);
+
+private:
+    bool validate();
+
+    Ui::RecorderTimersEditor *ui;
+
+    Timer *_currentTimer;
+    TimersFilterModel *_validateModel;
+    TimersModel *_modelCore;
 };
 
-#endif // TANO_TRAYICON_H_
+#endif // TANO_RECORDERTIMERSEDITOR_H_

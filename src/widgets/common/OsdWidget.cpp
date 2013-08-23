@@ -64,11 +64,6 @@ OsdWidget::OsdWidget(QWidget *parent)
     connect(ui->buttonTeletext, SIGNAL(clicked()), this, SIGNAL(teletextClicked()));
 
     connect(_file, SIGNAL(file(QFile *)), this, SLOT(setLogo(QFile *)));
-
-#if !FEATURE_RECORDER
-    ui->buttonRecordNow->hide();
-    ui->buttonSnapshot->hide();
-#endif
 }
 
 OsdWidget::~OsdWidget()

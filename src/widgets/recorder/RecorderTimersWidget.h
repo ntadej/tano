@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,42 +16,44 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_TIMERSDISPLAYWIDGET_H_
-#define TANO_TIMERSDISPLAYWIDGET_H_
+#ifndef TANO_RECORDERTIMERSWIDGET_H_
+#define TANO_RECORDERTIMERSWIDGET_H_
 
 #include <QtCore/QModelIndex>
-#include <QtCore/QPointer>
 
 #if QT_VERSION >= 0x050000
-    #include <QtWidgets/QWidget>
+    #include <QtWidgets/QListView>
+    #include <QtWidgets/QMainWindow>
 #else
-    #include <QtGui/QWidget>
+    #include <QtGui/QListView>
+    #include <QtGui/QMainWindow>
 #endif
 
 #include "timers/models/TimersModel.h"
 
+class FancyLineEdit;
 class Timer;
 class TimersFilterModel;
-class TimersSql;
+class TimersModel;
 
-namespace Ui
-{
-    class TimersDisplayWidget;
-}
-
-class TimersDisplayWidget : public QWidget
+class RecorderTimersWidget : public QMainWindow
 {
 Q_OBJECT
 public:
-    TimersDisplayWidget(QWidget *parent = 0);
-    ~TimersDisplayWidget();
+    explicit RecorderTimersWidget(QWidget *parent = 0);
+    ~RecorderTimersWidget();
 
-    void setDatabase(TimersSql *db);
+    Timer *currentTimer() { return _current; }
+    void setCurrentTimer(Timer *timer);
+
+    void setModel(TimersModel *model);
 
 protected:
     void changeEvent(QEvent *e);
 
 signals:
+    void requestNew();
+    void requestQuick();
     void recordingSelected(Timer *);
     void timerSelected(Timer *);
 
@@ -60,11 +62,20 @@ private slots:
     void timerClicked(const QModelIndex &index);
 
 private:
-    Ui::TimersDisplayWidget *ui;
-
-    TimersSql *_db;
-    QPointer<TimersModel> _model;
+    Timer *_current;
+    TimersModel *_model;
     TimersFilterModel *_filterModel;
+
+    QListView *_list;
+
+    QToolBar *_toolbarTop;
+    QToolBar *_toolbarBottomSearch;
+
+    QLabel *_labelRecorder;
+    QAction *_actionQuick;
+    QAction *_actionNew;
+
+    FancyLineEdit *_search;
 };
 
-#endif // TANO_TIMERSDISPLAYWIDGET_H_
+#endif // TANO_RECORDERTIMERSWIDGET_H_

@@ -87,8 +87,11 @@ private slots:
     void aboutTano();
     void support();
 
+    void currentWidget(QWidget *widget);
+
     void showSchedule();
     void showScheduleCurrent();
+    void showRecorder();
     void showSettings();
     void showSettingsShortcuts();
 
@@ -114,7 +117,6 @@ private slots:
 
     void recordNow(bool start);
     void recordProgramme(XmltvProgramme *programme);
-    void recorder(bool enabled);
 
 private:
     Ui::MainWindow *ui;
@@ -127,7 +129,6 @@ private:
     void createMenus();
     void createSettings();
     void createDesktopStartup();
-    void createRecorder();
     void createShortcuts();
 
     //Settings

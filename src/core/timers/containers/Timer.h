@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -72,17 +72,16 @@ public:
                    const QString &url,
                    const Type &type = Once,
                    QObject *parent = 0);
+    explicit Timer(Timer *timer);
     explicit Timer(QObject *parent = 0);
     ~Timer();
 
-
-    inline QString id() const { return QString::number(_id); }
+    inline QString id() const { return _startTime.toString(); }
     QVariant data(int role) const;
     QString display() const;
     QPixmap decoration() const;
     QHash<int, QByteArray> roleNames() const;
 
-    void setId(int id);
     inline QString name() const { return _name; }
     void setName(const QString &name);
     inline QString channel() const { return _channel; }
@@ -109,7 +108,6 @@ public:
     static QStringList typesLong();
 
 private:
-    int _id;
     QString _name;
     QString _channel;
     QString _url;

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,14 +16,11 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "RecorderNewDialog.h"
-#include "ui_RecorderNewDialog.h"
-
-#if QT_VERSION >= 0x050000
+#if defined(Qt5)
     #include <QtWidgets/QMenu>
     #include <QtWidgets/QMessageBox>
     #include <QtWidgets/QWidgetAction>
-#else
+#elif defined(Qt4)
     #include <QtGui/QMenu>
     #include <QtGui/QMessageBox>
     #include <QtGui/QWidgetAction>
@@ -32,38 +29,49 @@
 #include "core/network/NetworkUdpxy.h"
 #include "core/playlist/PlaylistModel.h"
 #include "core/playlist/containers/Channel.h"
-#include "core/timers/TimersSql.h"
 #include "core/timers/containers/Timer.h"
+#include "core/timers/models/TimersModel.h"
 #include "core/xmltv/containers/XmltvProgramme.h"
 
-RecorderNewDialog::RecorderNewDialog(TimersSql *db,
+#include "RecorderNewDialog.h"
+#include "ui_RecorderNewDialog.h"
+
+RecorderNewDialog::RecorderNewDialog(bool quick,
+                                     TimersModel *timers,
+                                     PlaylistModel *playlist,
                                      QWidget *parent)
     : QDialog(parent),
       ui(new Ui::RecorderNewDialog),
       _currentChannel(0),
-      _currentTimer(0),
-      _db(db)
+      _currentTimer(0)
 {
+    setWindowModality(Qt::WindowModal);
+
     ui->setupUi(this);
-
-    ui->quickBox->hide();
-    ui->timerBox->hide();
-
-    // TODO: filter
-    /*_menu = new QMenu(this);
-    _action = new QWidgetAction(this);
-    ui->playlistWidget->filter()->show();
-    _action->setDefaultWidget(ui->playlistWidget->filter());
-    _menu->addAction(_action);
-    ui->buttonFilter->setMenu(_menu);*/
 
     _udpxy = new NetworkUdpxy();
     _udpxy->createSettings();
 
-    connect(ui->buttonNewCancel, SIGNAL(clicked()), this, SLOT(reject()));
-    connect(ui->buttonNewTimer, SIGNAL(clicked()), this, SLOT(processNewTimer()));
-    connect(ui->buttonQuickCancel, SIGNAL(clicked()), this, SLOT(reject()));
-    connect(ui->buttonQuickRecord, SIGNAL(clicked()), this, SLOT(processQuickRecord()));
+    _model = timers;
+    ui->playlistWidget->setPlaylistModel(playlist);
+
+    if (quick)
+        ui->buttonTimer->hide();
+    else
+        ui->buttonRecord->hide();
+
+    ui->search->setButtonPixmap(FancyLineEdit::Left, QIcon::fromTheme("edit-find").pixmap(16));
+    ui->search->setButtonPixmap(FancyLineEdit::Right, QIcon::fromTheme("edit-clear").pixmap(16));
+    ui->search->setButtonVisible(FancyLineEdit::Left, true);
+    ui->search->setButtonVisible(FancyLineEdit::Right, true);
+    ui->search->setAutoHideButton(FancyLineEdit::Right, true);
+
+    connect(ui->buttonCancel, SIGNAL(clicked()), this, SLOT(reject()));
+    connect(ui->buttonTimer, SIGNAL(clicked()), this, SLOT(processNewTimer()));
+    connect(ui->buttonRecord, SIGNAL(clicked()), this, SLOT(processQuickRecord()));
+    connect(ui->editName, SIGNAL(textChanged(QString)), this, SLOT(validate()));
+    connect(ui->search, SIGNAL(textChanged(QString)), this, SLOT(processFilters()));
+    connect(ui->search, SIGNAL(rightButtonClicked()), ui->search, SLOT(clear()));
 
     connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playlist(Channel *)));
 }
@@ -85,78 +93,67 @@ void RecorderNewDialog::changeEvent(QEvent *e)
     }
 }
 
-void RecorderNewDialog::newQuick()
-{
-    ui->quickBox->show();
-    ui->timerBox->hide();
-}
-
-void RecorderNewDialog::newTimer()
-{
-    ui->quickBox->hide();
-    ui->timerBox->show();
-}
-
-void RecorderNewDialog::newTimerFromSchedule(XmltvProgramme *programme)
+Timer *RecorderNewDialog::newTimerFromSchedule(XmltvProgramme *programme)
 {
     ui->playlistWidget->channelSelected(programme->channel());
 
     if (!_currentChannel) {
         QMessageBox::critical(this, tr("Recorder"),
                     tr("You don't have this channel in your playlist."));
-        return;
+        return 0;
     }
 
-    Timer *timer = _db->createTimer(programme->title(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
+    Timer *timer = _model->createTimer(programme->title(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
     timer->setState(Timer::Disabled);
-    timer->setDate(programme->start().date());
-    timer->setStartTime(programme->start().time());
-    timer->setEndTime(programme->stop().time());
-    _db->updateTimer(timer);
+    timer->setDate(QDateTime::fromTime_t(programme->start()).date());
+    timer->setStartTime(QDateTime::fromTime_t(programme->start()).time());
+    timer->setEndTime(QDateTime::fromTime_t(programme->stop()).time());
 
     _currentTimer = timer;
+
+    return timer;
 }
 
 void RecorderNewDialog::playlist(Channel *channel)
 {
     _currentChannel = channel;
 
-    ui->valueSelectedNew->setText("<b>" + channel->name() + "</b>");
-    ui->valueSelectedQuick->setText("<b>" + channel->name() + "</b>");
+    ui->valueSelected->setText("<b>" + channel->name() + "</b>");
+
+    validate();
+}
+
+void RecorderNewDialog::processFilters()
+{
+    ui->playlistWidget->setFilters(ui->search->text());
 }
 
 void RecorderNewDialog::processNewTimer()
 {
-    if (!_currentChannel) {
-        QMessageBox::critical(this, tr("Recorder"),
-                    tr("Please, select a channel."));
-        return;
-    }
+    Timer *timer = _model->createTimer(ui->editName->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
+    timer->setState(Timer::Disabled);
 
-    _currentTimer = _db->createTimer(ui->editNameNew->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
+    _currentTimer = timer;
 
     accept();
 }
 
 void RecorderNewDialog::processQuickRecord()
 {
-    if (!_currentChannel) {
-        QMessageBox::critical(this, tr("Recorder"),
-                    tr("Please, select a channel."));
-        return;
-    }
+    Timer *timer = _model->createTimer(ui->editName->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()), Timer::Instant);
 
-    _currentTimer = _db->createTimer(ui->editNameQuick->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()), Timer::Instant);
+    _currentTimer = timer;
 
     accept();
 }
 
-void RecorderNewDialog::refreshPlaylistModel()
+void RecorderNewDialog::validate()
 {
-    //ui->playlistWidget->refreshModel();
-}
-
-void RecorderNewDialog::setPlaylistModel(PlaylistModel *model)
-{
-    ui->playlistWidget->setPlaylistModel(model);
+    if (!ui->editName->text().isEmpty() && !ui->valueSelected->text().isEmpty()) {
+        ui->buttonRecord->setEnabled(true);
+        ui->buttonTimer->setEnabled(true);
+    } else {
+        ui->buttonRecord->setEnabled(false);
+        ui->buttonTimer->setEnabled(false);
+    }
 }
