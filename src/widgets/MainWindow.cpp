@@ -288,11 +288,21 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::single()
 {
-    if (isHidden())
-        tray();
+    if (isHidden()) {
+        if (_trayIcon)
+            tray();
+        else
+            show();
+    }
 
     raise();
     activateWindow();
+}
+
+void MainWindow::dockClicked()
+{
+    if (isHidden())
+        show();
 }
 
 // Init functions

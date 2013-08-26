@@ -40,6 +40,7 @@ int main(int argc, char *argv[])
     main.show();
 
     QObject::connect(&instance, SIGNAL(activate()), &main, SLOT(single()));
+    QObject::connect(&instance, SIGNAL(dockClicked()), &main, SLOT(dockClicked()));
 
     return instance.exec();
 }

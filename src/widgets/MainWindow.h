@@ -73,6 +73,7 @@ public:
 
 public slots:
     void single();
+    void dockClicked();
 
 protected:
     void changeEvent(QEvent *e);

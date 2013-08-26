@@ -36,6 +36,12 @@ public:
     static bool preInit();
     bool postInit();
 
+public slots:
+    void onClickOnDock();
+
+signals:
+    void dockClicked();
+
 private:
     Arguments *_arguments;
 };

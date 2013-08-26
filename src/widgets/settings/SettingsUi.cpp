@@ -25,6 +25,12 @@ SettingsUi::SettingsUi(QWidget *parent)
 {
     ui->setupUi(this);
 
+#if defined(Q_OS_MAC)
+    ui->labelTray->hide();
+    ui->checkTray->hide();
+    ui->checkTrayHide->hide();
+#endif
+
 #if !defined(Q_OS_LINUX)
     ui->comboIcons->removeItem(1);
 #endif
