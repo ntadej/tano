@@ -170,8 +170,14 @@ void FancyLineEdit::updateMargins()
     Side realLeft = (leftToRight ? Left : Right);
     Side realRight = (leftToRight ? Right : Left);
 
-    int leftMargin = d->_iconbutton[realLeft]->pixmap().width() / d->_iconbutton[realLeft]->pixmap().devicePixelRatio() + 8;
-    int rightMargin = d->_iconbutton[realRight]->pixmap().width() / d->_iconbutton[realLeft]->pixmap().devicePixelRatio() + 8;
+#if QT_VERSION < 0x050000
+    qreal ratio = 1;
+#else
+    qreal ratio = d->_iconbutton[realLeft]->pixmap().devicePixelRatio();
+#endif
+
+    int leftMargin = d->_iconbutton[realLeft]->pixmap().width() / ratio + 8;
+    int rightMargin = d->_iconbutton[realRight]->pixmap().width() / ratio + 8;
     // Note KDE does not reserve space for the highlight color
     if (style()->inherits("OxygenStyle")) {
         leftMargin = qMax(24, leftMargin);
