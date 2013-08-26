@@ -71,6 +71,9 @@ public:
     explicit MainWindow(Arguments *args);
     ~MainWindow();
 
+public slots:
+    void single();
+
 protected:
     void changeEvent(QEvent *e);
     void closeEvent(QCloseEvent *event);

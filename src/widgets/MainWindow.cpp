@@ -46,11 +46,10 @@
 
 #include "Config.h"
 
-#include "core/Arguments.h"
 #include "core/Common.h"
-#include "core/LocaleManager.h"
-#include "core/Log.h"
 #include "core/Resources.h"
+#include "core/application/Arguments.h"
+#include "core/application/LocaleManager.h"
 #include "core/network/NetworkDownload.h"
 #include "core/network/NetworkUdpxy.h"
 #include "core/playlist/PlaylistModel.h"
@@ -275,6 +274,15 @@ void MainWindow::closeEvent(QCloseEvent *event)
         tray();
         event->ignore();
     }
+}
+
+void MainWindow::single()
+{
+    if (isHidden())
+        tray();
+
+    raise();
+    activateWindow();
 }
 
 // Init functions

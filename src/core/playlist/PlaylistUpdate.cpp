@@ -18,7 +18,6 @@
 
 #include <QtCore/QDebug>
 
-#include "Log.h"
 #include "Resources.h"
 #include "network/NetworkDownload.h"
 #include "playlist/PlaylistModel.h"

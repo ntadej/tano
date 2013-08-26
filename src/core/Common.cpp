@@ -43,6 +43,11 @@ QString Tano::executable()
 #endif
 }
 
+QString Tano::localServer()
+{
+    return QString(name() + "localserver").toLower();
+}
+
 QString Tano::version()
 {
     return globalConfig ? globalConfig->version() : versionCore();

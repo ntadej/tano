@@ -16,81 +16,30 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtSingleApplication>
-
-#include <QtCore/QDir>
-#include <QtCore/QTextCodec>
 #include <QtCore/QtPlugin>
 
-#include "Config.h"
-#include "core/Arguments.h"
-#include "core/Common.h"
-#include "core/Log.h"
-#include "core/Out.h"
-#include "core/Resources.h"
-#include "core/plugins/Plugins.h"
-
+#include "widgets/application/TanoApplication.h"
 #include "widgets/MainWindow.h"
-#include "widgets/dialogs/PasswordDialog.h"
-#include "widgets/style/Common.h"
 
 Q_IMPORT_PLUGIN(TanoConfig)
 
 int main(int argc, char *argv[])
 {
-#if defined(Q_OS_MAC) && defined(QT_NO_DEBUG) // Fix plugin detection
-    QDir dir(argv[0]);  // e.g. appdir/Contents/MacOS/appname
-    dir.cdUp();
-    dir.cdUp();
-    dir.cd("PlugIns");  // e.g. appdir/Contents/PlugIns
-    QCoreApplication::setLibraryPaths(QStringList(dir.absolutePath()));
-#endif
+    if (!TanoApplication::preInit())
+        return -10;
 
-    Tano::Plugins::initConfig();
-    Tano::Plugins::initNetwork();
-
-    QCoreApplication::setApplicationName(Tano::name());
-    QCoreApplication::setApplicationVersion(Tano::version());
-
-    QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
-
-#if QT_VERSION < 0x050000
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
-#endif
-
-    Tano::Log::setup();
-
-    QtSingleApplication instance(argc, argv);
-    if(instance.sendMessage(""))
+    TanoApplication instance(argc, argv);
+    // Is another instance of the program is already running
+    if (!instance.shouldContinue())
         return 0;
 
-    Out::welcome();
+    if (!instance.postInit())
+        return -10;
 
-    Arguments *args = new Arguments(argc, argv);
+    MainWindow main(instance.arguments());
+    main.show();
 
-    if (args->isValid()) {
-        Tano::Style::setMainStyle();
-        Tano::Style::setIconPaths();
-        Tano::Style::setIconName();
+    QObject::connect(&instance, SIGNAL(activate()), &main, SLOT(single()));
 
-        if (globalConfig && globalConfig->requiresAuthentication()) {
-            PasswordDialog dialog;
-            switch (dialog.exec())
-            {
-            case QDialog::Accepted:
-                break;
-            default:
-                return -10;
-                break;
-            }
-        }
-
-        MainWindow mainWindow(args);
-        instance.setActivationWindow(&mainWindow);
-        mainWindow.show();
-
-        return instance.exec();
-    } else {
-        return -100;
-    }
+    return instance.exec();
 }

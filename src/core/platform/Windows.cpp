@@ -17,7 +17,7 @@
 *****************************************************************************/
 
 #include "Common.h"
-#include "Out.h"
+#include "application/Output.h"
 #include "platform/Windows.h"
 
 #include <windows.h>
@@ -26,7 +26,7 @@ void Tano::Windows::pauseConsole()
 {
     if(getenv("PWD")) return; /* Cygwin shell or Wine */
 
-    Out() << "\nPress the RETURN key to continue...\n";
+    Output() << "\nPress the RETURN key to continue...\n";
 
     getchar();
     fclose(stdout);

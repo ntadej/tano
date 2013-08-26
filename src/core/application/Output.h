@@ -16,34 +16,28 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#ifndef TANO_OUTPUT_H_
+#define TANO_OUTPUT_H_
 
-#include <QtCore/QDate>
-#include <QtCore/QString>
-#include <QtCore/QTime>
+#include <QtCore/QTextStream>
 
 #include "CoreSharedExport.h"
 
-namespace Tano
+class TANO_CORE_EXPORT Output : public QTextStream
 {
-    // Tano name and executable
-    TANO_CORE_EXPORT QString name();
-    TANO_CORE_EXPORT QString executable();
-    TANO_CORE_EXPORT QString localServer();
+public:
+    Output(bool error = false);
+    ~Output();
 
-    // Version
-    TANO_CORE_EXPORT QString version();
-    TANO_CORE_EXPORT QString versionCore();
-    TANO_CORE_EXPORT QString changeset();
-    TANO_CORE_EXPORT bool is64bit();
-    TANO_CORE_EXPORT QString uid();
+    Output& operator<<(const QString &string);
 
-    // Misc
-    TANO_CORE_EXPORT QString recordingFileName(const QString &name,
-                                               const QString &channel,
-                                               const QDate &date,
-                                               const QTime &time);
-}
+    static void welcome();
 
-#endif // TANO_COMMON_H_
+    static void help();
+
+    static void errorGeneric();
+    static void errorMissing(const QString &arg);
+    static void errorUnknown(const QString &arg);
+};
+
+#endif // TANO_OUTPUT_H_

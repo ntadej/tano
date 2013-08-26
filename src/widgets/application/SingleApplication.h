@@ -16,34 +16,30 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#ifndef TANO_SINGLEAPPLICATION_H_
+#define TANO_SINGLEAPPLICATION_H_
 
-#include <QtCore/QDate>
-#include <QtCore/QString>
-#include <QtCore/QTime>
+#include <QApplication>
 
-#include "CoreSharedExport.h"
+#include "WidgetsSharedExport.h"
 
-namespace Tano
+class LocalServer;
+
+class TANO_WIDGETS_EXPORT SingleApplication : public QApplication
 {
-    // Tano name and executable
-    TANO_CORE_EXPORT QString name();
-    TANO_CORE_EXPORT QString executable();
-    TANO_CORE_EXPORT QString localServer();
+Q_OBJECT
+public:
+    explicit SingleApplication(int argc, char *argv[]);
+    ~SingleApplication();
 
-    // Version
-    TANO_CORE_EXPORT QString version();
-    TANO_CORE_EXPORT QString versionCore();
-    TANO_CORE_EXPORT QString changeset();
-    TANO_CORE_EXPORT bool is64bit();
-    TANO_CORE_EXPORT QString uid();
+    bool shouldContinue();
 
-    // Misc
-    TANO_CORE_EXPORT QString recordingFileName(const QString &name,
-                                               const QString &channel,
-                                               const QDate &date,
-                                               const QTime &time);
-}
+signals:
+    void activate();
+  
+private:
+    LocalServer *_server;
+    bool _shouldContinue;
+};
 
-#endif // TANO_COMMON_H_
+#endif // TANO_SINGLEAPPLICATION_H_

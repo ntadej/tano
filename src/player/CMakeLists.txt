@@ -40,12 +40,6 @@ SET(Tano_Srcs
     main.cpp
 )
 
-SET(Tano_SingleApplication_Srcs
-    ../../lib/qtsingleapplication/src/qtlocalpeer.cpp
-    ../../lib/qtsingleapplication/src/qtsingleapplication.cpp
-    ../../lib/qtsingleapplication/src/qtsinglecoreapplication.cpp
-)
-
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     SET(Tano_Iconset ${CMAKE_SOURCE_DIR}/osx/Tano.iconset)
 
@@ -79,7 +73,6 @@ INCLUDE_DIRECTORIES(
     ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/src/core
     ${CMAKE_SOURCE_DIR}/src/widgets
-    ${CMAKE_SOURCE_DIR}/lib/qtsingleapplication/src
     ${CMAKE_BINARY_DIR}
     ${CMAKE_BINARY_DIR}/src
 )
@@ -104,7 +97,7 @@ IF(MSVC)
 ENDIF(MSVC)
 
 # This line tells cmake to create the Tano program.
-ADD_EXECUTABLE(${PROJECT_NAME} MACOSX_BUNDLE WIN32 ${Tano_Srcs} ${Tano_Resrcs_Srcs} ${Tano_SingleApplication_Srcs})
+ADD_EXECUTABLE(${PROJECT_NAME} MACOSX_BUNDLE WIN32 ${Tano_Srcs} ${Tano_Resrcs_Srcs})
 ADD_DEPENDENCIES(${PROJECT_NAME} ${TANO_CORE} ${TANO_WIDGETS} ${TANO_CONFIG})
 
 # MSVC: Avoid Debug/Release/... subfolders

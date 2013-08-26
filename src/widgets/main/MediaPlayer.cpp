@@ -14,7 +14,7 @@
 #include <vlc-qt/ControlVideo.h>
 #include <vlc-qt/WidgetVideo.h>
 
-#include "core/Arguments.h"
+#include "core/application/Arguments.h"
 #include "core/settings/Settings.h"
 #include "core/settings/SettingsChannel.h"
 

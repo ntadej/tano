@@ -45,6 +45,13 @@ SET(Tano_Core_Resrcs
 )
 
 # Define the C++ source files used by Tano Core
+SET(Tano_Core_Application_Srcs
+    application/Arguments.cpp
+    application/LocaleManager.cpp
+    application/LocalServer.cpp
+    application/Log.cpp
+    application/Output.cpp
+)
 SET(Tano_Core_Network_Srcs
     network/NetworkDownload.cpp
     network/NetworkRequest.cpp
@@ -124,19 +131,16 @@ IF(MINGW OR MSVC)
 ENDIF(MINGW OR MSVC)
 
 SET(Tano_Core_Srcs
-    Arguments.cpp
     Common.cpp
     File.h
-    Out.cpp
     ListItem.h
     ListModel.cpp
-    LocaleManager.cpp
-    Log.cpp
     Resources.cpp
     UpdateHandler.cpp
 
     CoreSharedExport.h
 
+    ${Tano_Core_Application_Srcs}
     ${Tano_Core_Network_Srcs}
     ${Tano_Core_Playlist_Srcs}
     ${Tano_Core_Plugins_Srcs}

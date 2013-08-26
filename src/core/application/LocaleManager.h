@@ -16,34 +16,28 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#ifndef TANO_LOCALEMANAGER_H_
+#define TANO_LOCALEMANAGER_H_
 
-#include <QtCore/QDate>
 #include <QtCore/QString>
-#include <QtCore/QTime>
+#include <QtCore/QTranslator>
 
 #include "CoreSharedExport.h"
 
-namespace Tano
+class TANO_CORE_EXPORT LocaleManager
 {
-    // Tano name and executable
-    TANO_CORE_EXPORT QString name();
-    TANO_CORE_EXPORT QString executable();
-    TANO_CORE_EXPORT QString localServer();
+public:
+	LocaleManager();
+	~LocaleManager();
 
-    // Version
-    TANO_CORE_EXPORT QString version();
-    TANO_CORE_EXPORT QString versionCore();
-    TANO_CORE_EXPORT QString changeset();
-    TANO_CORE_EXPORT bool is64bit();
-    TANO_CORE_EXPORT QString uid();
+	static QString language(const QString &locale);
+	static QStringList loadTranslations();
+	static QString localeName(const QString &file);
 
-    // Misc
-    TANO_CORE_EXPORT QString recordingFileName(const QString &name,
-                                               const QString &channel,
-                                               const QDate &date,
-                                               const QTime &time);
-}
+	void setLocale();
 
-#endif // TANO_COMMON_H_
+private:
+	QTranslator *_translator;
+};
+
+#endif // TANO_LOCALEMANAGER_H_

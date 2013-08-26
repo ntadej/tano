@@ -17,7 +17,7 @@
 *****************************************************************************/
 
 #include "core/Common.h"
-#include "core/LocaleManager.h"
+#include "core/application/LocaleManager.h"
 
 #include "SettingsGeneral.h"
 #include "ui_SettingsGeneral.h"

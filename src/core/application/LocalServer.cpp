@@ -16,34 +16,29 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#include <QtCore/QDebug>
+#include <QtCore/QFile>
+#include <QtCore/QStringList>
 
-#include <QtCore/QDate>
-#include <QtCore/QString>
-#include <QtCore/QTime>
+#include "Common.h"
+#include "application/LocalServer.h"
 
-#include "CoreSharedExport.h"
-
-namespace Tano
+LocalServer::LocalServer(QObject *parent)
+    : QObject(parent)
 {
-    // Tano name and executable
-    TANO_CORE_EXPORT QString name();
-    TANO_CORE_EXPORT QString executable();
-    TANO_CORE_EXPORT QString localServer();
+    _server = new QLocalServer(this);
+    _server->removeServer(Tano::localServer());
+    if (!_server->listen(Tano::localServer())) {
+        qCritical() << "Local server could not be started." << _server->errorString();
+        return;
+    }
 
-    // Version
-    TANO_CORE_EXPORT QString version();
-    TANO_CORE_EXPORT QString versionCore();
-    TANO_CORE_EXPORT QString changeset();
-    TANO_CORE_EXPORT bool is64bit();
-    TANO_CORE_EXPORT QString uid();
-
-    // Misc
-    TANO_CORE_EXPORT QString recordingFileName(const QString &name,
-                                               const QString &channel,
-                                               const QDate &date,
-                                               const QTime &time);
+    connect(_server, SIGNAL(newConnection()), this, SLOT(newConnection()));
 }
 
-#endif // TANO_COMMON_H_
+LocalServer::~LocalServer() { }
+
+void LocalServer::newConnection()
+{
+    emit connected();
+}

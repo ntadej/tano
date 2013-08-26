@@ -16,34 +16,28 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COMMON_H_
-#define TANO_COMMON_H_
+#ifndef TANO_LOCALSERVER_H_
+#define TANO_LOCALSERVER_H_
 
-#include <QtCore/QDate>
-#include <QtCore/QString>
-#include <QtCore/QTime>
+#include <QtNetwork/QLocalServer>
 
 #include "CoreSharedExport.h"
 
-namespace Tano
+class TANO_CORE_EXPORT LocalServer : public QObject
 {
-    // Tano name and executable
-    TANO_CORE_EXPORT QString name();
-    TANO_CORE_EXPORT QString executable();
-    TANO_CORE_EXPORT QString localServer();
+Q_OBJECT
+public:
+    explicit LocalServer(QObject *parent = 0);
+    ~LocalServer();
 
-    // Version
-    TANO_CORE_EXPORT QString version();
-    TANO_CORE_EXPORT QString versionCore();
-    TANO_CORE_EXPORT QString changeset();
-    TANO_CORE_EXPORT bool is64bit();
-    TANO_CORE_EXPORT QString uid();
+signals:
+    void connected();
 
-    // Misc
-    TANO_CORE_EXPORT QString recordingFileName(const QString &name,
-                                               const QString &channel,
-                                               const QDate &date,
-                                               const QTime &time);
-}
+private slots:
+    void newConnection();
 
-#endif // TANO_COMMON_H_
+private:
+    QLocalServer *_server;
+};
+
+#endif // TANO_LOCALSERVER_H_

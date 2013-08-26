@@ -77,6 +77,10 @@ IF(FEATURE_RECORDER)
 ENDIF(FEATURE_RECORDER)
 
 # Define the C++ source files used by Tano Widgets
+SET(Tano_Widgets_Application_Srcs
+    application/SingleApplication.cpp
+    application/TanoApplication.cpp
+)
 SET(Tano_Widgets_Common_Srcs
     common/Backend.cpp
     common/BrowseWidget.cpp
@@ -148,6 +152,7 @@ SET(Tano_Widgets_Timers_Srcs
 SET(Tano_Widgets_Srcs
     MainWindow.cpp
 
+    ${Tano_Widgets_Application_Srcs}
     ${Tano_Widgets_Common_Srcs}
     ${Tano_Widgets_Dialogs_Srcs}
     ${Tano_Widgets_Main_Srcs}
