@@ -29,11 +29,13 @@ class TANO_WIDGETS_EXPORT TanoApplication : public SingleApplication
 {
 Q_OBJECT
 public:
-    explicit TanoApplication(int argc, char *argv[]);
+    explicit TanoApplication(int argc,
+                             char *argv[]);
     ~TanoApplication();
 
     inline Arguments *arguments() { return _arguments; }
-    static bool preInit();
+    static bool preInit(int argc,
+                        char *argv[]);
     bool postInit();
 
 public slots:

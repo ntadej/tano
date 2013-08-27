@@ -23,7 +23,8 @@
 
 #include "application/SingleApplication.h"
 
-SingleApplication::SingleApplication(int argc, char *argv[])
+SingleApplication::SingleApplication(int argc,
+                                     char *argv[])
     : QApplication(argc, argv)
 {
     _shouldContinue = false; // By default this is not the main process

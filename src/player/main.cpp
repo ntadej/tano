@@ -25,7 +25,7 @@ Q_IMPORT_PLUGIN(TanoConfig)
 
 int main(int argc, char *argv[])
 {
-    if (!TanoApplication::preInit())
+    if (!TanoApplication::preInit(argc, argv))
         return -10;
 
     TanoApplication instance(argc, argv);

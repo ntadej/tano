@@ -51,7 +51,8 @@ bool dockClickHandler(id self,
 
 #endif
 
-TanoApplication::TanoApplication(int argc, char *argv[])
+TanoApplication::TanoApplication(int argc,
+                                 char *argv[])
     : SingleApplication(argc, argv),
       _arguments(new Arguments(argc, argv))
 {
@@ -79,14 +80,19 @@ TanoApplication::~TanoApplication()
     delete _arguments;
 }
 
-bool TanoApplication::preInit()
+bool TanoApplication::preInit(int argc,
+                              char *argv[])
 {
+    Q_UNUSED(argc)
+
 #if defined(Q_OS_MAC) && defined(QT_NO_DEBUG) // Fix plugin detection
     QDir dir(argv[0]);  // e.g. appdir/Contents/MacOS/appname
     dir.cdUp();
     dir.cdUp();
     dir.cd("PlugIns");  // e.g. appdir/Contents/PlugIns
     QCoreApplication::setLibraryPaths(QStringList(dir.absolutePath()));
+#else
+    Q_UNUSED(argv)
 #endif
 
     Tano::Plugins::initConfig();

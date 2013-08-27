@@ -25,25 +25,6 @@
 
 #include <Cocoa/Cocoa.h>
 
-@interface NotificationsOSXDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate>
-@end
-
-@implementation NotificationsOSXDelegate
-- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification
-{
-    Q_UNUSED(center)
-    Q_UNUSED(notification)
-
-    return YES;
-}
-@end
-
-void NotificationsOSX::init()
-{
-    id delegate = [NotificationsOSXDelegate new];
-    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:delegate];
-}
-
 void NotificationsOSX::showNotification(const QString &title,
                                         const QString &text)
 {
