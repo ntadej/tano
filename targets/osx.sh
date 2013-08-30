@@ -25,7 +25,7 @@ build()
     mkdir -p ${OUTPUT_DIR}
 
     pushd ${BUILD_DIR}
-    cmake ../../../ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${OUTPUT_DIR} -DLIBVLCQT_INCLUDE_DIR=${VLCQT}/include -DLIBVLCQT_LIBRARY=${VLCQT}/lib/libvlc-qt.dylib -DLIBVLCQT_WIDGETS_LIBRARY=${VLCQT}/lib/libvlc-qt-widgets.dylib ${TANO_EXPORT_BRANDING}
+    cmake ../../../ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${OUTPUT_DIR} -DLIBVLCQT_INCLUDE_DIR=${VLCQT}/include -DLIBVLCQT_LIBRARY=${VLCQT}/lib/libvlc-qt.dylib -DLIBVLCQT_WIDGETS_LIBRARY=${VLCQT}/lib/libvlc-qt-widgets.dylib ${TANO_EXPORT_BRANDING} -DGIT=
     make install -j8
     popd
 

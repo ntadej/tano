@@ -50,7 +50,7 @@ do
           CUSTOM="$OPTARG"
           ;;
       i)
-          VLCQT="$OPTARG"
+          VLCQT="../../../$OPTARG"
           ;;
   esac
 done
