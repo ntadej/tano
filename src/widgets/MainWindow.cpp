@@ -73,6 +73,7 @@
 #include "common/TrayIcon.h"
 #include "dialogs/AboutDialog.h"
 #include "dialogs/UpdateDialog.h"
+#include "editor/PlaylistEditor.h"
 #include "main/MediaPlayer.h"
 #include "main/PlaylistTab.h"
 #include "main/ScheduleTab.h"
@@ -100,6 +101,7 @@ MainWindow::MainWindow(Arguments *args)
       _previewTimer(new QTimer(this)),
       _udpxy(new NetworkUdpxy()),
       _osdFloat(0),
+      _playlistEditor(0),
       _trayIcon(0)
 {
     _arguments = args;
@@ -132,6 +134,9 @@ MainWindow::MainWindow(Arguments *args)
 
 MainWindow::~MainWindow()
 {
+    if (_playlistEditor)
+        delete _playlistEditor;
+
     delete ui;
 
     delete _recorder;
@@ -338,7 +343,10 @@ void MainWindow::createGui()
 
 #if !defined(Q_OS_LINUX)
     ui->menuMedia->removeAction(ui->actionTeletext);
-#endif 
+#endif
+
+    if (globalConfig && !globalConfig->editorEnabled())
+        ui->menuOptions->removeAction(ui->actionEditPlaylist);
 
     qDebug() << "Initialised: GUI";
 }
@@ -418,6 +426,7 @@ void MainWindow::createConnections()
     connect(ui->actionScheduleCurrent, SIGNAL(triggered()), this, SLOT(showScheduleCurrent()));
     connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
     connect(ui->actionSettingsShortcuts, SIGNAL(triggered()), this, SLOT(showSettingsShortcuts()));
+    connect(ui->actionEditPlaylist, SIGNAL(triggered()), this, SLOT(showPlaylistEditor()));
 
     connect(ui->actionPlay, SIGNAL(triggered()), _mediaPlayer, SLOT(togglePause()));
     connect(ui->actionStop, SIGNAL(triggered()), this, SLOT(stop()));
@@ -775,6 +784,30 @@ void MainWindow::showSettingsShortcuts()
 {
     SettingsDialogShortcuts s(_shortcuts, this);
     s.exec();
+}
+
+void MainWindow::showPlaylistEditor()
+{
+    if (_playlistEditor) {
+        if (_playlistEditor->isVisible()) {
+            _playlistEditor->activateWindow();
+        } else {
+            disconnect(_xmltv, SIGNAL(channelsChanged(QHash<QString, QString>)), _playlistEditor, SLOT(setXmltvMap(QHash<QString, QString>)));
+            delete _playlistEditor;
+            _playlistEditor = new PlaylistEditor(this);
+            _playlistEditor->setMediaInstance(_mediaPlayer->mediaInstance());
+            _playlistEditor->setXmltvMap(_xmltv->channels());
+            _playlistEditor->open(_playlistName);
+            _playlistEditor->show();
+        }
+    } else {
+        _playlistEditor = new PlaylistEditor(this);
+        _playlistEditor->setMediaInstance(_mediaPlayer->mediaInstance());
+        connect(_xmltv, SIGNAL(channelsChanged(QHash<QString, QString>)), _playlistEditor, SLOT(setXmltvMap(QHash<QString, QString>)));
+        _playlistEditor->setXmltvMap(_xmltv->channels());
+        _playlistEditor->open(_playlistName);
+        _playlistEditor->show();
+    }
 }
 
 void MainWindow::tooltip(const QString &channelNow)

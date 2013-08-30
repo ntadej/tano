@@ -52,6 +52,12 @@ SET(Tano_Widgets_UIs
     dialogs/AboutDialog.ui
     dialogs/PasswordDialog.ui
     dialogs/UpdateDialog.ui
+    editor/PlaylistEditor.ui
+    editor/PlaylistEditorHelp.ui
+    editor/PlaylistEditorScan.ui
+    editor/PlaylistExportTvheadend.ui
+    editor/PlaylistImportCSV.ui
+    editor/PrintDialog.ui
     main/ShowInfoTab.ui
     recorder/RecorderInfoWidget.ui
     recorder/RecorderNewDialog.ui
@@ -104,6 +110,15 @@ SET(Tano_Widgets_Dialogs_Srcs
     dialogs/AboutDialog.cpp
     dialogs/PasswordDialog.cpp
     dialogs/UpdateDialog.cpp
+)
+SET(Tano_Widgets_Editor_Srcs
+    editor/PlaylistEditor.cpp
+    editor/PlaylistEditorHelp.cpp
+    editor/PlaylistEditorScan.cpp
+    editor/PlaylistExportTvheadend.cpp
+    editor/PlaylistImportCSV.cpp
+    editor/Print.cpp
+    editor/PrintDialog.cpp
 )
 SET(Tano_Widgets_Main_Srcs
     main/MediaPlayer.cpp
@@ -159,6 +174,7 @@ SET(Tano_Widgets_Srcs
     ${Tano_Widgets_Application_Srcs}
     ${Tano_Widgets_Common_Srcs}
     ${Tano_Widgets_Dialogs_Srcs}
+    ${Tano_Widgets_Editor_Srcs}
     ${Tano_Widgets_Main_Srcs}
     ${Tano_Widgets_Menu_Srcs}
     ${Tano_Widgets_Recorder_Srcs}
@@ -249,7 +265,7 @@ ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 # Here the needed Libraries are added to the link command.
 IF(QT5)
-    QT5_USE_MODULES(${TANO_WIDGETS} Network Sql Widgets Xml)
+    QT5_USE_MODULES(${TANO_WIDGETS} Network PrintSupport Sql Widgets Xml)
     IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
         QT5_USE_MODULES(${TANO_WIDGETS} MacExtras)
     ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")

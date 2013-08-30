@@ -32,13 +32,12 @@
 #include "core/playlist/PlaylistModel.h"
 #include "core/playlist/handlers/CSVHandler.h"
 
-#include "widgets/common/FileDialogs.h"
-
-#include "ui/PrintDialog.h"
-#include "ui/PlaylistEditorHelp.h"
-#include "ui/PlaylistEditorScan.h"
-#include "ui/PlaylistExportTvheadend.h"
-#include "ui/PlaylistImportCSV.h"
+#include "common/FileDialogs.h"
+#include "editor/PlaylistEditorHelp.h"
+#include "editor/PlaylistEditorScan.h"
+#include "editor/PlaylistExportTvheadend.h"
+#include "editor/PlaylistImportCSV.h"
+#include "editor/PrintDialog.h"
 
 #include "PlaylistEditor.h"
 #include "ui_PlaylistEditor.h"
@@ -66,9 +65,6 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
     _menuExport = new QMenu();
     _menuExport->addAction(ui->actionExportTvheadend);
     _menuExport->addAction(ui->actionExportXmltvId);
-
-    //ui->toolBar->insertAction(ui->actionClose, ui->actionAbout);
-    //ui->toolBar->insertAction(ui->actionHelp, ui->actionSettings);
 }
 
 PlaylistEditor::~PlaylistEditor()
@@ -97,9 +93,7 @@ void PlaylistEditor::closeEvent(QCloseEvent *event)
 
 void PlaylistEditor::createConnections()
 {
-    connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
     connect(ui->actionHelp, SIGNAL(triggered()), this, SLOT(help()));
-    connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(settings()));
     connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(open()));
     connect(ui->actionNew, SIGNAL(triggered()), this, SLOT(newPlaylist()));
     connect(ui->actionDelete, SIGNAL(triggered()), this, SLOT(deleteItem()));
@@ -120,7 +114,7 @@ void PlaylistEditor::createConnections()
     connect(ui->editUrl, SIGNAL(textChanged(QString)), this, SLOT(editChannelUrl(QString)));
     connect(ui->editCategories, SIGNAL(textChanged(QString)), this, SLOT(editChannelCategories(QString)));
     connect(ui->editLanguage, SIGNAL(textChanged(QString)), this, SLOT(editChannelLanguage(QString)));
-    connect(ui->editXmltvId, SIGNAL(textChanged(QString)), this, SLOT(editChannelXmltvId(QString)));
+    connect(ui->editXmltvId, SIGNAL(currentTextChanged(QString)), this, SLOT(editChannelXmltvId(QString)));
     connect(ui->editLogo, SIGNAL(textChanged(QString)), this, SLOT(editChannelLogo(QString)));
 
     connect(ui->actionUp, SIGNAL(triggered()), this, SLOT(moveUp()));
@@ -142,23 +136,10 @@ void PlaylistEditor::setTitle(const QString &title)
         setWindowTitle(tr("%1 - %2 Editor").arg(title, Tano::name()));
 }
 
-
-void PlaylistEditor::aboutTano()
-{
-
-}
-
 void PlaylistEditor::help()
 {
     PlaylistEditorHelp help(this);
     help.exec();
-}
-
-void PlaylistEditor::settings()
-{
-    //SettingsEditorDialog s(this);
-    //s.exec();
-    //createSettings();
 }
 
 void PlaylistEditor::open(const QString &playlist,
@@ -348,7 +329,6 @@ void PlaylistEditor::exit()
 {
     if (_closeEnabled) {
         hide();
-        //qApp->quit();
         return;
     }
 
@@ -428,6 +408,8 @@ void PlaylistEditor::mapXmltv()
             newId = id;
         }
     }
+
+    newId = id;
 
     for (int i = 0; i < ui->editXmltvId->count(); i++) {
         if (ui->editXmltvId->itemText(i) == newId) {

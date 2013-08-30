@@ -59,6 +59,7 @@
     </property>
     <addaction name="actionSettings"/>
     <addaction name="actionSettingsShortcuts"/>
+    <addaction name="actionEditPlaylist"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -484,6 +485,11 @@
    </property>
    <property name="text">
     <string>Logout and Exit</string>
+   </property>
+  </action>
+  <action name="actionEditPlaylist">
+   <property name="text">
+    <string>Edit playlist</string>
    </property>
   </action>
  </widget>

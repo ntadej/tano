@@ -57,9 +57,7 @@ protected:
     void closeEvent(QCloseEvent *event);
 
 private slots:
-    void aboutTano();
     void help();
-    void settings();
     void setTitle(const QString &title = "");
 
     void deleteItem();

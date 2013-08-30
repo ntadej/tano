@@ -43,6 +43,7 @@ public:
     virtual QString downloadUrl() const = 0;
 
     virtual bool requiresAuthentication() const = 0;
+    virtual bool editorEnabled() const = 0;
 
     virtual QVariantMap defaultSettings() const = 0;
     virtual bool disableSettings(const QString &category) const = 0;

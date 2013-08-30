@@ -40,6 +40,7 @@ public:
     QString downloadUrl() const;
 
     bool requiresAuthentication() const;
+    bool editorEnabled() const;
 
     QVariantMap defaultSettings() const { return QVariantMap(); }
     bool disableSettings(const QString &category) const { Q_UNUSED(category) return false; }

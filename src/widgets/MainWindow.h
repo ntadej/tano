@@ -47,6 +47,7 @@ class ScheduleTab;
 class SettingsChannel;
 class ShowInfoTab;
 class OsdFloat;
+class PlaylistEditor;
 class PlaylistModel;
 class PlaylistTab;
 class PlaylistUpdate;
@@ -94,6 +95,7 @@ private slots:
     void showRecorder();
     void showSettings();
     void showSettingsShortcuts();
+    void showPlaylistEditor();
 
     void playChannel(Channel* channel);
     void playRecording(Timer* recording);
@@ -176,6 +178,7 @@ private:
     ShowInfoTab *_showInfoTab;
 
     OsdFloat *_osdFloat;
+    PlaylistEditor *_playlistEditor;
     QTimer *_mouseTimer;
 
     //Menus and actions
