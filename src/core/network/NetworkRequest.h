@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,6 +20,7 @@
 #define TANO_NETWORKREQUEST_H_
 
 #include <QtCore/QUrl>
+#include <QtNetwork/QAuthenticator>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkReply>
 
@@ -41,6 +42,8 @@ signals:
                QNetworkReply *);
     void result(const QByteArray &,
                 QNetworkReply *);
+    void auth(QNetworkReply *,
+              QAuthenticator *);
 
 private slots:
     void requestFinished(QNetworkReply *reply);
