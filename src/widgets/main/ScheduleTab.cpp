@@ -248,7 +248,7 @@ void ScheduleTab::setEpg(const QString &channel,
 
     QList<QDate> date;
     for (int i = 0; i < _model->rowCount(); i++) {
-        QDate d = QDateTime::fromString(_model->value(i, 2).toString(), Tano::Xmltv::dateFormat()).date();
+        QDate d = QDateTime::fromTime_t(_model->value(i, 2).toInt()).date();
         if (!date.contains(d) && d >= QDate::currentDate()) {
             date << d;
         }

@@ -42,7 +42,7 @@ bool XmltvProgrammeFilterModel::filterAcceptsRow(int sourceRow,
     Q_UNUSED(sourceParent)
 
     bool name = _model->value(sourceRow, 1).toString().contains(filterRegExp());
-    bool start = (QDateTime::fromString(_model->value(sourceRow, 2).toString(), Tano::Xmltv::dateFormat()).date() == _date);
+    bool start = (QDateTime::fromTime_t(_model->value(sourceRow, 2).toInt()).date() == _date);
 
     return (name && start);
 }

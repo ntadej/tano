@@ -80,10 +80,10 @@ public:
     void setChannelDisplayName(const QString &s);
     inline QString title() const { return _title; }
     void setTitle(const QString &s);
-    inline QDateTime start() const { return _start; }
-    void setStart(const QDateTime &d);
-    inline QDateTime stop() const { return _stop; }
-    void setStop(const QDateTime &d);
+    inline int start() const { return _start; }
+    void setStart(int i);
+    inline int stop() const { return _stop; }
+    void setStop(int i);
     inline QString subTitle() const { return _subTitle; }
     void setSubTitle(const QString &s);
     inline QString desc() const { return _desc; }
@@ -118,8 +118,8 @@ private:
     QString _channel;
     QString _channelDisplayName;
     QString _title;
-    QDateTime _start;
-    QDateTime _stop;
+    int _start;
+    int _stop;
     QString _subTitle;
     QString _desc;
     QDateTime _date;

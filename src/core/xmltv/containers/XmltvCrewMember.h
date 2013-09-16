@@ -60,7 +60,7 @@ public:
     explicit XmltvCrewMember(const QString &name,
                              const Type &type,
                              const QString &programme,
-                             const QDateTime &start,
+                             int start,
                              QObject *parent = 0);
     explicit XmltvCrewMember(const QString &name,
                              const Type &type,
@@ -76,7 +76,7 @@ public:
     inline QString name() const { return _name; }
     inline Type type() const { return _type; }
     inline QString programme() const { return _programme; }
-    inline QDateTime start() const { return _start; }
+    inline int start() const { return _start; }
 
     static Type typeFromString(const QString &type);
     static QString stringFromType(const Type &type);
@@ -86,7 +86,7 @@ private:
     QString _name;
     XmltvCrewMember::Type _type;
     QString _programme;
-    QDateTime _start;
+    int _start;
 };
 
 #endif // TANO_XMLTVCREWMEMBER_H_

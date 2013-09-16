@@ -40,15 +40,15 @@ QVariant XmltvProgrammeModel::data(const QModelIndex &index,
 {
     QVariant v = QSqlQueryModel::data(index, role);
     if (v.isValid() && role == Qt::DisplayRole) {
-        QDateTime start = QDateTime::fromString(value(index.row(), 2).toString(), Tano::Xmltv::dateFormat());
+        QDateTime start = QDateTime::fromTime_t(value(index.row(), 2).toInt());
         QString title = value(index.row(), 1).toString();
 
         return QString("%1 - %2").arg(start.toString(Tano::Xmltv::timeFormatDisplay()), title);
     } else if (role == Qt::DecorationRole) {
         return QIcon::fromTheme("x-office-calendar").pixmap(16);
     } else if (role == Qt::FontRole) {
-        QDateTime start = QDateTime::fromString(value(index.row(), 2).toString(), Tano::Xmltv::dateFormat());
-        QDateTime stop = QDateTime::fromString(value(index.row(), 3).toString(), Tano::Xmltv::dateFormat());
+        QDateTime start =  QDateTime::fromTime_t(value(index.row(), 2).toInt());
+        QDateTime stop = QDateTime::fromTime_t(value(index.row(), 3).toInt());
 
         QFont font;
         if (QDateTime::currentDateTime() > start && QDateTime::currentDateTime() < stop)

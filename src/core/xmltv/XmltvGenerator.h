@@ -56,8 +56,6 @@ private:
 
     QFile *_file;
     QTextStream _out;
-
-    QString _timeOffset;
 };
 
 #endif // TANO_XMLTVGENERATOR_H_

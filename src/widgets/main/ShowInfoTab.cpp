@@ -105,7 +105,7 @@ void ShowInfoTab::display(XmltvProgramme *programme)
 
     _labelTitle->setText(programme->title());
     ui->labelChannel->setText("<b>" + programme->channelDisplayName() + "</b>");
-    ui->labelTime->setText("<b>" + programme->start().toString("dddd, d.M.yyyy") + " (" + programme->start().toString("hh:mm") + " - " + programme->stop().toString("hh:mm") + ")</b>");
+    ui->labelTime->setText("<b>" + QDateTime::fromTime_t(programme->start()).toString("dddd, d.M.yyyy") + " (" + QDateTime::fromTime_t(programme->start()).toString("hh:mm") + " - " + QDateTime::fromTime_t(programme->stop()).toString("hh:mm") + ")</b>");
 
     if (programme->categories().length()) {
         ui->labelInfo->setText("<b>" + programme->categories().join(" / ") + "</b>");

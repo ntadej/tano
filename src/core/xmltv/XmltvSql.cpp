@@ -148,8 +148,8 @@ void XmltvSql::addProgramme(XmltvProgramme *programme)
     q.bindValue(":title", programme->title());
     q.bindValue(":subtitle", programme->subTitle());
     q.bindValue(":channel", programme->channel());
-    q.bindValue(":start", programme->start().toString(Tano::Xmltv::dateFormat()));
-    q.bindValue(":stop", programme->stop().toString(Tano::Xmltv::dateFormat()));
+    q.bindValue(":start", programme->start());
+    q.bindValue(":stop", programme->stop());
     q.bindValue(":desc", programme->desc());
     q.bindValue(":date", programme->date().toString(Tano::Xmltv::dateFormat()));
     q.bindValue(":categories", programme->categories().join(Tano::Xmltv::commaSeparator()));
@@ -179,7 +179,7 @@ void XmltvSql::addCrewMember(XmltvCrewMember *member)
     q.bindValue(":name", member->name());
     q.bindValue(":type", member->type());
     q.bindValue(":programme", member->programme());
-    q.bindValue(":start", member->start().toString(Tano::Xmltv::dateFormat()));
+    q.bindValue(":start", member->start());
     q.exec();
 
     delete member;
@@ -223,7 +223,7 @@ QList<XmltvCrewMember *> XmltvSql::crew(const QString &programme)
                     q.value(1).toString(),
                     XmltvCrewMember::Type(q.value(2).toInt()),
                     q.value(3).toString(),
-                    q.value(4).toDateTime());
+                    q.value(4).toInt());
         list << member;
     }
 
@@ -239,8 +239,8 @@ XmltvProgramme *XmltvSql::programme(const QString &id)
         programme->setTitle(q.value(1).toString());
         programme->setSubTitle(q.value(2).toString());
         programme->setChannel(q.value(3).toString());
-        programme->setStart(QDateTime::fromString(q.value(4).toString(), Tano::Xmltv::dateFormat()));
-        programme->setStop(QDateTime::fromString(q.value(5).toString(), Tano::Xmltv::dateFormat()));
+        programme->setStart(q.value(4).toInt());
+        programme->setStop(q.value(5).toInt());
         programme->setDesc(q.value(6).toString());
         programme->setDate(QDateTime::fromString(q.value(7).toString(), Tano::Xmltv::dateFormat()));
 
@@ -296,9 +296,9 @@ QStringList XmltvSql::programmeCurrentDisplay(const QString &id)
     int c = 0;
 
     QSqlQuery q = query();
-    q.exec("SELECT * FROM `programmes` WHERE `channel` = '" + id + "' AND `stop` > '" + QDateTime::currentDateTime().toString(Tano::Xmltv::dateFormat()) + "' ORDER BY `start`");
+    q.exec("SELECT * FROM `programmes` WHERE `channel` = '" + id + "' AND `stop` > '" + QDateTime::currentDateTime().toTime_t() + "' ORDER BY `start`");
     while (q.next() && c < 2) {
-        epg << output.arg(q.value(0).toString(), QDateTime::fromString(q.value(4).toString(), Tano::Xmltv::dateFormat()).toString(Tano::Xmltv::timeFormatDisplay()), q.value(1).toString());
+        epg << output.arg(q.value(0).toString(), QDateTime::fromTime_t(q.value(4).toInt()).toString(Tano::Xmltv::timeFormatDisplay()), q.value(1).toString());
         c++;
     }
 

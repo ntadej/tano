@@ -36,11 +36,6 @@ XmltvGenerator::XmltvGenerator(XmltvSql *xmltv,
 {
     _xmltv = xmltv;
     _file = new QFile(file);
-
-    int offset = QDateTime::currentDateTime().time().hour() - QDateTime::currentDateTimeUtc().time().hour();
-    _timeOffset = " +0" + QString::number(offset) + "00";
-
-    qDebug() << "Time offset:" << _timeOffset;
 }
 
 XmltvGenerator::~XmltvGenerator()
@@ -143,7 +138,7 @@ void XmltvGenerator::generateProgramme(XmltvProgramme *programme)
 
     int depth = 1;
 
-    _out << indent(depth) << "<programme start=" << escapedAttribute(programme->start().toString(Tano::Xmltv::dateFormat()) + _timeOffset) << " stop=" << escapedAttribute(programme->stop().toString(Tano::Xmltv::dateFormat()) + _timeOffset) << " channel=" << escapedAttribute(programme->channel()) << ">\n"
+    _out << indent(depth) << "<programme start=" << escapedAttribute(QDateTime::fromTime_t(programme->start()).toUTC().toString(Tano::Xmltv::dateFormat()) + " +0000") << " stop=" << escapedAttribute(QDateTime::fromTime_t(programme->stop()).toUTC().toString(Tano::Xmltv::dateFormat()) + " +0000") << " channel=" << escapedAttribute(programme->channel()) << ">\n"
          << indent(depth + 1) << "<title>" << escapedText(programme->title()) << "</title>\n";
 
     if (!programme->subTitle().isEmpty())

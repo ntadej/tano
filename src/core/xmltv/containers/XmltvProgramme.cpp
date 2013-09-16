@@ -65,7 +65,7 @@ QHash<int, QByteArray> XmltvProgramme::roleNames() const
 
 QString XmltvProgramme::id() const
 {
-    return channel() + "_" + start().toString(Tano::Xmltv::dateFormat());
+    return channel() + "_" + QString::number(start());
 }
 
 QVariant XmltvProgramme::data(int role) const
@@ -113,7 +113,7 @@ QVariant XmltvProgramme::data(int role) const
 
 QString XmltvProgramme::display() const
 {
-    return QString("%1 - %2").arg(start().toString(Tano::Xmltv::timeFormatDisplay()), title());
+    return QString("%1 - %2").arg(QDateTime::fromTime_t(start()).toString(Tano::Xmltv::timeFormatDisplay()), title());
 }
 
 QPixmap XmltvProgramme::decoration() const
@@ -124,7 +124,7 @@ QPixmap XmltvProgramme::decoration() const
 QFont XmltvProgramme::displayFont() const
 {
     QFont f;
-    if (QDateTime::currentDateTime() > start() && QDateTime::currentDateTime() < stop())
+    if (QDateTime::currentDateTime() > QDateTime::fromTime_t(start()) && QDateTime::currentDateTime() < QDateTime::fromTime_t(stop()))
         f.setBold(true);
 
     return f;
@@ -154,18 +154,18 @@ void XmltvProgramme::setTitle(const QString &s)
     }
 }
 
-void XmltvProgramme::setStart(const QDateTime &d)
+void XmltvProgramme::setStart(int i)
 {
-    if (_start != d) {
-        _start = d;
+    if (_start != i) {
+        _start = i;
         emit dataChanged();
     }
 }
 
-void XmltvProgramme::setStop(const QDateTime &d)
+void XmltvProgramme::setStop(int i)
 {
-    if (_stop != d) {
-        _stop = d;
+    if (_stop != i) {
+        _stop = i;
         emit dataChanged();
     }
 }

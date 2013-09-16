@@ -58,13 +58,11 @@ bool XmltvHandler::startElement(const QString & /* namespaceURI */,
             _currentProgramme->setIconSize(QSize(attributes.value("width").toInt(), attributes.value("height").toInt()));
         }
     } else if (qName == "programme") { // Programme
-        QString start = attributes.value("start").replace(Tano::Xmltv::dateRegExp(), "");
-        QString stop = attributes.value("stop").replace(Tano::Xmltv::dateRegExp(), "");
         _currentProgramme = new XmltvProgramme(attributes.value("channel"));
-        _currentProgramme->setStart(QDateTime::fromString(start, Tano::Xmltv::dateFormat()));
-        _currentProgramme->setStop(QDateTime::fromString(stop, Tano::Xmltv::dateFormat()));
-        if (_previousProgramme && !_previousProgramme->stop().isValid()) {
-            _db->updateProgramme(_previousProgramme->id(), "stop", _currentProgramme->start().toString(Tano::Xmltv::dateFormat()));
+        _currentProgramme->setStart(Tano::Xmltv::parse(attributes.value("start")));
+        _currentProgramme->setStop(Tano::Xmltv::parse(attributes.value("stop")));
+        if (_previousProgramme && !QDateTime::fromTime_t(_previousProgramme->stop()).isValid()) {
+            _db->updateProgramme(_previousProgramme->id(), "stop", QString::number(_currentProgramme->start()));
             delete _previousProgramme;
         }
     } else if (qName == "lenght") {
@@ -155,8 +153,7 @@ bool XmltvHandler::endElement(const QString & /* namespaceURI */,
         }
     } else if(qName == "date") { // Programme - continuation
         if(_currentProgramme) {
-            QString date = _currentText.replace(Tano::Xmltv::dateRegExp(), "");
-            _currentProgramme->setDate(QDateTime::fromString(date, Tano::Xmltv::dateFormat()));
+            _currentProgramme->setDate(QDateTime::fromTime_t(Tano::Xmltv::parse(_currentText)));
         }
     } else if(qName == "category") {
         if(_currentProgramme) {

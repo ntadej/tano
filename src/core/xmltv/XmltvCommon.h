@@ -49,10 +49,11 @@ namespace Tano
         */
         TANO_CORE_EXPORT QString dateFormatDisplay();
         /*!
-            \brief Date regular expression
-            \return expression (QRegExp)
+            \brief Parse date
+            \param data date in XMLTV string format (QString)
+            \return date timestamp in seconds (int)
         */
-        TANO_CORE_EXPORT QRegExp dateRegExp();
+        TANO_CORE_EXPORT int parse(const QString &data);
         /*!
             \brief Time format for display
             \return format (QString)
@@ -64,12 +65,19 @@ namespace Tano
             \return category map (QMap<QString, QString>)
         */
         TANO_CORE_EXPORT QMap<QString, QString> categoryMap();
+
         /*!
             \brief Map category to translation
             \param cat category to map (QString)
             \return mapped category (QString)
         */
         TANO_CORE_EXPORT QString mapCategory(const QString &cat);
+
+        /*!
+            \brief Get current timezone difference
+            \return timezone difference in seconds (int)
+        */
+        TANO_CORE_EXPORT int timeZoneDiff();
     }
 }
 

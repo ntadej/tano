@@ -27,7 +27,7 @@ XmltvCrewMember::XmltvCrewMember(QObject *parent)
 XmltvCrewMember::XmltvCrewMember(const QString &name,
                                  const Type &type,
                                  const QString &programme,
-                                 const QDateTime &start,
+                                 int start,
                                  QObject *parent)
     : ListItem(parent),
       _name(name),
