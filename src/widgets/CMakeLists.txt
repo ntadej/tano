@@ -203,9 +203,9 @@ ENDIF(QT5)
 #####################
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     FIND_PATH(APPLICATIONSERVICES_INCLUDE_DIR ApplicationServices/ApplicationServices.h)
-    FIND_LIBRARY(APPLICATIONSERVICES_LIBRARY ApplicationServices)
+    SET(APPLICATIONSERVICES_LIBRARY "-weak_framework ApplicationServices")
     FIND_PATH(COCOA_INCLUDE_DIR Cocoa/Cocoa.h)
-    FIND_LIBRARY(COCOA_LIBRARY Cocoa)
+    SET(COCOA_LIBRARY "-weak_framework Cocoa")
 
     INCLUDE_DIRECTORIES(${APPLICATIONSERVICES_INCLUDE_DIR}/Headers)
     SET_SOURCE_FILES_PROPERTIES(application/NotificationsOSX.cpp PROPERTIES COMPILE_FLAGS "-x objective-c++")
