@@ -4,6 +4,8 @@ NOW=`date -R`
 #VER=`git describe | sed "s/\([0-9]*\)\.\([0-9]*\)-\([0-9]*\)-.*/\1.\2.\3/"`
 VER=`cat VERSION`
 TANO_EXPORT_BRANDING="-DBRANDING=${CUSTOM}"
+[ -z "${DEBDIST:-}" ] && DEBDIST="unstable"
+[ -z "${DEBSUFFIX:-}" ] && DEBSUFFIX=""
 
 build() 
 {
@@ -15,9 +17,9 @@ build()
 
         export TANO_EXPORT_BRANDING
 
-        echo >${CHANGELOG} "`echo ${CUSTOM} | awk '{print tolower($0)}'` (${VER}-${BUILD}) unstable; urgency=low"
+        echo >${CHANGELOG} "`echo ${CUSTOM} | awk '{print tolower($0)}'` (${VER}-${BUILD}${DEBSUFFIX}) ${DEBDIST}; urgency=low"
     else
-        echo >${CHANGELOG} "tano (${VER}-${BUILD}) unstable; urgency=low"
+        echo >${CHANGELOG} "tano (${VER}-${BUILD}${DEBSUFFIX}) ${DEBDIST}; urgency=low"
     fi
 
     echo >>${CHANGELOG}

@@ -2,7 +2,7 @@ Source: tano
 Section: misc
 Priority: extra
 Maintainer: Tadej Novak <tadej@tano.si>
-Build-Depends: debhelper (>= 7), cmake (>=2.6), libqt4-dev (>=4.8.0), libvlc-qt-dev (>=0.8.90), libx11-dev
+Build-Depends: debhelper (>= 7), cmake (>=2.6), libqt4-dev (>=4.8.0), libvlc-qt-dev (>=0.9), libx11-dev
 Standards-Version: 3.9.1
 Homepage: http://projects.tano.si
 
@@ -27,7 +27,7 @@ Description: Tano - an open-source cross-platform IP TV player
 
 Package: libtanowidgets0
 Architecture: any
-Depends: ${misc:Depends}, libtanocore0 (= ${binary:Version}), libvlc-qt-widgets0 (>=0.8.90)
+Depends: ${misc:Depends}, libtanocore0 (= ${binary:Version}), libvlc-qt-widgets1 (>=0.9)
 Description: Tano - an open-source cross-platform IP TV player
  Tano is an open-source cross-platform IP TV player. It features
  full IP TV playback with EPG and recorder. Project started
