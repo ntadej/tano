@@ -52,9 +52,9 @@ void XmltvSql::clean()
 
     QSqlQuery q = query();
     q.exec("DELETE FROM `programmes`"
-           "WHERE `start` < " + time.toString(Tano::Xmltv::dateFormat()));
+           "WHERE `start` < " + QString::number(time.toTime_t()));
     q.exec("DELETE FROM `crew`"
-           "WHERE `start` < " + time.toString(Tano::Xmltv::dateFormat()));
+           "WHERE `start` < " + QString::number(time.toTime_t()));
 }
 
 void XmltvSql::close()
@@ -281,7 +281,7 @@ QList<XmltvProgramme *> XmltvSql::programmes(const QString &channel)
 XmltvProgramme *XmltvSql::programmeCurrent(const QString &id)
 {
     QSqlQuery q = query();
-    q.exec("SELECT * FROM `programmes` WHERE `channel` = '" + id + "' AND `stop` > '" + QDateTime::currentDateTime().toString(Tano::Xmltv::dateFormat()) + "' ORDER BY `start`");
+    q.exec("SELECT * FROM `programmes` WHERE `channel` = '" + id + "' AND `stop` > " + QString::number(QDateTime::currentDateTime().toTime_t()) + " ORDER BY `start`");
     if (q.next()) {
         return programme(q.value(0).toString());
     }
@@ -296,7 +296,7 @@ QStringList XmltvSql::programmeCurrentDisplay(const QString &id)
     int c = 0;
 
     QSqlQuery q = query();
-    q.exec("SELECT * FROM `programmes` WHERE `channel` = '" + id + "' AND `stop` > '" + QDateTime::currentDateTime().toTime_t() + "' ORDER BY `start`");
+    q.exec("SELECT * FROM `programmes` WHERE `channel` = '" + id + "' AND `stop` > " + QString::number(QDateTime::currentDateTime().toTime_t()) + " ORDER BY `start`");
     while (q.next() && c < 2) {
         epg << output.arg(q.value(0).toString(), QDateTime::fromTime_t(q.value(4).toInt()).toString(Tano::Xmltv::timeFormatDisplay()), q.value(1).toString());
         c++;
