@@ -106,11 +106,6 @@ SET(Tano_Qt5_ImageFormats
     ${QT_PLUGINS_DIR}/imageformats/qgif.dll
     ${QT_PLUGINS_DIR}/imageformats/qico.dll
     ${QT_PLUGINS_DIR}/imageformats/qjpeg.dll
-    ${QT_PLUGINS_DIR}/imageformats/qmng.dll
-    ${QT_PLUGINS_DIR}/imageformats/qsvg.dll
-    ${QT_PLUGINS_DIR}/imageformats/qtga.dll
-    ${QT_PLUGINS_DIR}/imageformats/qtiff.dll
-    ${QT_PLUGINS_DIR}/imageformats/qwbmp.dll
 )
 
 SET(Tano_Qt4_Sql
