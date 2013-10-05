@@ -71,6 +71,7 @@ Notifications::Notifications(QSystemTrayIcon *trayicon,
     // check if users OS has support for NSUserNotification
     if (NotificationsOSX::instance()->hasNotificationCenterSupport()) {
         _mode = OSXNotificationCenter;
+        NotificationsOSX::instance()->init();
     } else {
         // Check if Growl is installed (based on Qt's tray icon implementation)
         CFURLRef cfurl;

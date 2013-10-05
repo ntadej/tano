@@ -28,6 +28,7 @@ class NotificationsOSX : public QObject
 {
 Q_OBJECT
 public:
+    void init();
     void showNotification(const QString &title,
                           const QString &text);
 
