@@ -48,9 +48,8 @@ MediaPlayer::MediaPlayer(Arguments *arguments,
     _videoWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     _mediaPlayer->setVideoWidget(_videoWidget);
 
-    // TODO: settings
-    _audioController = new VlcControlAudio(_mediaPlayer, "", this); //_defaultAudioLanguage, this);
-    _videoController = new VlcControlVideo(_mediaPlayer, "", this); //_defaultSubtitleLanguage, this);
+    _audioController = new VlcControlAudio(_mediaPlayer, "", this);
+    _videoController = new VlcControlVideo(_mediaPlayer, "", this);
 
     _videoWidget->setMediaPlayer(_mediaPlayer);
     _videoWidget->setStyleSheet("background-color: rgb(0,0,0);");
@@ -147,6 +146,7 @@ void MediaPlayer::createSettingsStartup()
     _sessionAutoplayEnabled = settings->sessionAutoplay();
     _sessionVolume = settings->sessionVolume();
     _sessionChannel = settings->sessionChannel();
+    _sessionGui = settings->rememberGuiSession();
 
     _teletext = settings->teletext();
 }
@@ -172,11 +172,10 @@ void MediaPlayer::startSession()
         playLocal(_arguments->value(Argument::File));
     else if (!_arguments->value(Argument::File).isEmpty())
         playUrl(_arguments->value(Argument::Url));
-    // TODO: session
-    /*else if (!_arguments->value(Argument::Channel).isEmpty())
-        ui->playlistWidget->channelSelected(_arguments->value(Argument::Channel).toInt());
+    else if (!_arguments->value(Argument::Channel).isEmpty())
+        emit sessionChannel(_arguments->value(Argument::Channel).toInt());
     else
-        ui->playlistWidget->channelSelected(_sessionChannel);*/
+        emit sessionChannel(_sessionChannel);
 
     _startTimer->stop();
 }
@@ -193,13 +192,12 @@ void MediaPlayer::writeSession()
     if (_sessionAutoplayEnabled)
         settings->setSessionChannel(_osd->lcd()->value());
 
-    // TODO: remember gui
-    /*if (_rememberGui) {
-        settings->setWidth(size().width());
-        settings->setHeight(size().height());
-        settings->setPosX(x());
-        settings->setPosY(y());
-    }*/
+    if (_sessionGui) {
+        settings->setWidth(parentWidget()->size().width());
+        settings->setHeight(parentWidget()->size().height());
+        settings->setPosX(parentWidget()->x());
+        settings->setPosY(parentWidget()->y());
+    }
 
     settings->writeSettings();
 

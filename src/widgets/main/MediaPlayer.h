@@ -48,6 +48,7 @@ public:
 signals:
     void stateChanged(const Vlc::State &);
     void vout(int count);
+    void sessionChannel(int);
     
 public slots:
     void openFile();
@@ -111,6 +112,7 @@ private:
     bool _sessionVolumeEnabled;
     bool _sessionAutoplayEnabled;
     int _sessionVolume;
+    bool _sessionGui;
     bool _teletext;
     bool _videoSettings;
     bool _videoSettingsChannel;

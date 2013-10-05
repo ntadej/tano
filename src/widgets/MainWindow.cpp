@@ -478,6 +478,7 @@ void MainWindow::createConnections()
 
     connect(_mediaPlayer, SIGNAL(stateChanged(Vlc::State)), this, SLOT(setState(Vlc::State)));
     connect(_mediaPlayer, SIGNAL(vout(int)), this, SLOT(showVideo(int)));
+    connect(_mediaPlayer, SIGNAL(sessionChannel(int)), _playlistTab->playlist(), SLOT(channelSelected(int)));
 
     connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(showRecorder()));
     connect(ui->actionRecordNow, SIGNAL(toggled(bool)), this, SLOT(recordNow(bool)));
