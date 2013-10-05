@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/info">
-        <file>AUTHORS</file>
         <file>CHANGELOG</file>
         <file>LICENSE.GPL</file>
         <file>VERSION</file>
