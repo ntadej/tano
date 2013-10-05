@@ -6,7 +6,7 @@ because of a need of a simple IP TV player on Linux providing EPG.
 Now after more than three years of development, Tano reached its
 stable release.
 
-Tano runs on Linux and Windows,
+Tano runs on Linux, OS X and Windows,
 other operating systems are currently not supported.
 Playlists and other copyright material are not provided.
 
@@ -24,7 +24,7 @@ Dependencies
 - g++, make
 - cmake >= 2.8.9
 - Qt >= 4.8
-- libvlc-qt >= 0.8.0
+- libvlc-qt >= 0.9.0
 
 
 Compilation

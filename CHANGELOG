@@ -1,6 +1,10 @@
 2.0 (git)
-  * Initial Raspberry Pi (QML) support
+  * New modern user interface
+  * OS X support
   * Store XMLTV information in a database
+
+1.99.1 (2013-10-05)
+  * Beta 1 release for Tano 2.0
 
 1.2.1 (2013-02-08)
   * Updated Czech and Ukrainian translation
