@@ -57,7 +57,7 @@ TanoApplication::TanoApplication(int argc,
       _arguments(new Arguments(argc, argv))
 {
 #ifdef Q_OS_MAC
-    id cls = objc_getClass("NSApplication");
+    id cls = (id)objc_getClass("NSApplication");
     SEL sharedApplication = sel_registerName("sharedApplication");
     id appInst = objc_msgSend(cls, sharedApplication);
 

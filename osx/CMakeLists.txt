@@ -39,12 +39,8 @@ SET(Tano_VlcQt_Libs
     ${LIBVLCQT_LIB_DIR}/libvlc-qt.dylib
 )
 
-SET(Tano_Vlc_Libs
-    ${LIBVLCQT_LIB_DIR}/libvlc.dylib
-    ${LIBVLCQT_LIB_DIR}/libvlc.5.dylib
-    ${LIBVLCQT_LIB_DIR}/libvlccore.dylib
-    ${LIBVLCQT_LIB_DIR}/libvlccore.5.dylib
-)
+FILE(GLOB Tano_Vlc_Libs ${LIBVLCQT_LIB_DIR}/libvlc.*)
+FILE(GLOB Tano_VlcCore_Libs ${LIBVLCQT_LIB_DIR}/libvlccore.*)
 
 FILE(GLOB Tano_Vlc_Plugins ${LIBVLCQT_DIR}/plugins/*.dylib)
 
@@ -61,6 +57,7 @@ IF(NOT STATIC)
     INSTALL(FILES ${Tano_VlcQt_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_LIB_DIR}")
 ENDIF(NOT STATIC)
 INSTALL(FILES ${Tano_Vlc_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_LIB_DIR}")
+INSTALL(FILES ${Tano_VlcCore_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_LIB_DIR}")
 
 INSTALL(FILES ${Tano_Vlc_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_BIN_DIR}/plugins")
 

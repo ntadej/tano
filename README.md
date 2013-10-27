@@ -21,10 +21,19 @@ You can download Tano from the official web page
 
 Dependencies
 ------------
+Common:
 - g++, make
 - cmake >= 2.8.9
-- Qt >= 4.8
 - libvlc-qt >= 0.9.0
+
+Linux:
+- Qt >= 4.8
+
+OS X:
+- Qt >= 5.2
+
+Windows:
+- Qt >= 5.1
 
 
 Compilation

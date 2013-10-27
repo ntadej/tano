@@ -22,10 +22,6 @@
 #include <QDebug>
 #include <QUrl>
 
-#ifdef Q_OS_MAC
-    #include <qmacfunctions.h>
-#endif
-
 #if defined(Qt5)
     #include <QtWidgets/QDesktopWidget>
     #include <QtWidgets/QLCDNumber>
@@ -513,7 +509,7 @@ void MainWindow::createMenus()
     _rightMenu->addAction(ui->actionExit);
 
 #ifdef Q_OS_MAC
-    QtMacExtras::setDockMenu(_rightMenu);
+    _rightMenu->setAsDockMenu();
 
     ui->actionAbout->setMenuRole(QAction::AboutRole);
     ui->actionAboutQt->setMenuRole(QAction::AboutQtRole);
