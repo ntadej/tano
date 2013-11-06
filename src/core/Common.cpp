@@ -19,10 +19,11 @@
 #include <QtCore/QCryptographicHash>
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
-#include <QtNetwork/QNetworkInterface>
 
 #if defined(Q_OS_MAC)
     #include "platform/OSX.h"
+#elif defined(Q_OS_WIN32)
+    #include "platform/Windows.h"
 #endif
 
 #include "Config.h"
@@ -98,12 +99,7 @@ QString Tano::uid()
 #elif defined(Q_OS_MAC)
     QString uid = Tano::OSX::uuid();
 #else
-    QString uid("error");
-    foreach (QNetworkInterface netInterface, QNetworkInterface::allInterfaces()) {
-        // Return only the first non-loopback MAC Address
-        if (!(netInterface.flags() & QNetworkInterface::IsLoopBack))
-            uid = netInterface.hardwareAddress();
-    }
+    QString uid = Tano::Windows::machineGuid();
 #endif
 
     return QString(QCryptographicHash::hash(uid.toLocal8Bit(), QCryptographicHash::Md5).toHex());

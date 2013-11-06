@@ -28,6 +28,8 @@ namespace Tano
         // Windows specific
         void pauseConsole();
         void showConsole();
+
+        QString machineGuid();
     }
 }
 
