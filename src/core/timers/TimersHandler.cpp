@@ -63,13 +63,9 @@ bool TimersHandler::endElement(const QString & /* namespaceURI */,
         if (_timer) {
             _timer->setName(_currentText);
         }
-    } else if (qName == "channel") {
+    } else if (qName == "channelId") {
         if (_timer) {
-            _timer->setChannel(_currentText);
-        }
-    } else if (qName == "url") {
-        if (_timer) {
-            _timer->setUrl(_currentText);
+            _timer->setChannelId(_currentText);
         }
     } else if (qName == "file") {
         if (_timer) {

@@ -28,7 +28,6 @@ class Channel;
 class PlaylistModel;
 class Timer;
 class TimersModel;
-class NetworkUdpxy;
 class XmltvProgramme;
 
 namespace Ui {
@@ -67,7 +66,6 @@ private:
     Timer *_currentTimer;
 
     TimersModel *_model;
-    NetworkUdpxy *_udpxy;
 };
 
 #endif // TANO_RECORDERNEWDIALOG_H_

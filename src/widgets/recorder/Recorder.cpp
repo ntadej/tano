@@ -30,6 +30,9 @@
     #include <QtGui/QVBoxLayout>
 #endif
 
+#include "core/network/NetworkUdpxy.h"
+#include "core/playlist/PlaylistModel.h"
+#include "core/playlist/containers/Channel.h"
 #include "core/settings/Settings.h"
 #include "core/timers/TimersTimeManager.h"
 #include "core/timers/containers/Timer.h"
@@ -54,6 +57,7 @@ Recorder::Recorder(QWidget *parent)
     _core = new RecorderCore(this);
     _manager = new TimersTimeManager(this);
     _model = new TimersModel(this);
+    _udpxy = new NetworkUdpxy();
 
     _manager->setTimersModel(_model);
 
@@ -103,6 +107,8 @@ void Recorder::createSettings()
     _directory = settings->recorderDirectory();
 
     _core->setDefaultOutputPath(_directory);
+
+    _udpxy->createSettings();
 }
 
 void Recorder::currentWidget(QWidget *widget)
@@ -115,10 +121,9 @@ bool Recorder::isRecording() const
     return _core->isRecording();
 }
 
-Timer *Recorder::newInstantTimer(const QString &channel,
-                                 const QString &url)
+Timer *Recorder::newInstantTimer(Channel *channel)
 {
-    Timer *timer = _model->createTimer(tr("Instant %1").arg(channel), channel, url, Timer::Instant);
+    Timer *timer = _model->createTimer(tr("Instant %1").arg(channel->name()), channel->id(), Timer::Instant);
 
     return timer;
 }
@@ -145,15 +150,24 @@ void Recorder::quickRecord()
 
 void Recorder::recordStart(Timer *timer)
 {
-    if (!QDir(_directory).exists()) {
+    if (timer->channelId().isEmpty()) {
+        QMessageBox::critical(this, tr("Recorder"),
+                              tr("Recording does not have a channel associated!"));
+        delete timer;
+        return;
+    }
+
+    Channel *c = _playlist->find(timer->channelId());
+
+    if (!c) {
+        QMessageBox::critical(this, tr("Recorder"),
+                    tr("Recording does not have a valid channel associated!"));
+        delete timer;
+        return;
+    } else if (!QDir(_directory).exists()) {
         QMessageBox::critical(this, tr("Recorder"),
                     tr("Cannot write to %1.")
                     .arg(_directory));
-        return;
-    } else if (timer->url().isEmpty() || timer->channel().isEmpty()) {
-        QMessageBox::critical(this, tr("Recorder"),
-                    tr("Recording not valid!"));
-        delete timer;
         return;
     }
 
@@ -163,20 +177,20 @@ void Recorder::recordStart(Timer *timer)
         timer->setStartTime(QTime::currentTime());
     }
 
-    _core->record(timer);
+    _core->record(timer, c->name(), _udpxy->processUrl(c->url()));
 
     if (_core->isTimer())
-        _info->start(timer->name(), timer->channel(), timer->endTime().toString("hh:mm"));
+        _info->start(timer->name(), c->name(), timer->endTime().toString("hh:mm"));
     else
-        _info->start(timer->name(), timer->channel());
+        _info->start(timer->name(), c->name());
 
     if (_actionRecord)
         _actionRecord->setEnabled(true);
 
     if (_core->isTimer())
-        notifications->notify(tr("Recording"), tr("Starting %1 on %2 until %3.").arg(timer->name(), timer->channel(), timer->startTime().toString("hh:mm")));
+        notifications->notify(tr("Recording"), tr("Starting %1 on %2 until %3.").arg(timer->name(), c->name(), timer->startTime().toString("hh:mm")));
     else
-        notifications->notify(tr("Recording"), tr("Starting %1 on %2.").arg(timer->name(), timer->channel()));
+        notifications->notify(tr("Recording"), tr("Starting %1 on %2.").arg(timer->name(), c->name()));
 }
 
 
@@ -245,6 +259,7 @@ void Recorder::setMediaInstance(VlcInstance *instance)
 void Recorder::setPlaylistModel(PlaylistModel *model)
 {
     _playlist = model;
+    _info->setPlaylistModel(model);
 }
 
 void Recorder::setWidgets(QAction *action)

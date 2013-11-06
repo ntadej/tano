@@ -43,7 +43,8 @@ public:
     enum Roles {
         DisplayRole = Qt::DisplayRole,
         DecorationRole = Qt::DecorationRole,
-        NameRole = Qt::UserRole + 1,
+        IdRole = Qt::UserRole + 1,
+        NameRole,
         NumberRole,
         TypeRole,
         LanguageRole,
@@ -83,7 +84,7 @@ public:
     ~Channel();
 
     // Implemented virtual functions
-    inline QString id() const { return _url; }
+    QString id() const;
     QVariant data(int role) const;
     QString display() const;
     QPixmap decoration() const;

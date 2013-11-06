@@ -22,14 +22,12 @@
 #include "Timer.h"
 
 Timer::Timer(const QString &name,
-             const QString &channel,
-             const QString &url,
+             const QString &channelId,
              const Type &type,
              QObject *parent)
     : ListItem(parent),
       _name(name),
-      _channel(channel),
-      _url(url),
+      _channelId(channelId),
       _type(type)
 {
     _file = "";
@@ -49,8 +47,7 @@ Timer::Timer(Timer *timer)
     _state = Enabled;
 
     _name = timer->name();
-    _channel = timer->channel();
-    _url = timer->url();
+    _channelId = timer->channelId();
     _date = timer->date();
     _startTime = timer->startTime();
     _endTime = timer->endTime();
@@ -68,8 +65,7 @@ QHash<int, QByteArray> Timer::roleNames() const
     names[DisplayRole] = "display";
     names[DecorationRole] = "decoration";
     names[NameRole] = "name";
-    names[ChannelRole] = "channel";
-    names[UrlRole] = "url";
+    names[ChannelIdRole] = "channelId";
     names[FileRole] = "file";
     names[DateRole] = "date";
     names[StartTimeRole] = "start";
@@ -91,10 +87,8 @@ QVariant Timer::data(int role) const
         return decoration();
     case NameRole:
         return name();
-    case ChannelRole:
-        return channel();
-    case UrlRole:
-        return url();
+    case ChannelIdRole:
+        return channelId();
     case DateRole:
         return date();
     case StartTimeRole:
@@ -116,13 +110,14 @@ QVariant Timer::data(int role) const
 
 QString Timer::display() const
 {
+    // TODO: new display
     if (type() != Once && type() != Instant)
-        return QString("%1 (%2) - %3 - %4 %5 %6, %7")
-            .arg(name(), states()[state()], channel(),
+        return QString("%1 (%2) - %4 %5 %6, %7")
+            .arg(name(), states()[state()],
                  date().toString("dd.M.yyyy"), tr("at"), startTime().toString("hh:mm"), typesLong()[type()]);
     else
-        return QString("%1 (%2) - %3 - %4 %5 %6")
-            .arg(name(), states()[state()], channel(),
+        return QString("%1 (%2) - %4 %5 %6")
+            .arg(name(), states()[state()],
                  date().toString("dd.M.yyyy"), tr("at"), startTime().toString("hh:mm"));
 }
 
@@ -144,18 +139,10 @@ void Timer::setName(const QString &name)
     }
 }
 
-void Timer::setChannel(const QString &channel)
+void Timer::setChannelId(const QString &channelId)
 {
-    if (_channel != channel) {
-        _channel = channel;
-        emit dataChanged();
-    }
-}
-
-void Timer::setUrl(const QString &url)
-{
-    if (_url != url) {
-        _url = url;
+    if (_channelId != channelId) {
+        _channelId = channelId;
         emit dataChanged();
     }
 }

@@ -46,18 +46,20 @@ RecorderCore::~RecorderCore()
     delete _timer;
 }
 
-void RecorderCore::record(Timer *t)
+void RecorderCore::record(Timer *t,
+                          const QString &channelName,
+                          const QString &url)
 {
     stop();
 
-    _outputName = Tano::recordingFileName(t->name(), t->channel(), t->date(), t->startTime());
+    _outputName = Tano::recordingFileName(t->name(), channelName, t->date(), t->startTime());
     _outputPath = _defaultPath;
     _currentEndTime = t->endDateTime();
 
     if (_media)
         delete _media;
 
-    _media = new VlcMedia(t->url(), _instance);
+    _media = new VlcMedia(url, _instance);
     _output = _media->record(_outputName, _outputPath, Vlc::TS);
     t->setFile(_output);
 

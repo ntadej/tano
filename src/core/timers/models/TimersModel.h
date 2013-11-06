@@ -38,8 +38,7 @@ public:
     Timer *takeRow(const int &row);
 
     Timer *createTimer(const QString &name,
-                       const QString &channel,
-                       const QString &url,
+                       const QString &channelId,
                        const Timer::Type &type = Timer::Once);
     void deleteTimer(Timer *timer);
     Timer *duplicateTimer(Timer *timer);

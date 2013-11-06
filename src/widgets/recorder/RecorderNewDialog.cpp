@@ -26,7 +26,6 @@
     #include <QtGui/QWidgetAction>
 #endif
 
-#include "core/network/NetworkUdpxy.h"
 #include "core/playlist/PlaylistModel.h"
 #include "core/playlist/containers/Channel.h"
 #include "core/timers/containers/Timer.h"
@@ -48,9 +47,6 @@ RecorderNewDialog::RecorderNewDialog(bool quick,
     setWindowModality(Qt::WindowModal);
 
     ui->setupUi(this);
-
-    _udpxy = new NetworkUdpxy();
-    _udpxy->createSettings();
 
     _model = timers;
     ui->playlistWidget->setPlaylistModel(playlist);
@@ -103,7 +99,7 @@ Timer *RecorderNewDialog::newTimerFromSchedule(XmltvProgramme *programme)
         return 0;
     }
 
-    Timer *timer = _model->createTimer(programme->title(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
+    Timer *timer = _model->createTimer(programme->title(), _currentChannel->id());
     timer->setState(Timer::Disabled);
     timer->setDate(QDateTime::fromTime_t(programme->start()).date());
     timer->setStartTime(QDateTime::fromTime_t(programme->start()).time());
@@ -130,7 +126,7 @@ void RecorderNewDialog::processFilters()
 
 void RecorderNewDialog::processNewTimer()
 {
-    Timer *timer = _model->createTimer(ui->editName->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()));
+    Timer *timer = _model->createTimer(ui->editName->text(), _currentChannel->id());
     timer->setState(Timer::Disabled);
 
     _currentTimer = timer;
@@ -140,7 +136,7 @@ void RecorderNewDialog::processNewTimer()
 
 void RecorderNewDialog::processQuickRecord()
 {
-    Timer *timer = _model->createTimer(ui->editName->text(), _currentChannel->name(), _udpxy->processUrl(_currentChannel->url()), Timer::Instant);
+    Timer *timer = _model->createTimer(ui->editName->text(), _currentChannel->id(), Timer::Instant);
 
     _currentTimer = timer;
 

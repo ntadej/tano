@@ -27,6 +27,7 @@
     #include <QtGui/QWidget>
 #endif
 
+class PlaylistModel;
 class Timer;
 class TimersFilterModel;
 class TimersModel;
@@ -46,6 +47,7 @@ public:
     void edit(Timer *item);
     bool save();
     void setModel(TimersModel *model);
+    void setPlaylistModel(PlaylistModel *model);
 
 protected:
     void changeEvent(QEvent *e);
@@ -58,6 +60,8 @@ private:
     Timer *_currentTimer;
     TimersFilterModel *_validateModel;
     TimersModel *_modelCore;
+
+    PlaylistModel *_playlist;
 };
 
 #endif // TANO_RECORDERTIMERSEDITOR_H_

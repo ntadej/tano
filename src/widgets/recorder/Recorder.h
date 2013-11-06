@@ -25,6 +25,8 @@
 
 #include "style/MiniSplitter.h"
 
+class Channel;
+class NetworkUdpxy;
 class PlaylistModel;
 class RecorderCore;
 class RecorderInfoWidget;
@@ -45,8 +47,7 @@ public:
     void createSettings();
     QString directory() const { return _directory; }
     bool isRecording() const;
-    Timer *newInstantTimer(const QString &channel,
-                           const QString &url);
+    Timer *newInstantTimer(Channel *channel);
 
     void setMediaInstance(VlcInstance *instance);
     void setPlaylistModel(PlaylistModel *model);
@@ -86,6 +87,7 @@ private:
     TimersTimeManager *_manager;
     TimersModel *_model;
     PlaylistModel *_playlist;
+    NetworkUdpxy *_udpxy;
 };
 
 #endif // TANO_RECORDER_H_

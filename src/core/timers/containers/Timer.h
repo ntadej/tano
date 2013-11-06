@@ -35,8 +35,7 @@ public:
         DisplayRole = Qt::DisplayRole,
         DecorationRole = Qt::DecorationRole,
         NameRole = Qt::UserRole + 1,
-        ChannelRole,
-        UrlRole,
+        ChannelIdRole,
         FileRole,
         DateRole,
         StartTimeRole,
@@ -68,8 +67,7 @@ public:
     };
 
     explicit Timer(const QString &name,
-                   const QString &channel,
-                   const QString &url,
+                   const QString &channelId,
                    const Type &type = Once,
                    QObject *parent = 0);
     explicit Timer(Timer *timer);
@@ -84,10 +82,8 @@ public:
 
     inline QString name() const { return _name; }
     void setName(const QString &name);
-    inline QString channel() const { return _channel; }
-    void setChannel(const QString &channel);
-    inline QString url() const { return _url; }
-    void setUrl(const QString &url);
+    inline QString channelId() const { return _channelId; }
+    void setChannelId(const QString &channelId);
     inline QString file() const { return _file; }
     void setFile(const QString &file);
     inline QDate date() const { return _date; }
@@ -109,8 +105,7 @@ public:
 
 private:
     QString _name;
-    QString _channel;
-    QString _url;
+    QString _channelId;
     QString _file;
     QDate _date;
     QTime _startTime;

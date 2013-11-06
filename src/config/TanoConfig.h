@@ -40,6 +40,7 @@ public:
     QString downloadUrl() const;
 
     bool requiresAuthentication() const;
+    bool recorderIdUrl() const;
     bool editorEnabled() const;
 
     QVariantMap defaultSettings() const { return QVariantMap(); }

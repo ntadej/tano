@@ -23,6 +23,7 @@
 
 class QLabel;
 
+class PlaylistModel;
 class Timer;
 class TimersModel;
 
@@ -39,6 +40,7 @@ public:
 
     void setAction(QAction *action);
     void setModel(TimersModel *model);
+    void setPlaylistModel(PlaylistModel *model);
     void start(const QString &name,
                const QString &channel,
                const QString &end = 0);
@@ -72,6 +74,7 @@ private:
     QLabel *_labelInfo;
 
     Timer *_currentTimer;
+    PlaylistModel *_playlist;
 };
 
 #endif // TANO_RECORDERINFOWIDGET_H_

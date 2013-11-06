@@ -61,6 +61,11 @@ bool TanoConfig::requiresAuthentication() const
     return false;
 }
 
+bool TanoConfig::recorderIdUrl() const
+{
+    return true;
+}
+
 bool TanoConfig::editorEnabled() const
 {
     return true;

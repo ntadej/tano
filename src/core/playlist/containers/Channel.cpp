@@ -19,6 +19,7 @@
 #include <QtGui/QIcon>
 
 #include "Channel.h"
+#include "plugins/Plugins.h"
 
 Channel::Channel(QObject *parent)
     : ListItem(parent) { }
@@ -44,6 +45,7 @@ Channel::~Channel() { }
 QHash<int, QByteArray> Channel::roleNames() const
 {
     QHash<int, QByteArray> names;
+    names[IdRole] = "id";
     names[DisplayRole] = "display";
     names[DecorationRole] = "decoration";
     names[NameRole] = "name";
@@ -56,6 +58,14 @@ QHash<int, QByteArray> Channel::roleNames() const
     names[LogoRole] = "logo";
     names[ProtectedRole] = "protected";
     return names;
+}
+
+QString Channel::id() const
+{
+    if (globalConfig && globalConfig->recorderIdUrl())
+        return url();
+    else
+        return QString::number(number());
 }
 
 QVariant Channel::data(int role) const

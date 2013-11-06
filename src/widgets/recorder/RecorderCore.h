@@ -45,7 +45,9 @@ public:
     void stop();
 
 public slots:
-    void record(Timer *t);
+    void record(Timer *t,
+                const QString &channelName,
+                const QString &url);
 
 signals:
     void elapsed(int );

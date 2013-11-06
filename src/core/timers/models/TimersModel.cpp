@@ -49,11 +49,10 @@ Timer *TimersModel::takeRow(const int &row)
 }
 
 Timer *TimersModel::createTimer(const QString &name,
-                                const QString &channel,
-                                const QString &url,
+                                const QString &channelId,
                                 const Timer::Type &type)
 {
-    Timer *newTimer = new Timer(name, channel, url, type, this);
+    Timer *newTimer = new Timer(name, channelId, type, this);
     appendRow(newTimer);
 
     return newTimer;

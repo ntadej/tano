@@ -938,7 +938,7 @@ void MainWindow::recordNow(bool start)
 
         _mediaPlayer->recordNowStop();
     } else {
-        _recording = _recorder->newInstantTimer(_channel->name(), _channel->url());
+        _recording = _recorder->newInstantTimer(_channel);
         _recording->setDate(QDate::currentDate());
         _recording->setStartTime(QTime::currentTime());
         _recording->setState(Timer::Recording);
