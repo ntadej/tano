@@ -389,8 +389,6 @@ void PlaylistEditor::scan(bool status)
 
 void PlaylistEditor::mapXmltv()
 {
-    ui->editXmltvId->setItemText(ui->editXmltvId->count() - 1, tr("Other"));
-
     QString newId;
     QString id = ui->playlist->currentChannel()->xmltvId();
     QString name = ui->playlist->currentChannel()->name();
