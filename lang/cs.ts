@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="cs">
+<TS version="2.1" language="cs">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -293,6 +293,14 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <message>
         <source>Show Info</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Instant</source>
+        <translation type="unfinished">Okamžitý</translation>
     </message>
 </context>
 <context>
@@ -602,7 +610,7 @@ Zkuste to, prosím, znovu.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>O programu</translation>
+        <translation type="vanished">O programu</translation>
     </message>
     <message>
         <source>New playlist</source>
@@ -614,7 +622,7 @@ Zkuste to, prosím, znovu.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Nastavení</translation>
+        <translation type="vanished">Nastavení</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
@@ -622,7 +630,7 @@ Zkuste to, prosím, znovu.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Update Information</source>
-        <translation>Informace o aktualizacích</translation>
+        <translation type="vanished">Informace o aktualizacích</translation>
     </message>
     <message>
         <source>Cannot read file %1:
@@ -1589,7 +1597,7 @@ Ztratíte všechny neuložené změny.</translation>
     </message>
     <message>
         <source>Recording not valid!</source>
-        <translation>Záznam není platný!</translation>
+        <translation type="vanished">Záznam není platný!</translation>
     </message>
     <message>
         <source>File cannot be removed.
@@ -1599,7 +1607,31 @@ Již jste jej přesunul nebo smazal?</translation>
     </message>
     <message>
         <source>Recordings and timers</source>
-        <translation>Nahrávky a časovače</translation>
+        <translation type="vanished">Nahrávky a časovače</translation>
+    </message>
+    <message>
+        <source>Instant %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording does not have a channel associated!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording does not have a valid channel associated!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation type="unfinished">Nahrávání</translation>
+    </message>
+    <message>
+        <source>Starting %1 on %2 until %3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting %1 on %2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1630,7 +1662,7 @@ Již jste jej přesunul nebo smazal?</translation>
     </message>
     <message>
         <source>Output:</source>
-        <translation>Výstup:</translation>
+        <translation type="vanished">Výstup:</translation>
     </message>
     <message>
         <source>Channel:</source>
@@ -1658,7 +1690,7 @@ Již jste jej přesunul nebo smazal?</translation>
     </message>
     <message>
         <source>File:</source>
-        <translation>Soubor:</translation>
+        <translation type="vanished">Soubor:</translation>
     </message>
     <message>
         <source>at</source>
@@ -1680,18 +1712,26 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation>Stav</translation>
+        <translation type="vanished">Stav</translation>
     </message>
     <message>
         <source>Edit timer</source>
         <translation>Upravit časovač</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation type="unfinished">Zrušit</translation>
+    </message>
+    <message>
+        <source>Recording information</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RecorderNewDialog</name>
     <message>
         <source>Quick record</source>
-        <translation>Rychlý záznam</translation>
+        <translation type="vanished">Rychlý záznam</translation>
     </message>
     <message>
         <source>Selected channel:</source>
@@ -1707,15 +1747,15 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Zpět</translation>
+        <translation type="vanished">Zpět</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Přidat časovač</translation>
+        <translation type="vanished">Přidat časovač</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation>Název časovače:</translation>
+        <translation type="vanished">Název časovače:</translation>
     </message>
     <message>
         <source>Add new timer</source>
@@ -1727,7 +1767,7 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation>Vyberte, prosím, program.</translation>
+        <translation type="vanished">Vyberte, prosím, program.</translation>
     </message>
     <message>
         <source>You don&apos;t have this channel in your playlist.</source>
@@ -1739,7 +1779,96 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation>Hledat a filtrovat</translation>
+        <translation type="vanished">Hledat a filtrovat</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RecorderTimersEditor</name>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Časovače</translation>
+    </message>
+    <message>
+        <source>Date:</source>
+        <translation type="unfinished">Datum:</translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished">Jednou</translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation type="unfinished">Denně</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished">Týdně</translation>
+    </message>
+    <message>
+        <source>Weekdays</source>
+        <translation type="unfinished">Každý všední den</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Typ:</translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished">Program:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Název:</translation>
+    </message>
+    <message>
+        <source>dd. MM. yyyy</source>
+        <translation type="unfinished">dd.mm.rrrr</translation>
+    </message>
+    <message>
+        <source>Enabled:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished">Konec:</translation>
+    </message>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished">Začátek:</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The recording start date is before today.
+Your changes will not be saved.</source>
+        <translation type="unfinished">Počáteční datum nahrávání je před dneškem.
+Vaše změny nebudou uloženy.</translation>
+    </message>
+    <message>
+        <source>The recording is overlaping with others.
+Your changes will not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RecorderTimersWidget</name>
+    <message>
+        <source>Quick</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1964,11 +2093,11 @@ Tuto operaci nelze vrátit zpět.</translation>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation>Přepnout informační prvek</translation>
+        <translation type="vanished">Přepnout informační prvek</translation>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation>Přepnout ovládací prvek</translation>
+        <translation type="vanished">Přepnout ovládací prvek</translation>
     </message>
     <message>
         <source>Mute</source>
@@ -2300,75 +2429,75 @@ Tuto operaci nelze vrátit zpět.</translation>
     <name>TimersDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation>Smazat</translation>
+        <translation type="vanished">Smazat</translation>
     </message>
 </context>
 <context>
     <name>TimersEditorWidget</name>
     <message>
         <source>Timers</source>
-        <translation>Časovače</translation>
+        <translation type="vanished">Časovače</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Název:</translation>
+        <translation type="vanished">Název:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation>Program:</translation>
+        <translation type="vanished">Program:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Typ:</translation>
+        <translation type="vanished">Typ:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation>Jednou</translation>
+        <translation type="vanished">Jednou</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation>Denně</translation>
+        <translation type="vanished">Denně</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation>Týdně</translation>
+        <translation type="vanished">Týdně</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation>Každý všední den</translation>
+        <translation type="vanished">Každý všední den</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Adresa (URL):</translation>
+        <translation type="vanished">Adresa (URL):</translation>
     </message>
     <message>
         <source>dd. MM. yyyy</source>
-        <translation>dd.mm.rrrr</translation>
+        <translation type="vanished">dd.mm.rrrr</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation>Datum:</translation>
+        <translation type="vanished">Datum:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation>Začátek:</translation>
+        <translation type="vanished">Začátek:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation>Konec:</translation>
+        <translation type="vanished">Konec:</translation>
     </message>
     <message>
         <source>Disable:</source>
-        <translation>Vypnout:</translation>
+        <translation type="vanished">Vypnout:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Nahrávání</translation>
+        <translation type="vanished">Nahrávání</translation>
     </message>
     <message>
         <source>The recording start date is before today.
 Your changes will not be saved.</source>
-        <translation>Počáteční datum nahrávání je před dneškem.
+        <translation type="vanished">Počáteční datum nahrávání je před dneškem.
 Vaše změny nebudou uloženy.</translation>
     </message>
 </context>
@@ -2376,38 +2505,38 @@ Vaše změny nebudou uloženy.</translation>
     <name>TimersModel</name>
     <message>
         <source>at</source>
-        <translation>na</translation>
+        <translation type="vanished">na</translation>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
     <message>
         <source>Playing:</source>
-        <translation>Přehrává se:</translation>
+        <translation type="vanished">Přehrává se:</translation>
     </message>
     <message>
         <source>Recording:</source>
-        <translation>Nahrává se:</translation>
+        <translation type="vanished">Nahrává se:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Nahrávač</translation>
+        <translation type="vanished">Nahrávač</translation>
     </message>
     <message>
         <source>Recording stopped.</source>
-        <translation>Nahrávání zastaveno.</translation>
+        <translation type="vanished">Nahrávání zastaveno.</translation>
     </message>
     <message>
         <source>Recording %1 to %2 
 Stop manually!</source>
-        <translation>Nahrává se %1 do
+        <translation type="vanished">Nahrává se %1 do
 %2
 Zastavit ručně!</translation>
     </message>
     <message>
         <source>Recording %1 to %2 
 End time: %3</source>
-        <translation>Nahrává se %1 do
+        <translation type="vanished">Nahrává se %1 do
 %2
 Čas konce: %3</translation>
     </message>

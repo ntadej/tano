@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ru">
+<TS version="2.1" language="ru">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -275,6 +275,14 @@ This will stop recording in progress.</source>
     <message>
         <source>Show Info</source>
         <translation type="unfinished">Информация о канале</translation>
+    </message>
+    <message>
+        <source>Edit playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Instant</source>
+        <translation type="unfinished">Текущий</translation>
     </message>
 </context>
 <context>
@@ -584,7 +592,7 @@ Please, try again.&lt;/b&gt;</source>
     </message>
     <message>
         <source>About</source>
-        <translation>О программе</translation>
+        <translation type="vanished">О программе</translation>
     </message>
     <message>
         <source>New playlist</source>
@@ -596,7 +604,7 @@ Please, try again.&lt;/b&gt;</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Настройки</translation>
+        <translation type="vanished">Настройки</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
@@ -604,7 +612,7 @@ Please, try again.&lt;/b&gt;</source>
     </message>
     <message>
         <source>Update Information</source>
-        <translation>Информация об обновлении</translation>
+        <translation type="vanished">Информация об обновлении</translation>
     </message>
     <message>
         <source>Cannot read file %1:
@@ -1570,7 +1578,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Recording not valid!</source>
-        <translation>Запись невозможна!</translation>
+        <translation type="vanished">Запись невозможна!</translation>
     </message>
     <message>
         <source>File cannot be removed.
@@ -1580,7 +1588,31 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>Recordings and timers</source>
-        <translation>Записи и таймеры</translation>
+        <translation type="vanished">Записи и таймеры</translation>
+    </message>
+    <message>
+        <source>Instant %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording does not have a channel associated!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording does not have a valid channel associated!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation type="unfinished">Записывается</translation>
+    </message>
+    <message>
+        <source>Starting %1 on %2 until %3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting %1 on %2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1611,7 +1643,7 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>Output:</source>
-        <translation>Вывод:</translation>
+        <translation type="vanished">Вывод:</translation>
     </message>
     <message>
         <source>Channel:</source>
@@ -1639,7 +1671,7 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>File:</source>
-        <translation>Файл:</translation>
+        <translation type="vanished">Файл:</translation>
     </message>
     <message>
         <source>at</source>
@@ -1661,18 +1693,26 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Status</source>
-        <translation>Состояние</translation>
+        <translation type="vanished">Состояние</translation>
     </message>
     <message>
         <source>Edit timer</source>
         <translation>Изменить таймер</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording information</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RecorderNewDialog</name>
     <message>
         <source>Quick record</source>
-        <translation>Быстрая запись</translation>
+        <translation type="vanished">Быстрая запись</translation>
     </message>
     <message>
         <source>Selected channel:</source>
@@ -1688,15 +1728,15 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Back</source>
-        <translation>Назад</translation>
+        <translation type="vanished">Назад</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Добавить таймер</translation>
+        <translation type="vanished">Добавить таймер</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation>Имя таймера:</translation>
+        <translation type="vanished">Имя таймера:</translation>
     </message>
     <message>
         <source>Add new timer</source>
@@ -1708,7 +1748,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation>Пожалуйста, выберите канал.</translation>
+        <translation type="vanished">Пожалуйста, выберите канал.</translation>
     </message>
     <message>
         <source>You don&apos;t have this channel in your playlist.</source>
@@ -1720,7 +1760,96 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation>Поиск и фильтр</translation>
+        <translation type="vanished">Поиск и фильтр</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RecorderTimersEditor</name>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Таймеры</translation>
+    </message>
+    <message>
+        <source>Date:</source>
+        <translation type="unfinished">Дата:</translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished">Однократно</translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation type="unfinished">Ежедневно</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished">Еженедельно</translation>
+    </message>
+    <message>
+        <source>Weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Тип:</translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished">Канал:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Название:</translation>
+    </message>
+    <message>
+        <source>dd. MM. yyyy</source>
+        <translation type="unfinished">дд. ММ. гггг</translation>
+    </message>
+    <message>
+        <source>Enabled:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished">Начало:</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The recording start date is before today.
+Your changes will not be saved.</source>
+        <translation type="unfinished">Дата начала записи раньше чем сегодня.
+Изменения не будут сохранены.</translation>
+    </message>
+    <message>
+        <source>The recording is overlaping with others.
+Your changes will not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RecorderTimersWidget</name>
+    <message>
+        <source>Quick</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1945,11 +2074,11 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation>Вкл./выкл. инфопанель</translation>
+        <translation type="vanished">Вкл./выкл. инфопанель</translation>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation>Вкл./выкл. виджет управления</translation>
+        <translation type="vanished">Вкл./выкл. виджет управления</translation>
     </message>
     <message>
         <source>Mute</source>
@@ -2281,75 +2410,75 @@ This operation is ireversible.</source>
     <name>TimersDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation>Сбросить</translation>
+        <translation type="vanished">Сбросить</translation>
     </message>
 </context>
 <context>
     <name>TimersEditorWidget</name>
     <message>
         <source>Timers</source>
-        <translation>Таймеры</translation>
+        <translation type="vanished">Таймеры</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Название:</translation>
+        <translation type="vanished">Название:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation>Канал:</translation>
+        <translation type="vanished">Канал:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Тип:</translation>
+        <translation type="vanished">Тип:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation>Однократно</translation>
+        <translation type="vanished">Однократно</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation>Ежедневно</translation>
+        <translation type="vanished">Ежедневно</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation>Еженедельно</translation>
+        <translation type="vanished">Еженедельно</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation>По будням</translation>
+        <translation type="vanished">По будням</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Url:</translation>
+        <translation type="vanished">Url:</translation>
     </message>
     <message>
         <source>dd. MM. yyyy</source>
-        <translation>дд. ММ. гггг</translation>
+        <translation type="vanished">дд. ММ. гггг</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation>Дата:</translation>
+        <translation type="vanished">Дата:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation>Начало:</translation>
+        <translation type="vanished">Начало:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation>Конец:</translation>
+        <translation type="vanished">Конец:</translation>
     </message>
     <message>
         <source>Disable:</source>
-        <translation>Отключить:</translation>
+        <translation type="vanished">Отключить:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Рекордер</translation>
+        <translation type="vanished">Рекордер</translation>
     </message>
     <message>
         <source>The recording start date is before today.
 Your changes will not be saved.</source>
-        <translation>Дата начала записи раньше чем сегодня.
+        <translation type="vanished">Дата начала записи раньше чем сегодня.
 Изменения не будут сохранены.</translation>
     </message>
 </context>
@@ -2357,37 +2486,37 @@ Your changes will not be saved.</source>
     <name>TimersModel</name>
     <message>
         <source>at</source>
-        <translation type="unfinished">у</translation>
+        <translation type="obsolete">у</translation>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
     <message>
         <source>Playing:</source>
-        <translation>Воспроизведение:</translation>
+        <translation type="vanished">Воспроизведение:</translation>
     </message>
     <message>
         <source>Recording:</source>
-        <translation>Запись:</translation>
+        <translation type="vanished">Запись:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Рекордер</translation>
+        <translation type="vanished">Рекордер</translation>
     </message>
     <message>
         <source>Recording stopped.</source>
-        <translation>Запись оставновлена.</translation>
+        <translation type="vanished">Запись оставновлена.</translation>
     </message>
     <message>
         <source>Recording %1 to %2 
 Stop manually!</source>
-        <translation>Запись %1 в %2 
+        <translation type="vanished">Запись %1 в %2 
 Остановка вручную!</translation>
     </message>
     <message>
         <source>Recording %1 to %2 
 End time: %3</source>
-        <translation>Запись %1 в %2 
+        <translation type="vanished">Запись %1 в %2 
 Время окончания: %3</translation>
     </message>
 </context>

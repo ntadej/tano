@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0">
+<TS version="2.1">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -244,6 +244,14 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Show Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Instant</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -550,10 +558,6 @@ Please, try again.&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>New playlist</source>
         <translation type="unfinished"></translation>
     </message>
@@ -562,15 +566,7 @@ Please, try again.&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>XMLTV IDs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Update Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1529,16 +1525,32 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Recording not valid!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>File cannot be removed.
 Have you already moved or deleted it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Recordings and timers</source>
+        <source>Instant %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording does not have a channel associated!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording does not have a valid channel associated!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting %1 on %2 until %3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting %1 on %2.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1569,10 +1581,6 @@ Have you already moved or deleted it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Output:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Channel:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1597,10 +1605,6 @@ Have you already moved or deleted it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>File:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>at</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1618,20 +1622,20 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Status</source>
+        <source>Edit timer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit timer</source>
+        <source>Discard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording information</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RecorderNewDialog</name>
-    <message>
-        <source>Quick record</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Selected channel:</source>
         <translation type="unfinished"></translation>
@@ -1645,27 +1649,11 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Back</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add timer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Timer name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Add new timer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please, select a channel.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1677,7 +1665,91 @@ This operation is ireversible.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Search and filter</source>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RecorderTimersEditor</name>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Date:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Weekdays</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>dd. MM. yyyy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabled:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The recording start date is before today.
+Your changes will not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The recording is overlaping with others.
+Your changes will not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RecorderTimersWidget</name>
+    <message>
+        <source>Quick</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1899,14 +1971,6 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Toggle Info Widget</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Toggle Controls Widget</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2232,117 +2296,6 @@ This operation is ireversible.</source>
     <name>Timer</name>
     <message>
         <source>at</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>TimersDisplayWidget</name>
-    <message>
-        <source>Clear</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>TimersEditorWidget</name>
-    <message>
-        <source>Timers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Channel:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Once</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Daily</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Weekly</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Weekdays</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Url:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>dd. MM. yyyy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Date:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Start time:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>End time:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Disable:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The recording start date is before today.
-Your changes will not be saved.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>TimersModel</name>
-    <message>
-        <source>at</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>TrayIcon</name>
-    <message>
-        <source>Playing:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recording:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recording stopped.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recording %1 to %2 
-Stop manually!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recording %1 to %2 
-End time: %3</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

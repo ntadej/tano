@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ast">
+<TS version="2.1" language="ast">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -270,6 +270,14 @@ This will stop recording in progress.</source>
     <message>
         <source>Show Info</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit playlist</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Instant</source>
+        <translation type="unfinished">Nel intre</translation>
     </message>
 </context>
 <context>
@@ -577,7 +585,7 @@ Please, try again.&lt;/b&gt;</source>
     </message>
     <message>
         <source>About</source>
-        <translation>Alrodiu</translation>
+        <translation type="vanished">Alrodiu</translation>
     </message>
     <message>
         <source>New playlist</source>
@@ -589,7 +597,7 @@ Please, try again.&lt;/b&gt;</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Axustes</translation>
+        <translation type="vanished">Axustes</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
@@ -597,7 +605,7 @@ Please, try again.&lt;/b&gt;</source>
     </message>
     <message>
         <source>Update Information</source>
-        <translation>Anovar información</translation>
+        <translation type="vanished">Anovar información</translation>
     </message>
     <message>
         <source>Cannot read file %1:
@@ -1562,7 +1570,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Recording not valid!</source>
-        <translation>¡La grabación nun ye válida!</translation>
+        <translation type="vanished">¡La grabación nun ye válida!</translation>
     </message>
     <message>
         <source>File cannot be removed.
@@ -1572,7 +1580,31 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>Recordings and timers</source>
-        <translation>Grabaciones ya temporizadores</translation>
+        <translation type="vanished">Grabaciones ya temporizadores</translation>
+    </message>
+    <message>
+        <source>Instant %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording does not have a channel associated!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording does not have a valid channel associated!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation type="unfinished">Grabando</translation>
+    </message>
+    <message>
+        <source>Starting %1 on %2 until %3.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting %1 on %2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1603,7 +1635,7 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>Output:</source>
-        <translation>Salida:</translation>
+        <translation type="vanished">Salida:</translation>
     </message>
     <message>
         <source>Channel:</source>
@@ -1631,7 +1663,7 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>File:</source>
-        <translation>Ficheru:</translation>
+        <translation type="vanished">Ficheru:</translation>
     </message>
     <message>
         <source>at</source>
@@ -1653,18 +1685,26 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation>Estáu</translation>
+        <translation type="vanished">Estáu</translation>
     </message>
     <message>
         <source>Edit timer</source>
         <translation>Editar temporizador</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recording information</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RecorderNewDialog</name>
     <message>
         <source>Quick record</source>
-        <translation>Grabación rápida</translation>
+        <translation type="vanished">Grabación rápida</translation>
     </message>
     <message>
         <source>Selected channel:</source>
@@ -1680,15 +1720,15 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Tornar</translation>
+        <translation type="vanished">Tornar</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Añader temporizador</translation>
+        <translation type="vanished">Añader temporizador</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation>Viesu&apos;l temporizador:</translation>
+        <translation type="vanished">Viesu&apos;l temporizador:</translation>
     </message>
     <message>
         <source>Add new timer</source>
@@ -1700,7 +1740,7 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation>Por favor, esbilla una canal.</translation>
+        <translation type="vanished">Por favor, esbilla una canal.</translation>
     </message>
     <message>
         <source>You don&apos;t have this channel in your playlist.</source>
@@ -1712,7 +1752,96 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation>Guetar ya filtrar</translation>
+        <translation type="vanished">Guetar ya filtrar</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RecorderTimersEditor</name>
+    <message>
+        <source>Timers</source>
+        <translation type="unfinished">Temporizadores</translation>
+    </message>
+    <message>
+        <source>Date:</source>
+        <translation type="unfinished">Data:</translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation type="unfinished">Una vegada</translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation type="unfinished">Caldía</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation type="unfinished">Selmanalmente</translation>
+    </message>
+    <message>
+        <source>Weekdays</source>
+        <translation type="unfinished">Díes de la selmana</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="unfinished">Canal:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Viesu:</translation>
+    </message>
+    <message>
+        <source>dd. MM. yyyy</source>
+        <translation type="unfinished">dd. MM. aaaa</translation>
+    </message>
+    <message>
+        <source>Enabled:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Start time:</source>
+        <translation type="unfinished">Tiempu d&apos;entamu:</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Grabador</translation>
+    </message>
+    <message>
+        <source>The recording start date is before today.
+Your changes will not be saved.</source>
+        <translation type="unfinished">La grabación entama nuna data que ye enantes de güei.
+Les tos camudancies nun sedrán atroxaes.</translation>
+    </message>
+    <message>
+        <source>The recording is overlaping with others.
+Your changes will not be saved.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RecorderTimersWidget</name>
+    <message>
+        <source>Quick</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Grabador</translation>
     </message>
 </context>
 <context>
@@ -1934,14 +2063,6 @@ Esta operación nun pue desfacese.</translation>
     <message>
         <source>Fullscreen</source>
         <translation>Pantalla completa</translation>
-    </message>
-    <message>
-        <source>Toggle Info Widget</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Toggle Controls Widget</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Mute</source>
@@ -2273,75 +2394,75 @@ Esta operación nun pue desfacese.</translation>
     <name>TimersDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation>Llimpiar</translation>
+        <translation type="vanished">Llimpiar</translation>
     </message>
 </context>
 <context>
     <name>TimersEditorWidget</name>
     <message>
         <source>Timers</source>
-        <translation>Temporizadores</translation>
+        <translation type="vanished">Temporizadores</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Viesu:</translation>
+        <translation type="vanished">Viesu:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation>Canal:</translation>
+        <translation type="vanished">Canal:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tipu:</translation>
+        <translation type="vanished">Tipu:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation>Una vegada</translation>
+        <translation type="vanished">Una vegada</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation>Caldía</translation>
+        <translation type="vanished">Caldía</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation>Selmanalmente</translation>
+        <translation type="vanished">Selmanalmente</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation>Díes de la selmana</translation>
+        <translation type="vanished">Díes de la selmana</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Enllaz:</translation>
+        <translation type="vanished">Enllaz:</translation>
     </message>
     <message>
         <source>dd. MM. yyyy</source>
-        <translation>dd. MM. aaaa</translation>
+        <translation type="vanished">dd. MM. aaaa</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation>Data:</translation>
+        <translation type="vanished">Data:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation>Tiempu d&apos;entamu:</translation>
+        <translation type="vanished">Tiempu d&apos;entamu:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation>Tiempu de fináu:</translation>
+        <translation type="vanished">Tiempu de fináu:</translation>
     </message>
     <message>
         <source>Disable:</source>
-        <translation>Deshabilitar:</translation>
+        <translation type="vanished">Deshabilitar:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Grabador</translation>
+        <translation type="vanished">Grabador</translation>
     </message>
     <message>
         <source>The recording start date is before today.
 Your changes will not be saved.</source>
-        <translation>La grabación entama nuna data que ye enantes de güei.
+        <translation type="vanished">La grabación entama nuna data que ye enantes de güei.
 Les tos camudancies nun sedrán atroxaes.</translation>
     </message>
 </context>
@@ -2349,36 +2470,22 @@ Les tos camudancies nun sedrán atroxaes.</translation>
     <name>TimersModel</name>
     <message>
         <source>at</source>
-        <translation type="unfinished">a les</translation>
+        <translation type="obsolete">a les</translation>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
     <message>
         <source>Playing:</source>
-        <translation>Entamando:</translation>
+        <translation type="vanished">Entamando:</translation>
     </message>
     <message>
         <source>Recording:</source>
-        <translation>Grabando:</translation>
+        <translation type="vanished">Grabando:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Grabador</translation>
-    </message>
-    <message>
-        <source>Recording stopped.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recording %1 to %2 
-Stop manually!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Recording %1 to %2 
-End time: %3</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Grabador</translation>
     </message>
 </context>
 <context>

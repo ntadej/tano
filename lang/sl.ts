@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="sl">
+<TS version="2.1" language="sl">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -292,6 +292,14 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <source>Show Info</source>
         <translation>Info o oddaji</translation>
+    </message>
+    <message>
+        <source>Edit playlist</source>
+        <translation>Uredi seznam programov</translation>
+    </message>
+    <message>
+        <source>Instant</source>
+        <translation>Instantno</translation>
     </message>
 </context>
 <context>
@@ -601,7 +609,7 @@ Poskusite znova.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>O urejevalniku</translation>
+        <translation type="vanished">O urejevalniku</translation>
     </message>
     <message>
         <source>New playlist</source>
@@ -613,7 +621,7 @@ Poskusite znova.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Nastavitve</translation>
+        <translation type="vanished">Nastavitve</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
@@ -621,7 +629,7 @@ Poskusite znova.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Update Information</source>
-        <translation>Informacije o posodobitvah</translation>
+        <translation type="vanished">Informacije o posodobitvah</translation>
     </message>
     <message>
         <source>Cannot read file %1:
@@ -1587,7 +1595,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Recording not valid!</source>
-        <translation>Snemanje ni veljavno!</translation>
+        <translation type="vanished">Snemanje ni veljavno!</translation>
     </message>
     <message>
         <source>File cannot be removed.
@@ -1597,7 +1605,31 @@ Ste mogoče datoteko že premaknili ali izbrisali?</translation>
     </message>
     <message>
         <source>Recordings and timers</source>
-        <translation>Posnetki in časovniki</translation>
+        <translation type="vanished">Posnetki in časovniki</translation>
+    </message>
+    <message>
+        <source>Instant %1</source>
+        <translation>Instantno %1</translation>
+    </message>
+    <message>
+        <source>Recording does not have a channel associated!</source>
+        <translation>Posnetek nima povezanega programa!</translation>
+    </message>
+    <message>
+        <source>Recording does not have a valid channel associated!</source>
+        <translation>Posnetek nima povezanega veljavnega programa!</translation>
+    </message>
+    <message>
+        <source>Recording</source>
+        <translation>Snemanje</translation>
+    </message>
+    <message>
+        <source>Starting %1 on %2 until %3.</source>
+        <translation>Snemanje %1 na %2 do %3.</translation>
+    </message>
+    <message>
+        <source>Starting %1 on %2.</source>
+        <translation>Snemanje %1 na %2.</translation>
     </message>
 </context>
 <context>
@@ -1628,7 +1660,7 @@ Ste mogoče datoteko že premaknili ali izbrisali?</translation>
     </message>
     <message>
         <source>Output:</source>
-        <translation>Izhod:</translation>
+        <translation type="vanished">Izhod:</translation>
     </message>
     <message>
         <source>Channel:</source>
@@ -1656,7 +1688,7 @@ Ste mogoče datoteko že premaknili ali izbrisali?</translation>
     </message>
     <message>
         <source>File:</source>
-        <translation>Datoteka:</translation>
+        <translation type="vanished">Datoteka:</translation>
     </message>
     <message>
         <source>at</source>
@@ -1678,18 +1710,26 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation>Status</translation>
+        <translation type="vanished">Status</translation>
     </message>
     <message>
         <source>Edit timer</source>
         <translation>Uredi časovnik</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation>Zavrzi</translation>
+    </message>
+    <message>
+        <source>Recording information</source>
+        <translation>Informacije o posnetku</translation>
     </message>
 </context>
 <context>
     <name>RecorderNewDialog</name>
     <message>
         <source>Quick record</source>
-        <translation>Hitro snemanje</translation>
+        <translation type="vanished">Hitro snemanje</translation>
     </message>
     <message>
         <source>Selected channel:</source>
@@ -1705,15 +1745,15 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Nazaj</translation>
+        <translation type="vanished">Nazaj</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Dodaj časovnik</translation>
+        <translation type="vanished">Dodaj časovnik</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation>Ime časovnika:</translation>
+        <translation type="vanished">Ime časovnika:</translation>
     </message>
     <message>
         <source>Add new timer</source>
@@ -1725,7 +1765,7 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation>Prosim, izberite program.</translation>
+        <translation type="vanished">Prosim, izberite program.</translation>
     </message>
     <message>
         <source>You don&apos;t have this channel in your playlist.</source>
@@ -1737,7 +1777,97 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation>Išči in filtriraj</translation>
+        <translation type="vanished">Išči in filtriraj</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation>Prekliči</translation>
+    </message>
+</context>
+<context>
+    <name>RecorderTimersEditor</name>
+    <message>
+        <source>Timers</source>
+        <translation>Časovniki</translation>
+    </message>
+    <message>
+        <source>Date:</source>
+        <translation>Datum:</translation>
+    </message>
+    <message>
+        <source>Once</source>
+        <translation>Enkratno</translation>
+    </message>
+    <message>
+        <source>Daily</source>
+        <translation>Dnevno</translation>
+    </message>
+    <message>
+        <source>Weekly</source>
+        <translation>Tedensko</translation>
+    </message>
+    <message>
+        <source>Weekdays</source>
+        <translation>Med tednom</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Tip:</translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation>Program:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Ime:</translation>
+    </message>
+    <message>
+        <source>dd. MM. yyyy</source>
+        <translation>dd. MM. yyyy</translation>
+    </message>
+    <message>
+        <source>Enabled:</source>
+        <translation>Omogočen:</translation>
+    </message>
+    <message>
+        <source>End time:</source>
+        <translation>Konec:</translation>
+    </message>
+    <message>
+        <source>Start time:</source>
+        <translation>Začetek:</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation>Snemalnik</translation>
+    </message>
+    <message>
+        <source>The recording start date is before today.
+Your changes will not be saved.</source>
+        <translation>Datum snemanja je nastavljen pred današnjim dnem.
+Vaše nastavitve ne bodo shranjene.</translation>
+    </message>
+    <message>
+        <source>The recording is overlaping with others.
+Your changes will not be saved.</source>
+        <translation>Časovnik se prekriva z ostalimi.
+Vaše nastavitve ne bodo shranjene.</translation>
+    </message>
+</context>
+<context>
+    <name>RecorderTimersWidget</name>
+    <message>
+        <source>Quick</source>
+        <translation>Hitro</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation>Nov</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation>Snemalnik</translation>
     </message>
 </context>
 <context>
@@ -1962,11 +2092,11 @@ Te operacije ni mogoče razveljaviti.</translation>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation>Preklopi Info pult</translation>
+        <translation type="vanished">Preklopi Info pult</translation>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation>Preklopi upravljalni pult</translation>
+        <translation type="vanished">Preklopi upravljalni pult</translation>
     </message>
     <message>
         <source>Mute</source>
@@ -2298,75 +2428,75 @@ Te operacije ni mogoče razveljaviti.</translation>
     <name>TimersDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation>Počisti</translation>
+        <translation type="vanished">Počisti</translation>
     </message>
 </context>
 <context>
     <name>TimersEditorWidget</name>
     <message>
         <source>Timers</source>
-        <translation>Časovniki</translation>
+        <translation type="vanished">Časovniki</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ime:</translation>
+        <translation type="vanished">Ime:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation>Program:</translation>
+        <translation type="vanished">Program:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tip:</translation>
+        <translation type="vanished">Tip:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation>Enkratno</translation>
+        <translation type="vanished">Enkratno</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation>Dnevno</translation>
+        <translation type="vanished">Dnevno</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation>Tedensko</translation>
+        <translation type="vanished">Tedensko</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation>Med tednom</translation>
+        <translation type="vanished">Med tednom</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Naslov:</translation>
+        <translation type="vanished">Naslov:</translation>
     </message>
     <message>
         <source>dd. MM. yyyy</source>
-        <translation>dd. MM. yyyy</translation>
+        <translation type="vanished">dd. MM. yyyy</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation>Datum:</translation>
+        <translation type="vanished">Datum:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation>Začetek:</translation>
+        <translation type="vanished">Začetek:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation>Konec:</translation>
+        <translation type="vanished">Konec:</translation>
     </message>
     <message>
         <source>Disable:</source>
-        <translation>Onemogoči:</translation>
+        <translation type="vanished">Onemogoči:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Snemalnik</translation>
+        <translation type="vanished">Snemalnik</translation>
     </message>
     <message>
         <source>The recording start date is before today.
 Your changes will not be saved.</source>
-        <translation>Datum snemanja je nastavljen pred današnjim dnem.
+        <translation type="vanished">Datum snemanja je nastavljen pred današnjim dnem.
 Vaše nastavitve ne bodo shranjene.</translation>
     </message>
 </context>
@@ -2374,37 +2504,37 @@ Vaše nastavitve ne bodo shranjene.</translation>
     <name>TimersModel</name>
     <message>
         <source>at</source>
-        <translation>ob</translation>
+        <translation type="vanished">ob</translation>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
     <message>
         <source>Playing:</source>
-        <translation>Predvajam:</translation>
+        <translation type="vanished">Predvajam:</translation>
     </message>
     <message>
         <source>Recording:</source>
-        <translation>Snemam:</translation>
+        <translation type="vanished">Snemam:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Snemalnik</translation>
+        <translation type="vanished">Snemalnik</translation>
     </message>
     <message>
         <source>Recording stopped.</source>
-        <translation>Snemanje zaključeno.</translation>
+        <translation type="vanished">Snemanje zaključeno.</translation>
     </message>
     <message>
         <source>Recording %1 to %2 
 Stop manually!</source>
-        <translation>Snemanje %1 v %2 
+        <translation type="vanished">Snemanje %1 v %2 
 Ročno ustavite!</translation>
     </message>
     <message>
         <source>Recording %1 to %2 
 End time: %3</source>
-        <translation>Snemanje %1 v %2 
+        <translation type="vanished">Snemanje %1 v %2 
 Končni čas: %3</translation>
     </message>
 </context>
