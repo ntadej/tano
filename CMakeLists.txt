@@ -191,11 +191,6 @@ ELSE(NOT QT4_FOUND OR QT_VERSION_MAJOR MATCHES 5)
 ENDIF(NOT QT4_FOUND OR QT_VERSION_MAJOR MATCHES 5)
 
 IF(QT5)
-    # QtCreator include fix
-    IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-        INCLUDE_DIRECTORIES(${_qt5Core_install_prefix}/include)
-    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-
     # Add compiler flags for building executables (-fPIE)
     SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${Qt5Widgets_EXECUTABLE_COMPILE_FLAGS}")
 
