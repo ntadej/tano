@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2014 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,26 +24,21 @@ ADD_DEFINITIONS(-DTANO_CORE_LIBRARY)
 # Add definitions for static/shared library
 IF(STATIC)
     ADD_DEFINITIONS(-DQT_STATIC -D_REENTRANT)
-ELSE(STATIC)
+ELSE()
     ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
-ENDIF(STATIC)
+ENDIF()
 
 IF(MINGW OR MSVC)
     CONFIGURE_FILE(
         ${CMAKE_SOURCE_DIR}/src/core/tano-core.rc.in
         ${CMAKE_BINARY_DIR}/src/core/tano-core.rc
     )
-ENDIF(MINGW OR MSVC)
+ENDIF()
 
 
 ###################
 # List of sources #
 ###################
-# Define the QRC source files used by Tano
-SET(Tano_Core_Resrcs
-    ../../info.qrc
-)
-
 # Define the C++ source files used by Tano Core
 SET(Tano_Core_Application_Srcs
     application/Arguments.cpp
@@ -116,19 +111,19 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     SET(Tano_Core_Platform_Srcs
         platform/Linux.cpp
     )
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ENDIF()
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     SET(Tano_Core_Platform_Srcs
         platform/OSX.cpp
     )
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+ENDIF()
 
 IF(MINGW OR MSVC)
     SET(Tano_Core_Platform_Srcs
         platform/Windows.cpp
     )
-ENDIF(MINGW OR MSVC)
+ENDIF()
 
 SET(Tano_Core_Srcs
     Common.cpp
@@ -139,6 +134,8 @@ SET(Tano_Core_Srcs
     UpdateHandler.cpp
 
     CoreSharedExport.h
+
+    ../../info.qrc
 
     ${Tano_Core_Application_Srcs}
     ${Tano_Core_Network_Srcs}
@@ -152,17 +149,6 @@ SET(Tano_Core_Srcs
 )
 
 
-###############
-# Qt settings #
-###############
-# This script runs the resource compiler rcc
-IF(QT5)
-    QT5_ADD_RESOURCES(Tano_Core_Resrcs_Srcs ${Tano_Core_Resrcs})
-ELSE(QT5)
-    QT4_ADD_RESOURCES(Tano_Core_Resrcs_Srcs ${Tano_Core_Resrcs})
-ENDIF(QT5)
-
-
 #####################
 # Compiler settings #
 #####################
@@ -174,7 +160,7 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
     INCLUDE_DIRECTORIES(${COREFOUNDATION_INCLUDE_DIR}/Headers)
     SET_SOURCE_FILES_PROPERTIES(platform/OSX.cpp PROPERTIES COMPILE_FLAGS "-x objective-c++")
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+ENDIF()
 
 # This needs to be added in order for #include to work inside .cpp files
 INCLUDE_DIRECTORIES(
@@ -196,18 +182,18 @@ IF(MINGW)
         WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/core"
     )
     SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_BINARY_DIR}/src/core/tano-core.obj)
-ENDIF(MINGW)
+ENDIF()
 
 IF(MSVC)
     SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_BINARY_DIR}/src/core/tano-core.rc)
-ENDIF(MSVC)
+ENDIF()
 
 # This line tells cmake to create the Tano Core library.
 IF(STATIC)
-    ADD_LIBRARY(${TANO_CORE} STATIC ${Tano_Core_Srcs} ${Tano_Core_Resrcs_Srcs})
-ELSE(STATIC)
-    ADD_LIBRARY(${TANO_CORE} SHARED ${Tano_Core_Srcs} ${Tano_Core_Resrcs_Srcs})
-ENDIF(STATIC)
+    ADD_LIBRARY(${TANO_CORE} STATIC ${Tano_Core_Srcs})
+ELSE()
+    ADD_LIBRARY(${TANO_CORE} SHARED ${Tano_Core_Srcs})
+ENDIF()
 
 # MSVC: Avoid Debug/Release/... subfolders
 IF(MSVC)
@@ -217,24 +203,20 @@ IF(MSVC)
     SET_TARGET_PROPERTIES(${TANO_CORE} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELWITHDUBUGINFO ".")
     SET_TARGET_PROPERTIES(${TANO_CORE} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_MINSIZEREL ".")
     SET_TARGET_PROPERTIES(${TANO_CORE} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_PROFILE ".")
-ENDIF(MSVC)
+ENDIF()
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     SET_TARGET_PROPERTIES(${TANO_CORE} PROPERTIES VERSION ${TANO_VERSION_MAJOR}
                                        SOVERSION "${TANO_VERSION_MAJOR}.${TANO_VERSION_MINOR}"
     )
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ENDIF()
 
 # Here the needed Libraries are added to the link command.
-IF(QT5)
-    QT5_USE_MODULES(${TANO_CORE} Concurrent Gui Network Sql Xml)
-ELSE(QT5)
-    TARGET_LINK_LIBRARIES(${TANO_CORE} ${QT_LIBRARIES})
-ENDIF(QT5)
+TARGET_LINK_LIBRARIES(${TANO_CORE} Qt5::Concurrent Qt5::Gui Qt5::Network Qt5::Sql Qt5::Xml)
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     TARGET_LINK_LIBRARIES(${TANO_CORE} ${COREFOUNDATION_LIBRARY} ${IOKIT_LIBRARY})
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+ENDIF()
 
 
 ################
@@ -245,4 +227,4 @@ IF(NOT STATIC)
             LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_LIB_DIR}
             ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_LIB_DIR}
     )
-ENDIF(NOT STATIC)
+ENDIF()

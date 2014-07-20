@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2014 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ IF(MINGW OR MSVC)
         ${CMAKE_SOURCE_DIR}/src/player/tano.rc.in
         ${CMAKE_BINARY_DIR}/src/player/tano.rc
     )
-ENDIF(MINGW OR MSVC)
+ENDIF()
 
 SET(Tano_Desktop
     ${CMAKE_SOURCE_DIR}/src/player/tano.desktop
@@ -31,13 +31,10 @@ SET(Tano_Logo
     ${CMAKE_SOURCE_DIR}/src/player/tano.png
 )
 
-# Define the QRC source files used by Tano
-SET(Tano_Resrcs
-    ../../data/logo/logo.qrc
-)
-
 SET(Tano_Srcs
     main.cpp
+
+    ../../data/logo/logo.qrc
 )
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
@@ -51,18 +48,7 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
         ${Tano_Iconset}
     )
     SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/player/${PROJECT_NAME}.app/Contents/Resources/${PROJECT_NAME}.icns)
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-
-
-###############
-# Qt settings #
-###############
-# This script runs the resources compiler rcc
-IF(QT5)
-    QT5_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})
-ELSE(QT5)
-    QT4_ADD_RESOURCES(Tano_Resrcs_Srcs ${Tano_Resrcs})
-ENDIF(QT5)
+ENDIF()
 
 
 #####################
@@ -91,14 +77,14 @@ IF(MINGW)
         WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/player"
     )
     SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/player/tano.obj)
-ENDIF(MINGW)
+ENDIF()
 
 IF(MSVC)
     SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/player/tano.rc)
-ENDIF(MSVC)
+ENDIF()
 
 # This line tells cmake to create the Tano program.
-ADD_EXECUTABLE(${PROJECT_NAME} MACOSX_BUNDLE WIN32 ${Tano_Srcs} ${Tano_Resrcs_Srcs})
+ADD_EXECUTABLE(${PROJECT_NAME} MACOSX_BUNDLE WIN32 ${Tano_Srcs})
 ADD_DEPENDENCIES(${PROJECT_NAME} ${TANO_CORE} ${TANO_WIDGETS} ${TANO_CONFIG})
 
 # MSVC: Avoid Debug/Release/... subfolders
@@ -109,35 +95,33 @@ IF(MSVC)
     SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELWITHDUBUGINFO ".")
     SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_MINSIZEREL ".")
     SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_PROFILE ".")
-ENDIF(MSVC)
+ENDIF()
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
    SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES MACOSX_BUNDLE_INFO_PLIST "${CMAKE_BINARY_DIR}/osx/Info.plist")
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+ENDIF()
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
    SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME_LOWER})
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ENDIF()
 
 # Here the needed Libraries are added to the link command.
 IF(STATIC)
     TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${LIBVLC_LIBRARY} ${LIBVLCCORE_LIBRARY})
     TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${LIBVLCQT_LIBRARY} ${LIBVLCQT_WIDGETS_LIBRARY})
-ENDIF(STATIC)
+ENDIF()
 
-IF(QT5)
-    QT5_USE_MODULES(${PROJECT_NAME} Concurrent Gui Network PrintSupport Sql Widgets Xml)
-    TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${TANO_CORE_LIB} ${TANO_WIDGETS_LIB} ${TANO_CONFIG_LIB})
-ELSE(QT5)
-    TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${TANO_CONFIG_LIB} ${TANO_CORE_LIB} ${TANO_WIDGETS_LIB} ${QT_LIBRARIES})
-ENDIF(QT5)
+
+TARGET_LINK_LIBRARIES(${PROJECT_NAME}
+                      Qt5::Concurrent Qt5::Gui Qt5::Network Qt5::PrintSupport Qt5::Sql Qt5::Widgets Qt5::Xml
+                      ${TANO_CORE_LIB} ${TANO_WIDGETS_LIB} ${TANO_CONFIG_LIB})
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT STATIC)
     ADD_CUSTOM_COMMAND(TARGET ${PROJECT_NAME} POST_BUILD COMMAND
         ${CMAKE_INSTALL_NAME_TOOL} -change ${TANO_CORE_LIB} "@loader_path/lib/${LIBSTART}${TANO_CORE}.${LIBEND}" $<TARGET_FILE:${PROJECT_NAME}>)
     ADD_CUSTOM_COMMAND(TARGET ${PROJECT_NAME} POST_BUILD COMMAND
         ${CMAKE_INSTALL_NAME_TOOL} -change ${TANO_WIDGETS_LIB} "@loader_path/lib/${LIBSTART}${TANO_WIDGETS}.${LIBEND}" $<TARGET_FILE:${PROJECT_NAME}>)
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT STATIC)
+ENDIF()
 
 
 ################
@@ -152,4 +136,4 @@ INSTALL(TARGETS ${PROJECT_NAME}
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     INSTALL(FILES ${Tano_Desktop} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
     INSTALL(FILES ${Tano_Logo} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/icons")
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ENDIF()

@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2014 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,27 +24,21 @@ ADD_DEFINITIONS(-DTANO_WIDGETS_LIBRARY)
 # Add definitions for static/style library
 IF(STATIC)
     ADD_DEFINITIONS(-DQT_STATIC -D_REENTRANT)
-ELSE(STATIC)
+ELSE()
     ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
-ENDIF(STATIC)
+ENDIF()
 
 IF(MINGW OR MSVC)
     CONFIGURE_FILE(
         ${CMAKE_SOURCE_DIR}/src/widgets/tano-widgets.rc.in
         ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.rc
     )
-ENDIF(MINGW OR MSVC)
+ENDIF()
 
 
 ###################
 # List of sources #
 ###################
-# Define the QRC source files used by Tano
-SET(Tano_Widgets_Resrcs
-    ../../data/misc/misc.qrc
-    ../../data/style/style.qrc
-)
-
 # Define the UI source files used by Tano Widgets
 SET(Tano_Widgets_UIs
     MainWindow.ui
@@ -84,7 +78,7 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
         application/NotificationsOSX.mm
     )
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+ENDIF()
 SET(Tano_Widgets_Common_Srcs
     common/Backend.cpp
     common/BrowseWidget.cpp
@@ -105,7 +99,7 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
         common/FreedesktopImage.cpp
     )
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ENDIF()
 SET(Tano_Widgets_Dialogs_Srcs
     dialogs/AboutDialog.cpp
     dialogs/PasswordDialog.cpp
@@ -171,6 +165,8 @@ SET(Tano_Widgets_Style_Srcs
 SET(Tano_Widgets_Srcs
     MainWindow.cpp
 
+    ../../data/style/style.qrc
+
     ${Tano_Widgets_Application_Srcs}
     ${Tano_Widgets_Common_Srcs}
     ${Tano_Widgets_Dialogs_Srcs}
@@ -187,13 +183,7 @@ SET(Tano_Widgets_Srcs
 # Qt settings #
 ###############
 # This script runs the user interface compiler uic
-IF(QT5)
-    QT5_WRAP_UI(Tano_Widgets_UIC_Srcs ${Tano_Widgets_UIs})
-    QT5_ADD_RESOURCES(Tano_Widgets_Resrcs_Srcs ${Tano_Widgets_Resrcs})
-ELSE(QT5)
-    QT4_WRAP_UI(Tano_Widgets_UIC_Srcs ${Tano_Widgets_UIs})
-    QT4_ADD_RESOURCES(Tano_Widgets_Resrcs_Srcs ${Tano_Widgets_Resrcs})
-ENDIF(QT5)
+QT5_WRAP_UI(Tano_Widgets_UIC_Srcs ${Tano_Widgets_UIs})
 
 
 #####################
@@ -207,7 +197,7 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
     INCLUDE_DIRECTORIES(${APPLICATIONSERVICES_INCLUDE_DIR}/Headers)
     SET_SOURCE_FILES_PROPERTIES(application/NotificationsOSX.cpp PROPERTIES COMPILE_FLAGS "-x objective-c++")
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+ENDIF()
 
 # This needs to be added in order for #include to work inside .cpp files
 INCLUDE_DIRECTORIES(
@@ -233,18 +223,18 @@ IF(MINGW)
         WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/widgets"
     )
     SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.obj)
-ENDIF(MINGW)
+ENDIF()
 
 IF(MSVC)
     SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.rc)
-ENDIF(MSVC)
+ENDIF()
 
 # This line tells cmake to create the Tano Widgets library.
 IF(STATIC)
-    ADD_LIBRARY(${TANO_WIDGETS} STATIC ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs} ${Tano_Widgets_Resrcs_Srcs})
-ELSE(STATIC)
-    ADD_LIBRARY(${TANO_WIDGETS} SHARED ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs} ${Tano_Widgets_Resrcs_Srcs})
-ENDIF(STATIC)
+    ADD_LIBRARY(${TANO_WIDGETS} STATIC ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs})
+ELSE()
+    ADD_LIBRARY(${TANO_WIDGETS} SHARED ${Tano_Widgets_Srcs} ${Tano_Widgets_UIC_Srcs})
+ENDIF()
 ADD_DEPENDENCIES(${TANO_WIDGETS} ${TANO_CORE})
 
 # MSVC: Avoid Debug/Release/... subfolders
@@ -255,31 +245,24 @@ IF(MSVC)
     SET_TARGET_PROPERTIES(${TANO_WIDGETS} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_RELWITHDUBUGINFO ".")
     SET_TARGET_PROPERTIES(${TANO_WIDGETS} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_MINSIZEREL ".")
     SET_TARGET_PROPERTIES(${TANO_WIDGETS} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_PROFILE ".")
-ENDIF(MSVC)
+ENDIF()
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     SET_TARGET_PROPERTIES(${TANO_WIDGETS} PROPERTIES VERSION ${TANO_VERSION_MAJOR}
                                           SOVERSION "${TANO_VERSION_MAJOR}.${TANO_VERSION_MINOR}"
     )
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+ENDIF()
 
 # Here the needed Libraries are added to the link command.
-IF(QT5)
-    QT5_USE_MODULES(${TANO_WIDGETS} Network PrintSupport Sql Widgets Xml)
-    IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-        QT5_USE_MODULES(${TANO_WIDGETS} MacExtras)
-    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-        QT5_USE_MODULES(${TANO_WIDGETS} DBus)
-    ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${TANO_CORE_LIB} ${LIBVLCQT_LIBRARY} ${LIBVLCQT_WIDGETS_LIBRARY})
-ELSE(QT5)
-    TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${QT_LIBRARIES} ${TANO_CORE_LIB} ${LIBVLCQT_LIBRARY} ${LIBVLCQT_WIDGETS_LIBRARY})
-ENDIF(QT5)
+TARGET_LINK_LIBRARIES(${TANO_WIDGETS} Qt5::Network Qt5::PrintSupport Qt5::Sql Qt5::Widgets Qt5::Xml)
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    TARGET_LINK_LIBRARIES(${TANO_WIDGETS} DBus)
+ENDIF()
+TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${TANO_CORE_LIB} ${LIBVLCQT_LIBRARY} ${LIBVLCQT_WIDGETS_LIBRARY})
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${APPLICATIONSERVICES_LIBRARY} ${COCOA_LIBRARY})
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+ENDIF()
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT STATIC)
     ADD_CUSTOM_COMMAND(TARGET ${TANO_WIDGETS} POST_BUILD COMMAND
@@ -288,7 +271,7 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT STATIC)
         ${CMAKE_INSTALL_NAME_TOOL} -change "libvlc-qt.dylib" "@loader_path/../lib/libvlc-qt.dylib" $<TARGET_FILE:${TANO_WIDGETS}>)
     ADD_CUSTOM_COMMAND(TARGET ${TANO_WIDGETS} POST_BUILD COMMAND
         ${CMAKE_INSTALL_NAME_TOOL} -change "libvlc-qt-widgets.dylib" "@loader_path/../lib/libvlc-qt-widgets.dylib" $<TARGET_FILE:${TANO_WIDGETS}>)
-ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin" AND NOT STATIC)
+ENDIF()
 
 ################
 # Installation #
@@ -298,4 +281,4 @@ IF(NOT STATIC)
             LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_LIB_DIR}
             ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_LIB_DIR}
     )
-ENDIF(NOT STATIC)
+ENDIF()

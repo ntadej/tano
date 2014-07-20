@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2014 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,8 +21,8 @@ MACRO(INSTALL_VLC_PLUGINS)
     FOREACH(type ${ARGN})
         FILE(GLOB Vlc_Plugins ${LIBVLCQT_BIN_DIR}/plugins/${type}/*.dll)
         INSTALL(FILES ${Vlc_Plugins} DESTINATION "${CMAKE_INSTALL_PREFIX}/plugins/${type}")
-    ENDFOREACH(type)
-ENDMACRO(INSTALL_VLC_PLUGINS)
+    ENDFOREACH()
+ENDMACRO()
 
 SET(Tano_Vlc_Plugin_Types
     3dnow
@@ -51,19 +51,11 @@ SET(Tano_Vlc_Plugin_Types
 
 IF(MINGW)
     STRING(REGEX REPLACE "bin/gcc.exe" "bin" MINGW_BIN_DIR "${CMAKE_C_COMPILER}")
-ENDIF(MINGW)
+ENDIF()
 
 STRING(REGEX REPLACE "bin" "plugins" QT_PLUGINS_DIR "${QT_BIN_DIR}")
 STRING(REGEX REPLACE "\\\\" "/" LIBVLCQT_INCLUDE_DIR "${LIBVLCQT_INCLUDE_DIR}")
 STRING(REGEX REPLACE "include" "bin" LIBVLCQT_BIN_DIR "${LIBVLCQT_INCLUDE_DIR}")
-
-SET(Tano_Qt4_Libs
-    ${QT_BIN_DIR}/QtCore4.dll
-    ${QT_BIN_DIR}/QtGui4.dll
-    ${QT_BIN_DIR}/QtNetwork4.dll
-    ${QT_BIN_DIR}/QtSql4.dll
-    ${QT_BIN_DIR}/QtXml4.dll
-)
 
 SET(Tano_Qt5_Libs
     ${QT_BIN_DIR}/Qt5Core.dll
@@ -92,25 +84,10 @@ SET(Tano_Qt5_Platforms
     ${QT_PLUGINS_DIR}/platforms/qwindows.dll
 )
 
-SET(Tano_Qt4_ImageFormats
-    ${QT_PLUGINS_DIR}/imageformats/qgif4.dll
-    ${QT_PLUGINS_DIR}/imageformats/qico4.dll
-    ${QT_PLUGINS_DIR}/imageformats/qjpeg4.dll
-    ${QT_PLUGINS_DIR}/imageformats/qmng4.dll
-    ${QT_PLUGINS_DIR}/imageformats/qsvg4.dll
-    ${QT_PLUGINS_DIR}/imageformats/qtga4.dll
-    ${QT_PLUGINS_DIR}/imageformats/qtiff4.dll
-)
-
 SET(Tano_Qt5_ImageFormats
     ${QT_PLUGINS_DIR}/imageformats/qgif.dll
     ${QT_PLUGINS_DIR}/imageformats/qico.dll
     ${QT_PLUGINS_DIR}/imageformats/qjpeg.dll
-)
-
-SET(Tano_Qt4_Sql
-    ${QT_PLUGINS_DIR}/sqldrivers/qsqlite4.dll
-    ${QT_PLUGINS_DIR}/sqldrivers/qsqlodbc4.dll
 )
 
 SET(Tano_Qt5_Sql
@@ -123,12 +100,12 @@ IF(MSVC)
         ${LIBVLCQT_BIN_DIR}/vlc-qt.dll
         ${LIBVLCQT_BIN_DIR}/vlc-qt-widgets.dll
     )
-ELSE(MSVC)
+ELSE()
     SET(Tano_VlcQt_Libs
         ${LIBVLCQT_BIN_DIR}/libvlc-qt.dll
         ${LIBVLCQT_BIN_DIR}/libvlc-qt-widgets.dll
     )
-ENDIF(MSVC)
+ENDIF()
 
 SET(Tano_Vlc_Libs
     ${LIBVLCQT_BIN_DIR}/libvlc.dll
@@ -139,18 +116,12 @@ SET(Tano_Vlc_Libs
 ################
 # Installation #
 ################
-IF(QT5)
-    INSTALL(FILES ${Tano_Qt5_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}")
-    INSTALL(FILES ${Tano_Qt5_Libs_Icu} DESTINATION "${CMAKE_INSTALL_PREFIX}")
-    INSTALL(FILES ${Tano_Qt5_Libs_D3D} DESTINATION "${CMAKE_INSTALL_PREFIX}")
-    INSTALL(FILES ${Tano_Qt5_ImageFormats} DESTINATION "${CMAKE_INSTALL_PREFIX}/imageformats")
-    INSTALL(FILES ${Tano_Qt5_Platforms} DESTINATION "${CMAKE_INSTALL_PREFIX}/platforms")
-    INSTALL(FILES ${Tano_Qt5_Sql} DESTINATION "${CMAKE_INSTALL_PREFIX}/sqldrivers")
-ELSE(QT5)
-    INSTALL(FILES ${Tano_Qt4_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}")
-    INSTALL(FILES ${Tano_Qt4_ImageFormats} DESTINATION "${CMAKE_INSTALL_PREFIX}/imageformats")
-    INSTALL(FILES ${Tano_Qt4_Sql} DESTINATION "${CMAKE_INSTALL_PREFIX}/sqldrivers")
-ENDIF(QT5)
+INSTALL(FILES ${Tano_Qt5_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}")
+INSTALL(FILES ${Tano_Qt5_Libs_Icu} DESTINATION "${CMAKE_INSTALL_PREFIX}")
+INSTALL(FILES ${Tano_Qt5_Libs_D3D} DESTINATION "${CMAKE_INSTALL_PREFIX}")
+INSTALL(FILES ${Tano_Qt5_ImageFormats} DESTINATION "${CMAKE_INSTALL_PREFIX}/imageformats")
+INSTALL(FILES ${Tano_Qt5_Platforms} DESTINATION "${CMAKE_INSTALL_PREFIX}/platforms")
+INSTALL(FILES ${Tano_Qt5_Sql} DESTINATION "${CMAKE_INSTALL_PREFIX}/sqldrivers")
 
 INSTALL(FILES ${Tano_VlcQt_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}")
 INSTALL(FILES ${Tano_Vlc_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}")

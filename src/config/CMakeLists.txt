@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2014 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -46,6 +46,7 @@ INCLUDE_DIRECTORIES(
 
 # This line tells cmake to create the Tano Config library.
 ADD_LIBRARY(${TANO_CONFIG} STATIC ${Tano_Config_Srcs})
+TARGET_LINK_LIBRARIES(${TANO_CONFIG} Qt5::Core)
 
 # MSVC: Avoid Debug/Release/... subfolders
 IF(MSVC)
@@ -56,8 +57,3 @@ IF(MSVC)
     SET_TARGET_PROPERTIES(${TANO_CONFIG} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_MINSIZEREL ".")
     SET_TARGET_PROPERTIES(${TANO_CONFIG} PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_PROFILE ".")
 ENDIF(MSVC)
-
-# Here the needed Libraries are added to the link command.
-IF(QT5)
-    QT5_USE_MODULES(${TANO_CONFIG} Core)
-ENDIF(QT5)
