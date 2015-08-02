@@ -19,7 +19,7 @@
 #ifndef TANO_MENUDEINTERLACING_H_
 #define TANO_MENUDEINTERLACING_H_
 
-#include <vlc-qt/WidgetVideo.h>
+#include <VLCQtWidgets/WidgetVideo.h>
 
 #include "menu/MenuCore.h"
 

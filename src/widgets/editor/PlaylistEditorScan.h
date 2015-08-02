@@ -25,7 +25,7 @@
     #include <QtGui/QWidget>
 #endif
 
-#include <vlc-qt/Enums.h>
+#include <VLCQtCore/Enums.h>
 
 class PlaylistModel;
 class VlcInstance;

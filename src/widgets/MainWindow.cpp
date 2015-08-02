@@ -38,7 +38,7 @@
     #include <QtGui/QWidgetAction>
 #endif
 
-#include <vlc-qt/WidgetVideo.h>
+#include <VLCQtWidgets/WidgetVideo.h>
 
 #include "Config.h"
 

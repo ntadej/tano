@@ -3,16 +3,16 @@
 #include <QLCDNumber>
 #include <QVBoxLayout>
 
-#include <vlc-qt/Common.h>
-#include <vlc-qt/Config.h>
-#include <vlc-qt/Instance.h>
-#include <vlc-qt/Media.h>
-#include <vlc-qt/MediaPlayer.h>
-#include <vlc-qt/Video.h>
+#include <VLCQtCore/Common.h>
+#include <VLCQtCore/Config.h>
+#include <VLCQtCore/Instance.h>
+#include <VLCQtCore/Media.h>
+#include <VLCQtCore/MediaPlayer.h>
+#include <VLCQtCore/Video.h>
 
-#include <vlc-qt/ControlAudio.h>
-#include <vlc-qt/ControlVideo.h>
-#include <vlc-qt/WidgetVideo.h>
+#include <VLCQtWidgets/ControlAudio.h>
+#include <VLCQtWidgets/ControlVideo.h>
+#include <VLCQtWidgets/WidgetVideo.h>
 
 #include "core/application/Arguments.h"
 #include "core/settings/Settings.h"

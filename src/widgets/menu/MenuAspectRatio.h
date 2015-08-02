@@ -19,7 +19,7 @@
 #ifndef TANO_MENUASPECTRATIO_H_
 #define TANO_MENUASPECTRATIO_H_
 
-#include <vlc-qt/WidgetVideo.h>
+#include <VLCQtWidgets/WidgetVideo.h>
 
 #include "menu/MenuCore.h"
 

@@ -20,6 +20,8 @@
 #include <QtCore/QDir>
 #include <QtCore/QTextCodec>
 
+#include <VLCQtCore/Common.h>
+
 #include "core/Common.h"
 #include "core/Resources.h"
 #include "core/application/Arguments.h"
@@ -115,6 +117,8 @@ bool TanoApplication::preInit(int argc,
 bool TanoApplication::postInit()
 {
     Output::welcome();
+
+    VlcCommon::setPluginPath(qApp->applicationDirPath() + "/plugins");
 
     if (_arguments->isValid()) {
         Tano::Style::setMainStyle();

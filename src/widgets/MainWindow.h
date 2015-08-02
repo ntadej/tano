@@ -28,7 +28,7 @@
     #include <QtGui/QMainWindow>
 #endif
 
-#include <vlc-qt/Enums.h>
+#include <VLCQtCore/Enums.h>
 
 #include "WidgetsSharedExport.h"
 

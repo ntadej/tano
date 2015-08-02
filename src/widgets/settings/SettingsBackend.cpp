@@ -21,7 +21,7 @@
 #include "SettingsBackend.h"
 #include "ui_SettingsBackend.h"
 
-#include <vlc-qt/Enums.h>
+#include <VLCQtCore/Enums.h>
 
 SettingsBackend::SettingsBackend(QWidget *parent)
     : QWidget(parent),

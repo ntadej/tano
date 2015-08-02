@@ -25,7 +25,7 @@
     #include <QtGui/QMenu>
 #endif
 
-#include <vlc-qt/Enums.h>
+#include <VLCQtCore/Enums.h>
 
 class MenuCore : public QMenu
 {

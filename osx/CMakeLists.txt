@@ -34,9 +34,12 @@ SET(Tano_Deploy
     ${CMAKE_BINARY_DIR}/osx/deploy.sh
 )
 
+FILE(GLOB Tano_VlcQt_Core_Libs ${LIBVLCQT_LIB_DIR}/libvlc-qt.*)
+FILE(GLOB Tano_VlcQt_Widgets_Libs ${LIBVLCQT_LIB_DIR}/libvlc-qt-widgets.*)
+
 SET(Tano_VlcQt_Libs
-    ${LIBVLCQT_LIB_DIR}/libvlc-qt-widgets.dylib
-    ${LIBVLCQT_LIB_DIR}/libvlc-qt.dylib
+    ${Tano_VlcQt_Core_Libs}
+    ${Tano_VlcQt_Widgets_Libs}
 )
 
 FILE(GLOB Tano_Vlc_Libs ${LIBVLCQT_LIB_DIR}/libvlc.*)
@@ -53,9 +56,7 @@ SET(Tano_Retina_Icons
 # Installation #
 ################
 INSTALL(FILES ${Tano_Deploy} DESTINATION "${CMAKE_INSTALL_PREFIX}")
-IF(NOT STATIC)
-    INSTALL(FILES ${Tano_VlcQt_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_LIB_DIR}")
-ENDIF()
+INSTALL(FILES ${Tano_VlcQt_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_LIB_DIR}")
 INSTALL(FILES ${Tano_Vlc_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_LIB_DIR}")
 INSTALL(FILES ${Tano_VlcCore_Libs} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_LIB_DIR}")
 

@@ -21,7 +21,7 @@
 
 #include <QtCore/QFile>
 
-#include <vlc-qt/Enums.h>
+#include <VLCQtCore/Enums.h>
 
 #include "style/StyledBar.h"
 

@@ -19,6 +19,7 @@
 #ifndef TANO_XMLTVCOMMON_H_
 #define TANO_XMLTVCOMMON_H_
 
+#include <QtCore/QMap>
 #include <QtCore/QString>
 #include <QtCore/QStringList>
 

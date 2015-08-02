@@ -26,7 +26,7 @@
 #include <QPixmap>
 #include <QSlider>
 
-#include <vlc-qt/WidgetVolumeSlider.h>
+#include <VLCQtWidgets/WidgetVolumeSlider.h>
 
 class QPalette;
 class QTimer;

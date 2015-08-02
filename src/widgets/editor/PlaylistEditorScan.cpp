@@ -20,9 +20,9 @@
 #include <QtCore/QDir>
 #include <QtCore/QFile>
 
-#include <vlc-qt/Instance.h>
-#include <vlc-qt/Media.h>
-#include <vlc-qt/MediaPlayer.h>
+#include <VLCQtCore/Instance.h>
+#include <VLCQtCore/Media.h>
+#include <VLCQtCore/MediaPlayer.h>
 
 #include "core/network/NetworkUdpxy.h"
 #include "core/playlist/containers/Channel.h"

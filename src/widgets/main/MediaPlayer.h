@@ -3,7 +3,7 @@
 
 #include <QWidget>
 
-#include <vlc-qt/Enums.h>
+#include <VLCQtCore/Enums.h>
 
 class QLCDNumber;
 

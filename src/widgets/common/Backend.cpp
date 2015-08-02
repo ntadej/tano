@@ -18,9 +18,9 @@
 
 #include <QtCore/QDebug>
 
-#include <vlc-qt/Common.h>
-#include <vlc-qt/Enums.h>
-#include <vlc-qt/Instance.h>
+#include <VLCQtCore/Common.h>
+#include <VLCQtCore/Enums.h>
+#include <VLCQtCore/Instance.h>
 
 #include "core/settings/Settings.h"
 
