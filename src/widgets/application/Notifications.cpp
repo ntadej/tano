@@ -65,21 +65,6 @@ Notifications::Notifications(QSystemTrayIcon *trayicon,
     if (NotificationsOSX::instance()->hasNotificationCenterSupport()) {
         _mode = OSXNotificationCenter;
         NotificationsOSX::instance()->init();
-    } else {
-        // Check if Growl is installed (based on Qt's tray icon implementation)
-        CFURLRef cfurl;
-        OSStatus status = LSGetApplicationForInfo(kLSUnknownType, kLSUnknownCreator, CFSTR("growlTicket"), kLSRolesAll, 0, &cfurl);
-        if (status != kLSApplicationNotFoundErr) {
-            CFBundleRef bundle = CFBundleCreate(0, cfurl);
-            if (CFStringCompare(CFBundleGetIdentifier(bundle), CFSTR("com.Growl.GrowlHelperApp"), kCFCompareCaseInsensitive | kCFCompareBackwards) == kCFCompareEqualTo) {
-                if (CFStringHasSuffix(CFURLGetString(cfurl), CFSTR("/Growl.app/")))
-                    _mode = Growl13;
-                else
-                    _mode = Growl12;
-            }
-            CFRelease(cfurl);
-            CFRelease(bundle);
-        }
     }
 #endif
 }
@@ -141,40 +126,7 @@ void Notifications::notifySystray(const QString &title,
     _trayIcon->showMessage(title, text, QSystemTrayIcon::Information, millisTimeout);
 }
 
-// Based on Qt's tray icon implementation
 #ifdef Q_OS_MAC
-void Notifications::notifyGrowl(const QString &title,
-                                const QString &text)
-{
-    const QString script(
-        "tell application \"%5\"\n"
-        "  set the allNotificationsList to {\"Notification\"}\n" // -- Make a list of all the notification types (all)
-        "  set the enabledNotificationsList to {\"Notification\"}\n" // -- Make a list of the notifications (enabled)
-        "  register as application \"%1\" all notifications allNotificationsList default notifications enabledNotificationsList\n" // -- Register our script with Growl
-        "  notify with name \"Notification\" title \"%2\" description \"%3\" application name \"%1\"%4\n" // -- Send a Notification
-        "end tell"
-    );
-
-    QString notificationApp(QApplication::applicationName());
-    if (notificationApp.isEmpty())
-        notificationApp = "Application";
-
-    QPixmap notificationIconPixmap = QIcon(":/logo/48x48/logo.png").pixmap(48);
-    QString notificationIcon;
-    QTemporaryFile notificationIconFile;
-    if (!notificationIconPixmap.isNull() && notificationIconFile.open()) {
-        QImageWriter writer(&notificationIconFile, "PNG");
-        if (writer.write(notificationIconPixmap.toImage()))
-            notificationIcon = QString(" image from location \"file://%1\"").arg(notificationIconFile.fileName());
-    }
-
-    QString quotedTitle(title), quotedText(text);
-    quotedTitle.replace("\\", "\\\\").replace("\"", "\\");
-    quotedText.replace("\\", "\\\\").replace("\"", "\\");
-    QString growlApp(this->_mode == Notifications::Growl13 ? "Growl" : "GrowlHelperApp");
-    NotificationsOSX::instance()->sendAppleScript(script.arg(notificationApp, quotedTitle, quotedText, notificationIcon, growlApp));
-}
-
 void Notifications::notifyMacOSXNotificationCenter(const QString &title,
                                                    const QString &text)
 {
@@ -199,10 +151,6 @@ void Notifications::notify(const QString &title,
 #ifdef Q_OS_MAC
     case OSXNotificationCenter:
         notifyMacOSXNotificationCenter(title, text);
-        break;
-    case Growl12:
-    case Growl13:
-        notifyGrowl(title, text);
         break;
 #endif
     default:

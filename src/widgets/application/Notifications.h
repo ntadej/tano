@@ -51,8 +51,6 @@ private:
         None,
         Freedesktop,
         QSystemTray,
-        Growl12,
-        Growl13,
         OSXNotificationCenter
     };
 
@@ -69,8 +67,6 @@ private:
                        const QString &text,
                        int millisTimeout);
 #ifdef Q_OS_MAC
-    void notifyGrowl(const QString &title,
-                     const QString &text);
     void notifyMacOSXNotificationCenter(const QString &title,
                                         const QString &text);
 #endif
