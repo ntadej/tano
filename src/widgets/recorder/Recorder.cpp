@@ -19,16 +19,9 @@
 #include <QtCore/QDir>
 #include <QtCore/QEvent>
 #include <QtCore/QFile>
-
-#if QT_VERSION >= 0x050000
-    #include <QtWidgets/QAction>
-    #include <QtWidgets/QMessageBox>
-    #include <QtWidgets/QVBoxLayout>
-#else
-    #include <QtGui/QAction>
-    #include <QtGui/QMessageBox>
-    #include <QtGui/QVBoxLayout>
-#endif
+#include <QtWidgets/QAction>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QVBoxLayout>
 
 #include "core/network/NetworkUdpxy.h"
 #include "core/playlist/PlaylistModel.h"

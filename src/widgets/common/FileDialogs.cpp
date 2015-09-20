@@ -17,14 +17,8 @@
 *****************************************************************************/
 
 #include <QtCore/QObject>
-
-#if defined(Qt5)
-    #include <QtWidgets/QFileDialog>
-    #include <QtWidgets/QInputDialog>
-#elif defined(Qt4)
-    #include <QtGui/QFileDialog>
-    #include <QtGui/QInputDialog>
-#endif
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QInputDialog>
 
 #include "FileDialogs.h"
 

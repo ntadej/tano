@@ -20,11 +20,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if defined(Qt5)
-    #include <QtWidgets/QWidget>
-#elif defined(Qt4)
-    #include <QtGui/QWidget>
-#endif
+#include <QtWidgets/QWidget>
 
 class QLineEdit;
 class QKeyEvent;

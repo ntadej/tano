@@ -22,21 +22,12 @@
 #include <QDebug>
 #include <QUrl>
 
-#if defined(Qt5)
-    #include <QtWidgets/QDesktopWidget>
-    #include <QtWidgets/QLCDNumber>
-    #include <QtWidgets/QMessageBox>
-    #include <QtWidgets/QShortcut>
-    #include <QtWidgets/QStatusBar>
-    #include <QtWidgets/QWidgetAction>
-#elif defined(Qt4)
-    #include <QtGui/QDesktopWidget>
-    #include <QtGui/QLCDNumber>
-    #include <QtGui/QMessageBox>
-    #include <QtGui/QShortcut>
-    #include <QtGui/QStatusBar>
-    #include <QtGui/QWidgetAction>
-#endif
+#include <QtWidgets/QDesktopWidget>
+#include <QtWidgets/QLCDNumber>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QShortcut>
+#include <QtWidgets/QStatusBar>
+#include <QtWidgets/QWidgetAction>
 
 #include <VLCQtWidgets/WidgetVideo.h>
 

@@ -20,12 +20,7 @@
 #define TANO_PLAYLISTEDITOR_H_
 
 #include <QtCore/QHash>
-
-#if defined(Qt5)
-    #include <QtWidgets/QMainWindow>
-#elif defined(Qt4)
-    #include <QtGui/QMainWindow>
-#endif
+#include <QtWidgets/QMainWindow>
 
 class Channel;
 class PlaylistModel;

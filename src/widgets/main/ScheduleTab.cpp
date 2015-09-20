@@ -17,27 +17,15 @@
 *****************************************************************************/
 
 #include <QtCore/QEvent>
-#if QT_VERSION >= 0x050000
-    #include <QtWidgets/QAction>
-    #include <QtWidgets/QComboBox>
-    #include <QtWidgets/QLabel>
-    #include <QtWidgets/QListView>
-    #include <QtWidgets/QMenu>
-    #include <QtWidgets/QPushButton>
-    #include <QtWidgets/QStackedWidget>
-    #include <QtWidgets/QToolBar>
-    #include <QtWidgets/QVBoxLayout>
-#else
-    #include <QtGui/QAction>
-    #include <QtGui/QComboBox>
-    #include <QtGui/QLabel>
-    #include <QtGui/QListView>
-    #include <QtGui/QMenu>
-    #include <QtGui/QPushButton>
-    #include <QtGui/QStackedWidget>
-    #include <QtGui/QToolBar>
-    #include <QtGui/QVBoxLayout>
-#endif
+#include <QtWidgets/QAction>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QListView>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 
 #include "core/xmltv/XmltvCommon.h"
 #include "core/xmltv/containers/XmltvChannel.h"

@@ -19,11 +19,7 @@
 #ifndef TANO_PRINT_H_
 #define TANO_PRINT_H_
 
-#if defined(Qt5)
-    #include <QtWidgets/QTextEdit>
-#elif defined(Qt4)
-    #include <QtGui/QTextEdit>
-#endif
+#include <QtWidgets/QTextEdit>
 
 class QPrinter;
 

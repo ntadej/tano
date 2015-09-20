@@ -19,11 +19,7 @@
 #ifndef TANO_PRINTDIALOG_H_
 #define TANO_PRINTDIALOG_H_
 
-#if defined(Qt5)
-    #include <QtWidgets/QDialog>
-#elif defined(Qt4)
-    #include <QtGui/QDialog>
-#endif
+#include <QtWidgets/QDialog>
 
 namespace Ui {
     class PrintDialog;

@@ -21,12 +21,7 @@
 
 #include <QtCore/QTimer>
 #include <QtGui/QCloseEvent>
-
-#if defined(Qt5)
-    #include <QtWidgets/QMainWindow>
-#elif defined(Qt4)
-    #include <QtGui/QMainWindow>
-#endif
+#include <QtWidgets/QMainWindow>
 
 #include <VLCQtCore/Enums.h>
 

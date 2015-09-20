@@ -16,11 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if defined(Qt5)
-    #include <QtWidgets/QAction>
-#elif defined(Qt4)
-    #include <QtGui/QAction>
-#endif
+#include <QtWidgets/QAction>
 
 #include "common/DesktopShortcuts.h"
 

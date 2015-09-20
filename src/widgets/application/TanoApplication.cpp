@@ -105,10 +105,6 @@ bool TanoApplication::preInit(int argc,
 
     QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
 
-#if QT_VERSION < 0x050000
-    QTextCodec::setCodecForCStrings(QTextCodec::codecForName("UTF-8"));
-#endif
-
     Tano::Log::setup();
 
     return true;

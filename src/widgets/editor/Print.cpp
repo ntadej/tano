@@ -19,14 +19,8 @@
 #include <QtCore/QDate>
 #include <QtGui/QTextFrame>
 #include <QtGui/QTextTable>
-
-#if defined(Qt5)
-    #include <QtPrintSupport/QPrinter>
-    #include <QtPrintSupport/QPrintPreviewDialog>
-#elif defined(Qt4)
-    #include <QtGui/QPrinter>
-    #include <QtGui/QPrintPreviewDialog>
-#endif
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPrintPreviewDialog>
 
 #include "core/Common.h"
 #include "core/playlist/PlaylistModel.h"

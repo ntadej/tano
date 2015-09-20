@@ -20,12 +20,7 @@
 #define TANO_SCROLLINGWIDGET_H_
 
 #include <QtCore/QTimer>
-
-#if defined(Qt5)
-    #include <QtWidgets/QScrollArea>
-#elif defined(Qt4)
-    #include <QtGui/QScrollArea>
-#endif
+#include <QtWidgets/QScrollArea>
 
 class QLabel;
 class QResizeEvent;

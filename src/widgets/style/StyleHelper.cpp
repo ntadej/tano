@@ -334,9 +334,7 @@ void StyleHelper::drawArrow(QStyle::PrimitiveElement element,
         imagePainter.drawPolygon(a);
         imagePainter.end();
         pixmap = QPixmap::fromImage(image);
-#if QT_VERSION >= 0x050000
         pixmap.setDevicePixelRatio(devicePixelRatio);
-#endif
         QPixmapCache::insert(pixmapName, pixmap);
     }
     int xOffset = r.x() + (r.width() * devicePixelRatio - size)/2;
@@ -372,13 +370,7 @@ void StyleHelper::menuGradient(QPainter *painter,
 
 static qreal pixmapDevicePixelRatio(const QPixmap &pixmap)
 {
-#if QT_VERSION > 0x050000
     return pixmap.devicePixelRatio();
-#else
-    Q_UNUSED(pixmap)
-
-    return 1.0;
-#endif
 }
 
 // Draws a cached pixmap with shadow
@@ -455,9 +447,7 @@ void StyleHelper::drawIconWithShadow(const QIcon &icon,
 
         // Draw the actual pixmap...
         cachePainter.drawPixmap(QRect(QPoint(radius, radius) + offset, QSize(px.width(), px.height())), px);
-#if QT_VERSION > 0x050000
         cache.setDevicePixelRatio(devicePixelRatio);
-#endif
         QPixmapCache::insert(pixmapName, cache);
     }
 

@@ -17,16 +17,9 @@
 *****************************************************************************/
 
 #include <QtGui/QResizeEvent>
-
-#if defined(Qt5)
-    #include <QtWidgets/QHBoxLayout>
-    #include <QtWidgets/QLabel>
-    #include <QtWidgets/QScrollBar>
-#elif defined(Qt4)
-    #include <QtGui/QHBoxLayout>
-    #include <QtGui/QLabel>
-    #include <QtGui/QScrollBar>
-#endif
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QScrollBar>
 
 #include "ScrollingWidget.h"
 

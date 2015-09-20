@@ -16,19 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if defined(Qt5)    
-    #include <QtWidgets/QApplication>
-    #include <QtWidgets/QDesktopWidget>
-    #include <QtWidgets/QHBoxLayout>
-#elif defined(Qt4)
-    #include <QtGui/QApplication>
-    #include <QtGui/QDesktopWidget>
-    #include <QtGui/QHBoxLayout>
-#endif
-
-#if defined(Qt4) && defined(Q_WS_X11)
-    #include <QX11Info>
-#endif
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QDesktopWidget>
+#include <QtWidgets/QHBoxLayout>
 
 #include "OsdFloat.h"
 
@@ -61,12 +51,7 @@ OsdFloat::~OsdFloat()
 
 void OsdFloat::floatHide()
 {
-#if defined(Qt4) && defined(Q_WS_X11)
-    if (QX11Info::isCompositingManagerRunning())
-        _slowHideTimer->start(5);
-    else
-        hide();
-#elif defined(Q_OS_WIN32)
+#if defined(Q_OS_WIN32)
     hide();
 #else
     _slowHideTimer->start(5);

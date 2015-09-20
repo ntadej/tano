@@ -17,12 +17,7 @@
 *****************************************************************************/
 
 #include <QtCore/QDebug>
-
-#if QT_VERSION >= 0x050000
-    #include <QtConcurrent/QtConcurrentRun>
-#else
-    #include <QtCore/QtConcurrentRun>
-#endif
+#include <QtConcurrent/QtConcurrentRun>
 
 #include "Resources.h"
 #include "network/NetworkDownload.h"

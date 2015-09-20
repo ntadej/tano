@@ -19,11 +19,7 @@
 #ifndef TANO_PLAYLISTFILTERMODEL_H_
 #define TANO_PLAYLISTFILTERMODEL_H_
 
-#if defined(Qt5)
-    #include <QtCore/QSortFilterProxyModel>
-#elif defined(Qt4)
-    #include <QtGui/QSortFilterProxyModel>
-#endif
+#include <QtCore/QSortFilterProxyModel>
 
 #include "CoreSharedExport.h"
 

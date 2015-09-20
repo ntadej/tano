@@ -19,11 +19,7 @@
 #ifndef TANO_SETTINGSRECORDER_H_
 #define TANO_SETTINGSRECORDER_H_
 
-#if defined(Qt5)
-    #include <QtWidgets/QWidget>
-#elif defined(Qt4)
-    #include <QtGui/QWidget>
-#endif
+#include <QtWidgets/QWidget>
 
 namespace Ui
 {

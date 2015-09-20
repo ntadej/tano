@@ -21,16 +21,9 @@
 
 #include <QtCore/QTemporaryFile>
 #include <QtGui/QImageWriter>
-
-#if QT_VERSION >= 0x050000
-    #include <QtWidgets/QApplication>
-    #include <QtWidgets/QSystemTrayIcon>
-    #include <QtWidgets/QStyle>
-#else
-    #include <QtGui/QApplication>
-    #include <QtGui/QSystemTrayIcon>
-    #include <QtGui/QStyle>
-#endif
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QSystemTrayIcon>
+#include <QtWidgets/QStyle>
 
 #ifdef Q_OS_LINUX
     #include <QtDBus/QDBusInterface>

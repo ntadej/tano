@@ -16,17 +16,10 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if defined(Qt5)
-    #include <QtWidgets/QHBoxLayout>
-    #include <QtWidgets/QLineEdit>
-    #include <QtWidgets/QPushButton>
-    #include <QtWidgets/QToolButton>
-#elif defined(Qt4)
-    #include <QtGui/QHBoxLayout>
-    #include <QtGui/QLineEdit>
-    #include <QtGui/QPushButton>
-    #include <QtGui/QToolButton>
-#endif
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QToolButton>
 
 #include "common/FileDialogs.h"
 

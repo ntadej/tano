@@ -17,14 +17,8 @@
 *****************************************************************************/
 
 #include <QtGui/QCloseEvent>
-
-#if defined(Qt5)
-    #include <QtWidgets/QMenu>
-    #include <QtWidgets/QMessageBox>
-#elif defined(Qt4)
-    #include <QtGui/QMenu>
-    #include <QtGui/QMessageBox>
-#endif
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QMessageBox>
 
 #include "core/Common.h"
 #include "core/File.h"

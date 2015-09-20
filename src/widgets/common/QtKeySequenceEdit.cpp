@@ -21,16 +21,9 @@
 *****************************************************************************/
 
 #include <QtGui/QKeyEvent>
-
-#if defined(Qt5)
-    #include <QtWidgets/QHBoxLayout>
-    #include <QtWidgets/QLineEdit>
-    #include <QtWidgets/QMenu>
-#elif defined(Qt4)
-    #include <QtGui/QHBoxLayout>
-    #include <QtGui/QLineEdit>
-    #include <QtGui/QMenu>
-#endif
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QMenu>
 
 #include "QtKeySequenceEdit.h"
 

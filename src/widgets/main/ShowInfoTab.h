@@ -20,12 +20,7 @@
 #define TANO_SHOWINFOTAB_H_
 
 #include <QtCore/QFile>
-
-#if QT_VERSION >= 0x050000
-    #include <QtWidgets/QMainWindow>
-#else
-    #include <QtGui/QMainWindow>
-#endif
+#include <QtWidgets/QMainWindow>
 
 namespace Ui
 {

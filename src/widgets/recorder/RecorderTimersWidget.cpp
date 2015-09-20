@@ -17,15 +17,9 @@
 *****************************************************************************/
 
 #include <QtCore/QEvent>
-#if QT_VERSION >= 0x050000
-    #include <QtWidgets/QAction>
-    #include <QtWidgets/QLabel>
-    #include <QtWidgets/QToolBar>
-#else
-    #include <QtGui/QAction>
-    #include <QtGui/QLabel>
-    #include <QtGui/QToolBar>
-#endif
+#include <QtWidgets/QAction>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QToolBar>
 
 #include "core/timers/containers/Timer.h"
 #include "core/timers/models/TimersFilterModel.h"

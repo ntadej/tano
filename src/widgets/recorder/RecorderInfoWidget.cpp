@@ -18,12 +18,7 @@
 
 #include <QtCore/qmath.h>
 #include <QtCore/QTime>
-
-#if QT_VERSION >= 0x050000
-    #include <QtWidgets/QMessageBox>
-#else
-    #include <QtGui/QMessageBox>
-#endif
+#include <QtWidgets/QMessageBox>
 
 #include "core/playlist/PlaylistModel.h"
 #include "core/playlist/containers/Channel.h"

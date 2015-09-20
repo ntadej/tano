@@ -16,15 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if defined(Qt5)
-    #include <QtWidgets/QMenu>
-    #include <QtWidgets/QMessageBox>
-    #include <QtWidgets/QWidgetAction>
-#elif defined(Qt4)
-    #include <QtGui/QMenu>
-    #include <QtGui/QMessageBox>
-    #include <QtGui/QWidgetAction>
-#endif
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QWidgetAction>
 
 #include "core/playlist/PlaylistModel.h"
 #include "core/playlist/containers/Channel.h"

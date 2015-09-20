@@ -20,12 +20,7 @@
 #define TANO_XMLTVPROGRAMMEFILTERMODEL_H_
 
 #include <QtCore/QDate>
-
-#if QT_VERSION >= 0x050000
-    #include <QtCore/QSortFilterProxyModel>
-#else
-    #include <QtGui/QSortFilterProxyModel>
-#endif
+#include <QtCore/QSortFilterProxyModel>
 
 #include "CoreSharedExport.h"
 

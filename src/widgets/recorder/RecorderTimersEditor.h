@@ -20,12 +20,7 @@
 #define TANO_RECORDERTIMERSEDITOR_H_
 
 #include <QtCore/QDate>
-
-#if defined(Qt5)
-    #include <QtWidgets/QWidget>
-#elif defined(Qt4)
-    #include <QtGui/QWidget>
-#endif
+#include <QtWidgets/QWidget>
 
 class PlaylistModel;
 class Timer;

@@ -20,14 +20,8 @@
 #define TANO_RECORDERTIMERSWIDGET_H_
 
 #include <QtCore/QModelIndex>
-
-#if QT_VERSION >= 0x050000
-    #include <QtWidgets/QListView>
-    #include <QtWidgets/QMainWindow>
-#else
-    #include <QtGui/QListView>
-    #include <QtGui/QMainWindow>
-#endif
+#include <QtWidgets/QListView>
+#include <QtWidgets/QMainWindow>
 
 #include "timers/models/TimersModel.h"
 

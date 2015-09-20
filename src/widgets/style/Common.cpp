@@ -20,13 +20,8 @@
 #include <QtCore/QDebug>
 #include <QtCore/QDir>
 #include <QtGui/QIcon>
-#if QT_VERSION >= 0x050000
-    #include <QtWidgets/QApplication>
-    #include <QtWidgets/QStyleFactory>
-#else
-    #include <QtGui/QApplication>
-    #include <QtGui/QStyleFactory>
-#endif
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QStyleFactory>
 
 #include "Config.h"
 

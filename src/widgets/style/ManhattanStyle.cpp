@@ -585,11 +585,7 @@ void ManhattanStyle::drawPrimitive(PrimitiveElement element, const QStyleOption 
     case PE_IndicatorArrowRight:
     case PE_IndicatorArrowLeft:
         {
-#if QT_VERSION > 0x050000
             StyleHelper::drawArrow(element, painter, option, widget->devicePixelRatio());
-#else
-            StyleHelper::drawArrow(element, painter, option, 1.0);
-#endif
         }
         break;
 

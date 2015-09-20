@@ -31,18 +31,11 @@
 
 QTextStream *out;
 
-#if defined(Qt5)
 void Tano::Log::output(QtMsgType type,
                        const QMessageLogContext &context,
                        const QString &msg)
-#elif defined(Qt4)
-void Tano::Log::output(QtMsgType type,
-                       const char *msg)
-#endif
 {
-#if defined(Qt5)
     Q_UNUSED(context)
-#endif
 
     QString debugdate = QDateTime::currentDateTime().toString("yyyy.MM.dd hh:mm:ss");
     switch (type)
@@ -77,11 +70,7 @@ void Tano::Log::setup()
     QFile *log = new QFile(fileName);
     if (log->open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text)) {
         out = new QTextStream(log);
-#if defined(Qt5)
         qInstallMessageHandler(output);
-#elif defined(Qt4)
-        qInstallMsgHandler(output);
-#endif
     } else {
         qDebug() << "Error opening log file '" << fileName << "'. All debug output redirected to console.";
     }

@@ -19,11 +19,7 @@
 #ifndef TANO_PLAYLISTEDITORSCAN_H_
 #define TANO_PLAYLISTEDITORSCAN_H_
 
-#if defined(Qt5)
-    #include <QtWidgets/QWidget>
-#elif defined(Qt4)
-    #include <QtGui/QWidget>
-#endif
+#include <QtWidgets/QWidget>
 
 #include <VLCQtCore/Enums.h>
 

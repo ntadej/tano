@@ -17,15 +17,9 @@
 *****************************************************************************/
 
 #include <QtCore/QEvent>
-#if QT_VERSION >= 0x050000
-    #include <QtWidgets/QComboBox>
-    #include <QtWidgets/QLabel>
-    #include <QtWidgets/QToolBar>
-#else
-    #include <QtGui/QComboBox>
-    #include <QtGui/QLabel>
-    #include <QtGui/QToolBar>
-#endif
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QToolBar>
 
 #include "common/PlaylistDisplayWidget.h"
 #include "style/FancyLineEdit.h"

@@ -20,12 +20,7 @@
 #define TANO_OSDFLOAT_H_
 
 #include <QtCore/QTimer>
-
-#if defined(Qt5)
-    #include <QtWidgets/QFrame>
-#elif defined(Qt4)
-    #include <QtGui/QFrame>
-#endif
+#include <QtWidgets/QFrame>
 
 namespace Ui {
     class OsdFloat;

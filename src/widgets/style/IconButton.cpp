@@ -38,12 +38,7 @@ IconButton::IconButton(QWidget *parent)
 void IconButton::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
-
-#if QT_VERSION < 0x050000
-    qreal ratio = 1;
-#else
     qreal ratio = _pixmap.devicePixelRatio();
-#endif
 
     QRect pixmapRect = QRect(0, 0, _pixmap.width() / ratio, _pixmap.height() / ratio);
     pixmapRect.moveCenter(rect().center());

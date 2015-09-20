@@ -19,11 +19,7 @@
 #ifndef TANO_MENUCORE_H_
 #define TANO_MENUCORE_H_
 
-#if defined(Qt5)
-    #include <QtWidgets/QMenu>
-#elif defined(Qt4)
-    #include <QtGui/QMenu>
-#endif
+#include <QtWidgets/QMenu>
 
 #include <VLCQtCore/Enums.h>
 

@@ -16,13 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#if defined(Qt5)
-    #include <QtWidgets/QLCDNumber>
-    #include <QtWidgets/QShortcut>
-#elif defined(Qt4)
-    #include <QtGui/QLCDNumber>
-    #include <QtGui/QShortcut>
-#endif
+#include <QtWidgets/QLCDNumber>
+#include <QtWidgets/QShortcut>
 
 #include "ChannelSelect.h"
 

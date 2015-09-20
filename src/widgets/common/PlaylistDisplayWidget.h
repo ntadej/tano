@@ -20,12 +20,7 @@
 #define TANO_PLAYLISTDISPLAYWIDGET_H_
 
 #include <QtCore/QModelIndex>
-
-#if QT_VERSION >= 0x050000
-    #include <QtWidgets/QListView>
-#else
-    #include <QtGui/QListView>
-#endif
+#include <QtWidgets/QListView>
 
 #include "core/playlist/containers/Channel.h"
 
