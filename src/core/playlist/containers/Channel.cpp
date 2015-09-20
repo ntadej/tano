@@ -19,7 +19,6 @@
 #include <QtGui/QIcon>
 
 #include "Channel.h"
-#include "plugins/Plugins.h"
 
 Channel::Channel(QObject *parent)
     : ListItem(parent) { }
@@ -62,10 +61,7 @@ QHash<int, QByteArray> Channel::roleNames() const
 
 QString Channel::id() const
 {
-    if (globalConfig && globalConfig->recorderIdUrl())
-        return url();
-    else
-        return QString::number(number());
+    return QString::number(number());
 }
 
 QVariant Channel::data(int role) const

@@ -67,7 +67,6 @@ SET(Tano_Core_Playlist_Srcs
 )
 SET(Tano_Core_Plugins_Srcs
     plugins/ConfigPlugin.h
-    plugins/NetworkPlugin.h
     plugins/Plugins.cpp
 )
 SET(Tano_Core_Settings_Srcs

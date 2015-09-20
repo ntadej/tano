@@ -80,9 +80,6 @@ void UpdateDialog::changeEvent(QEvent *e)
 
 void UpdateDialog::download()
 {
-    if (!globalConfig || globalConfig->downloadUrl().isEmpty())
-        return;
-
 #if defined(Q_OS_WIN)
     QString platform = QString("windows/%1_%2_win%3.exe").arg(Tano::name(), _versionNew, Tano::is64bit() ? "64" : "32");
 #elif defined(Q_OS_MAC)
@@ -90,8 +87,6 @@ void UpdateDialog::download()
 #else
     QString platform = QString("src/%1_%2_src.tar.gz").arg(Tano::name(), _versionNew);
 #endif
-
-    QDesktopServices::openUrl(globalConfig->downloadUrl() + platform);
 }
 
 void UpdateDialog::changelog()
@@ -148,9 +143,6 @@ void UpdateDialog::processUpdate(const QStringList &update,
         ui->labelInfo->setText(info.description);
         ui->labelChangelog->setText(tr("<h3>Changes in %1</h3>").arg(update[1]));
         ui->main->setCurrentIndex(2);
-
-        if (!globalConfig || !globalConfig->downloadUrl().isEmpty())
-            ui->buttonDownload->show();
 
         _versionNew = update[1];
     }

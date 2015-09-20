@@ -35,17 +35,12 @@ public:
     QString email() const;
     QString projectUrl() const;
     QString updateUrl() const;
-    QString downloadUrl() const;
 
-    bool requiresAuthentication() const;
-    bool recorderIdUrl() const;
     bool editorEnabled() const;
 
     QVariantMap defaultSettings() const { return QVariantMap(); }
     bool disableSettings(const QString &category) const { Q_UNUSED(category) return false; }
     bool disableSettingsGui(const QString &category) const { Q_UNUSED(category) return false; }
-
-    NetworkPlugin *networkPlugin() { return 0; }
 };
 
 #endif // TANO_TANOCONFIG_H_

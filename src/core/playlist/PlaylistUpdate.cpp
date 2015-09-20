@@ -21,7 +21,6 @@
 #include "Resources.h"
 #include "network/NetworkDownload.h"
 #include "playlist/PlaylistModel.h"
-#include "plugins/Plugins.h"
 #include "settings/Settings.h"
 
 #include "PlaylistUpdate.h"
@@ -50,8 +49,6 @@ void PlaylistUpdate::processPlaylist(QFile *file)
 
     if (_save)
         _model->save(_playlist, _model->name());
-
-    if (globalNetwork) globalNetwork->statusPlaylist();
 
     emit done();
 

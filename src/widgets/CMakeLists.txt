@@ -40,7 +40,6 @@ SET(Tano_Widgets_UIs
     MainWindow.ui
     common/OsdWidget.ui
     dialogs/AboutDialog.ui
-    dialogs/PasswordDialog.ui
     dialogs/UpdateDialog.ui
     editor/PlaylistEditor.ui
     editor/PlaylistEditorHelp.ui
@@ -98,7 +97,6 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 ENDIF()
 SET(Tano_Widgets_Dialogs_Srcs
     dialogs/AboutDialog.cpp
-    dialogs/PasswordDialog.cpp
     dialogs/UpdateDialog.cpp
 )
 SET(Tano_Widgets_Editor_Srcs

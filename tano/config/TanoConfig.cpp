@@ -51,21 +51,6 @@ QString TanoConfig::updateUrl() const
     return "http://update.tano.si";
 }
 
-QString TanoConfig::downloadUrl() const
-{
-    return "http://update.tano.si";
-}
-
-bool TanoConfig::requiresAuthentication() const
-{
-    return false;
-}
-
-bool TanoConfig::recorderIdUrl() const
-{
-    return true;
-}
-
 bool TanoConfig::editorEnabled() const
 {
     return true;

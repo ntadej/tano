@@ -85,6 +85,12 @@ void Tano::Style::setIconPaths()
 
 #if defined(Q_OS_MAC)
     paths.prepend(QCoreApplication::applicationDirPath().replace("MacOS", "Resources") + "/icons");
+
+    QDir bundleDir(QCoreApplication::applicationDirPath());
+    bundleDir.cdUp();
+    bundleDir.cdUp();
+    bundleDir.cdUp();
+    paths.append(bundleDir.path() + "/icons");
 #endif
 
     QIcon::setThemeSearchPaths(paths);

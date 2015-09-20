@@ -24,7 +24,6 @@
 #include "core/application/Output.h"
 #include "core/plugins/Plugins.h"
 
-#include "widgets/dialogs/PasswordDialog.h"
 #include "widgets/style/Common.h"
 
 #include "TanoApplication.h"
@@ -64,7 +63,6 @@ TanoApplication::~TanoApplication()
 bool TanoApplication::preInit()
 {
     Tano::Plugins::initConfig();
-    Tano::Plugins::initNetwork();
 
     QCoreApplication::setApplicationName(Tano::name());
     QCoreApplication::setApplicationVersion(Tano::version());
@@ -85,18 +83,6 @@ bool TanoApplication::postInit()
         Tano::Style::setMainStyle();
         Tano::Style::setIconPaths();
         Tano::Style::setIconName();
-
-        if (globalConfig && globalConfig->requiresAuthentication()) {
-            PasswordDialog dialog;
-            switch (dialog.exec())
-            {
-            case QDialog::Accepted:
-                break;
-            default:
-                return false;
-                break;
-            }
-        }
     } else {
         return false;
     }

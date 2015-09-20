@@ -151,8 +151,6 @@ void MainWindow::exit()
         if (_trayIcon) _trayIcon->hide();
         _mediaPlayer->writeSession();
 
-        if (globalConfig && globalConfig->requiresAuthentication() && globalNetwork) globalNetwork->statusLogout();
-
         qDebug() << "Event:" << "Quit";
 
         qApp->quit();
@@ -531,9 +529,6 @@ void MainWindow::createMenus()
         ui->menuFile->removeAction(ui->actionOpenUrl);
     }
 
-    if (globalConfig && globalConfig->requiresAuthentication())
-        ui->menuFile->insertAction(ui->actionExit, ui->actionLogoutExit);
-
     qDebug() << "Initialised: Menus";
 }
 
@@ -657,8 +652,6 @@ void MainWindow::playChannel(Channel *channel)
 
     _mediaPlayer->playUrl(url, true);
 
-    if (globalNetwork) globalNetwork->statusPlay(channel->number());
-
     _scheduleTab->reset();
     _xmltv->request(_channel->xmltvId(), true);
 
@@ -689,8 +682,6 @@ void MainWindow::stop()
     _xmltv->stop();
 
     tooltip();
-
-    if (globalNetwork) globalNetwork->statusStop();
 }
 
 // Open dialogs

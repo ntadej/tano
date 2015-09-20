@@ -20,19 +20,16 @@
 #define TANO_PLUGINS_H_
 
 #include "plugins/ConfigPlugin.h"
-#include "plugins/NetworkPlugin.h"
 
 #include "CoreSharedExport.h"
 
 TANO_CORE_EXPORT extern ConfigPlugin *globalConfig;
-TANO_CORE_EXPORT extern NetworkPlugin *globalNetwork;
 
 namespace Tano
 {
     namespace Plugins
     {
         TANO_CORE_EXPORT void initConfig();
-        TANO_CORE_EXPORT void initNetwork();
     }
 }
 
