@@ -17,13 +17,8 @@
 *****************************************************************************/
 
 #include <QtCore/QDebug>
-#include <QtCore/QDir>
-#include <QtCore/QTextCodec>
-
-#include <VLCQtCore/Common.h>
 
 #include "core/Common.h"
-#include "core/Resources.h"
 #include "core/application/Arguments.h"
 #include "core/application/Log.h"
 #include "core/application/Output.h"
@@ -35,7 +30,6 @@
 #include "TanoApplication.h"
 
 #ifdef Q_OS_MAC
-
 #include <objc/objc.h>
 #include <objc/message.h>
 
@@ -50,7 +44,6 @@ bool dockClickHandler(id self,
 
     return true;
 }
-
 #endif
 
 TanoApplication::TanoApplication(int argc,
@@ -59,21 +52,7 @@ TanoApplication::TanoApplication(int argc,
       _arguments(new Arguments(argc, argv))
 {
 #ifdef Q_OS_MAC
-    id cls = (id)objc_getClass("NSApplication");
-    SEL sharedApplication = sel_registerName("sharedApplication");
-    id appInst = objc_msgSend(cls, sharedApplication);
-
-    if(appInst != NULL) {
-        id delegate = objc_msgSend(appInst, sel_registerName("delegate"));
-        id delegateClass = objc_msgSend(delegate, sel_registerName("class"));
-        bool success = class_addMethod((Class)delegateClass, sel_registerName("applicationShouldHandleReopen:hasVisibleWindows:"), (IMP)dockClickHandler, "b@:");
-
-        if (!success) {
-            qCritical() << "Could not set up OS X dock handler!";
-        }
-    } else {
-        qCritical() << "Could not set up OS X dock handler!";
-    }
+    setupDockHandler();
 #endif
 }
 
@@ -82,21 +61,8 @@ TanoApplication::~TanoApplication()
     delete _arguments;
 }
 
-bool TanoApplication::preInit(int argc,
-                              char *argv[])
+bool TanoApplication::preInit()
 {
-    Q_UNUSED(argc)
-
-#if defined(Q_OS_MAC) && defined(QT_NO_DEBUG) // Fix plugin detection
-    QDir dir(argv[0]);  // e.g. appdir/Contents/MacOS/appname
-    dir.cdUp();
-    dir.cdUp();
-    dir.cd("PlugIns");  // e.g. appdir/Contents/PlugIns
-    QCoreApplication::setLibraryPaths(QStringList(dir.absolutePath()));
-#else
-    Q_UNUSED(argv)
-#endif
-
     Tano::Plugins::initConfig();
     Tano::Plugins::initNetwork();
 
@@ -104,6 +70,7 @@ bool TanoApplication::preInit(int argc,
     QCoreApplication::setApplicationVersion(Tano::version());
 
     QCoreApplication::setAttribute(Qt::AA_X11InitThreads);
+    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 
     Tano::Log::setup();
 
@@ -113,8 +80,6 @@ bool TanoApplication::preInit(int argc,
 bool TanoApplication::postInit()
 {
     Output::welcome();
-
-    VlcCommon::setPluginPath(qApp->applicationDirPath() + "/plugins");
 
     if (_arguments->isValid()) {
         Tano::Style::setMainStyle();
@@ -143,3 +108,28 @@ void TanoApplication::onClickOnDock()
 {
     emit dockClicked();
 }
+
+#ifdef Q_OS_MAC
+void TanoApplication::setupDockHandler()
+{
+    Class cls = objc_getClass("NSApplication");
+    objc_object *appInst = objc_msgSend((objc_object*)cls, sel_registerName("sharedApplication"));
+
+    if (appInst != NULL) {
+        objc_object* delegate = objc_msgSend(appInst, sel_registerName("delegate"));
+        Class delClass = (Class)objc_msgSend(delegate,  sel_registerName("class"));
+        SEL shouldHandle = sel_registerName("applicationShouldHandleReopen:hasVisibleWindows:");
+        if (class_getInstanceMethod(delClass, shouldHandle)) {
+            if (class_replaceMethod(delClass, shouldHandle, (IMP)dockClickHandler, "B@:"))
+                qDebug() << "Registered dock click handler (replaced original method)";
+            else
+                qWarning() << "Failed to replace method for dock click handler";
+        } else {
+            if (class_addMethod(delClass, shouldHandle, (IMP)dockClickHandler,"B@:"))
+                qDebug() << "Registered dock click handler";
+            else
+                qWarning() << "Failed to register dock click handler";
+        }
+    }
+}
+#endif

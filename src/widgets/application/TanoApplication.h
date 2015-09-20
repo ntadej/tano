@@ -34,9 +34,12 @@ public:
     ~TanoApplication();
 
     inline Arguments *arguments() { return _arguments; }
-    static bool preInit(int argc,
-                        char *argv[]);
+    static bool preInit();
     bool postInit();
+
+#ifdef Q_OS_MAC
+    void setupDockHandler();
+#endif
 
 public slots:
     void onClickOnDock();
