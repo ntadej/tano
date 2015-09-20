@@ -49,7 +49,7 @@ class PlaylistUpdate;
 class Recorder;
 class Timer;
 class TrayIcon;
-class UpdateDialog;
+class Updates;
 class XmltvManager;
 class XmltvProgramme;
 
@@ -157,7 +157,7 @@ private:
     PlaylistUpdate *_modelUpdate;
     Recorder *_recorder;
     DesktopShortcuts *_shortcuts;
-    UpdateDialog *_update;
+    Updates *_updates;
 
     //Playback and channels
     Channel *_channel;

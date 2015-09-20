@@ -40,7 +40,6 @@ SET(Tano_Widgets_UIs
     MainWindow.ui
     common/OsdWidget.ui
     dialogs/AboutDialog.ui
-    dialogs/UpdateDialog.ui
     editor/PlaylistEditor.ui
     editor/PlaylistEditorHelp.ui
     editor/PlaylistEditorScan.ui
@@ -66,12 +65,14 @@ SET(Tano_Widgets_Application_Srcs
     application/Notifications.cpp
     application/SingleApplication.cpp
     application/TanoApplication.cpp
+    application/Updates.cpp
 )
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     SET(Tano_Widgets_Application_Srcs
         ${Tano_Widgets_Application_Srcs}
 
         application/NotificationsOSX.mm
+        application/UpdatesOSX.mm
     )
 ENDIF()
 SET(Tano_Widgets_Common_Srcs
@@ -97,7 +98,6 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 ENDIF()
 SET(Tano_Widgets_Dialogs_Srcs
     dialogs/AboutDialog.cpp
-    dialogs/UpdateDialog.cpp
 )
 SET(Tano_Widgets_Editor_Srcs
     editor/PlaylistEditor.cpp
@@ -189,8 +189,15 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     FIND_PATH(COCOA_INCLUDE_DIR Cocoa/Cocoa.h)
     SET(COCOA_LIBRARY "-weak_framework Cocoa")
 
+    FIND_PATH(SPARKLE_INCLUDE_DIR Sparkle/Sparkle.h
+              PATHS ${CMAKE_SOURCE_DIR}/Carthage/Build/Mac
+              NO_DEFAULT_PATH)
+    SET(SPARKLE_LIBRARY "${SPARKLE_INCLUDE_DIR}")
+
     INCLUDE_DIRECTORIES(${APPLICATIONSERVICES_INCLUDE_DIR}/Headers)
-    SET_SOURCE_FILES_PROPERTIES(application/NotificationsOSX.cpp PROPERTIES COMPILE_FLAGS "-x objective-c++")
+    INCLUDE_DIRECTORIES(${SPARKLE_INCLUDE_DIR}/Headers)
+    SET_SOURCE_FILES_PROPERTIES(application/NotificationsOSX.mm PROPERTIES COMPILE_FLAGS "-x objective-c++")
+    SET_SOURCE_FILES_PROPERTIES(application/UpdatesOSX.mm PROPERTIES COMPILE_FLAGS "-x objective-c++")
 ENDIF()
 
 # This needs to be added in order for #include to work inside .cpp files
@@ -237,7 +244,7 @@ ENDIF()
 TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${TANO_CORE_LIB})
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${APPLICATIONSERVICES_LIBRARY} ${COCOA_LIBRARY})
+    TARGET_LINK_LIBRARIES(${TANO_WIDGETS} ${APPLICATIONSERVICES_LIBRARY} ${COCOA_LIBRARY} ${SPARKLE_LIBRARY})
 ENDIF()
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")

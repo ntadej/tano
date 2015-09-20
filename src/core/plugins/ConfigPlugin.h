@@ -39,7 +39,6 @@ public:
     virtual QString version() const = 0;
     virtual QString email() const = 0;
     virtual QString projectUrl() const = 0;
-    virtual QString updateUrl() const = 0;
 
     virtual bool editorEnabled() const = 0;
 

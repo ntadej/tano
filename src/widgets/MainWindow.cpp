@@ -50,6 +50,7 @@
 #include "core/xmltv/XmltvManager.h"
 
 #include "application/Notifications.h"
+#include "application/Updates.h"
 #include "common/Backend.h"
 #include "common/ChannelSelect.h"
 #include "common/DesktopShortcuts.h"
@@ -59,7 +60,6 @@
 #include "common/PlaylistDisplayWidget.h"
 #include "common/TrayIcon.h"
 #include "dialogs/AboutDialog.h"
-#include "dialogs/UpdateDialog.h"
 #include "editor/PlaylistEditor.h"
 #include "main/MediaPlayer.h"
 #include "main/PlaylistTab.h"
@@ -92,13 +92,14 @@ MainWindow::MainWindow(Arguments *args)
       _trayIcon(0)
 {
     _arguments = args;
+    _updates = new Updates(this);
 
     ui->setupUi(this);
 
-#if !defined(Q_OS_LINUX)
-    _update = new UpdateDialog(this);
-#else
+#if defined(Q_OS_LINUX)
     ui->menuAbout->removeAction(ui->actionUpdate);
+#else
+    ui->actionUpdate->setMenuRole(QAction::ApplicationSpecificRole);
 #endif
 
     createDesktopStartup();
@@ -111,10 +112,6 @@ MainWindow::MainWindow(Arguments *args)
     _mediaPlayer->createSession(_hasPlaylist && _model->validate());
 
     qApp->installEventFilter(this);
-
-#if !defined(Q_OS_LINUX)
-    _update->checkSilent();
-#endif
 
     tooltip();
 }
@@ -458,7 +455,7 @@ void MainWindow::createConnections()
     connect(_playlistTab->playlist(), SIGNAL(scheduleRequested(Channel *)), _scheduleTab, SLOT(channel(Channel *)));
 
 #if !defined(Q_OS_LINUX)
-    connect(ui->actionUpdate, SIGNAL(triggered()), _update, SLOT(check()));
+    connect(ui->actionUpdate, SIGNAL(triggered()), _updates, SLOT(check()));
 #endif
 
     connect(_mediaPlayer, SIGNAL(stateChanged(Vlc::State)), this, SLOT(setState(Vlc::State)));

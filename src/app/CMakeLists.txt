@@ -37,6 +37,17 @@ SET(Tano_Srcs
     main.cpp
     ../../${PROJECT_NAME_LOWER}/resources/logo/logo.qrc
 )
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    SET(Tano_Srcs
+        ${Tano_Srcs}
+        ../../resources/dsa_pub.pem
+    )
+    SET_SOURCE_FILES_PROPERTIES (
+        ../../resources/dsa_pub.pem
+        PROPERTIES
+        MACOSX_PACKAGE_LOCATION Resources
+    )
+ENDIF()
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     SET(Tano_Iconset ${CMAKE_SOURCE_DIR}/${PROJECT_NAME_LOWER}/resources/logo/Project.iconset)

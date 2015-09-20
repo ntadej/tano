@@ -46,11 +46,6 @@ QString TanoConfig::projectUrl() const
     return "http://projects.tano.si";
 }
 
-QString TanoConfig::updateUrl() const
-{
-    return "http://update.tano.si";
-}
-
 bool TanoConfig::editorEnabled() const
 {
     return true;

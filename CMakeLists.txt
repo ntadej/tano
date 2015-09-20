@@ -37,6 +37,7 @@ PROJECT(${BRANDING}
 SET(PROJECT_AUTHOR "Tadej Novak")
 SET(PROJECT_COPYRIGHT "Copyright (C) 2015 ${PROJECT_AUTHOR}.")
 SET(PROJECT_DESCRIPTION "Tano - An Open IP TV Player")
+SET(PROJECT_UPDATE_XML "http://cdn-direct.tano.si/sparkle/tano.xml")
 
 INCLUDE(CustomTargets)
 INCLUDE(ApplicationConfig)

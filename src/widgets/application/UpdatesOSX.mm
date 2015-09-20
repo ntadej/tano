@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,30 +16,15 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_TANOCONFIG_H_
-#define TANO_TANOCONFIG_H_
+#define TANO_UPDATESOSX
+#include "application/UpdatesOSX.h"
 
-#include "core/plugins/ConfigPlugin.h"
-
-class TanoConfig : public QObject, public ConfigPlugin
+UpdatesOSX::UpdatesOSX()
 {
-Q_OBJECT
-Q_PLUGIN_METADATA(IID "si.tano.core.ConfigPlugin")
-Q_INTERFACES(ConfigPlugin)
+    sharedUpdater = [SUUpdater new];
+}
 
-public:
-    QString applicationDataDir() const;
-
-    QString name() const;
-    QString version() const;
-    QString email() const;
-    QString projectUrl() const;
-
-    bool editorEnabled() const;
-
-    QVariantMap defaultSettings() const { return QVariantMap(); }
-    bool disableSettings(const QString &category) const { Q_UNUSED(category) return false; }
-    bool disableSettingsGui(const QString &category) const { Q_UNUSED(category) return false; }
-};
-
-#endif // TANO_TANOCONFIG_H_
+void UpdatesOSX::checkForUpdates()
+{
+    [sharedUpdater checkForUpdates:0];
+}
