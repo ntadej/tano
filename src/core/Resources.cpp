@@ -76,11 +76,6 @@ QString Tano::Resources::resource(const QString &file)
     else if (globalConfig && QFileInfo(globalConfig->applicationDataDir() + "/" + file).exists())
         path = QFileInfo(globalConfig->applicationDataDir() + "/" + file).absoluteFilePath();
 
-#if defined(DATA_DIR)
-    else if (QFileInfo(QString(DATA_DIR) + "/" + file).exists())
-        path = QFileInfo(QString(DATA_DIR) + "/" + file).absoluteFilePath();
-#endif
-
     return path;
 }
 

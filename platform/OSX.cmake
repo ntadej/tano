@@ -31,7 +31,7 @@ SET(PROJECT_INSTALL_LIB_DIR "${PROJECT_NAME}.app/Contents/MacOS/lib")
 # Support OS X 10.6 or later (64-bit only)
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     SET(CMAKE_MACOSX_RPATH ON)
-    SET(CMAKE_INSTALL_RPATH "${QT_LIB_DIR}")
+    SET(CMAKE_INSTALL_RPATH "${QT_LIB_DIR};@executable_path/../Frameworks;@executable_path/lib")
     SET(CMAKE_OSX_ARCHITECTURES x86_64)
 ENDIF()
 
@@ -40,9 +40,16 @@ CONFIGURE_FILE(
     ${CMAKE_BINARY_DIR}/platform/osx/Info.plist
 )
 
+INSTALL(DIRECTORY ${VLCQtCoreFramework} DESTINATION "${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}.app/Contents/Frameworks")
+INSTALL(DIRECTORY ${VLCQtWidgetsFramework} DESTINATION "${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}.app/Contents/Frameworks")
+
+ADD_CUSTOM_TARGET(macdeploy
+    "${QT_BIN_DIR}/macdeployqt"
+    "${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}.app"
+    WORKING_DIRECTORY ${QT_BIN_DIR})
+
 ADD_CUSTOM_TARGET(dmg
     "${QT_BIN_DIR}/macdeployqt"
     "${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}.app"
     -dmg
-    -verbose=2
     WORKING_DIRECTORY ${QT_BIN_DIR})

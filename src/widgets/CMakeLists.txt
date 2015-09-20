@@ -24,7 +24,7 @@ ADD_DEFINITIONS(-DTANO_WIDGETS_LIBRARY)
 # Add definitions for shared library
 ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
 
-IF(MINGW OR MSVC)
+IF(MSVC)
     CONFIGURE_FILE(
         ${CMAKE_SOURCE_DIR}/src/widgets/tano-widgets.rc.in
         ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.rc
@@ -205,18 +205,6 @@ INCLUDE_DIRECTORIES(
     ${CMAKE_BINARY_DIR}/src
     ${CMAKE_BINARY_DIR}/src/widgets
 )
-
-# Compile resources with windres
-IF(MINGW)
-    ADD_CUSTOM_COMMAND(
-        OUTPUT ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.obj
-        COMMAND ${CMAKE_RC_COMPILER}
-        -i ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.rc
-        -o ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.obj
-        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/widgets"
-    )
-    SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.obj)
-ENDIF()
 
 IF(MSVC)
     SET(Tano_Widgets_Srcs ${Tano_Widgets_Srcs} ${CMAKE_BINARY_DIR}/src/widgets/tano-widgets.rc)

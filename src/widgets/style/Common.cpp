@@ -83,10 +83,6 @@ void Tano::Style::setIconPaths()
 
     if (globalConfig) paths.prepend(globalConfig->applicationDataDir() + "/" + "icons");
 
-#if defined(DATA_DIR)
-    paths.prepend(QString(DATA_DIR) + "/" + "icons");
-#endif
-
 #if defined(Q_OS_MAC)
     paths.prepend(QCoreApplication::applicationDirPath().replace("MacOS", "Resources") + "/icons");
 #endif

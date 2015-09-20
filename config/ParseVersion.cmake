@@ -17,7 +17,11 @@
 #############################################################################
 FILE(READ VERSION VERSION_FROM_FILE)
 STRING(REGEX REPLACE "\n" "" VERSION_FROM_FILE "${VERSION_FROM_FILE}") # get rid of the newline at the end
-MESSAGE("You are compiling ${PROJECT_NAME} ${VERSION_FROM_FILE}")
+
+FILE(READ ${PROJECT_NAME_LOWER}/VERSION VERSION_APP_FROM_FILE)
+STRING(REGEX REPLACE "\n" "" VERSION_APP_FROM_FILE "${VERSION_APP_FROM_FILE}") # get rid of the newline at the end
+
+MESSAGE("You are compiling Tano Core ${VERSION_FROM_FILE} and ${BRANDING} ${VERSION_APP_FROM_FILE}")
 
 # Find Git Version Patch
 FIND_PROGRAM(GIT git)

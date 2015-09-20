@@ -16,29 +16,30 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
-IF(MINGW OR MSVC)
+IF(MSVC)
     CONFIGURE_FILE(
-        ${CMAKE_SOURCE_DIR}/src/app/tano.rc.in
-        ${CMAKE_BINARY_DIR}/src/app/tano.rc
+        ${CMAKE_SOURCE_DIR}/src/app/Project.rc.in
+        ${CMAKE_BINARY_DIR}/src/app/Project.rc
     )
 ENDIF()
 
-SET(Tano_Desktop
-    ${CMAKE_SOURCE_DIR}/src/app/tano.desktop
+SET(Tano_Icons
+    ../../resources/icons/tano-default
 )
-
-SET(Tano_Logo
-    ${CMAKE_SOURCE_DIR}/src/app/tano.png
-)
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    SET(Tano_Icons
+        ${Tano_Icons}
+        ../../resources/icons/tano-default@2x
+    )
+ENDIF()
 
 SET(Tano_Srcs
     main.cpp
-
-    ../../../tano/resources/logo/logo.qrc
+    ../../${PROJECT_NAME_LOWER}/resources/logo/logo.qrc
 )
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    SET(Tano_Iconset ${CMAKE_SOURCE_DIR}/tano/resources/logo/Project.iconset)
+    SET(Tano_Iconset ${CMAKE_SOURCE_DIR}/${PROJECT_NAME_LOWER}/resources/logo/Project.iconset)
 
     FILE(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/src/app/${PROJECT_NAME}.app/Contents/Resources)
     FIND_PROGRAM(ICONUTIL_EXECUTABLE NAMES iconutil)
@@ -64,20 +65,8 @@ INCLUDE_DIRECTORIES(
     ${CMAKE_BINARY_DIR}/src
 )
 
-# Compile resources with windres
-IF(MINGW)
-    ADD_CUSTOM_COMMAND(
-        OUTPUT ${CMAKE_BINARY_DIR}/src/app/tano.obj
-        COMMAND ${CMAKE_RC_COMPILER}
-        -i ${CMAKE_BINARY_DIR}/src/app/tano.rc
-        -o ${CMAKE_BINARY_DIR}/src/app/tano.obj
-        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/app"
-    )
-    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/app/tano.obj)
-ENDIF()
-
 IF(MSVC)
-    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/app/tano.rc)
+    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/app/Project.rc)
 ENDIF()
 
 # This line tells cmake to create the Tano program.
@@ -95,7 +84,7 @@ IF(MSVC)
 ENDIF()
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-   SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES MACOSX_BUNDLE_INFO_PLIST "${CMAKE_BINARY_DIR}/osx/Info.plist")
+   SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES MACOSX_BUNDLE_INFO_PLIST "${CMAKE_BINARY_DIR}/platform/osx/Info.plist")
 ENDIF()
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
@@ -107,13 +96,6 @@ TARGET_LINK_LIBRARIES(${PROJECT_NAME} VLCQt::Core
                       Qt5::Concurrent Qt5::Gui Qt5::Network Qt5::PrintSupport Qt5::Sql Qt5::Widgets Qt5::Xml
                       ${TANO_CORE_LIB} ${TANO_WIDGETS_LIB} ${TANO_CONFIG_LIB})
 
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    ADD_CUSTOM_COMMAND(TARGET ${PROJECT_NAME} POST_BUILD COMMAND
-        ${CMAKE_INSTALL_NAME_TOOL} -change ${TANO_CORE_LIB} "@loader_path/lib/${LIBSTART}${TANO_CORE}.${LIBEND}" $<TARGET_FILE:${PROJECT_NAME}>)
-    ADD_CUSTOM_COMMAND(TARGET ${PROJECT_NAME} POST_BUILD COMMAND
-        ${CMAKE_INSTALL_NAME_TOOL} -change ${TANO_WIDGETS_LIB} "@loader_path/lib/${LIBSTART}${TANO_WIDGETS}.${LIBEND}" $<TARGET_FILE:${PROJECT_NAME}>)
-ENDIF()
-
 
 ################
 # Installation #
@@ -124,7 +106,5 @@ INSTALL(TARGETS ${PROJECT_NAME}
     BUNDLE DESTINATION .
 )
 
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    INSTALL(FILES ${Tano_Desktop} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
-    INSTALL(FILES ${Tano_Logo} DESTINATION "${CMAKE_INSTALL_PREFIX}/share/icons")
-ENDIF()
+# Install data
+INSTALL(DIRECTORY ${Tano_Icons} DESTINATION "${CMAKE_INSTALL_PREFIX}/${PROJECT_INSTALL_DATA_DIR}/icons")

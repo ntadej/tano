@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2014 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,15 +15,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
-
 PROJECT(${TANO_CONFIG})
 
 # Add definitions for static library and plugin
 ADD_DEFINITIONS(-DQT_STATICPLUGIN -DQT_PLUGIN)
 
-#################
-# Configuration #
-#################
 CONFIGURE_FILE(
     ${CMAKE_SOURCE_DIR}/tano/config/TanoConfigGenerated.h.in
     ${CMAKE_BINARY_DIR}/tano/config/TanoConfigGenerated.h

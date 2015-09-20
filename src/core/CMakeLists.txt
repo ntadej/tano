@@ -24,7 +24,7 @@ ADD_DEFINITIONS(-DTANO_CORE_LIBRARY)
 # Add definitions for shared library
 ADD_DEFINITIONS(-DQT_SHARED -D_REENTRANT)
 
-IF(MINGW OR MSVC)
+IF(MSVC)
     CONFIGURE_FILE(
         ${CMAKE_SOURCE_DIR}/src/core/tano-core.rc.in
         ${CMAKE_BINARY_DIR}/src/core/tano-core.rc
@@ -115,7 +115,7 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     )
 ENDIF()
 
-IF(MINGW OR MSVC)
+IF(MSVC)
     SET(Tano_Core_Platform_Srcs
         platform/Windows.cpp
     )
@@ -165,18 +165,6 @@ INCLUDE_DIRECTORIES(
     ${CMAKE_BINARY_DIR}/src
     ${CMAKE_BINARY_DIR}/src/core
 )
-
-# Compile resources with windres
-IF(MINGW)
-    ADD_CUSTOM_COMMAND(
-        OUTPUT ${CMAKE_BINARY_DIR}/src/core/tano-core.obj
-        COMMAND ${CMAKE_RC_COMPILER}
-        -i ${CMAKE_BINARY_DIR}/src/core/tano-core.rc
-        -o ${CMAKE_BINARY_DIR}/src/core/tano-core.obj
-        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/core"
-    )
-    SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_BINARY_DIR}/src/core/tano-core.obj)
-ENDIF()
 
 IF(MSVC)
     SET(Tano_Core_Srcs ${Tano_Core_Srcs} ${CMAKE_BINARY_DIR}/src/core/tano-core.rc)

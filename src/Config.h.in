@@ -26,6 +26,5 @@
 
 // Settings
 #define LOGGING @LOGGING_SET@
-#define DATA_DIR "@DEFAULT_DATA_DIR@"
 
 #endif // TANO_CONFIG_H_

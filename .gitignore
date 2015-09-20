@@ -12,6 +12,5 @@ CMakeLists.txt.user*
 # Debian/build
 obj*
 
-# Branding
-src/branding/*/
-
+# Branding test
+branding/*
