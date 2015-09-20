@@ -161,7 +161,7 @@ SET(Tano_Widgets_Style_Srcs
 SET(Tano_Widgets_Srcs
     MainWindow.cpp
 
-    ../../data/style/style.qrc
+    ../../resources/style/style.qrc
 
     ${Tano_Widgets_Application_Srcs}
     ${Tano_Widgets_Common_Srcs}

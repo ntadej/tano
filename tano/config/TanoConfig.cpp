@@ -16,9 +16,9 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "ConfigPlayer.h"
 #include "core/Common.h"
 
+#include "TanoConfigGenerated.h"
 #include "TanoConfig.h"
 
 QString TanoConfig::applicationDataDir() const

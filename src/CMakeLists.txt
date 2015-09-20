@@ -21,17 +21,7 @@ CONFIGURE_FILE(
     ${CMAKE_SOURCE_DIR}/src/Config.h.in
     ${CMAKE_BINARY_DIR}/src/Config.h
 )
-CONFIGURE_FILE(
-    ${CMAKE_SOURCE_DIR}/src/ConfigPlayer.h.in
-    ${CMAKE_BINARY_DIR}/src/ConfigPlayer.h
-)
 
 ADD_SUBDIRECTORY(core)
 ADD_SUBDIRECTORY(widgets)
-
-#IF(NOT BRANDING STREQUAL "")
-#    ADD_SUBDIRECTORY(branding)
-#ELSE()
-    ADD_SUBDIRECTORY(config)
-    ADD_SUBDIRECTORY(player)
-#ENDIF()
+ADD_SUBDIRECTORY(app)

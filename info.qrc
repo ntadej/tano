@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/info">
-        <file>CHANGELOG</file>
-        <file>LICENSE.GPL</file>
-        <file>VERSION</file>
-        <file>README.md</file>
-    </qresource>
-</RCC>

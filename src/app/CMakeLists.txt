@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2014 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,36 +18,36 @@
 
 IF(MINGW OR MSVC)
     CONFIGURE_FILE(
-        ${CMAKE_SOURCE_DIR}/src/player/tano.rc.in
-        ${CMAKE_BINARY_DIR}/src/player/tano.rc
+        ${CMAKE_SOURCE_DIR}/src/app/tano.rc.in
+        ${CMAKE_BINARY_DIR}/src/app/tano.rc
     )
 ENDIF()
 
 SET(Tano_Desktop
-    ${CMAKE_SOURCE_DIR}/src/player/tano.desktop
+    ${CMAKE_SOURCE_DIR}/src/app/tano.desktop
 )
 
 SET(Tano_Logo
-    ${CMAKE_SOURCE_DIR}/src/player/tano.png
+    ${CMAKE_SOURCE_DIR}/src/app/tano.png
 )
 
 SET(Tano_Srcs
     main.cpp
 
-    ../../data/logo/logo.qrc
+    ../../../tano/resources/logo/logo.qrc
 )
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    SET(Tano_Iconset ${CMAKE_SOURCE_DIR}/osx/Tano.iconset)
+    SET(Tano_Iconset ${CMAKE_SOURCE_DIR}/tano/resources/logo/Project.iconset)
 
-    FILE(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/src/player/${PROJECT_NAME}.app/Contents/Resources)
+    FILE(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/src/app/${PROJECT_NAME}.app/Contents/Resources)
     FIND_PROGRAM(ICONUTIL_EXECUTABLE NAMES iconutil)
     ADD_CUSTOM_COMMAND(
-        OUTPUT ${CMAKE_BINARY_DIR}/src/player/${PROJECT_NAME}.app/Contents/Resources/${PROJECT_NAME}.icns
-        COMMAND ${ICONUTIL_EXECUTABLE} --convert icns --output ${CMAKE_BINARY_DIR}/src/player/${PROJECT_NAME}.app/Contents/Resources/${PROJECT_NAME}.icns
+        OUTPUT ${CMAKE_BINARY_DIR}/src/app/${PROJECT_NAME}.app/Contents/Resources/${PROJECT_NAME}.icns
+        COMMAND ${ICONUTIL_EXECUTABLE} --convert icns --output ${CMAKE_BINARY_DIR}/src/app/${PROJECT_NAME}.app/Contents/Resources/${PROJECT_NAME}.icns
         ${Tano_Iconset}
     )
-    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/player/${PROJECT_NAME}.app/Contents/Resources/${PROJECT_NAME}.icns)
+    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/app/${PROJECT_NAME}.app/Contents/Resources/${PROJECT_NAME}.icns)
 ENDIF()
 
 
@@ -67,17 +67,17 @@ INCLUDE_DIRECTORIES(
 # Compile resources with windres
 IF(MINGW)
     ADD_CUSTOM_COMMAND(
-        OUTPUT ${CMAKE_BINARY_DIR}/src/player/tano.obj
+        OUTPUT ${CMAKE_BINARY_DIR}/src/app/tano.obj
         COMMAND ${CMAKE_RC_COMPILER}
-        -i ${CMAKE_BINARY_DIR}/src/player/tano.rc
-        -o ${CMAKE_BINARY_DIR}/src/player/tano.obj
-        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/player"
+        -i ${CMAKE_BINARY_DIR}/src/app/tano.rc
+        -o ${CMAKE_BINARY_DIR}/src/app/tano.obj
+        WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/src/app"
     )
-    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/player/tano.obj)
+    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/app/tano.obj)
 ENDIF()
 
 IF(MSVC)
-    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/player/tano.rc)
+    SET(Tano_Srcs ${Tano_Srcs} ${CMAKE_BINARY_DIR}/src/app/tano.rc)
 ENDIF()
 
 # This line tells cmake to create the Tano program.

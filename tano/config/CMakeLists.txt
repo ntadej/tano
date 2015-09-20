@@ -21,6 +21,14 @@ PROJECT(${TANO_CONFIG})
 # Add definitions for static library and plugin
 ADD_DEFINITIONS(-DQT_STATICPLUGIN -DQT_PLUGIN)
 
+#################
+# Configuration #
+#################
+CONFIGURE_FILE(
+    ${CMAKE_SOURCE_DIR}/tano/config/TanoConfigGenerated.h.in
+    ${CMAKE_BINARY_DIR}/tano/config/TanoConfigGenerated.h
+)
+
 
 ###################
 # List of sources #
@@ -35,13 +43,9 @@ SET(Tano_Config_Srcs
 #####################
 # This needs to be added in order for #include to work inside .cpp files
 INCLUDE_DIRECTORIES(
-    ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/src/config
     ${CMAKE_SOURCE_DIR}/src/core
-    ${CMAKE_BINARY_DIR}
-    ${CMAKE_BINARY_DIR}/src
-    ${CMAKE_BINARY_DIR}/src/config
+    ${CMAKE_BINARY_DIR}/tano/config
 )
 
 # This line tells cmake to create the Tano Config library.

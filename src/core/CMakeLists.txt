@@ -131,8 +131,6 @@ SET(Tano_Core_Srcs
 
     CoreSharedExport.h
 
-    ../../info.qrc
-
     ${Tano_Core_Application_Srcs}
     ${Tano_Core_Network_Srcs}
     ${Tano_Core_Playlist_Srcs}
