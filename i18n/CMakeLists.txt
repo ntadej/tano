@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ IF(REFRESH_TRANSLATIONS)
     ENDIF()
 ENDIF()
 
-IF(NOT QT_LRELEASE_EXECUTABLE AND NOT Qt5_LRELEASE_EXECUTABLE)
+IF(NOT Qt5_LRELEASE_EXECUTABLE)
     MESSAGE(WARNING "Tano could not find lrelease. Your build won't contain translations.")
 ENDIF()
 
@@ -54,4 +54,4 @@ ENDIF()
 
 
 ## Installation
-INSTALL(FILES ${Tano_QMS} DESTINATION "${CMAKE_INSTALL_PREFIX}/${TANO_INSTALL_DATA_DIR}/lang")
+INSTALL(FILES ${Tano_QMS} DESTINATION "${CMAKE_INSTALL_PREFIX}/${PROJECT_INSTALL_DATA_DIR}/lang")
