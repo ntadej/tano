@@ -19,6 +19,7 @@
 #include <QtCore/QMap>
 
 #include "XmltvCommon.h"
+#include <QtCore/QObject>
 
 QMap<QString, QString> Tano::Xmltv::categoryMap()
 {

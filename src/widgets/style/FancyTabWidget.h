@@ -155,6 +155,7 @@ public:
 
     void paintEvent(QPaintEvent *event);
 
+    int tabCount() const;
     int currentIndex() const;
     QWidget *currentWidget() const;
     QStatusBar *statusBar() const;

@@ -23,6 +23,7 @@
 #include <QtCore/QStringList>
 
 #include "CoreSharedExport.h"
+#include <QtCore/QMap>
 
 namespace Tano
 {
