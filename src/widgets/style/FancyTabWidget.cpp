@@ -484,6 +484,10 @@ void FancyTabWidget::paintEvent(QPaintEvent *event)
     }
 }
 
+int FancyTabWidget::tabCount() const {
+    return _tabBar->count();
+}
+
 void FancyTabWidget::insertCornerWidget(int pos,
                                         QWidget *widget)
 {
