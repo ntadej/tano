@@ -22,28 +22,26 @@
 #include <QtCore/QDir>
 #include <QtCore/QString>
 
-#include "core/File.h"
-
-#include "WidgetsSharedExport.h"
+#include "common/File.h"
 
 namespace FileDialogs
 {
-    QString TANO_WIDGETS_EXPORT filterByType(const File::Type &type);
+    QString filterByType(const File::Type &type);
 
-    QString TANO_WIDGETS_EXPORT openByType(const File::Type &type,
+    QString openByType(const File::Type &type,
                        const QString &arg = "");
-    QString TANO_WIDGETS_EXPORT openDirectory(const QString &dir = QDir::homePath());
-    QString TANO_WIDGETS_EXPORT openFile();
-    File TANO_WIDGETS_EXPORT openPlaylist();
-    QString TANO_WIDGETS_EXPORT openPlaylistSimple();
-    QString TANO_WIDGETS_EXPORT openSubtitles(const QString &dir = QDir::homePath());
-    QString TANO_WIDGETS_EXPORT openUrl();
-    QString TANO_WIDGETS_EXPORT openXmltvFile(const QString &file = QDir::homePath() + "xmltv.xml");
+    QString openDirectory(const QString &dir = QDir::homePath());
+    QString openFile();
+    File openPlaylist();
+    QString openPlaylistSimple();
+    QString openSubtitles(const QString &dir = QDir::homePath());
+    QString openUrl();
+    QString openXmltvFile(const QString &file = QDir::homePath() + "xmltv.xml");
 
-    QString TANO_WIDGETS_EXPORT saveByType(const File::Type &type,
+    QString saveByType(const File::Type &type,
                        const QString &arg = "");
-    File TANO_WIDGETS_EXPORT savePlaylist();
-    QString TANO_WIDGETS_EXPORT saveXmltv();
+    File savePlaylist();
+    QString saveXmltv();
 }
 
 #endif // TANO_FILEDIALOGS_H_

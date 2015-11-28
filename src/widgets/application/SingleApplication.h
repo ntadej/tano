@@ -21,11 +21,9 @@
 
 #include <QApplication>
 
-#include "WidgetsSharedExport.h"
-
 class LocalServer;
 
-class TANO_WIDGETS_EXPORT SingleApplication : public QApplication
+class SingleApplication : public QApplication
 {
 Q_OBJECT
 public:

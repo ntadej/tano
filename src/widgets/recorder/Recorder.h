@@ -21,7 +21,7 @@
 
 #include <QtCore/QTime>
 
-#include "core/timers/containers/Timer.h"
+#include "timers/containers/Timer.h"
 
 #include "style/MiniSplitter.h"
 

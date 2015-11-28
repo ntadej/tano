@@ -25,8 +25,6 @@
 
 #include <VLCQtCore/Enums.h>
 
-#include "WidgetsSharedExport.h"
-
 class QShortcut;
 class QWidgetAction;
 
@@ -60,7 +58,7 @@ namespace Ui
     class MainWindow;
 }
 
-class TANO_WIDGETS_EXPORT MainWindow : public QMainWindow
+class MainWindow : public QMainWindow
 {
 Q_OBJECT
 public:

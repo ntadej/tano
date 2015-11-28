@@ -19,7 +19,7 @@
 #ifndef TANO_TANOCONFIG_H_
 #define TANO_TANOCONFIG_H_
 
-#include "core/plugins/ConfigPlugin.h"
+#include "plugins/ConfigPlugin.h"
 
 class TanoConfig : public QObject, public ConfigPlugin
 {

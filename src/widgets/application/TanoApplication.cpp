@@ -18,11 +18,11 @@
 
 #include <QtCore/QDebug>
 
-#include "core/Common.h"
-#include "core/application/Arguments.h"
-#include "core/application/Log.h"
-#include "core/application/Output.h"
-#include "core/plugins/Plugins.h"
+#include "common/Common.h"
+#include "application/Arguments.h"
+#include "application/Log.h"
+#include "application/Output.h"
+#include "plugins/Plugins.h"
 
 #include "widgets/style/Common.h"
 

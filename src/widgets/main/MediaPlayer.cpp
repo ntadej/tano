@@ -14,9 +14,9 @@
 #include <VLCQtWidgets/ControlVideo.h>
 #include <VLCQtWidgets/WidgetVideo.h>
 
-#include "core/application/Arguments.h"
-#include "core/settings/Settings.h"
-#include "core/settings/SettingsChannel.h"
+#include "application/Arguments.h"
+#include "settings/Settings.h"
+#include "settings/SettingsChannel.h"
 
 #include "common/Backend.h"
 #include "common/FileDialogs.h"

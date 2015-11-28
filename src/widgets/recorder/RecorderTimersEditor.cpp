@@ -20,11 +20,11 @@
 
 #include <QDebug>
 
-#include "core/playlist/PlaylistModel.h"
-#include "core/playlist/containers/Channel.h"
-#include "core/timers/containers/Timer.h"
-#include "core/timers/models/TimersFilterModel.h"
-#include "core/timers/models/TimersModel.h"
+#include "playlist/PlaylistModel.h"
+#include "playlist/containers/Channel.h"
+#include "timers/containers/Timer.h"
+#include "timers/models/TimersFilterModel.h"
+#include "timers/models/TimersModel.h"
 
 #include "RecorderTimersEditor.h"
 #include "ui_RecorderTimersEditor.h"

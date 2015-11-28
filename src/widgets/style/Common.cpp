@@ -25,9 +25,9 @@
 
 #include "Config.h"
 
-#include "core/Resources.h"
-#include "core/plugins/Plugins.h"
-#include "core/settings/Settings.h"
+#include "common/Resources.h"
+#include "plugins/Plugins.h"
+#include "settings/Settings.h"
 
 #include "style/Common.h"
 #include "style/ManhattanStyle.h"

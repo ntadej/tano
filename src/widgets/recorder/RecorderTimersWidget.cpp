@@ -21,8 +21,8 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QToolBar>
 
-#include "core/timers/containers/Timer.h"
-#include "core/timers/models/TimersFilterModel.h"
+#include "timers/containers/Timer.h"
+#include "timers/models/TimersFilterModel.h"
 
 #include "style/FancyLineEdit.h"
 

@@ -17,8 +17,8 @@
 *****************************************************************************/
 
 #include "Config.h"
-#include "core/plugins/Plugins.h"
-#include "core/settings/Settings.h"
+#include "plugins/Plugins.h"
+#include "settings/Settings.h"
 
 #include "SettingsDialog.h"
 #include "ui_SettingsDialog.h"

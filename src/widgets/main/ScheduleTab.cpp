@@ -27,11 +27,11 @@
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 
-#include "core/xmltv/XmltvCommon.h"
-#include "core/xmltv/containers/XmltvChannel.h"
-#include "core/xmltv/containers/XmltvProgramme.h"
-#include "core/xmltv/models/XmltvProgrammeFilterModel.h"
-#include "core/xmltv/models/XmltvProgrammeModel.h"
+#include "xmltv/XmltvCommon.h"
+#include "xmltv/containers/XmltvChannel.h"
+#include "xmltv/containers/XmltvProgramme.h"
+#include "xmltv/models/XmltvProgrammeFilterModel.h"
+#include "xmltv/models/XmltvProgrammeModel.h"
 
 #include "common/PlaylistDisplayWidget.h"
 #include "style/FancyLineEdit.h"

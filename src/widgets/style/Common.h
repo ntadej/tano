@@ -19,8 +19,6 @@
 #ifndef TANO_STYLECOMMON_H_
 #define TANO_STYLECOMMON_H_
 
-#include "WidgetsSharedExport.h"
-
 #include "MainWindow.h"
 
 namespace Tano
@@ -28,11 +26,11 @@ namespace Tano
     namespace Style
     {
         // Resources locators
-        TANO_WIDGETS_EXPORT void setMainStyle();
+        void setMainStyle();
 
         // Icons
-        TANO_WIDGETS_EXPORT void setIconName();
-        TANO_WIDGETS_EXPORT void setIconPaths();
+        void setIconName();
+        void setIconPaths();
     }
 }
 

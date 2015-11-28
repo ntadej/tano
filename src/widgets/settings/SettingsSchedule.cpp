@@ -16,8 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/File.h"
-#include "core/settings/Settings.h"
+#include "common/File.h"
+#include "settings/Settings.h"
 
 #include "SettingsSchedule.h"
 #include "ui_SettingsSchedule.h"

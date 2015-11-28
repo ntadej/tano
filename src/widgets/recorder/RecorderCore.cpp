@@ -20,8 +20,8 @@
 #include <VLCQtCore/Media.h>
 #include <VLCQtCore/MediaPlayer.h>
 
-#include "core/Common.h"
-#include "core/timers/containers/Timer.h"
+#include "common/Common.h"
+#include "timers/containers/Timer.h"
 
 #include "recorder/RecorderCore.h"
 

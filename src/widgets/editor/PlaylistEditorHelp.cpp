@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Common.h"
+#include "common/Common.h"
 
 #include "PlaylistEditorHelp.h"
 #include "ui_PlaylistEditorHelp.h"

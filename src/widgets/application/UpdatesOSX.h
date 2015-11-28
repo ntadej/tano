@@ -20,7 +20,7 @@
 #define TANO_UPDATESSOSX_H_
 
 #ifdef TANO_UPDATESOSX
-#include <Sparkle.h>
+#include <Sparkle/Sparkle.h>
 #endif
 
 class UpdatesOSX

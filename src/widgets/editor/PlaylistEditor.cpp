@@ -20,11 +20,11 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMessageBox>
 
-#include "core/Common.h"
-#include "core/File.h"
-#include "core/playlist/containers/Channel.h"
-#include "core/playlist/PlaylistModel.h"
-#include "core/playlist/handlers/CSVHandler.h"
+#include "common/Common.h"
+#include "common/File.h"
+#include "playlist/containers/Channel.h"
+#include "playlist/PlaylistModel.h"
+#include "playlist/handlers/CSVHandler.h"
 
 #include "common/FileDialogs.h"
 #include "editor/PlaylistEditorHelp.h"

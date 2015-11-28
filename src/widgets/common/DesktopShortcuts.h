@@ -19,7 +19,7 @@
 #ifndef TANO_DESKTOPSHORTCUTS_H_
 #define TANO_DESKTOPSHORTCUTS_H_
 
-#include "core/settings/SettingsShortcuts.h"
+#include "settings/SettingsShortcuts.h"
 
 class QAction;
 

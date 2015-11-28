@@ -16,10 +16,10 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/network/NetworkDownload.h"
-#include "core/xmltv/containers/XmltvProgramme.h"
-#include "core/xmltv/models/XmltvCrewFilterModel.h"
-#include "core/xmltv/models/XmltvCrewModel.h"
+#include "network/NetworkDownload.h"
+#include "xmltv/containers/XmltvProgramme.h"
+#include "xmltv/models/XmltvCrewFilterModel.h"
+#include "xmltv/models/XmltvCrewModel.h"
 
 #include "style/StyledBar.h"
 

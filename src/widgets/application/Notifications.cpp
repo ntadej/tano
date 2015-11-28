@@ -35,7 +35,7 @@
     #include "application/NotificationsOSX.h"
 #endif
 
-#include "core/Common.h"
+#include "common/Common.h"
 
 #include "Notifications.h"
 

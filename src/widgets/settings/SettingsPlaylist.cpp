@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/File.h"
+#include "common/File.h"
 
 #include "SettingsPlaylist.h"
 #include "ui_SettingsPlaylist.h"

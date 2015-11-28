@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/network/NetworkDownload.h"
+#include "network/NetworkDownload.h"
 
 #include "common/InfoBarWidget.h"
 

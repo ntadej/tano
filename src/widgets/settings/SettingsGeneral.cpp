@@ -16,8 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "core/Common.h"
-#include "core/application/LocaleManager.h"
+#include "common/Common.h"
+#include "application/LocaleManager.h"
 
 #include "SettingsGeneral.h"
 #include "ui_SettingsGeneral.h"

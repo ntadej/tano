@@ -21,8 +21,8 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QMenu>
 
-#include "core/playlist/PlaylistFilterModel.h"
-#include "core/playlist/PlaylistModel.h"
+#include "playlist/PlaylistFilterModel.h"
+#include "playlist/PlaylistModel.h"
 
 PlaylistDisplayWidget::PlaylistDisplayWidget(QWidget *parent)
     : QListView(parent),

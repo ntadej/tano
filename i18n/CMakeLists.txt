@@ -16,7 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
-SET(TEMPLATE ${CMAKE_SOURCE_DIR}/lang/source.ts)
+SET(TEMPLATE ${CMAKE_SOURCE_DIR}/i18n/source.ts)
 
 IF(REFRESH_TRANSLATIONS)
     IF(NOT Qt5_LUPDATE_EXECUTABLE)
@@ -29,7 +29,7 @@ IF(NOT Qt5_LRELEASE_EXECUTABLE)
 ENDIF()
 
 ## Collect all translations files
-FILE(GLOB Tano_TS ${CMAKE_SOURCE_DIR}/lang/*.ts)
+FILE(GLOB Tano_TS ${CMAKE_SOURCE_DIR}/i18n/*.ts)
 LIST(REMOVE_ITEM Tano_TS ${TEMPLATE})
 
 IF(Qt5_LRELEASE_EXECUTABLE)
@@ -54,4 +54,4 @@ ENDIF()
 
 
 ## Installation
-INSTALL(FILES ${Tano_QMS} DESTINATION "${CMAKE_INSTALL_PREFIX}/${PROJECT_INSTALL_DATA_DIR}/lang")
+INSTALL(FILES ${Tano_QMS} DESTINATION "${CMAKE_INSTALL_PREFIX}/${PROJECT_INSTALL_DATA_DIR}/i18n")

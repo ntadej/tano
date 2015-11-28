@@ -23,14 +23,14 @@
 #include <QtWidgets/QMessageBox>
 #include <QtWidgets/QVBoxLayout>
 
-#include "core/network/NetworkUdpxy.h"
-#include "core/playlist/PlaylistModel.h"
-#include "core/playlist/containers/Channel.h"
-#include "core/settings/Settings.h"
-#include "core/timers/TimersTimeManager.h"
-#include "core/timers/containers/Timer.h"
-#include "core/timers/models/TimersModel.h"
-#include "core/xmltv/containers/XmltvProgramme.h"
+#include "network/NetworkUdpxy.h"
+#include "playlist/PlaylistModel.h"
+#include "playlist/containers/Channel.h"
+#include "settings/Settings.h"
+#include "timers/TimersTimeManager.h"
+#include "timers/containers/Timer.h"
+#include "timers/models/TimersModel.h"
+#include "xmltv/containers/XmltvProgramme.h"
 
 #include "recorder/RecorderCore.h"
 

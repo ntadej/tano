@@ -20,9 +20,9 @@
 #include <QtCore/QTime>
 #include <QtWidgets/QMessageBox>
 
-#include "core/playlist/PlaylistModel.h"
-#include "core/playlist/containers/Channel.h"
-#include "core/timers/containers/Timer.h"
+#include "playlist/PlaylistModel.h"
+#include "playlist/containers/Channel.h"
+#include "timers/containers/Timer.h"
 
 #include "style/StyledBar.h"
 

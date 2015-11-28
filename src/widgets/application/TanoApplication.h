@@ -21,11 +21,9 @@
 
 #include "application/SingleApplication.h"
 
-#include "WidgetsSharedExport.h"
-
 class Arguments;
 
-class TANO_WIDGETS_EXPORT TanoApplication : public SingleApplication
+class TanoApplication : public SingleApplication
 {
 Q_OBJECT
 public:

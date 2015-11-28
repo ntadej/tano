@@ -21,8 +21,8 @@
 
 #include <QtCore/QDate>
 
-#include "core/Common.h"
-#include "core/plugins/Plugins.h"
+#include "common/Common.h"
+#include "plugins/Plugins.h"
 
 #include "common/Backend.h"
 

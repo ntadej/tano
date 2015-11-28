@@ -22,7 +22,7 @@
 #include <VLCQtCore/Enums.h>
 #include <VLCQtCore/Instance.h>
 
-#include "core/settings/Settings.h"
+#include "settings/Settings.h"
 
 #include "Backend.h"
 

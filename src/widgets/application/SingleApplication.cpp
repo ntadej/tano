@@ -18,8 +18,8 @@
 
 #include <QtNetwork/QLocalSocket>
 
-#include "core/Common.h"
-#include "core/application/LocalServer.h"
+#include "common/Common.h"
+#include "application/LocalServer.h"
 
 #include "application/SingleApplication.h"
 

@@ -22,9 +22,9 @@
 #include <QtPrintSupport/QPrinter>
 #include <QtPrintSupport/QPrintPreviewDialog>
 
-#include "core/Common.h"
-#include "core/playlist/PlaylistModel.h"
-#include "core/playlist/containers/Channel.h"
+#include "common/Common.h"
+#include "playlist/PlaylistModel.h"
+#include "playlist/containers/Channel.h"
 
 #include "Print.h"
 

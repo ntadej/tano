@@ -21,7 +21,7 @@
 
 #include <QtWidgets/QWidget>
 
-#include "core/File.h"
+#include "common/File.h"
 
 class QLineEdit;
 class QPushButton;

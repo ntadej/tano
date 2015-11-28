@@ -22,6 +22,8 @@ CMAKE_POLICY(VERSION 3.0.2)
 SET(CMAKE_MODULE_PATH
     ${CMAKE_SOURCE_DIR}/config
     ${CMAKE_SOURCE_DIR}/platform
+    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/src/widgets
 )
 
 IF(NOT DEFINED BRANDING OR BRANDING STREQUAL "")
@@ -37,7 +39,7 @@ PROJECT(${BRANDING}
 SET(PROJECT_AUTHOR "Tadej Novak")
 SET(PROJECT_COPYRIGHT "Copyright (C) 2015 ${PROJECT_AUTHOR}.")
 SET(PROJECT_DESCRIPTION "Tano - An Open IP TV Player")
-SET(PROJECT_UPDATE_XML "http://cdn-direct.tano.si/sparkle/tano.xml")
+SET(PROJECT_UPDATE_XML "https://cdn-direct.tano.si/sparkle/tano.xml")
 
 INCLUDE(CustomTargets)
 INCLUDE(ApplicationConfig)
@@ -46,7 +48,7 @@ INCLUDE(Dependencies)
 
 # Set the OS X Bundle specific CMake variables which will be used to populate the plist for
 # the application bundle
-SET(MACOSX_BUNDLE_COPYRIGHT "2014 Tadej Novak")
+SET(MACOSX_BUNDLE_COPYRIGHT "2015 Tadej Novak")
 SET(MACOSX_BUNDLE_ICON_FILE "${PROJECT_NAME}.icns")
 SET(MACOSX_BUNDLE_GUI_IDENTIFIER "si.tano.${PROJECT_NAME_LOWER}")
 
@@ -56,29 +58,17 @@ SET(MACOSX_BUNDLE_GUI_IDENTIFIER "si.tano.${PROJECT_NAME_LOWER}")
 #################
 IF(MSVC)
     SET(LIBSTART "")
-ELSE()
-    SET(LIBSTART lib)
-ENDIF()
-
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    SET(LIBEND dylib)
-ELSEIF(MSVC)
     SET(LIBEND lib)
 ELSE()
-    SET(LIBEND so)
+    SET(LIBSTART lib)
+    SET(LIBEND a)
 ENDIF()
 
-SET(TANO_CORE TanoCore)
 SET(TANO_WIDGETS TanoWidgets)
 SET(TANO_CONFIG ConfigPlugin)
 
-SET(TANO_CORE_LIB "${CMAKE_BINARY_DIR}/src/core/${LIBSTART}${TANO_CORE}.${LIBEND}")
 SET(TANO_WIDGETS_LIB "${CMAKE_BINARY_DIR}/src/widgets/${LIBSTART}${TANO_WIDGETS}.${LIBEND}")
-IF(MSVC)
-    SET(TANO_CONFIG_LIB "${CMAKE_BINARY_DIR}/${PROJECT_NAME_LOWER}/config/${LIBSTART}${TANO_CONFIG}.lib")
-ELSE()
-    SET(TANO_CONFIG_LIB "${CMAKE_BINARY_DIR}/${PROJECT_NAME_LOWER}/config/${LIBSTART}${TANO_CONFIG}.a")
-ENDIF()
+SET(TANO_CONFIG_LIB "${CMAKE_BINARY_DIR}/${PROJECT_NAME_LOWER}/config/${LIBSTART}${TANO_CONFIG}.${LIBEND}")
 
 
 ###################

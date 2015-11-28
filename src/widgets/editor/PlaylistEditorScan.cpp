@@ -24,9 +24,9 @@
 #include <VLCQtCore/Media.h>
 #include <VLCQtCore/MediaPlayer.h>
 
-#include "core/network/NetworkUdpxy.h"
-#include "core/playlist/containers/Channel.h"
-#include "core/playlist/PlaylistModel.h"
+#include "network/NetworkUdpxy.h"
+#include "playlist/containers/Channel.h"
+#include "playlist/PlaylistModel.h"
 
 #include "PlaylistEditorScan.h"
 #include "ui_PlaylistEditorScan.h"
