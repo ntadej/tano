@@ -16,8 +16,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
-CMAKE_MINIMUM_REQUIRED(VERSION 3.0.2)
-CMAKE_POLICY(VERSION 3.0.2)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.1.0)
 
 SET(CMAKE_MODULE_PATH
     ${CMAKE_SOURCE_DIR}/config
@@ -39,18 +38,14 @@ PROJECT(${BRANDING}
 SET(PROJECT_AUTHOR "Tadej Novak")
 SET(PROJECT_COPYRIGHT "Copyright (C) 2016 ${PROJECT_AUTHOR}.")
 SET(PROJECT_DESCRIPTION "Tano - An Open IP TV Player")
+SET(PROJECT_URL "http://player.tano.si")
+SET(PROJECT_SUPPORT "http://player.tano.si")
 SET(PROJECT_UPDATE_XML "https://cdn-direct.tano.si/sparkle/tano.xml")
 
 INCLUDE(CustomTargets)
 INCLUDE(ApplicationConfig)
 INCLUDE(CompilerConfig)
 INCLUDE(Dependencies)
-
-# Set the OS X Bundle specific CMake variables which will be used to populate the plist for
-# the application bundle
-SET(MACOSX_BUNDLE_COPYRIGHT "2015 Tadej Novak")
-SET(MACOSX_BUNDLE_ICON_FILE "${PROJECT_NAME}.icns")
-SET(MACOSX_BUNDLE_GUI_IDENTIFIER "si.tano.${PROJECT_NAME_LOWER}")
 
 
 #################
@@ -63,11 +58,6 @@ ELSE()
     SET(LIBSTART lib)
     SET(LIBEND a)
 ENDIF()
-
-SET(TANO_WIDGETS TanoWidgets)
-SET(TANO_CONFIG ConfigPlugin)
-
-SET(TANO_CONFIG_LIB "${CMAKE_BINARY_DIR}/${PROJECT_NAME_LOWER}/config/${LIBSTART}${TANO_CONFIG}.${LIBEND}")
 
 
 ###################
@@ -82,5 +72,4 @@ ELSEIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 ENDIF()
 
 ADD_SUBDIRECTORY(src)
-ADD_SUBDIRECTORY(${PROJECT_NAME_LOWER})
 ADD_SUBDIRECTORY(i18n)

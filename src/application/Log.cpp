@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,17 +19,19 @@
 #include <QtCore/QDateTime>
 #include <QtCore/QDebug>
 #include <QtCore/QFile>
+#include <QtCore/QMutex>
+#include <QtCore/QStandardPaths>
 #include <QtCore/QTextCodec>
 #include <QtCore/QTextStream>
 
 #include "Config.h"
 
-#include "common/Common.h"
-#include "common/Resources.h"
+#include "application/Common.h"
 #include "application/Log.h"
 #include "application/Output.h"
 
 QTextStream *out;
+QMutex *outMutex;
 
 void Tano::Log::output(QtMsgType type,
                        const QMessageLogContext &context,
@@ -37,7 +39,9 @@ void Tano::Log::output(QtMsgType type,
 {
     Q_UNUSED(context)
 
-    QString debugdate = QDateTime::currentDateTime().toString("yyyy.MM.dd hh:mm:ss");
+    QMutexLocker locker(outMutex);
+
+    QString debugdate = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
     switch (type)
     {
     case QtDebugMsg:
@@ -66,10 +70,16 @@ void Tano::Log::output(QtMsgType type,
 void Tano::Log::setup()
 {
 #if LOGGING
-    QString fileName = Tano::Resources::settingsPath() + "/" + Tano::executable() + ".log";
+#if QT_VERSION < 0x050400
+    QString directory = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+#else
+    QString directory = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+#endif
+    QString fileName = directory + "/" + Tano::executable() + ".log";
     QFile *log = new QFile(fileName);
     if (log->open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text)) {
         out = new QTextStream(log);
+        outMutex = new QMutex;
         qInstallMessageHandler(output);
     } else {
         qDebug() << "Error opening log file '" << fileName << "'. All debug output redirected to console.";

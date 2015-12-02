@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -18,8 +18,8 @@
 
 #include <QtCore/QSettings>
 
+#include "application/Common.h"
 #include "application/Output.h"
-#include "common/Common.h"
 #include "platform/Windows.h"
 
 #include <windows.h>
@@ -46,10 +46,4 @@ void Tano::Windows::showConsole()
     freopen("CONOUT$", "w", stderr);
     freopen("CONIN$", "r", stdin);
     freopen("CONOUT$", "w", stdout);
-}
-
-QString Tano::Windows::machineGuid()
-{
-    QSettings settings("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography", QSettings::NativeFormat);
-    return settings.value("MachineGuid").toString();
 }

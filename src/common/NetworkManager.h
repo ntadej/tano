@@ -16,29 +16,37 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_UPDATES_H_
-#define TANO_UPDATES_H_
+#ifndef TANO_NETWORKMANAGER_H_
+#define TANO_NETWORKMANAGER_H_
 
-#include <QtCore/QObject>
+#include <QtNetwork/QNetworkAccessManager>
+#include <QtNetwork/QNetworkDiskCache>
+#include <QtNetwork/QNetworkReply>
 
-#ifdef Q_OS_MAC
-class UpdatesOSX;
-#endif
-
-class Updates: public QObject
+class NetworkManager : public QNetworkAccessManager
 {
     Q_OBJECT
 public:
-    Updates(QObject *parent = 0);
-    ~Updates();
+    NetworkManager(QObject *parent = 0);
+    ~NetworkManager();
 
-public slots:
-    void check();
+    QNetworkReply *request(const QNetworkRequest &request,
+                           const Operation &operation,
+                           const QByteArray &data = QByteArray());
+
+signals:
+    void error(QNetworkReply *,
+               QNetworkReply::NetworkError);
+    void result(QNetworkReply *);
+
+private slots:
+    void httpError(QNetworkReply::NetworkError err);
+    void httpRequestFinished();
+    void sslError(QNetworkReply *reply,
+                  QList<QSslError> error);
 
 private:
-#ifdef Q_OS_MAC
-    UpdatesOSX *_backend;
-#endif
+    QNetworkDiskCache *_cache;
 };
 
-#endif // TANO_NOTIFICATIONS_H_
+#endif // TANO_NETWORKMANAGER_H_

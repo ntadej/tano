@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -17,6 +17,7 @@
 *****************************************************************************/
 
 #include <QtCore/QCoreApplication>
+#include <QtCore/QDebug>
 #include <QtCore/QDir>
 #include <QtCore/QLocale>
 
@@ -24,9 +25,11 @@
 #include "application/LocaleManager.h"
 #include "settings/Settings.h"
 
-LocaleManager::LocaleManager()
+LocaleManager::LocaleManager(QObject *parent)
+    : QObject(parent)
 {
     _translator = new QTranslator();
+    _locale = "";
     QCoreApplication::installTranslator(_translator);
     setLocale();
 }
@@ -37,24 +40,14 @@ LocaleManager::~LocaleManager()
     delete _translator;
 }
 
-QString LocaleManager::language(const QString &locale)
-{
-    QString language = QLocale::languageToString(QLocale(locale).language());
-
-    if(language == "C")
-        return "English";
-    else
-        return language;
-}
-
-QStringList LocaleManager::loadTranslations()
+QStringList LocaleManager::loadLocales()
 {
     QDir dir(Tano::Resources::path("/i18n/sl.qm"));
     QStringList list;
-    list << QLocale::languageToString(QLocale(QLocale::English).language());
+    list << QLocale(QLocale::English, QLocale::UnitedStates).name();
 
     foreach (const QString &fileName, dir.entryList(QDir::Files)) {
-        if(fileName.contains(".qm") && !fileName.contains("source")) {
+        if (fileName.contains(".qm") && !fileName.contains("source")) {
             list << localeName(fileName);
         }
     }
@@ -88,6 +81,11 @@ void LocaleManager::setLocale()
         locale = settings->language();
     }
 
+    qDebug() << "Using locale" << locale;
+
     QString langPath = Tano::Resources::path("/i18n/" + locale + ".qm");
     _translator->load(locale, langPath);
+    _locale = locale;
+
+    emit localeChanged();
 }

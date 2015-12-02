@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -22,20 +22,30 @@
 #include <QtCore/QString>
 #include <QtCore/QTranslator>
 
-class LocaleManager
+class LocaleManager : public QObject
 {
+    Q_OBJECT
+    Q_PROPERTY(QString R READ retranslateQml NOTIFY localeChanged)
+    Q_PROPERTY(QString locale READ locale NOTIFY localeChanged)
 public:
-	LocaleManager();
+    LocaleManager(QObject *parent = 0);
 	~LocaleManager();
 
-	static QString language(const QString &locale);
-	static QStringList loadTranslations();
+    static QStringList loadLocales();
 	static QString localeName(const QString &file);
 
+signals:
+    void localeChanged();
+
+public slots:
 	void setLocale();
 
 private:
+    inline QString retranslateQml() { return ""; }
+    inline QString locale() { return _locale; }
+
 	QTranslator *_translator;
+    QString _locale;
 };
 
 #endif // TANO_LOCALEMANAGER_H_

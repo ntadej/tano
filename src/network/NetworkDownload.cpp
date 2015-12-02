@@ -20,7 +20,7 @@
 #include <QtCore/QTemporaryFile>
 #include <QtNetwork/QNetworkReply>
 
-#include "common/Common.h"
+#include "application/Common.h"
 #include "network/NetworkRequest.h"
 
 #include "NetworkDownload.h"

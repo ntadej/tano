@@ -26,7 +26,6 @@
 #include "Config.h"
 
 #include "common/Resources.h"
-#include "plugins/Plugins.h"
 #include "settings/Settings.h"
 
 #include "style/Common.h"
@@ -80,8 +79,6 @@ void Tano::Style::setIconPaths()
 {
     QStringList paths = QIcon::themeSearchPaths();
     paths.prepend(QCoreApplication::applicationDirPath() + "/" + "icons");
-
-    if (globalConfig) paths.prepend(globalConfig->applicationDataDir() + "/" + "icons");
 
 #if defined(Q_OS_MAC)
     paths.prepend(QCoreApplication::applicationDirPath().replace("MacOS", "Resources") + "/icons");

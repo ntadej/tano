@@ -20,7 +20,7 @@
 #include <VLCQtCore/Media.h>
 #include <VLCQtCore/MediaPlayer.h>
 
-#include "common/Common.h"
+#include "application/Common.h"
 #include "timers/containers/Timer.h"
 
 #include "recorder/RecorderCore.h"

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,37 +16,37 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_TANOAPPLICATION_H_
-#define TANO_TANOAPPLICATION_H_
+#include "application/Updates.h"
 
-#include "application/SingleApplication.h"
-
-class Arguments;
-
-class TanoApplication : public SingleApplication
-{
-Q_OBJECT
-public:
-    explicit TanoApplication(int argc,
-                             char *argv[]);
-    ~TanoApplication();
-
-    inline Arguments *arguments() { return _arguments; }
-    static bool preInit();
-    bool postInit();
-
-#ifdef Q_OS_MAC
-    void setupDockHandler();
+#if defined(Q_OS_MAC)
+    #include <Foundation/NSString.h>
+    #include <Sparkle/Sparkle.h>
+#elif defined(Q_OS_WIN32)
+    #include "winsparkle.h"
 #endif
 
-public slots:
-    void onClickOnDock();
+Updates::Updates(QObject *parent)
+    : QObject(parent)
+{
+#if defined(Q_OS_MAC)
+    [SUUpdater sharedUpdater];
+#elif defined(Q_OS_WIN32)
+    win_sparkle_init();
+#endif
+}
 
-signals:
-    void dockClicked();
+Updates::~Updates()
+{
+#if defined(Q_OS_WIN32)
+    win_sparkle_cleanup();
+#endif
+}
 
-private:
-    Arguments *_arguments;
-};
-
-#endif // TANO_TANOAPPLICATION_H_
+void Updates::checkForUpdates()
+{
+#if defined(Q_OS_MAC)
+    [[SUUpdater sharedUpdater] checkForUpdates:0];
+#elif defined(Q_OS_WIN32)
+    win_sparkle_check_update_with_ui();
+#endif
+}

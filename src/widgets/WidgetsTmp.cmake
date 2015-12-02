@@ -20,7 +20,7 @@
 # List of sources #
 ###################
 # Define the UI source files used by Tano Widgets
-SET(Tano_Widgets_UIs
+SET(Project_Widgets_UIs
     widgets/MainWindow.ui
     widgets/common/OsdWidget.ui
     widgets/dialogs/AboutDialog.ui
@@ -45,21 +45,7 @@ SET(Tano_Widgets_UIs
 )
 
 # Define the C++ source files used by Tano Widgets
-SET(Tano_Widgets_Application_Srcs
-    widgets/application/Notifications.cpp
-    widgets/application/SingleApplication.cpp
-    widgets/application/TanoApplication.cpp
-    widgets/application/Updates.cpp
-)
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    SET(Tano_Widgets_Application_Srcs
-        ${Tano_Widgets_Application_Srcs}
-
-        widgets/application/NotificationsOSX.mm
-        widgets/application/UpdatesOSX.mm
-    )
-ENDIF()
-SET(Tano_Widgets_Common_Srcs
+SET(Project_Widgets_Common_Srcs
     widgets/common/Backend.cpp
     widgets/common/BrowseWidget.cpp
     widgets/common/ChannelSelect.cpp
@@ -74,16 +60,16 @@ SET(Tano_Widgets_Common_Srcs
     widgets/common/TrayIcon.cpp
 )
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    SET(Tano_Widgets_Common_Srcs
-        ${Tano_Widgets_Common_Srcs}
+    SET(Project_Widgets_Common_Srcs
+        ${Project_Widgets_Common_Srcs}
 
         widgets/common/FreedesktopImage.cpp
     )
 ENDIF()
-SET(Tano_Widgets_Dialogs_Srcs
+SET(Project_Widgets_Dialogs_Srcs
     widgets/dialogs/AboutDialog.cpp
 )
-SET(Tano_Widgets_Editor_Srcs
+SET(Project_Widgets_Editor_Srcs
     widgets/editor/PlaylistEditor.cpp
     widgets/editor/PlaylistEditorHelp.cpp
     widgets/editor/PlaylistEditorScan.cpp
@@ -92,13 +78,13 @@ SET(Tano_Widgets_Editor_Srcs
     widgets/editor/Print.cpp
     widgets/editor/PrintDialog.cpp
 )
-SET(Tano_Widgets_Main_Srcs
+SET(Project_Widgets_Main_Srcs
     widgets/main/MediaPlayer.cpp
     widgets/main/PlaylistTab.cpp
     widgets/main/ScheduleTab.cpp
     widgets/main/ShowInfoTab.cpp
 )
-SET(Tano_Widgets_Menu_Srcs
+SET(Project_Widgets_Menu_Srcs
     widgets/menu/MenuAspectRatio.cpp
     widgets/menu/MenuCore.cpp
     widgets/menu/MenuCropRatio.cpp
@@ -108,7 +94,7 @@ SET(Tano_Widgets_Menu_Srcs
     widgets/menu/MenuTrackSubtitles.cpp
     widgets/menu/MenuTrackVideo.cpp
 )
-SET(Tano_Widgets_Recorder_Srcs
+SET(Project_Widgets_Recorder_Srcs
     widgets/recorder/Recorder.cpp
     widgets/recorder/RecorderCore.cpp
     widgets/recorder/RecorderInfoWidget.cpp
@@ -116,7 +102,7 @@ SET(Tano_Widgets_Recorder_Srcs
     widgets/recorder/RecorderTimersEditor.cpp
     widgets/recorder/RecorderTimersWidget.cpp
 )
-SET(Tano_Widgets_Settings_Srcs
+SET(Project_Widgets_Settings_Srcs
     widgets/settings/SettingsBackend.cpp
     widgets/settings/SettingsDialog.cpp
     widgets/settings/SettingsDialogShortcuts.cpp
@@ -126,7 +112,7 @@ SET(Tano_Widgets_Settings_Srcs
     widgets/settings/SettingsSchedule.cpp
     widgets/settings/SettingsUi.cpp
 )
-SET(Tano_Widgets_Style_Srcs
+SET(Project_Widgets_Style_Srcs
     widgets/style/Common.cpp
     widgets/style/FancyLineEdit.cpp
     widgets/style/FancyTabWidget.cpp
@@ -140,18 +126,18 @@ SET(Tano_Widgets_Style_Srcs
 )
 
 
-SET(Tano_Widgets_Srcs
+SET(Project_Widgets_Srcs
     widgets/MainWindow.cpp
 
-    ${Tano_Widgets_Application_Srcs}
-    ${Tano_Widgets_Common_Srcs}
-    ${Tano_Widgets_Dialogs_Srcs}
-    ${Tano_Widgets_Editor_Srcs}
-    ${Tano_Widgets_Main_Srcs}
-    ${Tano_Widgets_Menu_Srcs}
-    ${Tano_Widgets_Recorder_Srcs}
-    ${Tano_Widgets_Settings_Srcs}
-    ${Tano_Widgets_Style_Srcs}
+    ${Project_Widgets_Application_Srcs}
+    ${Project_Widgets_Common_Srcs}
+    ${Project_Widgets_Dialogs_Srcs}
+    ${Project_Widgets_Editor_Srcs}
+    ${Project_Widgets_Main_Srcs}
+    ${Project_Widgets_Menu_Srcs}
+    ${Project_Widgets_Recorder_Srcs}
+    ${Project_Widgets_Settings_Srcs}
+    ${Project_Widgets_Style_Srcs}
 )
 
 
@@ -159,14 +145,4 @@ SET(Tano_Widgets_Srcs
 # Qt settings #
 ###############
 # This script runs the user interface compiler uic
-QT5_WRAP_UI(Tano_Widgets_UIC_Srcs ${Tano_Widgets_UIs})
-
-
-#####################
-# Compiler settings #
-#####################
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    INCLUDE_DIRECTORIES(${SPARKLE_INCLUDE_DIR})
-    SET_SOURCE_FILES_PROPERTIES(widgets/application/NotificationsOSX.mm PROPERTIES COMPILE_FLAGS "-x objective-c++")
-    SET_SOURCE_FILES_PROPERTIES(widgets/application/UpdatesOSX.mm PROPERTIES COMPILE_FLAGS "-x objective-c++")
-ENDIF()
+QT5_WRAP_UI(Project_Widgets_UIC_Srcs ${Project_Widgets_UIs})

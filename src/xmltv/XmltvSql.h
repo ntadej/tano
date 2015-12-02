@@ -42,13 +42,6 @@ public:
     */
     XmltvSql();
 
-    /*!
-        \brief XmltvSql constructor
-        \param name database name (QString)
-        \param location database location (QString)
-    */
-    XmltvSql(const QString &name,
-             const QString &location);
     ~XmltvSql();
 
     /*!

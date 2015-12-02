@@ -17,6 +17,7 @@
 *****************************************************************************/
 
 #include <QtCore/QDebug>
+#include <QtCore/QStandardPaths>
 #include <QtCore/QStringList>
 
 #include "XmltvSql.h"
@@ -31,14 +32,11 @@
 XmltvSql::XmltvSql()
 {
     _db = QSqlDatabase::addDatabase("QSQLITE");
-    _db.setDatabaseName(Tano::Resources::settingsPath() + "/xmltv.db");
-}
-
-XmltvSql::XmltvSql(const QString &name,
-                   const QString &location)
-{
-    _db = QSqlDatabase::addDatabase("QSQLITE", name);
-    _db.setDatabaseName(location + "/" + name + ".db");
+#if QT_VERSION < 0x050400
+    _db.setDatabaseName(QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/xmltv.db");
+#else
+    _db.setDatabaseName(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/xmltv.db");
+#endif
 }
 
 XmltvSql::~XmltvSql()

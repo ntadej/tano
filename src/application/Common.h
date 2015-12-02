@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,37 +16,32 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "common/Common.h"
+#ifndef TANO_COMMON_H_
+#define TANO_COMMON_H_
 
-#include "TanoConfigGenerated.h"
-#include "TanoConfig.h"
+#include <QtCore/QDate>
+#include <QtCore/QString>
+#include <QtCore/QTime>
 
-QString TanoConfig::applicationDataDir() const
+namespace Tano
 {
-    return QString(APP_DATA_DIR);
+    // Tano name and executable
+    QString name();
+    QString executable();
+    QString domain();
+    QString localServer();
+
+    // Version
+    QString version();
+    QString build();
+    QString changeset();
+    bool is64bit();
+
+    // Misc
+    QString recordingFileName(const QString &name,
+                              const QString &channel,
+                              const QDate &date,
+                              const QTime &time);
 }
 
-QString TanoConfig::name() const
-{
-    return "Tano";
-}
-
-QString TanoConfig::version() const
-{
-    return Tano::versionCore();
-}
-
-QString TanoConfig::email() const
-{
-    return "info@tano.si";
-}
-
-QString TanoConfig::projectUrl() const
-{
-    return "http://projects.tano.si";
-}
-
-bool TanoConfig::editorEnabled() const
-{
-    return true;
-}
+#endif // TANO_COMMON_H_

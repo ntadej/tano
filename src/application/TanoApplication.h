@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,31 +16,37 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QtPlugin>
+#ifndef TANO_TANOAPPLICATION_H_
+#define TANO_TANOAPPLICATION_H_
 
-#include "widgets/application/TanoApplication.h"
-#include "widgets/MainWindow.h"
+#include "application/SingleApplication.h"
 
-Q_IMPORT_PLUGIN(TanoConfig)
+class Arguments;
 
-int main(int argc, char *argv[])
+class TanoApplication : public SingleApplication
 {
-    if (!TanoApplication::preInit())
-        return -10;
+    Q_OBJECT
+public:
+    explicit TanoApplication(int &argc,
+                             char **argv);
+    ~TanoApplication();
 
-    TanoApplication instance(argc, argv);
-    // Is another instance of the program is already running
-    if (!instance.shouldContinue())
-        return 0;
+    inline Arguments *arguments() { return _arguments; }
+    static bool preInit();
+    bool postInit();
 
-    if (!instance.postInit())
-        return -10;
+#ifdef Q_OS_MAC
+    void setupDockHandler();
+#endif
 
-    MainWindow main(instance.arguments());
-    main.show();
+public slots:
+    void onClickOnDock();
 
-    QObject::connect(&instance, SIGNAL(activate()), &main, SLOT(single()));
-    QObject::connect(&instance, SIGNAL(dockClicked()), &main, SLOT(dockClicked()));
+signals:
+    void dockClicked();
 
-    return instance.exec();
-}
+private:
+    Arguments *_arguments;
+};
+
+#endif // TANO_TANOAPPLICATION_H_

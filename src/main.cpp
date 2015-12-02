@@ -16,36 +16,27 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_COREPLUGIN_H_
-#define TANO_COREPLUGIN_H_
+#include "application/TanoApplication.h"
+#include "widgets/MainWindow.h"
 
-#include <QtCore/QString>
-#include <QtCore/QStringList>
-#include <QtCore/QVariantMap>
-#include <QtCore/QtPlugin>
-
-class NetworkPlugin;
-
-class ConfigPlugin
+int main(int argc, char *argv[])
 {
-public:
-    virtual ~ConfigPlugin() { }
+    if (!TanoApplication::preInit())
+        return -10;
 
-    virtual QString applicationDataDir() const = 0;
+    TanoApplication instance(argc, argv);
+    // Is another instance of the program is already running
+    if (!instance.shouldContinue())
+        return 0;
 
-    virtual QString name() const = 0;
-    virtual QString version() const = 0;
-    virtual QString email() const = 0;
-    virtual QString projectUrl() const = 0;
+    if (!instance.postInit())
+        return -10;
 
-    virtual bool editorEnabled() const = 0;
+    MainWindow main(instance.arguments());
+    main.show();
 
-    virtual QVariantMap defaultSettings() const = 0;
-    virtual bool disableSettings(const QString &category) const = 0;
-    virtual bool disableSettingsGui(const QString &category) const = 0;
-};
+    QObject::connect(&instance, SIGNAL(activate()), &main, SLOT(single()));
+    QObject::connect(&instance, SIGNAL(dockClicked()), &main, SLOT(dockClicked()));
 
-#define ConfigPlugin_IID "si.tano.core.ConfigPlugin"
-Q_DECLARE_INTERFACE(ConfigPlugin, ConfigPlugin_IID)
-
-#endif // TANO_COREPLUGIN_H_
+    return instance.exec();
+}

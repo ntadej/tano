@@ -19,14 +19,11 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtCore/QTemporaryFile>
-#include <QtGui/QImageWriter>
-#include <QtWidgets/QApplication>
 #include <QtWidgets/QSystemTrayIcon>
-#include <QtWidgets/QStyle>
 
 #ifdef Q_OS_LINUX
     #include <QtDBus/QDBusInterface>
+    #include "application/Common.h"
     #include "common/FreedesktopImage.h"
 #endif
 
@@ -34,8 +31,6 @@
     #include <ApplicationServices/ApplicationServices.h>
     #include "application/NotificationsOSX.h"
 #endif
-
-#include "common/Common.h"
 
 #include "Notifications.h"
 
@@ -126,6 +121,7 @@ void Notifications::notifySystray(const QString &title,
     _trayIcon->showMessage(title, text, QSystemTrayIcon::Information, millisTimeout);
 }
 
+// Based on Qt's tray icon implementation
 #ifdef Q_OS_MAC
 void Notifications::notifyMacOSXNotificationCenter(const QString &title,
                                                    const QString &text)

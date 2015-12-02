@@ -20,7 +20,7 @@
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMessageBox>
 
-#include "common/Common.h"
+#include "application/Common.h"
 #include "common/File.h"
 #include "playlist/containers/Channel.h"
 #include "playlist/PlaylistModel.h"

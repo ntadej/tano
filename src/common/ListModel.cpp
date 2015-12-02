@@ -59,7 +59,7 @@ void ListModel::appendRows(const QList<ListItem *> &items)
 {
     beginInsertRows(QModelIndex(), rowCount(), rowCount()+items.size()-1);
     foreach(ListItem *item, items) {
-        connect(item, SIGNAL(dataChanged()), SLOT(handleItemChange()));
+        connect(item, &ListItem::dataChanged, this, &ListModel::handleItemChange);
         _list.append(item);
     }
     endInsertRows();
@@ -68,7 +68,7 @@ void ListModel::appendRows(const QList<ListItem *> &items)
 void ListModel::insertRow(int row, ListItem *item)
 {
     beginInsertRows(QModelIndex(), row, row);
-    connect(item, SIGNAL(dataChanged()), SLOT(handleItemChange()));
+    connect(item, &ListItem::dataChanged, this, &ListModel::handleItemChange);
     _list.insert(row, item);
     endInsertRows();
 }

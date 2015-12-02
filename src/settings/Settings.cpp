@@ -18,8 +18,7 @@
 
 #include "Config.h"
 
-#include "common/Common.h"
-#include "plugins/Plugins.h"
+#include "application/Common.h"
 #include "settings/Settings.h"
 
 Settings::Settings(QObject *parent)
@@ -86,70 +85,50 @@ void Settings::writeSettings()
     setValue(KEY_SESSION_REMEMBER_VOLUME, sessionRememberVolume());
     setValue(KEY_SESSION_VOLUME, sessionVolume());
 
-    if (globalConfig && globalConfig->disableSettings("channels")) {
-        remove("channels");
-    } else {
-        setValue(KEY_PLAYLIST, playlist());
-        setValue(KEY_PLAYLIST_UPDATE, playlistUpdate());
-        setValue(KEY_PLAYLIST_UPDATE_URL, playlistUpdateUrl());
-        setValue(KEY_RADIO_CATEGORY, radioCategory());
-        setValue(KEY_HD_CATEGORY, hdCategory());
-        setValue(KEY_UDPXY, udpxy());
-        setValue(KEY_UDPXY_URL, udpxyUrl());
-        setValue(KEY_UDPXY_PORT, udpxyPort());
-    }
+    setValue(KEY_PLAYLIST, playlist());
+    setValue(KEY_PLAYLIST_UPDATE, playlistUpdate());
+    setValue(KEY_PLAYLIST_UPDATE_URL, playlistUpdateUrl());
+    setValue(KEY_RADIO_CATEGORY, radioCategory());
+    setValue(KEY_HD_CATEGORY, hdCategory());
+    setValue(KEY_UDPXY, udpxy());
+    setValue(KEY_UDPXY_URL, udpxyUrl());
+    setValue(KEY_UDPXY_PORT, udpxyPort());
 
-    if (globalConfig && globalConfig->disableSettings("gui")) {
-        remove("gui");
-    } else {
-        setValue(KEY_WIDTH, width());
-        setValue(KEY_HEIGHT, height());
-        setValue(KEY_POS_X, posX());
-        setValue(KEY_POS_Y, posY());
+    setValue(KEY_WIDTH, width());
+    setValue(KEY_HEIGHT, height());
+    setValue(KEY_POS_X, posX());
+    setValue(KEY_POS_Y, posY());
 
-        setValue(KEY_OSD, osd());
-        setValue(KEY_TRAY_ENABLED, trayEnabled());
-        setValue(KEY_HIDE_TO_TRAY, hideToTray());
-        setValue(KEY_MOUSE_WHEEL, mouseWheel());
-        setValue(KEY_REMEMBER_GUI_SESSION, rememberGuiSession());
-        setValue(KEY_ICONS, icons());
-    }
+    setValue(KEY_OSD, osd());
+    setValue(KEY_TRAY_ENABLED, trayEnabled());
+    setValue(KEY_HIDE_TO_TRAY, hideToTray());
+    setValue(KEY_MOUSE_WHEEL, mouseWheel());
+    setValue(KEY_REMEMBER_GUI_SESSION, rememberGuiSession());
+    setValue(KEY_ICONS, icons());
 
-    if (globalConfig && globalConfig->disableSettings("backend")) {
-        remove("backend");
-    } else {
-        setValue(KEY_VOUT, vout());
-        setValue(KEY_AOUT, aout());
-        setValue(KEY_YUV_TO_RGB, yuvToRgb());
-        setValue(KEY_SPDIF, spdif());
+    setValue(KEY_VOUT, vout());
+    setValue(KEY_AOUT, aout());
+    setValue(KEY_YUV_TO_RGB, yuvToRgb());
+    setValue(KEY_SPDIF, spdif());
 
-        setValue(KEY_REMEMBER_VIDEO_SETTINGS, rememberVideoSettings());
-        setValue(KEY_REMEMBER_VIDEO_PER_CHANNEL, rememberVideoPerChannel());
-        setValue(KEY_ASPECT_RATIO, aspectRatio());
-        setValue(KEY_CROP_RATIO, cropRatio());
-        setValue(KEY_DEINTERLACING, deinterlacing());
-        setValue(KEY_AUDIO_LANGUAGE, audioLanguage());
-        setValue(KEY_SUBTITLE_LANGUAGE, subtitleLanguage());
+    setValue(KEY_REMEMBER_VIDEO_SETTINGS, rememberVideoSettings());
+    setValue(KEY_REMEMBER_VIDEO_PER_CHANNEL, rememberVideoPerChannel());
+    setValue(KEY_ASPECT_RATIO, aspectRatio());
+    setValue(KEY_CROP_RATIO, cropRatio());
+    setValue(KEY_DEINTERLACING, deinterlacing());
+    setValue(KEY_AUDIO_LANGUAGE, audioLanguage());
+    setValue(KEY_SUBTITLE_LANGUAGE, subtitleLanguage());
 
-        setValue(KEY_MUTE_ON_MINIMIZE, muteOnMinimize());
-        setValue(KEY_TELETEXT, teletext());
-    }
+    setValue(KEY_MUTE_ON_MINIMIZE, muteOnMinimize());
+    setValue(KEY_TELETEXT, teletext());
 
-    if (globalConfig && globalConfig->disableSettings("recorder")) {
-        remove("recorder");
-    } else {
-        setValue(KEY_RECORDER_DIRECTORY, recorderDirectory());
-        setValue(KEY_SNAPSHOTS_DIRECTORY, snapshotsDirectory());
-    }
+    setValue(KEY_RECORDER_DIRECTORY, recorderDirectory());
+    setValue(KEY_SNAPSHOTS_DIRECTORY, snapshotsDirectory());
 
-    if (globalConfig && globalConfig->disableSettings("xmltv")) {
-        remove("xmltv");
-    } else {
-        setValue(KEY_XMLTV_UPDATE, xmltvUpdate());
-        setValue(KEY_XMLTV_UPDATE_LOCATION, xmltvUpdateLocation());
-        setValue(KEY_XMLTV_UPDATE_REMOTE, xmltvUpdateRemote());
-        setValue(KEY_XMLTV_HOURS_OFFSET, xmltvHoursOffset());
-    }
+    setValue(KEY_XMLTV_UPDATE, xmltvUpdate());
+    setValue(KEY_XMLTV_UPDATE_LOCATION, xmltvUpdateLocation());
+    setValue(KEY_XMLTV_UPDATE_REMOTE, xmltvUpdateRemote());
+    setValue(KEY_XMLTV_HOURS_OFFSET, xmltvHoursOffset());
 
     sync();
 }
@@ -211,8 +190,5 @@ void Settings::readSettings()
 
 QVariant Settings::defaultValue(const QString &key) const
 {
-    if (globalConfig && globalConfig->defaultSettings().contains(key))
-        return globalConfig->defaultSettings().value(key);
-    else
-        return _map.value(key);
+    return _map.value(key);
 }

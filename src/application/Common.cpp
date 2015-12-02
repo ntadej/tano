@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,19 +20,12 @@
 #include <QtCore/QFile>
 #include <QtCore/QTextStream>
 
-#if defined(Q_OS_MAC)
-    #include "platform/OSX.h"
-#elif defined(Q_OS_WIN32)
-    #include "platform/Windows.h"
-#endif
-
 #include "Config.h"
 #include "Common.h"
-#include "plugins/Plugins.h"
 
 QString Tano::name()
 {
-    return globalConfig ? globalConfig->name() : "Tano";
+    return QString(PROJECT_NAME);
 }
 
 QString Tano::executable()
@@ -44,17 +37,17 @@ QString Tano::executable()
 #endif
 }
 
+QString Tano::domain()
+{
+    return "tano.si";
+}
+
 QString Tano::localServer()
 {
     return QString(name() + "localserver").toLower();
 }
 
 QString Tano::version()
-{
-    return globalConfig ? globalConfig->version() : versionCore();
-}
-
-QString Tano::versionCore()
 {
 #ifdef VERSION
     return QString(VERSION);
@@ -63,13 +56,22 @@ QString Tano::versionCore()
 #endif
 }
 
+QString Tano::build()
+{
+#ifdef VERSION_BUILD
+    return "(" + QString(VERSION_BUILD) + ")";
+#else
+    return "";
+#endif
+}
+
 QString Tano::changeset()
 {
     QString version;
 
-#ifdef VERSION_PATCH
-    if(QString(VERSION_PATCH) != "0" && QString(VERSION_PATCH) != "") {
-        version.append("(" + QString(VERSION_PATCH) + ")");
+#ifdef VERSION_VCS
+    if(QString(VERSION_VCS) != "0" && QString(VERSION_VCS) != "") {
+        version.append("(" + QString(VERSION_VCS) + ")");
     }
 #endif
 
@@ -85,24 +87,6 @@ bool Tano::is64bit()
 #endif
 
     return bit;
-}
-
-QString Tano::uid()
-{
-#if defined(Q_OS_LINUX)
-    QFile file("/var/lib/dbus/machine-id");
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-        return QString("error");
-
-    QTextStream in(&file);
-    QString uid = in.readLine();
-#elif defined(Q_OS_MAC)
-    QString uid = Tano::OSX::uuid();
-#else
-    QString uid = Tano::Windows::machineGuid();
-#endif
-
-    return QString(QCryptographicHash::hash(uid.toLocal8Bit(), QCryptographicHash::Md5).toHex());
 }
 
 QString Tano::recordingFileName(const QString &name,

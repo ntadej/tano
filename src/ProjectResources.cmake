@@ -15,3 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
+SET(Project_Resources
+    ../${PROJECT_NAME_LOWER}/resources/logo/logo.qrc
+    ../resources/style/style.qrc
+)

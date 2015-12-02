@@ -29,7 +29,6 @@ namespace Tano
         QString path(const QString &file);
         QString recordings();
         QString resource(const QString &file);
-        QString settingsPath();
     }
 }
 

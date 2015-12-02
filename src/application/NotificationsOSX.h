@@ -2,6 +2,9 @@
 * Tano - An Open IP TV Player
 * Copyright (C) 2013 Tadej Novak <tadej@tano.si>
 *
+* This file was part of Bitcoin
+* Copyright (C) 2013 Bitcoin Developers.
+*
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
 * the Free Software Foundation, either version 3 of the License, or
@@ -16,32 +19,23 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <IOKit/IOKitLib.h>
+#ifndef TANO_NOTIFICATIONSOSX_H_
+#define TANO_NOTIFICATIONSOSX_H_
 
-#include "platform/OSX.h"
+#include <QtCore/QObject>
 
-QString Tano::OSX::QCFStringToQString(CFStringRef str)
+class NotificationsOSX : public QObject
 {
-    if (!str)
-        return QString();
+    Q_OBJECT
+public:
+    void init();
+    void showNotification(const QString &title,
+                          const QString &text);
 
-    CFIndex length = CFStringGetLength(str);
-    if (length == 0)
-        return QString();
+    void sendAppleScript(const QString &script);
 
-    QString string(length, Qt::Uninitialized);
-    CFStringGetCharacters(str, CFRangeMake(0, length), reinterpret_cast<UniChar *>
-        (const_cast<QChar *>(string.unicode())));
-    return string;
-}
+    bool hasNotificationCenterSupport(void);
+    static NotificationsOSX *instance();
+};
 
-QString Tano::OSX::uuid()
-{
-    io_registry_entry_t ioRegistryRoot = IORegistryEntryFromPath(kIOMasterPortDefault, "IOService:/");
-    CFStringRef uuidCf = (CFStringRef) IORegistryEntryCreateCFProperty(ioRegistryRoot, CFSTR(kIOPlatformUUIDKey), kCFAllocatorDefault, 0);
-    IOObjectRelease(ioRegistryRoot);
-    QString uuid = QCFStringToQString(uuidCf);
-    CFRelease(uuidCf);
-
-    return uuid;
-}
+#endif // TANO_NOTIFICATIONSOSX_H_

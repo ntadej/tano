@@ -33,7 +33,7 @@
 
 #include "Config.h"
 
-#include "common/Common.h"
+#include "application/Common.h"
 #include "common/Resources.h"
 #include "application/Arguments.h"
 #include "application/LocaleManager.h"
@@ -42,7 +42,6 @@
 #include "playlist/PlaylistModel.h"
 #include "playlist/PlaylistUpdate.h"
 #include "playlist/containers/Channel.h"
-#include "plugins/Plugins.h"
 #include "settings/Settings.h"
 #include "settings/SettingsChannel.h"
 #include "settings/SettingsPassword.h"
@@ -139,7 +138,7 @@ void MainWindow::initUpdates()
     _updates = new Updates(this);
 
 #if !defined(Q_OS_LINUX)
-    connect(ui->actionUpdate, SIGNAL(triggered()), _updates, SLOT(check()));
+    connect(ui->actionUpdate, SIGNAL(triggered()), _updates, SLOT(checkForUpdates()));
 #endif
 }
 
@@ -345,9 +344,6 @@ void MainWindow::createGui()
     ui->menuMedia->removeAction(ui->actionTeletext);
 #endif
 
-    if (globalConfig && !globalConfig->editorEnabled())
-        ui->menuOptions->removeAction(ui->actionEditPlaylist);
-
     qDebug() << "Initialised: GUI";
 }
 
@@ -533,16 +529,6 @@ void MainWindow::createMenus()
             ui->menuVideo->addMenu(menu);
     }
 
-    if (globalConfig && globalConfig->disableSettingsGui("channels")) {
-        ui->actionOpen->setDisabled(true);
-        ui->actionOpenFile->setDisabled(true);
-        ui->actionOpenUrl->setDisabled(true);
-
-        ui->menuFile->removeAction(ui->actionOpen);
-        ui->menuFile->removeAction(ui->actionOpenFile);
-        ui->menuFile->removeAction(ui->actionOpenUrl);
-    }
-
     qDebug() << "Initialised: Menus";
 }
 
@@ -604,7 +590,7 @@ void MainWindow::support()
 {
     QString subject = Tano::name() + " " + tr("Support");
     subject = subject.replace(" ", "%20");
-    QDesktopServices::openUrl(QUrl("mailto:" + (globalConfig ? globalConfig->email() : "info@tano.si" ) + "?subject=" + subject));
+    //QDesktopServices::openUrl(QUrl("mailto:" + (globalConfig ? globalConfig->email() : "info@tano.si" ) + "?subject=" + subject));
 }
 
 void MainWindow::currentWidget(QWidget *widget)

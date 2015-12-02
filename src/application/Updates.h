@@ -16,36 +16,20 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "application/Updates.h"
+#ifndef TANO_UPDATES_H_
+#define TANO_UPDATES_H_
 
-#if defined(Q_OS_MAC)
-    #include "application/UpdatesOSX.h"
-#elif defined(Q_OS_WIN32)
-    #include "winsparkle.h"
-#endif
+#include <QtCore/QObject>
 
-Updates::Updates(QObject *parent)
-    : QObject(parent)
+class Updates: public QObject
 {
-#if defined(Q_OS_MAC)
-    _backend = new UpdatesOSX();
-#elif defined(Q_OS_WIN32)
-    win_sparkle_init();
-#endif
-}
+    Q_OBJECT
+public:
+    Updates(QObject *parent = 0);
+    ~Updates();
 
-Updates::~Updates()
-{
-#if defined(Q_OS_WIN32)
-    win_sparkle_cleanup();
-#endif
-}
+public slots:
+    void checkForUpdates();
+};
 
-void Updates::check()
-{
-#if defined(Q_OS_MAC)
-    _backend->checkForUpdates();
-#elif defined(Q_OS_WIN32)
-    win_sparkle_check_update_with_ui();
-#endif
-}
+#endif // TANO_NOTIFICATIONS_H_

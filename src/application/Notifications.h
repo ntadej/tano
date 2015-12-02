@@ -34,7 +34,7 @@ QT_END_NAMESPACE
 
 class Notifications: public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     Notifications(QSystemTrayIcon *trayIcon = 0,
                   QObject *parent = 0);

@@ -17,16 +17,14 @@
 *****************************************************************************/
 
 #include <QtCore/QCoreApplication>
-#include <QtCore/QDebug>
 #include <QtCore/QDir>
 #include <QtCore/QFileInfo>
+#include <QtCore/QStandardPaths>
 
 #include "Config.h"
 
-#include "Common.h"
-#include "Resources.h"
-#include "plugins/Plugins.h"
-#include "settings/Settings.h"
+#include "application/Common.h"
+#include "common/Resources.h"
 
 QString Tano::Resources::path(const QString &file)
 {
@@ -41,7 +39,11 @@ QString Tano::Resources::path(const QString &file)
 
 QString Tano::Resources::recordings()
 {
-    return settingsPath() + "recordings.xml";
+#if QT_VERSION < 0x050400
+    return QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/recordings.xml";
+#else
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/recordings.xml";
+#endif
 }
 
 QString Tano::Resources::resource(const QString &file)
@@ -73,26 +75,10 @@ QString Tano::Resources::resource(const QString &file)
         path = QFileInfo(QCoreApplication::applicationDirPath().replace("MacOS", "Resources") + "/" + file).absoluteFilePath();
 #endif
 
-    else if (globalConfig && QFileInfo(globalConfig->applicationDataDir() + "/" + file).exists())
-        path = QFileInfo(globalConfig->applicationDataDir() + "/" + file).absoluteFilePath();
-
-    return path;
-}
-
-QString Tano::Resources::settingsPath()
-{
-    QScopedPointer<QSettings> settings(
-            new QSettings(QSettings::IniFormat,
-                          QSettings::UserScope,
-                          Tano::name(),
-                          Tano::name()));
-    QString path = settings->fileName().replace(Tano::name() + ".ini", "");
-    QDir dir = QDir(path);
-
-    if (!dir.exists()) {
-        dir.mkpath(path);
-        qDebug() << "Creating settings path:" << path;
-    }
+#if defined(DATA_DIR)
+    else if (QFileInfo(QString(DATA_DIR) + "/" + file).exists())
+        path = QFileInfo(QString(DATA_DIR) + "/" + file).absoluteFilePath();
+#endif
 
     return path;
 }

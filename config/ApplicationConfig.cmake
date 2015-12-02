@@ -25,5 +25,16 @@ ELSE()
     SET(LOGGING_SET 0)
 ENDIF()
 
+
+OPTION(RELEASE "Enable release" OFF)
+MESSAGE("Enable release: ${RELEASE}")
+
+IF(RELEASE)
+    SET(RELEASE_SET 1)
+ELSE()
+    SET(RELEASE_SET 0)
+ENDIF()
+
+
 OPTION(REFRESH_TRANSLATIONS "Refresh translations" ON)
 MESSAGE("Refresh translations: ${REFRESH_TRANSLATIONS}")

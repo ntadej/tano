@@ -23,7 +23,6 @@
 #include <QtCore/QHash>
 #include <QtCore/QObject>
 #include <QtCore/QVariant>
-#include <QtGui/QPixmap>
 
 /*!
     \class ListItem ListItem.h core/ListItem.h

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -18,11 +18,10 @@
 
 #include <QtCore/QDebug>
 
-#include "common/Common.h"
 #include "application/Arguments.h"
+#include "application/Common.h"
 #include "application/Log.h"
 #include "application/Output.h"
-#include "plugins/Plugins.h"
 
 #include "widgets/style/Common.h"
 
@@ -45,8 +44,8 @@ bool dockClickHandler(id self,
 }
 #endif
 
-TanoApplication::TanoApplication(int argc,
-                                 char *argv[])
+TanoApplication::TanoApplication(int &argc,
+                                 char **argv)
     : SingleApplication(argc, argv),
       _arguments(new Arguments(argc, argv))
 {
@@ -62,8 +61,7 @@ TanoApplication::~TanoApplication()
 
 bool TanoApplication::preInit()
 {
-    Tano::Plugins::initConfig();
-
+    QCoreApplication::setOrganizationDomain(Tano::domain());
     QCoreApplication::setApplicationName(Tano::name());
     QCoreApplication::setApplicationVersion(Tano::version());
 

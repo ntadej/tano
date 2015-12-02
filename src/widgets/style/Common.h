@@ -19,8 +19,6 @@
 #ifndef TANO_STYLECOMMON_H_
 #define TANO_STYLECOMMON_H_
 
-#include "MainWindow.h"
-
 namespace Tano
 {
     namespace Style

@@ -1,9 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
-*
-* This file was part of Bitcoin
-* Copyright (C) 2013 Bitcoin Developers.
+* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,23 +16,29 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_NOTIFICATIONSOSX_H_
-#define TANO_NOTIFICATIONSOSX_H_
+#ifndef TANO_SINGLEAPPLICATION_H_
+#define TANO_SINGLEAPPLICATION_H_
 
-#include <QtCore/QObject>
+#include <QtWidgets/QApplication>
 
-class NotificationsOSX : public QObject
+class LocalServer;
+
+class SingleApplication : public QApplication
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-    void init();
-    void showNotification(const QString &title,
-                          const QString &text);
+    explicit SingleApplication(int &argc,
+                               char **argv);
+    ~SingleApplication();
 
-    void sendAppleScript(const QString &script);
+    bool shouldContinue();
 
-    bool hasNotificationCenterSupport(void);
-    static NotificationsOSX *instance();
+signals:
+    void activate();
+
+private:
+    LocalServer *_server;
+    bool _shouldContinue;
 };
 
-#endif // TANO_NOTIFICATIONSOSX_H_
+#endif // TANO_SINGLEAPPLICATION_H_

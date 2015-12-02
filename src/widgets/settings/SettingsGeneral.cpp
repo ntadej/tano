@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "common/Common.h"
+#include "application/Common.h"
 #include "application/LocaleManager.h"
 
 #include "SettingsGeneral.h"
@@ -97,8 +97,7 @@ void SettingsGeneral::setSessionVolume(bool enabled)
 
 void SettingsGeneral::loadLocale()
 {
-    _locale = LocaleManager::loadTranslations();
+    _locale = LocaleManager::loadLocales();
 
-    foreach (const QString &language, _locale)
-        ui->comboLanguage->addItem(LocaleManager::language(language));
+    // TODO: fix locales
 }

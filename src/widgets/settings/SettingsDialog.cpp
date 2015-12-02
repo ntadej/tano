@@ -17,7 +17,6 @@
 *****************************************************************************/
 
 #include "Config.h"
-#include "plugins/Plugins.h"
 #include "settings/Settings.h"
 
 #include "SettingsDialog.h"
@@ -46,14 +45,6 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     connect(_buttonGroup, SIGNAL(buttonClicked(int)), ui->settingsWidget, SLOT(setCurrentIndex(int)));
     connect(ui->general, SIGNAL(resetDefaults()), this, SLOT(defaults()));
     connect(ui->buttonBox, SIGNAL(clicked(QAbstractButton*)), this, SLOT(action(QAbstractButton*)));
-
-    if (globalConfig) {
-        if (globalConfig->disableSettingsGui("channels")) ui->buttonPlaylist->hide();
-        if (globalConfig->disableSettingsGui("gui")) ui->buttonInterface->hide();
-        if (globalConfig->disableSettingsGui("backend")) ui->buttonPlayback->hide();
-        if (globalConfig->disableSettingsGui("xmltv")) ui->buttonSchedule->hide();
-        if (globalConfig->disableSettingsGui("recorder")) ui->buttonRecorder->hide();
-    }
 }
 
 SettingsDialog::~SettingsDialog()

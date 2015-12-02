@@ -15,27 +15,41 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
-SET(Tano_Application_Srcs
+SET(Project_Application_Srcs
     application/Arguments.cpp
+    application/Common.cpp
     application/LocaleManager.cpp
     application/LocalServer.cpp
     application/Log.cpp
+    application/Notifications.cpp
     application/Output.cpp
+    application/SingleApplication.cpp
+    application/TanoApplication.cpp
+    application/Updates.cpp
 )
-SET(Tano_Common_Srcs
-    common/Common.cpp
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    SET(Project_Application_Srcs
+        ${Project_Application_Srcs}
+
+        application/NotificationsOSX.mm
+    )
+ENDIF()
+
+SET(Project_Common_Srcs
     common/File.h
     common/ListItem.h
     common/ListModel.cpp
+    common/NetworkManager.cpp
     common/Resources.cpp
-    common/UpdateHandler.cpp
 )
-SET(Tano_Network_Srcs
+
+SET(Project_Network_Srcs
     network/NetworkDownload.cpp
     network/NetworkRequest.cpp
     network/NetworkUdpxy.cpp
 )
-SET(Tano_Playlist_Srcs
+
+SET(Project_Playlist_Srcs
     playlist/PlaylistFilterModel.cpp
     playlist/PlaylistModel.cpp
     playlist/PlaylistOpen.cpp
@@ -48,11 +62,8 @@ SET(Tano_Playlist_Srcs
     playlist/handlers/CSVHandler.cpp
     playlist/handlers/M3UHandler.cpp
 )
-SET(Tano_Plugins_Srcs
-    plugins/ConfigPlugin.h
-    plugins/Plugins.cpp
-)
-SET(Tano_Settings_Srcs
+
+SET(Project_Settings_Srcs
     settings/Settings.cpp
     settings/SettingsChannel.cpp
     settings/SettingsDefaults.cpp
@@ -61,7 +72,7 @@ SET(Tano_Settings_Srcs
     settings/SettingsShortcuts.cpp
     settings/SettingsShortcutsDefaults.cpp
 )
-SET(Tano_Timers_Srcs
+SET(Project_Timers_Srcs
     timers/TimersGenerator.cpp
     timers/TimersHandler.cpp
     timers/TimersTimeManager.cpp
@@ -69,7 +80,7 @@ SET(Tano_Timers_Srcs
     timers/models/TimersFilterModel.cpp
     timers/models/TimersModel.cpp
 )
-SET(Tano_Xmltv_Srcs
+SET(Project_Xmltv_Srcs
     xmltv/XmltvCommon.cpp
     xmltv/XmltvCommonCategories.cpp
     xmltv/XmltvGenerator.cpp
@@ -86,36 +97,32 @@ SET(Tano_Xmltv_Srcs
 )
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    SET(Tano_Platform_Srcs
+    SET(Project_Platform_Srcs
         platform/Linux.cpp
     )
 ENDIF()
 
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    SET(Tano_Platform_Srcs
-        platform/OSX.cpp
-    )
-ENDIF()
-
 IF(MSVC)
-    SET(Tano_Platform_Srcs
+    SET(Project_Platform_Srcs
         platform/Windows.cpp
     )
 ENDIF()
 
 INCLUDE(WidgetsTmp)
 
-SET(Tano_Srcs
-    ${Tano_Application_Srcs}
-    ${Tano_Common_Srcs}
-    ${Tano_Network_Srcs}
-    ${Tano_Playlist_Srcs}
-    ${Tano_Plugins_Srcs}
-    ${Tano_Settings_Srcs}
-    ${Tano_Timers_Srcs}
-    ${Tano_Xmltv_Srcs}
+SET(Project_Srcs
+    main.cpp
 
-    ${Tano_Platform_Srcs}
+    ${Project_Application_Srcs}
+    ${Project_Common_Srcs}
+    ${Project_Network_Srcs}
+    ${Project_Playlist_Srcs}
+    ${Project_Plugins_Srcs}
+    ${Project_Settings_Srcs}
+    ${Project_Timers_Srcs}
+    ${Project_Xmltv_Srcs}
 
-    ${Tano_Widgets_Srcs}
+    ${Project_Platform_Srcs}
+
+    ${Project_Widgets_Srcs}
 )
