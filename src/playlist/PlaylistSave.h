@@ -32,11 +32,8 @@ public:
     ~PlaylistSave();
 
     void saveCSVFile(const QString &file);
-    void saveJsFile(const QString &file);
     void saveM3UFile(const QString &file,
                      const File::Type &type = File::M3U);
-    void saveTvheadend(const QString &location,
-                       const QString &interface);
     void saveXmltvId(const QString &file);
 
 private:

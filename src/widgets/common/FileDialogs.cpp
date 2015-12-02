@@ -38,8 +38,6 @@ QString FileDialogs::filterByType(const File::Type &type)
         return QObject::tr("M3U (Udpxy URL) files") + "(*.m3u tano63848)";
     case File::CSV:
         return QObject::tr("Comma-separated values files") + "(*.csv *.txt)";
-    case File::JS:
-        return QObject::tr("Sagem STB channel list files") + "(*.js)";
     case File::XmltvFile:
         return QObject::tr("XMLTV file") + "(*.xml)";
     case File::XmltvId:
@@ -83,8 +81,7 @@ File FileDialogs::openPlaylist()
 {
     QStringList filters;
     filters << filterByType(File::M3U)
-            << filterByType(File::CSV)
-            << filterByType(File::JS);
+            << filterByType(File::CSV);
 
     QFileDialog dialog;
     dialog.setAcceptMode(QFileDialog::AcceptOpen);
@@ -148,8 +145,7 @@ File FileDialogs::savePlaylist()
     filters << filterByType(File::M3U)
             << filterByType(File::M3UClean)
             << filterByType(File::M3UUdpxy)
-            << filterByType(File::CSV)
-            << filterByType(File::JS);
+            << filterByType(File::CSV);
 
     QFileDialog dialog;
     dialog.setAcceptMode(QFileDialog::AcceptSave);

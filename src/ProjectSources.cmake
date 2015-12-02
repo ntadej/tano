@@ -43,13 +43,9 @@ SET(Tano_Playlist_Srcs
     playlist/PlaylistUpdate.cpp
     playlist/containers/Channel.cpp
     playlist/generators/CSVGenerator.cpp
-    playlist/generators/JsGenerator.cpp
     playlist/generators/M3UGenerator.cpp
-    playlist/generators/TvheadendGenerator.cpp
     playlist/generators/XmltvIdGenerator.cpp
     playlist/handlers/CSVHandler.cpp
-    playlist/handlers/GoTVHandler.cpp
-    playlist/handlers/JsHandler.cpp
     playlist/handlers/M3UHandler.cpp
 )
 SET(Tano_Plugins_Srcs

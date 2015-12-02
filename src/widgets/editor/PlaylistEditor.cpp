@@ -57,7 +57,6 @@ PlaylistEditor::PlaylistEditor(QWidget *parent)
     connect(ui->scan, SIGNAL(scan(bool)), this, SLOT(scan(bool)));
 
     _menuExport = new QMenu();
-    _menuExport->addAction(ui->actionExportTvheadend);
     _menuExport->addAction(ui->actionExportXmltvId);
 }
 
@@ -95,7 +94,6 @@ void PlaylistEditor::createConnections()
     connect(ui->actionSave, SIGNAL(triggered()), this, SLOT(save()));
     connect(ui->actionClose, SIGNAL(triggered()), this, SLOT(exit()));
     connect(ui->actionExport, SIGNAL(triggered()), this, SLOT(menuOpenExport()));
-    connect(ui->actionExportTvheadend, SIGNAL(triggered()), this, SLOT(exportTvheadend()));
     connect(ui->actionExportXmltvId, SIGNAL(triggered()), this, SLOT(exportXmltvId()));
     connect(ui->actionPrint, SIGNAL(triggered()), this, SLOT(print()));
     connect(ui->actionAutoXmltv, SIGNAL(triggered()), this, SLOT(autoMapXmltv()));
@@ -167,7 +165,6 @@ void PlaylistEditor::open(const QString &playlist,
     switch (file.type)
     {
     case File::M3U:
-    case File::JS:
         _model->open(file.path, refresh, file.type);
         break;
     case File::CSV:
@@ -274,7 +271,6 @@ void PlaylistEditor::save()
     case File::M3U:
     case File::M3UClean:
     case File::CSV:
-    case File::JS:
         _model->save(file.path, ui->editName->text(), file.type);
         break;
     case File::M3UUdpxy:
@@ -297,16 +293,6 @@ void PlaylistEditor::save()
     default:
         break;
     }
-}
-
-void PlaylistEditor::exportTvheadend()
-{
-    PlaylistExportTvheadend dialog;
-    dialog.exec();
-    if (!dialog.proceed())
-        return;
-
-    _model->exportTvheadend(dialog.location(), dialog.interface());
 }
 
 void PlaylistEditor::exportXmltvId()

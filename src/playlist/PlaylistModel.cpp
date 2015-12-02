@@ -115,12 +115,6 @@ Channel *PlaylistModel::deleteChannel(Channel *channel)
         return row(r);
 }
 
-void PlaylistModel::exportTvheadend(const QString &location,
-                                    const QString &interface)
-{
-    _save->saveTvheadend(location, interface);
-}
-
 void PlaylistModel::moveDown(Channel *channel)
 {
     if (_channelNumbers.contains(channel->number()+1) && channel->number()+1 < 1000) {
@@ -198,12 +192,6 @@ void PlaylistModel::open(const QString &file,
     {
     case File::CSV:
         _open->openCSVFile(file, info);
-        break;
-    case File::GoTV:
-        _open->openGoTVFile(file);
-        break;
-    case File::JS:
-        _open->openJsFile(file);
         break;
     case File::M3U:
         _open->openM3UFile(file);
@@ -303,9 +291,6 @@ void PlaylistModel::save(const QString &file,
     {
     case File::CSV:
         _save->saveCSVFile(file);
-        break;
-    case File::JS:
-        _save->saveJsFile(file);
         break;
     case File::M3U:
     case File::M3UClean:

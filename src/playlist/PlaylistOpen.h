@@ -35,8 +35,6 @@ public:
     inline QList<Channel *> list() const { return _list; }
     void openCSVFile(const QString &file,
                      const CSVInfo &info);
-    void openGoTVFile(const QString &file);
-    void openJsFile(const QString &file);
     void openM3UFile(const QString &file);
 
 private:

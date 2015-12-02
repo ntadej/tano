@@ -30,8 +30,6 @@ struct File
         CSV = 20,
         Directory = 0,
         Files = 1,
-        GoTV = 40,
-        JS = 21,
         M3U = 10,
         M3UClean = 11,
         M3UUdpxy = 12,

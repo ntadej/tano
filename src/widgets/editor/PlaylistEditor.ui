@@ -15,8 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset theme="accessories-text-editor">
-    <normaloff/>
-   </iconset>
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
@@ -138,8 +137,7 @@
    </property>
    <property name="windowIcon">
     <iconset theme="accessories-text-editor">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="features">
     <set>QDockWidget::NoDockWidgetFeatures</set>
@@ -171,8 +169,7 @@
        </property>
        <property name="icon">
         <iconset theme="dialog-apply">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -337,8 +334,7 @@
   <widget class="QDockWidget" name="updateWidget">
    <property name="windowIcon">
     <iconset theme="view-refresh">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="features">
     <set>QDockWidget::NoDockWidgetFeatures</set>
@@ -363,8 +359,7 @@
   <action name="actionAdd">
    <property name="icon">
     <iconset theme="list-add">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Add channel</string>
@@ -376,8 +371,7 @@
   <action name="actionDelete">
    <property name="icon">
     <iconset theme="list-remove">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Delete channel</string>
@@ -389,8 +383,7 @@
   <action name="actionSave">
    <property name="icon">
     <iconset theme="document-save">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Save</string>
@@ -402,8 +395,7 @@
   <action name="actionClose">
    <property name="icon">
     <iconset theme="window-close">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Close</string>
@@ -412,8 +404,7 @@
   <action name="actionUp">
    <property name="icon">
     <iconset theme="go-up">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Move up</string>
@@ -425,8 +416,7 @@
   <action name="actionDown">
    <property name="icon">
     <iconset theme="go-down">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Move down</string>
@@ -438,8 +428,7 @@
   <action name="actionPrint">
    <property name="icon">
     <iconset theme="document-print">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Print</string>
@@ -448,8 +437,7 @@
   <action name="actionExport">
    <property name="icon">
     <iconset theme="document-export">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Export</string>
@@ -458,8 +446,7 @@
   <action name="actionOpen">
    <property name="icon">
     <iconset theme="document-open">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -468,28 +455,16 @@
   <action name="actionNew">
    <property name="icon">
     <iconset theme="document-new">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>New playlist</string>
    </property>
   </action>
-  <action name="actionExportTvheadend">
-   <property name="icon">
-    <iconset theme="document-export">
-     <normaloff/>
-    </iconset>
-   </property>
-   <property name="text">
-    <string>Tvheadend</string>
-   </property>
-  </action>
   <action name="actionExportXmltvId">
    <property name="icon">
     <iconset theme="document-export">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>XMLTV IDs</string>
@@ -501,8 +476,7 @@
   <action name="actionHelp">
    <property name="icon">
     <iconset theme="help-browser">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Help</string>
@@ -511,8 +485,7 @@
   <action name="actionAutoXmltv">
    <property name="icon">
     <iconset theme="x-office-calendar">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Auto XMLTV map</string>

@@ -61,7 +61,6 @@ private slots:
                  const QString &url);
 
     void save();
-    void exportTvheadend();
     void exportXmltvId();
     void print();
 

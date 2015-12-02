@@ -67,8 +67,6 @@ public:
     void save(const QString &file,
               const QString &name,
               const File::Type &type = File::M3U);
-    void exportTvheadend(const QString &location,
-                         const QString &interface);
 
     bool validate() const;
 

@@ -16,9 +16,10 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QObject>
+#include <QtCore/QScopedPointer>
+
 #include "playlist/handlers/CSVHandler.h"
-#include "playlist/handlers/GoTVHandler.h"
-#include "playlist/handlers/JsHandler.h"
 #include "playlist/handlers/M3UHandler.h"
 
 #include "PlaylistOpen.h"
@@ -36,35 +37,6 @@ void PlaylistOpen::openCSVFile(const QString &file,
 
     _list = open->channelList();
     _name = QObject::tr("CSV channel list");
-}
-
-void PlaylistOpen::openGoTVFile(const QString &file)
-{
-    QScopedPointer<GoTVHandler> open(new GoTVHandler());
-
-    QXmlSimpleReader reader;
-    reader.setContentHandler(open.data());
-    reader.setErrorHandler(open.data());
-
-    QFile f(file);
-    if (!f.open(QFile::ReadOnly | QFile::Text))
-        return;
-
-    QXmlInputSource xmlInputSource(&f);
-    if (!reader.parse(xmlInputSource))
-        return;
-
-    _list = open->channelList();
-    _name = QObject::tr("GoTV channel list");
-}
-
-void PlaylistOpen::openJsFile(const QString &file)
-{
-    QScopedPointer<JsHandler> open(new JsHandler());
-    open->processFile(file);
-
-    _list = open->channelList();
-    _name = QObject::tr("Sagem STB channel list");
 }
 
 void PlaylistOpen::openM3UFile(const QString &file)

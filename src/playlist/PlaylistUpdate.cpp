@@ -42,10 +42,7 @@ void PlaylistUpdate::processPlaylist(QFile *file)
 {
     disconnect(_downloader, SIGNAL(file(QFile *)), this, SLOT(processPlaylist(QFile *)));
 
-    if (_type == File::GoTV)
-        _model->open(file->fileName(), true, File::GoTV);
-    else
-        _model->open(file->fileName(), true);
+    _model->open(file->fileName(), true);
 
     if (_save)
         _model->save(_playlist, _model->name());
@@ -78,8 +75,6 @@ void PlaylistUpdate::update(const QString &playlist)
     if (settings->playlistUpdate()) {
         _downloader = new NetworkDownload(this);
         connect(_downloader, SIGNAL(file(QFile *)), this, SLOT(processPlaylist(QFile *)));
-        if (settings->playlistUpdateUrl().contains("scaletv.com"))
-            _type = File::GoTV;
         _downloader->getFile(settings->playlistUpdateUrl());
     } else {
         emit done();
