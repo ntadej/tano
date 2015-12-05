@@ -62,17 +62,12 @@ void Tano::Style::setMainStyle()
 
 void Tano::Style::setIconName()
 {
-    QScopedPointer<Settings> settings(new Settings());
-    if (!settings->icons().isEmpty()) {
-        QString name = settings->icons();
+    QString name = "tano-default";
 #if defined(Q_OS_MAC)
-        if (qApp->devicePixelRatio() >= 2)
-            name.append("@2x");
+    if (qApp->devicePixelRatio() >= 2)
+        name.append("@2x");
 #endif
-        QIcon::setThemeName(name);
-    }
-
-    qDebug() << "Icon theme:" << QIcon::themeName();
+    QIcon::setThemeName(name);
 }
 
 void Tano::Style::setIconPaths()

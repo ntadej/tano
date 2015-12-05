@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsPlayback</class>
+ <widget class="QWidget" name="SettingsPlayback">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>436</width>
+    <height>381</height>
+   </rect>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="preferences-desktop">
+    <normaloff>.</normaloff>.</iconset>
+  </property>
+  <layout class="QFormLayout" name="playbackLayout">
+   <item row="1" column="0">
+    <widget class="QLabel" name="labelVideoSettings">
+     <property name="text">
+      <string>Remember video settings:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QRadioButton" name="radioSettingsNone">
+     <property name="text">
+      <string>Never</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QRadioButton" name="radioSettingsAll">
+     <property name="text">
+      <string>For all channels</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QRadioButton" name="radioSettingsChannel">
+     <property name="text">
+      <string>Per channel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="labelAspectRatio">
+     <property name="text">
+      <string>Default aspect ratio:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QComboBox" name="comboAspectRatio">
+     <property name="maxVisibleItems">
+      <number>15</number>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="labelCrop">
+     <property name="text">
+      <string>Default crop:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QComboBox" name="comboCropRatio">
+     <property name="maxVisibleItems">
+      <number>15</number>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="labelDeinterlacing">
+     <property name="text">
+      <string>Default deinterlacing:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="1">
+    <widget class="QComboBox" name="comboDeinterlacing"/>
+   </item>
+   <item row="12" column="0">
+    <widget class="QLabel" name="labelAudio">
+     <property name="text">
+      <string>Default audio language:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="1">
+    <widget class="QComboBox" name="comboAudio">
+     <property name="editable">
+      <bool>true</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>Automatic</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">English</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">Slovenščina / Slovenian </string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">Deutsch / German</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">Hrvatski / Croatian</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Other</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="14" column="0">
+    <widget class="QLabel" name="labelSub">
+     <property name="text">
+      <string>Default subtitle language:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="1">
+    <widget class="QComboBox" name="comboSub">
+     <property name="editable">
+      <bool>true</bool>
+     </property>
+     <item>
+      <property name="text">
+       <string>Disabled</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">English</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">Slovenščina / Slovenian </string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">Deutsch / German</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string notr="true">Hrvatski / Croatian</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Other</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="15" column="1">
+    <widget class="QCheckBox" name="checkTeletext">
+     <property name="text">
+      <string>Enable teletext (requires restart)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="1">
+    <widget class="QCheckBox" name="checkYuvRgb">
+     <property name="text">
+      <string>Enable YUV-&gt;RGB hardware decoding</string>
+     </property>
+    </widget>
+   </item>
+   <item row="17" column="1">
+    <widget class="QCheckBox" name="checkSpdif">
+     <property name="text">
+      <string>Enable S/PDIF output</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="labelEmpty1">
+     <property name="text">
+      <string notr="true"/>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="labelEmpty2">
+     <property name="text">
+      <string notr="true"/>
+     </property>
+    </widget>
+   </item>
+   <item row="18" column="1">
+    <widget class="QComboBox" name="comboVout"/>
+   </item>
+   <item row="18" column="0">
+    <widget class="QLabel" name="labelVout">
+     <property name="text">
+      <string>Video output (advanced):</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

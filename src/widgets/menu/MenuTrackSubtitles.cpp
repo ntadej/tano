@@ -18,7 +18,7 @@
 
 #include <QtCore/QEvent>
 
-#include "common/FileDialogs.h"
+#include "common/widgets/FileDialogs.h"
 
 #include "MenuTrackSubtitles.h"
 

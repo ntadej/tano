@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,61 +19,46 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QToolButton>
 
-#include "common/FileDialogs.h"
+#include "common/widgets/FileDialogs.h"
 
 #include "BrowseWidget.h"
 
 BrowseWidget::BrowseWidget(QWidget *parent)
-    : QWidget(parent),
-      _resetValue("")
+    : QWidget(parent)
 {
     _edit = new QLineEdit(this);
-    _browse = new QToolButton(this);
-    _browse->setText("...");
-    _reset = new QPushButton(this);
-    _reset->setIcon(QIcon::fromTheme("view-refresh"));
-    _reset->setMaximumSize(26, 26);
-    _reset->setMinimumSize(26, 26);
+    _edit->setClearButtonEnabled(true);
+    _edit->setMinimumWidth(225);
+    _browse = new QPushButton(this);
+    _browse->setText(tr("Browse…"));
 
     QHBoxLayout *layout = new QHBoxLayout;
+    layout->setSpacing(1);
     layout->setMargin(0);
     layout->addWidget(_edit);
     layout->addWidget(_browse);
-    layout->addWidget(_reset);
     setLayout(layout);
 
-    connect(_browse, SIGNAL(clicked()), this, SLOT(browse()));
-    connect(_reset, SIGNAL(clicked()), this, SLOT(reset()));
+    connect(_browse, &QPushButton::clicked, this, &BrowseWidget::browse);
+    connect(_edit, &QLineEdit::textChanged, this, &BrowseWidget::valueChanged);
 }
 
 BrowseWidget::~BrowseWidget()
 {
     delete _edit;
     delete _browse;
-    delete _reset;
 }
 
 void BrowseWidget::browse()
 {
-    QString b;
-    if(_edit->text().isEmpty())
-        b = QDir::homePath();
-    else
-        b = _edit->text();
-
+    QString b = _edit->text().isEmpty() ? QDir::homePath() : _edit->text();
     QString file = FileDialogs::openByType(_type, b);
 
     if(file.isEmpty())
         return;
 
     _edit->setText(file);
-}
-
-void BrowseWidget::reset()
-{
-    _edit->setText(_resetValue);
 }
 
 void BrowseWidget::setValue(const QString &value)

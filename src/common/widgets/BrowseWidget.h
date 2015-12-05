@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2011 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,34 +16,39 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSRECORDER_H_
-#define TANO_SETTINGSRECORDER_H_
+#ifndef TANO_BROWSEWIDGET_H_
+#define TANO_BROWSEWIDGET_H_
 
 #include <QtWidgets/QWidget>
 
-namespace Ui
-{
-    class SettingsRecorder;
-}
+#include "common/File.h"
 
-class SettingsRecorder : public QWidget
+class QLineEdit;
+class QPushButton;
+
+class BrowseWidget : public QWidget
 {
 Q_OBJECT
 public:
-    SettingsRecorder(QWidget *parent = 0);
-    ~SettingsRecorder();
+    BrowseWidget(QWidget *parent = 0);
+    ~BrowseWidget();
 
-    QString directory() const;
-    void setDirectory(const QString &value);
-    QString snapshot() const;
-    void setSnapshot(const QString &value);
+    QLineEdit *edit() { return _edit; }
+    void setType(const File::Type &type) { _type = type; }
+    void setValue(const QString &value);
+    QString value() const;
 
+signals:
+    void valueChanged(const QString &);
 
-protected:
-    void changeEvent(QEvent *e);
+private slots:
+    void browse();
 
 private:
-    Ui::SettingsRecorder *ui;
+    QLineEdit *_edit;
+    QPushButton *_browse;
+
+    File::Type _type;
 };
 
-#endif // TANO_SETTINGSRECORDER_H_
+#endif // TANO_BROWSEWIDGET_H_

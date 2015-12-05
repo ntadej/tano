@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -19,42 +19,66 @@
 #ifndef TANO_SETTINGSDIALOG_H_
 #define TANO_SETTINGSDIALOG_H_
 
-#include <QtWidgets/QDialog>
+#include <QtWidgets/QActionGroup>
+#include <QtWidgets/QMainWindow>
 
-class QAbstractButton;
-class QButtonGroup;
+#define MAC_NATIVE_TOOLBAR 1
 
-class Settings;
+#if defined(Q_OS_MAC) && MAC_NATIVE_TOOLBAR
+    #include <QtMacExtras>
+#endif
 
-namespace Ui
-{
+namespace Ui {
     class SettingsDialog;
 }
 
-class SettingsDialog : public QDialog
+class SettingsDialog : public QMainWindow
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     explicit SettingsDialog(QWidget *parent = 0);
     ~SettingsDialog();
 
+public slots:
+    void refreshAndShow();
+
 protected:
     void changeEvent(QEvent *e);
 
+signals:
+    void generalChanged();
+    void localeChanged();
+    void guiChanged();
+    void channelsChanged();
+    void udpxyChanged();
+    void playbackRememberChanged();
+    void playbackDefaultsChanged();
+    void playbackMiscChanged();
+    void xmltvChanged();
+
 private slots:
-    void action(QAbstractButton *button);
-    void apply();
-    void defaults();
-    void save();
+    void actionToggled();
+    void localeSettingsChanged();
+    void generalSettingsChanged();
+    void guiSettingsChanged();
 
 private:
-    void read();
-
     Ui::SettingsDialog *ui;
 
-    Settings *_settings;
+    QActionGroup *_group;
 
-    QButtonGroup *_buttonGroup;
+    void loadLocales();
+    QStringList _locales;
+
+#if defined(Q_OS_MAC) && MAC_NATIVE_TOOLBAR
+    QMacToolBar *_macToolbar;
+    QMacToolBarItem *_macItemGeneral;
+    QMacToolBarItem *_macItemTv;
+    QMacToolBarItem *_macItemPlayback;
+    QMacToolBarItem *_macItemInterface;
+    QMacToolBarItem *_macItemNotifications;
+    QMacToolBarItem *_macItemShortcuts;
+#endif
 };
 
 #endif // TANO_SETTINGSDIALOG_H_

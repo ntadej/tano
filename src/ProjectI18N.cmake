@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2015 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,29 +29,35 @@ IF(NOT Qt5_LRELEASE_EXECUTABLE)
 ENDIF()
 
 ## Collect all translations files
-FILE(GLOB Tano_TS ${CMAKE_SOURCE_DIR}/i18n/*.ts)
-LIST(REMOVE_ITEM Tano_TS ${TEMPLATE})
+FILE(GLOB Project_TS ${CMAKE_SOURCE_DIR}/i18n/*.ts)
+LIST(REMOVE_ITEM Project_TS ${TEMPLATE})
 
 IF(Qt5_LRELEASE_EXECUTABLE)
     IF(REFRESH_TRANSLATIONS)
         FILE(GLOB_RECURSE translate_SRCS ${CMAKE_SOURCE_DIR}/src/*.cpp)
         FILE(GLOB_RECURSE translate_UIS ${CMAKE_SOURCE_DIR}/src/*.ui)
         SET(translate_SRCS ${translate_SRCS} ${translate_UIS})
-    ENDIF()
 
-    IF(REFRESH_TRANSLATIONS)
-        QT5_CREATE_TRANSLATION(Tano_QMS ${translate_SRCS} ${Tano_TS})
-        QT5_CREATE_TRANSLATION(Tano_QMS_SRC ${translate_SRCS} ${TEMPLATE})
+        QT5_CREATE_TRANSLATION(Project_QMS ${translate_SRCS} ${Project_TS})
+        QT5_CREATE_TRANSLATION(Project_QMS_SRC ${translate_SRCS} ${TEMPLATE})
     ELSE()
-        QT5_ADD_TRANSLATION(Tano_QMS ${Tano_TS})
+        QT5_ADD_TRANSLATION(Project_QMS ${Project_TS})
     ENDIF()
 
-    ADD_CUSTOM_TARGET(translations ALL DEPENDS ${Tano_QMS})
-    IF(REFRESH_TRANSLATIONS)
-        ADD_CUSTOM_TARGET(translations_src ALL DEPENDS ${Tano_QMS_SRC})
-    ENDIF()
+    SET(Project_Srcs
+        ${Project_Srcs}
+        ${Project_QMS}
+        ${Project_QMS_SRC}
+    )
 ENDIF()
 
-
 ## Installation
-INSTALL(FILES ${Tano_QMS} DESTINATION "${CMAKE_INSTALL_PREFIX}/${PROJECT_INSTALL_DATA_DIR}/i18n")
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    SET_SOURCE_FILES_PROPERTIES(
+        ${Project_QMS}
+        PROPERTIES
+        MACOSX_PACKAGE_LOCATION Resources/i18n
+    )
+ELSE()
+    INSTALL(FILES ${Project_QMS} DESTINATION "${CMAKE_INSTALL_PREFIX}/${PROJECT_INSTALL_DATA_DIR}/i18n")
+ENDIF()

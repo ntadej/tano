@@ -36,7 +36,7 @@ class LocaleManager;
 class MediaPlayer;
 class NetworkUdpxy;
 class ScheduleTab;
-class SettingsChannel;
+class SettingsDialog;
 class ShowInfoTab;
 class OsdFloat;
 class PlaylistEditor;
@@ -81,7 +81,6 @@ signals:
 private slots:
     void initUpdates();
     void exit();
-    void exitLogout();
     void aboutTano();
     void support();
 
@@ -90,7 +89,6 @@ private slots:
     void showSchedule();
     void showScheduleCurrent();
     void showRecorder();
-    void showSettings();
     void showSettingsShortcuts();
     void showPlaylistEditor();
 
@@ -100,7 +98,7 @@ private slots:
     void stop();
     void setState(const Vlc::State &state);
 
-    void openPlaylist(bool start = false);
+    void openPlaylist();
     void openPlaylistComplete();
 
     void tooltip(const QString &channelNow = "stop");
@@ -132,7 +130,6 @@ private:
 
     //Settings
     bool _channelPlayback;
-    QString _defaultPlaylist;
     int _desktopWidth;
     int _desktopHeight;
     bool _hasPlaylist;
@@ -142,9 +139,6 @@ private:
     bool _muteOnMinimize;
     bool _muteOnMinimizeCurrent;
     bool _recordNow;
-    bool _rememberGui;
-    int _width;
-    int _height;
     int _posX;
     int _posY;
     bool _udpxyEnabled;
@@ -155,7 +149,6 @@ private:
     LocaleManager *_locale;
     MediaPlayer *_mediaPlayer;
     PlaylistModel *_model;
-    PlaylistUpdate *_modelUpdate;
     Recorder *_recorder;
     DesktopShortcuts *_shortcuts;
     Updates *_updates;
@@ -172,6 +165,8 @@ private:
     PlaylistTab *_playlistTab;
     ScheduleTab *_scheduleTab;
     ShowInfoTab *_showInfoTab;
+
+    SettingsDialog *_settingsDialog;
 
     OsdFloat *_osdFloat;
     PlaylistEditor *_playlistEditor;

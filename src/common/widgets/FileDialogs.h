@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -29,19 +29,19 @@ namespace FileDialogs
     QString filterByType(const File::Type &type);
 
     QString openByType(const File::Type &type,
-                       const QString &arg = "");
-    QString openDirectory(const QString &dir = QDir::homePath());
-    QString openFile();
-    File openPlaylist();
-    QString openPlaylistSimple();
-    QString openSubtitles(const QString &dir = QDir::homePath());
+                       const QString &arg = QString());
+    QString openDirectory(const QString &dir = QString());
+    QString openFile(const QString &file = QString());
+    File openChannelsList();
+    QString openChannelsSimple(const QString &file = QString());
+    QString openSubtitles(const QString &file = QString());
     QString openUrl();
-    QString openXmltvFile(const QString &file = QDir::homePath() + "xmltv.xml");
+    QString openXmltvFile(const QString &file = QString());
 
     QString saveByType(const File::Type &type,
-                       const QString &arg = "");
-    File savePlaylist();
-    QString saveXmltv();
+                       const QString &arg = QString());
+    File saveChannelsList();
+    QString saveXmltv(const QString &file = QString());
 }
 
 #endif // TANO_FILEDIALOGS_H_

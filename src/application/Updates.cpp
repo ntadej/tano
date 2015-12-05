@@ -21,7 +21,7 @@
 #if defined(Q_OS_MAC)
     #include <Foundation/NSString.h>
     #include <Sparkle/Sparkle.h>
-#elif defined(Q_OS_WIN32)
+#elif defined(Q_OS_WIN)
     #include "winsparkle.h"
 #endif
 
@@ -30,14 +30,14 @@ Updates::Updates(QObject *parent)
 {
 #if defined(Q_OS_MAC)
     [SUUpdater sharedUpdater];
-#elif defined(Q_OS_WIN32)
+#elif defined(Q_OS_WIN)
     win_sparkle_init();
 #endif
 }
 
 Updates::~Updates()
 {
-#if defined(Q_OS_WIN32)
+#if defined(Q_OS_WIN)
     win_sparkle_cleanup();
 #endif
 }
@@ -46,7 +46,7 @@ void Updates::checkForUpdates()
 {
 #if defined(Q_OS_MAC)
     [[SUUpdater sharedUpdater] checkForUpdates:0];
-#elif defined(Q_OS_WIN32)
+#elif defined(Q_OS_WIN)
     win_sparkle_check_update_with_ui();
 #endif
 }

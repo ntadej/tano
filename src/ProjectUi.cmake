@@ -16,3 +16,8 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 
+SET(Project_UIs
+    settings/widgets/SettingsDialog.ui
+    settings/widgets/SettingsPlayback.ui
+    settings/widgets/SettingsTv.ui
+)

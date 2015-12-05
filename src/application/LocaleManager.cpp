@@ -21,8 +21,8 @@
 #include <QtCore/QDir>
 #include <QtCore/QLocale>
 
-#include "common/Resources.h"
 #include "application/LocaleManager.h"
+#include "common/Resources.h"
 #include "settings/Settings.h"
 
 LocaleManager::LocaleManager(QObject *parent)
@@ -72,13 +72,13 @@ void LocaleManager::setLocale()
 {
     QString locale;
     QScopedPointer<Settings> settings(new Settings());
-    if(settings->language().isEmpty()) {
+    if(settings->locale().isEmpty()) {
         locale = QLocale::system().name();
 
         if (Tano::Resources::resource("/i18n/" + locale + ".qm").isEmpty())
             locale = locale.split("_")[0];
     } else {
-        locale = settings->language();
+        locale = settings->locale();
     }
 
     qDebug() << "Using locale" << locale;

@@ -73,7 +73,7 @@ void XmltvManager::current()
 void XmltvManager::loadXmltv()
 {
     QScopedPointer<Settings> settings(new Settings(this));
-    if (!settings->xmltvUpdate())
+    if (settings->xmltvUpdateLocation().isEmpty())
         return;
 
     if (settings->xmltvUpdateRemote()) {

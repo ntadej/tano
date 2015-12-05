@@ -21,7 +21,6 @@
 #include "common/Resources.h"
 #include "network/NetworkDownload.h"
 #include "playlist/PlaylistModel.h"
-#include "settings/Settings.h"
 
 #include "PlaylistUpdate.h"
 
@@ -71,12 +70,12 @@ void PlaylistUpdate::update(const QString &playlist)
     if (_save)
         _model->open(_playlist);
 
-    QScopedPointer<Settings> settings(new Settings(this));
-    if (settings->playlistUpdate()) {
+// Playlist downloading feature is disabled for now
+/*    if (settings->playlistUpdate()) {
         _downloader = new NetworkDownload(this);
         connect(_downloader, SIGNAL(file(QFile *)), this, SLOT(processPlaylist(QFile *)));
         _downloader->getFile(settings->playlistUpdateUrl());
-    } else {
-        emit done();
-    }
+    } else {*/
+
+    emit done();
 }

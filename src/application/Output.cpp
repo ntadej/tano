@@ -22,10 +22,6 @@
 #include "Common.h"
 #include "Output.h"
 
-#if defined(Q_OS_WIN32)
-#   include "platform/Windows.h"
-#endif
-
 Output::Output(bool error)
     : QTextStream(error ? stderr : stdout, QIODevice::WriteOnly) { }
 

@@ -97,7 +97,7 @@ void Recorder::changeEvent(QEvent *e)
 void Recorder::createSettings()
 {
     QScopedPointer<Settings> settings(new Settings(this));
-    _directory = settings->recorderDirectory();
+    _directory = settings->recordingsDirectory();
 
     _core->setDefaultOutputPath(_directory);
 

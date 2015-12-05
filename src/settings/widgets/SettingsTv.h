@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,47 +16,41 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSPLAYLIST_H_
-#define TANO_SETTINGSPLAYLIST_H_
+#ifndef TANO_SETTINGSTV_H_
+#define TANO_SETTINGSTV_H_
 
+#include <QtCore/QTimer>
 #include <QtWidgets/QWidget>
 
 namespace Ui
 {
-    class SettingsPlaylist;
+    class SettingsTv;
 }
 
-class SettingsPlaylist : public QWidget
+class SettingsTv : public QWidget
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-    SettingsPlaylist(QWidget *parent = 0);
-    ~SettingsPlaylist();
-
-    QString playlist() const;
-    void setPlaylist(const QString &playlist);
-    bool playlistUpdate() const;
-    void setPlaylistUpdate(bool enabled);
-    QString playlistUpdateUrl() const;
-    void setPlaylistUpdateUrl(const QString &playlist);
-
-    QString radioCategory() const;
-    void setRadioCategory(const QString &category);
-    QString hdCategory() const;
-    void setHdCategory(const QString &category);
-
-    bool udpxy() const;
-    void setUdpxy(bool enabled);
-    QString udpxyUrl() const;
-    void setUdpxyUrl(const QString &url);
-    int udpxyPort() const;
-    void setUdpxyPort(int port);
+    SettingsTv(QWidget *parent = 0);
+    ~SettingsTv();
 
 protected:
     void changeEvent(QEvent *e);
 
+signals:
+    void channelsChanged();
+    void udpxyChanged();
+    void xmltvChanged();
+
+private slots:
+    void channelsSettingsChanged();
+    void udpxySettingsChanged();
+    void xmltvSettingsChanged();
+
 private:
-    Ui::SettingsPlaylist *ui;
+    Ui::SettingsTv *ui;
+
+    QTimer *_channelsTimer;
 };
 
-#endif // TANO_SETTINGSPLAYLIST_H_
+#endif // TANO_SETTINGSTV_H_

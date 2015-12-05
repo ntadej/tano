@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsDialog</class>
+ <widget class="QMainWindow" name="SettingsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>560</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>560</width>
+    <height>350</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>560</width>
+    <height>350</height>
+   </size>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <widget class="QWidget" name="pageGeneral">
+       <layout class="QFormLayout" name="generalLayout">
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>24</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelLocale">
+          <property name="text">
+           <string>Application language:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="comboLocale">
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QCheckBox" name="checkAutoPlay">
+          <property name="text">
+           <string>Autoplay last channel</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QCheckBox" name="checkMuteMinimize">
+          <property name="text">
+           <string>Mute on minimize</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="BrowseWidget" name="browseSnapshots" native="true"/>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="labelSnapshots">
+          <property name="text">
+           <string>Snapshots folder:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="labelRecordings">
+          <property name="text">
+           <string>Recordings folder:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="BrowseWidget" name="browseRecordings" native="true"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="SettingsTv" name="pageTv"/>
+      <widget class="SettingsPlayback" name="pagePlayback"/>
+      <widget class="QWidget" name="pageInterface">
+       <layout class="QFormLayout" name="interfaceLayout">
+        <item row="1" column="1">
+         <widget class="QCheckBox" name="checkTray">
+          <property name="text">
+           <string>Show tray icon</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelTray">
+          <property name="text">
+           <string>Tray icon:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QCheckBox" name="checkTrayHide">
+          <property name="text">
+           <string>Minimise to tray</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QRadioButton" name="radioWheelChannel">
+          <property name="text">
+           <string>Change channel</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="labelMouseWheel">
+          <property name="text">
+           <string>Mouse wheel:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QRadioButton" name="radioWheelVolume">
+          <property name="text">
+           <string>Change volume</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pageShortcuts">
+       <layout class="QFormLayout" name="formLayout_4">
+        <property name="leftMargin">
+         <number>24</number>
+        </property>
+        <property name="topMargin">
+         <number>24</number>
+        </property>
+        <property name="rightMargin">
+         <number>24</number>
+        </property>
+        <property name="bottomMargin">
+         <number>24</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelShortcuts">
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionGeneral"/>
+   <addaction name="actionTv"/>
+   <addaction name="actionPlayback"/>
+   <addaction name="actionInterface"/>
+   <addaction name="actionShortcuts"/>
+  </widget>
+  <action name="actionGeneral">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset theme="preferences-system">
+     <normaloff>.</normaloff>.</iconset>
+   </property>
+   <property name="text">
+    <string>General</string>
+   </property>
+  </action>
+  <action name="actionShortcuts">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset theme="preferences-desktop-keyboard">
+     <normaloff>.</normaloff>.</iconset>
+   </property>
+   <property name="text">
+    <string>Shortcuts</string>
+   </property>
+  </action>
+  <action name="actionInterface">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset theme="preferences-system-windows-actions">
+     <normaloff>.</normaloff>.</iconset>
+   </property>
+   <property name="text">
+    <string>Interface</string>
+   </property>
+  </action>
+  <action name="actionTv">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset theme="video-television">
+     <normaloff>.</normaloff>.</iconset>
+   </property>
+   <property name="text">
+    <string>TV</string>
+   </property>
+  </action>
+  <action name="actionPlayback">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset theme="preferences-desktop-multimedia">
+     <normaloff>.</normaloff>.</iconset>
+   </property>
+   <property name="text">
+    <string>Playback</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SettingsTv</class>
+   <extends>QWidget</extends>
+   <header>settings/widgets/SettingsTv.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SettingsPlayback</class>
+   <extends>QWidget</extends>
+   <header>settings/widgets/SettingsPlayback.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>BrowseWidget</class>
+   <extends>QWidget</extends>
+   <header>common/widgets/BrowseWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>checkTray</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>checkTrayHide</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>329</x>
+     <y>88</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>329</x>
+     <y>112</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

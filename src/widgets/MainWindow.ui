@@ -109,7 +109,6 @@
     </property>
     <addaction name="actionOpenFile"/>
     <addaction name="actionOpenUrl"/>
-    <addaction name="actionOpen"/>
     <addaction name="separator"/>
     <addaction name="actionSchedule"/>
     <addaction name="actionScheduleCurrent"/>
@@ -141,8 +140,7 @@
   <action name="actionExit">
    <property name="icon">
     <iconset theme="application-exit">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>&amp;Exit</string>
@@ -154,8 +152,7 @@
   <action name="actionSettings">
    <property name="icon">
     <iconset theme="preferences-desktop">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>&amp;Settings</string>
@@ -167,31 +164,16 @@
    </property>
    <property name="icon">
     <iconset theme="view-fullscreen">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>&amp;Fullscreen</string>
    </property>
   </action>
-  <action name="actionOpen">
-   <property name="icon">
-    <iconset theme="document-open">
-     <normaloff/>
-    </iconset>
-   </property>
-   <property name="text">
-    <string>&amp;Open channel list</string>
-   </property>
-   <property name="toolTip">
-    <string>Open channel list</string>
-   </property>
-  </action>
   <action name="actionOpenFile">
    <property name="icon">
     <iconset theme="document-open">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Open &amp;File</string>
@@ -200,8 +182,7 @@
   <action name="actionOpenUrl">
    <property name="icon">
     <iconset theme="document-open">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Open URL</string>
@@ -210,8 +191,7 @@
   <action name="actionUpdate">
    <property name="icon">
     <iconset theme="system-software-update">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Check for updates</string>
@@ -223,8 +203,7 @@
   <action name="actionPlay">
    <property name="icon">
     <iconset theme="media-playback-start">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Play</string>
@@ -233,8 +212,7 @@
   <action name="actionStop">
    <property name="icon">
     <iconset theme="media-playback-stop">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Stop</string>
@@ -246,8 +224,7 @@
    </property>
    <property name="icon">
     <iconset theme="go-top">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Always on top</string>
@@ -256,8 +233,7 @@
   <action name="actionTray">
    <property name="icon">
     <iconset theme="go-bottom">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Hide to tray</string>
@@ -269,8 +245,7 @@
    </property>
    <property name="icon">
     <iconset theme="preferences-system-windows">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Simple Mode</string>
@@ -279,8 +254,7 @@
   <action name="actionNext">
    <property name="icon">
     <iconset theme="media-skip-forward">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Next</string>
@@ -289,8 +263,7 @@
   <action name="actionBack">
    <property name="icon">
     <iconset theme="media-skip-backward">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Back</string>
@@ -302,8 +275,7 @@
    </property>
    <property name="icon">
     <iconset theme="audio-volume-muted">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Mute</string>
@@ -312,8 +284,7 @@
   <action name="actionVolumeUp">
    <property name="icon">
     <iconset theme="audio-volume-high">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Volume up</string>
@@ -322,8 +293,7 @@
   <action name="actionVolumeDown">
    <property name="icon">
     <iconset theme="audio-volume-low">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Volume down</string>
@@ -332,8 +302,7 @@
   <action name="actionRecorder">
    <property name="icon">
     <iconset theme="media-record">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Recorder</string>
@@ -342,8 +311,7 @@
   <action name="actionRecordQuick">
    <property name="icon">
     <iconset theme="media-record">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Quick record</string>
@@ -367,8 +335,7 @@
    </property>
    <property name="icon">
     <iconset theme="media-playback-stop">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Stop recording</string>
@@ -380,8 +347,7 @@
   <action name="actionSchedule">
    <property name="icon">
     <iconset theme="x-office-calendar">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Schedule</string>
@@ -396,8 +362,7 @@
    </property>
    <property name="icon">
     <iconset theme="text-x-generic-template">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Teletext</string>
@@ -406,8 +371,7 @@
   <action name="actionSettingsShortcuts">
    <property name="icon">
     <iconset theme="preferences-desktop-keyboard-shortcuts">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Keyboard shortcuts</string>
@@ -422,8 +386,7 @@
    </property>
    <property name="icon">
     <iconset theme="media-record">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Instant recording</string>
@@ -432,8 +395,7 @@
   <action name="actionRecordTimer">
    <property name="icon">
     <iconset theme="list-add">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Add timer</string>
@@ -442,8 +404,7 @@
   <action name="actionSupport">
    <property name="icon">
     <iconset theme="help-browser">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Support</string>
@@ -455,8 +416,7 @@
    </property>
    <property name="icon">
     <iconset theme="image-x-generic">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Take snapshot</string>
@@ -473,8 +433,7 @@
   <action name="actionScheduleCurrent">
    <property name="icon">
     <iconset theme="x-office-calendar">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Current show info</string>
@@ -483,8 +442,7 @@
   <action name="actionLogoutExit">
    <property name="icon">
     <iconset theme="application-exit">
-     <normaloff/>
-    </iconset>
+     <normaloff>.</normaloff>.</iconset>
    </property>
    <property name="text">
     <string>Logout and Exit</string>

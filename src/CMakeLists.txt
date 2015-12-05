@@ -1,6 +1,6 @@
 #############################################################################
 # Tano - An Open IP TV Player
-# Copyright (C) 2015 Tadej Novak <tadej@tano.si>
+# Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,6 +29,7 @@ IF(MSVC)
     )
 ENDIF()
 
+INCLUDE(ProjectI18N)
 INCLUDE(ProjectSources)
 INCLUDE(ProjectResources)
 INCLUDE(ProjectUi)
@@ -72,7 +73,7 @@ ENDIF()
 #####################
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     SET_SOURCE_FILES_PROPERTIES(application/Updates.cpp PROPERTIES COMPILE_FLAGS "-x objective-c++")
-    SET_SOURCE_FILES_PROPERTIES(widgets/settings/SettingsDialog.cpp PROPERTIES COMPILE_FLAGS "-x objective-c++")
+    SET_SOURCE_FILES_PROPERTIES(settings/widgets/SettingsDialog.cpp PROPERTIES COMPILE_FLAGS "-x objective-c++")
 ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
 # This needs to be added in order for #include to work inside .cpp files
@@ -91,7 +92,7 @@ IF(MSVC)
 ENDIF()
 
 # This line tells cmake to create the Project program.
-ADD_EXECUTABLE(${PROJECT_NAME} MACOSX_BUNDLE WIN32 ${Project_Srcs} ${Project_Resources})
+ADD_EXECUTABLE(${PROJECT_NAME} MACOSX_BUNDLE WIN32 ${Project_UIs} ${Project_Srcs} ${Project_Resources})
 
 # MSVC: Avoid Debug/Release/... subfolders
 IF(MSVC)
@@ -106,6 +107,7 @@ ENDIF()
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
    SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES MACOSX_BUNDLE_INFO_PLIST "${CMAKE_BINARY_DIR}/platform/osx/Info.plist")
    TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${APPLICATIONSERVICES_LIBRARY} ${COCOA_LIBRARY} ${SPARKLE_LIBRARY})
+   TARGET_LINK_LIBRARIES(${PROJECT_NAME} Qt5::MacExtras)
 ENDIF()
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")

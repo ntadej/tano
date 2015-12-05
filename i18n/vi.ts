@@ -547,10 +547,6 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tvheadend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>XMLTV IDs</source>
         <translation type="unfinished"></translation>
     </message>
@@ -958,10 +954,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The file is not a Tano updates file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Once</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1000,7 +992,7 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation type="unfinished">Không thể ghi dữ liệu lên tập tin %1:
+        <translation type="obsolete">Không thể ghi dữ liệu lên tập tin %1:
 %2.</translation>
     </message>
     <message>
@@ -1084,15 +1076,7 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Sagem STB channel list files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>CSV channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sagem STB channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1152,52 +1136,8 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Missing mandatory argument for &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unknown option &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Usage: %1 [options]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>IP TV playback:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Play channel by number</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use playlist file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use XMLTV file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open URL</source>
-        <translation type="unfinished">Mở đường dẫn mạng</translation>
-    </message>
-    <message>
-        <source>Playback options:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set audio output</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set video output</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Mở đường dẫn mạng</translation>
     </message>
     <message>
         <source>Error:</source>
@@ -1479,22 +1419,6 @@ You will lose any unsaved changes.</source>
         <source>Gardening</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Try &apos;%1 %2&apos; for more information.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>GoTV channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The file is not a GoTV channel list file.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unknown title</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
@@ -1772,143 +1696,38 @@ Your changes will not be saved.</source>
 <context>
     <name>SettingsBackend</name>
     <message>
-        <source>VLC-Qt Backend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Using Videolan VLC version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Playback</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default subtitle language:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default audio language:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Disabled</source>
-        <translation type="unfinished">Vô hiệu hóa</translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default aspect ratio:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default crop:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default deinterlacing:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Original</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Vô hiệu hóa</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation type="unfinished">Hủy bỏ</translation>
+        <translation type="obsolete">Hủy bỏ</translation>
     </message>
     <message>
         <source>Blend</source>
-        <translation type="unfinished">Pha màu</translation>
+        <translation type="obsolete">Pha màu</translation>
     </message>
     <message>
         <source>Mean</source>
-        <translation type="unfinished">Trung thực</translation>
+        <translation type="obsolete">Trung thực</translation>
     </message>
     <message>
         <source>Bob</source>
-        <translation type="unfinished">Bob</translation>
+        <translation type="obsolete">Bob</translation>
     </message>
     <message>
         <source>Linear</source>
-        <translation type="unfinished">Tuyến tính</translation>
+        <translation type="obsolete">Tuyến tính</translation>
     </message>
     <message>
         <source>X</source>
-        <translation type="unfinished">X</translation>
-    </message>
-    <message>
-        <source>Enable teletext (requires restart)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Video output:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Audio output:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable YUV-&gt;RGB hardware decoding</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable S/PDIF output</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Misc</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mute on minimize</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remember video settings:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For all channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Per channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">X</translation>
     </message>
 </context>
 <context>
     <name>SettingsDialog</name>
     <message>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Playlist</source>
-        <extracomment>Please make manual line breaks if text too long!</extracomment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1921,11 +1740,67 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished">Lịch phát sóng</translation>
+        <translation type="obsolete">Lịch phát sóng</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished">Thu hình</translation>
+        <translation type="obsolete">Thu hình</translation>
+    </message>
+    <message>
+        <source>Application language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autoplay last channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;small&gt;Delete all cached information and settings. Reset is irreversible!&lt;/small&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset application</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show tray icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change volume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mouse wheel:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tray icon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimise to tray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember main window size and position on exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2072,45 +1947,89 @@ Your changes will not be saved.</source>
     </message>
 </context>
 <context>
-    <name>SettingsGeneral</name>
+    <name>SettingsPlayback</name>
     <message>
-        <source>Language</source>
+        <source>Never</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>System default language</source>
+        <source>For all channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Custom language</source>
+        <source>Per channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Session store</source>
+        <source>Original</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Remember volume</source>
+        <source>Disabled</source>
+        <translation type="unfinished">Vô hiệu hóa</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation type="unfinished">Hủy bỏ</translation>
+    </message>
+    <message>
+        <source>Blend</source>
+        <translation type="unfinished">Pha màu</translation>
+    </message>
+    <message>
+        <source>Mean</source>
+        <translation type="unfinished">Trung thực</translation>
+    </message>
+    <message>
+        <source>Bob</source>
+        <translation type="unfinished">Bob</translation>
+    </message>
+    <message>
+        <source>Linear</source>
+        <translation type="unfinished">Tuyến tính</translation>
+    </message>
+    <message>
+        <source>X</source>
+        <translation type="unfinished">X</translation>
+    </message>
+    <message>
+        <source>Other</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Autoplay last channel</source>
+        <source>Mute on minimize</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Defaults</source>
+        <source>Enable teletext (requires restart)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Restore defaults</source>
+        <source>Enable S/PDIF output</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
+        <source>Remember video settings:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You are using %1 version:</source>
+        <source>Default aspect ratio:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default crop:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default deinterlacing:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default audio language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default subtitle language:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2208,61 +2127,65 @@ Your changes will not be saved.</source>
     </message>
 </context>
 <context>
-    <name>SettingsUi</name>
+    <name>SettingsTv</name>
     <message>
-        <source>General Interface Settings</source>
+        <source>Channels</source>
+        <translation type="unfinished">Kênh</translation>
+    </message>
+    <message>
+        <source>Default channel list:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Change channel</source>
+        <source>Default HD category:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Change volume</source>
+        <source>Default radio category:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Minimise to tray</source>
+        <source>Refresh on startup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show tray icon</source>
+        <source>List URL:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Mouse wheel:</source>
+        <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Tray icon:</source>
+        <source>Enable UDPXY support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show on mouse move</source>
+        <source>Server IP or name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Remember main window size, position and open panels</source>
+        <source>Server port:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Icon theme</source>
+        <source>Schedule</source>
+        <translation type="unfinished">Lịch phát sóng</translation>
+    </message>
+    <message>
+        <source>Source type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Desktop theme</source>
+        <source>Local file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
+        <source>Download file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OSD in fullscreen:</source>
+        <source>Source:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

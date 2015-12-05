@@ -18,7 +18,7 @@
 #include "settings/SettingsChannel.h"
 
 #include "common/Backend.h"
-#include "common/FileDialogs.h"
+#include "common/widgets/FileDialogs.h"
 #include "common/OsdWidget.h"
 #include "menu/MenuAspectRatio.h"
 #include "menu/MenuCropRatio.h"
@@ -129,8 +129,7 @@ void MediaPlayer::createSettings()
 
     _settingsChannel->setDefaults(_defaultAspectRatio, _defaultCropRatio, _defaultDeinterlacing, _defaultAudioLanguage, _defaultSubtitleLanguage);
 
-    _sessionVolumeEnabled = settings->sessionVolume();
-    _sessionAutoplayEnabled = settings->sessionAutoplay();
+    _sessionAutoplayEnabled = settings->autoplayLast();
 
     _defaultSnapshot = settings->snapshotsDirectory();
 }
@@ -139,13 +138,15 @@ void MediaPlayer::createSettingsStartup()
 {
     QScopedPointer<Settings> settings(new Settings(this));
     //Session
-    _sessionVolumeEnabled = settings->sessionRememberVolume();
-    _sessionAutoplayEnabled = settings->sessionAutoplay();
+    _sessionAutoplayEnabled = settings->autoplayLast();
     _sessionVolume = settings->sessionVolume();
     _sessionChannel = settings->sessionChannel();
-    _sessionGui = settings->rememberGuiSession();
 
+#ifdef Q_OS_LINUX
     _teletext = settings->teletext();
+#else
+    _teletext = false;
+#endif
 }
 
 void MediaPlayer::createSession(bool valid)
@@ -171,20 +172,13 @@ void MediaPlayer::writeSession()
 {
     QScopedPointer<Settings> settings(new Settings(this));
 
-    if (_sessionVolumeEnabled)
-        settings->setSessionVolume(_osd->volumeSlider()->volume());
-    else
-        settings->setSessionVolume(settings->defaultValue(Settings::KEY_SESSION_VOLUME).toInt());
+    settings->setSessionVolume(_osd->volumeSlider()->volume());
+    settings->setSessionChannel(_osd->lcd()->value());
 
-    if (_sessionAutoplayEnabled)
-        settings->setSessionChannel(_osd->lcd()->value());
-
-    if (_sessionGui) {
-        settings->setWidth(parentWidget()->size().width());
-        settings->setHeight(parentWidget()->size().height());
-        settings->setPosX(parentWidget()->x());
-        settings->setPosY(parentWidget()->y());
-    }
+    settings->setWidth(parentWidget()->size().width());
+    settings->setHeight(parentWidget()->size().height());
+    settings->setPosX(parentWidget()->x());
+    settings->setPosY(parentWidget()->y());
 
     settings->writeSettings();
 

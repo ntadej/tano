@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,44 +16,41 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_BROWSEWIDGET_H_
-#define TANO_BROWSEWIDGET_H_
+#ifndef TANO_SETTINGSPLAYBACK_H_
+#define TANO_SETTINGSPLAYBACK_H_
 
 #include <QtWidgets/QWidget>
 
-#include "common/File.h"
-
-class QLineEdit;
-class QPushButton;
-class QToolButton;
-
-class BrowseWidget : public QWidget
+namespace Ui
 {
-Q_OBJECT
+    class SettingsPlayback;
+}
+
+class SettingsPlayback : public QWidget
+{
+    Q_OBJECT
 public:
-    BrowseWidget(QWidget *parent = 0);
-    ~BrowseWidget();
+    SettingsPlayback(QWidget *parent = 0);
+    ~SettingsPlayback();
 
-    QLineEdit *edit() { return _edit; }
-    void setResetValue(const QString &value) { _resetValue = value; }
-    void setType(const File::Type &type) { _type = type; }
-    void setValue(const QString &value);
-    QString value() const;
+protected:
+    void changeEvent(QEvent *e);
 
-public slots:
-    void reset();
+signals:
+    void playbackRememberChanged();
+    void playbackDefaultsChanged();
+    void playbackMiscChanged();
 
 private slots:
-    void browse();
+    void rememberChanged();
+    void defaultsChanged();
+    void miscChanged();
 
 private:
-    QString _resetValue;
+    void setAudio(const QString &audio);
+    void setSub(const QString &sub);
 
-    QLineEdit *_edit;
-    QPushButton *_reset;
-    QToolButton *_browse;
-
-    File::Type _type;
+    Ui::SettingsPlayback *ui;
 };
 
-#endif // TANO_BROWSEWIDGET_H_
+#endif // TANO_SETTINGSPLAYBACK_H_

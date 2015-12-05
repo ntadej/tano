@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -33,27 +33,49 @@ public:
     QVariant defaultValue(const QString &key) const;
 
     // General
-    inline QString language() const { return _language; }
-    inline void setLanguage(const QString &s) { _language = s; }
-    static const QString KEY_LANGUAGE;
-    static const QString DEFAULT_LANGUAGE;
+    inline QString locale() const { return _locale; }
+    inline void setLocale(const QString &s) { _locale = s; }
+    static const QString KEY_LOCALE;
+    static const QString DEFAULT_LOCALE;
+
+    inline bool autoplayLast() const { return _autoplayLast; }
+    inline void setAutoplayLast(bool b) { _autoplayLast = b; }
+    static const QString KEY_AUTOPLAY_LAST;
+    static const bool DEFAULT_AUTOPLAY_LAST;
+
+    inline bool muteOnMinimize() const { return _muteOnMinimize; }
+    inline void setMuteOnMinimize(bool b) { _muteOnMinimize = b; }
+    static const QString KEY_MUTE_ON_MINIMIZE;
+    static const bool DEFAULT_MUTE_ON_MINIMIZE;
+
+    inline QString recordingsDirectory() const { return _recordingsDirectory; }
+    inline void setRecordingsDirectory(const QString &s) { _recordingsDirectory = s; }
+    static const QString KEY_RECORDINGS_DIRECTORY;
+    static const QString DEFAULT_RECORDINGS_DIRECTORY;
+
+    inline QString snapshotsDirectory() const { return _snapshotsDirectory; }
+    inline void setSnapshotsDirectory(const QString &s) { _snapshotsDirectory = s; }
+    static const QString KEY_SNAPSHOTS_DIRECTORY;
+    static const QString DEFAULT_SNAPSHOTS_DIRECTORY;
 
 
-    // Playlist
-    inline QString playlist() const { return _playlist; }
-    inline void setPlaylist(const QString &s) { _playlist = s; }
-    static const QString KEY_PLAYLIST;
-    static const QString DEFAULT_PLAYLIST;
+    // Session
+    inline int sessionChannel() const { return _sessionChannel; }
+    inline void setSessionChannel(int i) { _sessionChannel = i; }
+    static const QString KEY_SESSION_CHANNEL;
+    static const int DEFAULT_SESSION_CHANNEL;
 
-    inline bool playlistUpdate() const { return _playlistUpdate; }
-    inline void setPlaylistUpdate(bool b) { _playlistUpdate = b; }
-    static const QString KEY_PLAYLIST_UPDATE;
-    static const bool DEFAULT_PLAYLIST_UPDATE;
+    inline int sessionVolume() const { return _sessionVolume; }
+    inline void setSessionVolume(int i) { _sessionVolume = i; }
+    static const QString KEY_SESSION_VOLUME;
+    static const int DEFAULT_SESSION_VOLUME;
 
-    inline QString playlistUpdateUrl() const { return _playlistUpdateUrl; }
-    inline void setPlaylistUpdateUrl(const QString &s) { _playlistUpdateUrl = s; }
-    static const QString KEY_PLAYLIST_UPDATE_URL;
-    static const QString DEFAULT_PLAYLIST_UPDATE_URL;
+
+    // Channels
+    inline QString channelsList() const { return _channelsList; }
+    inline void setChannelsList(const QString &s) { _channelsList = s; }
+    static const QString KEY_CHANNELS_LIST;
+    static const QString DEFAULT_CHANNELS_LIST;
 
     inline QString radioCategory() const { return _radioCategory; }
     inline void setRadioCategory(const QString &s) { _radioCategory = s; }
@@ -82,11 +104,7 @@ public:
 
 
     // GUI
-    inline bool osd() const { return _osd; }
-    inline void setOsd(bool b) { _osd = b; }
-    static const QString KEY_OSD;
-    static const bool DEFAULT_OSD;
-
+#ifndef Q_OS_MAC
     inline bool trayEnabled() const { return _trayEnabled; }
     inline void setTrayEnabled(bool b) { _trayEnabled = b; }
     static const QString KEY_TRAY_ENABLED;
@@ -96,21 +114,11 @@ public:
     inline void setHideToTray(bool b) { _hideToTray = b; }
     static const QString KEY_HIDE_TO_TRAY;
     static const bool DEFAULT_HIDE_TO_TRAY;
-
+#endif
     inline QString mouseWheel() const { return _mouseWheel; }
     inline void setMouseWheel(const QString &s) { _mouseWheel = s; }
     static const QString KEY_MOUSE_WHEEL;
     static const QString DEFAULT_MOUSE_WHEEL;
-
-    inline bool rememberGuiSession() const { return _rememberGuiSession; }
-    inline void setRememberGuiSession(bool b) { _rememberGuiSession = b; }
-    static const QString KEY_REMEMBER_GUI_SESSION;
-    static const bool DEFAULT_REMEMBER_GUI_SESSION;
-
-    inline QString icons() const { return _icons; }
-    inline void setIcons(const QString &s) { _icons = s; }
-    static const QString KEY_ICONS;
-    static const QString DEFAULT_ICONS;
 
 
     // GUI - session
@@ -141,20 +149,24 @@ public:
     static const QString KEY_VOUT;
     static const int DEFAULT_VOUT;
 
-    inline int aout() const { return _aout; }
-    inline void setAout(int i) { _aout = i; }
-    static const QString KEY_AOUT;
-    static const int DEFAULT_AOUT;
-
+#ifdef Q_OS_WIN
     inline bool yuvToRgb() const { return _yuvToRgb; }
     inline void setYuvToRgb(bool b) { _yuvToRgb = b; }
     static const QString KEY_YUV_TO_RGB;
     static const bool DEFAULT_YUV_TO_RGB;
+#endif
 
     inline bool spdif() const { return _spdif; }
     inline void setSpdif(bool b) { _spdif = b; }
     static const QString KEY_SPDIF;
     static const bool DEFAULT_SPDIF;
+
+#ifdef Q_OS_LINUX
+    inline bool teletext() const { return _teletext; }
+    inline void setTeletext(bool b) { _teletext = b; }
+    static const QString KEY_TELETEXT;
+    static const bool DEFAULT_TELETEXT;
+#endif
 
 
     // Backend - video settings
@@ -194,58 +206,7 @@ public:
     static const QString DEFAULT_SUBTITLE_LANGUAGE;
 
 
-    // Backend - misc
-    inline bool muteOnMinimize() const { return _muteOnMinimize; }
-    inline void setMuteOnMinimize(bool b) { _muteOnMinimize = b; }
-    static const QString KEY_MUTE_ON_MINIMIZE;
-    static const bool DEFAULT_MUTE_ON_MINIMIZE;
-
-    inline bool teletext() const { return _teletext; }
-    inline void setTeletext(bool b) { _teletext = b; }
-    static const QString KEY_TELETEXT;
-    static const bool DEFAULT_TELETEXT;
-
-
-    // Recorder
-    inline QString recorderDirectory() const { return _recorderDirectory; }
-    inline void setRecorderDirectory(const QString &s) { _recorderDirectory = s; }
-    static const QString KEY_RECORDER_DIRECTORY;
-    static const QString DEFAULT_RECORDER_DIRECTORY;
-
-    inline QString snapshotsDirectory() const { return _snapshotsDirectory; }
-    inline void setSnapshotsDirectory(const QString &s) { _snapshotsDirectory = s; }
-    static const QString KEY_SNAPSHOTS_DIRECTORY;
-    static const QString DEFAULT_SNAPSHOTS_DIRECTORY;
-
-
-    // Session
-    inline bool sessionAutoplay() const { return _sessionAutoplay; }
-    inline void setSessionAutoplay(bool b) { _sessionAutoplay = b; }
-    static const QString KEY_SESSION_AUTOPLAY;
-    static const bool DEFAULT_SESSION_AUTOPLAY;
-
-    inline int sessionChannel() const { return _sessionChannel; }
-    inline void setSessionChannel(int i) { _sessionChannel = i; }
-    static const QString KEY_SESSION_CHANNEL;
-    static const int DEFAULT_SESSION_CHANNEL;
-
-    inline bool sessionRememberVolume() const { return _sessionRememberVolume; }
-    inline void setSessionRememberVolume(bool b) { _sessionRememberVolume = b; }
-    static const QString KEY_SESSION_REMEMBER_VOLUME;
-    static const bool DEFAULT_SESSION_REMEMBER_VOLUME;
-
-    inline int sessionVolume() const { return _sessionVolume; }
-    inline void setSessionVolume(int i) { _sessionVolume = i; }
-    static const QString KEY_SESSION_VOLUME;
-    static const int DEFAULT_SESSION_VOLUME;
-
-
     // Schedule
-    inline bool xmltvUpdate() const { return _xmltvUpdate; }
-    inline void setXmltvUpdate(bool b) { _xmltvUpdate = b; }
-    static const QString KEY_XMLTV_UPDATE;
-    static const bool DEFAULT_XMLTV_UPDATE;
-
     inline QString xmltvUpdateLocation() const { return _xmltvUpdateLocation; }
     inline void setXmltvUpdateLocation(const QString &s) { _xmltvUpdateLocation = s; }
     static const QString KEY_XMLTV_UPDATE_LOCATION;
@@ -265,12 +226,18 @@ private:
     QVariantMap _map;
 
     // General variables
-    QString _language;
+    QString _locale;
+    bool _autoplayLast;
+    bool _muteOnMinimize;
+    QString _recordingsDirectory;
+    QString _snapshotsDirectory;
+
+    // Session
+    int _sessionChannel;
+    int _sessionVolume;
 
     // Channels
-    QString _playlist;
-    bool _playlistUpdate;
-    QString _playlistUpdateUrl;
+    QString _channelsList;
     QString _radioCategory;
     QString _hdCategory;
     bool _udpxy;
@@ -278,12 +245,11 @@ private:
     int _udpxyPort;
 
     // GUI
-    bool _osd;
+#ifndef Q_OS_MAC
     bool _trayEnabled;
     bool _hideToTray;
+#endif
     QString _mouseWheel;
-    bool _rememberGuiSession;
-    QString _icons;
 
     // GUI - session
     int _width;
@@ -293,9 +259,13 @@ private:
 
     // Backend - core
     int _vout;
-    int _aout;
+#ifdef Q_OS_WIN
     bool _yuvToRgb;
+#endif
     bool _spdif;
+#ifdef Q_OS_LINUX
+    bool _teletext;
+#endif
 
     // Backend - video settings
     bool _rememberVideoSettings;
@@ -306,22 +276,7 @@ private:
     QString _audioLanguage;
     QString _subtitleLanguage;
 
-    // Backend - misc
-    bool _muteOnMinimize;
-    bool _teletext;
-
-    // Recorder
-    QString _recorderDirectory;
-    QString _snapshotsDirectory;
-
-    // Session
-    bool _sessionAutoplay;
-    int _sessionChannel;
-    bool _sessionRememberVolume;
-    int _sessionVolume;
-
     // Schedule
-    bool _xmltvUpdate;
     QString _xmltvUpdateLocation;
     bool _xmltvUpdateRemote;
     int _xmltvHoursOffset;

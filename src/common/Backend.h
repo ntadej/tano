@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,34 +16,21 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSPASSWORD_H_
-#define TANO_SETTINGSPASSWORD_H_
+#ifndef TANO_BACKEND_H_
+#define TANO_BACKEND_H_
 
-#include <QtCore/QSettings>
+#include <QtCore/QString>
+#include <QtCore/QStringList>
 
-class SettingsPassword : public QSettings
+namespace Tano
 {
-public:
-    SettingsPassword(QObject *parent = 0);
-    ~SettingsPassword();
+    namespace Backend
+    {
+        // Backend settings
+        QStringList args();
+        QString versionCore();
+        QString versionLibrary();
+    }
+}
 
-    void readSettings();
-    void writeSettings();
-
-    inline QString username() const { return _username; }
-    inline void setUsername(const QString &s) { _username = s; }
-
-    inline QString password() const { return _password; }
-    inline void setPassword(const QString &s) { _password = s; }
-
-    inline QString sessionId() const { return _sessionId; }
-    inline void setSessionId(const QString &s) { _sessionId = s; }
-
-private:
-    QString _username;
-    QString _password;
-    QString _uid;
-    QString _sessionId;
-};
-
-#endif // TANO_SETTINGS_H_
+#endif // TANO_BACKEND_H_

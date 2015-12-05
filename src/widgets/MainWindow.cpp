@@ -39,11 +39,9 @@
 #include "network/NetworkDownload.h"
 #include "network/NetworkUdpxy.h"
 #include "playlist/PlaylistModel.h"
-#include "playlist/PlaylistUpdate.h"
 #include "playlist/containers/Channel.h"
 #include "settings/Settings.h"
 #include "settings/SettingsChannel.h"
-#include "settings/SettingsPassword.h"
 #include "timers/containers/Timer.h"
 #include "xmltv/XmltvManager.h"
 
@@ -52,7 +50,7 @@
 #include "common/Backend.h"
 #include "common/ChannelSelect.h"
 #include "common/DesktopShortcuts.h"
-#include "common/FileDialogs.h"
+#include "common/widgets/FileDialogs.h"
 #include "common/OsdFloat.h"
 #include "common/OsdWidget.h"
 #include "common/PlaylistDisplayWidget.h"
@@ -65,7 +63,7 @@
 #include "main/ShowInfoTab.h"
 #include "menu/MenuCore.h"
 #include "recorder/Recorder.h"
-#include "settings/SettingsDialog.h"
+#include "settings/widgets/SettingsDialog.h"
 #include "settings/SettingsDialogShortcuts.h"
 #include "style/VolumeSlider.h"
 
@@ -80,11 +78,11 @@ MainWindow::MainWindow()
       _select(0),
       _locale(new LocaleManager()),
       _model(new PlaylistModel(this)),
-      _modelUpdate(new PlaylistUpdate(_model)),
       _channel(0),
       _xmltv(new XmltvManager()),
       _previewTimer(new QTimer(this)),
       _udpxy(new NetworkUdpxy()),
+      _settingsDialog(0),
       _osdFloat(0),
       _playlistEditor(0),
       _trayIcon(0)
@@ -172,16 +170,6 @@ void MainWindow::exit()
     }
 }
 
-void MainWindow::exitLogout()
-{
-    QScopedPointer<SettingsPassword> settings(new SettingsPassword());
-    settings->setUsername("");
-    settings->setPassword("");
-    settings->writeSettings();
-
-    exit();
-}
-
 bool MainWindow::eventFilter(QObject *obj,
                              QEvent *event)
 {
@@ -194,7 +182,7 @@ bool MainWindow::eventFilter(QObject *obj,
         }
     } else if (obj == this && event->type() == QEvent::Show) {
         qDebug() << "Event:" << "Show";
-        if (_rememberGui && _posX && _posY) {
+        if (_posX && _posY) {
             move(_posX, _posY);
             _posX = 0;
             _posY = 0;
@@ -334,7 +322,7 @@ void MainWindow::createGui()
     _osdFloat->resize(_osdFloat->width(), _mediaPlayer->osd()->height());
     _osdFloat->setControls();
 
-    openPlaylist(true);
+    openPlaylist();
     setState(Vlc::Idle);
 
 #if !defined(Q_OS_LINUX)
@@ -354,23 +342,28 @@ void MainWindow::createBackend()
 void MainWindow::createSettings()
 {
     QScopedPointer<Settings> settings(new Settings(this));
-    _hideToTray = settings->trayEnabled() ? settings->hideToTray() : false;
-
     //GUI Settings
+#ifndef Q_OS_MAC
+    _hideToTray = settings->trayEnabled() ? settings->hideToTray() : false;
     if (_trayIcon) {
         if(settings->trayEnabled())
             _trayIcon->show();
         else
             _trayIcon->hide();
     }
+#endif
 
     _wheelType = settings->mouseWheel();
-    _rememberGui = settings->rememberGuiSession();
 
     //Playback settings
     _mediaPlayer->createSettings();
     _udpxy->createSettings();
     _muteOnMinimize = settings->muteOnMinimize();
+
+    //Settings dialog
+    if (!_settingsDialog) {
+        _settingsDialog = new SettingsDialog();
+    }
 
     qDebug() << "Initialised: Settings";
 }
@@ -378,16 +371,10 @@ void MainWindow::createSettings()
 void MainWindow::createDesktopStartup()
 {
     QScopedPointer<Settings> settings(new Settings(this));
-    _defaultPlaylist = settings->playlist();
-
-    _width = settings->width();
-    _height = settings->height();
     _posX = settings->posX();
     _posY = settings->posY();
 
-    if (_rememberGui) {
-        resize(_width, _height);
-    }
+    resize(settings->width(), settings->height());
 
     qDebug() << "Initialised: Startup settings";
 }
@@ -396,6 +383,17 @@ void MainWindow::createConnections()
 {
     connect(this, SIGNAL(windowWasShown()), this, SLOT(initUpdates()),
             Qt::ConnectionType(Qt::QueuedConnection | Qt::UniqueConnection));
+
+    connect(_settingsDialog, &SettingsDialog::localeChanged, _locale, &LocaleManager::setLocale);
+    connect(_settingsDialog, &SettingsDialog::generalChanged, this, &MainWindow::createSettings);
+    connect(_settingsDialog, &SettingsDialog::generalChanged, _recorder, &Recorder::createSettings);
+    connect(_settingsDialog, &SettingsDialog::guiChanged, this, &MainWindow::createSettings);
+    connect(_settingsDialog, &SettingsDialog::channelsChanged, this, &MainWindow::openPlaylist);
+    connect(_settingsDialog, &SettingsDialog::udpxyChanged, _udpxy, &NetworkUdpxy::createSettings);
+    connect(_settingsDialog, &SettingsDialog::playbackDefaultsChanged, _mediaPlayer, &MediaPlayer::createSettings);
+    connect(_settingsDialog, &SettingsDialog::playbackMiscChanged, _mediaPlayer, &MediaPlayer::createSettings);
+    connect(_settingsDialog, &SettingsDialog::playbackRememberChanged, _mediaPlayer, &MediaPlayer::createSettings);
+    connect(ui->actionSettings, &QAction::triggered, _settingsDialog, &SettingsDialog::refreshAndShow);
 
     connect(ui->tabs, SIGNAL(currentChanged(QWidget *)), this, SLOT(currentWidget(QWidget *)));
     connect(ui->tabs, SIGNAL(currentChanged(QWidget *)), _recorder, SLOT(currentWidget(QWidget *)));
@@ -406,19 +404,16 @@ void MainWindow::createConnections()
     connect(ui->actionSupport, SIGNAL(triggered()), this, SLOT(support()));
     connect(ui->actionAbout, SIGNAL(triggered()), this, SLOT(aboutTano()));
     connect(ui->actionAboutQt, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
-    connect(ui->actionLogoutExit, SIGNAL(triggered()), this, SLOT(exitLogout()));
     connect(ui->actionExit, SIGNAL(triggered()), this, SLOT(exit()));
 
     connect(ui->actionTop, SIGNAL(triggered()), this, SLOT(top()));
     connect(ui->actionLite, SIGNAL(triggered()), this, SLOT(lite()));
 
-    connect(ui->actionOpen, SIGNAL(triggered()), this, SLOT(openPlaylist()));
     connect(ui->actionOpenFile, SIGNAL(triggered()), _mediaPlayer, SLOT(openFile()));
     connect(ui->actionOpenUrl, SIGNAL(triggered()), _mediaPlayer, SLOT(openUrl()));
 
     connect(ui->actionSchedule, SIGNAL(triggered()), this, SLOT(showSchedule()));
     connect(ui->actionScheduleCurrent, SIGNAL(triggered()), this, SLOT(showScheduleCurrent()));
-    connect(ui->actionSettings, SIGNAL(triggered()), this, SLOT(showSettings()));
     connect(ui->actionSettingsShortcuts, SIGNAL(triggered()), this, SLOT(showSettingsShortcuts()));
     connect(ui->actionEditPlaylist, SIGNAL(triggered()), this, SLOT(showPlaylistEditor()));
 
@@ -545,7 +540,6 @@ void MainWindow::createShortcuts()
              << ui->actionScheduleCurrent
              << ui->actionOpenFile
              << ui->actionOpenUrl
-             << ui->actionOpen
              << ui->actionSettings
              << ui->actionSettingsShortcuts
              << ui->actionTop
@@ -561,7 +555,6 @@ void MainWindow::createShortcuts()
     _actionsFull << ui->actionRecorder
                  << ui->actionOpenFile
                  << ui->actionOpenUrl
-                 << ui->actionOpen
                  << ui->actionSettings
                  << ui->actionSettingsShortcuts
                  << ui->actionTop
@@ -680,51 +673,26 @@ void MainWindow::stop()
 }
 
 // Open dialogs
-void MainWindow::openPlaylist(bool start)
+void MainWindow::openPlaylist()
 {
-    if (!start) {
-        _playlistName = FileDialogs::openPlaylistSimple();
-        if (_playlistName.isEmpty())
-            return;
-
-        QFile f(_playlistName);
-        if (!f.open(QFile::ReadOnly | QFile::Text)) {
-            QMessageBox::warning(this, Tano::name(),
-                                tr("Cannot read file %1:\n%2.")
-                                .arg(_playlistName)
-                                .arg(f.errorString()));
-            return;
-        }
-        f.close();
-
-        if (_select != 0) {
-            disconnect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
-            disconnect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
-            disconnect(_select, SIGNAL(channelSelect(int)), _playlistTab->playlist(), SLOT(channelSelected(int)));
-            delete _select;
-        }
-
-        _model->open(_playlistName);
-        openPlaylistComplete();
-    } else {
-        if (_select != 0) {
-            disconnect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
-            disconnect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
-            disconnect(_select, SIGNAL(channelSelect(int)), _playlistTab->playlist(), SLOT(channelSelected(int)));
-            delete _select;
-        }
-
-         connect(_modelUpdate, SIGNAL(done()), this, SLOT(openPlaylistComplete()));
-
-        _playlistName = Tano::Resources::resource(_defaultPlaylist);
-        _modelUpdate->update(_defaultPlaylist);
+    if (_select != 0) {
+        disconnect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
+        disconnect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
+        disconnect(_select, SIGNAL(channelSelect(int)), _playlistTab->playlist(), SLOT(channelSelected(int)));
+        delete _select;
     }
+
+    QScopedPointer<Settings> settings(new Settings(this));
+    QString channels = settings->channelsList();
+
+    _playlistName = Tano::Resources::resource(channels);
+    _model->open(_playlistName);
+
+    openPlaylistComplete();
 }
 
 void MainWindow::openPlaylistComplete()
 {
-    disconnect(_modelUpdate, SIGNAL(done()), this, SLOT(openPlaylistComplete()));
-
     _hasPlaylist = true;
 
     _select = new ChannelSelect(this, _mediaPlayer->osd()->lcd(), _model->numbers());
@@ -751,14 +719,6 @@ void MainWindow::showScheduleCurrent()
 void MainWindow::showRecorder()
 {
     ui->tabs->setCurrentWidget(_recorder);
-}
-
-void MainWindow::showSettings()
-{
-    SettingsDialog s(this);
-    s.exec();
-    _locale->setLocale();
-    createSettings();
 }
 
 void MainWindow::showSettingsShortcuts()

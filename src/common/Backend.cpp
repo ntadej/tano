@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -22,26 +22,20 @@
 #include <VLCQtCore/Enums.h>
 #include <VLCQtCore/Instance.h>
 
+#include "common/Backend.h"
 #include "settings/Settings.h"
-
-#include "Backend.h"
 
 QStringList Tano::Backend::args()
 {
     QStringList args = VlcCommon::args();
 
     QScopedPointer<Settings> settings(new Settings());
-    if (settings->aout() != -1) {
-        args << QString("--aout=" + Vlc::audioOutput()[settings->aout()]);
-        qDebug() << "Using aout:" << Vlc::audioOutput()[settings->aout()];
-    }
-
-    if (settings->vout() != -1) {
+    if (settings->vout() != 0) {
         args << QString("--vout=" + Vlc::videoOutput()[settings->vout()]);
         qDebug() << "Using vout:" << Vlc::videoOutput()[settings->vout()];
     }
 
-#if defined(Q_OS_WIN32)
+#ifdef Q_OS_WIN
     if (settings->yuvToRgb())
         args << "--directx-hw-yuv";
     else

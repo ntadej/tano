@@ -51,7 +51,7 @@ OsdFloat::~OsdFloat()
 
 void OsdFloat::floatHide()
 {
-#if defined(Q_OS_WIN32)
+#if defined(Q_OS_WIN)
     hide();
 #else
     _slowHideTimer->start(5);
@@ -60,7 +60,7 @@ void OsdFloat::floatHide()
 
 void OsdFloat::floatShow()
 {
-#if !defined(Q_OS_WIN32)
+#if !defined(Q_OS_WIN)
     _slowHideTimer->stop();
 
     if (isVisible() && windowOpacity() >= 1)

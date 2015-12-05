@@ -35,11 +35,14 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 ENDIF()
 
 SET(Project_Common_Srcs
+    common/Backend.cpp
     common/File.h
     common/ListItem.h
     common/ListModel.cpp
     common/NetworkManager.cpp
     common/Resources.cpp
+    common/widgets/BrowseWidget.cpp
+    common/widgets/FileDialogs.cpp
 )
 
 SET(Project_Network_Srcs
@@ -67,10 +70,13 @@ SET(Project_Settings_Srcs
     settings/SettingsChannel.cpp
     settings/SettingsDefaults.cpp
     settings/SettingsKeys.cpp
-    settings/SettingsPassword.cpp
     settings/SettingsShortcuts.cpp
     settings/SettingsShortcutsDefaults.cpp
+    settings/widgets/SettingsDialog.cpp
+    settings/widgets/SettingsPlayback.cpp
+    settings/widgets/SettingsTv.cpp
 )
+
 SET(Project_Timers_Srcs
     timers/TimersGenerator.cpp
     timers/TimersHandler.cpp
@@ -79,6 +85,7 @@ SET(Project_Timers_Srcs
     timers/models/TimersFilterModel.cpp
     timers/models/TimersModel.cpp
 )
+
 SET(Project_Xmltv_Srcs
     xmltv/XmltvCommon.cpp
     xmltv/XmltvCommonCategories.cpp
@@ -110,6 +117,8 @@ ENDIF()
 INCLUDE(WidgetsTmp)
 
 SET(Project_Srcs
+    ${Project_Srcs}
+
     main.cpp
 
     ${Project_Application_Srcs}
@@ -123,5 +132,5 @@ SET(Project_Srcs
 
     ${Project_Platform_Srcs}
 
-    ${Project_Widgets_Srcs}
+    ${Project_Widgets_Tmp_Srcs}
 )

@@ -27,30 +27,19 @@ SET(Project_Widgets_UIs
     widgets/editor/PlaylistEditor.ui
     widgets/editor/PlaylistEditorHelp.ui
     widgets/editor/PlaylistEditorScan.ui
-    widgets/editor/PlaylistExportTvheadend.ui
     widgets/editor/PlaylistImportCSV.ui
     widgets/editor/PrintDialog.ui
     widgets/main/ShowInfoTab.ui
     widgets/recorder/RecorderInfoWidget.ui
     widgets/recorder/RecorderNewDialog.ui
     widgets/recorder/RecorderTimersEditor.ui
-    widgets/settings/SettingsBackend.ui
-    widgets/settings/SettingsDialog.ui
-    widgets/settings/SettingsGeneral.ui
-    widgets/settings/SettingsPlaylist.ui
-    widgets/settings/SettingsRecorder.ui
-    widgets/settings/SettingsSchedule.ui
     widgets/settings/SettingsDialogShortcuts.ui
-    widgets/settings/SettingsUi.ui
 )
 
 # Define the C++ source files used by Tano Widgets
 SET(Project_Widgets_Common_Srcs
-    widgets/common/Backend.cpp
-    widgets/common/BrowseWidget.cpp
     widgets/common/ChannelSelect.cpp
     widgets/common/DesktopShortcuts.cpp
-    widgets/common/FileDialogs.cpp
     widgets/common/InfoBarWidget.cpp
     widgets/common/OsdFloat.cpp
     widgets/common/OsdWidget.cpp
@@ -73,7 +62,6 @@ SET(Project_Widgets_Editor_Srcs
     widgets/editor/PlaylistEditor.cpp
     widgets/editor/PlaylistEditorHelp.cpp
     widgets/editor/PlaylistEditorScan.cpp
-    widgets/editor/PlaylistExportTvheadend.cpp
     widgets/editor/PlaylistImportCSV.cpp
     widgets/editor/Print.cpp
     widgets/editor/PrintDialog.cpp
@@ -83,6 +71,7 @@ SET(Project_Widgets_Main_Srcs
     widgets/main/PlaylistTab.cpp
     widgets/main/ScheduleTab.cpp
     widgets/main/ShowInfoTab.cpp
+    widgets/settings/SettingsDialogShortcuts.cpp
 )
 SET(Project_Widgets_Menu_Srcs
     widgets/menu/MenuAspectRatio.cpp
@@ -102,16 +91,6 @@ SET(Project_Widgets_Recorder_Srcs
     widgets/recorder/RecorderTimersEditor.cpp
     widgets/recorder/RecorderTimersWidget.cpp
 )
-SET(Project_Widgets_Settings_Srcs
-    widgets/settings/SettingsBackend.cpp
-    widgets/settings/SettingsDialog.cpp
-    widgets/settings/SettingsDialogShortcuts.cpp
-    widgets/settings/SettingsGeneral.cpp
-    widgets/settings/SettingsPlaylist.cpp
-    widgets/settings/SettingsRecorder.cpp
-    widgets/settings/SettingsSchedule.cpp
-    widgets/settings/SettingsUi.cpp
-)
 SET(Project_Widgets_Style_Srcs
     widgets/style/Common.cpp
     widgets/style/FancyLineEdit.cpp
@@ -126,7 +105,7 @@ SET(Project_Widgets_Style_Srcs
 )
 
 
-SET(Project_Widgets_Srcs
+SET(Project_Widgets_Tmp_Srcs
     widgets/MainWindow.cpp
 
     ${Project_Widgets_Application_Srcs}
@@ -136,7 +115,6 @@ SET(Project_Widgets_Srcs
     ${Project_Widgets_Main_Srcs}
     ${Project_Widgets_Menu_Srcs}
     ${Project_Widgets_Recorder_Srcs}
-    ${Project_Widgets_Settings_Srcs}
     ${Project_Widgets_Style_Srcs}
 )
 

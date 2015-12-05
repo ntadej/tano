@@ -105,11 +105,9 @@ private:
     int _defaultDeinterlacing;
     QString _defaultSnapshot;
     QString _defaultSubtitleLanguage;
-    int _sessionChannel;
-    bool _sessionVolumeEnabled;
     bool _sessionAutoplayEnabled;
+    int _sessionChannel;
     int _sessionVolume;
-    bool _sessionGui;
     bool _teletext;
     bool _videoSettings;
     bool _videoSettingsChannel;

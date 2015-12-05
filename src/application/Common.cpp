@@ -30,7 +30,7 @@ QString Tano::name()
 
 QString Tano::executable()
 {   
-#if defined(Q_OS_LINUX)
+#ifdef Q_OS_LINUX
     return name().toLower();
 #else
     return name();

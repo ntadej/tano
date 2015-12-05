@@ -26,10 +26,9 @@
 #include "playlist/PlaylistModel.h"
 #include "playlist/handlers/CSVHandler.h"
 
-#include "common/FileDialogs.h"
+#include "common/widgets/FileDialogs.h"
 #include "editor/PlaylistEditorHelp.h"
 #include "editor/PlaylistEditorScan.h"
-#include "editor/PlaylistExportTvheadend.h"
 #include "editor/PlaylistImportCSV.h"
 #include "editor/PrintDialog.h"
 
@@ -141,7 +140,7 @@ void PlaylistEditor::open(const QString &playlist,
     CSVInfo info;
     PlaylistImportCSV dialog;
     if (playlist.isNull()) {
-        file = FileDialogs::openPlaylist();
+        file = FileDialogs::openChannelsList();
     } else {
         file.path = playlist;
         file.type = File::M3U;
@@ -251,7 +250,7 @@ void PlaylistEditor::save()
 {
     ui->playlist->channelSelected(0);
 
-    File file = FileDialogs::savePlaylist();
+    File file = FileDialogs::saveChannelsList();
 
     if (file.path.isEmpty() || file.type == File::Unknown)
         return;
