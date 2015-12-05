@@ -156,7 +156,7 @@
              <bool>false</bool>
             </property>
             <property name="maximum">
-             <number>9999</number>
+             <number>65535</number>
             </property>
             <property name="value">
              <number>1234</number>
