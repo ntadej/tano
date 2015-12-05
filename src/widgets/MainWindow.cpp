@@ -684,13 +684,6 @@ void MainWindow::stop()
 // Open dialogs
 void MainWindow::openPlaylist(bool start)
 {
-    if (_select != 0) {
-        disconnect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
-        disconnect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
-        disconnect(_select, SIGNAL(channelSelect(int)), _playlistTab->playlist(), SLOT(channelSelected(int)));
-        delete _select;
-    }
-
     if (!start) {
         _playlistName = FileDialogs::openPlaylistSimple();
         if (_playlistName.isEmpty())
@@ -706,9 +699,23 @@ void MainWindow::openPlaylist(bool start)
         }
         f.close();
 
+        if (_select != 0) {
+            disconnect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
+            disconnect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
+            disconnect(_select, SIGNAL(channelSelect(int)), _playlistTab->playlist(), SLOT(channelSelected(int)));
+            delete _select;
+        }
+
         _model->open(_playlistName);
         openPlaylistComplete();
     } else {
+        if (_select != 0) {
+            disconnect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
+            disconnect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
+            disconnect(_select, SIGNAL(channelSelect(int)), _playlistTab->playlist(), SLOT(channelSelected(int)));
+            delete _select;
+        }
+
          connect(_modelUpdate, SIGNAL(done()), this, SLOT(openPlaylistComplete()));
 
         _playlistName = Tano::Resources::resource(_defaultPlaylist);
