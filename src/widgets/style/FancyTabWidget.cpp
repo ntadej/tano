@@ -92,9 +92,12 @@ QSize FancyTabBar::tabSizeHint(bool minimum) const
     int width = 60 + spacing + 2;
     int maxLabelwidth = 0;
     for (int tab=0 ; tab<count() ;++tab) {
-        int width = fm.width(tabText(tab));
-        if (width > maxLabelwidth)
-            maxLabelwidth = width;
+        QStringList tabSplit = tabText(tab).split(' ');
+        for (int word=0; word<tabSplit.size(); word++) {
+            int width = fm.width(tabSplit[word]);
+            if (width > maxLabelwidth)
+                maxLabelwidth = width;
+        }
     }
     int iconHeight = minimum ? 0 : 32;
     return QSize(qMax(width, maxLabelwidth + 4), iconHeight + spacing + fm.height());
