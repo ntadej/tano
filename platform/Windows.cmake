@@ -17,3 +17,9 @@
 #############################################################################
 # Windows Extra #
 #################
+INSTALL(FILES ${VLCQtCoreLocation}/bin/VLCQtCore.dll DESTINATION "${CMAKE_INSTALL_PREFIX}")
+INSTALL(FILES ${VLCQtWidgetsLocation}/bin/VLCQtWidgets.dll DESTINATION "${CMAKE_INSTALL_PREFIX}")
+
+INSTALL(FILES ${VLCQtCoreLocation}/bin/libvlc.dll DESTINATION "${CMAKE_INSTALL_PREFIX}")
+INSTALL(FILES ${VLCQtCoreLocation}/bin/libvlccore.dll DESTINATION "${CMAKE_INSTALL_PREFIX}")
+INSTALL(DIRECTORY ${VLCQtCoreLocation}/bin/plugins/ DESTINATION "${CMAKE_INSTALL_PREFIX}/plugins")
