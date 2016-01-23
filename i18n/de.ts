@@ -1,49 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="uk">
+<TS version="2.1" language="de">
 <context>
     <name>AboutDialog</name>
     <message>
         <source>About</source>
-        <translation>Про програму</translation>
-    </message>
-    <message>
-        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
-</source>
-        <translation type="obsolete">Tano це багатоплотформовий програвач IP телебачення з відкритим кодом з моживостями відтворення IP телебачення з технологією EPG та запису програм. Tano базується на VLC-Qt.</translation>
-    </message>
-    <message>
-        <source>Authors</source>
-        <translation type="obsolete">Автори</translation>
-    </message>
-    <message>
-        <source>License</source>
-        <translation type="obsolete">Ліцензія</translation>
-    </message>
-    <message>
-        <source>Backend</source>
-        <translation type="obsolete">Бекенд</translation>
-    </message>
-    <message>
-        <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
-</source>
-        <translation type="obsolete">VLC-Qt це вільна бібліотека яка використовується для поєднання бібліотек Qt та libvlc. Ця бібліотека містить в собі основні класи відтворення медіа а також деякі GUI класи для швидкого розвитку медіа-програвача.</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Ви використовуєте VideoLAN VLC %1&lt;/b&gt;</translation>
+        <translation>Über</translation>
     </message>
     <message>
         <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tano ist ein Open-Source-Cross-Platform-IP-TV-Player, der volle IP-TV-Wiedergabe mit EPG und Recorder verfügt.</translation>
     </message>
     <message>
         <source>Multimedia backend powered by VLC-Qt %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Multimedia-Backend bereitgestellt von VLC-Qt %1.</translation>
     </message>
     <message>
         <source>&lt;b&gt;This application is based on Tano %1.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Diese Anwendung basiert auf Tano %1.&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -58,219 +32,224 @@
     </message>
     <message>
         <source>Radio</source>
-        <translation>Радіо</translation>
+        <translation>Radio</translation>
     </message>
 </context>
 <context>
     <name>InfoBarWidget</name>
     <message>
         <source>Now:</source>
-        <translation>Зараз:</translation>
+        <translation>Jetzt:</translation>
     </message>
     <message>
         <source>Next:</source>
-        <translation>Наступний:</translation>
+        <translation>Als nächstes:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Мова:</translation>
+        <translation>Sprache:</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>&amp;Recorder</source>
-        <translation>&amp;Записувач</translation>
+        <translation>&amp;Recorder</translation>
     </message>
     <message>
         <source>&amp;Options</source>
-        <translation>&amp;Налаштування</translation>
+        <translation>&amp;Optionen</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;Допомога</translation>
+        <translation>&amp;Hilfe</translation>
     </message>
     <message>
         <source>Vie&amp;w</source>
-        <translation>&amp;Вигляд</translation>
+        <translation>Anzeigen</translation>
     </message>
     <message>
         <source>&amp;Audio</source>
-        <translation>&amp;Аудіо</translation>
+        <translation>&amp;Audio</translation>
     </message>
     <message>
         <source>&amp;Playback</source>
-        <translation>&amp;Відтворення</translation>
+        <translation>Wiedergabe</translation>
     </message>
     <message>
         <source>&amp;Video</source>
-        <translation>&amp;Відео</translation>
+        <translation>&amp;Video</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;Файл</translation>
+        <translation>Datei</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation>Відтворити</translation>
+        <translation>Abspielen</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation>Сховати до трею</translation>
+        <translation>Ausblenden in den Tray</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation>Пауза</translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Неможливо прочитати файл %1:
+        <translation>Datei nicht lesbar %1:
 %2.</translation>
     </message>
     <message>
         <source>Restore</source>
-        <translation>Відновити</translation>
+        <translation>Wiederherstellen</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Розклад</translation>
+        <translation>Zeitplan</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Назад</translation>
+        <translation>Zurück</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation>&amp;Вихід</translation>
+        <translation>Beenden</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation>Strg+Q</translation>
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;Налаштування</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>&amp;Fullscreen</source>
-        <translation>&amp;На весь екран</translation>
+        <translation>Vollbild</translation>
     </message>
     <message>
         <source>&amp;Open channel list</source>
-        <translation>&amp;Відкрити список каналів</translation>
+        <translation>Programm-Liste öffnen</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Відкрити список каналів</translation>
+        <translation>Programm-Liste öffnen</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
-        <translation>Відкрити &amp;Файл</translation>
+        <translation>Datei öffnen</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Відкрити посилання URL</translation>
+        <translation>URL öffnen</translation>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation>Перевірити оновлення</translation>
+        <translation>Auf Updates prüfen</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Зупинити</translation>
+        <translation>Stop</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Завжди поверх інших вікон</translation>
+        <translation>Immer im Vordergrund</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>Простий режим</translation>
+        <translation>Einfacher Modus</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Далі</translation>
+        <translation>Als Nächstes</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Вимкнути звук</translation>
+        <translation>Stumm schalten</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Збільшити гучність</translation>
+        <translation>Lautstärke erhöhen</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Зменшити гучність</translation>
+        <translation>Lautstärke verringern</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Записувач</translation>
+        <translation>Recorder</translation>
     </message>
     <message>
         <source>Quick record</source>
-        <translation>Швидкий запис</translation>
+        <translation>Schnellaufnahme</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>Про Qt</translation>
+        <translation>Über Qt</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation>Зупинити запис</translation>
+        <translation>Aufnahme stoppen</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Телетекст</translation>
+        <translation>Teletext</translation>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>Скорочення клавіатури</translation>
+        <translation>Tastatürkürzel</translation>
     </message>
     <message>
         <source>Instant recording</source>
-        <translation>Негайний запис</translation>
+        <translation>Sofortaufnahme</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>Додати таймер</translation>
+        <translation>Timer hinzufügen</translation>
     </message>
     <message>
         <source>Support</source>
-        <translation>Підтримка</translation>
+        <translation>Unterstützung</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>Зробити знімок</translation>
+        <translation>Schnappschuss machen</translation>
     </message>
     <message>
         <source>Preview channels</source>
-        <translation>Попередній перегляд каналів</translation>
+        <translation>Vorschau Kanäle</translation>
     </message>
     <message>
         <source>Current show info</source>
-        <translation>Переглянути поточну інформацію</translation>
+        <translation>Aktuelle Info anzeigen</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Über</translation>
     </message>
     <message>
         <source>Logout and Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Abmelden und Beenden</translation>
     </message>
     <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie sind sicher, dass Sie beenden wollen?
+Dies stoppt die laufende Aufzeichnung.</translation>
     </message>
     <message>
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanäle</translation>
     </message>
     <message>
         <source>Show Info</source>
+        <translation>Info anzeigen</translation>
+    </message>
+    <message>
+        <source>Check for updates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -279,132 +258,128 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Instant</source>
-        <translation type="unfinished">Мить</translation>
-    </message>
-    <message>
-        <source>Check for updates...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sofort</translation>
     </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
     <message>
         <source>Aspect ratio</source>
-        <translation>Співвідношення сторін</translation>
+        <translation>Seitenverhältnis</translation>
     </message>
     <message>
         <source>Next aspect ratio option</source>
-        <translation>Наступний параметр співвідношення сторін</translation>
+        <translation>Nächste Option Seitenverhältnis</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Оригінал</translation>
+        <translation>Original</translation>
     </message>
 </context>
 <context>
     <name>MenuCropRatio</name>
     <message>
         <source>Crop video</source>
-        <translation>Обрізати відео</translation>
+        <translation>Video schneiden</translation>
     </message>
     <message>
         <source>Next crop option</source>
-        <translation>Наступний параметр обрізання відео</translation>
+        <translation>Nächstes schneiden Option</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Оригінал</translation>
+        <translation>Original</translation>
     </message>
 </context>
 <context>
     <name>MenuDeinterlacing</name>
     <message>
         <source>Deinterlacing</source>
-        <translation>Деінтерлейсінг</translation>
+        <translation>Zeilenentflechtung</translation>
     </message>
     <message>
         <source>Next deinterlacing option</source>
-        <translation>Наступний параметр деінтерлейсінгу</translation>
+        <translation>Nächste Zeilenentflechtung Option</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Вимкнути</translation>
+        <translation>Deaktiviert</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Скасувати</translation>
+        <translation>Entsorgen</translation>
     </message>
     <message>
         <source>Blend</source>
-        <translation>Змішати</translation>
+        <translation>Mischung</translation>
     </message>
     <message>
         <source>Mean</source>
-        <translation>Середнє</translation>
+        <translation>Mittelwert</translation>
     </message>
     <message>
         <source>Bob</source>
-        <translation>Швидко</translation>
+        <translation>Bob</translation>
     </message>
     <message>
         <source>Linear</source>
-        <translation>Лінейний</translation>
+        <translation>Linear</translation>
     </message>
     <message>
         <source>X</source>
-        <translation>Х</translation>
+        <translation>X</translation>
     </message>
 </context>
 <context>
     <name>MenuScale</name>
     <message>
         <source>Original</source>
-        <translation>Оригінальне</translation>
+        <translation>Original</translation>
     </message>
     <message>
         <source>Scale/Zoom</source>
-        <translation>Шкала/Масштаб</translation>
+        <translation>Maßstab/Zoom</translation>
     </message>
     <message>
         <source>Next scale/zoom option</source>
-        <translation>Наступний параметр шкала/масштаб</translation>
+        <translation>Nächster Maßstab/Zoom-Option</translation>
     </message>
 </context>
 <context>
     <name>MenuTrackAudio</name>
     <message>
         <source>Audio track</source>
-        <translation>Звукова доріжка</translation>
+        <translation>Audiospur</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation>Наступна звукова доріжка</translation>
+        <translation>Nächste Audiospur</translation>
     </message>
 </context>
 <context>
     <name>MenuTrackSubtitles</name>
     <message>
         <source>Subtitles</source>
-        <translation>Субтитри</translation>
+        <translation>Untertitel</translation>
     </message>
     <message>
         <source>Next subtitles</source>
-        <translation>Наступні субтитри</translation>
+        <translation>Nächste Untertitel</translation>
     </message>
     <message>
         <source>Open subtitle file</source>
-        <translation>Відкрити файл субтитрів</translation>
+        <translation>Untertiteldatei öffnen</translation>
     </message>
 </context>
 <context>
     <name>MenuTrackVideo</name>
     <message>
         <source>Video track</source>
-        <translation>Відео доріжка</translation>
+        <translation>Videospur</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation>Наступна відео доріжка</translation>
+        <translation>Nächste Videospur</translation>
     </message>
 </context>
 <context>
@@ -412,153 +387,192 @@ This will stop recording in progress.</source>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Неможливо записати файл %1:
+        <translation>Datei kann nicht geschrieben werden %1:
 %2.</translation>
     </message>
     <message>
         <source>Error:</source>
-        <translation>Помилка:</translation>
+        <translation>Fehler:</translation>
     </message>
 </context>
 <context>
     <name>OsdWidget</name>
     <message>
         <source>Play</source>
-        <translation>Відтворити</translation>
+        <translation>Abspielen</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Зупинити</translation>
+        <translation>Stop</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Назад</translation>
+        <translation>Zurück</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>Далі</translation>
+        <translation>Als Nächstes</translation>
     </message>
     <message>
         <source>Record Now</source>
-        <translation>Записати зараз</translation>
+        <translation>Jetzt aufnehmen</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Вимкнути звук</translation>
+        <translation>Stumm schalten</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation>Пауза</translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Телетекст</translation>
+        <translation>Teletext</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>Зробити знімок</translation>
+        <translation>Schnappschuss machen</translation>
+    </message>
+</context>
+<context>
+    <name>PasswordDialog</name>
+    <message>
+        <source>Login required</source>
+        <translation type="vanished">Anmeldung erforderlich</translation>
+    </message>
+    <message>
+        <source>Username:</source>
+        <translation type="vanished">Benutzername:</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="vanished">Passwort:</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
+        <translation type="vanished">&lt;b&gt;Sie müssen sich anmelden, um diese Anwendung zu nutzen.&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Remember password</source>
+        <translation type="vanished">Passwort merken</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Your username or password is incorrect.
+Please, try again.&lt;/b&gt;</source>
+        <translation type="vanished">&lt;b&gt;Ihr Benutzername oder das Passwort sind falsch.
+Bitte, versuchen Sie es nochmal.&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;An unknown error has occured.
+Please, try again.&lt;/b&gt;</source>
+        <translation type="vanished">&lt;b&gt;Ein unbekannter Fehler ist aufgetreten.
+Bitte, versuchen Sie es nochmal.&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
+        <translation type="vanished">&lt;b&gt;Anmelden ...&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Play</source>
-        <translation>Відтворити</translation>
+        <translation>Abspielen</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Розклад</translation>
+        <translation>Zeitplan</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditor</name>
     <message>
         <source>Tano Editor</source>
-        <translation>Tano Редактор</translation>
+        <translation>Tano Editor</translation>
     </message>
     <message>
         <source>Playlist name:</source>
-        <translation>Назва переліку каналів:</translation>
+        <translation>Playlist name:</translation>
     </message>
     <message>
         <source>Number of channels:</source>
-        <translation>Номера каналів:</translation>
+        <translation>Anzahl der Kanäle:</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>Допомога</translation>
+        <translation>&amp;Hilfe</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>Панель</translation>
+        <translation>Toolbar</translation>
     </message>
     <message>
         <source>Number:</source>
-        <translation>Номер:</translation>
+        <translation>Nummer:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Назва:</translation>
+        <translation>Name:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation>Категорії:</translation>
+        <translation>Kategorien:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Мова:</translation>
+        <translation>Sprache:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Посилання URL:</translation>
+        <translation>Url:</translation>
     </message>
     <message>
         <source>Logo:</source>
-        <translation>Логотип:</translation>
+        <translation>Logo:</translation>
     </message>
     <message>
         <source>Add channel</source>
-        <translation>Додати канал</translation>
+        <translation>Sender hinzufügen</translation>
     </message>
     <message>
         <source>Delete channel</source>
-        <translation>Видалити канал</translation>
+        <translation>Sender löschen</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Зберігти</translation>
+        <translation>Speichern</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Закрити</translation>
+        <translation>Schliessen</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Перемістити вгору</translation>
+        <translation>Nach oben bewegen</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Перемістити вниз</translation>
+        <translation>Nach unten bewegen</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Роздрукувати</translation>
+        <translation>Drucken</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Експортувати</translation>
+        <translation>Exportieren</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Відкрити</translation>
+        <translation>Öffnen</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="vanished">Про</translation>
+        <translation type="vanished">Über</translation>
     </message>
     <message>
         <source>New playlist</source>
-        <translation>Новий перелік каналів</translation>
+        <translation>Nächste Playliste</translation>
     </message>
     <message>
         <source>Tvheadend</source>
@@ -566,71 +580,71 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="vanished">Налаштування</translation>
+        <translation type="vanished">Einstellungen</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
-        <translation>XMLTV ідентифікатор</translation>
+        <translation>XMLTV IDs</translation>
     </message>
     <message>
         <source>Update Information</source>
-        <translation type="vanished">Оновити інформацію</translation>
+        <translation type="vanished">Update Informationen</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Неможливо прочитати файл %1:
+        <translation>Datei kann nicht gelesen werden %1:
 %2.</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Редактор переліку каналів</translation>
+        <translation>Playlist Editor</translation>
     </message>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
-        <translation>Ви бажаєте створити новий перелік каналів?
-Ви втратите усі незбережені зміни.</translation>
+        <translation>Wollen Sie eine neue Playliste erstellen?
+Alle nicht gespeicherten Änderungen werden verloren.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Неможливо записати файл %1:
+        <translation>Datei kann nicht geschrieben werden %1:
 %2.</translation>
     </message>
     <message>
         <source>Export to M3U format with Udpxy URLs</source>
-        <translation>Експортувати в формат M3U з Udxpy посиланнями URL</translation>
+        <translation>Exportieren ins M3U format mit Udpxy URLs</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation>Вам потрібно мати дійсні налаштування Udpxy чи перелік каналів що експортовано повинен містити класичні посилання URL.</translation>
+        <translation>Sie müssen gültigen Udpxy Einstellungen oder die exportierte Playlist klassischen URLs enthalten.</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
-        <translation>Ви бажаєте закрити редактор?
-Ви втратите усі незбережені зміни.</translation>
+        <translation>Wollen Sie den Editor schließen?
+Sie werden alle nicht gespeicherten Änderungen verlieren.</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation>Канал з таким номером вже існує!</translation>
+        <translation>Ein Sender mit dieser Nummer existiert bereits!</translation>
     </message>
     <message>
         <source>Edit channel</source>
-        <translation>Редагувати канал</translation>
+        <translation>Sender bearbeiten</translation>
     </message>
     <message>
         <source>Scan for new channels</source>
-        <translation>Сканувати для нових каналів</translation>
+        <translation>Nach neuen Sendern suchen</translation>
     </message>
     <message>
         <source>XMLTV ID:</source>
-        <translation>XMLTV ідентифікатор:</translation>
+        <translation>XMLTV ID:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Тип:</translation>
+        <translation>Typ:</translation>
     </message>
     <message>
         <source>SD</source>
@@ -642,120 +656,120 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Radio</source>
-        <translation>Радіо</translation>
+        <translation>Radio</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>Інше</translation>
+        <translation>Andere</translation>
     </message>
     <message>
         <source>Auto XMLTV map</source>
-        <translation>Авто карта XMLTV</translation>
+        <translation>Automatische XMLTV karte</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Редактор</translation>
+        <translation>Editor</translation>
     </message>
     <message>
         <source>Please wait for XMLTV file to parse.</source>
-        <translation>Будь ласка, зачекайте XMLTV файл аналізується.</translation>
+        <translation>Bitte warten Sie damit die XMLTV-Datei geparst wird.</translation>
     </message>
     <message>
         <source>%1 - %2 Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - %2 Editor</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditorHelp</name>
     <message>
         <source>Tano Editor - Help</source>
-        <translation>Tano Редактор - Допомога</translation>
+        <translation>Tano Editor - Hilfe</translation>
     </message>
     <message>
         <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Tano Редактор - Допомога&lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt;Tano Editor - Hilfe&lt;/h2&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;You can edit your IP TV playlist, print it or export it to desired format.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Ви можете редагувати перелік Ваших каналів IP TV, роздрукувати його або експортувати в бажаний формат.&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Sie können Ihre IP-TV Playlist bearbeiten, ausdrucken oder exportieren, in gewünschten Format.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Редагування каналів&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;Sender bearbeiten&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
-        <translation>Повне посилання URL необхідно для забезпечення логотипу каналу. Зображення  будуть масштабовані щоб заповнити інтерфейс.</translation>
+        <translation>Vollständige URL muss für das Sender-Logo versehen werden. Bilder werden skaliert, um die Schnittstelle anzupassen.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Формати та експорт&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;Formatieren und exportieren&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Сканувати для каналів&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;Nach neuen Sendern suchen&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
-        <translation>Ви можете встановити власну категорію радіо в Налаштуваннях (за замовчуванням Радіо) для експорту в Sagem JS файли та файли  CSV. Лише першу категорію радіо буде екпортовано до файлу Sagem JS.</translation>
+        <translation>Sie können benutzerdefinierte Radiokategorien in den Einstellungen (Standard-Radio) für den Export nach Sagem JS und CSV festgelegen. Nur die erste Kategorie oder die Radio-Kategorie wird zum Sagem JS exportiert werden.</translation>
     </message>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
-        <translation>Каналам повинні бути присвоєні номери. Усі значення автоматично зміняться. Ви можете встановити будь-який канал як радіо. Категорії можуть бути розділені комою (,).</translation>
+        <translation>Die Anzahl der Sender die aufgebracht werden muss. Alle anderen Werte werden automatisch geändert. Sie können jeden Sender als Radio festgelegen. Kategorien können durch Komma (,) getrennt werden.</translation>
     </message>
     <message>
         <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Editor wird automatisch versuchen, aktuelle XMLTV-IDs, um die Kanäle in die Playliste zu verschieben. Sie können Sie immer noch brauchen, um mögliche Fehler zu überprüfen.</translation>
     </message>
     <message>
         <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Editor unterstützt seine eigene modifizierte M3U und unmodifizierten M3U, CSV und Sagem JS-Dateien. Neben diesen Formaten können Sie auch speichern / Export in M3U mit Udpxy URLs und Tvheadend Konfigurationsdateien.</translation>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie können nach neuen Sendern mit dem Sendersuche-Sacner suchen. Bitte stellen Sie gültige einen IP-Bereich (zB 232.4.1) und Port (zB 5000) fest. Alle 255 IPs in diesem Bereich werden durchsucht. Ein Sender wird aufgenommen wenn er vor dem Zeitablauf erkannt wird.</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditorScan</name>
     <message>
         <source>IP Range:</source>
-        <translation>Діапазон IP:</translation>
+        <translation>IP-Bereich:</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>Порт:</translation>
+        <translation>Port:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation>Час що залишився:</translation>
+        <translation>Auszeit:</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation>мс</translation>
+        <translation> ms</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation>Сканувати та оновити</translation>
+        <translation>Suchen und Aktualisieren</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation>Новий канал з відсканованого %1</translation>
+        <translation>Neue Sender nach der Suche %1</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Редактор переліку каналів</translation>
+        <translation>Playlist Editor</translation>
     </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
     <message>
         <source>Export to Tvheadend IP TV services</source>
-        <translation>Експортувати в  сервіси Tvheadend IP телебачення</translation>
+        <translation>Exportieren nach Tvheadend IP TV services</translation>
     </message>
     <message>
         <source>Output location:</source>
-        <translation>Місце розташування:</translation>
+        <translation>Ausgabeort:</translation>
     </message>
     <message>
         <source>...</source>
@@ -763,37 +777,37 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Network interface:</source>
-        <translation>Мережевий інтерфейс:</translation>
+        <translation>Netzwerkschnittstelle:</translation>
     </message>
     <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>&lt;i&gt;&lt;b&gt;Увага: Це видалить усі існуючі канали!&lt;/b&gt;&lt;/a&gt;</translation>
+        <translation>&lt;i&gt;&lt;b&gt;Warnung: Dies wird alle bestehenden Sender löschen!&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
     <name>PlaylistFilterModel</name>
     <message>
         <source>All categories</source>
-        <translation>Усі категорії</translation>
+        <translation>Alle Kategorien</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Усі мови</translation>
+        <translation>Alle Sprachen</translation>
     </message>
     <message>
         <source>Playlist</source>
-        <translation type="unfinished">Перелік відтворення</translation>
+        <translation>Playliste</translation>
     </message>
 </context>
 <context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
-        <translation>Структура CSV файла</translation>
+        <translation>CSV Dateistruktur</translation>
     </message>
     <message>
         <source>Separator:</source>
-        <translation>Розділювач:</translation>
+        <translation>Trennzeichen:</translation>
     </message>
     <message>
         <source>;</source>
@@ -801,66 +815,66 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>First line:</source>
-        <translation>Перша лінія:</translation>
+        <translation>Erste Zeile:</translation>
     </message>
     <message>
         <source>First line contains column names</source>
-        <translation>Перша лінія містить назви колонок</translation>
+        <translation>Erste Zeile enthält Spaltennamen</translation>
     </message>
     <message>
         <source>First line does not contain column names</source>
-        <translation>Перша лінія не містить назви колонок</translation>
+        <translation>Erste Zeile enthält keine Spaltennamen </translation>
     </message>
     <message>
         <source>Column list:</source>
-        <translation>Перелік колонок:</translation>
+        <translation>Spaltenliste:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Будь ласка відсортуйте Ваші колонки від першої до останньої.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;&lt;/Bitte sortieren Sie Ihre Spalten von Anfang bis Ende.i&gt;</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>Номер</translation>
+        <translation>Nummer</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>Канал</translation>
+        <translation>Sender</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Категорії</translation>
+        <translation>Kategorien</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Мова</translation>
+        <translation>Sprache:</translation>
     </message>
     <message>
         <source>EPG ID</source>
-        <translation>EPG ідентифікатор</translation>
+        <translation>EPG ID</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>Посилання URL</translation>
+        <translation>URL</translation>
     </message>
 </context>
 <context>
     <name>PlaylistTab</name>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle</translation>
     </message>
     <message>
         <source>TV</source>
-        <translation type="unfinished"></translation>
+        <translation>TV</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished">Усі категорії</translation>
+        <translation>Alle Kategorien</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished">Усі мови</translation>
+        <translation>Alle Sprachen</translation>
     </message>
 </context>
 <context>
@@ -868,7 +882,7 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">Неможливо прочитати файл %1:
+        <translation>Datei nicht lesbar %1:
 %2.</translation>
     </message>
 </context>
@@ -880,678 +894,677 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Channel</source>
-        <translation>Канал</translation>
+        <translation>Sender</translation>
     </message>
     <message>
         <source>Url</source>
-        <translation>Посилання Url</translation>
+        <translation>Url</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Категорії</translation>
+        <translation>Kategorien</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Мова</translation>
+        <translation>Sprache</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation>XMLTV ідентифікатор</translation>
+        <translation>XMLTV ID</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Тип</translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation>Логотип</translation>
+        <translation>Logo</translation>
     </message>
     <message>
         <source>Exported with %1 on %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportieren mit %1 zu %2.</translation>
     </message>
 </context>
 <context>
     <name>PrintDialog</name>
     <message>
         <source>Print</source>
-        <translation>Друкувати</translation>
+        <translation>Drucken</translation>
     </message>
     <message>
         <source>Select information for printing:</source>
-        <translation>Обрати інформацію для друку:</translation>
+        <translation>Wählen Sie Informationen zum Drucken:</translation>
     </message>
     <message>
         <source>Channel number</source>
-        <translation>Номер каналу</translation>
+        <translation>Sendernummer</translation>
     </message>
     <message>
         <source>Channel name</source>
-        <translation>Назва каналу</translation>
+        <translation>Sendername</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>Посилання Url</translation>
+        <translation>URL</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Категорії</translation>
+        <translation>Kategorien</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Мова</translation>
+        <translation>Sprache</translation>
     </message>
     <message>
         <source>Print channel List</source>
-        <translation>Надрукувати перелік каналів</translation>
+        <translation>Programm-Liste drucken</translation>
     </message>
     <message>
         <source>Channel type</source>
-        <translation>Тип каналу</translation>
+        <translation>Sendertyp</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation>XMLTV ідентифікатор</translation>
+        <translation>XMLTV ID</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation>Логотип</translation>
+        <translation>Logo</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Disabled</source>
-        <translation>Вимкнено</translation>
+        <translation>Deaktiviert</translation>
     </message>
     <message>
         <source>Channel list</source>
-        <translation>Перелік каналів</translation>
+        <translation>Programm-Liste</translation>
     </message>
     <message>
         <source>New channel</source>
-        <translation>Новий канал</translation>
+        <translation>Neuer Sender</translation>
     </message>
     <message>
         <source>The file is not a Tano Timers list.</source>
-        <translation>Цей файл не є переліком таймерів Tano.</translation>
+        <translation>Die Datei ist keine Tano Timer-Liste.</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2:
 %3</source>
-        <translation>Проаналізуйте помилку в лінії %1, колонка %2:
-%3</translation>
+        <translation>Parse-Fehler in Zeile% 1, Spalte% 2:
+% 3</translation>
     </message>
     <message>
         <source>The file is not a Tano updates file.</source>
-        <translation>Це не файл оновлень Tano.</translation>
+        <translation>Die Datei ist keine Tano Updates Datei.</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation>Одноразово</translation>
+        <translation>Einmal</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation>Щоденно</translation>
+        <translation>Jeden Tag</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation>Щотижня</translation>
+        <translation>Jede Woche</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>Канал</translation>
+        <translation>Sender</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>Посилання URL</translation>
+        <translation>URL</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Категорії</translation>
+        <translation>Kategorien</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Мова</translation>
+        <translation>Sprache</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>Номер</translation>
+        <translation>Nummer</translation>
     </message>
     <message>
         <source>The file is not a valid XMLTV file.</source>
-        <translation>Цей номер не є дійсним файлом XMLTV.</translation>
+        <translation>Die Datei ist keine gültige XMLTV-Datei.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Неможливо записати файл %1:
+        <translation>Datei kann nicht geschrieben werden %1:
 %2.</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>секунди</translation>
+        <translation>sekunden</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>мінути</translation>
+        <translation>minuten</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>години</translation>
+        <translation>stunden</translation>
     </message>
     <message>
         <source>s</source>
-        <translation>с</translation>
+        <translation>s</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>мін</translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>h</source>
-        <translation>г</translation>
+        <translation>h</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation>Відкрити теку</translation>
+        <translation>Verzeichnis öffnen</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Відкрити прелік каналів</translation>
+        <translation>Programm-Liste öffnen</translation>
     </message>
     <message>
         <source>Open URL or stream</source>
-        <translation>Відкрити посилання URL або потік</translation>
+        <translation>URL oder Stream öffnen</translation>
     </message>
     <message>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
-        <translation>Ввести посилання URL мультімедіа файлу чи потіку який Ви бажаєте відтворити:</translation>
+        <translation>Geben Sie die URL der Multimedia-Datei oder Stream das abgespielt werden soll: </translation>
     </message>
     <message>
         <source>Tano M3U channel list files</source>
-        <translation>Tano M3U файли переліку каналів</translation>
+        <translation>Tano M3U Senderliste Dateien</translation>
     </message>
     <message>
         <source>Comma-separated values files</source>
-        <translation>Відокремлені комою значення файлів</translation>
+        <translation>Kommagetrennte Werte Dateien</translation>
     </message>
     <message>
         <source>Multimedia files</source>
-        <translation>Мультімедіа файли</translation>
+        <translation>Multimedia dateien</translation>
     </message>
     <message>
         <source>Subtitles files</source>
-        <translation>Файли субтитрів</translation>
+        <translation>Untetitel dateien</translation>
     </message>
     <message>
         <source>Plain text files</source>
-        <translation>Текстові файли</translation>
+        <translation>Text-Dateien</translation>
     </message>
     <message>
         <source>Open file</source>
-        <translation>Відкрити файл</translation>
+        <translation>Datei öffnen</translation>
     </message>
     <message>
         <source>Open subtitles</source>
-        <translation>Відкрити субтитри</translation>
+        <translation>Untertitel öffnen</translation>
     </message>
     <message>
         <source>Export XMLTV IDs</source>
-        <translation>Експортувати XMLTV ідентифікатор</translation>
+        <translation>XMLTV IDs Exportieren</translation>
     </message>
     <message>
         <source>M3U (original) files</source>
-        <translation>M3U файли (оригінали)</translation>
+        <translation>M3U (original) dateien</translation>
     </message>
     <message>
         <source>M3U (Udpxy URL) files</source>
-        <translation>M3U (Udpxy посилання URL) файли</translation>
+        <translation>M3U (Udpxy URL) dateien</translation>
     </message>
     <message>
         <source>Sagem STB channel list files</source>
-        <translation>Файли переліків каналів Sagem STB</translation>
+        <translation>Sagem STB Programm-Liste dateien</translation>
     </message>
     <message>
         <source>CSV channel list</source>
-        <translation>CSV перелік каналів</translation>
+        <translation>CSV Programm-Liste</translation>
     </message>
     <message>
         <source>Sagem STB channel list</source>
-        <translation>Sagem STB перелік каналів</translation>
+        <translation>Sagem STB Programm-Liste</translation>
     </message>
     <message>
         <source>XMLTV file</source>
-        <translation>XMLTV файл</translation>
+        <translation>XMLTV datei</translation>
     </message>
     <message>
         <source>Open XMLTV</source>
-        <translation>Відкрити XMLTV</translation>
+        <translation>XMLTV öffnen</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>Увімкнено</translation>
+        <translation>Aktiviert</translation>
     </message>
     <message>
         <source>Recording</source>
-        <translation>Запис</translation>
+        <translation>Aufnahme</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation>Закінчено</translation>
+        <translation>Beendet</translation>
     </message>
     <message>
         <source>Expired</source>
-        <translation>Сплинуло</translation>
+        <translation>Abgelaufen</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation>Будні</translation>
+        <translation>Wochentage</translation>
     </message>
     <message>
         <source>Instant</source>
-        <translation>Мить</translation>
+        <translation>Sofort</translation>
     </message>
     <message>
         <source>repeats only once</source>
-        <translation>повторити лише 1 раз</translation>
+        <translation>Nur einmal wiederholen</translation>
     </message>
     <message>
         <source>repeats daily</source>
-        <translation>повторювати щоденно</translation>
+        <translation>Jeden Tag wiederholen</translation>
     </message>
     <message>
         <source>repeats weekly</source>
-        <translation>повторювати щотиждня</translation>
+        <translation>Jeden Woche wiederholen</translation>
     </message>
     <message>
         <source>repeats on weekdays</source>
-        <translation>повторювати по буднях</translation>
+        <translation>Jeden Wochentag wiederholen</translation>
     </message>
     <message>
         <source>instant recording</source>
-        <translation>негайний запис</translation>
+        <translation>Sofortige Aufnahme</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation>XMLTV ідентифікатор</translation>
+        <translation>XMLTV ID</translation>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
-        <translation>Відсутній обов&apos;язковий аргумент для &apos;%1&apos;.</translation>
+        <translation>Fehlendes obligatorisches Argument für &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Unknown option &apos;%1&apos;.</source>
-        <translation>Невідомий параметр &apos;%1&apos;.</translation>
+        <translation>Unbekannte Option &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Usage: %1 [options]</source>
-        <translation>Використання: %1 [параметри]</translation>
+        <translation>Usage: 1% [Optionen]</translation>
     </message>
     <message>
         <source>IP TV playback:</source>
-        <translation>Відтворення IP TV:</translation>
+        <translation>IP TV wiedergabe:</translation>
     </message>
     <message>
         <source>Play channel by number</source>
-        <translation>Відтворювати канали за номерами</translation>
+        <translation>Sender abspielen von Sendernummer</translation>
     </message>
     <message>
         <source>Use playlist file</source>
-        <translation>Використовувати файл переліку каналів</translation>
+        <translation>Playlistdatei benutzen</translation>
     </message>
     <message>
         <source>Use XMLTV file</source>
-        <translation>Використовувати файл XMLTV</translation>
+        <translation>XMLTV Datei benutzen</translation>
     </message>
     <message>
         <source>Open:</source>
-        <translation>Відкрити:</translation>
+        <translation>Öffnen:</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Відкрити посилання URL</translation>
+        <translation>URL öffnen</translation>
     </message>
     <message>
         <source>Playback options:</source>
-        <translation>Параметри відтворення:</translation>
+        <translation>Abspieloptionen:</translation>
     </message>
     <message>
         <source>Set audio output</source>
-        <translation>Визначити аудіо вихід</translation>
+        <translation>Audio-Ausgang einstellen</translation>
     </message>
     <message>
         <source>Set video output</source>
-        <translation>Визначити відео вихід</translation>
+        <translation>Videoausgang einstellen</translation>
     </message>
     <message>
         <source>Error:</source>
-        <translation>Помилка:</translation>
+        <translation>Fehler:</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2: %3</source>
-        <translation>Проаналізуйте помилку в рядку %1, колонка %2: %3</translation>
+        <translation>Parse-Fehler in Zeile %1, Spalte %2: %3</translation>
     </message>
     <message>
         <source>Movie/Drama</source>
-        <translation>Фільм/драма</translation>
+        <translation>Film/Drama</translation>
     </message>
     <message>
         <source>Detective/Thriller</source>
-        <translation>Детектив/Триллер</translation>
+        <translation>Detektiv/Thriller</translation>
     </message>
     <message>
         <source>Adventure/Western/War</source>
-        <translation>Пригоди/Вестерни/Військові</translation>
+        <translation>Abenteuer/Western/Krieg</translation>
     </message>
     <message>
         <source>Science Fiction/Fantasy/Horror</source>
-        <translation>Фантастика/Фентезі/Жахи</translation>
+        <translation>Science Fiction/Fantasy/Horror</translation>
     </message>
     <message>
         <source>Comedy</source>
-        <translation>Комедія</translation>
+        <translation>Komödie</translation>
     </message>
     <message>
         <source>Soap/Melodrama/Folkloric</source>
-        <translation>Мелодрама/Фолькльор</translation>
+        <translation>Soap/Melodram/Folklore</translation>
     </message>
     <message>
         <source>Romance</source>
-        <translation>Романтика</translation>
+        <translation>Romanze</translation>
     </message>
     <message>
         <source>Serious/Classical/Religious/Historical Movie/Drama</source>
-        <translation>Змістовні/Класичні/Релігійні/Історичні фільми/Драми</translation>
+        <translation>Serien/Klassisch/Religiös/Historische Filme/Drama</translation>
     </message>
     <message>
         <source>Adult Movie/Drama</source>
-        <translation>Дорослі фільми/Драма</translation>
+        <translation>Erotikfilme/Drama</translation>
     </message>
     <message>
         <source>News/Current affairs</source>
-        <translation>Новини/Наукові заняття</translation>
+        <translation>Nachrichten/Aktuelles</translation>
     </message>
     <message>
         <source>News/Weather report</source>
-        <translation>Новини/Погода</translation>
+        <translation>Nachrichten/Wetterbericht</translation>
     </message>
     <message>
         <source>News magazine</source>
-        <translation>Новини часопису</translation>
+        <translation>Nachrichten Magazine</translation>
     </message>
     <message>
         <source>Documentary</source>
-        <translation>Документальний</translation>
+        <translation>Dokumentationen</translation>
     </message>
     <message>
         <source>Discussion/Interview/Debate</source>
-        <translation>Обговорення/Інтерв&apos;ю/Дебати</translation>
+        <translation>Diskussionen/Interviews/Debatten</translation>
     </message>
     <message>
         <source>Show/Game show</source>
-        <translation>Огляди/Огляди ігор</translation>
+        <translation>Show/Spielshow</translation>
     </message>
     <message>
         <source>Game show/Quiz/Contest</source>
-        <translation>Огляди ігор/Вікторини/Конкурси</translation>
+        <translation>Spielshow/Quiz/Wettbewerb</translation>
     </message>
     <message>
         <source>Variety show</source>
-        <translation>Різне</translation>
+        <translation>Unterhaltungssendung</translation>
     </message>
     <message>
         <source>Talk show</source>
-        <translation>Перегляд бесід</translation>
+        <translation>Talkshow</translation>
     </message>
     <message>
         <source>Sports</source>
-        <translation>Спортивний</translation>
+        <translation>Sport</translation>
     </message>
     <message>
         <source>Special events</source>
-        <translation>Екстранні події</translation>
+        <translation>Besondere Ereignisse</translation>
     </message>
     <message>
         <source>Sports magazines</source>
-        <translation>Спортивні часописи</translation>
+        <translation>Sportmagazine</translation>
     </message>
     <message>
         <source>Football/Soccer</source>
-        <translation>Футбол</translation>
+        <translation>Fussball</translation>
     </message>
     <message>
         <source>Tennis/Squash</source>
-        <translation>Теніс/Сквош</translation>
+        <translation>Tennis/Squash</translation>
     </message>
     <message>
         <source>Team sports</source>
-        <translation>Командні види спорту</translation>
+        <translation>Teamsport</translation>
     </message>
     <message>
         <source>Athletics</source>
-        <translation>Атлетика</translation>
+        <translation>Leichtathletik</translation>
     </message>
     <message>
         <source>Motor sport</source>
-        <translation>Мотоспорт</translation>
+        <translation>Motorsport</translation>
     </message>
     <message>
         <source>Water sport</source>
-        <translation>Водяний спорт</translation>
+        <translation>Wassersport</translation>
     </message>
     <message>
         <source>Children&apos;s/Youth programmes</source>
-        <translation>Дитячі/Молодіжні програми</translation>
+        <translation>Kinder/Jugendsendungen</translation>
     </message>
     <message>
         <source>Pre-school children&apos;s programmes</source>
-        <translation>Дошкільні дитячі програми</translation>
+        <translation>Vorschulkindersendungen</translation>
     </message>
     <message>
         <source>Entertainment programmes for 6 to 14</source>
-        <translation>Розважальні програми з 6 до 14</translation>
+        <translation>Unterhaltungssendungen von 6 bis 14</translation>
     </message>
     <message>
         <source>Entertainment programmes for 10 to 16</source>
-        <translation>Розважальні програми з 10 до 16</translation>
+        <translation>Unterhaltungssendungen von 10 bis 16</translation>
     </message>
     <message>
         <source>Informational/Educational/School programmes</source>
-        <translation>Інформаційні/Освітні/Шкільні програми</translation>
+        <translation>Informativ/Bildung/Schulsendungen</translation>
     </message>
     <message>
         <source>Cartoons/Puppets</source>
-        <translation>Мультфільми/Дитячі</translation>
+        <translation>Cartoons/Puppen</translation>
     </message>
     <message>
         <source>Music/Ballet/Dance</source>
-        <translation>Музика/Балет/Танець</translation>
+        <translation>Musik/Ballet/Tanz</translation>
     </message>
     <message>
         <source>Rock/Pop</source>
-        <translation>Рок/Поп</translation>
+        <translation>Rock/Pop</translation>
     </message>
     <message>
         <source>Serious music/Classical music</source>
-        <translation>Серйозна музика/Класична музика</translation>
+        <translation>Seriöse Musik/Klassische Musik</translation>
     </message>
     <message>
         <source>Folk/Traditional music</source>
-        <translation>Фольклор/Традиційна музика</translation>
+        <translation>Schlager/Traditionelle Musik</translation>
     </message>
     <message>
         <source>Jazz</source>
-        <translation>Джас</translation>
+        <translation>Jazz</translation>
     </message>
     <message>
         <source>Musical/Opera</source>
-        <translation>Музичний/Опера</translation>
+        <translation>Musical/Opera</translation>
     </message>
     <message>
         <source>Arts/Culture</source>
-        <translation>Мистецтво/Культура</translation>
+        <translation>Kunst/Kultur</translation>
     </message>
     <message>
         <source>Performing arts</source>
-        <translation>Дійове мистецтво</translation>
+        <translation>darstellende Künste</translation>
     </message>
     <message>
         <source>Fine arts</source>
-        <translation>	
-Образотворче мистецтво</translation>
+        <translation>bildende Kunst</translation>
     </message>
     <message>
         <source>Religion</source>
-        <translation>Релігія</translation>
+        <translation>Religion</translation>
     </message>
     <message>
         <source>Popular culture/Traditional arts</source>
-        <translation>Популярна культура/Традиційне мистецтво</translation>
+        <translation>Populäre Kultur/Traditionelle Künste</translation>
     </message>
     <message>
         <source>Literature</source>
-        <translation>Література</translation>
+        <translation>Literatur</translation>
     </message>
     <message>
         <source>Film/Cinema</source>
-        <translation>Фільм/Кіноматограф</translation>
+        <translation>Film/Kino</translation>
     </message>
     <message>
         <source>Experimental film/video</source>
-        <translation>Експериментальне кіно/відео</translation>
+        <translation>Experimentalfilm/video</translation>
     </message>
     <message>
         <source>Broadcasting/Press</source>
-        <translation>Трансляція/Преса</translation>
+        <translation>Rundfunk/Presse</translation>
     </message>
     <message>
         <source>Social/Political issues/Economics</source>
-        <translation>Соціальні/Політичні питання/Економіка</translation>
+        <translation>Gesellschaft/Politik/Wirtschaft</translation>
     </message>
     <message>
         <source>Magazines/Reports/Documentary</source>
-        <translation>Часописи/Звіти/Документальні</translation>
+        <translation>Magazine/Reportagen/Dokumentationen</translation>
     </message>
     <message>
         <source>Economics/Social advisory</source>
-        <translation>Економіка/Соціальна консультація</translation>
+        <translation>Wirtschaft/Sozialberatung</translation>
     </message>
     <message>
         <source>Remarkable people</source>
-        <translation>Видатні люди</translation>
+        <translation>bemerkenswerte Leute</translation>
     </message>
     <message>
         <source>Education/Science/Factual topics</source>
-        <translation>Освіта/Наука/Фактичні теми</translation>
+        <translation>Bildung/Wissenschaft/Sachthemen</translation>
     </message>
     <message>
         <source>Nature/Animals/Environment</source>
-        <translation>Природа/Тварини/Довкілля</translation>
+        <translation>Natur/Tiere/Umwelt</translation>
     </message>
     <message>
         <source>Technology/Natural sciences</source>
-        <translation>Технології/Природничі науки</translation>
+        <translation>Technik/Naturwissenschaften</translation>
     </message>
     <message>
         <source>Medicine/Physiology/Psychology</source>
-        <translation>Медицина/Фізіологія/Психологія</translation>
+        <translation>Medizin/Physiologie/Psychologie</translation>
     </message>
     <message>
         <source>Foreign countries/Expeditions</source>
-        <translation>Закордонніі країни/Експедиції</translation>
+        <translation>Ausland/Expeditionen</translation>
     </message>
     <message>
         <source>Social/Spiritual sciences</source>
-        <translation>Соціальне/Духовні науки</translation>
+        <translation>Soziales/Spiritualwissenschaften</translation>
     </message>
     <message>
         <source>Further education</source>
-        <translation>Подальше навчання</translation>
+        <translation>Weiterbildung</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation>Мови</translation>
+        <translation>Sprachen</translation>
     </message>
     <message>
         <source>Leisure hobbies</source>
-        <translation>Дозвілля хобі</translation>
+        <translation>Freizeit hobbys</translation>
     </message>
     <message>
         <source>Tourism/Travel</source>
-        <translation>Туризм/Подорожі</translation>
+        <translation>Tourismus/Reisen</translation>
     </message>
     <message>
         <source>Handicraft</source>
-        <translation>Ремесло</translation>
+        <translation>Kunsthandwerk</translation>
     </message>
     <message>
         <source>Motoring</source>
-        <translation>Автомобілі</translation>
+        <translation>Autofahren</translation>
     </message>
     <message>
         <source>Fitness and Health</source>
-        <translation>Фітнес і здоров&apos;я</translation>
+        <translation>Fitness und Gesundheit</translation>
     </message>
     <message>
         <source>Cooking</source>
-        <translation>Кулінарія</translation>
+        <translation>Kochen</translation>
     </message>
     <message>
         <source>Advertisement/Shopping</source>
-        <translation>Реклама/Покупки</translation>
+        <translation>Werbung/Einkaufen</translation>
     </message>
     <message>
         <source>Gardening</source>
-        <translation>Садівництво</translation>
+        <translation>Gartenarbeit</translation>
     </message>
     <message>
         <source>Try &apos;%1 %2&apos; for more information.</source>
-        <translation type="unfinished"></translation>
+        <translation>Probieren &apos;%1 %2&apos; für mehr informationen.</translation>
     </message>
     <message>
         <source>GoTV channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>GoTV Programm-Liste</translation>
     </message>
     <message>
         <source>The file is not a GoTV channel list file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Datei ist keine GoTV Programm-Listendatei.</translation>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation type="unfinished"></translation>
+        <translation>Unbekannnter Titel</translation>
     </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
     <message>
         <source>Clear Shortcut</source>
-        <translation>Спорожнити скорочення</translation>
+        <translation>Abkürzung löschen</translation>
     </message>
 </context>
 <context>
     <name>Recorder</name>
     <message>
         <source>Recorder</source>
-        <translation>Записувач</translation>
+        <translation>Recorder</translation>
     </message>
     <message>
         <source>Cannot write to %1.</source>
-        <translation>Неможливо записати в %1.</translation>
+        <translation>Kann nicht geschrieben werden in %1.</translation>
     </message>
     <message>
         <source>Recording not valid!</source>
-        <translation type="vanished">Запис не існує!</translation>
+        <translation type="vanished">Aufnahme nicht gültig!</translation>
     </message>
     <message>
         <source>File cannot be removed.
 Have you already moved or deleted it?</source>
-        <translation>Файл не може бути видалений.
-Ви вже перемістили або видалили його?</translation>
+        <translation>Datei kann nicht entfernt werden.
+Haben Sie sie bereits verschoben oder gelöscht?</translation>
     </message>
     <message>
         <source>Recordings and timers</source>
-        <translation type="vanished">Записи та таймери</translation>
+        <translation type="vanished">Aufnahmen und Timer</translation>
     </message>
     <message>
         <source>Instant %1</source>
@@ -1567,7 +1580,7 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>Recording</source>
-        <translation type="unfinished">Запис</translation>
+        <translation type="unfinished">Aufnahme</translation>
     </message>
     <message>
         <source>Starting %1 on %2 until %3.</source>
@@ -1582,89 +1595,89 @@ Have you already moved or deleted it?</source>
     <name>RecorderInfoWidget</name>
     <message>
         <source>End time:</source>
-        <translation>Час закінчення:</translation>
+        <translation>Endzeit:</translation>
     </message>
     <message>
         <source>Currently not recording.</source>
-        <translation>В даний час не йде запис.</translation>
+        <translation>Aktuell keine Aufnahme</translation>
     </message>
     <message>
         <source>No timer - stop manually.</source>
-        <translation>Не має таймеру - зупинити власноруч.</translation>
+        <translation>Kein Timer - Manuell stoppen.</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation>Зупинити запис</translation>
+        <translation>Aufnahme stoppen</translation>
     </message>
     <message>
         <source>Recording:</source>
-        <translation>Запис:</translation>
+        <translation>Aufnahme: </translation>
     </message>
     <message>
         <source>Elapsed:</source>
-        <translation>Пройшло:</translation>
+        <translation>Abgelaufen:</translation>
     </message>
     <message>
         <source>Output:</source>
-        <translation type="vanished">На виході:</translation>
+        <translation type="vanished">Ausgabe:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation>Канал:</translation>
+        <translation>Sender:</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation>Відтворити</translation>
+        <translation>Abspielen</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Видалити</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Назад</translation>
+        <translation>Zurück</translation>
     </message>
     <message>
         <source>Time:</source>
-        <translation>Час:</translation>
+        <translation>Zeit:</translation>
     </message>
     <message>
         <source>Duration:</source>
-        <translation>Тривалість:</translation>
+        <translation>Dauer:</translation>
     </message>
     <message>
         <source>File:</source>
-        <translation type="vanished">Файл:</translation>
+        <translation type="vanished">Datei:</translation>
     </message>
     <message>
         <source>at</source>
-        <translation>в</translation>
+        <translation>in</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Записувач</translation>
+        <translation>Recorder</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the recording?
 This operation is ireversible.</source>
-        <translation>Ви дійсно бажаєте видалити запис?
-Ця операція необоротна.</translation>
+        <translation>Sind Sie sicher dass Sie die Aufnahme löschen möchten?
+Das kann nicht rückgängig gemacht werden.</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Зберігти</translation>
+        <translation>Speichern</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="vanished">Статус</translation>
+        <translation type="vanished">Status</translation>
     </message>
     <message>
         <source>Edit timer</source>
-        <translation>Редагувати таймер</translation>
+        <translation>Timer bearbeiten</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation type="unfinished">Скасувати</translation>
+        <translation type="unfinished">Entsorgen</translation>
     </message>
     <message>
         <source>Recording information</source>
@@ -1675,55 +1688,55 @@ This operation is ireversible.</source>
     <name>RecorderNewDialog</name>
     <message>
         <source>Quick record</source>
-        <translation type="vanished">Швидкий запис</translation>
+        <translation type="vanished">Schnellaufnahme</translation>
     </message>
     <message>
         <source>Selected channel:</source>
-        <translation>Обраний канал:</translation>
+        <translation>Ausgewählter Sender: </translation>
     </message>
     <message>
         <source>Recording name:</source>
-        <translation>Назва запису:</translation>
+        <translation>Name der Aufnahme:</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation>Запис</translation>
+        <translation>Aufnehmen</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="vanished">Назад</translation>
+        <translation type="vanished">Zurück</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation type="vanished">Додати таймер</translation>
+        <translation type="vanished">Timer hinzufügen</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation type="vanished">Назва таймеру:</translation>
+        <translation type="vanished">Timer name:</translation>
     </message>
     <message>
         <source>Add new timer</source>
-        <translation>Додати новий таймер</translation>
+        <translation>Neuen timer hinzufügen</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Записувач</translation>
+        <translation>Recorder</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation type="vanished">Будь ласка, оберіть канал.</translation>
+        <translation type="vanished">Bitte wählen Sie einen Sender.</translation>
     </message>
     <message>
         <source>You don&apos;t have this channel in your playlist.</source>
-        <translation>Цей канал відсутній у Вашому переліку каналів.</translation>
+        <translation>Dieser Sender befindet sich nicht in ihrer Playliste.</translation>
     </message>
     <message>
         <source>New recording</source>
-        <translation>Новий запис</translation>
+        <translation>Neue Aufnahme</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="vanished">Шукати та відфільтрувати</translation>
+        <translation type="vanished">Suchen und filtern</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -1734,43 +1747,43 @@ This operation is ireversible.</source>
     <name>RecorderTimersEditor</name>
     <message>
         <source>Timers</source>
-        <translation type="unfinished">Таймери</translation>
+        <translation type="unfinished">Timer</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation type="unfinished">Дата:</translation>
+        <translation type="unfinished">Datum:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation type="unfinished">Одноразово</translation>
+        <translation type="unfinished">Einmal</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished">Щоденно</translation>
+        <translation type="unfinished">Jeden Tag</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished">Щотижня</translation>
+        <translation type="unfinished">Jede Woche</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation type="unfinished">Будні</translation>
+        <translation type="unfinished">Wochentage</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished">Тип:</translation>
+        <translation type="unfinished">Typ:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation type="unfinished">Канал:</translation>
+        <translation type="unfinished">Sender:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Назва:</translation>
+        <translation type="unfinished">Name:</translation>
     </message>
     <message>
         <source>dd. MM. yyyy</source>
-        <translation type="unfinished">дд. ММ. рррр</translation>
+        <translation type="unfinished">dd. MM. yyyy</translation>
     </message>
     <message>
         <source>Enabled:</source>
@@ -1778,21 +1791,21 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="unfinished">Час закінчення:</translation>
+        <translation type="unfinished">Endzeit:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation type="unfinished">Час початку:</translation>
+        <translation type="unfinished">Startzeit:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished">Записувач</translation>
+        <translation type="unfinished">Recorder</translation>
     </message>
     <message>
         <source>The recording start date is before today.
 Your changes will not be saved.</source>
-        <translation type="unfinished">Дата початку запису раніше сьогодняшнього дня.
-Ваші зміни не будуть збережені.</translation>
+        <translation type="unfinished">Das Aufnahmestartdatum muss vor dem heutigen sein.
+Ihre Änderungen werden nicht gespeichert.</translation>
     </message>
     <message>
         <source>The recording is overlaping with others.
@@ -1812,34 +1825,34 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished">Записувач</translation>
+        <translation type="unfinished">Recorder</translation>
     </message>
 </context>
 <context>
     <name>ScheduleTab</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändern</translation>
     </message>
     <message>
         <source>Show information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informationen anzeigen</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished">Запис</translation>
+        <translation>Aufnehmen</translation>
     </message>
     <message>
         <source>Current channel selected doesn&apos;t have any schedule information</source>
-        <translation type="unfinished"></translation>
+        <translation>Der aktuell ausgewählte Sender hat keine Zeitplaninformationen</translation>
     </message>
     <message>
         <source>Select channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Sender auswählen</translation>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Informationen</translation>
     </message>
 </context>
 <context>
@@ -1850,286 +1863,286 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Version:</source>
-        <translation>Версія:</translation>
+        <translation>Version:</translation>
     </message>
     <message>
         <source>Using Videolan VLC version:</source>
-        <translation>Використовується версія Videolan VLC:</translation>
+        <translation>Videolan VLC version benutzen:</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation>Відтворення</translation>
+        <translation>Wiedergabe</translation>
     </message>
     <message>
         <source>Default subtitle language:</source>
-        <translation>Мова субтитрів за замовчуванням:</translation>
+        <translation>Standard-Untertitelsprache:</translation>
     </message>
     <message>
         <source>Default audio language:</source>
-        <translation>Мова аудіо за замовчуванням:</translation>
+        <translation>Standard-Audiosprache:</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Вимкнено</translation>
+        <translation>Deaktiviert</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>Інші</translation>
+        <translation>Andere</translation>
     </message>
     <message>
         <source>Default aspect ratio:</source>
-        <translation>Співвідношення сторін за замовчуванням:</translation>
+        <translation>Standard-Seitenverhältnis:</translation>
     </message>
     <message>
         <source>Default crop:</source>
-        <translation>Режим обрізання за замовчуванням:</translation>
+        <translation>Standard crop:</translation>
     </message>
     <message>
         <source>Default deinterlacing:</source>
-        <translation>Деінтерлейсінг за замовчуванням:</translation>
+        <translation>Standard Zeilenentflechtung:</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Оригінал</translation>
+        <translation>Original</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Скасувати</translation>
+        <translation>Entsorgen</translation>
     </message>
     <message>
         <source>Blend</source>
-        <translation>Змішати</translation>
+        <translation>Mischung</translation>
     </message>
     <message>
         <source>Mean</source>
-        <translation>Середнє</translation>
+        <translation>Mittelwert</translation>
     </message>
     <message>
         <source>Bob</source>
-        <translation>Швидко</translation>
+        <translation>Bob</translation>
     </message>
     <message>
         <source>Linear</source>
-        <translation>Лінейний</translation>
+        <translation>Linear</translation>
     </message>
     <message>
         <source>X</source>
-        <translation>Х</translation>
+        <translation>X</translation>
     </message>
     <message>
         <source>Enable teletext (requires restart)</source>
-        <translation>Увімкнути телетекст (необхідно перезапустити програму)</translation>
+        <translation>Teletext aktivieren (Neustart erforderlich)</translation>
     </message>
     <message>
         <source>Core</source>
-        <translation>Ядро</translation>
+        <translation>Core</translation>
     </message>
     <message>
         <source>Video output:</source>
-        <translation>Відео вихід</translation>
+        <translation>Videoausgang: </translation>
     </message>
     <message>
         <source>Audio output:</source>
-        <translation>Аудіо вихід</translation>
+        <translation>Audioausgang:</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>За замовчуванням</translation>
+        <translation>Voreinstellung</translation>
     </message>
     <message>
         <source>Enable YUV-&gt;RGB hardware decoding</source>
-        <translation>Увімкнути YUV-&gt;RGB апаратне кодування</translation>
+        <translation>YUV-&gt; RGB-Hardware-Dekodierung aktivieren</translation>
     </message>
     <message>
         <source>Enable S/PDIF output</source>
-        <translation>Увімкнути S/PDIF вихід</translation>
+        <translation>S/PDIF Ausgang aktivieren</translation>
     </message>
     <message>
         <source>Misc</source>
-        <translation>Різне</translation>
+        <translation>Sonstiges</translation>
     </message>
     <message>
         <source>Mute on minimize</source>
-        <translation>Вимкнути звук під час згортання</translation>
+        <translation>Stummschaltung beim minimieren</translation>
     </message>
     <message>
         <source>Remember video settings:</source>
-        <translation>Запам’ятати відео налаштування:</translation>
+        <translation>An Videoeinstellungen erinnern:</translation>
     </message>
     <message>
         <source>For all channels</source>
-        <translation>Для усіх каналів</translation>
+        <translation>Für alle Sender</translation>
     </message>
     <message>
         <source>Per channel</source>
-        <translation>На кожен канал</translation>
+        <translation>Pro Sender</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation>Увімкнути</translation>
+        <translation>Aktivieren</translation>
     </message>
 </context>
 <context>
     <name>SettingsDialog</name>
     <message>
         <source>Settings</source>
-        <translation>Налаштування</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Загальні</translation>
+        <translation>Allgemein</translation>
     </message>
     <message>
         <source>Playlist</source>
         <extracomment>Please make manual line breaks if text too long!</extracomment>
-        <translation>Перелік відтворення</translation>
+        <translation>Playliste</translation>
     </message>
     <message>
         <source>Interface</source>
-        <translation>Інтерфейс</translation>
+        <translation>Schnittstelle</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation>Відтворення</translation>
+        <translation>Wiedergabe</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Розклад</translation>
+        <translation>Zeitplan</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Записувач</translation>
+        <translation>Recorder</translation>
     </message>
 </context>
 <context>
     <name>SettingsDialogShortcuts</name>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>Скорочення клавіатури</translation>
+        <translation>Tastatürkürzel</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation>Дія</translation>
+        <translation>Handlung</translation>
     </message>
     <message>
         <source>Key</source>
-        <translation>Кнопка</translation>
+        <translation>Taste</translation>
     </message>
     <message>
         <source>Play / Pause</source>
-        <translation>Відтворити / Пауза</translation>
+        <translation>Abspielen / Pause</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Зупинити</translation>
+        <translation>Stop</translation>
     </message>
     <message>
         <source>Next channel</source>
-        <translation>Наступний канал</translation>
+        <translation>Nächster Sender</translation>
     </message>
     <message>
         <source>Previous channel</source>
-        <translation>Попередній канал</translation>
+        <translation>Vorheriger Sender</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation>На повний екран</translation>
+        <translation>Vollbild</translation>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation type="vanished">Перемикач інформаційної панелі</translation>
+        <translation type="vanished">Info Widget aushebeln</translation>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation type="vanished">Перемикач контрольної панелі</translation>
+        <translation type="vanished">Controls Widget aushebeln</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Вимкнути звук</translation>
+        <translation>Stumm schalten</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Телетекст</translation>
+        <translation>Teletext</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Збільшити гучність</translation>
+        <translation>Lautstärke erhöhen</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Зменшити гучність</translation>
+        <translation>Lautstärke verringern</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Записувач</translation>
+        <translation>Recorder</translation>
     </message>
     <message>
         <source>Open File</source>
-        <translation>Відкрити файл</translation>
+        <translation>Datei öffnen</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Відкрити посилання URL</translation>
+        <translation>URL öffnen</translation>
     </message>
     <message>
         <source>Open Channel list</source>
-        <translation>Відкрити перелік каналів</translation>
+        <translation>Programm-Liste öffnen</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Налаштування</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Завжди поверх інших вікон</translation>
+        <translation>Immer im Vordergrund</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>Простий режим</translation>
+        <translation>Einfacher Modus</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation>Сховати до трею</translation>
+        <translation>Ausblenden in den Tray</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation>Наступна звукова доріжка</translation>
+        <translation>Nächste Audiospur</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation>Наступна відео доріжка</translation>
+        <translation>Nächste Videospur</translation>
     </message>
     <message>
         <source>Next subtitle track</source>
-        <translation>Наступна доріжка субтитрів</translation>
+        <translation>Nächste Untertitelspur</translation>
     </message>
     <message>
         <source>Next aspect ratio mode</source>
-        <translation>Наступний режим співвідношення сторін</translation>
+        <translation>Nächstes Seitenverhältnis</translation>
     </message>
     <message>
         <source>Next crop mode</source>
-        <translation>Наступний режим обрізання зображення</translation>
+        <translation>Nächstes schneiden </translation>
     </message>
     <message>
         <source>Next deinterlace mode</source>
-        <translation>Наступний режим деінтерлейсінгу</translation>
+        <translation>Nächste Zeilenentflechtung </translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>Встановити</translation>
+        <translation>Bestimmen</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>За замовчуванням</translation>
+        <translation>Voreinstellung</translation>
     </message>
     <message>
         <source>Instant recording</source>
-        <translation>Негайний запис</translation>
+        <translation>Sofortaufnahme</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>Зробити знімок</translation>
+        <translation>Schnappschuss machen</translation>
     </message>
     <message>
         <source>-</source>
@@ -2137,147 +2150,147 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Next scale/zoom mode</source>
-        <translation>Наступний режим шкала/масштаб</translation>
+        <translation>Nächster Maßstab/Zoom Modus</translation>
     </message>
     <message>
         <source>Preview channels</source>
-        <translation>Попередній перегляд каналів</translation>
+        <translation>Sendervorschau</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Розклад</translation>
+        <translation>Zeitplan</translation>
     </message>
     <message>
         <source>Current show info</source>
-        <translation>Переглянути поточну інформацію</translation>
+        <translation>Aktuelle Info anzeigen</translation>
     </message>
 </context>
 <context>
     <name>SettingsGeneral</name>
     <message>
         <source>Language</source>
-        <translation>Мова</translation>
+        <translation>Sprache</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation>Системна мова за замовчуванням</translation>
+        <translation>Standardsprache des Systems</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation>Мова користувача</translation>
+        <translation>Benutzerdefinierte Sprache</translation>
     </message>
     <message>
         <source>Session store</source>
-        <translation>Сховище сесій</translation>
+        <translation>Session speichern</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation>Запам’ятати гучність</translation>
+        <translation>Lautstärke merken</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation>Автовідтворення останній канал</translation>
+        <translation>Automatische Wiedergabe letzten Sender</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>За замовчуванням</translation>
+        <translation>Voreinstellung</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation>Відновити налаштування за замовчуванням</translation>
+        <translation>Standardeinstellungen wiederherstellen</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Це відновить усі налаштуваня за замовчуванням. Вам потрібно застосувати зміни, перед тим як вони будуть застосовані.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Dies wird wiederherstellen alle Einstellungen auf Standard. Sie müssen die Änderungen übernehmen, bevor sie wirksam werden.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>You are using %1 version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie verwenden %1 Version:</translation>
     </message>
 </context>
 <context>
     <name>SettingsPlaylist</name>
     <message>
         <source>Default playlist</source>
-        <translation>Перелік відтворення за замовчуванням</translation>
+        <translation>Voreingestellte Playliste</translation>
     </message>
     <message>
         <source>Network refresh</source>
-        <translation>Оновити мережу</translation>
+        <translation>Netzwerk-Aktualisierung</translation>
     </message>
     <message>
         <source>Refresh playlist on startup</source>
-        <translation>Оновити перелік відтворення під час запуску</translation>
+        <translation>Playliste aktualisieren beim Start</translation>
     </message>
     <message>
         <source>Playlist URL:</source>
-        <translation>Посилання URL переліку відтворення:</translation>
+        <translation>Playliste URL:</translation>
     </message>
     <message>
         <source>Default radio category:</source>
-        <translation>Категорія радіо за замовчуванням:</translation>
+        <translation>Standard Radio Kategorie:</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation>UDPXY підтримка</translation>
+        <translation>UDPXY Unterstützung</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation>Увімкнути UDPXY підтримку</translation>
+        <translation>Aktivieren UDPXY Unterstützung</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation>IP роутера чи ім’я:</translation>
+        <translation>Router IP oder Name:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation>Порт роутера:</translation>
+        <translation>Router port:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Оновлення не змінить порядок переліку відтворення.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Die Aktualisierung wird Ihre Playliste, nicht ändern.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Channel types categories</source>
-        <translation>Категорії типів каналів</translation>
+        <translation>Kategorien von Sendertypen</translation>
     </message>
     <message>
         <source>Default HD category:</source>
-        <translation>Категорія HD за замовчуванням:</translation>
+        <translation>Standard HD Kategorie:</translation>
     </message>
 </context>
 <context>
     <name>SettingsRecorder</name>
     <message>
         <source>Default recording directory</source>
-        <translation>Тека для запису за замовчуванням</translation>
+        <translation>Standard Aufnahmeverzeichnis</translation>
     </message>
     <message>
         <source>Default snapshots directory</source>
-        <translation>Тека для знімків за замовчуванням</translation>
+        <translation>Standard Schnappschüsse Verzeichnis</translation>
     </message>
 </context>
 <context>
     <name>SettingsSchedule</name>
     <message>
         <source>XMLTV settings</source>
-        <translation>XMLTV налаштування</translation>
+        <translation>XMLTV Einstellungen</translation>
     </message>
     <message>
         <source>Refresh XMLTV file on startup</source>
-        <translation>Оновити файл XMLTV під час запуску</translation>
+        <translation>Aktualisieren XMLTV-Datei beim Start</translation>
     </message>
     <message>
         <source>Download file</source>
-        <translation>Завантажити файл</translation>
+        <translation>Datei herunterladen</translation>
     </message>
     <message>
         <source>Local file</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokale Datei</translation>
     </message>
     <message>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;XMLTV Einstellungen erfordern Neustart.&lt;/i&gt;</translation>
     </message>
     <message>
         <source> h</source>
@@ -2292,257 +2305,297 @@ Your changes will not be saved.</source>
     <name>SettingsUi</name>
     <message>
         <source>General Interface Settings</source>
-        <translation>Загальні налаштування інтерфейсу</translation>
+        <translation>Allgemeine Schnittstelleneinstellungen</translation>
     </message>
     <message>
         <source>Change channel</source>
-        <translation>Змінити канал</translation>
+        <translation>Sender ändern</translation>
     </message>
     <message>
         <source>Change volume</source>
-        <translation>Змінити гучність</translation>
+        <translation>Lautstärke ändern</translation>
     </message>
     <message>
         <source>Minimise to tray</source>
-        <translation>Мінімізувати в трей</translation>
+        <translation>In den Tray minimieren</translation>
     </message>
     <message>
         <source>Show tray icon</source>
-        <translation>Показати іконку в треї</translation>
+        <translation>Icon Tray anzeigen</translation>
     </message>
     <message>
         <source>Mouse wheel:</source>
-        <translation>Колесо миші:</translation>
+        <translation>Mausrad:</translation>
     </message>
     <message>
         <source>Tray icon:</source>
-        <translation>Іконка трею:</translation>
+        <translation>Tray icon:</translation>
     </message>
     <message>
         <source>Show on mouse move</source>
-        <translation>Показувати під час переміщення миші</translation>
+        <translation>Bei Mausbewegung anzeigen</translation>
     </message>
     <message>
         <source>Remember main window size, position and open panels</source>
-        <translation>Запам’ятати розмір головного вікна, позицію та відкриті панелі</translation>
+        <translation>Erinnern an Hauptfenster Größe, Position und offene Panels</translation>
     </message>
     <message>
         <source>Icon theme</source>
-        <translation>Тема іконок</translation>
+        <translation>Icon theme</translation>
     </message>
     <message>
         <source>Desktop theme</source>
-        <translation>Тема робочого столу</translation>
+        <translation>Desktop theme</translation>
     </message>
     <message>
         <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Цей параметр вимагає перезапуску.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Diese Option erfordert einen Neustart.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">За замовчуванням</translation>
+        <translation>Voreinstellung</translation>
     </message>
     <message>
         <source>OSD in fullscreen:</source>
-        <translation type="unfinished"></translation>
+        <translation>OSD in Vollbild:</translation>
     </message>
 </context>
 <context>
     <name>ShowInfoTab</name>
     <message>
         <source>&lt;h3&gt;No show selected.&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Keine Show ausgewählt.&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorherige</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished">Запис</translation>
+        <translation>Aufnahme</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished">Далі</translation>
+        <translation>Nächste</translation>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine Informationen</translation>
     </message>
 </context>
 <context>
     <name>Timer</name>
     <message>
         <source>at</source>
-        <translation>в</translation>
+        <translation>in</translation>
     </message>
 </context>
 <context>
     <name>TimersDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation type="vanished">Спорожнити</translation>
+        <translation type="vanished">Löschen</translation>
     </message>
 </context>
 <context>
     <name>TimersEditorWidget</name>
     <message>
         <source>Timers</source>
-        <translation type="vanished">Таймери</translation>
+        <translation type="vanished">Timer</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="vanished">Назва:</translation>
+        <translation type="vanished">Name:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation type="vanished">Канал:</translation>
+        <translation type="vanished">Sender:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="vanished">Тип:</translation>
+        <translation type="vanished">Typ:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation type="vanished">Одноразово</translation>
+        <translation type="vanished">Einmal</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="vanished">Щоденно</translation>
+        <translation type="vanished">Jeden Tag</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="vanished">Щотижня</translation>
+        <translation type="vanished">Jede Woche</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation type="vanished">Будні</translation>
+        <translation type="vanished">Wochentage</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation type="vanished">Посилання URL:</translation>
+        <translation type="vanished">Url:</translation>
     </message>
     <message>
         <source>dd. MM. yyyy</source>
-        <translation type="vanished">дд. ММ. рррр</translation>
+        <translation type="vanished">dd. MM. yyyy</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation type="vanished">Дата:</translation>
+        <translation type="vanished">Datum:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation type="vanished">Час початку:</translation>
+        <translation type="vanished">Startzeit:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="vanished">Час закінчення:</translation>
+        <translation type="vanished">Endzeit:</translation>
     </message>
     <message>
         <source>Disable:</source>
-        <translation type="vanished">Вимкнути:</translation>
+        <translation type="vanished">Deaktiviert:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="vanished">Записувач</translation>
+        <translation type="vanished">Recorder</translation>
     </message>
     <message>
         <source>The recording start date is before today.
 Your changes will not be saved.</source>
-        <translation type="vanished">Дата початку запису раніше сьогодняшнього дня.
-Ваші зміни не будуть збережені.</translation>
+        <translation type="vanished">Das Aufnahmestartdatum muss vor dem heutigen sein.
+Ihre Änderungen werden nicht gespeichert.</translation>
     </message>
 </context>
 <context>
     <name>TimersModel</name>
     <message>
         <source>at</source>
-        <translation type="obsolete">в</translation>
+        <translation type="vanished">in</translation>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
     <message>
         <source>Playing:</source>
-        <translation type="vanished">Відтворюється:</translation>
+        <translation type="vanished">Wird abgespielt: </translation>
     </message>
     <message>
         <source>Recording:</source>
-        <translation type="vanished">Записується:</translation>
+        <translation type="vanished">Aufnahme: </translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="vanished">Записувач</translation>
+        <translation type="vanished">Recorder</translation>
+    </message>
+    <message>
+        <source>Recording stopped.</source>
+        <translation type="vanished">Aufnahme wurde gestoppt.</translation>
+    </message>
+    <message>
+        <source>Recording %1 to %2 
+Stop manually!</source>
+        <translation type="vanished">Aufnahme% 1 in% 2
+Stoppen manuell!</translation>
+    </message>
+    <message>
+        <source>Recording %1 to %2 
+End time: %3</source>
+        <translation type="vanished">Aufnahme% 1 in% 2
+Endzeit: 3%</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
         <source>Update Information</source>
-        <translation type="vanished">Оновити інформацію</translation>
+        <translation type="vanished">Update Informationen</translation>
     </message>
     <message>
         <source>Current version:</source>
-        <translation type="vanished">Поточна версія:</translation>
+        <translation type="vanished">Aktuelle Version:</translation>
     </message>
     <message>
         <source>Stable version:</source>
-        <translation type="vanished">Стабільна версія:</translation>
+        <translation type="vanished">Stabile Version:</translation>
     </message>
     <message>
         <source>Date released:</source>
-        <translation type="vanished">Дата релізу:</translation>
+        <translation type="vanished">Datum veröffentlicht:</translation>
     </message>
     <message>
-        <source>Information:</source>
-        <translation type="obsolete">Інформація:</translation>
+        <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Sie nutzen bereits die neueste Version!&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Sie verwenden die Entwickler-Version!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="obsolete">Закрити</translation>
+        <translation type="vanished">Schliessen</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="vanished">Herunterladen</translation>
+    </message>
+    <message>
+        <source>Changelog:</source>
+        <translation type="vanished">Änderungen:</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="vanished">Anzeigen</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Änderungen in %1&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Ein neues Update ist verfügbar!&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>
     <name>XmltvCrewMember</name>
     <message>
         <source>Director</source>
-        <translation>Режисер</translation>
+        <translation>Regisseur</translation>
     </message>
     <message>
         <source>Actor</source>
-        <translation>Актор</translation>
+        <translation>Schauspieler</translation>
     </message>
     <message>
         <source>Writer</source>
-        <translation>Автор</translation>
+        <translation>Drehbuchautor</translation>
     </message>
     <message>
         <source>Adapter</source>
-        <translation>Адаптер</translation>
+        <translation>Adapter</translation>
     </message>
     <message>
         <source>Producer</source>
-        <translation>Продюсер</translation>
+        <translation>Produzent</translation>
     </message>
     <message>
         <source>Composer</source>
-        <translation>Композитор</translation>
+        <translation>Komponist</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Редактор</translation>
+        <translation>Editor</translation>
     </message>
     <message>
         <source>Presenter</source>
-        <translation>Представник</translation>
+        <translation>Moderator</translation>
     </message>
     <message>
         <source>Commentator</source>
-        <translation>Коментатор</translation>
+        <translation>Kommentator</translation>
     </message>
     <message>
         <source>Guest</source>
-        <translation>Гість</translation>
+        <translation>Gast</translation>
     </message>
 </context>
 </TS>

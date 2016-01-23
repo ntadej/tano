@@ -1,50 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="hi_IN">
+<TS version="2.1" language="el">
 <context>
     <name>AboutDialog</name>
     <message>
         <source>About</source>
-        <translation>विषय में</translation>
-    </message>
-    <message>
-        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
-</source>
-        <translation type="obsolete">Tano एक खुला स्रोत पार मंच आईपी टीवी प्लेयर है जो पूर्ण EPG और रिकॉर्ड के साथ आईपी टीवी प्लेबैक है. यह वीएलसी क्यूटी पर आधारित है.</translation>
-    </message>
-    <message>
-        <source>Authors</source>
-        <translation type="obsolete">लेखक</translation>
-    </message>
-    <message>
-        <source>License</source>
-        <translation type="obsolete">अनुज्ञा</translation>
-    </message>
-    <message>
-        <source>Backend</source>
-        <translation type="obsolete">पीछे के अंत</translation>
-    </message>
-    <message>
-        <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
-</source>
-        <translation type="obsolete">वीएलसी क्यूटी एक मुफ्त पुस्तकालय हैं क्यूटी और libvlc पुस्तकालयों को कनेक्ट करने के लिए प्रयोग किया जाता है.यह मुख्य मीडिया प्लेबैक और भी तेजी से मीडिया प्लेयर के विकास के लिए कुछ जीयूआई वर्गों के लिए मुख्य वर्ग शामिल हैं.
-</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;आप उपयोग कर रहे हैं VideoLAN VLC %1&lt;/b&gt;</translation>
+        <translation>Σχετικά με</translation>
     </message>
     <message>
         <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το Tano είναι ενας IP TV player ανοικτού πηγαίου κώδικα πολλαπλής πλατφόρμας που διαθέτει πλήρη αναπαραγωγή τηλεοπτικών IP με EPG και συσκευή εγγραφής.</translation>
     </message>
     <message>
         <source>Multimedia backend powered by VLC-Qt %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Σύστημα υποστήριξης πολυμέσων που τροφοδοτείται από το VLC-Qt %1.</translation>
     </message>
     <message>
         <source>&lt;b&gt;This application is based on Tano %1.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;Η εφαρμογή αυτή βασίζεται στο Tano %1.&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -59,91 +32,91 @@
     </message>
     <message>
         <source>Radio</source>
-        <translation>रेडियो</translation>
+        <translation>Ραδιόφωνο</translation>
     </message>
 </context>
 <context>
     <name>InfoBarWidget</name>
     <message>
         <source>Now:</source>
-        <translation>अभी:</translation>
+        <translation>Τώρα:</translation>
     </message>
     <message>
         <source>Next:</source>
-        <translation>अगला:</translation>
+        <translation>Επόμενο:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>भाषा:</translation>
+        <translation>Γλώσσα:</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>&amp;Recorder</source>
-        <translation>&amp;रिकॉर्डर</translation>
+        <translation>Recorder</translation>
     </message>
     <message>
         <source>&amp;Options</source>
-        <translation>&amp;विकल्प</translation>
+        <translation>Επιλογές</translation>
     </message>
     <message>
         <source>&amp;Help</source>
-        <translation>&amp;सहायता</translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <source>Vie&amp;w</source>
-        <translation>Vie&amp;w</translation>
+        <translation>Εμφάνιση</translation>
     </message>
     <message>
         <source>&amp;Audio</source>
-        <translation>&amp;ऑडियो</translation>
+        <translation>Ήχος</translation>
     </message>
     <message>
         <source>&amp;Playback</source>
-        <translation>&amp;पुनर्चलन</translation>
+        <translation>Αναπαραγωγή</translation>
     </message>
     <message>
         <source>&amp;Video</source>
-        <translation>&amp;वीडियो</translation>
+        <translation>Βίντεο</translation>
     </message>
     <message>
         <source>&amp;File</source>
-        <translation>&amp;फ़ाइल</translation>
+        <translation>Αρχείο</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation>चलाना</translation>
+        <translation>Αναπαραγωγή</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation>ट्रे में छुपाएँ</translation>
+        <translation>Απόκρυψη στο δίσκο</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation>विराम</translation>
+        <translation>Παύση</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>फ़ाइल नहीं पढ़ सकते %1:
+        <translation>Δεν είναι δυνατή η ανάγνωση του αρχείου %1:
 %2.</translation>
     </message>
     <message>
         <source>Restore</source>
-        <translation>पुनर्स्थापित</translation>
+        <translation>Επαναφορά</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>कार्यक्रम</translation>
+        <translation>Χρονοδιάγραμμα</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>वापस</translation>
+        <translation>Πίσω</translation>
     </message>
     <message>
         <source>&amp;Exit</source>
-        <translation>&amp;निकास</translation>
+        <translation>Εξοδος</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -151,127 +124,132 @@
     </message>
     <message>
         <source>&amp;Settings</source>
-        <translation>&amp;सेटिंग्स</translation>
+        <translation>Ρυθμίσεις</translation>
     </message>
     <message>
         <source>&amp;Fullscreen</source>
-        <translation>&amp;पूर्ण स्क्रीन</translation>
+        <translation>Πληρης Οθονη</translation>
     </message>
     <message>
         <source>&amp;Open channel list</source>
-        <translation>&amp;चैनल की सूची खोलें</translation>
+        <translation>Άνοιγμα λίστας καναλιών</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>चैनल की सूची खोलें</translation>
+        <translation>Άνοιγμα λίστας καναλιών</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
-        <translation>खोलें &amp;फ़ाइल</translation>
+        <translation>Άνοιγμα Αρχείου</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>URL खोलें</translation>
+        <translation>Άνοιγμα URL</translation>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation>अद्यतनों के लिए जाँचें</translation>
+        <translation>Έλεγχος για ενημερώσεις</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>विराम</translation>
+        <translation>Στοπ</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>हमेशा शीर्ष पर</translation>
+        <translation>Πάντα στην κορυφή</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>सरल मोड</translation>
+        <translation>Απλή λειτουργία</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>अगला</translation>
+        <translation>Επόμενο</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>मौन</translation>
+        <translation>Σίγαση</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>वॉल्यूम ऊपर</translation>
+        <translation>Αύξηση έντασης</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>वॉल्यूम नीचे</translation>
+        <translation>Μείωση έντασης</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>रिकॉर्डर</translation>
+        <translation>Recorder</translation>
     </message>
     <message>
         <source>Quick record</source>
-        <translation>तुरंत रिकॉर्ड</translation>
+        <translation>Γρήγορη εγγραφή</translation>
     </message>
     <message>
         <source>About Qt</source>
-        <translation>Qt के विषय में</translation>
+        <translation>Σχετικά με το Qt</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation>रिकॉर्डिंग रोकें</translation>
+        <translation>Διακοπή εγγραφής</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>टेलीटेक्स्ट</translation>
+        <translation>Τηλεκειμένο</translation>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>कीबोर्ड शॉर्टकर्ट</translation>
+        <translation>Συντομεύσεις πληκτρολογίου</translation>
     </message>
     <message>
         <source>Instant recording</source>
-        <translation>तत्काल रिकॉर्डिंग</translation>
+        <translation>Άμεση εγγραφή</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation>टाइमर जोड़ें</translation>
+        <translation>Προσθήκη χρονόμετρου</translation>
     </message>
     <message>
         <source>Support</source>
-        <translation>सहारा</translation>
+        <translation>Υποστήριξη</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>स्नैपशॉट ले</translation>
+        <translation>Λήψη στιγμιότυπου</translation>
     </message>
     <message>
         <source>Preview channels</source>
-        <translation>चैनलों को पूर्वावलोकन करें </translation>
+        <translation>Προεπισκόπηση καναλιών </translation>
     </message>
     <message>
         <source>Current show info</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση τρέχον πληροφοριών </translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>Σχετικά με</translation>
     </message>
     <message>
         <source>Logout and Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποσύνδεση και Έξοδος</translation>
     </message>
     <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
-        <translation type="unfinished"></translation>
+        <translation>Είστε βέβαιοι ότι θέλετε να εξέλθετε;
+Αυτό θα σταματήσει την εγγραφή που βρίσκεται σε εξέλιξη.</translation>
     </message>
     <message>
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Κανάλια</translation>
     </message>
     <message>
         <source>Show Info</source>
+        <translation>Εμφάνιση Πληροφοριων</translation>
+    </message>
+    <message>
+        <source>Check for updates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -280,76 +258,72 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Instant</source>
-        <translation type="unfinished">तत्काल</translation>
-    </message>
-    <message>
-        <source>Check for updates...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Άμεσα</translation>
     </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
     <message>
         <source>Aspect ratio</source>
-        <translation>पहलू अनुपात</translation>
+        <translation>Αναλογία εικόνας</translation>
     </message>
     <message>
         <source>Next aspect ratio option</source>
-        <translation>अगला पहलू अनुपात विकल्प</translation>
+        <translation>Επόμενη αναλογία εικόνας</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>मूल</translation>
+        <translation>Γνήσιο</translation>
     </message>
 </context>
 <context>
     <name>MenuCropRatio</name>
     <message>
         <source>Crop video</source>
-        <translation>क्रॉप वीडियो</translation>
+        <translation>Περικοπή βίντεο</translation>
     </message>
     <message>
         <source>Next crop option</source>
-        <translation>अगली क्रॉप विकल्प</translation>
+        <translation>Επόμενη περικοπή</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>मूल</translation>
+        <translation>Γνήσιο</translation>
     </message>
 </context>
 <context>
     <name>MenuDeinterlacing</name>
     <message>
         <source>Deinterlacing</source>
-        <translation>Deinterlacing</translation>
+        <translation>Απόπλεξη</translation>
     </message>
     <message>
         <source>Next deinterlacing option</source>
-        <translation>अगले deinterlacing के  विकल्प</translation>
+        <translation>Επόμενη απόπλεξη</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>बलहीन</translation>
+        <translation>Απενεργοποιημένο</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>ठुकराना</translation>
+        <translation>Απόρριψη</translation>
     </message>
     <message>
         <source>Blend</source>
-        <translation>मिश्रण</translation>
+        <translation>Μίγμα</translation>
     </message>
     <message>
         <source>Mean</source>
-        <translation>माध्य</translation>
+        <translation>Μέσο</translation>
     </message>
     <message>
         <source>Bob</source>
-        <translation>बॉब</translation>
+        <translation>Μπομπ</translation>
     </message>
     <message>
         <source>Linear</source>
-        <translation>रैखिक</translation>
+        <translation>Γραμμικό</translation>
     </message>
     <message>
         <source>X</source>
@@ -360,52 +334,52 @@ This will stop recording in progress.</source>
     <name>MenuScale</name>
     <message>
         <source>Original</source>
-        <translation>वास्तविक</translation>
+        <translation>Γνήσιο</translation>
     </message>
     <message>
         <source>Scale/Zoom</source>
-        <translation>मापक/ज़ूम</translation>
+        <translation>Κλίμακα/Μεγέθυνση</translation>
     </message>
     <message>
         <source>Next scale/zoom option</source>
-        <translation>अगले मापक/ ज़ूम के विकल्प</translation>
+        <translation>Επόμενη κλίμακα/Μεγέθυνση</translation>
     </message>
 </context>
 <context>
     <name>MenuTrackAudio</name>
     <message>
         <source>Audio track</source>
-        <translation>ऑडियो ट्रैक</translation>
+        <translation>Ηχητικό κομμάτι</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation>अगला ऑडियो ट्रैक</translation>
+        <translation>Επόμενο ηχητικό κομμάτι</translation>
     </message>
 </context>
 <context>
     <name>MenuTrackSubtitles</name>
     <message>
         <source>Subtitles</source>
-        <translation>उपशीर्षक</translation>
+        <translation>Υπότιτλοι</translation>
     </message>
     <message>
         <source>Next subtitles</source>
-        <translation>अगला उपशीर्षक</translation>
+        <translation>Επόμενη υπότιτλοι</translation>
     </message>
     <message>
         <source>Open subtitle file</source>
-        <translation>उपशीर्षक फ़ाइल खोलें</translation>
+        <translation>Άνοιγμα αρχείου υποτίτλων</translation>
     </message>
 </context>
 <context>
     <name>MenuTrackVideo</name>
     <message>
         <source>Video track</source>
-        <translation>वीडियो ट्रैक</translation>
+        <translation>κομμάτι Βίντεο</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation>अगले वीडियो ट्रैक</translation>
+        <translation>Επόμενο κομμάτι βίντεο</translation>
     </message>
 </context>
 <context>
@@ -413,101 +387,140 @@ This will stop recording in progress.</source>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>फ़ाइल नहीं लिख सकता %1:
+        <translation>Δεν είναι δυνατή η εγγραφή του αρχείου %1:
 %2.</translation>
     </message>
     <message>
         <source>Error:</source>
-        <translation>त्रुटि:</translation>
+        <translation>Σφάλμα:</translation>
     </message>
 </context>
 <context>
     <name>OsdWidget</name>
     <message>
         <source>Play</source>
-        <translation>चलाना</translation>
+        <translation>Αναπαραγωγή</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>विराम</translation>
+        <translation>Στοπ</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>वापस</translation>
+        <translation>Πίσω</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation>अगला</translation>
+        <translation>Επόμενο</translation>
     </message>
     <message>
         <source>Record Now</source>
-        <translation>अब रिकार्ड करें</translation>
+        <translation>Εγγραφή Τώρα</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>मौन</translation>
+        <translation>Σίγαση</translation>
     </message>
     <message>
         <source>Pause</source>
-        <translation>विराम</translation>
+        <translation>Παύση</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>टेलीटेक्स्ट</translation>
+        <translation>Τηλεκειμένο</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>Take स्नैपशॉट</translation>
+        <translation>Λήψη στιγμιότυπου</translation>
+    </message>
+</context>
+<context>
+    <name>PasswordDialog</name>
+    <message>
+        <source>Login required</source>
+        <translation type="vanished">Απαιτείται σύνδεση</translation>
+    </message>
+    <message>
+        <source>Username:</source>
+        <translation type="vanished">Όνομα Χρήστη:</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="vanished">Κωδικός Πρόσβασης:</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
+        <translation type="vanished">&lt;b&gt;Θα πρέπει να συνδεθείτε για να χρησιμοποιήσετε αυτή την εφαρμογή.&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>Remember password</source>
+        <translation type="vanished">Απομνημόνευση κωδικού πρόσβασης</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Your username or password is incorrect.
+Please, try again.&lt;/b&gt;</source>
+        <translation type="vanished">Το όνομα χρήστη ή ο κωδικός πρόσβασης σας είναι λάθος.
+Παρακαλώ προσπάθηστε ξανά.</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;An unknown error has occured.
+Please, try again.&lt;/b&gt;</source>
+        <translation type="vanished">&lt;b&gt;Προέκυψε ένα άγνωστο σφάλμα.
+Παρακαλώ προσπάθηστε ξανά.&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
+        <translation type="vanished">&lt;b&gt;Σύνδεση στο ...&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Play</source>
-        <translation>चलाना</translation>
+        <translation>Αναπαραγωγή</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>कार्यक्रम</translation>
+        <translation>Χρονοδιάγραμμα</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditor</name>
     <message>
         <source>Tano Editor</source>
-        <translation>Tano संपादक</translation>
+        <translation>Tano Editor</translation>
     </message>
     <message>
         <source>Playlist name:</source>
-        <translation>प्लेलिस्ट का नाम:</translation>
+        <translation>Όνομα λίστας αναπαραγωγής:</translation>
     </message>
     <message>
         <source>Number of channels:</source>
-        <translation>चैनलों की संख्या:</translation>
+        <translation>Αριθμός καναλιών:</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>सहायता</translation>
+        <translation>Βοήθεια</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>टूलबार</translation>
+        <translation>Γραμμη Εργαλειων</translation>
     </message>
     <message>
         <source>Number:</source>
-        <translation>संख्या:</translation>
+        <translation>Αριθμός:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>नाम:</translation>
+        <translation>Όνομα:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation>श्रेणियाँ:</translation>
+        <translation>Κατηγορίες:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>भाषा:</translation>
+        <translation>Γλώσσα:</translation>
     </message>
     <message>
         <source>Url:</source>
@@ -515,51 +528,51 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Logo:</source>
-        <translation>लोगो:</translation>
+        <translation>Λογότυπο:</translation>
     </message>
     <message>
         <source>Add channel</source>
-        <translation>चैनल जोड़ें</translation>
+        <translation>Προσθήκη καναλιού</translation>
     </message>
     <message>
         <source>Delete channel</source>
-        <translation>चैनल हटाएँ</translation>
+        <translation>Διαγραφή καναλιού</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>सुरक्षित करें</translation>
+        <translation>Αποθήκευση</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>बंद करें</translation>
+        <translation>Κλείσιμο</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>ऊपर ले जाएँ</translation>
+        <translation>Μετακίνηση προς τα πάνω</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>नीचे ले जाएँ</translation>
+        <translation>Μετακίνηση προς τα κάτω</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>प्रिंट</translation>
+        <translation>Εκτύπωση</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>निर्यात</translation>
+        <translation>Εξαγωγή</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>खोलें</translation>
+        <translation>Άνοιγμα </translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="vanished">बारे में</translation>
+        <translation type="vanished">Σχετικά με</translation>
     </message>
     <message>
         <source>New playlist</source>
-        <translation>नई प्लेलिस्ट</translation>
+        <translation>Νέα λίστα αναπαραγωγής</translation>
     </message>
     <message>
         <source>Tvheadend</source>
@@ -567,63 +580,63 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="vanished">सेटिंग्स</translation>
+        <translation type="vanished">Ρυθμίσεις</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
-        <translation>XMLTV IDs</translation>
+        <translation>XMLTV ID</translation>
     </message>
     <message>
         <source>Update Information</source>
-        <translation type="vanished">जानकारी अपडेट करें</translation>
+        <translation type="vanished">Ενημέρωση πληροφοριών</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>फ़ाइल नहीं पढ़ सकते %1:
+        <translation>Δεν είναι δυνατή η ανάγνωση του αρχείου %1:
 %2.</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>प्लेलिस्ट संपादक</translation>
+        <translation>Επιμέλεια αναπαραγωγής</translation>
     </message>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
-        <translation>क्या आप Tano से बाहर निकलना चाहते हैं?
-इस प्रगति में रिकॉर्डिंग बंद हो जाएगा.</translation>
+        <translation>Θέλετε να δημιουργήσετε μια νέα λίστα αναπαραγωγής;
+Θα χάσετε τυχόν μη αποθηκευμένες αλλαγές.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>फ़ाइल नहीं लिख सकता %1:
+        <translation>Δεν είναι δυνατή η εγγραφή του αρχείου %1:
 %2.</translation>
     </message>
     <message>
         <source>Export to M3U format with Udpxy URLs</source>
-        <translation> Udpxy URL के साथ M3U प्रारूप निर्यात करें</translation>
+        <translation>Εξαγωγή σε μορφή M3U με διευθύνσεις URL Udpxy</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</translation>
+        <translation>Θα πρέπει να έχουν έγκυρες ρυθμίσεις Udpxy ή η εξαγόμενη λίστα θα περιέχει κλασικες διευθύνσεις URL.</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
-        <translation>क्या आप संपादक बंद करना चाहते हैं?
-आप किसी भी न सहेजे गए परिवर्तन खो देंगे.</translation>
+        <translation>Θέλετε να κλείσετε το πρόγραμμα επεξεργασίας;
+Θα χάσετε τυχόν μη αποθηκευμένες αλλαγές.</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation>इस नंबर के साथ एक चैनल पहले से ही मौजूद है!</translation>
+        <translation>Ένα κανάλι με τον αριθμό αυτό υπάρχει ήδη!</translation>
     </message>
     <message>
         <source>Edit channel</source>
-        <translation>चैनल संपादित करें</translation>
+        <translation>Επεξεργασία καναλιού</translation>
     </message>
     <message>
         <source>Scan for new channels</source>
-        <translation>नए चैनलों के लिए स्कैन करें</translation>
+        <translation>Σάρωση για νέα κανάλια</translation>
     </message>
     <message>
         <source>XMLTV ID:</source>
@@ -631,7 +644,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Type:</source>
-        <translation>प्रकार:</translation>
+        <translation>Τύπος:</translation>
     </message>
     <message>
         <source>SD</source>
@@ -643,121 +656,120 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Radio</source>
-        <translation>रेडियो</translation>
+        <translation>Ραδιόφωνο</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>अन्य</translation>
+        <translation>Άλλο</translation>
     </message>
     <message>
         <source>Auto XMLTV map</source>
-        <translation type="unfinished"></translation>
+        <translation>Αυτοματος χαρτης XMLTV </translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>संपादक</translation>
+        <translation>Editor</translation>
     </message>
     <message>
         <source>Please wait for XMLTV file to parse.</source>
-        <translation type="unfinished"></translation>
+        <translation>Παρακαλώ περιμένετε να αναλύθει το αρχείο XMLTV.</translation>
     </message>
     <message>
         <source>%1 - %2 Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 - %2 Editor</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditorHelp</name>
     <message>
         <source>Tano Editor - Help</source>
-        <translation>Tano संपादक - सहायता</translation>
+        <translation>Tano Editor - Βοήθεια</translation>
     </message>
     <message>
         <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Tano संपादक - सहायता&lt;/h2&gt;</translation>
+        <translation>&lt;h2&gt;Tano Editor -  Βοήθεια&lt;/h2&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;You can edit your IP TV playlist, print it or export it to desired format.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;आप अपने IP TV प्लेलिस्ट को संपादित करने के लिए, इसे प्रिंट या इच्छित प्रारूप में निर्यात कर सकते हैं.&lt;/b&gt;</translation>
+        <translation>&lt;b&gt;Μπορείτε να επεξεργαστείτε την IP TV λίστα αναπαραγωγής, να την εκτυπώσετε ή να την εξάγετε στην επιθυμητή μορφή.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;चैनलों को संपादित करना&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;Επεξεργασία καναλιών&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
-        <translation>चैनल लोगो के लिए पूर्ण URL  प्रदान करने की जरूरत है.
-चित्र इंटरफ़ेस फिट करने के लिए बढ़ाया जाएगा.</translation>
+        <translation>Πρέπει να παρέχεται για το λογότυπο του καναλιού πλήρης διεύθυνση URL. Οι φωτογραφίες θα πρέπει να προσαρμοστουν ώστε να ταιριάζουν στο περιβάλλον.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;प्रारूप और निर्यात&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;Μορφές και εξαγωγή&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;चैनलों के लिए स्कैन&lt;/h3&gt;</translation>
+        <translation>&lt;h3&gt;Σάρωση για κανάλια&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
-        <translation>आप सेटिंग्स (रेडियो के डिफ़ॉल्ट्स) में Sagem JS और CSV निर्यात करने के लिए कस्टम रेडियो श्रेणी निर्धारित कर सकते हैं. केवल प्रथम श्रेणी या रेडियो श्रेणी Sagem JS को निर्यात किया जाएगा.</translation>
+        <translation>Μπορείτε να ορίσετε προσαρμοσμένες κατηγορίες ραδιοφώνου σε ρυθμίσεις (προεπιλογές ραδιοφώνου) για την εξαγωγή προς Sagem JS και CSV. Μόνο η πρώτη κατηγορία η η ραδιοφωνική κατηγορία θα εξαχθεί προς το Sagem JS.</translation>
     </message>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
-        <translation>एक चैनल की संख्या को लागू किया जाना चाहिए. अन्य सभी मान स्वचालित रूप बदल दिए जाते हैं. आप रेडियो के रूप में किसी भी चैनल को निर्धारित कर सकते हैं. श्रेणियाँ अल्पविराम (,) द्वारा अलग हो सकते हैं है.</translation>
+        <translation>Ο αριθμός του καναλιού πρέπει να εφαρμοστεί. Όλες οι άλλες τιμές αλλάζουν αυτόματα. Μπορείτε να ορίσετε οποιοδήποτε κανάλι, όπως ραδιόφωνο. Οι κατηγορίες μπορούν να διαχωρίζονται με κόμμα (,).</translation>
     </message>
     <message>
         <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο επεξεργαστής θα προσπαθήσει αυτόματα να χαρτογραφήσει τις τρέχουσες ταυτότητες XMLTV στα κανάλια στην playlist. Μπορείτε ακόμα να χρειαστεί να ελέγξετε για πιθανά σφάλματα.</translation>
     </message>
     <message>
         <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ο επεξεργαστής υποστηρίζει το δικο τροποποιημένο M3U, καθώς και μη τροποποιημένα M3U, CSV και αρχεία Sagem JS. Εκτός από αυτές τις μορφές, μπορείτε επίσης να αποθηκεύσετε σε M3U με διευθύνσεις URL Udpxy και Tvheadend αρχεία ρυθμίσεων.</translation>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
-        <translation type="unfinished"></translation>
+        <translation>Μπορείτε να σαρώσετε για νέα κανάλια στον σαρωτή καναλιών. Παρακαλώ θέστε το έγκυρο εύρος IP (π.χ. 232.4.1) και την υποδοχη (π.χ. 5000). Όλα τα 255 IP σε αυτή την περιοχή θα σαρωθούν. Ένα κανάλι προστίθεται εάν ανιχνευθεί πριν το χρονικό όριο.</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditorScan</name>
     <message>
         <source>IP Range:</source>
-        <translation>IP सीमा:</translation>
+        <translation>Σειρά IP:</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>पोर्ट:</translation>
+        <translation>Υποδοχη:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation>समय समाप्ति:</translation>
+        <translation>Διάλειμμα:</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation> ms</translation>
+        <translation>μδευ</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation>स्कैन और अद्यतन</translation>
+        <translation>Σάρωση και επικαιροποίηση</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation>स्कैन %1 से नया चैनल</translation>
+        <translation>Νέο κανάλι από σάρωση %1</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Playlist संपादक</translation>
+        <translation>Επιμέλεια αναπαραγωγής</translation>
     </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
     <message>
         <source>Export to Tvheadend IP TV services</source>
-        <translation>Tvheadend IP TV  सेवाओं के लिए निर्यात</translation>
+        <translation>Εξαγωγή σε υπηρεσίες τηλεόρασης Tvheadend IP</translation>
     </message>
     <message>
         <source>Output location:</source>
-        <translation>उत्पादन स्थान:</translation>
+        <translation>Θέση εξόδου:</translation>
     </message>
     <message>
         <source>...</source>
@@ -765,37 +777,37 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Network interface:</source>
-        <translation>संजाल अंतरफलक:</translation>
+        <translation>Διασύνδεση δικτύου:</translation>
     </message>
     <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>&lt;i&gt;&lt;b&gt;चेतावनी: यह सभी मौजूदा चैनलों को नष्ट करेगा!&lt;/b&gt;&lt;/a&gt;</translation>
+        <translation>&lt;i&gt;&lt;b&gt;Προειδοποίηση: Αυτό θα διαγράψει όλα τα υπάρχοντα κανάλια!&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
     <name>PlaylistFilterModel</name>
     <message>
         <source>All categories</source>
-        <translation>सभी श्रेणियाँ</translation>
+        <translation>Όλες οι κατηγορίες</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation> सभी भाषाएँ</translation>
+        <translation>Όλες οι γλώσσες</translation>
     </message>
     <message>
         <source>Playlist</source>
-        <translation type="unfinished">प्लेलिस्ट</translation>
+        <translation>Λίστα αναπαραγωγής</translation>
     </message>
 </context>
 <context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
-        <translation>CSV फ़ाइल की संरचना</translation>
+        <translation>CSV δομή αρχείου</translation>
     </message>
     <message>
         <source>Separator:</source>
-        <translation>विभाजक:</translation>
+        <translation>Διαχωριστικό:</translation>
     </message>
     <message>
         <source>;</source>
@@ -803,39 +815,39 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>First line:</source>
-        <translation>पहली पंक्ति:</translation>
+        <translation>Πρώτη γραμμή:</translation>
     </message>
     <message>
         <source>First line contains column names</source>
-        <translation>पहली पंक्ति में स्तंभ नाम हैं</translation>
+        <translation>Πρώτη γραμμή περιέχει ονόματα στηλών</translation>
     </message>
     <message>
         <source>First line does not contain column names</source>
-        <translation>पहली पंक्ति में स्तंभ नाम नहीं हैं</translation>
+        <translation>Πρώτη γραμμή δεν περιέχει ονόματα στηλών</translation>
     </message>
     <message>
         <source>Column list:</source>
-        <translation>स्तंभ की सूची:</translation>
+        <translation>Λίστα στήλης:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Παρακαλούμε ταξινομήσετε τις στήλες σας από πρώτη έως την τελευταία.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>संख्या</translation>
+        <translation>Αριθμός</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>चैनल </translation>
+        <translation>Κανάλι</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation> श्रेणियाँ</translation>
+        <translation>Κατηγορίες</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>भाषा</translation>
+        <translation>Γλώσσα</translation>
     </message>
     <message>
         <source>EPG ID</source>
@@ -850,19 +862,19 @@ You will lose any unsaved changes.</source>
     <name>PlaylistTab</name>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation>Ολα</translation>
     </message>
     <message>
         <source>TV</source>
-        <translation type="unfinished"></translation>
+        <translation>TV</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation type="unfinished">सभी श्रेणियाँ</translation>
+        <translation>Ολες οι κατηγορίες</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation type="unfinished"> सभी भाषाएँ</translation>
+        <translation>Ολες οι γλώσσες</translation>
     </message>
 </context>
 <context>
@@ -870,7 +882,7 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation type="unfinished">फ़ाइल नहीं पढ़ सकते %1:
+        <translation>Δεν είναι δυνατή η ανάγνωση του αρχείου %1:
 %2.</translation>
     </message>
 </context>
@@ -882,7 +894,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Channel</source>
-        <translation>चैनल </translation>
+        <translation>Κανάλι</translation>
     </message>
     <message>
         <source>Url</source>
@@ -890,11 +902,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Categories</source>
-        <translation>श्रेणियाँ</translation>
+        <translation>Κατηγορίες</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>भाषा</translation>
+        <translation>Γλώσσα</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
@@ -902,34 +914,34 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Type</source>
-        <translation>प्रकार</translation>
+        <translation>Τύπος</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation>लोगो</translation>
+        <translation>Λογότυπο</translation>
     </message>
     <message>
         <source>Exported with %1 on %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Εξάγονται με %1 σε %2.</translation>
     </message>
 </context>
 <context>
     <name>PrintDialog</name>
     <message>
         <source>Print</source>
-        <translation>प्रिंट</translation>
+        <translation>Εκτύπωση</translation>
     </message>
     <message>
         <source>Select information for printing:</source>
-        <translation>प्रिंटिंग के लिए जानकारी चुनें:</translation>
+        <translation>Επιλέξτε πληροφορίες για την εκτύπωση:</translation>
     </message>
     <message>
         <source>Channel number</source>
-        <translation>चैनल संख्या</translation>
+        <translation>Αριθμός καναλιού</translation>
     </message>
     <message>
         <source>Channel name</source>
-        <translation>चैनल नाम</translation>
+        <translation>Ονομα καναλιού</translation>
     </message>
     <message>
         <source>URL</source>
@@ -937,19 +949,19 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Categories</source>
-        <translation>श्रेणियाँ</translation>
+        <translation>Κατηγορίες</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>भाषा</translation>
+        <translation>Γλώσσα</translation>
     </message>
     <message>
         <source>Print channel List</source>
-        <translation>चैनल सूची प्रिंट करें</translation>
+        <translation>Εκτύπωση λίστας καναλιών</translation>
     </message>
     <message>
         <source>Channel type</source>
-        <translation>चैनल के प्रकार</translation>
+        <translation>Τύπος καναλιού</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
@@ -957,51 +969,52 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Logo</source>
-        <translation>लोगो</translation>
+        <translation>Λογότυπο</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Disabled</source>
-        <translation>बलहीन</translation>
+        <translation>Απενεργοποιημένο</translation>
     </message>
     <message>
         <source>Channel list</source>
-        <translation>चैनल की सूची</translation>
+        <translation>Λίστα καναλιών</translation>
     </message>
     <message>
         <source>New channel</source>
-        <translation>नया चैनल</translation>
+        <translation>Νέο κανάλι</translation>
     </message>
     <message>
         <source>The file is not a Tano Timers list.</source>
-        <translation>यह फ़ाइल एक Tano टाइमर सूची नहीं है.</translation>
+        <translation>Το αρχείο δεν είναι μια λίστα Tano χρονόμετρων.</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2:
 %3</source>
-        <translation>पंक्ति %1, स्तंभ %2: %3  पर त्रुटि पार्स करें</translation>
+        <translation>Σφάλμα ανάλυσης στη γραμμή %1, στήλη %2:
+%3</translation>
     </message>
     <message>
         <source>The file is not a Tano updates file.</source>
-        <translation>यह फ़ाइल एक Tano अद्यतन फ़ाइल नहीं है.</translation>
+        <translation>Το αρχείο δεν είναι ένα αρχείο Tano ενημερώσεων.</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation>एक बार</translation>
+        <translation>Μια Φορα</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation>प्रतिदिन</translation>
+        <translation>Καθημερινά</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation>साप्ताहिक</translation>
+        <translation>Εβδομαδιαία</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>चैनल</translation>
+        <translation>Κανάλι</translation>
     </message>
     <message>
         <source>URL</source>
@@ -1009,168 +1022,169 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Categories</source>
-        <translation>श्रेणियाँ</translation>
+        <translation>Κατηγορίες</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>भाषा</translation>
+        <translation>Γλώσσα</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>संख्या</translation>
+        <translation>Αριθμός</translation>
     </message>
     <message>
         <source>The file is not a valid XMLTV file.</source>
-        <translation>XMLTV फ़ाइल एक वैध फ़ाइल नहीं है .</translation>
+        <translation>Το αρχείο δεν είναι έγκυρο αρχείο XMLTV.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>फ़ाइल नहीं पढ़ सकते %1:⏎ %2.</translation>
+        <translation>Δεν είναι δυνατή η εγγραφή του αρχείου %1:
+%2.</translation>
     </message>
     <message>
         <source>seconds</source>
-        <translation>सेकंड्स</translation>
+        <translation>δευτερόλεπτα</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>मिनट</translation>
+        <translation>λεπτά</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>घंटे</translation>
+        <translation>ώρες</translation>
     </message>
     <message>
         <source>s</source>
-        <translation>s</translation>
+        <translation>δευ</translation>
     </message>
     <message>
         <source>min</source>
-        <translation>मिनट</translation>
+        <translation>λεπ</translation>
     </message>
     <message>
         <source>h</source>
-        <translation>h</translation>
+        <translation>ω</translation>
     </message>
     <message>
         <source>Open directory</source>
-        <translation>निर्देशिका खोलें</translation>
+        <translation>Άνοιγμα καταλόγου</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>खोलें चैनल की सूची</translation>
+        <translation>Άνοιγμα λίστας καναλιών</translation>
     </message>
     <message>
         <source>Open URL or stream</source>
-        <translation>खोलें URL या स्ट्रीम</translation>
+        <translation>Άνοιγμα URL η ροής</translation>
     </message>
     <message>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
-        <translation>मल्टीमीडिया फाइल या स्ट्रीम का URL दर्ज करें जो तुम खेलना चाहते:</translation>
+        <translation>Εισάγετε τη διεύθυνση URL του αρχείου πολυμέσων η της ροής που θέλετε να παίξετε:</translation>
     </message>
     <message>
         <source>Tano M3U channel list files</source>
-        <translation>Tano M3U ​​चैनल सूची फ़ाइलें</translation>
+        <translation>Tano M3U αρχεία λίστας καναλιών</translation>
     </message>
     <message>
         <source>Comma-separated values files</source>
-        <translation>Comma-separated values files</translation>
+        <translation>Τιμές διαχωρισμένες με κόμματα </translation>
     </message>
     <message>
         <source>Multimedia files</source>
-        <translation>मल्टीमीडिया फ़ाइलें</translation>
+        <translation>Αρχεία πολυμέσων</translation>
     </message>
     <message>
         <source>Subtitles files</source>
-        <translation>उपशीर्षक फ़ाइलें</translation>
+        <translation>Αρχεία υποτίτλων</translation>
     </message>
     <message>
         <source>Plain text files</source>
-        <translation>सादा टेक्स्ट फ़ाइलें</translation>
+        <translation>Αρχεία απλού κειμένου</translation>
     </message>
     <message>
         <source>Open file</source>
-        <translation>फाइल खोलें</translation>
+        <translation>Άνοιγμα Αρχείου</translation>
     </message>
     <message>
         <source>Open subtitles</source>
-        <translation>खोलें उपशीर्षक</translation>
+        <translation>Άνοιγμα υποτίτλων</translation>
     </message>
     <message>
         <source>Export XMLTV IDs</source>
-        <translation>निर्यात XMLTV IDs</translation>
+        <translation>Εξαγωγή XMLTV ID</translation>
     </message>
     <message>
         <source>M3U (original) files</source>
-        <translation>M3U फ़ाइलें (मूल)</translation>
+        <translation>M3U (πρωτότυπα) αρχεία</translation>
     </message>
     <message>
         <source>M3U (Udpxy URL) files</source>
-        <translation>M3U (Udpxy URL) फ़ाइलें</translation>
+        <translation>M3U (Udpxy URL) αρχεία</translation>
     </message>
     <message>
         <source>Sagem STB channel list files</source>
-        <translation>Sagem STB चैनल सूची फ़ाइलें</translation>
+        <translation>Sagem STB αρχεία λίστας καναλιών</translation>
     </message>
     <message>
         <source>CSV channel list</source>
-        <translation>CSV चैनल सूची</translation>
+        <translation>CSV λίστα καναλιών</translation>
     </message>
     <message>
         <source>Sagem STB channel list</source>
-        <translation>Sagem STB चैनल सूची</translation>
+        <translation>Sagem STB λίστα καναλιών</translation>
     </message>
     <message>
         <source>XMLTV file</source>
-        <translation>XMLTV फ़ाइल</translation>
+        <translation>XMLTV αρχείο</translation>
     </message>
     <message>
         <source>Open XMLTV</source>
-        <translation>XMLTV को खोलें</translation>
+        <translation>Άνοιγμα XMLTV</translation>
     </message>
     <message>
         <source>Enabled</source>
-        <translation>सक्षम</translation>
+        <translation>Ενεργοποιημένο</translation>
     </message>
     <message>
         <source>Recording</source>
-        <translation>रिकॉर्डिंग</translation>
+        <translation>Εγγραφή</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation>समाप्त</translation>
+        <translation>Ολοκληρώθηκε</translation>
     </message>
     <message>
         <source>Expired</source>
-        <translation>निश्वासित</translation>
+        <translation>Εληξε</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation>कार्यदिवस</translation>
+        <translation>Ημέρες εβδομάδας</translation>
     </message>
     <message>
         <source>Instant</source>
-        <translation>तत्काल</translation>
+        <translation>Άμεσα</translation>
     </message>
     <message>
         <source>repeats only once</source>
-        <translation>केवल एक बार दोहराता </translation>
+        <translation>επανάληψη μόνο μια φορά</translation>
     </message>
     <message>
         <source>repeats daily</source>
-        <translation>प्रतिदिन दोहराता</translation>
+        <translation>επανάληψη καθημερινά</translation>
     </message>
     <message>
         <source>repeats weekly</source>
-        <translation>साप्ताहिक दोहराता</translation>
+        <translation>επανάληψη εβδομαδιαία</translation>
     </message>
     <message>
         <source>repeats on weekdays</source>
-        <translation>कार्यदिवस पर दोहराता</translation>
+        <translation>επανάληψη στις εργάσιμες μέρες</translation>
     </message>
     <message>
         <source>instant recording</source>
-        <translation>तत्काल रिकॉर्डिंग</translation>
+        <translation>Άμεση εγγραφή</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
@@ -1178,379 +1192,380 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
-        <translation>&apos;%1&apos; के लिए अनिवार्य तर्क लापता.</translation>
+        <translation>Λείπει υποχρεωτικό επιχείρημα για &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Unknown option &apos;%1&apos;.</source>
-        <translation>अज्ञात विकल्प &apos;%1&apos;.</translation>
+        <translation>Άγνωστη επιλογή &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Usage: %1 [options]</source>
-        <translation>उपयोग: %1 [विकल्प]</translation>
+        <translation>Χρήση: %1 [επιλογές]</translation>
     </message>
     <message>
         <source>IP TV playback:</source>
-        <translation>IP TV का पुनर्चलन:</translation>
+        <translation>IP TV Αναπαραγωγή:</translation>
     </message>
     <message>
         <source>Play channel by number</source>
-        <translation>संख्या से चैनल चलायें</translation>
+        <translation>Αναπαραγωγή καναλιού με τον αριθμό</translation>
     </message>
     <message>
         <source>Use playlist file</source>
-        <translation>प्लेलिस्ट फ़ाइल का उपयोग करें</translation>
+        <translation>Χρήση λίστας αναπαραγωγής αρχείων</translation>
     </message>
     <message>
         <source>Use XMLTV file</source>
-        <translation>XMLTV फ़ाइल का उपयोग करें</translation>
+        <translation>Χρήση αρχείου XMLTV</translation>
     </message>
     <message>
         <source>Open:</source>
-        <translation>खोलें:</translation>
+        <translation>Άνοιγμα:</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>URL खोलें</translation>
+        <translation>Άνοιγμα URL</translation>
     </message>
     <message>
         <source>Playback options:</source>
-        <translation>पुनर्चलन के विकल्प:</translation>
+        <translation>Επιλογές αναπαραγωγής:</translation>
     </message>
     <message>
         <source>Set audio output</source>
-        <translation>ऑडियो आउटपुट निर्धारित करें</translation>
+        <translation>Ρύθμιση εξόδου ήχου</translation>
     </message>
     <message>
         <source>Set video output</source>
-        <translation>वीडियो आउटपुट निर्धारित करें</translation>
+        <translation>Ρύθμιση εξόδου βίντεο</translation>
     </message>
     <message>
         <source>Error:</source>
-        <translation>त्रुटि:</translation>
+        <translation>Σφάλμα:</translation>
     </message>
     <message>
         <source>Parse error at line %1, column %2: %3</source>
-        <translation type="unfinished"></translation>
+        <translation>Σφάλμα ανάλυσης στη γραμμή %1, στήλη %2:
+%3</translation>
     </message>
     <message>
         <source>Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation>Ταινία/Δράμα</translation>
     </message>
     <message>
         <source>Detective/Thriller</source>
-        <translation type="unfinished"></translation>
+        <translation>Ντετέκτιβ/Θρίλερ</translation>
     </message>
     <message>
         <source>Adventure/Western/War</source>
-        <translation type="unfinished"></translation>
+        <translation>Περιπέτεια/Western/Πόλεμος</translation>
     </message>
     <message>
         <source>Science Fiction/Fantasy/Horror</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιστημονική Φαντασία/Φαντασία/Τρόμος</translation>
     </message>
     <message>
         <source>Comedy</source>
-        <translation type="unfinished"></translation>
+        <translation>Κωμωδία</translation>
     </message>
     <message>
         <source>Soap/Melodrama/Folkloric</source>
-        <translation type="unfinished"></translation>
+        <translation>Soap/Μελόδραμα/Λαογραφικη</translation>
     </message>
     <message>
         <source>Romance</source>
-        <translation>प्रणय</translation>
+        <translation>Ρομαντζο</translation>
     </message>
     <message>
         <source>Serious/Classical/Religious/Historical Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation>Σοβαρή/Κλασική/Θρησκευτική/Ιστορική Ταινία/Δράμα</translation>
     </message>
     <message>
         <source>Adult Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation>Ταινία Ενηλίκων/Δράμα</translation>
     </message>
     <message>
         <source>News/Current affairs</source>
-        <translation>समाचार/वर्तमान मामले</translation>
+        <translation>Νέα/Επικαιρότητα</translation>
     </message>
     <message>
         <source>News/Weather report</source>
-        <translation type="unfinished"></translation>
+        <translation>Ειδήσεις/Δελτίο καιρού</translation>
     </message>
     <message>
         <source>News magazine</source>
-        <translation type="unfinished"></translation>
+        <translation>Μαγκαζινο ειδησεων</translation>
     </message>
     <message>
         <source>Documentary</source>
-        <translation>वृत्तचित्र</translation>
+        <translation>Ντοκυμαντέρ</translation>
     </message>
     <message>
         <source>Discussion/Interview/Debate</source>
-        <translation type="unfinished"></translation>
+        <translation>Συζήτηση/Συνέντευξη/Διάλογος</translation>
     </message>
     <message>
         <source>Show/Game show</source>
-        <translation type="unfinished"></translation>
+        <translation>Show/Τηλεπαιχνίδι</translation>
     </message>
     <message>
         <source>Game show/Quiz/Contest</source>
-        <translation type="unfinished"></translation>
+        <translation>Τηλεπαιχνίδι/Κουίζ/Διαγωνισμός</translation>
     </message>
     <message>
         <source>Variety show</source>
-        <translation type="unfinished"></translation>
+        <translation>Βαριετε</translation>
     </message>
     <message>
         <source>Talk show</source>
-        <translation type="unfinished"></translation>
+        <translation>Τοκ σόου</translation>
     </message>
     <message>
         <source>Sports</source>
-        <translation>खेल-कूद</translation>
+        <translation>Αθλητικά</translation>
     </message>
     <message>
         <source>Special events</source>
-        <translation type="unfinished"></translation>
+        <translation>Ειδικές εκδηλώσεις</translation>
     </message>
     <message>
         <source>Sports magazines</source>
-        <translation type="unfinished"></translation>
+        <translation>Αθλητικά μαγκαζινα</translation>
     </message>
     <message>
         <source>Football/Soccer</source>
-        <translation type="unfinished"></translation>
+        <translation>Ποδόσφαιρο</translation>
     </message>
     <message>
         <source>Tennis/Squash</source>
-        <translation type="unfinished"></translation>
+        <translation>Τένις/Σκουός</translation>
     </message>
     <message>
         <source>Team sports</source>
-        <translation type="unfinished"></translation>
+        <translation>Ομαδικά αθλήματα</translation>
     </message>
     <message>
         <source>Athletics</source>
-        <translation type="unfinished"></translation>
+        <translation>Στίβος</translation>
     </message>
     <message>
         <source>Motor sport</source>
-        <translation type="unfinished"></translation>
+        <translation>Μηχανοκίνητος αθλητισμός</translation>
     </message>
     <message>
         <source>Water sport</source>
-        <translation>जलक्रीड़ा</translation>
+        <translation>Θαλάσσια σπορ</translation>
     </message>
     <message>
         <source>Children&apos;s/Youth programmes</source>
-        <translation type="unfinished"></translation>
+        <translation>Παιδικά/Νεολαία</translation>
     </message>
     <message>
         <source>Pre-school children&apos;s programmes</source>
-        <translation type="unfinished"></translation>
+        <translation>Προσχολικα παιδικά προγράμματα</translation>
     </message>
     <message>
         <source>Entertainment programmes for 6 to 14</source>
-        <translation type="unfinished"></translation>
+        <translation>Ψυχαγωγικά προγράμματα για 6 έως 14</translation>
     </message>
     <message>
         <source>Entertainment programmes for 10 to 16</source>
-        <translation type="unfinished"></translation>
+        <translation>Ψυχαγωγικά προγράμματα για 10 έως 16</translation>
     </message>
     <message>
         <source>Informational/Educational/School programmes</source>
-        <translation type="unfinished"></translation>
+        <translation>Πληροφοριακά/Εκπαιδευτικά/Σχολικά προγράμματα</translation>
     </message>
     <message>
         <source>Cartoons/Puppets</source>
-        <translation>हास्यचित्र/कठपुतली</translation>
+        <translation>Κινούμενα σχέδια/Κούκλες</translation>
     </message>
     <message>
         <source>Music/Ballet/Dance</source>
-        <translation type="unfinished"></translation>
+        <translation>Μουσική/Μπαλέτο/Χορός</translation>
     </message>
     <message>
         <source>Rock/Pop</source>
-        <translation type="unfinished"></translation>
+        <translation>Ροκ/Ποπ</translation>
     </message>
     <message>
         <source>Serious music/Classical music</source>
-        <translation type="unfinished"></translation>
+        <translation>Σοβαρή μουσική/Κλασική μουσική</translation>
     </message>
     <message>
         <source>Folk/Traditional music</source>
-        <translation type="unfinished"></translation>
+        <translation>Λαϊκή/Παραδοσιακή μουσική</translation>
     </message>
     <message>
         <source>Jazz</source>
-        <translation type="unfinished"></translation>
+        <translation>Τζαζ</translation>
     </message>
     <message>
         <source>Musical/Opera</source>
-        <translation type="unfinished"></translation>
+        <translation>Μιούζικαλ/Όπερα</translation>
     </message>
     <message>
         <source>Arts/Culture</source>
-        <translation>कला/संस्कृति</translation>
+        <translation>Τέχνες/Πολιτισμός</translation>
     </message>
     <message>
         <source>Performing arts</source>
-        <translation>प्रदर्शन कला</translation>
+        <translation>Θεάματα</translation>
     </message>
     <message>
         <source>Fine arts</source>
-        <translation>ललित कला</translation>
+        <translation>Καλές τέχνες</translation>
     </message>
     <message>
         <source>Religion</source>
-        <translation>धर्म</translation>
+        <translation>Θρησκεία</translation>
     </message>
     <message>
         <source>Popular culture/Traditional arts</source>
-        <translation type="unfinished"></translation>
+        <translation>Λαϊκός πολιτισμός/Παραδοσιακές τέχνες</translation>
     </message>
     <message>
         <source>Literature</source>
-        <translation>साहित्य</translation>
+        <translation>Λογοτεχνία</translation>
     </message>
     <message>
         <source>Film/Cinema</source>
-        <translation type="unfinished"></translation>
+        <translation>Ταινία/Κινηματογράφος</translation>
     </message>
     <message>
         <source>Experimental film/video</source>
-        <translation type="unfinished"></translation>
+        <translation>Πειραματική ταινία/βίντεο</translation>
     </message>
     <message>
         <source>Broadcasting/Press</source>
-        <translation type="unfinished"></translation>
+        <translation>Ραδιοτηλεόραση/Δελτία Τύπου</translation>
     </message>
     <message>
         <source>Social/Political issues/Economics</source>
-        <translation type="unfinished"></translation>
+        <translation>Κοινωνικά/Πολιτικά θέματα/Οικονομία</translation>
     </message>
     <message>
         <source>Magazines/Reports/Documentary</source>
-        <translation type="unfinished"></translation>
+        <translation>Μαγκαζινα/Αναφορές/Ντοκιμαντέρ</translation>
     </message>
     <message>
         <source>Economics/Social advisory</source>
-        <translation type="unfinished"></translation>
+        <translation>Οικονομικά/Κοινωνική συμβουλευτική</translation>
     </message>
     <message>
         <source>Remarkable people</source>
-        <translation>उल्लेखनीय व्यक्ति</translation>
+        <translation>Αξιόλογοι ανθρωποι</translation>
     </message>
     <message>
         <source>Education/Science/Factual topics</source>
-        <translation type="unfinished"></translation>
+        <translation>Εκπαίδευση/Επιστήμη/Ιστορικά θέματα</translation>
     </message>
     <message>
         <source>Nature/Animals/Environment</source>
-        <translation type="unfinished"></translation>
+        <translation>Φύση/Ζώα/Περιβάλλον</translation>
     </message>
     <message>
         <source>Technology/Natural sciences</source>
-        <translation type="unfinished"></translation>
+        <translation>Τεχνολογία/Φυσικές επιστήμες</translation>
     </message>
     <message>
         <source>Medicine/Physiology/Psychology</source>
-        <translation type="unfinished"></translation>
+        <translation>Ιατρική/Φυσιολογία/Ψυχολογία</translation>
     </message>
     <message>
         <source>Foreign countries/Expeditions</source>
-        <translation type="unfinished"></translation>
+        <translation>Ξένες χώρες/Εξορμήσεις</translation>
     </message>
     <message>
         <source>Social/Spiritual sciences</source>
-        <translation type="unfinished"></translation>
+        <translation>Κοινωνικά/Πνευματική επιστήμες</translation>
     </message>
     <message>
         <source>Further education</source>
-        <translation type="unfinished"></translation>
+        <translation>Συνεχιζόμενη εκπαίδευση</translation>
     </message>
     <message>
         <source>Languages</source>
-        <translation>भाषाएँ</translation>
+        <translation>Γλώσσες</translation>
     </message>
     <message>
         <source>Leisure hobbies</source>
-        <translation type="unfinished"></translation>
+        <translation>Ενδιαφέροντα αναψυχής</translation>
     </message>
     <message>
         <source>Tourism/Travel</source>
-        <translation type="unfinished"></translation>
+        <translation>Τουρισμός/Ταξίδια</translation>
     </message>
     <message>
         <source>Handicraft</source>
-        <translation type="unfinished"></translation>
+        <translation>Χειροτεχνία</translation>
     </message>
     <message>
         <source>Motoring</source>
-        <translation type="unfinished"></translation>
+        <translation>Μετακινήσεις</translation>
     </message>
     <message>
         <source>Fitness and Health</source>
-        <translation type="unfinished"></translation>
+        <translation>Άσκηση και Υγεία</translation>
     </message>
     <message>
         <source>Cooking</source>
-        <translation type="unfinished"></translation>
+        <translation>Μαγειρική</translation>
     </message>
     <message>
         <source>Advertisement/Shopping</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαφήμιση/Ψώνια</translation>
     </message>
     <message>
         <source>Gardening</source>
-        <translation type="unfinished"></translation>
+        <translation>Κηπουρική</translation>
     </message>
     <message>
         <source>Try &apos;%1 %2&apos; for more information.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δοκιμάστε &apos;%1 %2&apos; για περισσότερες πληροφορίες.</translation>
     </message>
     <message>
         <source>GoTV channel list</source>
-        <translation type="unfinished"></translation>
+        <translation>GoTV λίστα καναλιών</translation>
     </message>
     <message>
         <source>The file is not a GoTV channel list file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Το αρχείο δεν είναι ένα αρχείο GoTV λίστας καναλιών.</translation>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation type="unfinished"></translation>
+        <translation>Άγνωστος τίτλος</translation>
     </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
     <message>
         <source>Clear Shortcut</source>
-        <translation>स्पष्ट सरल तरीका</translation>
+        <translation>Εκκαθαριση συντομευσης</translation>
     </message>
 </context>
 <context>
     <name>Recorder</name>
     <message>
         <source>Recorder</source>
-        <translation>रिकॉर्डर</translation>
+        <translation>Recorder</translation>
     </message>
     <message>
         <source>Cannot write to %1.</source>
-        <translation> %1 के लिए नहीं लिख सकता.</translation>
+        <translation>Δεν είναι δυνατή η εγγραφή του αρχείου %1.</translation>
     </message>
     <message>
         <source>Recording not valid!</source>
-        <translation type="vanished">रिकॉर्डिंग वैध नहीं है</translation>
+        <translation type="vanished">Η καταγραφή δεν είναι έγκυρη!</translation>
     </message>
     <message>
         <source>File cannot be removed.
 Have you already moved or deleted it?</source>
-        <translation>फ़ाइल हटाया नहीं जा सकता.
-क्या आप पहले से ही चले गए या इसे नष्ट कर दिया है?</translation>
+        <translation>Το αρχείο δεν μπορεί να αφαιρεθεί.
+Έχει ήδη μετακινηθεί ή διαγραφθεί;</translation>
     </message>
     <message>
         <source>Recordings and timers</source>
-        <translation type="vanished">रिकॉर्डिंग और टाइमर</translation>
+        <translation type="vanished">Εγγραφές και χρονόμετρα</translation>
     </message>
     <message>
         <source>Instant %1</source>
@@ -1566,7 +1581,7 @@ Have you already moved or deleted it?</source>
     </message>
     <message>
         <source>Recording</source>
-        <translation type="unfinished">रिकॉर्डिंग</translation>
+        <translation type="unfinished">Εγγραφή</translation>
     </message>
     <message>
         <source>Starting %1 on %2 until %3.</source>
@@ -1581,89 +1596,89 @@ Have you already moved or deleted it?</source>
     <name>RecorderInfoWidget</name>
     <message>
         <source>End time:</source>
-        <translation>अंत समय:</translation>
+        <translation>Ώρα λήξης:</translation>
     </message>
     <message>
         <source>Currently not recording.</source>
-        <translation>फिलहाल रिकॉर्डिंग नहीं है.</translation>
+        <translation>Αυτή τη στιγμή δεν γραφει.</translation>
     </message>
     <message>
         <source>No timer - stop manually.</source>
-        <translation>कोई टाइमर नहीं है- मैन्युअल रूप से बंद करो.</translation>
+        <translation>No timer - stop manually.</translation>
     </message>
     <message>
         <source>Stop recording</source>
-        <translation>रिकॉर्डिंग रोकें</translation>
+        <translation>Διακοπή εγγραφής</translation>
     </message>
     <message>
         <source>Recording:</source>
-        <translation>रिकॉर्डिंग:</translation>
+        <translation>Εγγραφή:</translation>
     </message>
     <message>
         <source>Elapsed:</source>
-        <translation>बीत:</translation>
+        <translation>Παρελθών:</translation>
     </message>
     <message>
         <source>Output:</source>
-        <translation type="vanished">आउटपुट:</translation>
+        <translation type="vanished">Έξοδος:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation>Channel:</translation>
+        <translation>Κανάλι:</translation>
     </message>
     <message>
         <source>Play</source>
-        <translation>चलायें</translation>
+        <translation>Αναπαραγωγή</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>हटाना</translation>
+        <translation>Διαγραφή</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>पीछे</translation>
+        <translation>Πίσω</translation>
     </message>
     <message>
         <source>Time:</source>
-        <translation>समय:</translation>
+        <translation>Χρονος:</translation>
     </message>
     <message>
         <source>Duration:</source>
-        <translation>अवधि:</translation>
+        <translation>Χρονική Διάρκεια:</translation>
     </message>
     <message>
         <source>File:</source>
-        <translation type="vanished">फ़ाइल:</translation>
+        <translation type="vanished">Αρχείο:</translation>
     </message>
     <message>
         <source>at</source>
-        <translation>में</translation>
+        <translation>σε</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>रिकॉर्डर</translation>
+        <translation>Recorder</translation>
     </message>
     <message>
         <source>Are you sure you want to delete the recording?
 This operation is ireversible.</source>
-        <translation>क्या आप सुनिश्चित हैं कि आप रिकॉर्डिंग हटाना चाहते हैं?
-यह आपरेशन अपरिवर्तनीय है.</translation>
+        <translation>Είστε σίγουροι ότι θέλετε να διαγράψετε την εγγραφή;
+Αυτή η λειτουργία δεν είναι αναστρέψιμη.</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>सुरक्षित करना</translation>
+        <translation>Αποθήκευση</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="vanished">स्थिति</translation>
+        <translation type="vanished">Κατάσταση</translation>
     </message>
     <message>
         <source>Edit timer</source>
-        <translation>टाइमर संपादित करें</translation>
+        <translation>Επεξεργασία χρονομέτρου</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Απόρριψη</translation>
     </message>
     <message>
         <source>Recording information</source>
@@ -1674,55 +1689,55 @@ This operation is ireversible.</source>
     <name>RecorderNewDialog</name>
     <message>
         <source>Quick record</source>
-        <translation type="vanished">त्वरित रिकॉर्ड</translation>
+        <translation type="vanished">Γρήγορη εγγραφή</translation>
     </message>
     <message>
         <source>Selected channel:</source>
-        <translation>चयनित चैनल:</translation>
+        <translation>Επιλεγμένο κανάλι:</translation>
     </message>
     <message>
         <source>Recording name:</source>
-        <translation>रिकॉर्डिंग का  नाम:</translation>
+        <translation> Ονομα εγγραφής:</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation>रिकॉर्ड</translation>
+        <translation>Εγγραφή</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="vanished">वापस</translation>
+        <translation type="vanished">Πίσω</translation>
     </message>
     <message>
         <source>Add timer</source>
-        <translation type="vanished">टाइमर जोड़ें</translation>
+        <translation type="vanished">Προσθήκη χρονόμετρου</translation>
     </message>
     <message>
         <source>Timer name:</source>
-        <translation type="vanished">टाइमर का नाम:</translation>
+        <translation type="vanished"> Ονομα χρονόμετρου:</translation>
     </message>
     <message>
         <source>Add new timer</source>
-        <translation>नई टाइमर जोड़ें</translation>
+        <translation>Προσθήκη χρονόμετρου</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>रिकॉर्डर</translation>
+        <translation>Recorder</translation>
     </message>
     <message>
         <source>Please, select a channel.</source>
-        <translation type="vanished">कृपया, एक चैनल का चयन करें.</translation>
+        <translation type="vanished">Παρακαλούμε, επιλέξτε ένα κανάλι.</translation>
     </message>
     <message>
         <source>You don&apos;t have this channel in your playlist.</source>
-        <translation>आपकी प्लेलिस्ट में यह चैनल नहीं है.</translation>
+        <translation>Δεν έχετε αυτό το κανάλι στη λίστα αναπαραγωγής σας.</translation>
     </message>
     <message>
         <source>New recording</source>
-        <translation>नई रिकॉर्डिंग</translation>
+        <translation>Νέα εγγραφή</translation>
     </message>
     <message>
         <source>Search and filter</source>
-        <translation type="vanished">खोज और साफ़ करना</translation>
+        <translation type="vanished">Αναζήτηση και φίλτρο</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -1733,39 +1748,39 @@ This operation is ireversible.</source>
     <name>RecorderTimersEditor</name>
     <message>
         <source>Timers</source>
-        <translation type="unfinished">टाइमर</translation>
+        <translation type="unfinished">Χρονόμετρα</translation>
     </message>
     <message>
         <source>Date:</source>
-        <translation type="unfinished">तिथि:</translation>
+        <translation type="unfinished">Ημερομηνία:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation type="unfinished">एक बार</translation>
+        <translation type="unfinished">Μια Φορα</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Καθημερινά</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="unfinished">साप्ताहिक</translation>
+        <translation type="unfinished">Εβδομαδιαία</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation type="unfinished">कार्यदिवस</translation>
+        <translation type="unfinished">Ημέρες εβδομάδας</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished">प्रकार:</translation>
+        <translation type="unfinished">Τύπος:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Κανάλι:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">नाम:</translation>
+        <translation type="unfinished">Όνομα:</translation>
     </message>
     <message>
         <source>dd. MM. yyyy</source>
@@ -1777,21 +1792,21 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="unfinished">अंत समय:</translation>
+        <translation type="unfinished">Ώρα λήξης:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation type="unfinished">प्रारंभ समय:</translation>
+        <translation type="unfinished">Ωρα εναρξης:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished">रिकॉर्डर</translation>
+        <translation type="unfinished">Recorder</translation>
     </message>
     <message>
         <source>The recording start date is before today.
 Your changes will not be saved.</source>
-        <translation type="unfinished">रिकॉर्डिंग शुरू होने की तिथि आज से पहले है.
-आपके परिवर्तनों को सहेजा नहीं किया जाएगा.</translation>
+        <translation type="unfinished">Η ημερομηνία έναρξης εγγραφής είναι πριν από σήμερα.
+Οι αλλαγές σας δεν θα αποθηκευτούν.</translation>
     </message>
     <message>
         <source>The recording is overlaping with others.
@@ -1811,105 +1826,105 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="unfinished">रिकॉर्डर</translation>
+        <translation type="unfinished">Recorder</translation>
     </message>
 </context>
 <context>
     <name>ScheduleTab</name>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Αλλαγή</translation>
     </message>
     <message>
         <source>Show information</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση Πληροφοριων</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished">रिकॉर्ड</translation>
+        <translation>Εγγραφή</translation>
     </message>
     <message>
         <source>Current channel selected doesn&apos;t have any schedule information</source>
-        <translation type="unfinished"></translation>
+        <translation>Το τρέχον επιλεγμένο κανάλι δεν έχει καμία πληροφορία χρονοδιαγράμματος</translation>
     </message>
     <message>
         <source>Select channel</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλογή καναλιού</translation>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"></translation>
+        <translation>Καμία πληροφορία</translation>
     </message>
 </context>
 <context>
     <name>SettingsBackend</name>
     <message>
         <source>VLC-Qt Backend</source>
-        <translation>VLC-Qt बैकेंड</translation>
+        <translation>VLC-Qt Backend</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation>संस्करण:</translation>
+        <translation>Έκδοση:</translation>
     </message>
     <message>
         <source>Using Videolan VLC version:</source>
-        <translation>VideoLAN VLC संस्करण का उपयोग:</translation>
+        <translation>Χρήση Videolan VLC έκδοσης:</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation>पुनर्चलन</translation>
+        <translation>Αναπαραγωγή</translation>
     </message>
     <message>
         <source>Default subtitle language:</source>
-        <translation>डिफ़ॉल्ट उपशीर्षक भाषा:</translation>
+        <translation>Προεπιλεγμένη γλώσσα υποτίτλων:</translation>
     </message>
     <message>
         <source>Default audio language:</source>
-        <translation>डिफ़ॉल्ट ऑडियो भाषा:</translation>
+        <translation>Προεπιλεγμένη γλώσσα ήχου:</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>अक्षम</translation>
+        <translation>Απενεργοποιημένο</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>अन्य</translation>
+        <translation>Άλλο</translation>
     </message>
     <message>
         <source>Default aspect ratio:</source>
-        <translation>डिफ़ॉल्ट पहलू अनुपात:</translation>
+        <translation>Προεπιλεγμένη αναλογία διαστάσεων:</translation>
     </message>
     <message>
         <source>Default crop:</source>
-        <translation>डिफ़ॉल्ट फसल:</translation>
+        <translation>Προεπιλεγμένη συγκομιδή:</translation>
     </message>
     <message>
         <source>Default deinterlacing:</source>
-        <translation>डिफ़ॉल्ट deinterlacing:</translation>
+        <translation>Προεπιλεγμένη απόπλεξη:</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>वास्तविक</translation>
+        <translation>Γνήσιο</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>छोड़ना</translation>
+        <translation>Απόρριψη</translation>
     </message>
     <message>
         <source>Blend</source>
-        <translation>मिश्रण</translation>
+        <translation>Μίγμα</translation>
     </message>
     <message>
         <source>Mean</source>
-        <translation>माध्य</translation>
+        <translation>Μέσο</translation>
     </message>
     <message>
         <source>Bob</source>
-        <translation>बॉब</translation>
+        <translation>Μπομπ</translation>
     </message>
     <message>
         <source>Linear</source>
-        <translation>रैखिक</translation>
+        <translation>Γραμμικό</translation>
     </message>
     <message>
         <source>X</source>
@@ -1917,219 +1932,218 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Enable teletext (requires restart)</source>
-        <translation>सक्षम टेलीटेक्स्ट (पुनरारंभ आवश्यक)</translation>
+        <translation>Ενεργοποίηση τηλεκειμένου (απαιτείται επανεκκίνηση)</translation>
     </message>
     <message>
         <source>Core</source>
-        <translation>मूल</translation>
+        <translation>Πυρήνας</translation>
     </message>
     <message>
         <source>Video output:</source>
-        <translation>वीडियो आउटपुट:</translation>
+        <translation>Έξοδος βίντεο:</translation>
     </message>
     <message>
         <source>Audio output:</source>
-        <translation>ऑडियो आउटपुट:</translation>
+        <translation>Έξοδος ήχου:</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>डिफ़ॉल्ट</translation>
+        <translation>Προεπιλογή</translation>
     </message>
     <message>
         <source>Enable YUV-&gt;RGB hardware decoding</source>
-        <translation> YUV-&gt;RGB हार्डवेयर decoding सक्षम करें</translation>
+        <translation>Ενεργοποίηση YUV-&gt; αποκωδικοποίηση RGB</translation>
     </message>
     <message>
         <source>Enable S/PDIF output</source>
-        <translation>S/PDIF आउटपुट सक्षम करें</translation>
+        <translation>Ενεργοποίηση S / PDIF έξοδος</translation>
     </message>
     <message>
         <source>Misc</source>
-        <translation>Misc</translation>
+        <translation>Διάφορα</translation>
     </message>
     <message>
         <source>Mute on minimize</source>
-        <translation>कम से कम पर मौन</translation>
+        <translation>Σίγαση κατα την ελαχιστοποίηση</translation>
     </message>
     <message>
         <source>Remember video settings:</source>
-        <translation>वीडियो सेटिंग्स याद रखें:</translation>
+        <translation>Εκθυμηση ρυθμίσεων βίντεο:</translation>
     </message>
     <message>
         <source>For all channels</source>
-        <translation>सभी चैनलों के लिए</translation>
+        <translation>Για όλα τα κανάλια</translation>
     </message>
     <message>
         <source>Per channel</source>
-        <translation>प्रति चैनल</translation>
+        <translation>Ανά κανάλι</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation>सक्षम</translation>
+        <translation>Ενεργοποιηση</translation>
     </message>
 </context>
 <context>
     <name>SettingsDialog</name>
     <message>
         <source>Settings</source>
-        <translation>सेटिंग</translation>
+        <translation>Ρυθμίσεις</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>सामान्य</translation>
+        <translation>Γενικά</translation>
     </message>
     <message>
         <source>Playlist</source>
         <extracomment>Please make manual line breaks if text too long!</extracomment>
-        <translation>प्लेलिस्ट</translation>
+        <translation>Λίστα αναπαραγωγής</translation>
     </message>
     <message>
         <source>Interface</source>
-        <translation>अंतरफलक</translation>
+        <translation>Διασύνδεση</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation>पुनर्चलन</translation>
+        <translation>Αναπαραγωγή</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>अनुसूची</translation>
+        <translation>Χρονοδιάγραμμα</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>रिकॉर्डर</translation>
+        <translation>Recorder</translation>
     </message>
 </context>
 <context>
     <name>SettingsDialogShortcuts</name>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>कीबोर्ड शॉर्टकट</translation>
+        <translation>Συντομεύσεις πληκτρολογίου</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation>क्रिया</translation>
+        <translation>Ενέργεια</translation>
     </message>
     <message>
         <source>Key</source>
-        <translation>Key</translation>
+        <translation>Πλήκτρο</translation>
     </message>
     <message>
         <source>Play / Pause</source>
-        <translation>चलायें/ रोकें</translation>
+        <translation>Αναπαραγωγή/Παύση</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>रोको</translation>
+        <translation>Στοπ</translation>
     </message>
     <message>
         <source>Next channel</source>
-        <translation>अगला चैनल</translation>
+        <translation>Επόμενο κανάλι</translation>
     </message>
     <message>
         <source>Previous channel</source>
-        <translation>पिछला चैनल</translation>
+        <translation>Προηγούμενο κανάλι</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation>पूर्णस्क्रीन</translation>
+        <translation>Πληρης Οθονη</translation>
     </message>
     <message>
         <source>Toggle Info Widget</source>
-        <translation type="vanished">टॉगल इन्फो विजेट</translation>
+        <translation type="vanished">Εναλλαγή πληροφορίων γραφικών στοιχείων</translation>
     </message>
     <message>
         <source>Toggle Controls Widget</source>
-        <translation type="vanished">टॉगल नियंत्रण विजेट</translation>
+        <translation type="vanished">Εναλλαγή Ελέγχου γραφικών στοιχείων</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>मूक</translation>
+        <translation>Σίγαση</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>टेलीटेक्स्ट</translation>
+        <translation>Τηλεκειμένο</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>	
-वॉल्यूम ऊपर</translation>
+        <translation>Αύξηση έντασης</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>वॉल्यूम नीचे</translation>
+        <translation>Μείωση έντασης</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>रिकॉर्डर</translation>
+        <translation>Recorder</translation>
     </message>
     <message>
         <source>Open File</source>
-        <translation>फ़ाइल खोलें</translation>
+        <translation>Άνοιγμα Αρχείου</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>URL खोलें</translation>
+        <translation>Άνοιγμα URL</translation>
     </message>
     <message>
         <source>Open Channel list</source>
-        <translation>चैनल की सूची खोलें</translation>
+        <translation>Άνοιγμα λίστας καναλιών</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>सेटिंग्स</translation>
+        <translation>Ρυθμίσεις</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>हमेशा शीर्ष पर</translation>
+        <translation>Πάντα στην κορυφή</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>सरल मोड</translation>
+        <translation>Απλή λειτουργία</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation>ट्रे में छुपाएँ</translation>
+        <translation>Απόκρυψη στο δίσκο</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation>अगला ऑडियो ट्रैक</translation>
+        <translation>Επόμενο ηχητικό κομμάτι</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation>अगला वीडियो ट्रैक</translation>
+        <translation>Επόμενο κομμάτι βίντεο</translation>
     </message>
     <message>
         <source>Next subtitle track</source>
-        <translation>अगला उपशीर्षक ट्रैक</translation>
+        <translation>Επόμενη υπότιτλοι</translation>
     </message>
     <message>
         <source>Next aspect ratio mode</source>
-        <translation>अगला पहलू अनुपात मोड</translation>
+        <translation>Επόμενη αναλογία εικόνας</translation>
     </message>
     <message>
         <source>Next crop mode</source>
-        <translation>अगला  क्रॉप त मोड</translation>
+        <translation>Επόμενη περικοπή</translation>
     </message>
     <message>
         <source>Next deinterlace mode</source>
-        <translation>अगला deinterlace मोड</translation>
+        <translation>Επόμενη απόπλεξη</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>स्थित</translation>
+        <translation>Ορισμος</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>चूक</translation>
+        <translation>Προεπιλογές</translation>
     </message>
     <message>
         <source>Instant recording</source>
-        <translation>तत्काल रिकॉर्डिंग</translation>
+        <translation>Άμεση εγγραφή</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>स्नैपशॉट लें</translation>
+        <translation>Λήψη στιγμιότυπου</translation>
     </message>
     <message>
         <source>-</source>
@@ -2137,147 +2151,147 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Next scale/zoom mode</source>
-        <translation>अगले मापक/ ज़ूम के मोड</translation>
+        <translation>Επόμενη κλίμακα/Μεγέθυνση</translation>
     </message>
     <message>
         <source>Preview channels</source>
-        <translation>चैनलों को पूर्वावलोकन करें </translation>
+        <translation>Προεπισκόπηση καναλιών </translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρονοδιάγραμμα</translation>
     </message>
     <message>
         <source>Current show info</source>
-        <translation type="unfinished"></translation>
+        <translation>Εμφάνιση τρέχον πληροφοριών </translation>
     </message>
 </context>
 <context>
     <name>SettingsGeneral</name>
     <message>
         <source>Language</source>
-        <translation>भाषा</translation>
+        <translation>Γλώσσα</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation>सिस्टम की डिफ़ॉल्ट भाषा</translation>
+        <translation>Προεπιλεγμένη γλώσσα συστήματος</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation>प्रचलन की भाषा</translation>
+        <translation>Προσαρμοσμένη γλώσσα</translation>
     </message>
     <message>
         <source>Session store</source>
-        <translation>सेशन संग्रह करना</translation>
+        <translation>Αποθηκευση συνεδρίας</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation>मात्रा याद रखें</translation>
+        <translation>Εκθυμηση εντασης</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation>पिछले चैनल को ऑटोप्ले करो</translation>
+        <translation>Αυτόματη αναπαραγωγή προηγούμενου καναλιου</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>चूक</translation>
+        <translation>Προεπιλογές</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation>डिफ़ॉल्ट पुनर्स्थापित करना</translation>
+        <translation>Επαναφορά προεπιλογών</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation>&lt;i&gt; यह आपके सभी सेटिंग्स डिफ़ॉल्ट को बहाल करेंगे. आपको परिवर्तनों को लागू करने की जरूरत है, इससे पहले कि वे प्रभाव में आये जाए.&lt;/ i&gt;</translation>
+        <translation>&lt;i&gt;Αυτό θα επαναφέρει όλες τις ρυθμίσεις στις προεπιλογές. Θα πρέπει να εφαρμοστούν οι αλλαγές, πριν να τεθεί σε ισχύ.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>You are using %1 version:</source>
-        <translation type="unfinished"></translation>
+        <translation>Χρησιμοποιείτε την %1 έκδοση:</translation>
     </message>
 </context>
 <context>
     <name>SettingsPlaylist</name>
     <message>
         <source>Default playlist</source>
-        <translation>डिफ़ॉल्ट प्लेलिस्ट</translation>
+        <translation>Προεπιλογή λίστας αναπαραγωγής</translation>
     </message>
     <message>
         <source>Network refresh</source>
-        <translation>नेटवर्क ताज़ा करे</translation>
+        <translation>Ανανέωση δικτύου</translation>
     </message>
     <message>
         <source>Refresh playlist on startup</source>
-        <translation>स्टार्टअप पर ताज़ा प्लेलिस्ट</translation>
+        <translation>Ανανέωση λίστας αναπαραγωγής κατά την εκκίνηση</translation>
     </message>
     <message>
         <source>Playlist URL:</source>
-        <translation>प्लेलिस्ट में URL:</translation>
+        <translation>Λίστα αναπαραγωγής URL:</translation>
     </message>
     <message>
         <source>Default radio category:</source>
-        <translation>डिफ़ॉल्ट रेडियो श्रेणी:</translation>
+        <translation>Προεπιλεγμένη κατηγορία ραδιοφώνου:</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation>UDPXY समर्थन</translation>
+        <translation>UDPXY υποστήριξη</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation>UDPXY समर्थन सक्षम करें</translation>
+        <translation>Ενεργοποίηση UDPXY υποστήριξης</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation>रूटर IP या नाम:</translation>
+        <translation>Δρομολογητής IP ή όνομα:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation>रूटर बंदरगाह:</translation>
+        <translation>Θύρα δρομολογητή:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;अद्यतन से आपका प्लेलिस्ट क्रम नहीं बदल जाएगा.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Η επικαιροποίηση δεν θα αλλάξει την σειρά της λίστας αναπαραγωγής σας.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Channel types categories</source>
-        <translation>चैनल के प्रकार की श्रेणियां</translation>
+        <translation>Κατηγορίες τύπων καναλιών </translation>
     </message>
     <message>
         <source>Default HD category:</source>
-        <translation>डिफ़ॉल्ट HD श्रेणी:</translation>
+        <translation>Προεπιλεγμένη κατηγορία HD:</translation>
     </message>
 </context>
 <context>
     <name>SettingsRecorder</name>
     <message>
         <source>Default recording directory</source>
-        <translation>डिफ़ॉल्ट रिकॉर्डिंग निर्देशिका</translation>
+        <translation>Προεπιλεγμένος κατάλογος καταγραφής</translation>
     </message>
     <message>
         <source>Default snapshots directory</source>
-        <translation>डिफ़ॉल्ट फोटो निर्देशिका</translation>
+        <translation>Προεπιλεγμένος κατάλογος στιγμιότυπων</translation>
     </message>
 </context>
 <context>
     <name>SettingsSchedule</name>
     <message>
         <source>XMLTV settings</source>
-        <translation>XMLTV सेटिंग्स</translation>
+        <translation>XMLTV Ρυθμίσεις</translation>
     </message>
     <message>
         <source>Refresh XMLTV file on startup</source>
-        <translation>प्रारंभ होने पर XMLTV को ताज़ा करें</translation>
+        <translation>Ανανέωση αρχείου XMLTV κατά την εκκίνηση</translation>
     </message>
     <message>
         <source>Download file</source>
-        <translation>फ़ाइल डाउनलोड करें</translation>
+        <translation>Λήψη αρχείου</translation>
     </message>
     <message>
         <source>Local file</source>
-        <translation type="unfinished"></translation>
+        <translation>Τοπικό αρχείο</translation>
     </message>
     <message>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;i&gt;Ρυθμίσεις XMLTV απαιτούν επανεκκίνηση.&lt;/i&gt;</translation>
     </message>
     <message>
         <source> h</source>
@@ -2292,131 +2306,131 @@ Your changes will not be saved.</source>
     <name>SettingsUi</name>
     <message>
         <source>General Interface Settings</source>
-        <translation>सामान्य अंतरफलक सेटिंग्स</translation>
+        <translation>Γενικές Ρυθμίσεις διασύνδεσης</translation>
     </message>
     <message>
         <source>Change channel</source>
-        <translation>चैनल बदलें</translation>
+        <translation>Αλλαγή καναλιού</translation>
     </message>
     <message>
         <source>Change volume</source>
-        <translation>वॉल्यूम बदलें</translation>
+        <translation>Αλλαγή έντασης</translation>
     </message>
     <message>
         <source>Minimise to tray</source>
-        <translation>ट्रे को छोटा करें</translation>
+        <translation>Απόκρυψη στο δίσκο</translation>
     </message>
     <message>
         <source>Show tray icon</source>
-        <translation>ट्रे चिह्न दिखाएँ</translation>
+        <translation>Εμφάνιση εικονιδίου πλαισίου συστήματος</translation>
     </message>
     <message>
         <source>Mouse wheel:</source>
-        <translation>माउस व्हील:</translation>
+        <translation>Τροχός ποντικιού:</translation>
     </message>
     <message>
         <source>Tray icon:</source>
-        <translation>ट्रे चिह्न:</translation>
+        <translation>Εικονίδιο δίσκου:</translation>
     </message>
     <message>
         <source>Show on mouse move</source>
-        <translation>माउस के चाल पर दिखाएं</translation>
+        <translation>Εμφάνιση κατα την κίνηση του ποντικιού</translation>
     </message>
     <message>
         <source>Remember main window size, position and open panels</source>
-        <translation>मुख्य विंडो का आकार,स्थिति, और खुले पैनल याद रखें</translation>
+        <translation>Εκθυμηση κύριου μέγεθους παραθύρου, θέσης και ανοιχτου πάνελ</translation>
     </message>
     <message>
         <source>Icon theme</source>
-        <translation>चिह्न प्रसंग</translation>
+        <translation>Θέμα εικονιδιου</translation>
     </message>
     <message>
         <source>Desktop theme</source>
-        <translation>डेस्कटॉप का विषय</translation>
+        <translation>Θέμα της επιφάνειας εργασίας</translation>
     </message>
     <message>
         <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;यह विकल्प को पुनः आरंभ करने की आवश्यकता है.&lt;/i&gt;</translation>
+        <translation>&lt;i&gt;Αυτή η επιλογή απαιτεί επανεκκίνηση.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">डिफ़ॉल्ट</translation>
+        <translation>Προεπιλογή</translation>
     </message>
     <message>
         <source>OSD in fullscreen:</source>
-        <translation type="unfinished"></translation>
+        <translation>OSD σε πληρης Οθονη</translation>
     </message>
 </context>
 <context>
     <name>ShowInfoTab</name>
     <message>
         <source>&lt;h3&gt;No show selected.&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Μη εμφάνιση επιλέγεται.&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Προηγούμενη</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished">रिकॉर्ड</translation>
+        <translation>Εγγραφή</translation>
     </message>
     <message>
         <source>Next</source>
-        <translation type="unfinished">अगला</translation>
+        <translation>Επόμενη</translation>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"></translation>
+        <translation>Καμία πληροφορία</translation>
     </message>
 </context>
 <context>
     <name>Timer</name>
     <message>
         <source>at</source>
-        <translation>में</translation>
+        <translation>σε</translation>
     </message>
 </context>
 <context>
     <name>TimersDisplayWidget</name>
     <message>
         <source>Clear</source>
-        <translation type="vanished">साफ़</translation>
+        <translation type="vanished">Εκκαθαριση</translation>
     </message>
 </context>
 <context>
     <name>TimersEditorWidget</name>
     <message>
         <source>Timers</source>
-        <translation type="vanished">टाइमर</translation>
+        <translation type="vanished">Χρονόμετρα</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="vanished">नाम:</translation>
+        <translation type="vanished">Όνομα:</translation>
     </message>
     <message>
         <source>Channel:</source>
-        <translation type="vanished">चैनल:</translation>
+        <translation type="vanished">Κανάλι:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="vanished">प्रकार:</translation>
+        <translation type="vanished">Τύπος:</translation>
     </message>
     <message>
         <source>Once</source>
-        <translation type="vanished">एक बार</translation>
+        <translation type="vanished">Μια Φορα</translation>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="vanished">दैनिक</translation>
+        <translation type="vanished">Καθημερινά</translation>
     </message>
     <message>
         <source>Weekly</source>
-        <translation type="vanished">साप्ताहिक</translation>
+        <translation type="vanished">Εβδομαδιαία</translation>
     </message>
     <message>
         <source>Weekdays</source>
-        <translation type="vanished">कार्यदिवस</translation>
+        <translation type="vanished">Ημέρες εβδομάδας</translation>
     </message>
     <message>
         <source>Url:</source>
@@ -2428,121 +2442,161 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Date:</source>
-        <translation type="vanished">तिथि:</translation>
+        <translation type="vanished">Ημερομηνία:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation type="vanished">प्रारंभ समय:</translation>
+        <translation type="vanished">Ωρα εναρξης:</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="vanished">अंत समय:</translation>
+        <translation type="vanished">Ώρα λήξης:</translation>
     </message>
     <message>
         <source>Disable:</source>
-        <translation type="vanished">अक्षम</translation>
+        <translation type="vanished">Απενεργοποιημένο:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="vanished">रिकॉर्डर</translation>
+        <translation type="vanished">Recorder</translation>
     </message>
     <message>
         <source>The recording start date is before today.
 Your changes will not be saved.</source>
-        <translation type="vanished">रिकॉर्डिंग शुरू होने की तिथि आज से पहले है.
-आपके परिवर्तनों को सहेजा नहीं किया जाएगा.</translation>
+        <translation type="vanished">Η ημερομηνία έναρξης εγγραφής είναι πριν από σήμερα.
+Οι αλλαγές σας δεν θα αποθηκευτούν.</translation>
     </message>
 </context>
 <context>
     <name>TimersModel</name>
     <message>
         <source>at</source>
-        <translation type="obsolete">में</translation>
+        <translation type="vanished">σε</translation>
     </message>
 </context>
 <context>
     <name>TrayIcon</name>
     <message>
         <source>Playing:</source>
-        <translation type="vanished">बजाना:</translation>
+        <translation type="vanished">Αναπαραγωγή:</translation>
     </message>
     <message>
         <source>Recording:</source>
-        <translation type="vanished">रिकॉर्डिंग:</translation>
+        <translation type="vanished">Εγγραφή:</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation type="vanished">रिकॉर्डर</translation>
+        <translation type="vanished">Recorder</translation>
+    </message>
+    <message>
+        <source>Recording stopped.</source>
+        <translation type="vanished">Η εγγραφή διακόπηκε.</translation>
+    </message>
+    <message>
+        <source>Recording %1 to %2 
+Stop manually!</source>
+        <translation type="vanished">Εγγραφή %1 %2
+Διακοπή με μη αυτόματο τρόπο!</translation>
+    </message>
+    <message>
+        <source>Recording %1 to %2 
+End time: %3</source>
+        <translation type="vanished">Εγγραφή %1 %2
+Ώρα λήξης: %3</translation>
     </message>
 </context>
 <context>
     <name>UpdateDialog</name>
     <message>
         <source>Update Information</source>
-        <translation type="vanished">अद्यतन जानकारी</translation>
+        <translation type="vanished">Ενημέρωση πληροφοριών</translation>
     </message>
     <message>
         <source>Current version:</source>
-        <translation type="vanished">वर्तमान संस्करण:</translation>
+        <translation type="vanished">Τρέχουσα έκδοση:</translation>
     </message>
     <message>
         <source>Stable version:</source>
-        <translation type="vanished">स्थिर संस्करण:</translation>
+        <translation type="vanished">Σταθερή έκδοση:</translation>
     </message>
     <message>
         <source>Date released:</source>
-        <translation type="vanished">तिथि जारी</translation>
+        <translation type="vanished">Ημερομηνία κυκλοφοριας:</translation>
     </message>
     <message>
-        <source>Information:</source>
-        <translation type="obsolete">जानकारी:</translation>
+        <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Χρησιμοποιειτε ηδη την πιο πρόσφατη έκδοση&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Χρησιμοποιείτε την υπό εξέλιξη έκδοση!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="obsolete">बंद करें</translation>
+        <translation type="vanished">Κλείσιμο</translation>
+    </message>
+    <message>
+        <source>Download</source>
+        <translation type="vanished">Λήψη </translation>
+    </message>
+    <message>
+        <source>Changelog:</source>
+        <translation type="vanished">Αρχείο καταγραφής αλλαγών:</translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="vanished">Εμφάνιση</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Αλλαγες σε %1&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
+        <translation type="vanished">&lt;h3&gt;Μια νέα ενημερωμένη έκδοση είναι διαθέσιμη!&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>
     <name>XmltvCrewMember</name>
     <message>
         <source>Director</source>
-        <translation>निर्देशक</translation>
+        <translation>Σκηνοθέτης</translation>
     </message>
     <message>
         <source>Actor</source>
-        <translation>अभिनेता</translation>
+        <translation>Ηθοποιός</translation>
     </message>
     <message>
         <source>Writer</source>
-        <translation>लेखक</translation>
+        <translation>Σεναριογραφος</translation>
     </message>
     <message>
         <source>Adapter</source>
-        <translation>अनुकूलक</translation>
+        <translation>Προσαρμογέας</translation>
     </message>
     <message>
         <source>Producer</source>
-        <translation>निर्माता</translation>
+        <translation>Παραγωγός</translation>
     </message>
     <message>
         <source>Composer</source>
-        <translation>संगीतकार</translation>
+        <translation>Συνθέτης</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>संपादक</translation>
+        <translation>Επεξεργαστής</translation>
     </message>
     <message>
         <source>Presenter</source>
-        <translation>प्रस्तुतकर्ता</translation>
+        <translation>Παρουσιαστής</translation>
     </message>
     <message>
         <source>Commentator</source>
-        <translation>समालोचक</translation>
+        <translation>Σχολιαστής</translation>
     </message>
     <message>
         <source>Guest</source>
-        <translation>अतिथि</translation>
+        <translation>Επισκέπτης</translation>
     </message>
 </context>
 </TS>

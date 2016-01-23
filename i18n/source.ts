@@ -254,6 +254,10 @@ This will stop recording in progress.</source>
         <source>Instant</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Check for updates...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -424,43 +428,6 @@ This will stop recording in progress.</source>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PasswordDialog</name>
-    <message>
-        <source>Login required</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Username:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Password:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remember password</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Your username or password is incorrect.
-Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;An unknown error has occured.
-Please, try again.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2209,6 +2176,14 @@ Your changes will not be saved.</source>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source> h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Offset:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsUi</name>
@@ -2296,57 +2271,6 @@ Your changes will not be saved.</source>
     <name>Timer</name>
     <message>
         <source>at</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>UpdateDialog</name>
-    <message>
-        <source>Update Information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Current version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stable version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Date released:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Changelog:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

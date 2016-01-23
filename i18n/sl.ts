@@ -301,6 +301,10 @@ To bo ustavilo trenutno snemanje.</translation>
         <source>Instant</source>
         <translation>Instantno</translation>
     </message>
+    <message>
+        <source>Check for updates...</source>
+        <translation>Preveri za posodobitve...</translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -479,39 +483,39 @@ To bo ustavilo trenutno snemanje.</translation>
     <name>PasswordDialog</name>
     <message>
         <source>Login required</source>
-        <translation>Obvezna prijava</translation>
+        <translation type="vanished">Obvezna prijava</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation>Uporabniško ime:</translation>
+        <translation type="vanished">Uporabniško ime:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Geslo:</translation>
+        <translation type="vanished">Geslo:</translation>
     </message>
     <message>
         <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Za uporabo aplikacije se morate prijaviti.&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;Za uporabo aplikacije se morate prijaviti.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Remember password</source>
-        <translation>Zapomni si geslo</translation>
+        <translation type="vanished">Zapomni si geslo</translation>
     </message>
     <message>
         <source>&lt;b&gt;Your username or password is incorrect.
 Please, try again.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Vaše uporabniško ime ali geslo ni pravilno.
+        <translation type="vanished">&lt;b&gt;Vaše uporabniško ime ali geslo ni pravilno.
 Poskusite znova.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;An unknown error has occured.
 Please, try again.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Zgodila se je neznana napaka.
+        <translation type="vanished">&lt;b&gt;Zgodila se je neznana napaka.
 Poskusite znova.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Prijava ...&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;Prijava ...&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -2334,6 +2338,14 @@ Vaše nastavitve ne bodo shranjene.</translation>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Nastavitve XMLTV zahtevajo ponovni zagon.&lt;/i&gt;</translation>
     </message>
+    <message>
+        <source> h</source>
+        <translation> h</translation>
+    </message>
+    <message>
+        <source>Offset:</source>
+        <translation>Zamik:</translation>
+    </message>
 </context>
 <context>
     <name>SettingsUi</name>
@@ -2542,19 +2554,19 @@ Končni čas: %3</translation>
     <name>UpdateDialog</name>
     <message>
         <source>Update Information</source>
-        <translation>Informacije o posodobitvah</translation>
+        <translation type="vanished">Informacije o posodobitvah</translation>
     </message>
     <message>
         <source>Current version:</source>
-        <translation>Trenutna različica:</translation>
+        <translation type="vanished">Trenutna različica:</translation>
     </message>
     <message>
         <source>Stable version:</source>
-        <translation>Stabilna različica:</translation>
+        <translation type="vanished">Stabilna različica:</translation>
     </message>
     <message>
         <source>Date released:</source>
-        <translation>Datum izdaje:</translation>
+        <translation type="vanished">Datum izdaje:</translation>
     </message>
     <message>
         <source>Information:</source>
@@ -2562,11 +2574,11 @@ Končni čas: %3</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Uporabljate zadnjo različico!&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Uporabljate zadnjo različico!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Uporabljate razvojno različico!&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Uporabljate razvojno različico!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
@@ -2574,27 +2586,27 @@ Končni čas: %3</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zapri</translation>
+        <translation type="vanished">Zapri</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Prenesi</translation>
+        <translation type="vanished">Prenesi</translation>
     </message>
     <message>
         <source>Changelog:</source>
-        <translation>Spremembe:</translation>
+        <translation type="vanished">Spremembe:</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Oglej</translation>
+        <translation type="vanished">Oglej</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Spremembe v %1&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Spremembe v %1&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Na voljo je nova posodobitev!&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Na voljo je nova posodobitev!&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>

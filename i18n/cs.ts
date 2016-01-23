@@ -302,6 +302,10 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
         <source>Instant</source>
         <translation type="unfinished">Okamžitý</translation>
     </message>
+    <message>
+        <source>Check for updates...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -480,39 +484,35 @@ Tím se zastaví i právě probíhající nahrávání.</translation>
     <name>PasswordDialog</name>
     <message>
         <source>Login required</source>
-        <translation>Přihlášení vyžadováno</translation>
+        <translation type="vanished">Přihlášení vyžadováno</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation>Uživatelské jméno:</translation>
+        <translation type="vanished">Uživatelské jméno:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Heslo:</translation>
+        <translation type="vanished">Heslo:</translation>
     </message>
     <message>
         <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Abyste tento program mohl používat, musíte se přihlásit.&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;Abyste tento program mohl používat, musíte se přihlásit.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Remember password</source>
-        <translation>Zapamatovat si heslo</translation>
+        <translation type="vanished">Zapamatovat si heslo</translation>
     </message>
     <message>
         <source>&lt;b&gt;Your username or password is incorrect.
 Please, try again.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Vaše uživatelské jméno a heslo jsou nesprávné.
+        <translation type="vanished">&lt;b&gt;Vaše uživatelské jméno a heslo jsou nesprávné.
 Zkuste to, prosím, znovu.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;An unknown error has occured.
 Please, try again.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Vyskytla se neznámá chyba.
+        <translation type="vanished">&lt;b&gt;Vyskytla se neznámá chyba.
 Zkuste to, prosím, znovu.&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2335,6 +2335,14 @@ Your changes will not be saved.</source>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Nastavení pro XMLTV vyžadují opětovné spuštění.&lt;/i&gt;</translation>
     </message>
+    <message>
+        <source> h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Offset:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsUi</name>
@@ -2545,19 +2553,19 @@ End time: %3</source>
     <name>UpdateDialog</name>
     <message>
         <source>Update Information</source>
-        <translation>Informace o aktualizacích</translation>
+        <translation type="vanished">Informace o aktualizacích</translation>
     </message>
     <message>
         <source>Current version:</source>
-        <translation>Současná verze:</translation>
+        <translation type="vanished">Současná verze:</translation>
     </message>
     <message>
         <source>Stable version:</source>
-        <translation>Stálá verze:</translation>
+        <translation type="vanished">Stálá verze:</translation>
     </message>
     <message>
         <source>Date released:</source>
-        <translation>Datum vydání:</translation>
+        <translation type="vanished">Datum vydání:</translation>
     </message>
     <message>
         <source>Information:</source>
@@ -2565,11 +2573,11 @@ End time: %3</source>
     </message>
     <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Již používáte poslední verzi!&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Již používáte poslední verzi!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Používáte vývojářskou verzi!&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Používáte vývojářskou verzi!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
@@ -2577,27 +2585,7 @@ End time: %3</source>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Zavřít</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Changelog:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">Zavřít</translation>
     </message>
 </context>
 <context>

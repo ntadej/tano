@@ -1,0 +1,10 @@
+[main]
+host = https://www.transifex.com
+
+[tano.master]
+file_filter = i18n/<lang>.ts
+source_file = i18n/source.ts
+source_lang = en
+trans.None = i18n/source.ts
+type = QT
+

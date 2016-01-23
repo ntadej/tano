@@ -301,6 +301,10 @@ Ova će radnja prekinuti snimanje u toku.</translation>
         <source>Instant</source>
         <translation type="unfinished">Instant</translation>
     </message>
+    <message>
+        <source>Check for updates...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -479,39 +483,35 @@ Ova će radnja prekinuti snimanje u toku.</translation>
     <name>PasswordDialog</name>
     <message>
         <source>Login required</source>
-        <translation>Zahtjeva prijavu</translation>
+        <translation type="vanished">Zahtjeva prijavu</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation>Korisničko ime:</translation>
+        <translation type="vanished">Korisničko ime:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Lozinka:</translation>
+        <translation type="vanished">Lozinka:</translation>
     </message>
     <message>
         <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Morate se prijaviti da biste koristili ovu aplikaciju.&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;Morate se prijaviti da biste koristili ovu aplikaciju.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Remember password</source>
-        <translation>Zapamti lozinku</translation>
+        <translation type="vanished">Zapamti lozinku</translation>
     </message>
     <message>
         <source>&lt;b&gt;Your username or password is incorrect.
 Please, try again.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Vaše korisničko ime ili lozinka su neispravni.
+        <translation type="vanished">&lt;b&gt;Vaše korisničko ime ili lozinka su neispravni.
 Molimo, pokušajte ponovo.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;An unknown error has occured.
 Please, try again.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Došlo je do nepoznate greške.
+        <translation type="vanished">&lt;b&gt;Došlo je do nepoznate greške.
 Molimo, pokušajte ponovo.&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2334,6 +2334,14 @@ Your changes will not be saved.</source>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
         <translation>&lt;i&gt;XMLTV postavke zahtjevaju restart.&lt;/i&gt;</translation>
     </message>
+    <message>
+        <source> h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Offset:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsUi</name>
@@ -2542,19 +2550,19 @@ Vrijeme kraja: %3</translation>
     <name>UpdateDialog</name>
     <message>
         <source>Update Information</source>
-        <translation>Informacije o nadogradnji</translation>
+        <translation type="vanished">Informacije o nadogradnji</translation>
     </message>
     <message>
         <source>Current version:</source>
-        <translation>Trenutna verzija:</translation>
+        <translation type="vanished">Trenutna verzija:</translation>
     </message>
     <message>
         <source>Stable version:</source>
-        <translation>Stabilna verzija:</translation>
+        <translation type="vanished">Stabilna verzija:</translation>
     </message>
     <message>
         <source>Date released:</source>
-        <translation>Datum objave:</translation>
+        <translation type="vanished">Datum objave:</translation>
     </message>
     <message>
         <source>Information:</source>
@@ -2562,11 +2570,11 @@ Vrijeme kraja: %3</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Već koristite posljednju verziju!&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Već koristite posljednju verziju!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Koristite verziju koja se razvija!&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Koristite verziju koja se razvija!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
@@ -2574,27 +2582,7 @@ Vrijeme kraja: %3</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zatvori</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Changelog:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Zatvori</translation>
     </message>
 </context>
 <context>

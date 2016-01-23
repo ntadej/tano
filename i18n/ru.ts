@@ -284,6 +284,10 @@ This will stop recording in progress.</source>
         <source>Instant</source>
         <translation type="unfinished">Текущий</translation>
     </message>
+    <message>
+        <source>Check for updates...</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MenuAspectRatio</name>
@@ -462,39 +466,39 @@ This will stop recording in progress.</source>
     <name>PasswordDialog</name>
     <message>
         <source>Login required</source>
-        <translation>Требуется авторизация</translation>
+        <translation type="vanished">Требуется авторизация</translation>
     </message>
     <message>
         <source>Username:</source>
-        <translation>Логин:</translation>
+        <translation type="vanished">Логин:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Пароль:</translation>
+        <translation type="vanished">Пароль:</translation>
     </message>
     <message>
         <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Авторизуйтесь для использования этого приложения.&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;Авторизуйтесь для использования этого приложения.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Remember password</source>
-        <translation>Запомнить пароль</translation>
+        <translation type="vanished">Запомнить пароль</translation>
     </message>
     <message>
         <source>&lt;b&gt;Your username or password is incorrect.
 Please, try again.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Неверный логин или пароль.
+        <translation type="vanished">&lt;b&gt;Неверный логин или пароль.
 Пожалуйста, попробуйте снова.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;An unknown error has occured.
 Please, try again.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Неизвестная ошибка.
+        <translation type="vanished">&lt;b&gt;Неизвестная ошибка.
 Пожалуйста, попробуйте снова.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Авторизация...&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;Авторизация...&lt;/b&gt;</translation>
     </message>
 </context>
 <context>
@@ -2316,6 +2320,14 @@ Your changes will not be saved.</source>
         <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
         <translation>&lt;i&gt;Настройки XMLTV требуют перезапуска.&lt;/i&gt;</translation>
     </message>
+    <message>
+        <source> h</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Offset:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>SettingsUi</name>
@@ -2524,19 +2536,19 @@ End time: %3</source>
     <name>UpdateDialog</name>
     <message>
         <source>Update Information</source>
-        <translation>Информация об обновлении</translation>
+        <translation type="vanished">Информация об обновлении</translation>
     </message>
     <message>
         <source>Current version:</source>
-        <translation>Текущая версия:</translation>
+        <translation type="vanished">Текущая версия:</translation>
     </message>
     <message>
         <source>Stable version:</source>
-        <translation>Стабильная версия:</translation>
+        <translation type="vanished">Стабильная версия:</translation>
     </message>
     <message>
         <source>Date released:</source>
-        <translation>Дата выпуска:</translation>
+        <translation type="vanished">Дата выпуска:</translation>
     </message>
     <message>
         <source>Information:</source>
@@ -2544,35 +2556,35 @@ End time: %3</source>
     </message>
     <message>
         <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Вы используете последнюю версию!&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Вы используете последнюю версию!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Вы используете версию для разработчиков!&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Вы используете версию для разработчиков!&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished">Закрыть</translation>
+        <translation type="obsolete">Закрыть</translation>
     </message>
     <message>
         <source>Download</source>
-        <translation>Скачать</translation>
+        <translation type="vanished">Скачать</translation>
     </message>
     <message>
         <source>Changelog:</source>
-        <translation>Спиок изменений:</translation>
+        <translation type="vanished">Спиок изменений:</translation>
     </message>
     <message>
         <source>View</source>
-        <translation>Показать</translation>
+        <translation type="vanished">Показать</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Изменения в %1&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Изменения в %1&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Доступно новое обновление!&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Доступно новое обновление!&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>

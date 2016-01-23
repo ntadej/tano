@@ -7,7 +7,6 @@ release/
 
 # Project files
 CMakeLists.txt.user*
-.tx/*
 
 # Debian/build
 obj*
