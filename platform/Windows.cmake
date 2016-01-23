@@ -34,3 +34,6 @@ ELSE()
     INSTALL(FILES ${CMAKE_SOURCE_DIR}/platform/windows/winsparkle/win32/WinSparkle.dll
             DESTINATION "${CMAKE_INSTALL_PREFIX}")
 ENDIF()
+
+ADD_CUSTOM_TARGET(windows
+    "${QT_BIN_DIR}/windeployqt.exe" "${CMAKE_INSTALL_PREFIX}/${PROJECT_NAME}.exe")

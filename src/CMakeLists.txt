@@ -120,7 +120,7 @@ ENDIF()
 # Here the needed Libraries are added to the link command.
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} VLCQt::Core
                       Qt5::Concurrent Qt5::Gui Qt5::Network Qt5::PrintSupport Qt5::Sql Qt5::Widgets Qt5::Xml
-                      ${TANO_WIDGETS_LIB} ${TANO_CONFIG_LIB})
+                      ${TANO_CONFIG_LIB})
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} VLCQt::Widgets)
 
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
