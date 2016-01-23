@@ -39,6 +39,8 @@ public:
     void setUpdate(bool enabled);
     bool remote() const;
     void setRemote(bool enabled);
+    int offset() const;
+    void setOffset(int hours);
 
 protected:
     void changeEvent(QEvent *e);

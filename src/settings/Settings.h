@@ -256,6 +256,11 @@ public:
     static const QString KEY_XMLTV_UPDATE_REMOTE;
     static const bool DEFAULT_XMLTV_UPDATE_REMOTE;
 
+    inline int xmltvHoursOffset() const { return _xmltvHoursOffset; }
+    inline void setXmltvHoursOffset(int i) { _xmltvHoursOffset = i; }
+    static const QString KEY_XMLTV_HOURS_OFFSET;
+    static const int DEFAULT_XMLTV_HOURS_OFFSET;
+
 private:
     QVariantMap _map;
 
@@ -319,6 +324,7 @@ private:
     bool _xmltvUpdate;
     QString _xmltvUpdateLocation;
     bool _xmltvUpdateRemote;
+    int _xmltvHoursOffset;
 };
 
 #endif // TANO_SETTINGS_H_

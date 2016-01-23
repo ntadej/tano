@@ -81,3 +81,13 @@ void SettingsSchedule::setRemote(bool enabled)
     ui->radioFile->setChecked(!enabled);
     ui->radioNetwork->setChecked(enabled);
 }
+
+int SettingsSchedule::offset() const
+{
+    return ui->spinOffset->value();
+}
+
+void SettingsSchedule::setOffset(int hours)
+{
+    ui->spinOffset->setValue(hours);
+}

@@ -70,6 +70,7 @@ Settings::Settings(QObject *parent)
     _map[KEY_XMLTV_UPDATE] = DEFAULT_XMLTV_UPDATE;
     _map[KEY_XMLTV_UPDATE_LOCATION] = DEFAULT_XMLTV_UPDATE_LOCATION;
     _map[KEY_XMLTV_UPDATE_REMOTE] = DEFAULT_XMLTV_UPDATE_REMOTE;
+    _map[KEY_XMLTV_HOURS_OFFSET] = DEFAULT_XMLTV_HOURS_OFFSET;
 
     readSettings();
 }
@@ -147,6 +148,7 @@ void Settings::writeSettings()
         setValue(KEY_XMLTV_UPDATE, xmltvUpdate());
         setValue(KEY_XMLTV_UPDATE_LOCATION, xmltvUpdateLocation());
         setValue(KEY_XMLTV_UPDATE_REMOTE, xmltvUpdateRemote());
+        setValue(KEY_XMLTV_HOURS_OFFSET, xmltvHoursOffset());
     }
 
     sync();
@@ -204,6 +206,7 @@ void Settings::readSettings()
     setXmltvUpdate(value(KEY_XMLTV_UPDATE, defaultValue(KEY_XMLTV_UPDATE)).toBool());
     setXmltvUpdateLocation(value(KEY_XMLTV_UPDATE_LOCATION, defaultValue(KEY_XMLTV_UPDATE_LOCATION)).toString());
     setXmltvUpdateRemote(value(KEY_XMLTV_UPDATE_REMOTE, defaultValue(KEY_XMLTV_UPDATE_REMOTE)).toBool());
+    setXmltvHoursOffset(value(KEY_XMLTV_HOURS_OFFSET, defaultValue(KEY_XMLTV_HOURS_OFFSET)).toInt());
 }
 
 QVariant Settings::defaultValue(const QString &key) const

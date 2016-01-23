@@ -78,3 +78,4 @@ const QString Settings::KEY_SESSION_VOLUME = "session/volume";
 const QString Settings::KEY_XMLTV_UPDATE = "xmltv/update";
 const QString Settings::KEY_XMLTV_UPDATE_LOCATION = "xmltv/updatelocation";
 const QString Settings::KEY_XMLTV_UPDATE_REMOTE = "xmltv/updateremote";
+const QString Settings::KEY_XMLTV_HOURS_OFFSET = "xmltv/offset";

@@ -12,8 +12,7 @@
   </property>
   <property name="windowIcon">
    <iconset theme="preferences-desktop">
-    <normaloff/>
-   </iconset>
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
@@ -62,6 +61,13 @@
             </property>
            </widget>
           </item>
+          <item row="4" column="0" colspan="2">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</string>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="0" colspan="2">
            <widget class="QCheckBox" name="checkRefresh">
             <property name="text">
@@ -69,15 +75,8 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="0" colspan="2">
-           <widget class="BrowseWidget" name="location" native="true"/>
-          </item>
           <item row="3" column="0" colspan="2">
-           <widget class="QLabel" name="label">
-            <property name="text">
-             <string>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</string>
-            </property>
-           </widget>
+           <widget class="BrowseWidget" name="location" native="true"/>
           </item>
           <item row="1" column="1">
            <widget class="QRadioButton" name="radioNetwork">
@@ -89,6 +88,26 @@
             </property>
             <property name="checked">
              <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="spinOffset">
+            <property name="suffix">
+             <string> h</string>
+            </property>
+            <property name="minimum">
+             <number>-12</number>
+            </property>
+            <property name="maximum">
+             <number>12</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Offset:</string>
             </property>
            </widget>
           </item>

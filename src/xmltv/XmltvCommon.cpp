@@ -18,6 +18,7 @@
 
 #include <QtCore/QDateTime>
 
+#include "settings/Settings.h"
 #include "xmltv/XmltvCommon.h"
 
 QString Tano::Xmltv::commaSeparator()
@@ -40,6 +41,8 @@ QString Tano::Xmltv::dateFormatDisplay()
 
 int Tano::Xmltv::parse(const QString &data)
 {
+    QScopedPointer<Settings> settings(new Settings());
+
     QString d = data;
     QRegExp exp = QRegExp(" .[0-9][0-9][0-9][0-9]");
     QDateTime current = QDateTime::currentDateTime();
@@ -52,7 +55,7 @@ int Tano::Xmltv::parse(const QString &data)
     QDateTime date = QDateTime::fromString(d, Tano::Xmltv::dateFormat());
     date.addSecs(- zone.left(2).toInt() * 3600 - zone.right(2).toInt() * 60);
 
-    return date.toTime_t() + timeZoneDiff();
+    return date.toTime_t() + timeZoneDiff() + settings->xmltvHoursOffset() * 3600;
 }
 
 QString Tano::Xmltv::timeFormatDisplay()

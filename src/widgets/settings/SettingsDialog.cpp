@@ -146,6 +146,7 @@ void SettingsDialog::apply()
         _settings->setXmltvUpdate(ui->schedule->update());
         _settings->setXmltvUpdateLocation(ui->schedule->location());
         _settings->setXmltvUpdateRemote(ui->schedule->remote());
+        _settings->setXmltvHoursOffset(ui->schedule->offset());
     }
 
     // Recorder
@@ -205,6 +206,7 @@ void SettingsDialog::defaults()
     ui->schedule->setUpdate(_settings->defaultValue(Settings::KEY_XMLTV_UPDATE).toBool());
     ui->schedule->setLocation(_settings->defaultValue(Settings::KEY_XMLTV_UPDATE_LOCATION).toString());
     ui->schedule->setRemote(_settings->defaultValue(Settings::KEY_XMLTV_UPDATE_REMOTE).toBool());
+    ui->schedule->setOffset(_settings->defaultValue(Settings::KEY_XMLTV_HOURS_OFFSET).toInt());
 
     // Recorder
     ui->recorder->setDirectory(_settings->defaultValue(Settings::KEY_RECORDER_DIRECTORY).toString());
@@ -259,6 +261,7 @@ void SettingsDialog::read()
     ui->schedule->setUpdate(_settings->xmltvUpdate());
     ui->schedule->setLocation(_settings->xmltvUpdateLocation());
     ui->schedule->setRemote(_settings->xmltvUpdateRemote());
+    ui->schedule->setOffset(_settings->xmltvHoursOffset());
 
     // Recorder
     ui->recorder->setDirectory(_settings->recorderDirectory());

@@ -108,3 +108,4 @@ const int Settings::DEFAULT_SESSION_VOLUME = 50;
 const bool Settings::DEFAULT_XMLTV_UPDATE = false;
 const QString Settings::DEFAULT_XMLTV_UPDATE_LOCATION = "xmltv.xml";
 const bool Settings::DEFAULT_XMLTV_UPDATE_REMOTE = false;
+const int Settings::DEFAULT_XMLTV_HOURS_OFFSET = 0;
