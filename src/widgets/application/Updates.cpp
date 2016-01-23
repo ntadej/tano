@@ -18,23 +18,34 @@
 
 #include "application/Updates.h"
 
-#ifdef Q_OS_MAC
+#if defined(Q_OS_MAC)
     #include "application/UpdatesOSX.h"
+#elif defined(Q_OS_WIN32)
+    #include "winsparkle.h"
 #endif
 
 Updates::Updates(QObject *parent)
     : QObject(parent)
 {
-#ifdef Q_OS_MAC
+#if defined(Q_OS_MAC)
     _backend = new UpdatesOSX();
+#elif defined(Q_OS_WIN32)
+    win_sparkle_init();
 #endif
 }
 
-Updates::~Updates() { }
+Updates::~Updates()
+{
+#if defined(Q_OS_WIN32)
+    win_sparkle_cleanup();
+#endif
+}
 
 void Updates::check()
 {
-#ifdef Q_OS_MAC
+#if defined(Q_OS_MAC)
     _backend->checkForUpdates();
+#elif defined(Q_OS_WIN32)
+    win_sparkle_check_update_with_ui();
 #endif
 }

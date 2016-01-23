@@ -23,3 +23,14 @@ INSTALL(FILES ${VLCQtWidgetsLocation}/bin/VLCQtWidgets.dll DESTINATION "${CMAKE_
 INSTALL(FILES ${VLCQtCoreLocation}/bin/libvlc.dll DESTINATION "${CMAKE_INSTALL_PREFIX}")
 INSTALL(FILES ${VLCQtCoreLocation}/bin/libvlccore.dll DESTINATION "${CMAKE_INSTALL_PREFIX}")
 INSTALL(DIRECTORY ${VLCQtCoreLocation}/bin/plugins/ DESTINATION "${CMAKE_INSTALL_PREFIX}/plugins")
+
+SET(WINSPARKLE_INCLUDE ${CMAKE_SOURCE_DIR}/platform/windows/winsparkle/include)
+IF(BITS)
+    SET(WINSPARKLE_LIBRARY ${CMAKE_SOURCE_DIR}/platform/windows/winsparkle/win64/WinSparkle.lib)
+    INSTALL(FILES ${CMAKE_SOURCE_DIR}/platform/windows/winsparkle/win64/WinSparkle.dll
+            DESTINATION "${CMAKE_INSTALL_PREFIX}")
+ELSE()
+    SET(WINSPARKLE_LIBRARY ${CMAKE_SOURCE_DIR}/platform/windows/winsparkle/win32/WinSparkle.lib)
+    INSTALL(FILES ${CMAKE_SOURCE_DIR}/platform/windows/winsparkle/win32/WinSparkle.dll
+            DESTINATION "${CMAKE_INSTALL_PREFIX}")
+ENDIF()

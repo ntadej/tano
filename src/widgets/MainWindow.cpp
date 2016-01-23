@@ -92,7 +92,6 @@ MainWindow::MainWindow(Arguments *args)
       _trayIcon(0)
 {
     _arguments = args;
-    _updates = new Updates(this);
 
     ui->setupUi(this);
 
@@ -118,12 +117,30 @@ MainWindow::MainWindow(Arguments *args)
 
 MainWindow::~MainWindow()
 {
+    delete _updates;
+
     if (_playlistEditor)
         delete _playlistEditor;
 
     delete ui;
 
     delete _recorder;
+}
+
+void MainWindow::showEvent(QShowEvent *event)
+{
+    QMainWindow::showEvent(event);
+
+    emit windowWasShown();
+}
+
+void MainWindow::initUpdates()
+{
+    _updates = new Updates(this);
+
+#if !defined(Q_OS_LINUX)
+    connect(ui->actionUpdate, SIGNAL(triggered()), _updates, SLOT(check()));
+#endif
 }
 
 void MainWindow::exit()
@@ -385,6 +402,9 @@ void MainWindow::createDesktopStartup()
 
 void MainWindow::createConnections()
 {
+    connect(this, SIGNAL(windowWasShown()), this, SLOT(initUpdates()),
+            Qt::ConnectionType(Qt::QueuedConnection | Qt::UniqueConnection));
+
     connect(ui->tabs, SIGNAL(currentChanged(QWidget *)), this, SLOT(currentWidget(QWidget *)));
     connect(ui->tabs, SIGNAL(currentChanged(QWidget *)), _recorder, SLOT(currentWidget(QWidget *)));
     connect(_playlistTab, SIGNAL(changeTo(QWidget *)), ui->tabs, SLOT(setCurrentWidget(QWidget *)));
@@ -453,10 +473,6 @@ void MainWindow::createConnections()
     connect(_showInfoTab, SIGNAL(requestNext(QString, QString)), _xmltv, SLOT(requestProgrammeNext(QString, QString)));
     connect(_showInfoTab, SIGNAL(requestPrevious(QString, QString)), _xmltv, SLOT(requestProgrammePrevious(QString, QString)));
     connect(_playlistTab->playlist(), SIGNAL(scheduleRequested(Channel *)), _scheduleTab, SLOT(channel(Channel *)));
-
-#if !defined(Q_OS_LINUX)
-    connect(ui->actionUpdate, SIGNAL(triggered()), _updates, SLOT(check()));
-#endif
 
     connect(_mediaPlayer, SIGNAL(stateChanged(Vlc::State)), this, SLOT(setState(Vlc::State)));
     connect(_mediaPlayer, SIGNAL(vout(int)), this, SLOT(showVideo(int)));

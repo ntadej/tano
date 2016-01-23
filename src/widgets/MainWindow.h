@@ -70,12 +70,17 @@ public slots:
     void dockClicked();
 
 protected:
+    void showEvent(QShowEvent *event);
     void changeEvent(QEvent *e);
     void closeEvent(QCloseEvent *event);
     bool eventFilter(QObject *obj,
                      QEvent *event);
 
+signals:
+    void windowWasShown();
+
 private slots:
+    void initUpdates();
     void exit();
     void exitLogout();
     void aboutTano();
