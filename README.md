@@ -64,7 +64,7 @@ Free Software Foundation and appearing in the file LICENSE.md.
 [license]: https://github.com/ntadej/tano/blob/master/LICENSE.md
 [appveyor]: https://ci.appveyor.com/project/ntadej/tano
 
-[web-img]: https://img.shields.io/badge/web-tano.si/tano-player/-green.svg
+[web-img]: https://img.shields.io/badge/web-tano.si%2Ftano--player%2F-green.svg
 [license-img]: https://img.shields.io/github/license/ntadej/tano.svg
 [release-img]: https://img.shields.io/github/release/ntadej/tano.svg
 [download-img]: https://img.shields.io/github/downloads/ntadej/tano/total.svg
