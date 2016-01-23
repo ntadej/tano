@@ -256,11 +256,12 @@ void MainWindow::changeEvent(QEvent *e)
     switch (e->type()) {
         case QEvent::LanguageChange:
             ui->retranslateUi(this);
-
-            ui->tabs->renameTab(0, tr("Channels"));
-            ui->tabs->renameTab(1, tr("Schedule"));
-            ui->tabs->renameTab(2, tr("Show Info"));
-            ui->tabs->renameTab(3, tr("Recorder"));
+            if (ui->tabs->tabCount()) {
+                ui->tabs->renameTab(0, tr("Channels"));
+                ui->tabs->renameTab(1, tr("Schedule"));
+                ui->tabs->renameTab(2, tr("Show Info"));
+                ui->tabs->renameTab(3, tr("Recorder"));
+            }
             break;
         default:
             break;
