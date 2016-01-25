@@ -16,7 +16,6 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>./
 #############################################################################
 SET(Project_Application_Srcs
-    application/Arguments.cpp
     application/Common.cpp
     application/LocaleManager.cpp
     application/LocalServer.cpp

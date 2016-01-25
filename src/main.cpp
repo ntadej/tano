@@ -21,22 +21,20 @@
 
 int main(int argc, char *argv[])
 {
-    if (!TanoApplication::preInit())
-        return -10;
+    TanoApplication::preInit();
 
     TanoApplication instance(argc, argv);
     // Is another instance of the program is already running
     if (!instance.shouldContinue())
         return 0;
 
-    if (!instance.postInit())
-        return -10;
+    instance.postInit();
 
-    MainWindow main(instance.arguments());
+    MainWindow main;
     main.show();
 
-    QObject::connect(&instance, SIGNAL(activate()), &main, SLOT(single()));
-    QObject::connect(&instance, SIGNAL(dockClicked()), &main, SLOT(dockClicked()));
+    QObject::connect(&instance, &TanoApplication::activate, &main, &MainWindow::single);
+    QObject::connect(&instance, &TanoApplication::dockClicked, &main, &MainWindow::dockClicked);
 
     return instance.exec();
 }

@@ -35,7 +35,6 @@
 
 #include "application/Common.h"
 #include "common/Resources.h"
-#include "application/Arguments.h"
 #include "application/LocaleManager.h"
 #include "network/NetworkDownload.h"
 #include "network/NetworkUdpxy.h"
@@ -73,7 +72,7 @@
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
-MainWindow::MainWindow(Arguments *args)
+MainWindow::MainWindow()
     : QMainWindow(),
       ui(new Ui::MainWindow),
       _hasPlaylist(false),
@@ -90,8 +89,6 @@ MainWindow::MainWindow(Arguments *args)
       _playlistEditor(0),
       _trayIcon(0)
 {
-    _arguments = args;
-
     ui->setupUi(this);
 
 #if defined(Q_OS_LINUX)
@@ -349,7 +346,7 @@ void MainWindow::createGui()
 
 void MainWindow::createBackend()
 {
-    _mediaPlayer = new MediaPlayer(_arguments, this);
+    _mediaPlayer = new MediaPlayer(this);
 
     qDebug() << "Initialised: Backend";
 }
@@ -382,8 +379,6 @@ void MainWindow::createDesktopStartup()
 {
     QScopedPointer<Settings> settings(new Settings(this));
     _defaultPlaylist = settings->playlist();
-    if (!_arguments->value(Argument::Playlist).isEmpty())
-        _defaultPlaylist = _arguments->value(Argument::Playlist);
 
     _width = settings->width();
     _height = settings->height();

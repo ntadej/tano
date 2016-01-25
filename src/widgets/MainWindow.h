@@ -28,7 +28,6 @@
 class QShortcut;
 class QWidgetAction;
 
-class Arguments;
 class Channel;
 class ChannelSelect;
 class DesktopShortcuts;
@@ -62,7 +61,7 @@ class MainWindow : public QMainWindow
 {
 Q_OBJECT
 public:
-    explicit MainWindow(Arguments *args);
+    explicit MainWindow();
     ~MainWindow();
 
 public slots:
@@ -152,7 +151,6 @@ private:
     QString _wheelType;
 
     //Main
-    Arguments *_arguments;
     ChannelSelect *_select;
     LocaleManager *_locale;
     MediaPlayer *_mediaPlayer;

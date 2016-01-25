@@ -44,6 +44,11 @@ void Tano::Log::output(QtMsgType type,
     QString debugdate = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
     switch (type)
     {
+#if QT_VERSION >= 0x050500
+    case QtInfoMsg:
+        debugdate += " [I]";
+        break;
+#endif
     case QtDebugMsg:
         debugdate += " [D]";
         break;

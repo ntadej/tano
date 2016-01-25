@@ -21,8 +21,6 @@
 
 #include "application/SingleApplication.h"
 
-class Arguments;
-
 class TanoApplication : public SingleApplication
 {
     Q_OBJECT
@@ -31,9 +29,8 @@ public:
                              char **argv);
     ~TanoApplication();
 
-    inline Arguments *arguments() { return _arguments; }
-    static bool preInit();
-    bool postInit();
+    static void preInit();
+    void postInit();
 
 #ifdef Q_OS_MAC
     void setupDockHandler();
@@ -44,9 +41,6 @@ public slots:
 
 signals:
     void dockClicked();
-
-private:
-    Arguments *_arguments;
 };
 
 #endif // TANO_TANOAPPLICATION_H_

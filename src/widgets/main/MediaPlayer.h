@@ -15,7 +15,6 @@ class VlcControlAudio;
 class VlcControlVideo;
 class VlcWidgetVideo;
 
-class Arguments;
 class MenuAspectRatio;
 class MenuCore;
 class MenuCropRatio;
@@ -31,8 +30,7 @@ class MediaPlayer : public QWidget
 {
 Q_OBJECT
 public:
-    explicit MediaPlayer(Arguments *arguments,
-                         QWidget *parent = 0);
+    explicit MediaPlayer(QWidget *parent = 0);
     ~MediaPlayer();
 
     void createSession(bool valid);
@@ -86,7 +84,6 @@ private:
     VlcWidgetVideo *_videoWidget;
 
     // Main
-    Arguments *_arguments;
     SettingsChannel *_settingsChannel;
     QTimer *_startTimer;
     

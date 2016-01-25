@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -30,12 +30,6 @@ public:
     Output& operator<<(const QString &string);
 
     static void welcome();
-
-    static void help();
-
-    static void errorGeneric();
-    static void errorMissing(const QString &arg);
-    static void errorUnknown(const QString &arg);
 };
 
 #endif // TANO_OUTPUT_H_

@@ -18,7 +18,6 @@
 
 #include <QtCore/QDebug>
 
-#include "application/Arguments.h"
 #include "application/Common.h"
 #include "application/Log.h"
 #include "application/Output.h"
@@ -46,20 +45,16 @@ bool dockClickHandler(id self,
 
 TanoApplication::TanoApplication(int &argc,
                                  char **argv)
-    : SingleApplication(argc, argv),
-      _arguments(new Arguments(argc, argv))
+    : SingleApplication(argc, argv)
 {
 #ifdef Q_OS_MAC
     setupDockHandler();
 #endif
 }
 
-TanoApplication::~TanoApplication()
-{
-    delete _arguments;
-}
+TanoApplication::~TanoApplication() { }
 
-bool TanoApplication::preInit()
+void TanoApplication::preInit()
 {
     QCoreApplication::setOrganizationDomain(Tano::domain());
     QCoreApplication::setApplicationName(Tano::name());
@@ -69,23 +64,15 @@ bool TanoApplication::preInit()
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
 
     Tano::Log::setup();
-
-    return true;
 }
 
-bool TanoApplication::postInit()
+void TanoApplication::postInit()
 {
     Output::welcome();
 
-    if (_arguments->isValid()) {
-        Tano::Style::setMainStyle();
-        Tano::Style::setIconPaths();
-        Tano::Style::setIconName();
-    } else {
-        return false;
-    }
-
-    return true;
+    Tano::Style::setMainStyle();
+    Tano::Style::setIconPaths();
+    Tano::Style::setIconName();
 }
 
 void TanoApplication::onClickOnDock()

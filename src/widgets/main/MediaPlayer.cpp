@@ -14,7 +14,6 @@
 #include <VLCQtWidgets/ControlVideo.h>
 #include <VLCQtWidgets/WidgetVideo.h>
 
-#include "application/Arguments.h"
 #include "settings/Settings.h"
 #include "settings/SettingsChannel.h"
 
@@ -32,16 +31,14 @@
 
 #include "MediaPlayer.h"
 
-MediaPlayer::MediaPlayer(Arguments *arguments,
-                         QWidget *parent)
+MediaPlayer::MediaPlayer(QWidget *parent)
     : QWidget(parent),
-      _arguments(arguments),
       _settingsChannel(new SettingsChannel(this)),
       _startTimer(new QTimer(this))
 {
     createSettingsStartup();
 
-    _mediaInstance = new VlcInstance(Tano::Backend::args(arguments->value(Argument::Aout), arguments->value(Argument::Vout)), this);
+    _mediaInstance = new VlcInstance(Tano::Backend::args(), this);
     _mediaItem = 0;
     _mediaPlayer = new VlcMediaPlayer(_mediaInstance);
     _videoWidget = new VlcWidgetVideo(this);
@@ -155,12 +152,9 @@ void MediaPlayer::createSession(bool valid)
 {
     _osd->volumeSlider()->setVolume(_sessionVolume);
 
-    if ((_sessionAutoplayEnabled ||
-         !_arguments->value(Argument::Channel).isEmpty() ||
-         !_arguments->value(Argument::File).isEmpty() ||
-         !_arguments->value(Argument::Url).isEmpty()) &&
-         valid)
+    if (_sessionAutoplayEnabled && valid) {
         _startTimer->start(100);
+    }
 }
 
 void MediaPlayer::startSession()
@@ -168,14 +162,7 @@ void MediaPlayer::startSession()
     if (!isVisible())
         return;
 
-    if (!_arguments->value(Argument::File).isEmpty())
-        playLocal(_arguments->value(Argument::File));
-    else if (!_arguments->value(Argument::File).isEmpty())
-        playUrl(_arguments->value(Argument::Url));
-    else if (!_arguments->value(Argument::Channel).isEmpty())
-        emit sessionChannel(_arguments->value(Argument::Channel).toInt());
-    else
-        emit sessionChannel(_sessionChannel);
+    emit sessionChannel(_sessionChannel);
 
     _startTimer->stop();
 }

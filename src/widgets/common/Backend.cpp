@@ -26,24 +26,17 @@
 
 #include "Backend.h"
 
-QStringList Tano::Backend::args(const QString &aout,
-                                const QString &vout)
+QStringList Tano::Backend::args()
 {
     QStringList args = VlcCommon::args();
 
     QScopedPointer<Settings> settings(new Settings());
-    if (!aout.isEmpty()) {
-        args << QString("--aout=" + aout);
-        qDebug() << "Using aout:" << aout;
-    } else if (settings->aout() != -1) {
+    if (settings->aout() != -1) {
         args << QString("--aout=" + Vlc::audioOutput()[settings->aout()]);
         qDebug() << "Using aout:" << Vlc::audioOutput()[settings->aout()];
     }
 
-    if (!vout.isEmpty()) {
-        args << QString("--vout=" + vout);
-        qDebug() << "Using vout:" << vout;
-    } else if (settings->vout() != -1) {
+    if (settings->vout() != -1) {
         args << QString("--vout=" + Vlc::videoOutput()[settings->vout()]);
         qDebug() << "Using vout:" << Vlc::videoOutput()[settings->vout()];
     }
