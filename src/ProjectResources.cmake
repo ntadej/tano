@@ -17,5 +17,6 @@
 #############################################################################
 SET(Project_Resources
     ../${PROJECT_NAME_LOWER}/resources/logo/logo.qrc
+    ../resources/icons/icons.qrc
     ../resources/style/style.qrc
 )

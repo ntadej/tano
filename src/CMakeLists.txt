@@ -34,16 +34,6 @@ INCLUDE(ProjectSources)
 INCLUDE(ProjectResources)
 INCLUDE(ProjectUi)
 
-SET(Project_Icons
-    ../resources/icons/tano-default
-)
-IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    SET(Project_Icons
-        ${Project_Icons}
-        ../resources/icons/tano-default@2x
-    )
-ENDIF()
-
 IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     SET(Project_Srcs
         ${Project_Srcs}
@@ -128,6 +118,3 @@ INSTALL(TARGETS ${PROJECT_NAME}
     RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/${PROJECT_INSTALL_BIN_DIR}
     BUNDLE DESTINATION .
 )
-
-# Install data
-INSTALL(DIRECTORY ${Project_Icons} DESTINATION "${CMAKE_INSTALL_PREFIX}/${PROJECT_INSTALL_DATA_DIR}/icons")

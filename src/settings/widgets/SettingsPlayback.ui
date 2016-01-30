@@ -7,12 +7,8 @@
     <x>0</x>
     <y>0</y>
     <width>436</width>
-    <height>381</height>
+    <height>411</height>
    </rect>
-  </property>
-  <property name="windowIcon">
-   <iconset theme="preferences-desktop">
-    <normaloff>.</normaloff>.</iconset>
   </property>
   <layout class="QFormLayout" name="playbackLayout">
    <item row="1" column="0">

@@ -70,7 +70,7 @@ QString XmltvChannel::display() const
 
 QPixmap XmltvChannel::decoration() const
 {
-    return QIcon::fromTheme("video-x-generic").pixmap(16);
+    return QIcon(":/icons/mimetypes/16/video-x-generic.png").pixmap(16);
 }
 
 void XmltvChannel::setDisplayName(const QString &s)

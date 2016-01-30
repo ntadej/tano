@@ -16,11 +16,6 @@
     <height>150</height>
    </size>
   </property>
-  <property name="windowIcon">
-   <iconset theme="media-playback-start">
-    <normaloff/>
-   </iconset>
-  </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
     <number>4</number>
@@ -89,9 +84,8 @@
         <string>Play</string>
        </property>
        <property name="icon">
-        <iconset theme="media-playback-start">
-         <normaloff/>
-        </iconset>
+        <iconset resource="../../../resources/icons/icons.qrc">
+         <normaloff>:/icons/actions/24/media-playback-start.png</normaloff>:/icons/actions/24/media-playback-start.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -110,9 +104,8 @@
         <string>Stop</string>
        </property>
        <property name="icon">
-        <iconset theme="media-playback-stop">
-         <normaloff/>
-        </iconset>
+        <iconset resource="../../../resources/icons/icons.qrc">
+         <normaloff>:/icons/actions/24/media-playback-stop.png</normaloff>:/icons/actions/24/media-playback-stop.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -131,9 +124,8 @@
         <string>Back</string>
        </property>
        <property name="icon">
-        <iconset theme="media-skip-backward">
-         <normaloff/>
-        </iconset>
+        <iconset resource="../../../resources/icons/icons.qrc">
+         <normaloff>:/icons/actions/24/media-skip-backward.png</normaloff>:/icons/actions/24/media-skip-backward.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -152,9 +144,8 @@
         <string>Next</string>
        </property>
        <property name="icon">
-        <iconset theme="media-skip-forward">
-         <normaloff/>
-        </iconset>
+        <iconset resource="../../../resources/icons/icons.qrc">
+         <normaloff>:/icons/actions/24/media-skip-forward.png</normaloff>:/icons/actions/24/media-skip-forward.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -176,9 +167,8 @@
         <string>Record Now</string>
        </property>
        <property name="icon">
-        <iconset theme="media-record">
-         <normaloff/>
-        </iconset>
+        <iconset resource="../../../resources/icons/icons.qrc">
+         <normaloff>:/icons/actions/24/media-record.png</normaloff>:/icons/actions/24/media-record.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -203,9 +193,8 @@
         <string>Take snapshot</string>
        </property>
        <property name="icon">
-        <iconset theme="image-x-generic">
-         <normaloff/>
-        </iconset>
+        <iconset resource="../../../resources/icons/icons.qrc">
+         <normaloff>:/icons/mimetypes/24/image-x-generic.png</normaloff>:/icons/mimetypes/24/image-x-generic.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -224,9 +213,8 @@
         <string>Teletext</string>
        </property>
        <property name="icon">
-        <iconset theme="text-x-generic-template">
-         <normaloff/>
-        </iconset>
+        <iconset resource="../../../resources/icons/icons.qrc">
+         <normaloff>:/icons/mimetypes/24/text-x-generic.png</normaloff>:/icons/mimetypes/24/text-x-generic.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -290,9 +278,8 @@
         <string>Mute</string>
        </property>
        <property name="icon">
-        <iconset theme="audio-volume-muted">
-         <normaloff/>
-        </iconset>
+        <iconset resource="../../../resources/icons/icons.qrc">
+         <normaloff>:/icons/actions/24/audio-volume-muted.png</normaloff>:/icons/actions/24/audio-volume-muted.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -325,6 +312,8 @@
    <header>style/VolumeSlider.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../../../resources/icons/icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

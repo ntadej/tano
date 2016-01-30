@@ -124,11 +124,11 @@ QString Timer::display() const
 QPixmap Timer::decoration() const
 {
     if (state() == Finished)
-        return QIcon::fromTheme("video-x-generic").pixmap(16);
+        return QIcon(":/icons/mimetypes/16/video-x-generic.png").pixmap(16);
     else if (state() == Recording)
-        return QIcon::fromTheme("media-record").pixmap(16);
+        return QIcon(":/icons/actions/16/media-record.png").pixmap(16);
     else
-        return QIcon::fromTheme("time-admin").pixmap(16);
+        return QIcon(":/icons/apps/16/accessories-clock.png").pixmap(16);
 }
 
 void Timer::setName(const QString &name)

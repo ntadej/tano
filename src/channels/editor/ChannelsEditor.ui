@@ -14,8 +14,8 @@
    <string>Tano Editor</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="accessories-text-editor">
-    <normaloff>.</normaloff>.</iconset>
+   <iconset resource="../../../resources/icons/icons.qrc">
+    <normaloff>:/icons/apps/16/accessories-text-editor.png</normaloff>:/icons/apps/16/accessories-text-editor.png</iconset>
   </property>
   <property name="toolButtonStyle">
    <enum>Qt::ToolButtonIconOnly</enum>
@@ -64,18 +64,6 @@
    </layout>
   </widget>
   <widget class="QToolBar" name="toolBar">
-   <property name="minimumSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>16777215</width>
-     <height>24</height>
-    </size>
-   </property>
    <property name="windowTitle">
     <string>Toolbar</string>
    </property>
@@ -84,8 +72,8 @@
    </property>
    <property name="iconSize">
     <size>
-     <width>16</width>
-     <height>16</height>
+     <width>24</width>
+     <height>24</height>
     </size>
    </property>
    <property name="toolButtonStyle">
@@ -126,7 +114,7 @@
    <property name="minimumSize">
     <size>
      <width>300</width>
-     <height>301</height>
+     <height>341</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -136,8 +124,8 @@
     </size>
    </property>
    <property name="windowIcon">
-    <iconset theme="accessories-text-editor">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/16/accessories-text-editor.png</normaloff>:/icons/apps/16/accessories-text-editor.png</iconset>
    </property>
    <property name="features">
     <set>QDockWidget::NoDockWidgetFeatures</set>
@@ -153,29 +141,58 @@
    </attribute>
    <widget class="QWidget" name="editWidgetContents">
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="2">
-      <widget class="QPushButton" name="buttonApplyNum">
-       <property name="minimumSize">
-        <size>
-         <width>25</width>
-         <height>25</height>
-        </size>
+     <item row="0" column="0">
+      <widget class="QLabel" name="labelNumber">
+       <property name="text">
+        <string>Number:</string>
        </property>
-       <property name="maximumSize">
-        <size>
-         <width>25</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="icon">
-        <iconset theme="dialog-apply">
-         <normaloff>.</normaloff>.</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>22</width>
-         <height>22</height>
-        </size>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QSpinBox" name="editNumber">
+         <property name="minimumSize">
+          <size>
+           <width>70</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="minimum">
+          <number>1</number>
+         </property>
+         <property name="maximum">
+          <number>999</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="buttonApplyNum">
+         <property name="icon">
+          <iconset resource="../../../resources/icons/icons.qrc">
+           <normaloff>:/icons/actions/16/object-select.png</normaloff>:/icons/actions/16/object-select.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="labelType">
+       <property name="text">
+        <string>Type:</string>
        </property>
       </widget>
      </item>
@@ -204,39 +221,6 @@
        </item>
       </widget>
      </item>
-     <item row="0" column="0">
-      <widget class="QLabel" name="labelNumber">
-       <property name="text">
-        <string>Number:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="8" column="1" colspan="4">
-      <widget class="QLineEdit" name="editLogo"/>
-     </item>
-     <item row="6" column="1" colspan="4">
-      <widget class="QLineEdit" name="editLanguage"/>
-     </item>
-     <item row="0" column="1">
-      <widget class="QSpinBox" name="editNumber">
-       <property name="minimum">
-        <number>1</number>
-       </property>
-       <property name="maximum">
-        <number>999</number>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="labelCategories">
-       <property name="text">
-        <string>Categories:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1" colspan="4">
-      <widget class="QLineEdit" name="editUrl"/>
-     </item>
      <item row="2" column="0">
       <widget class="QLabel" name="labelChannelName">
        <property name="text">
@@ -244,22 +228,8 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="labelType">
-       <property name="text">
-        <string>Type:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1" colspan="4">
+     <item row="2" column="1">
       <widget class="QLineEdit" name="editChannelName"/>
-     </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="labelXmltvId">
-       <property name="text">
-        <string>XMLTV ID:</string>
-       </property>
-      </widget>
      </item>
      <item row="3" column="0">
       <widget class="QLabel" name="labelUrl">
@@ -268,50 +238,37 @@
        </property>
       </widget>
      </item>
-     <item row="6" column="0">
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="editUrl"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="labelCategories">
+       <property name="text">
+        <string>Categories:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="editCategories"/>
+     </item>
+     <item row="5" column="0">
       <widget class="QLabel" name="labelLanguage">
        <property name="text">
         <string>Language:</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="3">
-      <spacer name="horizontalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="editLanguage"/>
      </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="labelLogo">
+     <item row="6" column="0">
+      <widget class="QLabel" name="labelXmltvId">
        <property name="text">
-        <string>Logo:</string>
+        <string>XMLTV ID:</string>
        </property>
       </widget>
      </item>
-     <item row="10" column="0" colspan="5">
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>40</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="4" column="1" colspan="4">
-      <widget class="QLineEdit" name="editCategories"/>
-     </item>
-     <item row="7" column="1" colspan="4">
+     <item row="6" column="1">
       <widget class="QComboBox" name="editXmltvId">
        <property name="editable">
         <bool>true</bool>
@@ -328,13 +285,36 @@
        </item>
       </widget>
      </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="labelLogo">
+       <property name="text">
+        <string>Logo:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="editLogo"/>
+     </item>
+     <item row="8" column="0" colspan="2">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
     </layout>
    </widget>
   </widget>
   <widget class="QDockWidget" name="updateWidget">
    <property name="windowIcon">
-    <iconset theme="view-refresh">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/16/accessories-text-editor.png</normaloff>:/icons/apps/16/accessories-text-editor.png</iconset>
    </property>
    <property name="features">
     <set>QDockWidget::NoDockWidgetFeatures</set>
@@ -358,8 +338,8 @@
   </widget>
   <action name="actionAdd">
    <property name="icon">
-    <iconset theme="list-add">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/24/list-add.png</normaloff>:/icons/actions/24/list-add.png</iconset>
    </property>
    <property name="text">
     <string>Add channel</string>
@@ -370,8 +350,8 @@
   </action>
   <action name="actionDelete">
    <property name="icon">
-    <iconset theme="list-remove">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/24/list-remove.png</normaloff>:/icons/actions/24/list-remove.png</iconset>
    </property>
    <property name="text">
     <string>Delete channel</string>
@@ -382,8 +362,8 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset theme="document-save">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/24/document-save.png</normaloff>:/icons/actions/24/document-save.png</iconset>
    </property>
    <property name="text">
     <string>Save</string>
@@ -394,8 +374,8 @@
   </action>
   <action name="actionClose">
    <property name="icon">
-    <iconset theme="window-close">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/24/window-close.png</normaloff>:/icons/actions/24/window-close.png</iconset>
    </property>
    <property name="text">
     <string>Close</string>
@@ -403,8 +383,8 @@
   </action>
   <action name="actionUp">
    <property name="icon">
-    <iconset theme="go-up">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/24/go-up.png</normaloff>:/icons/actions/24/go-up.png</iconset>
    </property>
    <property name="text">
     <string>Move up</string>
@@ -415,8 +395,8 @@
   </action>
   <action name="actionDown">
    <property name="icon">
-    <iconset theme="go-down">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/24/go-down.png</normaloff>:/icons/actions/24/go-down.png</iconset>
    </property>
    <property name="text">
     <string>Move down</string>
@@ -427,8 +407,8 @@
   </action>
   <action name="actionPrint">
    <property name="icon">
-    <iconset theme="document-print">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/24/document-print.png</normaloff>:/icons/actions/24/document-print.png</iconset>
    </property>
    <property name="text">
     <string>Print</string>
@@ -436,8 +416,8 @@
   </action>
   <action name="actionExport">
    <property name="icon">
-    <iconset theme="document-export">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/24/document-export.png</normaloff>:/icons/actions/24/document-export.png</iconset>
    </property>
    <property name="text">
     <string>Export</string>
@@ -445,8 +425,8 @@
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset theme="document-open">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/24/document-open.png</normaloff>:/icons/actions/24/document-open.png</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -454,8 +434,8 @@
   </action>
   <action name="actionNew">
    <property name="icon">
-    <iconset theme="document-new">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/24/document-new.png</normaloff>:/icons/actions/24/document-new.png</iconset>
    </property>
    <property name="text">
     <string>New channels list</string>
@@ -463,8 +443,8 @@
   </action>
   <action name="actionExportXmltvId">
    <property name="icon">
-    <iconset theme="document-export">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/document-export.png</normaloff>:/icons/actions/16/document-export.png</iconset>
    </property>
    <property name="text">
     <string>XMLTV IDs</string>
@@ -475,8 +455,8 @@
   </action>
   <action name="actionHelp">
    <property name="icon">
-    <iconset theme="help-browser">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/24/help-about.png</normaloff>:/icons/actions/24/help-about.png</iconset>
    </property>
    <property name="text">
     <string>Help</string>
@@ -484,8 +464,8 @@
   </action>
   <action name="actionAutoXmltv">
    <property name="icon">
-    <iconset theme="x-office-calendar">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/24/office-calendar.png</normaloff>:/icons/apps/24/office-calendar.png</iconset>
    </property>
    <property name="text">
     <string>Auto XMLTV map</string>
@@ -519,6 +499,8 @@
   <tabstop>editXmltvId</tabstop>
   <tabstop>editLogo</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../../../resources/icons/icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

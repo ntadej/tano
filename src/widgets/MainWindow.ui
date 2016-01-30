@@ -138,8 +138,8 @@
   </action>
   <action name="actionExit">
    <property name="icon">
-    <iconset theme="application-exit">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/application-exit.png</normaloff>:/icons/actions/16/application-exit.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Exit</string>
@@ -150,8 +150,8 @@
   </action>
   <action name="actionSettings">
    <property name="icon">
-    <iconset theme="preferences-desktop">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/16/preferences-desktop.png</normaloff>:/icons/apps/16/preferences-desktop.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Settings</string>
@@ -162,8 +162,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset theme="view-fullscreen">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/view-fullscreen.png</normaloff>:/icons/actions/16/view-fullscreen.png</iconset>
    </property>
    <property name="text">
     <string>&amp;Fullscreen</string>
@@ -171,8 +171,8 @@
   </action>
   <action name="actionOpenFile">
    <property name="icon">
-    <iconset theme="document-open">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/24/document-open.png</normaloff>:/icons/actions/24/document-open.png</iconset>
    </property>
    <property name="text">
     <string>Open &amp;File</string>
@@ -180,8 +180,8 @@
   </action>
   <action name="actionOpenUrl">
    <property name="icon">
-    <iconset theme="document-open">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/24/document-open.png</normaloff>:/icons/actions/24/document-open.png</iconset>
    </property>
    <property name="text">
     <string>Open URL</string>
@@ -189,8 +189,8 @@
   </action>
   <action name="actionUpdate">
    <property name="icon">
-    <iconset theme="system-software-update">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/16/system-software-update.png</normaloff>:/icons/apps/16/system-software-update.png</iconset>
    </property>
    <property name="text">
     <string>Check for updates</string>
@@ -201,8 +201,8 @@
   </action>
   <action name="actionPlay">
    <property name="icon">
-    <iconset theme="media-playback-start">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/media-playback-start.png</normaloff>:/icons/actions/16/media-playback-start.png</iconset>
    </property>
    <property name="text">
     <string>Play</string>
@@ -210,8 +210,8 @@
   </action>
   <action name="actionStop">
    <property name="icon">
-    <iconset theme="media-playback-stop">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/media-playback-stop.png</normaloff>:/icons/actions/16/media-playback-stop.png</iconset>
    </property>
    <property name="text">
     <string>Stop</string>
@@ -222,8 +222,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset theme="go-top">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/go-top.png</normaloff>:/icons/actions/16/go-top.png</iconset>
    </property>
    <property name="text">
     <string>Always on top</string>
@@ -231,8 +231,8 @@
   </action>
   <action name="actionTray">
    <property name="icon">
-    <iconset theme="go-bottom">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/go-bottom.png</normaloff>:/icons/actions/16/go-bottom.png</iconset>
    </property>
    <property name="text">
     <string>Hide to tray</string>
@@ -243,8 +243,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset theme="preferences-system-windows">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/16/preferences-system-windows.png</normaloff>:/icons/apps/16/preferences-system-windows.png</iconset>
    </property>
    <property name="text">
     <string>Simple Mode</string>
@@ -252,8 +252,8 @@
   </action>
   <action name="actionNext">
    <property name="icon">
-    <iconset theme="media-skip-forward">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/media-skip-forward.png</normaloff>:/icons/actions/16/media-skip-forward.png</iconset>
    </property>
    <property name="text">
     <string>Next</string>
@@ -261,8 +261,8 @@
   </action>
   <action name="actionBack">
    <property name="icon">
-    <iconset theme="media-skip-backward">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/media-skip-backward.png</normaloff>:/icons/actions/16/media-skip-backward.png</iconset>
    </property>
    <property name="text">
     <string>Back</string>
@@ -273,8 +273,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset theme="audio-volume-muted">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/audio-volume-muted.png</normaloff>:/icons/actions/16/audio-volume-muted.png</iconset>
    </property>
    <property name="text">
     <string>Mute</string>
@@ -282,8 +282,8 @@
   </action>
   <action name="actionVolumeUp">
    <property name="icon">
-    <iconset theme="audio-volume-high">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/audio-volume-high.png</normaloff>:/icons/actions/16/audio-volume-high.png</iconset>
    </property>
    <property name="text">
     <string>Volume up</string>
@@ -291,8 +291,8 @@
   </action>
   <action name="actionVolumeDown">
    <property name="icon">
-    <iconset theme="audio-volume-low">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/audio-volume-low.png</normaloff>:/icons/actions/16/audio-volume-low.png</iconset>
    </property>
    <property name="text">
     <string>Volume down</string>
@@ -300,8 +300,8 @@
   </action>
   <action name="actionRecorder">
    <property name="icon">
-    <iconset theme="media-record">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/media-record.png</normaloff>:/icons/actions/16/media-record.png</iconset>
    </property>
    <property name="text">
     <string>Recorder</string>
@@ -309,8 +309,8 @@
   </action>
   <action name="actionRecordQuick">
    <property name="icon">
-    <iconset theme="media-record">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/media-record.png</normaloff>:/icons/actions/16/media-record.png</iconset>
    </property>
    <property name="text">
     <string>Quick record</string>
@@ -321,8 +321,8 @@
   </action>
   <action name="actionAboutQt">
    <property name="icon">
-    <iconset resource="../../tano/resources/misc/misc.qrc">
-     <normaloff>:/misc/Qt-logo.svg</normaloff>:/misc/Qt-logo.svg</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/16/qt.png</normaloff>:/icons/apps/16/qt.png</iconset>
    </property>
    <property name="text">
     <string>About Qt</string>
@@ -333,8 +333,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="media-playback-stop">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/media-playback-stop.png</normaloff>:/icons/actions/16/media-playback-stop.png</iconset>
    </property>
    <property name="text">
     <string>Stop recording</string>
@@ -345,8 +345,8 @@
   </action>
   <action name="actionSchedule">
    <property name="icon">
-    <iconset theme="x-office-calendar">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/16/office-calendar.png</normaloff>:/icons/apps/16/office-calendar.png</iconset>
    </property>
    <property name="text">
     <string>Schedule</string>
@@ -360,8 +360,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="text-x-generic-template">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/mimetypes/16/text-x-generic.png</normaloff>:/icons/mimetypes/16/text-x-generic.png</iconset>
    </property>
    <property name="text">
     <string>Teletext</string>
@@ -375,8 +375,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="media-record">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/media-record.png</normaloff>:/icons/actions/16/media-record.png</iconset>
    </property>
    <property name="text">
     <string>Instant recording</string>
@@ -384,8 +384,8 @@
   </action>
   <action name="actionRecordTimer">
    <property name="icon">
-    <iconset theme="list-add">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/actions/16/list-add.png</normaloff>:/icons/actions/16/list-add.png</iconset>
    </property>
    <property name="text">
     <string>Add timer</string>
@@ -393,8 +393,8 @@
   </action>
   <action name="actionSupport">
    <property name="icon">
-    <iconset theme="help-browser">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/16/help-browser.png</normaloff>:/icons/apps/16/help-browser.png</iconset>
    </property>
    <property name="text">
     <string>Support</string>
@@ -405,8 +405,8 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="image-x-generic">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/mimetypes/16/image-x-generic.png</normaloff>:/icons/mimetypes/16/image-x-generic.png</iconset>
    </property>
    <property name="text">
     <string>Take snapshot</string>
@@ -416,20 +416,28 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/16/document-viewer.png</normaloff>:/icons/apps/16/document-viewer.png</iconset>
+   </property>
    <property name="text">
     <string>Preview channels</string>
    </property>
   </action>
   <action name="actionScheduleCurrent">
    <property name="icon">
-    <iconset theme="x-office-calendar">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/16/office-calendar.png</normaloff>:/icons/apps/16/office-calendar.png</iconset>
    </property>
    <property name="text">
     <string>Current show info</string>
    </property>
   </action>
   <action name="actionEditChannels">
+   <property name="icon">
+    <iconset resource="../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/16/accessories-text-editor.png</normaloff>:/icons/apps/16/accessories-text-editor.png</iconset>
+   </property>
    <property name="text">
     <string>Edit channels list</string>
    </property>
@@ -447,8 +455,8 @@
   </customwidget>
  </customwidgets>
  <resources>
+  <include location="../../resources/icons/icons.qrc"/>
   <include location="../../tano/resources/logo/logo.qrc"/>
-  <include location="../../tano/resources/misc/misc.qrc"/>
  </resources>
  <connections/>
 </ui>

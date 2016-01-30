@@ -25,10 +25,6 @@ namespace Tano
     {
         // Resources locators
         void setMainStyle();
-
-        // Icons
-        void setIconName();
-        void setIconPaths();
     }
 }
 

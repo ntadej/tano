@@ -71,8 +71,6 @@ void TanoApplication::postInit()
     Output::welcome();
 
     Tano::Style::setMainStyle();
-    Tano::Style::setIconPaths();
-    Tano::Style::setIconName();
 }
 
 void TanoApplication::onClickOnDock()

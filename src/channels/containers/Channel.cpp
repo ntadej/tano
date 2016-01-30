@@ -103,11 +103,11 @@ QString Channel::display() const
 QPixmap Channel::decoration() const
 {
     if (type() == Radio)
-        return QIcon::fromTheme("audio-x-generic").pixmap(16);
+        return QIcon(":/icons/mimetypes/16/audio-x-generic.png").pixmap(16);
     else if (type() == HD)
-        return QIcon::fromTheme("video-x-generic").pixmap(16);
+        return QIcon(":/icons/mimetypes/16/video-x-generic.png").pixmap(16);
     else // type() == SD
-        return QIcon::fromTheme("video-x-generic").pixmap(16);
+        return QIcon(":/icons/mimetypes/16/video-x-generic.png").pixmap(16);
 }
 
 void Channel::setNumber(int number)

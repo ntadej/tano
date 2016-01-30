@@ -14,8 +14,8 @@
    <string>Tano Editor - Help</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="help-browser">
-    <normaloff>.</normaloff>.</iconset>
+   <iconset resource="../../../resources/icons/icons.qrc">
+    <normaloff>:/icons/apps/16/accessories-text-editor.png</normaloff>:/icons/apps/16/accessories-text-editor.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -223,7 +223,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../resources/icons/icons.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

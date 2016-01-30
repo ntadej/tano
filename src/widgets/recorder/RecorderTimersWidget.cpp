@@ -65,15 +65,15 @@ RecorderTimersWidget::RecorderTimersWidget(QWidget *parent)
     _labelRecorder->setAlignment(Qt::AlignCenter);
     _toolbarTop->addWidget(_labelRecorder);
 
-    _actionQuick = new QAction(QIcon::fromTheme("media-record"), tr("Quick"), this);
+    _actionQuick = new QAction(QIcon(":/icons/actions/16/media-record.png"), tr("Quick"), this);
     _toolbarTop->addAction(_actionQuick);
 
-    _actionNew = new QAction(QIcon::fromTheme("list-add"), tr("New"), this);
+    _actionNew = new QAction(QIcon(":/icons/actions/16/list-add.png"), tr("New"), this);
     _toolbarTop->addAction(_actionNew);
 
     _search = new FancyLineEdit(this);
-    _search->setButtonPixmap(FancyLineEdit::Left, QIcon::fromTheme("edit-find").pixmap(16));
-    _search->setButtonPixmap(FancyLineEdit::Right, QIcon::fromTheme("edit-clear").pixmap(16));
+    _search->setButtonPixmap(FancyLineEdit::Left, QIcon(":/icons/actions/16/edit-find.png").pixmap(16));
+    _search->setButtonPixmap(FancyLineEdit::Right, QIcon(":/icons/actions/16/edit-clear-all.png").pixmap(16));
     _search->setButtonVisible(FancyLineEdit::Left, true);
     _search->setButtonVisible(FancyLineEdit::Right, true);
     _search->setAutoHideButton(FancyLineEdit::Right, true);

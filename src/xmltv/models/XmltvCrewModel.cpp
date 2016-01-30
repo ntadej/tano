@@ -43,7 +43,7 @@ QVariant XmltvCrewModel::data(const QModelIndex &index,
 
         return QString("%1 (%2)").arg(name, XmltvCrewMember::stringFromType(type));
     } else if (role == Qt::DecorationRole) {
-        return QIcon::fromTheme("config-users").pixmap(16);
+        return QIcon(":/icons/apps/16/system-users.png").pixmap(16);
     }
     return QVariant();
 }

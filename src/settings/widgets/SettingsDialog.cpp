@@ -55,23 +55,23 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 
     _macToolbar = new QMacToolBar(this);
 
-    _macItemGeneral = _macToolbar->addItem(QIcon::fromTheme("preferences-system"), tr("General"));
+    _macItemGeneral = _macToolbar->addItem(QIcon(":/icons/apps/32/preferences-desktop.png"), tr("General"));
     _macItemGeneral->setSelectable(true);
     connect(_macItemGeneral, &QMacToolBarItem::activated, this, &SettingsDialog::actionToggled);
 
-    _macItemTv = _macToolbar->addItem(QIcon::fromTheme("video-television"), tr("TV"));
+    _macItemTv = _macToolbar->addItem(QIcon(":/icons/mimetypes/32/video-x-generic.png"), tr("TV"));
     _macItemTv->setSelectable(true);
     connect(_macItemTv, &QMacToolBarItem::activated, this, &SettingsDialog::actionToggled);
 
-    _macItemPlayback = _macToolbar->addItem(QIcon::fromTheme("preferences-desktop-multimedia"), tr("Playback"));
+    _macItemPlayback = _macToolbar->addItem(QIcon(":/icons/apps/32/multimedia-video-player.png"), tr("Playback"));
     _macItemPlayback->setSelectable(true);
     connect(_macItemPlayback, &QMacToolBarItem::activated, this, &SettingsDialog::actionToggled);
 
-    _macItemInterface = _macToolbar->addItem(QIcon::fromTheme("preferences-system-windows-actions"), tr("Interface"));
+    _macItemInterface = _macToolbar->addItem(QIcon(":/icons/apps/32/preferences-system-windows.png"), tr("Interface"));
     _macItemInterface->setSelectable(true);
     connect(_macItemInterface, &QMacToolBarItem::activated, this, &SettingsDialog::actionToggled);
 
-    _macItemShortcuts = _macToolbar->addItem(QIcon::fromTheme("preferences-desktop-keyboard"), tr("Shortcuts"));
+    _macItemShortcuts = _macToolbar->addItem(QIcon(":/icons/apps/32/preferences-desktop-keyboard-shortcuts.png"), tr("Shortcuts"));
     _macItemShortcuts->setSelectable(true);
     connect(_macItemShortcuts, &QMacToolBarItem::activated, this, &SettingsDialog::actionToggled);
 

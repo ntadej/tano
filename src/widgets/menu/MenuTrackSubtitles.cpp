@@ -26,7 +26,7 @@ MenuTrackSubtitles::MenuTrackSubtitles(QWidget *parent)
     : MenuCore(parent)
 {
     setTitle(tr("Subtitles"));
-    setIcon(QIcon::fromTheme("font-x-generic"));
+    setIcon(QIcon(":/icons/apps/16/preferences-desktop-font.png"));
     actionNext()->setText(tr("Next subtitles"));
     setType(Vlc::Subtitles);
 

@@ -118,7 +118,7 @@ QString XmltvProgramme::display() const
 
 QPixmap XmltvProgramme::decoration() const
 {
-    return QIcon::fromTheme("x-office-calendar").pixmap(16);
+    return QIcon(":/icons/apps/16/office-calendar.png").pixmap(16);
 }
 
 QFont XmltvProgramme::displayFont() const

@@ -8,9 +8,6 @@ release/
 # Project files
 CMakeLists.txt.user*
 
-# Debian/build
-obj*
-
 # Carthage files
 Carthage/
 

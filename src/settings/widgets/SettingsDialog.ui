@@ -241,8 +241,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset theme="preferences-system">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/32/preferences-desktop.png</normaloff>:/icons/apps/32/preferences-desktop.png</iconset>
    </property>
    <property name="text">
     <string>General</string>
@@ -253,8 +253,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset theme="preferences-desktop-keyboard">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/32/preferences-desktop-keyboard-shortcuts.png</normaloff>:/icons/apps/32/preferences-desktop-keyboard-shortcuts.png</iconset>
    </property>
    <property name="text">
     <string>Shortcuts</string>
@@ -265,8 +265,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset theme="preferences-system-windows-actions">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/32/preferences-system-windows.png</normaloff>:/icons/apps/32/preferences-system-windows.png</iconset>
    </property>
    <property name="text">
     <string>Interface</string>
@@ -277,8 +277,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset theme="video-television">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/mimetypes/32/video-x-generic.png</normaloff>:/icons/mimetypes/32/video-x-generic.png</iconset>
    </property>
    <property name="text">
     <string>TV</string>
@@ -289,8 +289,8 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset theme="preferences-desktop-multimedia">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="../../../resources/icons/icons.qrc">
+     <normaloff>:/icons/apps/32/multimedia-video-player.png</normaloff>:/icons/apps/32/multimedia-video-player.png</iconset>
    </property>
    <property name="text">
     <string>Playback</string>
@@ -317,7 +317,9 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../../../resources/icons/icons.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>checkTray</sender>

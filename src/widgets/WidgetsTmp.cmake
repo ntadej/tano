@@ -98,6 +98,8 @@ SET(Project_Widgets_Tmp_Srcs
     ${Project_Widgets_Menu_Srcs}
     ${Project_Widgets_Recorder_Srcs}
     ${Project_Widgets_Style_Srcs}
+
+    ${Project_Widgets_UIs}
 )
 
 

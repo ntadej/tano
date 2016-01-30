@@ -26,7 +26,7 @@ MenuAspectRatio::MenuAspectRatio(VlcWidgetVideo *videoWidget,
     _videoWidget(videoWidget)
 {
     setTitle(tr("Aspect ratio"));
-    setIcon(QIcon::fromTheme("preferences-system-windows"));
+    setIcon(QIcon(":/icons/apps/16/preferences-system-windows.png"));
     actionNext()->setText(tr("Next aspect ratio option"));
     setType(Vlc::Other);
 

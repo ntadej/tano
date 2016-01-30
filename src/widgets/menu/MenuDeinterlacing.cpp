@@ -26,7 +26,7 @@ MenuDeinterlacing::MenuDeinterlacing(VlcWidgetVideo *videoWidget,
     _videoWidget(videoWidget)
 {
     setTitle(tr("Deinterlacing"));
-    setIcon(QIcon::fromTheme("video-x-generic"));
+    setIcon(QIcon(":/icons/mimetypes/16/video-x-generic.png"));
     actionNext()->setText(tr("Next deinterlacing option"));
 
     QAction *dfDisabled = new QAction(tr("Disabled"), this);

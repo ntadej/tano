@@ -82,8 +82,8 @@ ChannelsTab::ChannelsTab(QWidget *parent)
     _toolbarBottomType->addWidget(_selectLanguage);
 
     _search = new FancyLineEdit(this);
-    _search->setButtonPixmap(FancyLineEdit::Left, QIcon::fromTheme("edit-find").pixmap(16));
-    _search->setButtonPixmap(FancyLineEdit::Right, QIcon::fromTheme("edit-clear").pixmap(16));
+    _search->setButtonPixmap(FancyLineEdit::Left, QIcon(":/icons/actions/16/edit-find.png").pixmap(16));
+    _search->setButtonPixmap(FancyLineEdit::Right, QIcon(":/icons/actions/16/edit-clear-all.png").pixmap(16));
     _search->setButtonVisible(FancyLineEdit::Left, true);
     _search->setButtonVisible(FancyLineEdit::Right, true);
     _search->setAutoHideButton(FancyLineEdit::Right, true);

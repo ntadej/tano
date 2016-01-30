@@ -86,7 +86,7 @@ QString XmltvCrewMember::display() const
 
 QPixmap XmltvCrewMember::decoration() const
 {
-    return QIcon::fromTheme("config-users").pixmap(16);
+    return QIcon(":/icons/apps/16/system-users.png").pixmap(16);
 }
 
 XmltvCrewMember::Type XmltvCrewMember::typeFromString(const QString &type)

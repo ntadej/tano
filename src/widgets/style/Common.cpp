@@ -36,7 +36,6 @@ void Tano::Style::setMainStyle()
 {
 #ifdef Q_OS_MAC
     qApp->setAttribute(Qt::AA_DontShowIconsInMenus);
-    qApp->setAttribute(Qt::AA_UseHighDpiPixmaps);
 #endif
 
     QString baseName = QApplication::style()->objectName();
@@ -58,34 +57,4 @@ void Tano::Style::setMainStyle()
     qApp->setStyle(new ManhattanStyle(baseName));
 
     StyleHelper::setBaseColor(qApp->palette().color(QPalette::Highlight));
-}
-
-void Tano::Style::setIconName()
-{
-    QString name = "tano-default";
-#if defined(Q_OS_MAC)
-    if (qApp->devicePixelRatio() >= 2)
-        name.append("@2x");
-#endif
-    QIcon::setThemeName(name);
-}
-
-void Tano::Style::setIconPaths()
-{
-    QStringList paths = QIcon::themeSearchPaths();
-    paths.prepend(QCoreApplication::applicationDirPath() + "/" + "icons");
-
-#if defined(Q_OS_MAC)
-    paths.prepend(QCoreApplication::applicationDirPath().replace("MacOS", "Resources") + "/icons");
-
-    QDir bundleDir(QCoreApplication::applicationDirPath());
-    bundleDir.cdUp();
-    bundleDir.cdUp();
-    bundleDir.cdUp();
-    paths.append(bundleDir.path() + "/icons");
-#endif
-
-    QIcon::setThemeSearchPaths(paths);
-
-    qDebug() << "Icon theme search paths:" << QIcon::themeSearchPaths();
 }

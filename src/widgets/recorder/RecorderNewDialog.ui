@@ -14,8 +14,8 @@
    <string>New recording</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="media-record">
-    <normaloff>.</normaloff>.</iconset>
+   <iconset resource="../../../resources/icons/icons.qrc">
+    <normaloff>:/icons/actions/16/media-record.png</normaloff>:/icons/actions/16/media-record.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -78,8 +78,8 @@
         <string>Record</string>
        </property>
        <property name="icon">
-        <iconset theme="media-record">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset resource="../../../resources/icons/icons.qrc">
+         <normaloff>:/icons/actions/16/media-record.png</normaloff>:/icons/actions/16/media-record.png</iconset>
        </property>
        <property name="checked">
         <bool>false</bool>
@@ -95,8 +95,8 @@
         <string>Add new timer</string>
        </property>
        <property name="icon">
-        <iconset theme="time-admin">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset resource="../../../resources/icons/icons.qrc">
+         <normaloff>:/icons/actions/16/list-add.png</normaloff>:/icons/actions/16/list-add.png</iconset>
        </property>
        <property name="checked">
         <bool>false</bool>
@@ -109,8 +109,8 @@
         <string>Cancel</string>
        </property>
        <property name="icon">
-        <iconset theme="window-close">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset resource="../../../resources/icons/icons.qrc">
+         <normaloff>:/icons/actions/16/window-close.png</normaloff>:/icons/actions/16/window-close.png</iconset>
        </property>
       </widget>
      </item>
@@ -149,6 +149,8 @@
   <tabstop>buttonTimer</tabstop>
   <tabstop>buttonCancel</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../../../resources/icons/icons.qrc"/>
+ </resources>
  <connections/>
 </ui>

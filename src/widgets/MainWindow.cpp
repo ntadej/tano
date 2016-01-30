@@ -291,16 +291,16 @@ void MainWindow::createGui()
 
     _channelsTab = new ChannelsTab(this);
     _channelsTab->channels()->setChannelsModel(_model);
-    ui->tabs->insertTab(0, _channelsTab, QIcon::fromTheme("video-x-generic"), tr("Channels"));
+    ui->tabs->insertTab(0, _channelsTab, QIcon(":/icons/apps/32/multimedia-video-player.png"), tr("Channels"));
     ui->tabs->setTabEnabled(0, true);
 
     _scheduleTab = new ScheduleTab(this);
     _scheduleTab->channels()->setChannelsModel(_model);
-    ui->tabs->insertTab(1, _scheduleTab, QIcon::fromTheme("x-office-calendar"), tr("Schedule"));
+    ui->tabs->insertTab(1, _scheduleTab, QIcon(":/icons/apps/32/office-calendar.png"), tr("Schedule"));
     ui->tabs->setTabEnabled(1, true);
 
     _showInfoTab = new ShowInfoTab(this);
-    ui->tabs->insertTab(2, _showInfoTab, QIcon::fromTheme("dialog-information"), tr("Show Info"));
+    ui->tabs->insertTab(2, _showInfoTab, QIcon(":/icons/actions/32/help-info-color.png"), tr("Show Info"));
     ui->tabs->setTabEnabled(2, true);
 
     _recorder = new Recorder();
@@ -308,7 +308,7 @@ void MainWindow::createGui()
     _recorder->setMediaInstance(_mediaPlayer->mediaInstance());
     _recorder->createSettings();
     _recorder->setChannelsModel(_model);
-    ui->tabs->insertTab(3, _recorder, QIcon::fromTheme("media-record"), tr("Recorder"), true);
+    ui->tabs->insertTab(3, _recorder, QIcon(":/icons/actions/32/media-record.png"), tr("Recorder"), true);
     ui->tabs->setTabEnabled(3, true);
 
     _recordNow = false;
@@ -590,7 +590,7 @@ void MainWindow::setState(const Vlc::State &state)
     switch(state)
     {
     case Vlc::Playing:
-        ui->actionPlay->setIcon(QIcon::fromTheme("media-playback-pause"));
+        ui->actionPlay->setIcon(QIcon(":/icons/actions/16/media-playback-pause.png"));
         ui->actionPlay->setText(tr("Pause"));
         ui->actionPlay->setToolTip(tr("Pause"));
         ui->actionMute->setEnabled(true);
@@ -607,7 +607,7 @@ void MainWindow::setState(const Vlc::State &state)
     case Vlc::Ended:
     case Vlc::Error:
         showVideo();
-        ui->actionPlay->setIcon(QIcon::fromTheme("media-playback-start"));
+        ui->actionPlay->setIcon(QIcon(":/icons/actions/16/media-playback-start.png"));
         ui->actionPlay->setText(tr("Play"));
         ui->actionPlay->setToolTip(tr("Play"));
         ui->actionMute->setEnabled(false);

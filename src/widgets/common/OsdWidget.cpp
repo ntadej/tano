@@ -149,13 +149,13 @@ void OsdWidget::setLogo(QFile *file)
 void OsdWidget::setPlaying(bool playing)
 {
     if (playing) {
-        ui->buttonPlay->setIcon(QIcon::fromTheme("media-playback-pause"));
+        ui->buttonPlay->setIcon(QIcon(":/icons/actions/24/media-playback-pause.png"));
         ui->buttonPlay->setToolTip(tr("Pause"));
         ui->buttonPlay->setStatusTip(tr("Pause"));
         ui->buttonMute->setEnabled(true);
         ui->buttonTeletext->setEnabled(true);
     } else {
-        ui->buttonPlay->setIcon(QIcon::fromTheme("media-playback-start"));
+        ui->buttonPlay->setIcon(QIcon(":/icons/actions/24/media-playback-start.png"));
         ui->buttonPlay->setToolTip(tr("Play"));
         ui->buttonPlay->setStatusTip(tr("Play"));
         ui->buttonMute->setEnabled(false);

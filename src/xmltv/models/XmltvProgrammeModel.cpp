@@ -45,7 +45,7 @@ QVariant XmltvProgrammeModel::data(const QModelIndex &index,
 
         return QString("%1 - %2").arg(start.toString(Tano::Xmltv::timeFormatDisplay()), title);
     } else if (role == Qt::DecorationRole) {
-        return QIcon::fromTheme("x-office-calendar").pixmap(16);
+        return QIcon(":/icons/apps/16/office-calendar.png").pixmap(16);
     } else if (role == Qt::FontRole) {
         QDateTime start =  QDateTime::fromTime_t(value(index.row(), 2).toInt());
         QDateTime stop = QDateTime::fromTime_t(value(index.row(), 3).toInt());

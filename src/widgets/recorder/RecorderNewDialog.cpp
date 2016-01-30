@@ -50,8 +50,8 @@ RecorderNewDialog::RecorderNewDialog(bool quick,
     else
         ui->buttonRecord->hide();
 
-    ui->search->setButtonPixmap(FancyLineEdit::Left, QIcon::fromTheme("edit-find").pixmap(16));
-    ui->search->setButtonPixmap(FancyLineEdit::Right, QIcon::fromTheme("edit-clear").pixmap(16));
+    ui->search->setButtonPixmap(FancyLineEdit::Left, QIcon(":/icons/actions/16/edit-find.png").pixmap(16));
+    ui->search->setButtonPixmap(FancyLineEdit::Right, QIcon(":/icons/actions/16/edit-clear-all.png").pixmap(16));
     ui->search->setButtonVisible(FancyLineEdit::Left, true);
     ui->search->setButtonVisible(FancyLineEdit::Right, true);
     ui->search->setAutoHideButton(FancyLineEdit::Right, true);

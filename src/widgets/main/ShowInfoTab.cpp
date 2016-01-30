@@ -38,10 +38,10 @@ ShowInfoTab::ShowInfoTab(QWidget *parent)
     _crew->setDynamicSortFilter(true);
     ui->crew->setModel(_crew);
 
-    ui->labelChannelIcon->setPixmap(QIcon::fromTheme("video-x-generic").pixmap(22));
-    ui->labelInfoIcon->setPixmap(QIcon::fromTheme("dialog-information").pixmap(22));
-    ui->labelTimeIcon->setPixmap(QIcon::fromTheme("time-admin").pixmap(22));
-    ui->labelEmptyLogo->setPixmap(QIcon::fromTheme("list-remove").pixmap(32));
+    ui->labelChannelIcon->setPixmap(QIcon(":/icons/mimetypes/16/video-x-generic.png").pixmap(16));
+    ui->labelInfoIcon->setPixmap(QIcon(":/icons/actions/16/help-info-color.png").pixmap(16));
+    ui->labelTimeIcon->setPixmap(QIcon(":/icons/apps/16/accessories-clock.png").pixmap(16));
+    ui->labelEmptyIcon->setPixmap(QIcon(":/icons/actions/48/window-close.png").pixmap(48));
 
     _labelTitle = new QLabel(this);
     _labelTitle->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);

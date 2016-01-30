@@ -40,6 +40,7 @@ ChannelsEditor::ChannelsEditor(QWidget *parent)
       _map(QHash<QString, QString>())
 {
     ui->setupUi(this);
+    ui->toolBar->setProperty("custom_style_disabled", true);
     ui->editWidget->setEnabled(false);
     setTitle();
 

@@ -57,9 +57,9 @@ ScheduleTab::ScheduleTab(QWidget *parent)
     _main->addWidget(_view);
 
     _rightMenu = new QMenu(_view);
-    _change = new QAction(QIcon::fromTheme("view-refresh"), tr("Change"), this);
-    _info = new QAction(QIcon::fromTheme("x-office-calendar"), tr("Show information"), this);
-    _record = new QAction(QIcon::fromTheme("media-record"), tr("Record"), this);
+    _change = new QAction(QIcon(":/icons/actions/16/view-refresh.png"), tr("Change"), this);
+    _info = new QAction(QIcon(":/icons/apps/16/office-calendar.png"), tr("Show information"), this);
+    _record = new QAction(QIcon(":/icons/actions/16/media-record.png"), tr("Record"), this);
     _rightMenu->addAction(_info);
     _rightMenu->addAction(_record);
 
@@ -104,8 +104,8 @@ ScheduleTab::ScheduleTab(QWidget *parent)
     _toolbarBottomType->addWidget(_selectDate);
 
     _search = new FancyLineEdit(this);
-    _search->setButtonPixmap(FancyLineEdit::Left, QIcon::fromTheme("edit-find").pixmap(16));
-    _search->setButtonPixmap(FancyLineEdit::Right, QIcon::fromTheme("edit-clear").pixmap(16));
+    _search->setButtonPixmap(FancyLineEdit::Left, QIcon(":/icons/actions/16/edit-find.png").pixmap(16));
+    _search->setButtonPixmap(FancyLineEdit::Right, QIcon(":/icons/actions/16/edit-clear-all.png").pixmap(16));
     _search->setButtonVisible(FancyLineEdit::Left, true);
     _search->setButtonVisible(FancyLineEdit::Right, true);
     _search->setAutoHideButton(FancyLineEdit::Right, true);
@@ -114,12 +114,12 @@ ScheduleTab::ScheduleTab(QWidget *parent)
     _noEpg = new QWidget(this);
     _noEpgIcon = new QLabel(_noEpg);
     _noEpgIcon->setAlignment(Qt::AlignCenter);
-    _noEpgIcon->setPixmap(QIcon::fromTheme("list-remove").pixmap(32));
+    _noEpgIcon->setPixmap(QIcon(":/icons/actions/48/window-close.png").pixmap(48));
     _noEpgLabel = new QLabel(_noEpg);
     _noEpgLabel->setWordWrap(true);
     _noEpgLabel->setAlignment(Qt::AlignCenter);
     _noEpgButton = new QPushButton(_noEpg);
-    _noEpgButton->setIcon(QIcon::fromTheme("video-x-generic"));
+    _noEpgButton->setIcon(QIcon(":/icons/mimetypes/16/video-x-generic.png"));
     _noEpgButton->setIconSize(QSize(16, 16));
 
     QVBoxLayout *layout = new QVBoxLayout(_noEpg);
