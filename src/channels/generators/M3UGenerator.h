@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,47 +16,41 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERTIMERSEDITOR_H_
-#define TANO_RECORDERTIMERSEDITOR_H_
+#ifndef TANO_M3UGENERATOR_H_
+#define TANO_M3UGENERATOR_H_
 
-#include <QtCore/QDate>
-#include <QtWidgets/QWidget>
+#include <QtCore/QFile>
+#include <QtCore/QTextStream>
 
+#include "common/File.h"
+
+class Channel;
 class ChannelsModel;
-class Timer;
-class TimersFilterModel;
-class TimersModel;
+class NetworkUdpxy;
 
-namespace Ui
+class M3UGenerator
 {
-    class RecorderTimersEditor;
-}
-
-class RecorderTimersEditor : public QWidget
-{
-Q_OBJECT
 public:
-    explicit RecorderTimersEditor(QWidget *parent = 0);
-    ~RecorderTimersEditor();
+    M3UGenerator(const QString &file,
+                 const File::Type &type = File::M3U);
+    ~M3UGenerator();
 
-    void edit(Timer *item);
-    bool save();
-    void setModel(TimersModel *model);
-    void setChannelsModel(ChannelsModel *model);
-
-protected:
-    void changeEvent(QEvent *e);
+    bool write(ChannelsModel *model);
 
 private:
-    bool validate();
+    void generateItem(Channel *channel,
+                      bool clean = false,
+                      bool udpxy = false);
 
-    Ui::RecorderTimersEditor *ui;
+    File::Type _type;
 
-    Timer *_currentTimer;
-    TimersFilterModel *_validateModel;
-    TimersModel *_modelCore;
+    QFile *_file;
+    QTextStream _out;
 
-    ChannelsModel *_channels;
+    NetworkUdpxy *_udpxy;
+
+    QString _hd;
+    QString _radio;
 };
 
-#endif // TANO_RECORDERTIMERSEDITOR_H_
+#endif // TANO_M3UGENERATOR_H_

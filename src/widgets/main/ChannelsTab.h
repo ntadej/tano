@@ -16,87 +16,53 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SCHEDULETAB_H_
-#define TANO_SCHEDULETAB_H_
+#ifndef TANO_CHANNELSTAB_H_
+#define TANO_CHANNELSTAB_H_
 
-#include <QtCore/QDate>
-#include <QtCore/QModelIndex>
-#include <QtWidgets/QMainWindow>
+#include <QMainWindow>
 
 class QComboBox;
 class QLabel;
-class QListView;
-class QStackedWidget;
-class QPushButton;
 class QToolBar;
 
-class Channel;
 class FancyLineEdit;
 class ChannelsDisplayWidget;
-class XmltvProgrammeFilterModel;
-class XmltvProgrammeModel;
 
-class ScheduleTab : public QMainWindow
+class ChannelsTab : public QMainWindow
 {
 Q_OBJECT
 public:
-    explicit ScheduleTab(QWidget *parent = 0);
-    ~ScheduleTab();
+    explicit ChannelsTab(QWidget *parent = 0);
+    ~ChannelsTab();
 
     inline ChannelsDisplayWidget *channels() { return _channelsWidget; }
+    void setFilters(const QStringList &categories,
+                    const QStringList &languages);
+    void setChannelsName(const QString &name);
 
 protected:
     void changeEvent(QEvent *e);
 
-public slots:
-    void channel(Channel *channel);
-    void reset();
-    void setEpg(const QString &channel,
-                XmltvProgrammeModel *epg);
-    void setPage(int id);
-
 signals:
     void changeTo(QWidget *);
-    void itemSelected(const QString &);
-    void requestEpg(const QString &);
-    void requestRecord(const QString &);
     
 private slots:
-    void change();
-    void info();
-    void programmeClicked(const QModelIndex &index);
     void processFilters();
-    void record();
-    void showMenu(const QPoint &pos);
 
 private:
-    XmltvProgrammeModel *_model;
-    XmltvProgrammeFilterModel *_filterModel;
-
     ChannelsDisplayWidget *_channelsWidget;
-
-    QStackedWidget *_main;
-    QListView *_view;
 
     QToolBar *_toolbarTop;
     QToolBar *_toolbarBottomType;
     QToolBar *_toolbarBottomSearch;
 
-    QLabel *_labelTitle;
+    QLabel *_labelChannels;
 
-    QWidget *_noEpg;
-    QLabel *_noEpgIcon;
-    QLabel *_noEpgLabel;
-    QPushButton *_noEpgButton;
+    QComboBox *_selectType;
+    QComboBox *_selectCategory;
+    QComboBox *_selectLanguage;
 
-    QComboBox *_selectDate;
     FancyLineEdit *_search;
-
-    QAction *_change;
-    QAction *_info;
-    QAction *_record;
-    QMenu *_rightMenu;
-    QPoint _currentPos;
 };
 
-#endif // TANO_SCHEDULETAB_H_
+#endif // TANO_CHANNELSTAB_H_

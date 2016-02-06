@@ -27,13 +27,13 @@
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 
+#include "channels/widgets/ChannelsDisplayWidget.h"
 #include "xmltv/XmltvCommon.h"
 #include "xmltv/containers/XmltvChannel.h"
 #include "xmltv/containers/XmltvProgramme.h"
 #include "xmltv/models/XmltvProgrammeFilterModel.h"
 #include "xmltv/models/XmltvProgrammeModel.h"
 
-#include "common/PlaylistDisplayWidget.h"
 #include "style/FancyLineEdit.h"
 #include "style/StyledBar.h"
 
@@ -89,8 +89,8 @@ ScheduleTab::ScheduleTab(QWidget *parent)
     addToolBar(Qt::BottomToolBarArea, _toolbarBottomType);
     insertToolBarBreak(_toolbarBottomType);
 
-    _playlistWidget = new PlaylistDisplayWidget(this);
-    _main->addWidget(_playlistWidget);
+    _channelsWidget = new ChannelsDisplayWidget(this);
+    _main->addWidget(_channelsWidget);
 
     _labelTitle = new QLabel(this);
     _labelTitle->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -141,7 +141,7 @@ ScheduleTab::ScheduleTab(QWidget *parent)
     connect(_selectDate, SIGNAL(currentIndexChanged(QString)), this, SLOT(processFilters()));
     connect(_search, SIGNAL(textChanged(QString)), this, SLOT(processFilters()));
     connect(_search, SIGNAL(rightButtonClicked()), _search, SLOT(clear()));
-    connect(_playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(channel(Channel *)));
+    connect(_channelsWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(channel(Channel *)));
 }
 
 ScheduleTab::~ScheduleTab() { }
@@ -169,7 +169,7 @@ void ScheduleTab::change()
     _toolbarBottomType->hide();
     _search->clear();
 
-    _main->setCurrentWidget(_playlistWidget);
+    _main->setCurrentWidget(_channelsWidget);
     _labelTitle->setText(tr("Select channel"));
 }
 
@@ -188,8 +188,8 @@ void ScheduleTab::info()
 
 void ScheduleTab::processFilters()
 {
-    if (_main->currentWidget() == _playlistWidget) {
-        _playlistWidget->setFilters(_search->text());
+    if (_main->currentWidget() == _channelsWidget) {
+        _channelsWidget->setFilters(_search->text());
     } else {
         QRegExp regExp(_search->text(), Qt::CaseInsensitive);
         _filterModel->setFilterRegExp(regExp);

@@ -24,7 +24,7 @@
        <item row="0" column="0">
         <widget class="QLabel" name="labelDefaultList">
          <property name="text">
-          <string>Default channel list:</string>
+          <string>Default channels list:</string>
          </property>
         </widget>
        </item>

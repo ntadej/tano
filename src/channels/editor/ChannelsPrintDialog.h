@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,47 +16,44 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERTIMERSEDITOR_H_
-#define TANO_RECORDERTIMERSEDITOR_H_
+#ifndef TANO_CHANNELSPRINTDIALOG_H_
+#define TANO_CHANNELSPRINTDIALOG_H_
 
-#include <QtCore/QDate>
-#include <QtWidgets/QWidget>
+#include <QtWidgets/QDialog>
 
-class ChannelsModel;
-class Timer;
-class TimersFilterModel;
-class TimersModel;
-
-namespace Ui
-{
-    class RecorderTimersEditor;
+namespace Ui {
+    class ChannelsPrintDialog;
 }
 
-class RecorderTimersEditor : public QWidget
-{
-Q_OBJECT
-public:
-    explicit RecorderTimersEditor(QWidget *parent = 0);
-    ~RecorderTimersEditor();
+class QAbstractButton;
 
-    void edit(Timer *item);
-    bool save();
-    void setModel(TimersModel *model);
-    void setChannelsModel(ChannelsModel *model);
+class ChannelsModel;
+class ChannelsPrint;
+
+class ChannelsPrintDialog : public QDialog
+{
+    Q_OBJECT
+public:
+    ChannelsPrintDialog(const QString &name,
+                        ChannelsModel *model,
+                        QWidget *parent = 0);
+    ~ChannelsPrintDialog();
 
 protected:
     void changeEvent(QEvent *e);
 
+private slots:
+    void action(QAbstractButton *button);
+
 private:
-    bool validate();
+    void print();
 
-    Ui::RecorderTimersEditor *ui;
+    Ui::ChannelsPrintDialog *ui;
 
-    Timer *_currentTimer;
-    TimersFilterModel *_validateModel;
-    TimersModel *_modelCore;
+    ChannelsPrint *_print;
 
-    ChannelsModel *_channels;
+    QString _name;
+    ChannelsModel *_model;
 };
 
-#endif // TANO_RECORDERTIMERSEDITOR_H_
+#endif // TANO_CHANNELSPRINTDIALOG_H_

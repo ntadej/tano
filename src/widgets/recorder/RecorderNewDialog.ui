@@ -15,8 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset theme="media-record">
-    <normaloff/>
-   </iconset>
+    <normaloff>.</normaloff>.</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -50,9 +49,7 @@
     </widget>
    </item>
    <item>
-    <widget class="PlaylistDisplayWidget" name="playlistWidget" native="true">
-     <zorder>box</zorder>
-    </widget>
+    <widget class="ChannelsDisplayWidget" name="channelsWidget" native="true"/>
    </item>
    <item>
     <widget class="FancyLineEdit" name="search" native="true"/>
@@ -82,8 +79,7 @@
        </property>
        <property name="icon">
         <iconset theme="media-record">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="checked">
         <bool>false</bool>
@@ -100,8 +96,7 @@
        </property>
        <property name="icon">
         <iconset theme="time-admin">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
        <property name="checked">
         <bool>false</bool>
@@ -115,8 +110,7 @@
        </property>
        <property name="icon">
         <iconset theme="window-close">
-         <normaloff/>
-        </iconset>
+         <normaloff>.</normaloff>.</iconset>
        </property>
       </widget>
      </item>
@@ -139,9 +133,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>PlaylistDisplayWidget</class>
+   <class>ChannelsDisplayWidget</class>
    <extends>QWidget</extends>
-   <header>common/PlaylistDisplayWidget.h</header>
+   <header>channels/widgets/ChannelsDisplayWidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>

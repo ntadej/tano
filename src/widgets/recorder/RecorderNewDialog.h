@@ -25,7 +25,7 @@ class QMenu;
 class QWidgetAction;
 
 class Channel;
-class PlaylistModel;
+class ChannelsModel;
 class Timer;
 class TimersModel;
 class XmltvProgramme;
@@ -40,7 +40,7 @@ Q_OBJECT
 public:
     explicit RecorderNewDialog(bool quick,
                                TimersModel *timers,
-                               PlaylistModel *playlist,
+                               ChannelsModel *channels,
                                QWidget *parent = 0);
     ~RecorderNewDialog();
 
@@ -53,7 +53,7 @@ protected:
     void changeEvent(QEvent *e);
 
 private slots:
-    void playlist(Channel* channel);
+    void channels(Channel* channel);
     void processFilters();
     void processNewTimer();
     void processQuickRecord();

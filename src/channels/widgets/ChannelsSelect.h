@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,47 +16,47 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERTIMERSEDITOR_H_
-#define TANO_RECORDERTIMERSEDITOR_H_
+#ifndef TANO_CHANNELSSELECT_H_
+#define TANO_CHANNELSSELECT_H_
 
-#include <QtCore/QDate>
-#include <QtWidgets/QWidget>
+#include <QtCore/QTimer>
 
-class ChannelsModel;
-class Timer;
-class TimersFilterModel;
-class TimersModel;
+class QLCDNumber;
+class QShortcut;
 
-namespace Ui
+class ChannelsSelect : public QObject
 {
-    class RecorderTimersEditor;
-}
-
-class RecorderTimersEditor : public QWidget
-{
-Q_OBJECT
+    Q_OBJECT
 public:
-    explicit RecorderTimersEditor(QWidget *parent = 0);
-    ~RecorderTimersEditor();
+    ChannelsSelect(QWidget *parent,
+                  QLCDNumber *number,
+                  const QList<int> &list);
+    ~ChannelsSelect();
 
-    void edit(Timer *item);
-    bool save();
-    void setModel(TimersModel *model);
-    void setChannelsModel(ChannelsModel *model);
+public slots:
+    inline void back() { channel(false); }
+    void channel(bool direction);
+    inline void next() { channel(true); }
 
-protected:
-    void changeEvent(QEvent *e);
+private slots:
+    void display();
+    void keyPressed();
+
+signals:
+    void channelSelect(const int);
 
 private:
-    bool validate();
+    void process(int key);
 
-    Ui::RecorderTimersEditor *ui;
+    QList<int> _channels;
+    QList<QShortcut *> _key;
+    QLCDNumber *_lcd;
+    QTimer *_timer;
 
-    Timer *_currentTimer;
-    TimersFilterModel *_validateModel;
-    TimersModel *_modelCore;
-
-    ChannelsModel *_channels;
+    int _digit;
+    int _full;
+    int _number[3];
+    int _old;
 };
 
-#endif // TANO_RECORDERTIMERSEDITOR_H_
+#endif // TANO_CHANNELSSELECT_H_

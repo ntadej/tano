@@ -20,8 +20,8 @@
 #include <QtWidgets/QMessageBox>
 #include <QtWidgets/QWidgetAction>
 
-#include "playlist/PlaylistModel.h"
-#include "playlist/containers/Channel.h"
+#include "channels/containers/Channel.h"
+#include "channels/models/ChannelsModel.h"
 #include "timers/containers/Timer.h"
 #include "timers/models/TimersModel.h"
 #include "xmltv/containers/XmltvProgramme.h"
@@ -31,7 +31,7 @@
 
 RecorderNewDialog::RecorderNewDialog(bool quick,
                                      TimersModel *timers,
-                                     PlaylistModel *playlist,
+                                     ChannelsModel *channels,
                                      QWidget *parent)
     : QDialog(parent),
       ui(new Ui::RecorderNewDialog),
@@ -43,7 +43,7 @@ RecorderNewDialog::RecorderNewDialog(bool quick,
     ui->setupUi(this);
 
     _model = timers;
-    ui->playlistWidget->setPlaylistModel(playlist);
+    ui->channelsWidget->setChannelsModel(channels);
 
     if (quick)
         ui->buttonTimer->hide();
@@ -63,7 +63,7 @@ RecorderNewDialog::RecorderNewDialog(bool quick,
     connect(ui->search, SIGNAL(textChanged(QString)), this, SLOT(processFilters()));
     connect(ui->search, SIGNAL(rightButtonClicked()), ui->search, SLOT(clear()));
 
-    connect(ui->playlistWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(playlist(Channel *)));
+    connect(ui->channelsWidget, SIGNAL(itemSelected(Channel *)), this, SLOT(channels(Channel *)));
 }
 
 RecorderNewDialog::~RecorderNewDialog()
@@ -85,11 +85,11 @@ void RecorderNewDialog::changeEvent(QEvent *e)
 
 Timer *RecorderNewDialog::newTimerFromSchedule(XmltvProgramme *programme)
 {
-    ui->playlistWidget->channelSelected(programme->channel());
+    ui->channelsWidget->channelSelected(programme->channel());
 
     if (!_currentChannel) {
         QMessageBox::critical(this, tr("Recorder"),
-                    tr("You don't have this channel in your playlist."));
+                    tr("You don't have this channel in your channels list."));
         return 0;
     }
 
@@ -104,7 +104,7 @@ Timer *RecorderNewDialog::newTimerFromSchedule(XmltvProgramme *programme)
     return timer;
 }
 
-void RecorderNewDialog::playlist(Channel *channel)
+void RecorderNewDialog::channels(Channel *channel)
 {
     _currentChannel = channel;
 
@@ -115,7 +115,7 @@ void RecorderNewDialog::playlist(Channel *channel)
 
 void RecorderNewDialog::processFilters()
 {
-    ui->playlistWidget->setFilters(ui->search->text());
+    ui->channelsWidget->setFilters(ui->search->text());
 }
 
 void RecorderNewDialog::processNewTimer()

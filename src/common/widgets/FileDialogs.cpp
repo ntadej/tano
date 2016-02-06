@@ -31,7 +31,7 @@ QString FileDialogs::filterByType(const File::Type &type)
     case File::Subtitles:
         return QObject::tr("Subtitles files") + "(*.sub *.srt *.txt)";
     case File::M3U:
-        return QObject::tr("Tano M3U channel list files") + "(*.m3u)";
+        return QObject::tr("Tano M3U channels list files") + "(*.m3u)";
     case File::M3UClean:
         return QObject::tr("M3U (original) files") + "(*.m3u)";
     case File::M3UUdpxy:
@@ -106,7 +106,7 @@ File FileDialogs::openChannelsList()
 
 QString FileDialogs::openChannelsSimple(const QString &file)
 {
-    return QFileDialog::getOpenFileName(0, QObject::tr("Open channel list"),
+    return QFileDialog::getOpenFileName(0, QObject::tr("Open channels list"),
                                         file, filterByType(File::M3U));
 }
 

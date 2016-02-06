@@ -24,8 +24,8 @@
 #include <QtWidgets/QVBoxLayout>
 
 #include "network/NetworkUdpxy.h"
-#include "playlist/PlaylistModel.h"
-#include "playlist/containers/Channel.h"
+#include "channels/containers/Channel.h"
+#include "channels/models/ChannelsModel.h"
 #include "settings/Settings.h"
 #include "timers/TimersTimeManager.h"
 #include "timers/containers/Timer.h"
@@ -123,20 +123,20 @@ Timer *Recorder::newInstantTimer(Channel *channel)
 
 void Recorder::newTimer()
 {
-    RecorderNewDialog n(false, _model, _playlist, parentWidget());
+    RecorderNewDialog n(false, _model, _channels, parentWidget());
     if (n.exec())
         _info->timerInfo(n.timer());
 }
 
 void Recorder::newTimerFromSchedule(XmltvProgramme *programme)
 {
-    RecorderNewDialog n(false, _model, _playlist, parentWidget());
+    RecorderNewDialog n(false, _model, _channels, parentWidget());
     _info->timerInfo(n.newTimerFromSchedule(programme));
 }
 
 void Recorder::quickRecord()
 {
-    RecorderNewDialog n(true, _model, _playlist, parentWidget());
+    RecorderNewDialog n(true, _model, _channels, parentWidget());
     if (n.exec())
         recordStart(n.timer());
 }
@@ -150,7 +150,7 @@ void Recorder::recordStart(Timer *timer)
         return;
     }
 
-    Channel *c = _playlist->find(timer->channelId());
+    Channel *c = _channels->find(timer->channelId());
 
     if (!c) {
         QMessageBox::critical(this, tr("Recorder"),
@@ -249,10 +249,10 @@ void Recorder::setMediaInstance(VlcInstance *instance)
     _core->setMediaInstance(instance);
 }
 
-void Recorder::setPlaylistModel(PlaylistModel *model)
+void Recorder::setChannelsModel(ChannelsModel *model)
 {
-    _playlist = model;
-    _info->setPlaylistModel(model);
+    _channels = model;
+    _info->setChannelsModel(model);
 }
 
 void Recorder::setWidgets(QAction *action)

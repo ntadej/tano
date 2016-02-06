@@ -20,8 +20,8 @@
 #include <QtCore/QTime>
 #include <QtWidgets/QMessageBox>
 
-#include "playlist/PlaylistModel.h"
-#include "playlist/containers/Channel.h"
+#include "channels/containers/Channel.h"
+#include "channels/models/ChannelsModel.h"
 #include "timers/containers/Timer.h"
 
 #include "style/StyledBar.h"
@@ -132,7 +132,7 @@ void RecorderInfoWidget::recordingInfo(Timer *timer)
     qreal duration = timer->startTime().secsTo(timer->endTime());
 
     QString bold("<b>%1</b>");
-    Channel *channel = _playlist->find(timer->channelId());
+    Channel *channel = _channels->find(timer->channelId());
     if (channel)
         ui->valueRChannel->setText(bold.arg(channel->name()));
     ui->valueRTime->setText(bold.arg(QString("%1 %2 %3").arg(timer->date().toString("dd.MM.yyyy"), tr("at"), timer->startTime().toString("hh:mm"))));
@@ -157,10 +157,10 @@ void RecorderInfoWidget::setModel(TimersModel *model)
     ui->editor->setModel(model);
 }
 
-void RecorderInfoWidget::setPlaylistModel(PlaylistModel *model)
+void RecorderInfoWidget::setChannelsModel(ChannelsModel *model)
 {
-    _playlist = model;
-    ui->editor->setPlaylistModel(model);
+    _channels = model;
+    ui->editor->setChannelsModel(model);
 }
 
 void RecorderInfoWidget::start(const QString &name,

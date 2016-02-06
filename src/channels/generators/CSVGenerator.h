@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,47 +16,31 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERTIMERSEDITOR_H_
-#define TANO_RECORDERTIMERSEDITOR_H_
+#ifndef TANO_CSVGENERATOR_H_
+#define TANO_CSVGENERATOR_H_
 
-#include <QtCore/QDate>
-#include <QtWidgets/QWidget>
+#include <QtCore/QFile>
+#include <QtCore/QTextStream>
 
+class Channel;
 class ChannelsModel;
-class Timer;
-class TimersFilterModel;
-class TimersModel;
 
-namespace Ui
+class CSVGenerator
 {
-    class RecorderTimersEditor;
-}
-
-class RecorderTimersEditor : public QWidget
-{
-Q_OBJECT
 public:
-    explicit RecorderTimersEditor(QWidget *parent = 0);
-    ~RecorderTimersEditor();
+    CSVGenerator(const QString &file);
+    ~CSVGenerator();
 
-    void edit(Timer *item);
-    bool save();
-    void setModel(TimersModel *model);
-    void setChannelsModel(ChannelsModel *model);
-
-protected:
-    void changeEvent(QEvent *e);
+    bool write(ChannelsModel *model);
 
 private:
-    bool validate();
+    void generateItem(Channel *channel);
 
-    Ui::RecorderTimersEditor *ui;
+    QFile *_file;
+    QTextStream _out;
 
-    Timer *_currentTimer;
-    TimersFilterModel *_validateModel;
-    TimersModel *_modelCore;
-
-    ChannelsModel *_channels;
+    QString _hd;
+    QString _radio;
 };
 
-#endif // TANO_RECORDERTIMERSEDITOR_H_
+#endif // TANO_CSVGENERATOR_H_

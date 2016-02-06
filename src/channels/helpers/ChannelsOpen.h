@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,47 +16,30 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERTIMERSEDITOR_H_
-#define TANO_RECORDERTIMERSEDITOR_H_
+#ifndef TANO_CHANNELSOPEN_H_
+#define TANO_CHANNELSOPEN_H_
 
-#include <QtCore/QDate>
-#include <QtWidgets/QWidget>
+#include <QtCore/QList>
+#include <QtCore/QString>
 
-class ChannelsModel;
-class Timer;
-class TimersFilterModel;
-class TimersModel;
+class Channel;
+struct CSVInfo;
 
-namespace Ui
+class ChannelsOpen
 {
-    class RecorderTimersEditor;
-}
-
-class RecorderTimersEditor : public QWidget
-{
-Q_OBJECT
 public:
-    explicit RecorderTimersEditor(QWidget *parent = 0);
-    ~RecorderTimersEditor();
+    ChannelsOpen();
+    ~ChannelsOpen();
 
-    void edit(Timer *item);
-    bool save();
-    void setModel(TimersModel *model);
-    void setChannelsModel(ChannelsModel *model);
-
-protected:
-    void changeEvent(QEvent *e);
+    inline QString name() const { return _name; }
+    inline QList<Channel *> list() const { return _list; }
+    void openCSVFile(const QString &file,
+                     const CSVInfo &info);
+    void openM3UFile(const QString &file);
 
 private:
-    bool validate();
-
-    Ui::RecorderTimersEditor *ui;
-
-    Timer *_currentTimer;
-    TimersFilterModel *_validateModel;
-    TimersModel *_modelCore;
-
-    ChannelsModel *_channels;
+    QList<Channel *> _list;
+    QString _name;
 };
 
-#endif // TANO_RECORDERTIMERSEDITOR_H_
+#endif // TANO_CHANNELSOPEN_H_

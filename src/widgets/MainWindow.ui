@@ -58,7 +58,7 @@
      <string>&amp;Options</string>
     </property>
     <addaction name="actionSettings"/>
-    <addaction name="actionEditPlaylist"/>
+    <addaction name="actionEditChannels"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
     <property name="title">
@@ -429,9 +429,12 @@
     <string>Current show info</string>
    </property>
   </action>
-  <action name="actionEditPlaylist">
+  <action name="actionEditChannels">
    <property name="text">
-    <string>Edit playlist</string>
+    <string>Edit channels list</string>
+   </property>
+   <property name="toolTip">
+    <string>Edit channels list</string>
    </property>
   </action>
  </widget>

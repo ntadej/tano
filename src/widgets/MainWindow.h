@@ -29,7 +29,7 @@ class QShortcut;
 class QWidgetAction;
 
 class Channel;
-class ChannelSelect;
+class ChannelsSelect;
 class NetworkDownload;
 class LocaleManager;
 class MediaPlayer;
@@ -38,10 +38,9 @@ class ScheduleTab;
 class SettingsDialog;
 class ShowInfoTab;
 class OsdFloat;
-class PlaylistEditor;
-class PlaylistModel;
-class PlaylistTab;
-class PlaylistUpdate;
+class ChannelsEditor;
+class ChannelsModel;
+class ChannelsTab;
 class Recorder;
 class Timer;
 class TrayIcon;
@@ -88,7 +87,7 @@ private slots:
     void showSchedule();
     void showScheduleCurrent();
     void showRecorder();
-    void showPlaylistEditor();
+    void showChannelsEditor();
 
     void playChannel(Channel* channel);
     void playRecording(Timer* recording);
@@ -96,8 +95,8 @@ private slots:
     void stop();
     void setState(const Vlc::State &state);
 
-    void openPlaylist();
-    void openPlaylistComplete();
+    void openChannelsList();
+    void openChannelsListComplete();
 
     void tooltip(const QString &channelNow = "stop");
     void top();
@@ -130,7 +129,7 @@ private:
     bool _channelPlayback;
     int _desktopWidth;
     int _desktopHeight;
-    bool _hasPlaylist;
+    bool _hasChannels;
     bool _hideToTray;
     bool _isLite;
     bool _liteMenu;
@@ -143,30 +142,30 @@ private:
     QString _wheelType;
 
     //Main
-    ChannelSelect *_select;
+    ChannelsSelect *_select;
     LocaleManager *_locale;
     MediaPlayer *_mediaPlayer;
-    PlaylistModel *_model;
+    ChannelsModel *_model;
     Recorder *_recorder;
     Updates *_updates;
 
     //Playback and channels
     Channel *_channel;
     XmltvManager *_xmltv;
-    QString _playlistName;
+    QString _channelsListFile;
     QTimer *_previewTimer;
     Timer *_recording;
     NetworkUdpxy *_udpxy;
 
     //GUI
-    PlaylistTab *_playlistTab;
+    ChannelsTab *_channelsTab;
     ScheduleTab *_scheduleTab;
     ShowInfoTab *_showInfoTab;
 
     SettingsDialog *_settingsDialog;
 
     OsdFloat *_osdFloat;
-    PlaylistEditor *_playlistEditor;
+    ChannelsEditor *_channelsEditor;
     QTimer *_mouseTimer;
 
     //Menus and actions

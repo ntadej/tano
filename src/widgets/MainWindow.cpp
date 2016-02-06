@@ -38,8 +38,8 @@
 #include "application/LocaleManager.h"
 #include "network/NetworkDownload.h"
 #include "network/NetworkUdpxy.h"
-#include "playlist/PlaylistModel.h"
-#include "playlist/containers/Channel.h"
+#include "channels/containers/Channel.h"
+#include "channels/models/ChannelsModel.h"
 #include "settings/Settings.h"
 #include "settings/SettingsShortcutsDesktop.h"
 #include "settings/widgets/SettingsDialog.h"
@@ -49,16 +49,16 @@
 #include "application/Notifications.h"
 #include "application/Updates.h"
 #include "common/Backend.h"
-#include "common/ChannelSelect.h"
+#include "channels/widgets/ChannelsSelect.h"
 #include "common/widgets/FileDialogs.h"
 #include "common/OsdFloat.h"
 #include "common/OsdWidget.h"
-#include "common/PlaylistDisplayWidget.h"
+#include "channels/widgets/ChannelsDisplayWidget.h"
 #include "common/TrayIcon.h"
 #include "dialogs/AboutDialog.h"
-#include "editor/PlaylistEditor.h"
+#include "channels/editor/ChannelsEditor.h"
 #include "main/MediaPlayer.h"
-#include "main/PlaylistTab.h"
+#include "main/ChannelsTab.h"
 #include "main/ScheduleTab.h"
 #include "main/ShowInfoTab.h"
 #include "menu/MenuCore.h"
@@ -71,18 +71,18 @@
 MainWindow::MainWindow()
     : QMainWindow(),
       ui(new Ui::MainWindow),
-      _hasPlaylist(false),
+      _hasChannels(false),
       _isLite(false),
       _select(0),
       _locale(new LocaleManager()),
-      _model(new PlaylistModel(this)),
+      _model(new ChannelsModel(this)),
       _channel(0),
       _xmltv(new XmltvManager()),
       _previewTimer(new QTimer(this)),
       _udpxy(new NetworkUdpxy()),
       _settingsDialog(0),
       _osdFloat(0),
-      _playlistEditor(0),
+      _channelsEditor(0),
       _trayIcon(0)
 {
     ui->setupUi(this);
@@ -100,7 +100,7 @@ MainWindow::MainWindow()
     createGui();
     createShortcuts();
     createConnections();
-    _mediaPlayer->createSession(_hasPlaylist && _model->validate());
+    _mediaPlayer->createSession(_hasChannels && _model->validate());
 
     qApp->installEventFilter(this);
 
@@ -111,8 +111,8 @@ MainWindow::~MainWindow()
 {
     delete _updates;
 
-    if (_playlistEditor)
-        delete _playlistEditor;
+    if (_channelsEditor)
+        delete _channelsEditor;
 
     delete ui;
 
@@ -289,13 +289,13 @@ void MainWindow::createGui()
 {
     _mouseTimer = new QTimer(this);
 
-    _playlistTab = new PlaylistTab(this);
-    _playlistTab->playlist()->setPlaylistModel(_model);
-    ui->tabs->insertTab(0, _playlistTab, QIcon::fromTheme("video-x-generic"), tr("Channels"));
+    _channelsTab = new ChannelsTab(this);
+    _channelsTab->channels()->setChannelsModel(_model);
+    ui->tabs->insertTab(0, _channelsTab, QIcon::fromTheme("video-x-generic"), tr("Channels"));
     ui->tabs->setTabEnabled(0, true);
 
     _scheduleTab = new ScheduleTab(this);
-    _scheduleTab->playlist()->setPlaylistModel(_model);
+    _scheduleTab->channels()->setChannelsModel(_model);
     ui->tabs->insertTab(1, _scheduleTab, QIcon::fromTheme("x-office-calendar"), tr("Schedule"));
     ui->tabs->setTabEnabled(1, true);
 
@@ -307,7 +307,7 @@ void MainWindow::createGui()
     _recorder->setWidgets(ui->actionRecord);
     _recorder->setMediaInstance(_mediaPlayer->mediaInstance());
     _recorder->createSettings();
-    _recorder->setPlaylistModel(_model);
+    _recorder->setChannelsModel(_model);
     ui->tabs->insertTab(3, _recorder, QIcon::fromTheme("media-record"), tr("Recorder"), true);
     ui->tabs->setTabEnabled(3, true);
 
@@ -320,7 +320,7 @@ void MainWindow::createGui()
     _osdFloat->resize(_osdFloat->width(), _mediaPlayer->osd()->height());
     _osdFloat->setControls();
 
-    openPlaylist();
+    openChannelsList();
     setState(Vlc::Idle);
 
 #if !defined(Q_OS_LINUX)
@@ -386,7 +386,7 @@ void MainWindow::createConnections()
     connect(_settingsDialog, &SettingsDialog::generalChanged, this, &MainWindow::createSettings);
     connect(_settingsDialog, &SettingsDialog::generalChanged, _recorder, &Recorder::createSettings);
     connect(_settingsDialog, &SettingsDialog::guiChanged, this, &MainWindow::createSettings);
-    connect(_settingsDialog, &SettingsDialog::channelsChanged, this, &MainWindow::openPlaylist);
+    connect(_settingsDialog, &SettingsDialog::channelsChanged, this, &MainWindow::openChannelsList);
     connect(_settingsDialog, &SettingsDialog::udpxyChanged, _udpxy, &NetworkUdpxy::createSettings);
     connect(_settingsDialog, &SettingsDialog::playbackDefaultsChanged, _mediaPlayer, &MediaPlayer::createSettings);
     connect(_settingsDialog, &SettingsDialog::playbackMiscChanged, _mediaPlayer, &MediaPlayer::createSettings);
@@ -395,7 +395,7 @@ void MainWindow::createConnections()
 
     connect(ui->tabs, SIGNAL(currentChanged(QWidget *)), this, SLOT(currentWidget(QWidget *)));
     connect(ui->tabs, SIGNAL(currentChanged(QWidget *)), _recorder, SLOT(currentWidget(QWidget *)));
-    connect(_playlistTab, SIGNAL(changeTo(QWidget *)), ui->tabs, SLOT(setCurrentWidget(QWidget *)));
+    connect(_channelsTab, SIGNAL(changeTo(QWidget *)), ui->tabs, SLOT(setCurrentWidget(QWidget *)));
     connect(_scheduleTab, SIGNAL(changeTo(QWidget *)), ui->tabs, SLOT(setCurrentWidget(QWidget *)));
     connect(_showInfoTab, SIGNAL(changeTo(QWidget *)), ui->tabs, SLOT(setCurrentWidget(QWidget *)));
 
@@ -412,13 +412,13 @@ void MainWindow::createConnections()
 
     connect(ui->actionSchedule, SIGNAL(triggered()), this, SLOT(showSchedule()));
     connect(ui->actionScheduleCurrent, SIGNAL(triggered()), this, SLOT(showScheduleCurrent()));
-    connect(ui->actionEditPlaylist, SIGNAL(triggered()), this, SLOT(showPlaylistEditor()));
+    connect(ui->actionEditChannels, SIGNAL(triggered()), this, SLOT(showChannelsEditor()));
 
     connect(ui->actionPlay, SIGNAL(triggered()), _mediaPlayer, SLOT(togglePause()));
     connect(ui->actionStop, SIGNAL(triggered()), this, SLOT(stop()));
     connect(ui->actionPreview, SIGNAL(triggered(bool)), this, SLOT(preview(bool)));
 
-    connect(_playlistTab->playlist(), SIGNAL(itemSelected(Channel *)), this, SLOT(playChannel(Channel *)));
+    connect(_channelsTab->channels(), SIGNAL(itemSelected(Channel *)), this, SLOT(playChannel(Channel *)));
     connect(_previewTimer, SIGNAL(timeout()), ui->actionNext, SLOT(trigger()));
 
     if (_trayIcon) {
@@ -456,11 +456,11 @@ void MainWindow::createConnections()
     connect(_mediaPlayer->osd(), SIGNAL(openLink(QString)), _xmltv, SLOT(requestProgramme(QString)));
     connect(_showInfoTab, SIGNAL(requestNext(QString, QString)), _xmltv, SLOT(requestProgrammeNext(QString, QString)));
     connect(_showInfoTab, SIGNAL(requestPrevious(QString, QString)), _xmltv, SLOT(requestProgrammePrevious(QString, QString)));
-    connect(_playlistTab->playlist(), SIGNAL(scheduleRequested(Channel *)), _scheduleTab, SLOT(channel(Channel *)));
+    connect(_channelsTab->channels(), SIGNAL(scheduleRequested(Channel *)), _scheduleTab, SLOT(channel(Channel *)));
 
     connect(_mediaPlayer, SIGNAL(stateChanged(Vlc::State)), this, SLOT(setState(Vlc::State)));
     connect(_mediaPlayer, SIGNAL(vout(int)), this, SLOT(showVideo(int)));
-    connect(_mediaPlayer, SIGNAL(sessionChannel(int)), _playlistTab->playlist(), SLOT(channelSelected(int)));
+    connect(_mediaPlayer, SIGNAL(sessionChannel(int)), _channelsTab->channels(), SLOT(channelSelected(int)));
 
     connect(ui->actionRecorder, SIGNAL(triggered(bool)), this, SLOT(showRecorder()));
     connect(ui->actionRecordNow, SIGNAL(toggled(bool)), this, SLOT(recordNow(bool)));
@@ -648,7 +648,7 @@ void MainWindow::playChannel(Channel *channel)
 
 void MainWindow::playRecording(Timer *recording)
 {
-    ui->tabs->setCurrentWidget(_playlistTab);
+    ui->tabs->setCurrentWidget(_channelsTab);
 
     _mediaPlayer->playLocal(recording->file());
 
@@ -670,35 +670,35 @@ void MainWindow::stop()
 }
 
 // Open dialogs
-void MainWindow::openPlaylist()
+void MainWindow::openChannelsList()
 {
     if (_select != 0) {
         disconnect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
         disconnect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
-        disconnect(_select, SIGNAL(channelSelect(int)), _playlistTab->playlist(), SLOT(channelSelected(int)));
+        disconnect(_select, SIGNAL(channelSelect(int)), _channelsTab->channels(), SLOT(channelSelected(int)));
         delete _select;
     }
 
     QScopedPointer<Settings> settings(new Settings(this));
     QString channels = settings->channelsList();
 
-    _playlistName = Tano::Resources::resource(channels);
-    _model->open(_playlistName);
+    _channelsListFile = Tano::Resources::resource(channels);
+    _model->open(_channelsListFile);
 
-    openPlaylistComplete();
+    openChannelsListComplete();
 }
 
-void MainWindow::openPlaylistComplete()
+void MainWindow::openChannelsListComplete()
 {
-    _hasPlaylist = true;
+    _hasChannels = true;
 
-    _select = new ChannelSelect(this, _mediaPlayer->osd()->lcd(), _model->numbers());
+    _select = new ChannelsSelect(this, _mediaPlayer->osd()->lcd(), _model->numbers());
     connect(ui->actionBack, SIGNAL(triggered()), _select, SLOT(back()));
     connect(ui->actionNext, SIGNAL(triggered()), _select, SLOT(next()));
-    connect(_select, SIGNAL(channelSelect(int)), _playlistTab->playlist(), SLOT(channelSelected(int)));
+    connect(_select, SIGNAL(channelSelect(int)), _channelsTab->channels(), SLOT(channelSelected(int)));
 
-    _playlistTab->setPlaylistName(_model->name());
-    _playlistTab->setFilters(_model->categories(), _model->languages());
+    _channelsTab->setChannelsName(_model->name());
+    _channelsTab->setFilters(_model->categories(), _model->languages());
 }
 
 
@@ -718,27 +718,27 @@ void MainWindow::showRecorder()
     ui->tabs->setCurrentWidget(_recorder);
 }
 
-void MainWindow::showPlaylistEditor()
+void MainWindow::showChannelsEditor()
 {
-    if (_playlistEditor) {
-        if (_playlistEditor->isVisible()) {
-            _playlistEditor->activateWindow();
+    if (_channelsEditor) {
+        if (_channelsEditor->isVisible()) {
+            _channelsEditor->activateWindow();
         } else {
-            disconnect(_xmltv, SIGNAL(channelsChanged(QHash<QString, QString>)), _playlistEditor, SLOT(setXmltvMap(QHash<QString, QString>)));
-            delete _playlistEditor;
-            _playlistEditor = new PlaylistEditor(this);
-            _playlistEditor->setMediaInstance(_mediaPlayer->mediaInstance());
-            _playlistEditor->setXmltvMap(_xmltv->channels());
-            _playlistEditor->open(_playlistName);
-            _playlistEditor->show();
+            disconnect(_xmltv, SIGNAL(channelsChanged(QHash<QString, QString>)), _channelsEditor, SLOT(setXmltvMap(QHash<QString, QString>)));
+            delete _channelsEditor;
+            _channelsEditor = new ChannelsEditor(this);
+            _channelsEditor->setMediaInstance(_mediaPlayer->mediaInstance());
+            _channelsEditor->setXmltvMap(_xmltv->channels());
+            _channelsEditor->open(_channelsListFile);
+            _channelsEditor->show();
         }
     } else {
-        _playlistEditor = new PlaylistEditor(this);
-        _playlistEditor->setMediaInstance(_mediaPlayer->mediaInstance());
-        connect(_xmltv, SIGNAL(channelsChanged(QHash<QString, QString>)), _playlistEditor, SLOT(setXmltvMap(QHash<QString, QString>)));
-        _playlistEditor->setXmltvMap(_xmltv->channels());
-        _playlistEditor->open(_playlistName);
-        _playlistEditor->show();
+        _channelsEditor = new ChannelsEditor(this);
+        _channelsEditor->setMediaInstance(_mediaPlayer->mediaInstance());
+        connect(_xmltv, SIGNAL(channelsChanged(QHash<QString, QString>)), _channelsEditor, SLOT(setXmltvMap(QHash<QString, QString>)));
+        _channelsEditor->setXmltvMap(_xmltv->channels());
+        _channelsEditor->open(_channelsListFile);
+        _channelsEditor->show();
     }
 }
 

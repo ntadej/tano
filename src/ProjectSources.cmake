@@ -45,24 +45,32 @@ SET(Project_Common_Srcs
     common/widgets/FileDialogs.cpp
 )
 
+SET(Project_Channels_Srcs
+    channels/containers/Channel.cpp
+    channels/generators/CSVGenerator.cpp
+    channels/generators/M3UGenerator.cpp
+    channels/generators/XmltvIdGenerator.cpp
+    channels/handlers/CSVHandler.cpp
+    channels/handlers/M3UHandler.cpp
+    channels/helpers/ChannelsOpen.cpp
+    channels/helpers/ChannelsSave.cpp
+    channels/helpers/ChannelsUpdate.cpp
+    channels/models/ChannelsFilterModel.cpp
+    channels/models/ChannelsModel.cpp
+    channels/widgets/ChannelsDisplayWidget.cpp
+    channels/widgets/ChannelsSelect.cpp
+    channels/editor/ChannelsEditor.cpp
+    channels/editor/ChannelsEditorHelp.cpp
+    channels/editor/ChannelsImportCSV.cpp
+    channels/editor/ChannelsPrint.cpp
+    channels/editor/ChannelsPrintDialog.cpp
+    channels/editor/ChannelsScan.cpp
+)
+
 SET(Project_Network_Srcs
     network/NetworkDownload.cpp
     network/NetworkRequest.cpp
     network/NetworkUdpxy.cpp
-)
-
-SET(Project_Playlist_Srcs
-    playlist/PlaylistFilterModel.cpp
-    playlist/PlaylistModel.cpp
-    playlist/PlaylistOpen.cpp
-    playlist/PlaylistSave.cpp
-    playlist/PlaylistUpdate.cpp
-    playlist/containers/Channel.cpp
-    playlist/generators/CSVGenerator.cpp
-    playlist/generators/M3UGenerator.cpp
-    playlist/generators/XmltvIdGenerator.cpp
-    playlist/handlers/CSVHandler.cpp
-    playlist/handlers/M3UHandler.cpp
 )
 
 SET(Project_Settings_Srcs
@@ -126,8 +134,8 @@ SET(Project_Srcs
 
     ${Project_Application_Srcs}
     ${Project_Common_Srcs}
+    ${Project_Channels_Srcs}
     ${Project_Network_Srcs}
-    ${Project_Playlist_Srcs}
     ${Project_Plugins_Srcs}
     ${Project_Settings_Srcs}
     ${Project_Timers_Srcs}

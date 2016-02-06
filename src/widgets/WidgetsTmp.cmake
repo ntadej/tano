@@ -24,11 +24,6 @@ SET(Project_Widgets_UIs
     widgets/MainWindow.ui
     widgets/common/OsdWidget.ui
     widgets/dialogs/AboutDialog.ui
-    widgets/editor/PlaylistEditor.ui
-    widgets/editor/PlaylistEditorHelp.ui
-    widgets/editor/PlaylistEditorScan.ui
-    widgets/editor/PlaylistImportCSV.ui
-    widgets/editor/PrintDialog.ui
     widgets/main/ShowInfoTab.ui
     widgets/recorder/RecorderInfoWidget.ui
     widgets/recorder/RecorderNewDialog.ui
@@ -37,11 +32,9 @@ SET(Project_Widgets_UIs
 
 # Define the C++ source files used by Tano Widgets
 SET(Project_Widgets_Common_Srcs
-    widgets/common/ChannelSelect.cpp
     widgets/common/InfoBarWidget.cpp
     widgets/common/OsdFloat.cpp
     widgets/common/OsdWidget.cpp
-    widgets/common/PlaylistDisplayWidget.cpp
     widgets/common/ScrollingWidget.cpp
     widgets/common/TrayIcon.cpp
 )
@@ -55,17 +48,10 @@ ENDIF()
 SET(Project_Widgets_Dialogs_Srcs
     widgets/dialogs/AboutDialog.cpp
 )
-SET(Project_Widgets_Editor_Srcs
-    widgets/editor/PlaylistEditor.cpp
-    widgets/editor/PlaylistEditorHelp.cpp
-    widgets/editor/PlaylistEditorScan.cpp
-    widgets/editor/PlaylistImportCSV.cpp
-    widgets/editor/Print.cpp
-    widgets/editor/PrintDialog.cpp
-)
+
 SET(Project_Widgets_Main_Srcs
     widgets/main/MediaPlayer.cpp
-    widgets/main/PlaylistTab.cpp
+    widgets/main/ChannelsTab.cpp
     widgets/main/ScheduleTab.cpp
     widgets/main/ShowInfoTab.cpp
 )

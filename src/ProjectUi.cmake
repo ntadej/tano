@@ -17,6 +17,12 @@
 #############################################################################
 
 SET(Project_UIs
+    channels/editor/ChannelsEditor.ui
+    channels/editor/ChannelsEditorHelp.ui
+    channels/editor/ChannelsImportCSV.ui
+    channels/editor/ChannelsPrintDialog.ui
+    channels/editor/ChannelsScan.ui
+
     settings/widgets/SettingsDialog.ui
     settings/widgets/SettingsPlayback.ui
     settings/widgets/SettingsTv.ui

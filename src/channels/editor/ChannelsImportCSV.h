@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,47 +16,39 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERTIMERSEDITOR_H_
-#define TANO_RECORDERTIMERSEDITOR_H_
+#ifndef TANO_CHANNELSIMPORTCSV_H_
+#define TANO_CHANNELSIMPORTCSV_H_
 
-#include <QtCore/QDate>
-#include <QtWidgets/QWidget>
+#include <QtWidgets/QDialog>
 
-class ChannelsModel;
-class Timer;
-class TimersFilterModel;
-class TimersModel;
-
-namespace Ui
-{
-    class RecorderTimersEditor;
+namespace Ui {
+    class ChannelsImportCSV;
 }
 
-class RecorderTimersEditor : public QWidget
-{
-Q_OBJECT
-public:
-    explicit RecorderTimersEditor(QWidget *parent = 0);
-    ~RecorderTimersEditor();
+class QAbstractButton;
 
-    void edit(Timer *item);
-    bool save();
-    void setModel(TimersModel *model);
-    void setChannelsModel(ChannelsModel *model);
+class ChannelsImportCSV : public QDialog
+{
+    Q_OBJECT
+public:
+    ChannelsImportCSV(QWidget *parent = 0);
+    ~ChannelsImportCSV();
+
+	QList<int> columns() const;
+	bool header() const;
+	bool proceed() const { return _proceed; }
+	QString separator() const;
 
 protected:
-    void changeEvent(QEvent *e);
+	void changeEvent(QEvent *e);
+
+private slots:
+	void action(QAbstractButton *button);
 
 private:
-    bool validate();
+    Ui::ChannelsImportCSV *ui;
 
-    Ui::RecorderTimersEditor *ui;
-
-    Timer *_currentTimer;
-    TimersFilterModel *_validateModel;
-    TimersModel *_modelCore;
-
-    ChannelsModel *_channels;
+	bool _proceed;
 };
 
-#endif // TANO_RECORDERTIMERSEDITOR_H_
+#endif // TANO_CHANNELSIMPORTCSV_H_

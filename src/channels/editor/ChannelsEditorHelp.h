@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,47 +16,28 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_RECORDERTIMERSEDITOR_H_
-#define TANO_RECORDERTIMERSEDITOR_H_
+#ifndef TANO_CHANNELSEDITORHELP_H_
+#define TANO_CHANNELSEDITORHELP_H_
 
-#include <QtCore/QDate>
-#include <QtWidgets/QWidget>
-
-class ChannelsModel;
-class Timer;
-class TimersFilterModel;
-class TimersModel;
+#include <QtWidgets/QDialog>
 
 namespace Ui
 {
-    class RecorderTimersEditor;
+    class ChannelsEditorHelp;
 }
 
-class RecorderTimersEditor : public QWidget
+class ChannelsEditorHelp : public QDialog
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-    explicit RecorderTimersEditor(QWidget *parent = 0);
-    ~RecorderTimersEditor();
-
-    void edit(Timer *item);
-    bool save();
-    void setModel(TimersModel *model);
-    void setChannelsModel(ChannelsModel *model);
+    ChannelsEditorHelp(QWidget *parent = 0);
+    ~ChannelsEditorHelp();
 
 protected:
-    void changeEvent(QEvent *e);
+	void changeEvent(QEvent *e);
 
 private:
-    bool validate();
-
-    Ui::RecorderTimersEditor *ui;
-
-    Timer *_currentTimer;
-    TimersFilterModel *_validateModel;
-    TimersModel *_modelCore;
-
-    ChannelsModel *_channels;
+    Ui::ChannelsEditorHelp *ui;
 };
 
-#endif // TANO_RECORDERTIMERSEDITOR_H_
+#endif // TANO_CHANNELSEDITORHELP_H_

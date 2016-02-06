@@ -20,8 +20,8 @@
 
 #include <QDebug>
 
-#include "playlist/PlaylistModel.h"
-#include "playlist/containers/Channel.h"
+#include "channels/containers/Channel.h"
+#include "channels/models/ChannelsModel.h"
 #include "timers/containers/Timer.h"
 #include "timers/models/TimersFilterModel.h"
 #include "timers/models/TimersModel.h"
@@ -68,8 +68,8 @@ void RecorderTimersEditor::edit(Timer *item)
 
     _currentTimer = item;
 
-    Channel *channel = _playlist->find(_currentTimer->channelId());
-    QString ch = channel ? _playlist->data(_playlist->indexFromItem(channel)).toString() : "";
+    Channel *channel = _channels->find(_currentTimer->channelId());
+    QString ch = channel ? _channels->data(_channels->indexFromItem(channel)).toString() : "";
 
     ui->checkBoxEnabled->setChecked(_currentTimer->state() != Timer::Disabled);
     ui->editName->setText(_currentTimer->name());
@@ -86,7 +86,7 @@ bool RecorderTimersEditor::save()
         return false;
 
     _currentTimer->setName(ui->editName->text());
-    _currentTimer->setChannelId(_playlist->row(ui->editChannel->currentIndex())->id());
+    _currentTimer->setChannelId(_channels->row(ui->editChannel->currentIndex())->id());
     _currentTimer->setType(Timer::Type(ui->editType->currentIndex()));
     _currentTimer->setDate(ui->editDate->date());
     _currentTimer->setStartTime(ui->editStartTime->time());
@@ -102,10 +102,10 @@ void RecorderTimersEditor::setModel(TimersModel *model)
     _validateModel->setSourceModel(model);
 }
 
-void RecorderTimersEditor::setPlaylistModel(PlaylistModel *model)
+void RecorderTimersEditor::setChannelsModel(ChannelsModel *model)
 {
-    _playlist = model;
-    ui->editChannel->setModel(_playlist);
+    _channels = model;
+    ui->editChannel->setModel(_channels);
 }
 
 bool RecorderTimersEditor::validate()

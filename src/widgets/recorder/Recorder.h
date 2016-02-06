@@ -27,7 +27,7 @@
 
 class Channel;
 class NetworkUdpxy;
-class PlaylistModel;
+class ChannelsModel;
 class RecorderCore;
 class RecorderInfoWidget;
 class RecorderTimersWidget;
@@ -50,7 +50,7 @@ public:
     Timer *newInstantTimer(Channel *channel);
 
     void setMediaInstance(VlcInstance *instance);
-    void setPlaylistModel(PlaylistModel *model);
+    void setChannelsModel(ChannelsModel *model);
     void setWidgets(QAction *action);
     void writeTimers();
 
@@ -86,7 +86,7 @@ private:
     RecorderCore *_core;
     TimersTimeManager *_manager;
     TimersModel *_model;
-    PlaylistModel *_playlist;
+    ChannelsModel *_channels;
     NetworkUdpxy *_udpxy;
 };
 
