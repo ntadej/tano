@@ -1,10 +1,11 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
-* This file is part of Qt Creator.
-* Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-* Contact: http://www.qt-project.org/legal
+* Copyright (C) 2016 The Qt Company Ltd.
+* Contact: https://www.qt.io/licensing/
+*
+* This file is based on file from Qt Creator.
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -27,7 +28,7 @@
 
 class StyledBar : public QWidget
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     StyledBar(QWidget *parent = 0);
     void setSingleRow(bool singleRow);
@@ -42,7 +43,7 @@ protected:
 
 class StyledSeparator : public QWidget
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     StyledSeparator(QWidget *parent = 0);
 protected:
@@ -51,7 +52,7 @@ protected:
 
 class SimpleSeparator : public QWidget
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     SimpleSeparator(QWidget *parent = 0);
 };

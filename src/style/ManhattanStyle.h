@@ -1,10 +1,11 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
-* This file is part of Qt Creator.
-* Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-* Contact: http://www.qt-project.org/legal
+* Copyright (C) 2016 The Qt Company Ltd.
+* Contact: https://www.qt.io/licensing/
+*
+* This file is based on file from Qt Creator.
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -60,9 +61,6 @@ public:
 
     void unpolish(QWidget *widget);
     void unpolish(QApplication *app);
-
-protected slots:
-    QIcon standardIconImplementation(StandardPixmap standardIcon, const QStyleOption *option, const QWidget *widget) const;
 
 private:
     void drawButtonFrame(QPainter *painter, const QRect &rect) const;

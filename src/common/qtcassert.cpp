@@ -1,6 +1,11 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
+*
+* Copyright (C) 2016 The Qt Company Ltd.
+* Contact: https://www.qt.io/licensing/
+*
+* This file is based on file from Qt Creator.
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,16 +21,19 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_STYLECOMMON_H_
-#define TANO_STYLECOMMON_H_
+#include "qtcassert.h"
 
-namespace Tano
+#include <QByteArray>
+
+namespace Tano {
+
+void writeAssertLocation(const char *msg)
 {
-    namespace Style
-    {
-        // Resources locators
-        void setMainStyle();
-    }
+    static bool goBoom = !qgetenv("QTC_FATAL_ASSERTS").isEmpty();
+    if (goBoom)
+        qFatal("SOFT ASSERT made fatal: %s", msg);
+    else
+        qDebug("SOFT ASSERT: %s", msg);
 }
 
-#endif // TANO_STYLECOMMON_H_
+} // namespace Tano

@@ -17,12 +17,17 @@
 *****************************************************************************/
 
 #include <QtCore/QDebug>
+#include <QtCore/QSettings>
+#include <QtWidgets/QStyleFactory>
 
 #include "application/Common.h"
 #include "application/Log.h"
 #include "application/Output.h"
-
-#include "widgets/style/Common.h"
+#include "common/Resources.h"
+#include "style/ManhattanStyle.h"
+#include "style/StyleHelper.h"
+#include "style/Theme.h"
+#include "style/Theme_p.h"
 
 #include "TanoApplication.h"
 
@@ -70,7 +75,8 @@ void TanoApplication::postInit()
 {
     Output::welcome();
 
-    Tano::Style::setMainStyle();
+    setMainTheme();
+    setMainStyle();
 }
 
 void TanoApplication::onClickOnDock()
@@ -102,3 +108,41 @@ void TanoApplication::setupDockHandler()
     }
 }
 #endif
+
+void TanoApplication::setMainStyle()
+{
+#ifdef Q_OS_MAC
+    setAttribute(Qt::AA_DontShowIconsInMenus);
+#endif
+
+    QString baseName = style()->objectName();
+    // Sometimes we get the standard windows 95 style as a fallback
+#if defined(Q_OS_UNIX) && !defined(Q_OS_MAC)
+    if (baseName == QLatin1String("windows")) {
+        baseName = QLatin1String("fusion");
+    }
+#endif
+
+    // if the user has specified as base style in the theme settings,
+    // prefer that
+    const QStringList available = QStyleFactory::keys();
+    foreach (const QString &s, Tano::applicationTheme()->preferredStyles()) {
+        if (available.contains(s, Qt::CaseInsensitive)) {
+            baseName = s;
+            break;
+        }
+    }
+    setStyle(new ManhattanStyle(baseName));
+
+    StyleHelper::setBaseColor(palette().color(QPalette::Highlight));
+}
+
+void TanoApplication::setMainTheme()
+{
+    QSettings themeSettings(Tano::Resources::resource("DefaultTheme.ini"), QSettings::IniFormat);
+    Theme *theme = new Theme("Default", qApp);
+    theme->readSettings(themeSettings);
+    if (theme->flag(Theme::ApplyThemePaletteGlobally))
+        setPalette(theme->palette());
+    Tano::setApplicationTheme(theme);
+}

@@ -38,9 +38,11 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     SET(Project_Srcs
         ${Project_Srcs}
         ../resources/dsa_pub.pem
+        ../resources/style/DefaultTheme.ini
     )
     SET_SOURCE_FILES_PROPERTIES (
         ../resources/dsa_pub.pem
+        ../resources/style/DefaultTheme.ini
         PROPERTIES
         MACOSX_PACKAGE_LOCATION Resources
     )

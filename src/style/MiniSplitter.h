@@ -1,6 +1,11 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2015 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
+*
+* Copyright (C) 2016 The Qt Company Ltd.
+* Contact: https://www.qt.io/licensing/
+*
+* This file is based on file from Qt Creator.
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,35 +21,27 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_TANOAPPLICATION_H_
-#define TANO_TANOAPPLICATION_H_
+#ifndef TANO_MINISPLITTER_H_
+#define TANO_MINISPLITTER_H_
 
-#include "application/SingleApplication.h"
+#include <QSplitter>
 
-class TanoApplication : public SingleApplication
+class QSplitterHandle;
+
+/*! This is a simple helper-class to obtain mac-style 1-pixel wide splitters */
+class MiniSplitter : public QSplitter
 {
-    Q_OBJECT
 public:
-    explicit TanoApplication(int &argc,
-                             char **argv);
-    ~TanoApplication();
+    enum SplitterStyle {Dark, Light};
 
-    static void preInit();
-    void postInit();
+    MiniSplitter(QWidget *parent = 0, SplitterStyle style = Dark);
+    MiniSplitter(Qt::Orientation orientation, SplitterStyle style = Dark);
 
-#ifdef Q_OS_MAC
-    void setupDockHandler();
-#endif
-
-public slots:
-    void onClickOnDock();
-
-signals:
-    void dockClicked();
+protected:
+    QSplitterHandle *createHandle();
 
 private:
-    void setMainStyle();
-    void setMainTheme();
+    SplitterStyle m_style;
 };
 
-#endif // TANO_TANOAPPLICATION_H_
+#endif // TANO_MINISPLITTER_H_

@@ -1,10 +1,11 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
-* This file is part of Qt Creator.
-* Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-* Contact: http://www.qt-project.org/legal
+* Copyright (C) 2016 The Qt Company Ltd.
+* Contact: https://www.qt.io/licensing/
+*
+* This file is based on file from Qt Creator.
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,19 +21,20 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "MiniSplitter.h"
-#include "StyleHelper.h"
+#include "style/MiniSplitter.h"
+#include "style/StyleHelper.h"
+#include "style/Theme.h"
 
-#include <QPainter>
 #include <QPaintEvent>
+#include <QPainter>
 #include <QSplitterHandle>
 
 class MiniSplitterHandle : public QSplitterHandle
 {
 public:
-    MiniSplitterHandle(Qt::Orientation orientation,
-                       QSplitter *parent)
-            : QSplitterHandle(orientation, parent)
+    MiniSplitterHandle(Qt::Orientation orientation, QSplitter *parent, bool lightColored = false)
+            : QSplitterHandle(orientation, parent),
+              m_lightColored(lightColored)
     {
         setMask(QRegion(contentsRect()));
         setAttribute(Qt::WA_MouseNoMask, true);
@@ -40,6 +42,9 @@ public:
 protected:
     void resizeEvent(QResizeEvent *event);
     void paintEvent(QPaintEvent *event);
+
+private:
+    bool m_lightColored;
 };
 
 void MiniSplitterHandle::resizeEvent(QResizeEvent *event)
@@ -55,24 +60,29 @@ void MiniSplitterHandle::resizeEvent(QResizeEvent *event)
 void MiniSplitterHandle::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
-    painter.fillRect(event->rect(), StyleHelper::borderColor());
+    const QColor color = m_lightColored
+            ? StyleHelper::borderColor(m_lightColored)
+            : Tano::applicationTheme()->color(Theme::SplitterColor);
+    painter.fillRect(event->rect(), color);
 }
 
 QSplitterHandle *MiniSplitter::createHandle()
 {
-    return new MiniSplitterHandle(orientation(), this);
+    return new MiniSplitterHandle(orientation(), this, m_style == Light);
 }
 
-MiniSplitter::MiniSplitter(QWidget *parent)
-    : QSplitter(parent)
+MiniSplitter::MiniSplitter(QWidget *parent, SplitterStyle style)
+    : QSplitter(parent),
+      m_style(style)
 {
     setHandleWidth(1);
     setChildrenCollapsible(false);
     setProperty("minisplitter", true);
 }
 
-MiniSplitter::MiniSplitter(Qt::Orientation orientation)
-    : QSplitter(orientation)
+MiniSplitter::MiniSplitter(Qt::Orientation orientation, SplitterStyle style)
+    : QSplitter(orientation),
+      m_style(style)
 {
     setHandleWidth(1);
     setChildrenCollapsible(false);

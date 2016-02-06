@@ -1,12 +1,16 @@
 <RCC>
     <qresource prefix="/style">
-        <file>closebutton.png</file>
-        <file>extension.png</file>
-        <file>inputfield_disabled.png</file>
-        <file>inputfield.png</file>
         <file>volumeslider-gradient.png</file>
         <file>volumeslider-handle_glow.png</file>
         <file>volumeslider-handle.png</file>
         <file>volumeslider-inset.png</file>
+        <file>images/close.png</file>
+        <file>images/close@2x.png</file>
+        <file>images/extension.png</file>
+        <file>images/extension@2x.png</file>
+        <file>images/inputfield_disabled.png</file>
+        <file>images/inputfield_disabled@2x.png</file>
+        <file>images/inputfield.png</file>
+        <file>images/inputfield@2x.png</file>
     </qresource>
 </RCC>

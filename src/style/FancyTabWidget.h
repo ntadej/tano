@@ -1,10 +1,11 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
-* This file is part of Qt Creator.
-* Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-* Contact: http://www.qt-project.org/legal
+* Copyright (C) 2016 The Qt Company Ltd.
+* Contact: https://www.qt.io/licensing/
+*
+* This file is based on file from Qt Creator.
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -24,9 +25,10 @@
 #define TANO_FANCYTABWIDGET_H_
 
 #include <QIcon>
+#include <QWidget>
+
 #include <QTimer>
 #include <QPropertyAnimation>
-#include <QWidget>
 
 class QPainter;
 class QStackedLayout;
@@ -36,14 +38,15 @@ class MiniSplitter;
 
 class FancyTab : public QObject
 {
-Q_OBJECT
-Q_PROPERTY(float fader READ fader WRITE setFader)
+    Q_OBJECT
+
+    Q_PROPERTY(float fader READ fader WRITE setFader)
 public:
-    FancyTab(QWidget *tabbar) : enabled(false), full(false), tabbar(tabbar), _fader(0) {
+    FancyTab(QWidget *tabbar) : enabled(false), full(false), tabbar(tabbar), m_fader(0) {
         animator.setPropertyName("fader");
         animator.setTargetObject(this);
     }
-    float fader() { return _fader; }
+    float fader() { return m_fader; }
     void setFader(float value);
 
     void fadeIn();
@@ -58,12 +61,13 @@ public:
 private:
     QPropertyAnimation animator;
     QWidget *tabbar;
-    float _fader;
+    float m_fader;
 };
 
 class FancyTabBar : public QWidget
 {
-Q_OBJECT
+    Q_OBJECT
+
 public:
     FancyTabBar(QWidget *parent = 0);
     ~FancyTabBar();
@@ -71,47 +75,44 @@ public:
     bool event(QEvent *event);
 
     void paintEvent(QPaintEvent *event);
-    void paintTab(QPainter *painter,
-                  int tabIndex) const;
+    void paintTab(QPainter *painter, int tabIndex) const;
     void mousePressEvent(QMouseEvent *);
     void mouseMoveEvent(QMouseEvent *);
     void enterEvent(QEvent *);
     void leaveEvent(QEvent *);
-    bool validIndex(int index) const { return index >= 0 && index < _tabs.count(); }
+    bool validIndex(int index) const { return index >= 0 && index < m_tabs.count(); }
 
     QSize sizeHint() const;
     QSize minimumSizeHint() const;
 
-    void setTabEnabled(int index,
-                       bool enable);
+    void setTabEnabled(int index, bool enable);
     bool isTabEnabled(int index) const;
 
-    void insertTab(int index,
-                   const QIcon &icon,
-                   const QString &label,
-                   bool full = false) {
+    void insertTab(int index, const QIcon &icon, const QString &label, bool full = false) {
         FancyTab *tab = new FancyTab(this);
         tab->icon = icon;
         tab->text = label;
         tab->full = full;
-        _tabs.insert(index, tab);
+        m_tabs.insert(index, tab);
+        updateGeometry();
     }
     void setEnabled(int index, bool enabled);
     void removeTab(int index) {
-        FancyTab *tab = _tabs.takeAt(index);
+        FancyTab *tab = m_tabs.takeAt(index);
         delete tab;
+        updateGeometry();
     }
     void setCurrentIndex(int index);
-    int currentIndex() const { return _currentIndex; }
+    int currentIndex() const { return m_currentIndex; }
 
-    void setTabToolTip(int index, QString toolTip) { _tabs[index]->toolTip = toolTip; }
-    QString tabToolTip(int index) const { return _tabs.at(index)->toolTip; }
+    void setTabToolTip(int index, QString toolTip) { m_tabs[index]->toolTip = toolTip; }
+    QString tabToolTip(int index) const { return m_tabs.at(index)->toolTip; }
 
-    bool tabFull(int index) const { return _tabs.at(index)->full; }
-    QIcon tabIcon(int index) const { return _tabs.at(index)->icon; }
-    QString tabText(int index) const { return _tabs.at(index)->text; }
-    void setTabText(int index, const QString &text) const { _tabs.at(index)->text = text; }
-    int count() const {return _tabs.count(); }
+    bool tabFull(int index) const { return m_tabs.at(index)->full; }
+    void setTabText(int index, const QString &text) const { m_tabs.at(index)->text = text; }
+    QIcon tabIcon(int index) const { return m_tabs.at(index)->icon; }
+    QString tabText(int index) const { return m_tabs.at(index)->text; }
+    int count() const {return m_tabs.count(); }
     QRect tabRect(int index) const;
 
 signals:
@@ -121,37 +122,33 @@ public slots:
     void emitCurrentIndex();
 
 private:
-    static const int _rounding;
-    static const int _textPadding;
-    QRect _hoverRect;
-    int _hoverIndex;
-    int _currentIndex;
-    QList<FancyTab*> _tabs;
-    QTimer _triggerTimer;
+    static const int m_rounding;
+    static const int m_textPadding;
+    QRect m_hoverRect;
+    int m_hoverIndex;
+    int m_currentIndex;
+    QList<FancyTab*> m_tabs;
+    QTimer m_triggerTimer;
     QSize tabSizeHint(bool minimum = false) const;
 
 };
 
 class FancyTabWidget : public QWidget
 {
-Q_OBJECT
+    Q_OBJECT
+
 public:
     FancyTabWidget(QWidget *parent = 0);
 
     void addStaticWidget(QWidget *widget);
-    void insertTab(int index, QWidget *tab,
-                   const QIcon &icon,
-                   const QString &label,
-                   bool full = false);
+    void insertTab(int index, QWidget *tab, const QIcon &icon, const QString &label, bool full = false);
     void removeTab(int index);
     void renameTab(int index, const QString &name);
     void setBackgroundBrush(const QBrush &brush);
     void addCornerWidget(QWidget *widget);
-    void insertCornerWidget(int pos,
-                            QWidget *widget);
+    void insertCornerWidget(int pos, QWidget *widget);
     int cornerWidgetCount() const;
-    void setTabToolTip(int index,
-                       const QString &toolTip);
+    void setTabToolTip(int index, const QString &toolTip);
 
     void paintEvent(QPaintEvent *event);
 
@@ -160,8 +157,7 @@ public:
     QWidget *currentWidget() const;
     QStatusBar *statusBar() const;
 
-    void setTabEnabled(int index,
-                       bool enable);
+    void setTabEnabled(int index, bool enable);
     bool isTabEnabled(int index) const;
 
     bool isSelectionWidgetVisible() const;
@@ -181,13 +177,13 @@ private slots:
     void showWidget(int index);
 
 private:
-    FancyTabBar *_tabBar;
-    QWidget *_containerWidget;
-    QWidget *_cornerWidgetContainer;
-    QStackedLayout *_modesStack;
-    QWidget *_selectionWidget;
-    MiniSplitter *_splitterWidget;
-    QStatusBar *_statusBar;
+    FancyTabBar *m_tabBar;
+    QWidget *m_containerWidget;
+    QWidget *m_cornerWidgetContainer;
+    QStackedLayout *m_modesStack;
+    QWidget *m_selectionWidget;
+    MiniSplitter *m_splitterWidget;
+    QStatusBar *m_statusBar;
 };
 
 #endif // TANO_FANCYTABWIDGET_H_

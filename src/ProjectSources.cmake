@@ -40,6 +40,7 @@ SET(Project_Common_Srcs
     common/ListItem.h
     common/ListModel.cpp
     common/NetworkManager.cpp
+    common/qtcassert.cpp
     common/Resources.cpp
     common/widgets/BrowseWidget.cpp
     common/widgets/FileDialogs.cpp
@@ -86,6 +87,19 @@ SET(Project_Settings_Srcs
     settings/widgets/SettingsNotEditableDelegate.cpp
     settings/widgets/SettingsPlayback.cpp
     settings/widgets/SettingsTv.cpp
+)
+
+SET(Project_Style_Srcs
+    style/FancyLineEdit.cpp
+    style/FancyTabWidget.cpp
+    style/Icon.cpp
+    style/ManhattanStyle.cpp
+    style/MiniSplitter.cpp
+    style/StyleAnimator.cpp
+    style/StyleHelper.cpp
+    style/StyledBar.cpp
+    style/Theme.cpp
+    style/Theme_p.h
 )
 
 SET(Project_Timers_Srcs
@@ -138,6 +152,7 @@ SET(Project_Srcs
     ${Project_Network_Srcs}
     ${Project_Plugins_Srcs}
     ${Project_Settings_Srcs}
+    ${Project_Style_Srcs}
     ${Project_Timers_Srcs}
     ${Project_Xmltv_Srcs}
 

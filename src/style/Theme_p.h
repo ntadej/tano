@@ -1,10 +1,11 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
-* This file is part of Qt Creator.
-* Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-* Contact: http://www.qt-project.org/legal
+* Copyright (C) 2016 The Qt Company Ltd.
+* Contact: https://www.qt.io/licensing/
+*
+* This file is based on file from Qt Application.
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,21 +21,34 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_MINISPLITTER_H_
-#define TANO_MINISPLITTER_H_
+#ifndef TANO_THEME_P_H_
+#define TANO_THEME_P_H_
 
-#include <QSplitter>
+#include "Theme.h"
 
-class QSplitterHandle;
+#include <QColor>
+#include <QMap>
 
-class MiniSplitter : public QSplitter
+class ThemePrivate
 {
 public:
-    MiniSplitter(QWidget *parent = 0);
-    MiniSplitter(Qt::Orientation orientation);
+    ThemePrivate();
 
-protected:
-    QSplitterHandle *createHandle();
+    QString id;
+    QString fileName;
+    QString displayName;
+    QStringList preferredStyles;
+    QString defaultTextEditorColorScheme;
+    QVector<QPair<QColor, QString> > colors;
+    QVector<QString> imageFiles;
+    QVector<QGradientStops> gradients;
+    QVector<bool> flags;
+    Theme::WidgetStyle widgetStyle;
+    QMap<QString, QColor> palette;
 };
 
-#endif // TANO_MINISPLITTER_H_
+namespace Tano {
+void setApplicationTheme(Theme *theme);
+}
+
+#endif // TANO_THEME_P_H_

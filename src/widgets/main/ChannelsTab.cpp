@@ -70,7 +70,8 @@ ChannelsTab::ChannelsTab(QWidget *parent)
     _selectType->addItem(tr("All"));
     _selectType->addItem(tr("TV"));
     _selectType->addItems(Channel::types());
-    _selectType->setProperty("inverse", true);
+    _selectType->setProperty("hideborder", true);
+    _selectType->setProperty("drawleftborder", true);
     _toolbarTop->addWidget(_selectType);
 
     _selectCategory = new QComboBox(this);

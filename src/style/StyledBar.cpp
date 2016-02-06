@@ -1,10 +1,11 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
-* This file is part of Qt Creator.
-* Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-* Contact: http://www.qt-project.org/legal
+* Copyright (C) 2016 The Qt Company Ltd.
+* Contact: https://www.qt.io/licensing/
+*
+* This file is based on file from Qt Creator.
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -20,8 +21,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "StyledBar.h"
-#include "StyleHelper.h"
+#include "style/StyledBar.h"
+#include "style/StyleHelper.h"
 
 #include <QPainter>
 #include <QStyleOption>
@@ -46,7 +47,11 @@ bool StyledBar::isSingleRow() const
 
 void StyledBar::setLightColored(bool lightColored)
 {
+    if (isLightColored() == lightColored)
+        return;
     setProperty("lightColored", lightColored);
+    foreach (QWidget *childWidget, findChildren<QWidget *>())
+        childWidget->style()->polish(childWidget);
 }
 
 bool StyledBar::isLightColored() const
@@ -58,7 +63,7 @@ void StyledBar::paintEvent(QPaintEvent *event)
 {
     Q_UNUSED(event)
     QPainter painter(this);
-    QStyleOption option;
+    QStyleOptionToolBar option;
     option.rect = rect();
     option.state = QStyle::State_Horizontal;
     style()->drawControl(QStyle::CE_ToolBar, &option, &painter, this);

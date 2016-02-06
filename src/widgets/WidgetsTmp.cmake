@@ -74,15 +74,6 @@ SET(Project_Widgets_Recorder_Srcs
     widgets/recorder/RecorderTimersWidget.cpp
 )
 SET(Project_Widgets_Style_Srcs
-    widgets/style/Common.cpp
-    widgets/style/FancyLineEdit.cpp
-    widgets/style/FancyTabWidget.cpp
-    widgets/style/IconButton.cpp
-    widgets/style/ManhattanStyle.cpp
-    widgets/style/MiniSplitter.cpp
-    widgets/style/StyleAnimator.cpp
-    widgets/style/StyleHelper.cpp
-    widgets/style/StyledBar.cpp
     widgets/style/VolumeSlider.cpp
 )
 

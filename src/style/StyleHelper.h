@@ -1,10 +1,11 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2013 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
-* This file is part of Qt Creator.
-* Copyright (C) 2013 Digia Plc and/or its subsidiary(-ies).
-* Contact: http://www.qt-project.org/legal
+* Copyright (C) 2016 The Qt Company Ltd.
+* Contact: https://www.qt.io/licensing/
+*
+* This file is based on file from Qt Creator.
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -30,14 +31,10 @@ class QPainter;
 class QRect;
 // Note, this is exported but in a private header as qtopengl depends on it.
 // We should consider adding this as a public helper function.
-void qt_blurImage(QPainter *p,
-                  QImage &blurImage,
-                  qreal radius,
-                  bool quality,
-                  bool alphaOnly,
-                  int transposed = 0);
+void qt_blurImage(QPainter *p, QImage &blurImage, qreal radius, bool quality, bool alphaOnly, int transposed = 0);
 
 // Helper class holding all custom color values
+
 class StyleHelper
 {
 public:
@@ -57,54 +54,38 @@ public:
     static QColor shadowColor(bool lightColored = false);
     static QColor borderColor(bool lightColored = false);
     static QColor buttonTextColor() { return QColor(0x4c4c4c); }
-    static QColor mergedColors(const QColor &colorA,
-                               const QColor &colorB,
-                               int factor = 50);
+    static QColor mergedColors(const QColor &colorA, const QColor &colorB, int factor = 50);
 
     static QColor sidebarHighlight() { return QColor(255, 255, 255, 40); }
     static QColor sidebarShadow() { return QColor(0, 0, 0, 40); }
+
+    static QColor notTooBrightHighlightColor();
 
     // Sets the base color and makes sure all top level widgets are updated
     static void setBaseColor(const QColor &color);
 
     // Draws a shaded anti-aliased arrow
-    static void drawArrow(QStyle::PrimitiveElement element,
-                          QPainter *painter,
-                          const QStyleOption *option,
-                          qreal devicePixelRatio);
+    static void drawArrow(QStyle::PrimitiveElement element, QPainter *painter, const QStyleOption *option);
 
     // Gradients used for panels
-    static void horizontalGradient(QPainter *painter,
-                                   const QRect &spanRect,
-                                   const QRect &clipRect,
-                                   bool lightColored = false);
-    static void verticalGradient(QPainter *painter,
-                                 const QRect &spanRect,
-                                 const QRect &clipRect,
-                                 bool lightColored = false);
-    static void menuGradient(QPainter *painter,
-                             const QRect &spanRect,
-                             const QRect &clipRect);
+    static void horizontalGradient(QPainter *painter, const QRect &spanRect, const QRect &clipRect, bool lightColored = false);
+    static void verticalGradient(QPainter *painter, const QRect &spanRect, const QRect &clipRect, bool lightColored = false);
+    static void menuGradient(QPainter *painter, const QRect &spanRect, const QRect &clipRect);
     static bool usePixmapCache() { return true; }
 
-    static void drawIconWithShadow(const QIcon &icon,
-                                   const QRect &rect,
-                                   QPainter *p,
-                                   QIcon::Mode iconMode,
-                                   int dipRadius = 3,
-                                   const QColor &color = QColor(0, 0, 0, 130),
+    static QPixmap disabledSideBarIcon(const QPixmap &enabledicon);
+    static void drawIconWithShadow(const QIcon &icon, const QRect &rect, QPainter *p, QIcon::Mode iconMode,
+                                   int dipRadius = 3, const QColor &color = QColor(0, 0, 0, 130),
                                    const QPoint &dipOffset = QPoint(1, -2));
-    static void drawCornerImage(const QImage &img,
-                                QPainter *painter,
-                                QRect rect,
-                                int left = 0,
-                                int top = 0,
-                                int right = 0,
-                                int bottom = 0);
+    static void drawCornerImage(const QImage &img, QPainter *painter, const QRect &rect,
+                         int left = 0, int top = 0, int right = 0, int bottom = 0);
 
-    static void tintImage(QImage &img,
-                          const QColor &tintColor);
+    static void tintImage(QImage &img, const QColor &tintColor);
     static QLinearGradient statusBarGradient(const QRect &statusBarRect);
+
+    static QString dpiSpecificImageFile(const QString &fileName);
+    static QString imageFileWithResolution(const QString &fileName, int dpr);
+    static QList<int> availableImageResolutions(const QString &fileName);
 
 private:
     static QColor m_baseColor;
