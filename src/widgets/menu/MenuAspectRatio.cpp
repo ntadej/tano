@@ -36,7 +36,7 @@ MenuAspectRatio::MenuAspectRatio(VlcWidgetVideo *videoWidget,
     connect(original, SIGNAL(triggered()), this, SLOT(apply()));
     addItem(original);
 
-    for (int i = 1; i < Vlc::ratioHuman().size(); i++) {
+    for (int i = 2; i < Vlc::ratioHuman().size(); i++) {
         QAction *action = new QAction(Vlc::ratioHuman()[i], this);
         _map1.insert(action, Vlc::Ratio(i));
         _map2.insert(Vlc::Ratio(i), action);

@@ -346,6 +346,9 @@ void MediaPlayer::openUrl()
 
 void MediaPlayer::saveChannelSettings(int value)
 {
+    if (!_channelPlayback)
+        return;
+
     if (_mediaPlayer->state() != Vlc::Playing)
         return;
 
@@ -353,14 +356,12 @@ void MediaPlayer::saveChannelSettings(int value)
     if (!menu)
         return;
 
-    if (_channelPlayback) {
-        if (menu == _menuAspectRatio)
-            _settingsChannel->setAspectRatio(_mediaItem->currentLocation(), value);
-        else if (menu == _menuCropRatio)
-            _settingsChannel->setCropRatio(_mediaItem->currentLocation(), value);
-        else if (menu == _menuDeinterlacing)
-            _settingsChannel->setDeinterlacing(_mediaItem->currentLocation(), value);
-    }
+    if (menu == _menuAspectRatio)
+        _settingsChannel->setAspectRatio(_mediaItem->currentLocation(), value);
+    else if (menu == _menuCropRatio)
+        _settingsChannel->setCropRatio(_mediaItem->currentLocation(), value);
+    else if (menu == _menuDeinterlacing)
+        _settingsChannel->setDeinterlacing(_mediaItem->currentLocation(), value);
 }
 
 void MediaPlayer::saveChannelSettings(const QString &value)

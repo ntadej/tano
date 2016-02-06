@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,17 +16,26 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QStandardPaths>
+
 #include "application/Common.h"
 #include "settings/SettingsChannel.h"
 
 SettingsChannel::SettingsChannel(QObject *parent)
-    : QSettings(QSettings::IniFormat,
-                QSettings::UserScope,
-                Tano::name(),
-                "Channels",
+    : QSettings(SettingsChannel::fileName(),
+                QSettings::IniFormat,
                 parent) { }
 
 SettingsChannel::~SettingsChannel() { }
+
+QString SettingsChannel::fileName()
+{
+#if QT_VERSION < 0x050400
+    return QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/ChannelSettings.ini";
+#else
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/ChannelSettings.ini";
+#endif
+}
 
 void SettingsChannel::setDefaults(int aspectRatio,
                                   int cropRatio,
@@ -44,8 +53,7 @@ void SettingsChannel::setDefaults(int aspectRatio,
 QString SettingsChannel::process(const QString &id) const
 {
     QString arg = id;
-    arg = arg.replace("/", "_");
-    arg = arg.replace(":", "_");
+    arg = arg.replace(QRegExp("\\W"), "_");
 
     return arg;
 }

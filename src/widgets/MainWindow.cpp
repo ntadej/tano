@@ -41,7 +41,6 @@
 #include "playlist/PlaylistModel.h"
 #include "playlist/containers/Channel.h"
 #include "settings/Settings.h"
-#include "settings/SettingsChannel.h"
 #include "timers/containers/Timer.h"
 #include "xmltv/XmltvManager.h"
 
