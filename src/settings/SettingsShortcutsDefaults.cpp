@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include "settings/SettingsShortcuts.h"
+#include "SettingsShortcuts.h"
 
 const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_KEYS =
         QStringList() << "Space"
@@ -25,7 +25,7 @@ const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_KEYS =
                       << "B"
                       << "F"
                       << "M"
-#if defined(Q_OS_LINUX)
+#ifdef Q_OS_LINUX
                       << "T"
 #endif
                       << "Ctrl+Up"
@@ -35,9 +35,9 @@ const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_KEYS =
                       << "Ctrl+Shift+E"
                       << "Ctrl+O"
                       << "Ctrl+U"
-                      << "Ctrl+Shift+O"
+#ifndef Q_OS_MAC
                       << "Ctrl+S"
-                      << "Ctrl+K"
+#endif
                       << "Ctrl+T"
                       << "Ctrl+L"
                       << "Ctrl+H"
@@ -59,7 +59,7 @@ const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_ACTIONS =
                       << "Back"
                       << "Fullscreen"
                       << "Mute"
-#if defined(Q_OS_LINUX)
+#ifdef Q_OS_LINUX
                       << "Teletext"
 #endif
                       << "VolumeUp"
@@ -69,9 +69,9 @@ const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_ACTIONS =
                       << "ScheduleCurrent"
                       << "OpenFile"
                       << "OpenUrl"
-                      << "OpenPlaylist"
+#ifndef Q_OS_MAC
                       << "Settings"
-                      << "SettingsSettingsShortcuts"
+#endif
                       << "Top"
                       << "Lite"
                       << "Tray"
@@ -85,3 +85,38 @@ const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_ACTIONS =
                       << "NextCrop"
                       << "NextScale"
                       << "NextDeinterlace";
+
+const QStringList SettingsShortcuts::DEFAULT_SHORTCUTS_STRINGS =
+        QStringList() << tr("Play / Pause")
+                      << tr("Stop")
+                      << tr("Next channel")
+                      << tr("Previous channel")
+                      << tr("Fullscreen")
+                      << tr("Mute")
+#ifdef Q_OS_LINUX
+                      << tr("Teletext")
+#endif
+                      << tr("Volume up")
+                      << tr("Volume down")
+                      << tr("Recorder")
+                      << tr("Schedule")
+                      << tr("Current show info")
+                      << tr("Open file")
+                      << tr("Open URL")
+#ifndef Q_OS_MAC
+                      << tr("Settings")
+#endif
+                      << tr("Always on top")
+                      << tr("Simple mode")
+                      << tr("Hide to tray")
+                      << tr("Instant recording")
+                      << tr("Take snapshot")
+                      << tr("Preview channels")
+                      << tr("Next audio track")
+                      << tr("Next video track")
+                      << tr("Next subtitle track")
+                      << tr("Next aspect ratio mode")
+                      << tr("Next crop mode")
+                      << tr("Next scale/zoom mode")
+                      << tr("Next deinterlacing mode");
+

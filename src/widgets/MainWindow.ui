@@ -58,7 +58,6 @@
      <string>&amp;Options</string>
     </property>
     <addaction name="actionSettings"/>
-    <addaction name="actionSettingsShortcuts"/>
     <addaction name="actionEditPlaylist"/>
    </widget>
    <widget class="QMenu" name="menuAbout">
@@ -368,15 +367,6 @@
     <string>Teletext</string>
    </property>
   </action>
-  <action name="actionSettingsShortcuts">
-   <property name="icon">
-    <iconset theme="preferences-desktop-keyboard-shortcuts">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
-   <property name="text">
-    <string>Keyboard shortcuts</string>
-   </property>
-  </action>
   <action name="actionRecordNow">
    <property name="checkable">
     <bool>true</bool>
@@ -437,15 +427,6 @@
    </property>
    <property name="text">
     <string>Current show info</string>
-   </property>
-  </action>
-  <action name="actionLogoutExit">
-   <property name="icon">
-    <iconset theme="application-exit">
-     <normaloff>.</normaloff>.</iconset>
-   </property>
-   <property name="text">
-    <string>Logout and Exit</string>
    </property>
   </action>
   <action name="actionEditPlaylist">

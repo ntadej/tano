@@ -41,6 +41,8 @@
 #include "playlist/PlaylistModel.h"
 #include "playlist/containers/Channel.h"
 #include "settings/Settings.h"
+#include "settings/SettingsShortcutsDesktop.h"
+#include "settings/widgets/SettingsDialog.h"
 #include "timers/containers/Timer.h"
 #include "xmltv/XmltvManager.h"
 
@@ -48,7 +50,6 @@
 #include "application/Updates.h"
 #include "common/Backend.h"
 #include "common/ChannelSelect.h"
-#include "common/DesktopShortcuts.h"
 #include "common/widgets/FileDialogs.h"
 #include "common/OsdFloat.h"
 #include "common/OsdWidget.h"
@@ -62,8 +63,6 @@
 #include "main/ShowInfoTab.h"
 #include "menu/MenuCore.h"
 #include "recorder/Recorder.h"
-#include "settings/widgets/SettingsDialog.h"
-#include "settings/SettingsDialogShortcuts.h"
 #include "style/VolumeSlider.h"
 
 #include "MainWindow.h"
@@ -413,7 +412,6 @@ void MainWindow::createConnections()
 
     connect(ui->actionSchedule, SIGNAL(triggered()), this, SLOT(showSchedule()));
     connect(ui->actionScheduleCurrent, SIGNAL(triggered()), this, SLOT(showScheduleCurrent()));
-    connect(ui->actionSettingsShortcuts, SIGNAL(triggered()), this, SLOT(showSettingsShortcuts()));
     connect(ui->actionEditPlaylist, SIGNAL(triggered()), this, SLOT(showPlaylistEditor()));
 
     connect(ui->actionPlay, SIGNAL(triggered()), _mediaPlayer, SLOT(togglePause()));
@@ -529,7 +527,7 @@ void MainWindow::createShortcuts()
              << ui->actionBack
              << ui->actionFullscreen
              << ui->actionMute
-#if defined(Q_OS_LINUX)
+#ifdef Q_OS_LINUX
              << ui->actionTeletext
 #endif
              << ui->actionVolumeUp
@@ -539,8 +537,9 @@ void MainWindow::createShortcuts()
              << ui->actionScheduleCurrent
              << ui->actionOpenFile
              << ui->actionOpenUrl
+#ifndef Q_OS_MAC
              << ui->actionSettings
-             << ui->actionSettingsShortcuts
+#endif
              << ui->actionTop
              << ui->actionLite
              << ui->actionTray
@@ -555,14 +554,13 @@ void MainWindow::createShortcuts()
                  << ui->actionOpenFile
                  << ui->actionOpenUrl
                  << ui->actionSettings
-                 << ui->actionSettingsShortcuts
                  << ui->actionTop
                  << ui->actionLite
                  << ui->actionTray;
 
     addActions(_actions);
 
-    _shortcuts = new DesktopShortcuts(_actions, this);
+    _settingsDialog->shortcuts()->setActions(_actions);
 
     qDebug() << "Initialised: Shortcuts";
 }
@@ -718,12 +716,6 @@ void MainWindow::showScheduleCurrent()
 void MainWindow::showRecorder()
 {
     ui->tabs->setCurrentWidget(_recorder);
-}
-
-void MainWindow::showSettingsShortcuts()
-{
-    SettingsDialogShortcuts s(_shortcuts, this);
-    s.exec();
 }
 
 void MainWindow::showPlaylistEditor()

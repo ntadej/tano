@@ -179,10 +179,29 @@
         <property name="bottomMargin">
          <number>24</number>
         </property>
-        <item row="0" column="0">
+        <item row="1" column="0" colspan="2">
+         <widget class="QTreeView" name="shortcutsView">
+          <property name="showDropIndicator" stdset="0">
+           <bool>false</bool>
+          </property>
+          <property name="indentation">
+           <number>0</number>
+          </property>
+          <property name="itemsExpandable">
+           <bool>false</bool>
+          </property>
+          <property name="headerHidden">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
          <widget class="QLabel" name="labelShortcuts">
           <property name="text">
-           <string/>
+           <string>Double click the keyboard shortcut you want to edit</string>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
           </property>
          </widget>
         </item>

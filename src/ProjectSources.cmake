@@ -72,7 +72,10 @@ SET(Project_Settings_Srcs
     settings/SettingsKeys.cpp
     settings/SettingsShortcuts.cpp
     settings/SettingsShortcutsDefaults.cpp
+    settings/SettingsShortcutsDesktop.cpp
     settings/widgets/SettingsDialog.cpp
+    settings/widgets/SettingsKeyDelegate.cpp
+    settings/widgets/SettingsNotEditableDelegate.cpp
     settings/widgets/SettingsPlayback.cpp
     settings/widgets/SettingsTv.cpp
 )

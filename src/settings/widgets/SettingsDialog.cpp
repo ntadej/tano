@@ -18,6 +18,9 @@
 
 #include "application/LocaleManager.h"
 #include "settings/Settings.h"
+#include "settings/SettingsShortcutsDesktop.h"
+#include "settings/widgets/SettingsKeyDelegate.h"
+#include "settings/widgets/SettingsNotEditableDelegate.h"
 
 #include "SettingsDialog.h"
 #include "ui_SettingsDialog.h"
@@ -28,7 +31,8 @@
 
 SettingsDialog::SettingsDialog(QWidget *parent)
     : QMainWindow(parent),
-      ui(new Ui::SettingsDialog)
+      ui(new Ui::SettingsDialog),
+      _shortcuts(new SettingsShortcutsDesktop())
 {
     ui->setupUi(this);
     ui->toolBar->setProperty("custom_style_disabled", true);
@@ -135,6 +139,15 @@ SettingsDialog::SettingsDialog(QWidget *parent)
     connect(ui->pagePlayback, &SettingsPlayback::playbackDefaultsChanged, this, &SettingsDialog::playbackDefaultsChanged);
     connect(ui->pagePlayback, &SettingsPlayback::playbackMiscChanged, this, &SettingsDialog::playbackMiscChanged);
     connect(ui->pagePlayback, &SettingsPlayback::playbackRememberChanged, this, &SettingsDialog::playbackRememberChanged);
+
+    // Shortcuts
+    ui->shortcutsView->setItemDelegateForColumn(0, new SettingsNotEditableDelegate);
+    ui->shortcutsView->setItemDelegateForColumn(1, new SettingsKeyDelegate);
+    ui->shortcutsView->setModel(_shortcuts->model());
+    ui->shortcutsView->header()->setStretchLastSection(false);
+    ui->shortcutsView->header()->setSectionResizeMode(0, QHeaderView::Stretch);
+    ui->shortcutsView->header()->setSectionResizeMode(1, QHeaderView::Stretch);
+    ui->shortcutsView->header()->hideSection(2);
 }
 
 SettingsDialog::~SettingsDialog()

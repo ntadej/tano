@@ -16,28 +16,30 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSSHORTCUTS_H_
-#define TANO_SETTINGSSHORTCUTS_H_
+#ifndef TANO_SETTINGSKEYDELEGATE_H_
+#define TANO_SETTINGSKEYDELEGATE_H_
 
-#include <QtCore/QSettings>
-#include <QtCore/QStringList>
-#include <QtGui/QKeySequence>
+#include <QtWidgets/QStyledItemDelegate>
 
-class SettingsShortcuts : public QSettings
+class SettingsKeyDelegate : public QStyledItemDelegate
 {
+    Q_OBJECT
 public:
-    explicit SettingsShortcuts(QObject *parent = 0);
-    ~SettingsShortcuts();
+    SettingsKeyDelegate(QObject *parent = 0);
 
-    static QString fileName();
+    QWidget *createEditor(QWidget *parent,
+                          const QStyleOptionViewItem &option,
+                          const QModelIndex &index) const;
 
-    QStringList readKeys() const;
-    void writeShortcut(const QString &action,
-                       const QKeySequence &sequence);
+    void setEditorData(QWidget *editor,
+                       const QModelIndex &index) const;
+    void setModelData(QWidget *editor,
+                      QAbstractItemModel *model,
+                      const QModelIndex &index) const;
 
-    static const QStringList DEFAULT_SHORTCUTS_ACTIONS;
-    static const QStringList DEFAULT_SHORTCUTS_KEYS;
-    static const QStringList DEFAULT_SHORTCUTS_STRINGS;
+    void updateEditorGeometry(QWidget *editor,
+                              const QStyleOptionViewItem &option,
+                              const QModelIndex &index) const;
 };
 
-#endif // TANO_SETTINGSSHORTCUTS_H_
+#endif // TANO_SETTINGSKEYDELEGATE_H_

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,26 +16,14 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#include <QtWidgets/QAction>
+#include "SettingsNotEditableDelegate.h"
 
-#include "common/DesktopShortcuts.h"
+SettingsNotEditableDelegate::SettingsNotEditableDelegate(QObject *parent)
+    : QStyledItemDelegate(parent) { }
 
-DesktopShortcuts::DesktopShortcuts(const QList<QAction *> &list,
-                                   QObject *parent)
-    : SettingsShortcuts(parent),
-      _actions(list)
+QWidget *SettingsNotEditableDelegate::createEditor(QWidget */* parent */,
+                                           const QStyleOptionViewItem &/* option */,
+                                           const QModelIndex &/* index */) const
 {
-    apply();
-}
-
-DesktopShortcuts::~DesktopShortcuts() { }
-
-void DesktopShortcuts::apply()
-{
-    QStringList currentKeys = readKeys();
-
-    for (int i = 0; i < _actions.size(); i++) {
-        _actions[i]->setShortcut(QKeySequence(currentKeys[i]));
-        _actions[i]->setShortcutContext(Qt::ApplicationShortcut);
-    }
+    return 0;
 }

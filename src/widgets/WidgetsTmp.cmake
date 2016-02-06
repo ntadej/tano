@@ -33,18 +33,15 @@ SET(Project_Widgets_UIs
     widgets/recorder/RecorderInfoWidget.ui
     widgets/recorder/RecorderNewDialog.ui
     widgets/recorder/RecorderTimersEditor.ui
-    widgets/settings/SettingsDialogShortcuts.ui
 )
 
 # Define the C++ source files used by Tano Widgets
 SET(Project_Widgets_Common_Srcs
     widgets/common/ChannelSelect.cpp
-    widgets/common/DesktopShortcuts.cpp
     widgets/common/InfoBarWidget.cpp
     widgets/common/OsdFloat.cpp
     widgets/common/OsdWidget.cpp
     widgets/common/PlaylistDisplayWidget.cpp
-    widgets/common/QtKeySequenceEdit.cpp
     widgets/common/ScrollingWidget.cpp
     widgets/common/TrayIcon.cpp
 )
@@ -71,7 +68,6 @@ SET(Project_Widgets_Main_Srcs
     widgets/main/PlaylistTab.cpp
     widgets/main/ScheduleTab.cpp
     widgets/main/ShowInfoTab.cpp
-    widgets/settings/SettingsDialogShortcuts.cpp
 )
 SET(Project_Widgets_Menu_Srcs
     widgets/menu/MenuAspectRatio.cpp

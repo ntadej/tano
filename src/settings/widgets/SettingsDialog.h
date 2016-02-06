@@ -28,6 +28,8 @@
     #include <QtMacExtras>
 #endif
 
+class SettingsShortcutsDesktop;
+
 namespace Ui {
     class SettingsDialog;
 }
@@ -38,6 +40,8 @@ class SettingsDialog : public QMainWindow
 public:
     explicit SettingsDialog(QWidget *parent = 0);
     ~SettingsDialog();
+
+    SettingsShortcutsDesktop *shortcuts() { return _shortcuts; }
 
 public slots:
     void refreshAndShow();
@@ -69,6 +73,8 @@ private:
 
     void loadLocales();
     QStringList _locales;
+
+    SettingsShortcutsDesktop *_shortcuts;
 
 #if defined(Q_OS_MAC) && MAC_NATIVE_TOOLBAR
     QMacToolBar *_macToolbar;

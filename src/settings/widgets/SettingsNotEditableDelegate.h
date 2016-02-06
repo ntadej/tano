@@ -16,28 +16,20 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_SETTINGSSHORTCUTS_H_
-#define TANO_SETTINGSSHORTCUTS_H_
+#ifndef TANO_SETTINGSNOTEDITABLEDELEGATE_H_
+#define TANO_SETTINGSNOTEDITABLEDELEGATE_H_
 
-#include <QtCore/QSettings>
-#include <QtCore/QStringList>
-#include <QtGui/QKeySequence>
+#include <QtWidgets/QStyledItemDelegate>
 
-class SettingsShortcuts : public QSettings
+class SettingsNotEditableDelegate : public QStyledItemDelegate
 {
+    Q_OBJECT
 public:
-    explicit SettingsShortcuts(QObject *parent = 0);
-    ~SettingsShortcuts();
+    SettingsNotEditableDelegate(QObject *parent = 0);
 
-    static QString fileName();
-
-    QStringList readKeys() const;
-    void writeShortcut(const QString &action,
-                       const QKeySequence &sequence);
-
-    static const QStringList DEFAULT_SHORTCUTS_ACTIONS;
-    static const QStringList DEFAULT_SHORTCUTS_KEYS;
-    static const QStringList DEFAULT_SHORTCUTS_STRINGS;
+    QWidget *createEditor(QWidget *parent,
+                          const QStyleOptionViewItem &option,
+                          const QModelIndex &index) const;
 };
 
-#endif // TANO_SETTINGSSHORTCUTS_H_
+#endif // TANO_SETTINGSNOTEDITABLEDELEGATE_H_

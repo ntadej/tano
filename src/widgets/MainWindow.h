@@ -30,7 +30,6 @@ class QWidgetAction;
 
 class Channel;
 class ChannelSelect;
-class DesktopShortcuts;
 class NetworkDownload;
 class LocaleManager;
 class MediaPlayer;
@@ -89,7 +88,6 @@ private slots:
     void showSchedule();
     void showScheduleCurrent();
     void showRecorder();
-    void showSettingsShortcuts();
     void showPlaylistEditor();
 
     void playChannel(Channel* channel);
@@ -150,7 +148,6 @@ private:
     MediaPlayer *_mediaPlayer;
     PlaylistModel *_model;
     Recorder *_recorder;
-    DesktopShortcuts *_shortcuts;
     Updates *_updates;
 
     //Playback and channels

@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,24 +16,31 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
-#ifndef TANO_DESKTOPSHORTCUTS_H_
-#define TANO_DESKTOPSHORTCUTS_H_
+#ifndef TANO_SETTINGSSHORTCUTSDESKTOP_H_
+#define TANO_SETTINGSSHORTCUTSDESKTOP_H_
 
 #include "settings/SettingsShortcuts.h"
 
 class QAction;
+class QStandardItem;
+class QStandardItemModel;
 
-class DesktopShortcuts : public SettingsShortcuts
+class SettingsShortcutsDesktop : public SettingsShortcuts
 {
 public:
-    explicit DesktopShortcuts(const QList<QAction *> &list,
-                              QObject *parent = 0);
-    ~DesktopShortcuts();
+    explicit SettingsShortcutsDesktop(QObject *parent = 0);
+    ~SettingsShortcutsDesktop();
 
-    void apply();
+    QStandardItemModel *model() { return _model; }
+
+    void setActions(const QList<QAction *> &list);
+
+private slots:
+    void itemChanged(QStandardItem *item);
 
 private:
     QList<QAction *> _actions;
+    QStandardItemModel *_model;
 };
 
-#endif // TANO_DESKTOPSHORTCUTS_H_
+#endif // TANO_SETTINGSSHORTCUTSDESKTOP_H_

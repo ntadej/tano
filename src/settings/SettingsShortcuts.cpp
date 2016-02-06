@@ -1,6 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -16,17 +16,26 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QStandardPaths>
+
 #include "application/Common.h"
 #include "settings/SettingsShortcuts.h"
 
 SettingsShortcuts::SettingsShortcuts(QObject *parent)
-    : QSettings(QSettings::IniFormat,
-                QSettings::UserScope,
-                Tano::name(),
-                "Shortcuts",
+    : QSettings(SettingsShortcuts::fileName(),
+                QSettings::IniFormat,
                 parent) { }
 
 SettingsShortcuts::~SettingsShortcuts() { }
+
+QString SettingsShortcuts::fileName()
+{
+#if QT_VERSION < 0x050400
+    return QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/Shortcuts.ini";
+#else
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/Shortcuts.ini";
+#endif
+}
 
 QStringList SettingsShortcuts::readKeys() const
 {
@@ -37,10 +46,10 @@ QStringList SettingsShortcuts::readKeys() const
     return list;
 }
 
-void SettingsShortcuts::write(const QStringList &keys)
+void SettingsShortcuts::writeShortcut(const QString &action,
+                                      const QKeySequence &sequence)
 {
-    for (int i = 0; i < DEFAULT_SHORTCUTS_ACTIONS.size(); i++)
-        setValue(DEFAULT_SHORTCUTS_ACTIONS[i], keys[i]);
+    setValue(action, sequence.toString());
 
     sync();
 }
