@@ -39,6 +39,10 @@ SettingsTv::SettingsTv(QWidget *parent)
     ui->editUdpxyUrl->setText(settings->udpxyUrl());
     ui->editUdpxyPort->setValue(settings->udpxyPort());
 
+    ui->radioNetwork->setChecked(settings->xmltvUpdateRemote());
+    ui->browseXmltv->setValue(settings->xmltvUpdateLocation());
+    ui->spinOffset->setValue(settings->xmltvHoursOffset());
+
     _channelsTimer = new QTimer();
     _channelsTimer->setSingleShot(true);
     connect(_channelsTimer, &QTimer::timeout, this, &SettingsTv::channelsChanged);

@@ -22,8 +22,6 @@
 *****************************************************************************/
 
 #include "style/FancyTabWidget.h"
-//#include "fancyactionbar.h"
-
 #include "style/MiniSplitter.h"
 #include "style/StyledBar.h"
 #include "style/StyleHelper.h"
