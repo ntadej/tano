@@ -100,6 +100,7 @@ SET(Project_Style_Srcs
     style/StyledBar.cpp
     style/Theme.cpp
     style/Theme_p.h
+    style/VolumeSlider.cpp
 )
 
 SET(Project_Timers_Srcs

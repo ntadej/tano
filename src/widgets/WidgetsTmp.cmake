@@ -73,10 +73,6 @@ SET(Project_Widgets_Recorder_Srcs
     widgets/recorder/RecorderTimersEditor.cpp
     widgets/recorder/RecorderTimersWidget.cpp
 )
-SET(Project_Widgets_Style_Srcs
-    widgets/style/VolumeSlider.cpp
-)
-
 
 SET(Project_Widgets_Tmp_Srcs
     widgets/MainWindow.cpp
@@ -84,11 +80,9 @@ SET(Project_Widgets_Tmp_Srcs
     ${Project_Widgets_Application_Srcs}
     ${Project_Widgets_Common_Srcs}
     ${Project_Widgets_Dialogs_Srcs}
-    ${Project_Widgets_Editor_Srcs}
     ${Project_Widgets_Main_Srcs}
     ${Project_Widgets_Menu_Srcs}
     ${Project_Widgets_Recorder_Srcs}
-    ${Project_Widgets_Style_Srcs}
 
     ${Project_Widgets_UIs}
 )

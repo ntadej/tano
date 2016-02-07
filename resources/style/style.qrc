@@ -1,9 +1,5 @@
 <RCC>
     <qresource prefix="/style">
-        <file>volumeslider-gradient.png</file>
-        <file>volumeslider-handle_glow.png</file>
-        <file>volumeslider-handle.png</file>
-        <file>volumeslider-inset.png</file>
         <file>images/close.png</file>
         <file>images/close@2x.png</file>
         <file>images/extension.png</file>
@@ -12,5 +8,10 @@
         <file>images/inputfield_disabled@2x.png</file>
         <file>images/inputfield.png</file>
         <file>images/inputfield@2x.png</file>
+        <file>volume/volumeslider-handle.png</file>
+        <file>volume/volumeslider-handle@2x.png</file>
+        <file>volume/volumeslider-handle_glow.png</file>
+        <file>volume/volumeslider-handle_glow@2x.png</file>
+        <file>volume/volumeslider-gradient.png</file>
     </qresource>
 </RCC>

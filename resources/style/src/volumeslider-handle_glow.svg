@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="16"
+   height="36"
+   viewBox="0 0 16 36.000001"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="volumeslider-handle_glow.svg">
+  <defs
+     id="defs4">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter4695"
+       width="1.3999999999999999"
+       height="1.8"
+       x="-0.20000000000000001"
+       y="-0.40000000000000002">
+      <feFlood
+         flood-opacity="1"
+         flood-color="rgb(71,67,158)"
+         result="flood"
+         id="feFlood4697" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite4699" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="1.5"
+         result="blur"
+         id="feGaussianBlur4701" />
+      <feOffset
+         dx="0"
+         dy="0"
+         result="offset"
+         id="feOffset4703" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="fbSourceGraphic"
+         id="feComposite4705" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix4851" />
+      <feFlood
+         id="feFlood4853"
+         flood-opacity="1"
+         flood-color="rgb(71,67,158)"
+         result="flood"
+         in="fbSourceGraphic" />
+      <feComposite
+         id="feComposite4855"
+         in2="fbSourceGraphic"
+         in="flood"
+         operator="in"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur4857"
+         in="composite1"
+         stdDeviation="1.3"
+         result="blur" />
+      <feOffset
+         id="feOffset4859"
+         dx="0"
+         dy="0"
+         result="offset" />
+      <feComposite
+         id="feComposite4861"
+         in2="offset"
+         in="fbSourceGraphic"
+         operator="over"
+         result="composite2" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="7.9195959"
+     inkscape:cx="3.9184854"
+     inkscape:cy="1.0543948"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="791"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     units="px" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-1016.3622)">
+    <path
+       sodipodi:type="star"
+       style="opacity:1;fill:#e6e6e6;fill-opacity:1;fill-rule:nonzero;stroke:#4d4d4d;stroke-width:0.58851492;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4695)"
+       id="path4157"
+       sodipodi:sides="3"
+       sodipodi:cx="8.9285717"
+       sodipodi:cy="1042.3622"
+       sodipodi:r1="6.8721004"
+       sodipodi:r2="3.4360504"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.5707963"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 14.879985,1045.7982 -11.9028268,0 5.9514135,-10.3081 z"
+       inkscape:transform-center-y="-1.228142"
+       transform="matrix(0.92860124,0,0,0.7148626,-0.29108275,301.54991)" />
+  </g>
+</svg>
