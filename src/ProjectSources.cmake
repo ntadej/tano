@@ -42,6 +42,7 @@ SET(Project_Common_Srcs
     common/NetworkManager.cpp
     common/qtcassert.cpp
     common/Resources.cpp
+    common/widgets/AboutDialog.cpp
     common/widgets/BrowseWidget.cpp
     common/widgets/FileDialogs.cpp
 )

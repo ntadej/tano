@@ -55,7 +55,7 @@
 #include "common/OsdWidget.h"
 #include "channels/widgets/ChannelsDisplayWidget.h"
 #include "common/TrayIcon.h"
-#include "dialogs/AboutDialog.h"
+#include "common/widgets/AboutDialog.h"
 #include "channels/editor/ChannelsEditor.h"
 #include "main/MediaPlayer.h"
 #include "main/ChannelsTab.h"

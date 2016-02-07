@@ -1,9 +1,6 @@
 /****************************************************************************
 * Tano - An Open IP TV Player
-* Copyright (C) 2012 Tadej Novak <tadej@tano.si>
-*
-* The UI layout was based on the VLMC About dialog
-* Copyright (C) 2008-2010 VideoLAN
+* Copyright (C) 2016 Tadej Novak <tadej@tano.si>
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -24,23 +21,15 @@
 
 #include <QtWidgets/QDialog>
 
-namespace Ui
-{
-    class AboutDialog;
-}
-
 class AboutDialog : public QDialog
 {
-Q_OBJECT
+    Q_OBJECT
 public:
-    AboutDialog(QWidget *parent = 0);
-    ~AboutDialog();
+    explicit AboutDialog(QWidget *parent = 0);
 
-protected:
-    void changeEvent(QEvent *e);
+signals:
 
-private:
-    Ui::AboutDialog *ui;
+public slots:
 };
 
-#endif // TANO_ABOUTDIALOG_H
+#endif // TANO_ABOUTDIALOG_H_

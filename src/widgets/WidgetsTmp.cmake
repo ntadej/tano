@@ -23,7 +23,6 @@
 SET(Project_Widgets_UIs
     widgets/MainWindow.ui
     widgets/common/OsdWidget.ui
-    widgets/dialogs/AboutDialog.ui
     widgets/main/ShowInfoTab.ui
     widgets/recorder/RecorderInfoWidget.ui
     widgets/recorder/RecorderNewDialog.ui
@@ -45,9 +44,6 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
         widgets/common/FreedesktopImage.cpp
     )
 ENDIF()
-SET(Project_Widgets_Dialogs_Srcs
-    widgets/dialogs/AboutDialog.cpp
-)
 
 SET(Project_Widgets_Main_Srcs
     widgets/main/MediaPlayer.cpp
@@ -79,7 +75,6 @@ SET(Project_Widgets_Tmp_Srcs
 
     ${Project_Widgets_Application_Srcs}
     ${Project_Widgets_Common_Srcs}
-    ${Project_Widgets_Dialogs_Srcs}
     ${Project_Widgets_Main_Srcs}
     ${Project_Widgets_Menu_Srcs}
     ${Project_Widgets_Recorder_Srcs}
