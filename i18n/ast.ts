@@ -5,42 +5,37 @@
     <name>AboutDialog</name>
     <message>
         <source>About</source>
-        <translation>Alrodiu</translation>
+        <translation type="vanished">Alrodiu</translation>
     </message>
     <message>
-        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
-</source>
-        <translation type="obsolete">Tano ye un software llibre na plataforma de IP TV el cual les sos carauterístiques son entamar IP TV dafechu con EPG y grabador. Ta basáu en VLC-Qt.
-</translation>
-    </message>
-    <message>
-        <source>Authors</source>
-        <translation type="obsolete">Autores</translation>
-    </message>
-    <message>
-        <source>License</source>
-        <translation type="obsolete">Llicencia</translation>
-    </message>
-    <message>
-        <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
-</source>
-        <translation type="obsolete">VLC-Qt ye un llibrería llibre usada pa coneutar les llibreríes  Qt ya libvlc. Contien clases básiques pal entamu nos medios principales y tamién clases GUI pal desendolcu rápidu del reproductor.
-</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Tas usando VideoLAN VLC %1&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.</source>
+        <source>About %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Multimedia backend powered by VLC-Qt %1.</source>
+        <source>Copyright %1 %2 %3&lt;br&gt;All rights reserved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;b&gt;This application is based on Tano %1.&lt;/b&gt;</source>
+        <source>Using VLC %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Libraries</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BrowseWidget</name>
+    <message>
+        <source>Browse…</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -60,10 +55,461 @@
     </message>
 </context>
 <context>
+    <name>ChannelsDisplayWidget</name>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished">Entamar</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsEditor</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished">Editor de Tano</translation>
+    </message>
+    <message>
+        <source>Channels list name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of channels:</source>
+        <translation type="unfinished">Númberu de canales:</translation>
+    </message>
+    <message>
+        <source>Toolbar</source>
+        <translation type="unfinished">Barra de ferramientes</translation>
+    </message>
+    <message>
+        <source>Edit channel</source>
+        <translation type="unfinished">Editar canal</translation>
+    </message>
+    <message>
+        <source>Number:</source>
+        <translation type="unfinished">Númberu:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">Tipu</translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished">SD</translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished">HD</translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">Radio</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Viesu:</translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished">Enllaz:</translation>
+    </message>
+    <message>
+        <source>Categories:</source>
+        <translation type="unfinished">Estayes:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="unfinished">Llingua:</translation>
+    </message>
+    <message>
+        <source>XMLTV ID:</source>
+        <translation type="unfinished">ID XMLTV:</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished">Otru</translation>
+    </message>
+    <message>
+        <source>Logo:</source>
+        <translation type="unfinished">Imax:</translation>
+    </message>
+    <message>
+        <source>Scan for new channels</source>
+        <translation type="unfinished">Guetar pa nueves canales</translation>
+    </message>
+    <message>
+        <source>Add channel</source>
+        <translation type="unfinished">Añader canal</translation>
+    </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished">Esniciar canal</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Atroxar</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Zarrar</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation type="unfinished">Mover p&apos;arriba</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation type="unfinished">Mover p&apos;abaxo</translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished">Emprentar</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished">Esportar</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Abrir</translation>
+    </message>
+    <message>
+        <source>New channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV IDs</source>
+        <translation type="unfinished">IDs XMLTV</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished">Aida</translation>
+    </message>
+    <message>
+        <source>Auto XMLTV map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">Editor</translation>
+    </message>
+    <message>
+        <source>%1 - %2 Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">Nun pue lleese&apos;l ficheru %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Channels Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to create new channels list?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished">Nun pue escribise&apos;l ficheru %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Export to M3U format with Udpxy URLs</source>
+        <translation type="unfinished">Esportar al formatu M3U con enllaces Udpxy</translation>
+    </message>
+    <message>
+        <source>You need to have valid Udpxy settings or the exported channels list will contain classic URLs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want close the editor?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished">¿Quies zarrar l&apos;editor?
+Perderanse toles camudancies non atroxaes.</translation>
+    </message>
+    <message>
+        <source>Please wait for XMLTV file to parse.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A channel with this number already exists!</source>
+        <translation type="unfinished">!Xá esiste una canal con esti viesu¡</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsEditorHelp</name>
+    <message>
+        <source>Tano Editor - Help</source>
+        <translation type="unfinished">Editor Tano - Aida</translation>
+    </message>
+    <message>
+        <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
+        <translation type="unfinished">&lt;h2&gt;Editor Tano - Aida&lt;/h2&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You can edit your IP TV channels list, print it or export it to desired format.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
+        <translation type="unfinished">El númberu d&apos;una canal tien de ser aplicáu. Tolos otros valores camudaránse automáticamente. Pues configurar cualaquier canal como radio. Les estayes puen separtase per coma (,).</translation>
+    </message>
+    <message>
+        <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
+        <translation type="unfinished">L&apos;enllaz completu tien de ser dau pola imax de la canal. Les imaxes escalaranse pa encaxar la interfaz.</translation>
+    </message>
+    <message>
+        <source>Editor will automatically try to map current XMLTV IDs to channels in the list. You may still need to check for possible errors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
+        <translation type="unfinished">&lt;h3&gt;Formatos ya esportación&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>Editor supports its own modified M3U as well as unmodified M3U and CSV files. Beside these formats you can also save/export to M3U with Udpxy URLs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can set custom radio category in settings (defaults to Radio).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
+        <translation type="unfinished">&lt;h3&gt;Guetar canales&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsFilterModel</name>
+    <message>
+        <source>Channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Toles estayes</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Toles llingues</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsImportCSV</name>
+    <message>
+        <source>CSV file structure</source>
+        <translation type="unfinished">Cadarma&apos;l ficheru CSV</translation>
+    </message>
+    <message>
+        <source>Separator:</source>
+        <translation type="unfinished">Separtador:</translation>
+    </message>
+    <message>
+        <source>;</source>
+        <translation type="unfinished">;</translation>
+    </message>
+    <message>
+        <source>First line:</source>
+        <translation type="unfinished">Primer llinia:</translation>
+    </message>
+    <message>
+        <source>First line contains column names</source>
+        <translation type="unfinished">La primer llinia contién viesos de columnes</translation>
+    </message>
+    <message>
+        <source>First line does not contain column names</source>
+        <translation type="unfinished">La primer llinia nun contién viesos de columna</translation>
+    </message>
+    <message>
+        <source>Column list:</source>
+        <translation type="unfinished">Llista de columa:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;Por favor, ordena les tos columnes dende la primera fasta la cabera.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation type="unfinished">Númberu</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished">Canal</translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished">Estayes</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Llingua</translation>
+    </message>
+    <message>
+        <source>EPG ID</source>
+        <translation type="unfinished">ID EPG</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsPrint</name>
+    <message>
+        <source>#</source>
+        <translation type="unfinished">#</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished">Canal</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished">Tipu</translation>
+    </message>
+    <message>
+        <source>Url</source>
+        <translation type="unfinished">Enllaz</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished">Estayes</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Llingua</translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished">ID XMLTV</translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished">Imax</translation>
+    </message>
+    <message>
+        <source>Exported with %1 on %2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsPrintDialog</name>
+    <message>
+        <source>Print channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select information for printing:</source>
+        <translation type="unfinished">Esbilla información pa emprentar:</translation>
+    </message>
+    <message>
+        <source>Channel number</source>
+        <translation type="unfinished">Númberu de canal</translation>
+    </message>
+    <message>
+        <source>Channel name</source>
+        <translation type="unfinished">Viesu la canal</translation>
+    </message>
+    <message>
+        <source>Channel type</source>
+        <translation type="unfinished">Tipu de canal</translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished">Estayes</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Llingua</translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished">ID XMLTV</translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished">Imax</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsScan</name>
+    <message>
+        <source>IP Range:</source>
+        <translation type="unfinished">Rangu IP:</translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation type="unfinished">Puertu:</translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation type="unfinished"> ms</translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation type="unfinished">Guetar y anovar</translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
+        <translation type="unfinished">Nueva canal de la gueta %1</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsTab</name>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Toles estayes</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Toles llingues</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsUpdate</name>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">Nun pue lleese&apos;l ficheru %1:
+%2.</translation>
+    </message>
+</context>
+<context>
     <name>InfoBarWidget</name>
     <message>
         <source>Now:</source>
-        <translation>Nel intre:</translation>
+        <translation>Agora:</translation>
     </message>
     <message>
         <source>Next:</source>
@@ -123,7 +569,7 @@
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Nun pue lleese&apos;l ficheru %1:
+        <translation type="vanished">Nun pue lleese&apos;l ficheru %1:
 %2.</translation>
     </message>
     <message>
@@ -156,11 +602,11 @@
     </message>
     <message>
         <source>&amp;Open channel list</source>
-        <translation>&amp;Abrir listáu de canales</translation>
+        <translation type="vanished">&amp;Abrir listáu de canales</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Abrir llistáu de canales</translation>
+        <translation type="vanished">Abrir llistáu de canales</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
@@ -224,7 +670,7 @@
     </message>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>Atayos de tecláu</translation>
+        <translation type="vanished">Atayos de tecláu</translation>
     </message>
     <message>
         <source>Instant recording</source>
@@ -255,10 +701,6 @@
         <translation type="unfinished">Alrodiu</translation>
     </message>
     <message>
-        <source>Logout and Exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
@@ -272,15 +714,15 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Instant</source>
         <translation type="unfinished">Nel intre</translation>
     </message>
     <message>
         <source>Check for updates...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit channels list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -461,499 +903,415 @@ This will stop recording in progress.</source>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Play</source>
-        <translation>Entamar</translation>
-    </message>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Entamar</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditor</name>
     <message>
         <source>Tano Editor</source>
-        <translation>Editor de Tano</translation>
+        <translation type="vanished">Editor de Tano</translation>
     </message>
     <message>
         <source>Playlist name:</source>
-        <translation>Viesu la llista de reproducción:</translation>
+        <translation type="vanished">Viesu la llista de reproducción:</translation>
     </message>
     <message>
         <source>Number of channels:</source>
-        <translation>Númberu de canales:</translation>
+        <translation type="vanished">Númberu de canales:</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>Aida</translation>
+        <translation type="vanished">Aida</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>Barra de ferramientes</translation>
+        <translation type="vanished">Barra de ferramientes</translation>
     </message>
     <message>
         <source>Number:</source>
-        <translation>Númberu:</translation>
+        <translation type="vanished">Númberu:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Viesu:</translation>
+        <translation type="vanished">Viesu:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation>Estayes:</translation>
+        <translation type="vanished">Estayes:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Llingua:</translation>
+        <translation type="vanished">Llingua:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Enllaz:</translation>
+        <translation type="vanished">Enllaz:</translation>
     </message>
     <message>
         <source>Logo:</source>
-        <translation>Imax:</translation>
+        <translation type="vanished">Imax:</translation>
     </message>
     <message>
         <source>Add channel</source>
-        <translation>Añader canal</translation>
+        <translation type="vanished">Añader canal</translation>
     </message>
     <message>
         <source>Delete channel</source>
-        <translation>Esniciar canal</translation>
+        <translation type="vanished">Esniciar canal</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Atroxar</translation>
+        <translation type="vanished">Atroxar</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zarrar</translation>
+        <translation type="vanished">Zarrar</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Mover p&apos;arriba</translation>
+        <translation type="vanished">Mover p&apos;arriba</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Mover p&apos;abaxo</translation>
+        <translation type="vanished">Mover p&apos;abaxo</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Emprentar</translation>
+        <translation type="vanished">Emprentar</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Esportar</translation>
+        <translation type="vanished">Esportar</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Abrir</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Alrodiu</translation>
+        <translation type="vanished">Abrir</translation>
     </message>
     <message>
         <source>New playlist</source>
-        <translation>Llista de reproducción nueva</translation>
+        <translation type="vanished">Llista de reproducción nueva</translation>
     </message>
     <message>
         <source>Tvheadend</source>
-        <translation>Tvheadend</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">Axustes</translation>
+        <translation type="vanished">Tvheadend</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
-        <translation>IDs XMLTV</translation>
-    </message>
-    <message>
-        <source>Update Information</source>
-        <translation type="vanished">Anovar información</translation>
+        <translation type="vanished">IDs XMLTV</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Nun pue lleese&apos;l ficheru %1:
+        <translation type="vanished">Nun pue lleese&apos;l ficheru %1:
 %2.</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Editor de llista de reproducción</translation>
+        <translation type="vanished">Editor de llista de reproducción</translation>
     </message>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
-        <translation>¿Quies crear una llista de reproducción nueva?
+        <translation type="vanished">¿Quies crear una llista de reproducción nueva?
 Perderanse toles camudancies ensin atroxar.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Nun pue escribise&apos;l ficheru %1:
+        <translation type="vanished">Nun pue escribise&apos;l ficheru %1:
 %2.</translation>
     </message>
     <message>
         <source>Export to M3U format with Udpxy URLs</source>
-        <translation>Esportar al formatu M3U con enllaces Udpxy</translation>
+        <translation type="vanished">Esportar al formatu M3U con enllaces Udpxy</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation>Necesites tener unos axustes Udpxy válidos o la llista de reproducción tendrá enllaces clásicos.</translation>
+        <translation type="vanished">Necesites tener unos axustes Udpxy válidos o la llista de reproducción tendrá enllaces clásicos.</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
-        <translation>¿Quies zarrar l&apos;editor?
+        <translation type="vanished">¿Quies zarrar l&apos;editor?
 Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation>!Xá esiste una canal con esti viesu¡</translation>
+        <translation type="vanished">!Xá esiste una canal con esti viesu¡</translation>
     </message>
     <message>
         <source>Edit channel</source>
-        <translation>Editar canal</translation>
+        <translation type="vanished">Editar canal</translation>
     </message>
     <message>
         <source>Scan for new channels</source>
-        <translation>Guetar pa nueves canales</translation>
+        <translation type="vanished">Guetar pa nueves canales</translation>
     </message>
     <message>
         <source>XMLTV ID:</source>
-        <translation>ID XMLTV:</translation>
+        <translation type="vanished">ID XMLTV:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tipu</translation>
+        <translation type="vanished">Tipu</translation>
     </message>
     <message>
         <source>SD</source>
-        <translation>SD</translation>
+        <translation type="vanished">SD</translation>
     </message>
     <message>
         <source>HD</source>
-        <translation>HD</translation>
+        <translation type="vanished">HD</translation>
     </message>
     <message>
         <source>Radio</source>
-        <translation>Radio</translation>
+        <translation type="vanished">Radio</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>Otru</translation>
-    </message>
-    <message>
-        <source>Auto XMLTV map</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Otru</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Editor</translation>
-    </message>
-    <message>
-        <source>Please wait for XMLTV file to parse.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - %2 Editor</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Editor</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditorHelp</name>
     <message>
         <source>Tano Editor - Help</source>
-        <translation>Editor Tano - Aida</translation>
+        <translation type="vanished">Editor Tano - Aida</translation>
     </message>
     <message>
         <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Editor Tano - Aida&lt;/h2&gt;</translation>
+        <translation type="vanished">&lt;h2&gt;Editor Tano - Aida&lt;/h2&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;You can edit your IP TV playlist, print it or export it to desired format.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Pues editar la to llista de reproducción IP TV, emprentala o esportala al formatu deseyáu.&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">&lt;b&gt;Pues editar la to llista de reproducción IP TV, emprentala o esportala al formatu deseyáu.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
-        <translation>L&apos;enllaz completu tien de ser dau pola imax de la canal. Les imaxes escalaranse pa encaxar la interfaz.</translation>
+        <translation type="vanished">L&apos;enllaz completu tien de ser dau pola imax de la canal. Les imaxes escalaranse pa encaxar la interfaz.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Formatos ya esportación&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Formatos ya esportación&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Guetar canales&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Guetar canales&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
-        <translation>Pues poner una estaya personalizada nos axustes (per defeutu en Radio) pa esportar a Sagem JS ya CSV. Solo la primer estaya o estaya de radiu sedrá esportada a Sagem JS.</translation>
+        <translation type="vanished">Pues poner una estaya personalizada nos axustes (per defeutu en Radio) pa esportar a Sagem JS ya CSV. Solo la primer estaya o estaya de radiu sedrá esportada a Sagem JS.</translation>
     </message>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">El númberu d&apos;una canal tien de ser aplicáu. Tolos otros valores camudaránse automáticamente. Pues configurar cualaquier canal como radio. Les estayes puen separtase per coma (,).</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditorScan</name>
     <message>
         <source>IP Range:</source>
-        <translation>Rangu IP:</translation>
+        <translation type="vanished">Rangu IP:</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>Puertu:</translation>
-    </message>
-    <message>
-        <source>Timeout:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Puertu:</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation> ms</translation>
+        <translation type="vanished"> ms</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation>Guetar y anovar</translation>
+        <translation type="vanished">Guetar y anovar</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation>Nueva canal de la gueta %1</translation>
+        <translation type="vanished">Nueva canal de la gueta %1</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Editor de llista de reproducción</translation>
+        <translation type="vanished">Editor de llista de reproducción</translation>
     </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
     <message>
         <source>Export to Tvheadend IP TV services</source>
-        <translation>Esportar a los servicios Tvheadend IP TV</translation>
+        <translation type="vanished">Esportar a los servicios Tvheadend IP TV</translation>
     </message>
     <message>
         <source>Output location:</source>
-        <translation>Llugar de salida:</translation>
+        <translation type="vanished">Llugar de salida:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>Network interface:</source>
-        <translation>Interfaz de rede:</translation>
+        <translation type="vanished">Interfaz de rede:</translation>
     </message>
     <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>&lt;i&gt;&lt;b&gt;Alvertencia: ¡Esto esniciará toles canales esistentes!&lt;/b&gt;&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;i&gt;&lt;b&gt;Alvertencia: ¡Esto esniciará toles canales esistentes!&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
     <name>PlaylistFilterModel</name>
     <message>
         <source>All categories</source>
-        <translation>Toles estayes</translation>
+        <translation type="vanished">Toles estayes</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Toles llingues</translation>
-    </message>
-    <message>
-        <source>Playlist</source>
-        <translation type="unfinished">Llista</translation>
+        <translation type="vanished">Toles llingues</translation>
     </message>
 </context>
 <context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
-        <translation>Cadarma&apos;l ficheru CSV</translation>
+        <translation type="vanished">Cadarma&apos;l ficheru CSV</translation>
     </message>
     <message>
         <source>Separator:</source>
-        <translation>Separtador:</translation>
+        <translation type="vanished">Separtador:</translation>
     </message>
     <message>
         <source>;</source>
-        <translation>;</translation>
+        <translation type="vanished">;</translation>
     </message>
     <message>
         <source>First line:</source>
-        <translation>Primer llinia:</translation>
+        <translation type="vanished">Primer llinia:</translation>
     </message>
     <message>
         <source>First line contains column names</source>
-        <translation>La primer llinia contién viesos de columnes</translation>
+        <translation type="vanished">La primer llinia contién viesos de columnes</translation>
     </message>
     <message>
         <source>First line does not contain column names</source>
-        <translation>La primer llinia nun contién viesos de columna</translation>
+        <translation type="vanished">La primer llinia nun contién viesos de columna</translation>
     </message>
     <message>
         <source>Column list:</source>
-        <translation>Llista de columa:</translation>
+        <translation type="vanished">Llista de columa:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Por favor, ordena les tos columnes dende la primera fasta la cabera.&lt;/i&gt;</translation>
+        <translation type="vanished">&lt;i&gt;Por favor, ordena les tos columnes dende la primera fasta la cabera.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>Númberu</translation>
+        <translation type="vanished">Númberu</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>Canal</translation>
+        <translation type="vanished">Canal</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Estayes</translation>
+        <translation type="vanished">Estayes</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Llingua</translation>
+        <translation type="vanished">Llingua</translation>
     </message>
     <message>
         <source>EPG ID</source>
-        <translation>ID EPG</translation>
+        <translation type="vanished">ID EPG</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>Enllaz</translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistTab</name>
-    <message>
-        <source>All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>TV</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All categories</source>
-        <translation type="unfinished">Toles estayes</translation>
-    </message>
-    <message>
-        <source>All languages</source>
-        <translation type="unfinished">Toles llingues</translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistUpdate</name>
-    <message>
-        <source>Cannot read file %1:
-%2.</source>
-        <translation type="unfinished">Nun pue lleese&apos;l ficheru %1:
-%2.</translation>
+        <translation type="vanished">Enllaz</translation>
     </message>
 </context>
 <context>
     <name>Print</name>
     <message>
         <source>#</source>
-        <translation>#</translation>
+        <translation type="vanished">#</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>Canal</translation>
+        <translation type="vanished">Canal</translation>
     </message>
     <message>
         <source>Url</source>
-        <translation>Enllaz</translation>
+        <translation type="vanished">Enllaz</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Estayes</translation>
+        <translation type="vanished">Estayes</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Llingua</translation>
+        <translation type="vanished">Llingua</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation>ID XMLTV</translation>
+        <translation type="vanished">ID XMLTV</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Tipu</translation>
+        <translation type="vanished">Tipu</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation>Imax</translation>
-    </message>
-    <message>
-        <source>Exported with %1 on %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Imax</translation>
     </message>
 </context>
 <context>
     <name>PrintDialog</name>
     <message>
         <source>Print</source>
-        <translation>Emprentar</translation>
+        <translation type="vanished">Emprentar</translation>
     </message>
     <message>
         <source>Select information for printing:</source>
-        <translation>Esbilla información pa emprentar:</translation>
+        <translation type="vanished">Esbilla información pa emprentar:</translation>
     </message>
     <message>
         <source>Channel number</source>
-        <translation>Númberu de canal</translation>
+        <translation type="vanished">Númberu de canal</translation>
     </message>
     <message>
         <source>Channel name</source>
-        <translation>Viesu la canal</translation>
+        <translation type="vanished">Viesu la canal</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>ENLLAZ</translation>
+        <translation type="vanished">ENLLAZ</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Estayes</translation>
+        <translation type="vanished">Estayes</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Llingua</translation>
+        <translation type="vanished">Llingua</translation>
     </message>
     <message>
         <source>Print channel List</source>
-        <translation>Emprentar llistáu de canales</translation>
+        <translation type="vanished">Emprentar llistáu de canales</translation>
     </message>
     <message>
         <source>Channel type</source>
-        <translation>Tipu de canal</translation>
+        <translation type="vanished">Tipu de canal</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation>ID XMLTV</translation>
+        <translation type="vanished">ID XMLTV</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation>Imax</translation>
+        <translation type="vanished">Imax</translation>
     </message>
 </context>
 <context>
@@ -964,7 +1322,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Channel list</source>
-        <translation>Llistáu de canales</translation>
+        <translation type="vanished">Llistáu de canales</translation>
     </message>
     <message>
         <source>New channel</source>
@@ -981,7 +1339,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>The file is not a Tano updates file.</source>
-        <translation>El ficheru nun ye un ficheru d&apos;anovaciones Tano.</translation>
+        <translation type="vanished">El ficheru nun ye un ficheru d&apos;anovaciones Tano.</translation>
     </message>
     <message>
         <source>Once</source>
@@ -1022,7 +1380,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Nun pue escribise&apos;l ficheru %1:
+        <translation type="vanished">Nun pue escribise&apos;l ficheru %1:
 %2.</translation>
     </message>
     <message>
@@ -1055,7 +1413,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Abrir llistáu de canales</translation>
+        <translation type="vanished">Abrir llistáu de canales</translation>
     </message>
     <message>
         <source>Open URL or stream</source>
@@ -1067,7 +1425,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Tano M3U channel list files</source>
-        <translation>Ficheros de llista de canales M3U Tano</translation>
+        <translation type="vanished">Ficheros de llista de canales M3U Tano</translation>
     </message>
     <message>
         <source>Comma-separated values files</source>
@@ -1107,15 +1465,15 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Sagem STB channel list files</source>
-        <translation>Ficheros de llistáu de canales Sagem STB</translation>
+        <translation type="vanished">Ficheros de llistáu de canales Sagem STB</translation>
     </message>
     <message>
         <source>CSV channel list</source>
-        <translation>Llista de canales CSV</translation>
+        <translation type="vanished">Llista de canales CSV</translation>
     </message>
     <message>
         <source>Sagem STB channel list</source>
-        <translation>Llista de canales Sagem STB</translation>
+        <translation type="vanished">Llista de canales Sagem STB</translation>
     </message>
     <message>
         <source>XMLTV file</source>
@@ -1174,36 +1532,28 @@ Perderanse toles camudancies non atroxaes.</translation>
         <translation>ID XMLTV</translation>
     </message>
     <message>
-        <source>Missing mandatory argument for &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unknown option &apos;%1&apos;.</source>
-        <translation>Opción desconocida &apos;%1&apos;.</translation>
+        <translation type="vanished">Opción desconocida &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Usage: %1 [options]</source>
-        <translation>Usu: %1 [opciones]</translation>
-    </message>
-    <message>
-        <source>IP TV playback:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Usu: %1 [opciones]</translation>
     </message>
     <message>
         <source>Play channel by number</source>
-        <translation>Entamar canal pel númberu</translation>
+        <translation type="vanished">Entamar canal pel númberu</translation>
     </message>
     <message>
         <source>Use playlist file</source>
-        <translation>Usar ficheru de llista de reproducción</translation>
+        <translation type="vanished">Usar ficheru de llista de reproducción</translation>
     </message>
     <message>
         <source>Use XMLTV file</source>
-        <translation>Usar ficheru XMLTV</translation>
+        <translation type="vanished">Usar ficheru XMLTV</translation>
     </message>
     <message>
         <source>Open:</source>
-        <translation>Abrir:</translation>
+        <translation type="vanished">Abrir:</translation>
     </message>
     <message>
         <source>Open URL</source>
@@ -1211,15 +1561,15 @@ Perderanse toles camudancies non atroxaes.</translation>
     </message>
     <message>
         <source>Playback options:</source>
-        <translation>Opciones de reproducción.</translation>
+        <translation type="vanished">Opciones de reproducción.</translation>
     </message>
     <message>
         <source>Set audio output</source>
-        <translation>Introducir salida d&apos;audiu</translation>
+        <translation type="vanished">Introducir salida d&apos;audiu</translation>
     </message>
     <message>
         <source>Set video output</source>
-        <translation>Introducir salida de vidéu</translation>
+        <translation type="vanished">Introducir salida de vidéu</translation>
     </message>
     <message>
         <source>Error:</source>
@@ -1502,19 +1852,123 @@ Perderanse toles camudancies non atroxaes.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Try &apos;%1 %2&apos; for more information.</source>
+        <source>Play / Pause</source>
+        <translation type="unfinished">Entamar / Posar</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="unfinished">Aparar</translation>
+    </message>
+    <message>
+        <source>Next channel</source>
+        <translation type="unfinished">Siguiente canal</translation>
+    </message>
+    <message>
+        <source>Previous channel</source>
+        <translation type="unfinished">Postrer canal</translation>
+    </message>
+    <message>
+        <source>Fullscreen</source>
+        <translation type="unfinished">Pantalla completa</translation>
+    </message>
+    <message>
+        <source>Mute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>GoTV channel list</source>
+        <source>Teletext</source>
+        <translation type="unfinished">Teletestu</translation>
+    </message>
+    <message>
+        <source>Volume up</source>
+        <translation type="unfinished">Xubir volume</translation>
+    </message>
+    <message>
+        <source>Volume down</source>
+        <translation type="unfinished">Baxar volume</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Grabador</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The file is not a GoTV channel list file.</source>
+        <source>Current show info</source>
+        <translation type="unfinished">Amosar información d&apos;anguaño</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Axustes</translation>
+    </message>
+    <message>
+        <source>Always on top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown title</source>
+        <source>Simple mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide to tray</source>
+        <translation type="unfinished">Anubrir a la bandexa</translation>
+    </message>
+    <message>
+        <source>Instant recording</source>
+        <translation type="unfinished">Grabación nel intre</translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview channels</source>
+        <translation type="unfinished">Vista previa de canales</translation>
+    </message>
+    <message>
+        <source>Next audio track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next video track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next subtitle track</source>
+        <translation type="unfinished">Prósima pista de sotítulu</translation>
+    </message>
+    <message>
+        <source>Next aspect ratio mode</source>
+        <translation type="unfinished">Próximu mou de rellación aspeutu</translation>
+    </message>
+    <message>
+        <source>Next crop mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next scale/zoom mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next deinterlacing mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano M3U channels list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV channels list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1522,7 +1976,7 @@ Perderanse toles camudancies non atroxaes.</translation>
     <name>QtKeySequenceEdit</name>
     <message>
         <source>Clear Shortcut</source>
-        <translation>Llimpiar atayu</translation>
+        <translation type="vanished">Llimpiar atayu</translation>
     </message>
 </context>
 <context>
@@ -1536,18 +1990,10 @@ Perderanse toles camudancies non atroxaes.</translation>
         <translation>Nun pue escribise a %1.</translation>
     </message>
     <message>
-        <source>Recording not valid!</source>
-        <translation type="vanished">¡La grabación nun ye válida!</translation>
-    </message>
-    <message>
         <source>File cannot be removed.
 Have you already moved or deleted it?</source>
         <translation>Nun pue esniciase&apos;l ficheru.
 ¿Yá lu moviesti o esniciesti?</translation>
-    </message>
-    <message>
-        <source>Recordings and timers</source>
-        <translation type="vanished">Grabaciones ya temporizadores</translation>
     </message>
     <message>
         <source>Instant %1</source>
@@ -1601,10 +2047,6 @@ Have you already moved or deleted it?</source>
         <translation>Trescurrío:</translation>
     </message>
     <message>
-        <source>Output:</source>
-        <translation type="vanished">Salida:</translation>
-    </message>
-    <message>
         <source>Channel:</source>
         <translation>Canal:</translation>
     </message>
@@ -1629,10 +2071,6 @@ Have you already moved or deleted it?</source>
         <translation>Duración:</translation>
     </message>
     <message>
-        <source>File:</source>
-        <translation type="vanished">Ficheru:</translation>
-    </message>
-    <message>
         <source>at</source>
         <translation>a les</translation>
     </message>
@@ -1651,10 +2089,6 @@ Esta operación nun pue desfacese.</translation>
         <translation>Atroxar</translation>
     </message>
     <message>
-        <source>Status</source>
-        <translation type="vanished">Estáu</translation>
-    </message>
-    <message>
         <source>Edit timer</source>
         <translation>Editar temporizador</translation>
     </message>
@@ -1670,10 +2104,6 @@ Esta operación nun pue desfacese.</translation>
 <context>
     <name>RecorderNewDialog</name>
     <message>
-        <source>Quick record</source>
-        <translation type="vanished">Grabación rápida</translation>
-    </message>
-    <message>
         <source>Selected channel:</source>
         <translation>Canal esbillada:</translation>
     </message>
@@ -1686,18 +2116,6 @@ Esta operación nun pue desfacese.</translation>
         <translation>Grabar</translation>
     </message>
     <message>
-        <source>Back</source>
-        <translation type="vanished">Tornar</translation>
-    </message>
-    <message>
-        <source>Add timer</source>
-        <translation type="vanished">Añader temporizador</translation>
-    </message>
-    <message>
-        <source>Timer name:</source>
-        <translation type="vanished">Viesu&apos;l temporizador:</translation>
-    </message>
-    <message>
         <source>Add new timer</source>
         <translation>Añader temporizador nuevu</translation>
     </message>
@@ -1706,35 +2124,27 @@ Esta operación nun pue desfacese.</translation>
         <translation>Grabador</translation>
     </message>
     <message>
-        <source>Please, select a channel.</source>
-        <translation type="vanished">Por favor, esbilla una canal.</translation>
-    </message>
-    <message>
         <source>You don&apos;t have this channel in your playlist.</source>
-        <translation>Nun tienes esta canal na to llista de reproducción.</translation>
+        <translation type="vanished">Nun tienes esta canal na to llista de reproducción.</translation>
     </message>
     <message>
         <source>New recording</source>
         <translation>Nueva grabación</translation>
     </message>
     <message>
-        <source>Search and filter</source>
-        <translation type="vanished">Guetar ya filtrar</translation>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cancel</source>
+        <source>You don&apos;t have this channel in your channels list.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RecorderTimersEditor</name>
     <message>
-        <source>Timers</source>
-        <translation type="unfinished">Temporizadores</translation>
-    </message>
-    <message>
         <source>Date:</source>
-        <translation type="unfinished">Data:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Once</source>
@@ -1754,7 +2164,7 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tipu</translation>
     </message>
     <message>
         <source>Channel:</source>
@@ -1766,7 +2176,7 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>dd. MM. yyyy</source>
-        <translation type="unfinished">dd. MM. aaaa</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Enabled:</source>
@@ -1774,11 +2184,11 @@ Esta operación nun pue desfacese.</translation>
     </message>
     <message>
         <source>End time:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hora de fináu:</translation>
     </message>
     <message>
         <source>Start time:</source>
-        <translation type="unfinished">Tiempu d&apos;entamu:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Recorder</source>
@@ -1787,8 +2197,7 @@ Esta operación nun pue desfacese.</translation>
     <message>
         <source>The recording start date is before today.
 Your changes will not be saved.</source>
-        <translation type="unfinished">La grabación entama nuna data que ye enantes de güei.
-Les tos camudancies nun sedrán atroxaes.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The recording is overlaping with others.
@@ -1842,134 +2251,110 @@ Your changes will not be saved.</source>
     <name>SettingsBackend</name>
     <message>
         <source>VLC-Qt Backend</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">VLC-Qt Backend</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation>Versión:</translation>
+        <translation type="vanished">Versión:</translation>
     </message>
     <message>
         <source>Using Videolan VLC version:</source>
-        <translation>Usando versión Videolan VLC:</translation>
-    </message>
-    <message>
-        <source>Playback</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Usando versión Videolan VLC:</translation>
     </message>
     <message>
         <source>Default subtitle language:</source>
-        <translation>Llingua per defeutu nel sotitulax:</translation>
+        <translation type="vanished">Llingua per defeutu nel sotitulax:</translation>
     </message>
     <message>
         <source>Default audio language:</source>
-        <translation>Llingua per defeutu nel audiu:</translation>
+        <translation type="vanished">Llingua per defeutu nel audiu:</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Deshabilitao</translation>
+        <translation type="vanished">Deshabilitao</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>Otru</translation>
+        <translation type="vanished">Otru</translation>
     </message>
     <message>
         <source>Default aspect ratio:</source>
-        <translation>Rellación aspeutu per defeutu:</translation>
-    </message>
-    <message>
-        <source>Default crop:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Rellación aspeutu per defeutu:</translation>
     </message>
     <message>
         <source>Default deinterlacing:</source>
-        <translation>Entrellazáu per defeutu:</translation>
+        <translation type="vanished">Entrellazáu per defeutu:</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Orixinal</translation>
+        <translation type="vanished">Orixinal</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>Refugar</translation>
-    </message>
-    <message>
-        <source>Blend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mean</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bob</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Linear</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Refugar</translation>
     </message>
     <message>
         <source>X</source>
-        <translation>X</translation>
+        <translation type="vanished">X</translation>
     </message>
     <message>
         <source>Enable teletext (requires restart)</source>
-        <translation>Habilitar teletestu (requier reaniciar)</translation>
+        <translation type="vanished">Habilitar teletestu (requier reaniciar)</translation>
     </message>
     <message>
         <source>Core</source>
-        <translation>Nucleu</translation>
+        <translation type="vanished">Nucleu</translation>
     </message>
     <message>
         <source>Video output:</source>
-        <translation>Salida de vidéu:</translation>
+        <translation type="vanished">Salida de vidéu:</translation>
     </message>
     <message>
         <source>Audio output:</source>
-        <translation>Salida d&apos;audiu:</translation>
+        <translation type="vanished">Salida d&apos;audiu:</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Per defeutu</translation>
+        <translation type="vanished">Per defeutu</translation>
     </message>
     <message>
         <source>Enable YUV-&gt;RGB hardware decoding</source>
-        <translation>Habilitar descifráu per hardware YUV-&gt;RGB</translation>
+        <translation type="vanished">Habilitar descifráu per hardware YUV-&gt;RGB</translation>
     </message>
     <message>
         <source>Enable S/PDIF output</source>
-        <translation>Habilitar salida S/PDIF</translation>
+        <translation type="vanished">Habilitar salida S/PDIF</translation>
     </message>
     <message>
         <source>Misc</source>
-        <translation>Misc</translation>
+        <translation type="vanished">Misc</translation>
     </message>
     <message>
         <source>Mute on minimize</source>
-        <translation>Silenciar al minimizar</translation>
+        <translation type="vanished">Silenciar al minimizar</translation>
     </message>
     <message>
         <source>Remember video settings:</source>
-        <translation>Recordar axustes de vidéu:</translation>
+        <translation type="vanished">Recordar axustes de vidéu:</translation>
     </message>
     <message>
         <source>For all channels</source>
-        <translation>Pa toles canales</translation>
+        <translation type="vanished">Pa toles canales</translation>
     </message>
     <message>
         <source>Per channel</source>
-        <translation>Per canal</translation>
+        <translation type="vanished">Per canal</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation>Habilitar</translation>
+        <translation type="vanished">Habilitar</translation>
     </message>
 </context>
 <context>
     <name>SettingsDialog</name>
     <message>
         <source>Settings</source>
-        <translation>Axustes</translation>
+        <translation type="vanished">Axustes</translation>
     </message>
     <message>
         <source>General</source>
@@ -1978,7 +2363,7 @@ Your changes will not be saved.</source>
     <message>
         <source>Playlist</source>
         <extracomment>Please make manual line breaks if text too long!</extracomment>
-        <translation>Llista</translation>
+        <translation type="vanished">Llista</translation>
     </message>
     <message>
         <source>Interface</source>
@@ -1989,290 +2374,436 @@ Your changes will not be saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Schedule</source>
+        <source>Recorder</source>
+        <translation type="vanished">Grabador</translation>
+    </message>
+    <message>
+        <source>Application language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Recorder</source>
-        <translation>Grabador</translation>
+        <source>Autoplay last channel</source>
+        <translation type="unfinished">Auto-entamar la canal cabera</translation>
+    </message>
+    <message>
+        <source>Mute on minimize</source>
+        <translation type="unfinished">Silenciar al minimizar</translation>
+    </message>
+    <message>
+        <source>Snapshots folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recordings folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show tray icon</source>
+        <translation type="unfinished">Amosar iconu la bandexa</translation>
+    </message>
+    <message>
+        <source>Tray icon:</source>
+        <translation type="unfinished">Iconu la bandexa:</translation>
+    </message>
+    <message>
+        <source>Minimise to tray</source>
+        <translation type="unfinished">Minimizar a la bandexa</translation>
+    </message>
+    <message>
+        <source>Change channel</source>
+        <translation type="unfinished">Camudar canal</translation>
+    </message>
+    <message>
+        <source>Mouse wheel:</source>
+        <translation type="unfinished">Rueda&apos;l mur:</translation>
+    </message>
+    <message>
+        <source>Change volume</source>
+        <translation type="unfinished">Camudar volume</translation>
+    </message>
+    <message>
+        <source>Double click the keyboard shortcut you want to edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SettingsDialogShortcuts</name>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>Atayos del tecláu</translation>
+        <translation type="vanished">Atayos del tecláu</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation>Aición</translation>
+        <translation type="vanished">Aición</translation>
     </message>
     <message>
         <source>Key</source>
-        <translation>Llave</translation>
+        <translation type="vanished">Llave</translation>
     </message>
     <message>
         <source>Play / Pause</source>
-        <translation>Entamar / Posar</translation>
+        <translation type="vanished">Entamar / Posar</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Aparar</translation>
+        <translation type="vanished">Aparar</translation>
     </message>
     <message>
         <source>Next channel</source>
-        <translation>Siguiente canal</translation>
+        <translation type="vanished">Siguiente canal</translation>
     </message>
     <message>
         <source>Previous channel</source>
-        <translation>Postrer canal</translation>
+        <translation type="vanished">Postrer canal</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation>Pantalla completa</translation>
+        <translation type="vanished">Pantalla completa</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>Silenciar</translation>
+        <translation type="vanished">Silenciar</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>Teletestu</translation>
+        <translation type="vanished">Teletestu</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>Xubir volume</translation>
+        <translation type="vanished">Xubir volume</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>Baxar volume</translation>
+        <translation type="vanished">Baxar volume</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>Grabador</translation>
+        <translation type="vanished">Grabador</translation>
     </message>
     <message>
         <source>Open File</source>
-        <translation>Abrir ficheru</translation>
+        <translation type="vanished">Abrir ficheru</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>Abrir enllaz</translation>
+        <translation type="vanished">Abrir enllaz</translation>
     </message>
     <message>
         <source>Open Channel list</source>
-        <translation>Abrir llistáu de canales</translation>
+        <translation type="vanished">Abrir llistáu de canales</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Axustes</translation>
+        <translation type="vanished">Axustes</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>Siempres enriba</translation>
+        <translation type="vanished">Siempres enriba</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>Mou simple</translation>
+        <translation type="vanished">Mou simple</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation>Anubrir a la bandexa</translation>
+        <translation type="vanished">Anubrir a la bandexa</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation>Prósima pista d&apos;audiu</translation>
+        <translation type="vanished">Prósima pista d&apos;audiu</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation>Prósima pista de vidéu</translation>
+        <translation type="vanished">Prósima pista de vidéu</translation>
     </message>
     <message>
         <source>Next subtitle track</source>
-        <translation>Prósima pista de sotítulu</translation>
+        <translation type="vanished">Prósima pista de sotítulu</translation>
     </message>
     <message>
         <source>Next aspect ratio mode</source>
-        <translation>Próximu mou de rellación aspeutu</translation>
-    </message>
-    <message>
-        <source>Next crop mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Próximu mou de rellación aspeutu</translation>
     </message>
     <message>
         <source>Next deinterlace mode</source>
-        <translation>Prósimu mou de desentrellazáu</translation>
-    </message>
-    <message>
-        <source>Set</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Prósimu mou de desentrellazáu</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>Per defeutu</translation>
+        <translation type="vanished">Per defeutu</translation>
     </message>
     <message>
         <source>Instant recording</source>
-        <translation>Grabación nel intre</translation>
+        <translation type="vanished">Grabación nel intre</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>Fer captura</translation>
+        <translation type="vanished">Fer captura</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>Next scale/zoom mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>Preview channels</source>
-        <translation>Vista previa de canales</translation>
-    </message>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Current show info</source>
-        <translation type="unfinished">Amosar información d&apos;anguaño</translation>
+        <translation type="vanished">Vista previa de canales</translation>
     </message>
 </context>
 <context>
     <name>SettingsGeneral</name>
     <message>
         <source>Language</source>
-        <translation>Llingua</translation>
+        <translation type="vanished">Llingua</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation>Llingua per defeutu&apos;l sistema</translation>
+        <translation type="vanished">Llingua per defeutu&apos;l sistema</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation>Llingua personalizada</translation>
+        <translation type="vanished">Llingua personalizada</translation>
     </message>
     <message>
         <source>Session store</source>
-        <translation>Almacén de la sesión</translation>
+        <translation type="vanished">Almacén de la sesión</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation>Recordar volume</translation>
+        <translation type="vanished">Recordar volume</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation>Auto-entamar la canal cabera</translation>
+        <translation type="vanished">Auto-entamar la canal cabera</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>Per defeutu</translation>
+        <translation type="vanished">Per defeutu</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation>Restaurar valores per defeutu</translation>
+        <translation type="vanished">Restaurar valores per defeutu</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Esto restaurará los tos axustes per defeutu. Necesitarás afitar les camudancies, enantes que faigan efeutu.&lt;/i&gt;</translation>
+        <translation type="vanished">&lt;i&gt;Esto restaurará los tos axustes per defeutu. Necesitarás afitar les camudancies, enantes que faigan efeutu.&lt;/i&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsPlayback</name>
+    <message>
+        <source>Remember video settings:</source>
+        <translation type="unfinished">Recordar axustes de vidéu:</translation>
     </message>
     <message>
-        <source>You are using %1 version:</source>
+        <source>Never</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For all channels</source>
+        <translation type="unfinished">Pa toles canales</translation>
+    </message>
+    <message>
+        <source>Per channel</source>
+        <translation type="unfinished">Per canal</translation>
+    </message>
+    <message>
+        <source>Default aspect ratio:</source>
+        <translation type="unfinished">Rellación aspeutu per defeutu:</translation>
+    </message>
+    <message>
+        <source>Default crop:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default deinterlacing:</source>
+        <translation type="unfinished">Entrellazáu per defeutu:</translation>
+    </message>
+    <message>
+        <source>Default audio language:</source>
+        <translation type="unfinished">Llingua per defeutu nel audiu:</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished">Otru</translation>
+    </message>
+    <message>
+        <source>Default subtitle language:</source>
+        <translation type="unfinished">Llingua per defeutu nel sotitulax:</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="unfinished">Deshabilitao</translation>
+    </message>
+    <message>
+        <source>Enable teletext (requires restart)</source>
+        <translation type="unfinished">Habilitar teletestu (requier reaniciar)</translation>
+    </message>
+    <message>
+        <source>Enable YUV-&gt;RGB hardware decoding</source>
+        <translation type="unfinished">Habilitar descifráu per hardware YUV-&gt;RGB</translation>
+    </message>
+    <message>
+        <source>Enable S/PDIF output</source>
+        <translation type="unfinished">Habilitar salida S/PDIF</translation>
+    </message>
+    <message>
+        <source>Video output (advanced):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished">Orixinal</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Per defeutu</translation>
     </message>
 </context>
 <context>
     <name>SettingsPlaylist</name>
     <message>
         <source>Default playlist</source>
-        <translation>Llista per defeutu</translation>
+        <translation type="vanished">Llista per defeutu</translation>
     </message>
     <message>
         <source>Network refresh</source>
-        <translation>Anovar rede</translation>
+        <translation type="vanished">Anovar rede</translation>
     </message>
     <message>
         <source>Refresh playlist on startup</source>
-        <translation>Anovar llista nel aniciu</translation>
+        <translation type="vanished">Anovar llista nel aniciu</translation>
     </message>
     <message>
         <source>Playlist URL:</source>
-        <translation>Enllaz a la llista:</translation>
+        <translation type="vanished">Enllaz a la llista:</translation>
     </message>
     <message>
         <source>Default radio category:</source>
-        <translation>Estaya per defeutu de Radio:</translation>
+        <translation type="vanished">Estaya per defeutu de Radio:</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation>Soporte UDPXY</translation>
+        <translation type="vanished">Soporte UDPXY</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation>Habilitar soporte UDPXY</translation>
+        <translation type="vanished">Habilitar soporte UDPXY</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation>IP de router o viesu:</translation>
+        <translation type="vanished">IP de router o viesu:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation>Puertu de router:</translation>
+        <translation type="vanished">Puertu de router:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;L&apos;anovación nun camudará l&apos;orde la to llista.&lt;/i&gt;</translation>
+        <translation type="vanished">&lt;i&gt;L&apos;anovación nun camudará l&apos;orde la to llista.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Channel types categories</source>
-        <translation>Tipos d&apos;estayes de canales</translation>
+        <translation type="vanished">Tipos d&apos;estayes de canales</translation>
     </message>
     <message>
         <source>Default HD category:</source>
-        <translation>Estaya HD per defeutu:</translation>
+        <translation type="vanished">Estaya HD per defeutu:</translation>
     </message>
 </context>
 <context>
     <name>SettingsRecorder</name>
     <message>
         <source>Default recording directory</source>
-        <translation>Cartafueyu per defeutu de grabación</translation>
+        <translation type="vanished">Cartafueyu per defeutu de grabación</translation>
     </message>
     <message>
         <source>Default snapshots directory</source>
-        <translation>Cartafueyu per defeutu de captures</translation>
+        <translation type="vanished">Cartafueyu per defeutu de captures</translation>
     </message>
 </context>
 <context>
     <name>SettingsSchedule</name>
     <message>
         <source>XMLTV settings</source>
-        <translation>Axustes XMLTV</translation>
+        <translation type="vanished">Axustes XMLTV</translation>
     </message>
     <message>
         <source>Refresh XMLTV file on startup</source>
-        <translation>Anovar ficheru XMLTV nel aniciu</translation>
+        <translation type="vanished">Anovar ficheru XMLTV nel aniciu</translation>
     </message>
     <message>
         <source>Download file</source>
-        <translation>Baxar ficheru</translation>
+        <translation type="vanished">Baxar ficheru</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsTv</name>
+    <message>
+        <source>Channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default channels list:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default HD category:</source>
+        <translation type="unfinished">Estaya HD per defeutu:</translation>
+    </message>
+    <message>
+        <source>Default radio category:</source>
+        <translation type="unfinished">Estaya per defeutu de Radio:</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished">Habilitar soporte UDPXY</translation>
+    </message>
+    <message>
+        <source>Server address:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source type:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Local file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
+        <source>Download file</source>
+        <translation type="unfinished">Baxar ficheru</translation>
+    </message>
+    <message>
+        <source>Source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time offset:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source> h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Offset:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2280,59 +2811,47 @@ Your changes will not be saved.</source>
     <name>SettingsUi</name>
     <message>
         <source>General Interface Settings</source>
-        <translation>Axustes xenerales d&apos;interfaz</translation>
+        <translation type="vanished">Axustes xenerales d&apos;interfaz</translation>
     </message>
     <message>
         <source>Change channel</source>
-        <translation>Camudar canal</translation>
+        <translation type="vanished">Camudar canal</translation>
     </message>
     <message>
         <source>Change volume</source>
-        <translation>Camudar volume</translation>
+        <translation type="vanished">Camudar volume</translation>
     </message>
     <message>
         <source>Minimise to tray</source>
-        <translation>Minimizar a la bandexa</translation>
+        <translation type="vanished">Minimizar a la bandexa</translation>
     </message>
     <message>
         <source>Show tray icon</source>
-        <translation>Amosar iconu la bandexa</translation>
+        <translation type="vanished">Amosar iconu la bandexa</translation>
     </message>
     <message>
         <source>Mouse wheel:</source>
-        <translation>Rueda&apos;l mur:</translation>
+        <translation type="vanished">Rueda&apos;l mur:</translation>
     </message>
     <message>
         <source>Tray icon:</source>
-        <translation>Iconu la bandexa:</translation>
+        <translation type="vanished">Iconu la bandexa:</translation>
     </message>
     <message>
         <source>Show on mouse move</source>
-        <translation>Amosar col movimientu&apos;l mur</translation>
-    </message>
-    <message>
-        <source>Remember main window size, position and open panels</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Amosar col movimientu&apos;l mur</translation>
     </message>
     <message>
         <source>Icon theme</source>
-        <translation>Tema d&apos;iconu</translation>
+        <translation type="vanished">Tema d&apos;iconu</translation>
     </message>
     <message>
         <source>Desktop theme</source>
-        <translation>Tema d&apos;escritoriu</translation>
+        <translation type="vanished">Tema d&apos;escritoriu</translation>
     </message>
     <message>
         <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Esta opción requier reaniciar..&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="unfinished">Per defeutu</translation>
-    </message>
-    <message>
-        <source>OSD in fullscreen:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">&lt;i&gt;Esta opción requier reaniciar..&lt;/i&gt;</translation>
     </message>
 </context>
 <context>
@@ -2363,131 +2882,6 @@ Your changes will not be saved.</source>
     <message>
         <source>at</source>
         <translation type="unfinished">a les</translation>
-    </message>
-</context>
-<context>
-    <name>TimersDisplayWidget</name>
-    <message>
-        <source>Clear</source>
-        <translation type="vanished">Llimpiar</translation>
-    </message>
-</context>
-<context>
-    <name>TimersEditorWidget</name>
-    <message>
-        <source>Timers</source>
-        <translation type="vanished">Temporizadores</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Viesu:</translation>
-    </message>
-    <message>
-        <source>Channel:</source>
-        <translation type="vanished">Canal:</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="vanished">Tipu:</translation>
-    </message>
-    <message>
-        <source>Once</source>
-        <translation type="vanished">Una vegada</translation>
-    </message>
-    <message>
-        <source>Daily</source>
-        <translation type="vanished">Caldía</translation>
-    </message>
-    <message>
-        <source>Weekly</source>
-        <translation type="vanished">Selmanalmente</translation>
-    </message>
-    <message>
-        <source>Weekdays</source>
-        <translation type="vanished">Díes de la selmana</translation>
-    </message>
-    <message>
-        <source>Url:</source>
-        <translation type="vanished">Enllaz:</translation>
-    </message>
-    <message>
-        <source>dd. MM. yyyy</source>
-        <translation type="vanished">dd. MM. aaaa</translation>
-    </message>
-    <message>
-        <source>Date:</source>
-        <translation type="vanished">Data:</translation>
-    </message>
-    <message>
-        <source>Start time:</source>
-        <translation type="vanished">Tiempu d&apos;entamu:</translation>
-    </message>
-    <message>
-        <source>End time:</source>
-        <translation type="vanished">Tiempu de fináu:</translation>
-    </message>
-    <message>
-        <source>Disable:</source>
-        <translation type="vanished">Deshabilitar:</translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="vanished">Grabador</translation>
-    </message>
-    <message>
-        <source>The recording start date is before today.
-Your changes will not be saved.</source>
-        <translation type="vanished">La grabación entama nuna data que ye enantes de güei.
-Les tos camudancies nun sedrán atroxaes.</translation>
-    </message>
-</context>
-<context>
-    <name>TimersModel</name>
-    <message>
-        <source>at</source>
-        <translation type="obsolete">a les</translation>
-    </message>
-</context>
-<context>
-    <name>TrayIcon</name>
-    <message>
-        <source>Playing:</source>
-        <translation type="vanished">Entamando:</translation>
-    </message>
-    <message>
-        <source>Recording:</source>
-        <translation type="vanished">Grabando:</translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="vanished">Grabador</translation>
-    </message>
-</context>
-<context>
-    <name>UpdateDialog</name>
-    <message>
-        <source>Update Information</source>
-        <translation type="vanished">Anovar información</translation>
-    </message>
-    <message>
-        <source>Current version:</source>
-        <translation type="vanished">Versión d&apos;anguaño:</translation>
-    </message>
-    <message>
-        <source>Stable version:</source>
-        <translation type="vanished">Versión estable:</translation>
-    </message>
-    <message>
-        <source>Date released:</source>
-        <translation type="vanished">Data d&apos;asoleyamientu:</translation>
-    </message>
-    <message>
-        <source>Information:</source>
-        <translation type="obsolete">Información:</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">Zarrar</translation>
     </message>
 </context>
 <context>

@@ -5,60 +5,50 @@
     <name>AboutDialog</name>
     <message>
         <source>About</source>
-        <translation>O programu</translation>
-    </message>
-    <message>
-        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
-</source>
-        <translation type="obsolete">Tano je odprtokodni večplatformni IP TV predvajalnik, ki omogoča polno IP TV predvajanje z EPG in snemalnikom. Temelji na knjižnici VLC-Qt.
-</translation>
-    </message>
-    <message>
-        <source>Authors</source>
-        <translation type="obsolete">Avtorji</translation>
-    </message>
-    <message>
-        <source>License</source>
-        <translation type="obsolete">Licenca</translation>
-    </message>
-    <message>
-        <source>Backend</source>
-        <translation type="obsolete">Hrbtenica</translation>
-    </message>
-    <message>
-        <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
-</source>
-        <translation type="obsolete">VLC-Qt je brezplačna programska knjižnica, ki služi povezavi med knjižnicami Qt in libvlc. Vsebuje osnovne razrede za multimedijsko predvajanje in tudi nekaj razredov uporabniškega vmesnika za hitrejši razvoj multimedijskega predvajalnika.
-</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;Uporabljate Videolan VLC %1&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Your %1 version: %2
-Your Qt runtime version: %3
-Your VLC-Qt version: %4
-</source>
-        <translation type="obsolete">Vaša različica programa %1: %2
-Vaša različica Qt: %3
-Vaša različica knjižnice VLC-Qt: %4</translation>
-    </message>
-    <message>
-        <source>This application is based on Tano.</source>
-        <translation type="obsolete">Ta aplikacija temelji na programu Tano.</translation>
+        <translation type="vanished">O programu</translation>
     </message>
     <message>
         <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.</source>
-        <translation>Tano je odprtokodni večplatformni IP TV predvajalnik, ki omogoča polno IP TV predvajanje z EPG in snemalnikom.</translation>
+        <translation type="vanished">Tano je odprtokodni večplatformni IP TV predvajalnik, ki omogoča polno IP TV predvajanje z EPG in snemalnikom.</translation>
     </message>
     <message>
         <source>Multimedia backend powered by VLC-Qt %1.</source>
-        <translation>Multimedijsko hrbtenico poganja VLC-Qt %1.</translation>
+        <translation type="vanished">Multimedijsko hrbtenico poganja VLC-Qt %1.</translation>
     </message>
     <message>
         <source>&lt;b&gt;This application is based on Tano %1.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Ta aplikacija temelji na programu Tano %1.&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;Ta aplikacija temelji na programu Tano %1.&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>About %1</source>
+        <translation>O programu %1</translation>
+    </message>
+    <message>
+        <source>Copyright %1 %2 %3&lt;br&gt;All rights reserved.</source>
+        <translation>%1 %2 %3&lt;br&gt;Vse pravice pridržane.</translation>
+    </message>
+    <message>
+        <source>Using VLC %1</source>
+        <translation>Uporablja VLC %1</translation>
+    </message>
+    <message>
+        <source>Backend</source>
+        <translation>Hrbtenica</translation>
+    </message>
+    <message>
+        <source>Icons</source>
+        <translation>Ikone</translation>
+    </message>
+    <message>
+        <source>Libraries</source>
+        <translation>Knjižnice</translation>
+    </message>
+</context>
+<context>
+    <name>BrowseWidget</name>
+    <message>
+        <source>Browse…</source>
+        <translation>Brskaj...</translation>
     </message>
 </context>
 <context>
@@ -74,6 +64,458 @@ Vaša različica knjižnice VLC-Qt: %4</translation>
     <message>
         <source>Radio</source>
         <translation>Radio</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsDisplayWidget</name>
+    <message>
+        <source>Play</source>
+        <translation>Predvajaj</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Spored</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsEditor</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation>Tano Urejevalnik</translation>
+    </message>
+    <message>
+        <source>Channels list name:</source>
+        <translation>Ime seznama programov:</translation>
+    </message>
+    <message>
+        <source>Number of channels:</source>
+        <translation>Število programov:</translation>
+    </message>
+    <message>
+        <source>Toolbar</source>
+        <translation>Orodna vrstica</translation>
+    </message>
+    <message>
+        <source>Edit channel</source>
+        <translation>Uredi program</translation>
+    </message>
+    <message>
+        <source>Number:</source>
+        <translation>Število:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation>Tip:</translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation>SD</translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation>HD</translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation>Radio</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation>Ime:</translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation>Naslov:</translation>
+    </message>
+    <message>
+        <source>Categories:</source>
+        <translation>Kategorije:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation>Jezik:</translation>
+    </message>
+    <message>
+        <source>XMLTV ID:</source>
+        <translation>XMLTV ID:</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation>Drugo</translation>
+    </message>
+    <message>
+        <source>Logo:</source>
+        <translation>Logo:</translation>
+    </message>
+    <message>
+        <source>Scan for new channels</source>
+        <translation>Preišči za nove programe</translation>
+    </message>
+    <message>
+        <source>Add channel</source>
+        <translation>Dodaj program</translation>
+    </message>
+    <message>
+        <source>Delete channel</source>
+        <translation>Izbriši program</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation>Shrani</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation>Zapri</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation>Premakni navzgor</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation>Premakni navzdol</translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation>Natisni</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation>Izvozi</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation>Odpri</translation>
+    </message>
+    <message>
+        <source>New channels list</source>
+        <translation>Nov seznam programov</translation>
+    </message>
+    <message>
+        <source>XMLTV IDs</source>
+        <translation>XMLTV oznake</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation>Pomoč</translation>
+    </message>
+    <message>
+        <source>Auto XMLTV map</source>
+        <translation>Samodejno poveži z XMLTV</translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation>Urejevalnik</translation>
+    </message>
+    <message>
+        <source>%1 - %2 Editor</source>
+        <translation>%1 - %2 Urejevalnik</translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation>Ne morem prebrati %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Channels Editor</source>
+        <translation>Urejevalnik programov</translation>
+    </message>
+    <message>
+        <source>Do you want to create new channels list?
+You will lose any unsaved changes.</source>
+        <translation>Ali želite ustvariti nov seznam programov?
+Neshranjene spremembe ne bodo uveljavljene.</translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation>Ne morem pisati datoteke %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Export to M3U format with Udpxy URLs</source>
+        <translation>Izvozi v M3U format z Udpxy URLji</translation>
+    </message>
+    <message>
+        <source>You need to have valid Udpxy settings or the exported channels list will contain classic URLs.</source>
+        <translation>Nastavljene morajo biti pravilne Udpxy nastavitve ali pa bo izvožen seznam programov vseboval običajne URLje.</translation>
+    </message>
+    <message>
+        <source>Do you want close the editor?
+You will lose any unsaved changes.</source>
+        <translation>Ali želite zapreti urejevalnik?
+Neshranjene spremembe ne bodo uveljavljene.</translation>
+    </message>
+    <message>
+        <source>Please wait for XMLTV file to parse.</source>
+        <translation>Počakajte, da se datoteka XMLTV prebere do konca.</translation>
+    </message>
+    <message>
+        <source>A channel with this number already exists!</source>
+        <translation>Program s to številko že obstaja!</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsEditorHelp</name>
+    <message>
+        <source>Tano Editor - Help</source>
+        <translation>Tano Urejevalnik - Pomoč</translation>
+    </message>
+    <message>
+        <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
+        <translation>&lt;h2&gt;Tano Urejevalnik - Pomoč&lt;/h2&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You can edit your IP TV channels list, print it or export it to desired format.&lt;/b&gt;</source>
+        <translation>&lt;b&gt;Lahko uredite vaš seznam programov, ga natisnete ali izvozite v želen format.&lt;/b&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Urejanje programov&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
+        <translation>Zaporedna številka programa mora biti potrjena. Vse druge vrednosti se samodejno spremenijo. Katerikoli program je lahko nastavljen kot radio. Kategorije se ločijo z vejico (,).</translation>
+    </message>
+    <message>
+        <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
+        <translation>Poln URL mora biti nastavljen za logotip programa. Slike bodo pomanjšane, da bodo ustrezale velikosti vmesnika.</translation>
+    </message>
+    <message>
+        <source>Editor will automatically try to map current XMLTV IDs to channels in the list. You may still need to check for possible errors.</source>
+        <translation>Urejevalnik bo samodejno poskušal povezati programe z XMLTV. Še vedno pa priporočamo, da preverite za možne napake.</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Formati in izvoz&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>Editor supports its own modified M3U as well as unmodified M3U and CSV files. Beside these formats you can also save/export to M3U with Udpxy URLs.</source>
+        <translation>Urejevalnik podpira svoj lasten, prilagojen format M3U, poleg tega pa še običajen M3U in datoteke CSV. Seznam programov lahko shranite/izvozite še kot M3U z naslovi Udpxy.</translation>
+    </message>
+    <message>
+        <source>You can set custom radio category in settings (defaults to Radio).</source>
+        <translation>Nastavite lahko poljubno kategorijo radijskih programov v nastavitvah (privzeto Radio).</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
+        <translation>&lt;h3&gt;Iskanje novih programov&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
+        <translation>Nove programe lahko poiščete z vgrajenim iskalnikom programov. Nastavite veljavno območje IP (npr. 232.4.1) in vrata (npr. 5000). Vseh 255 IP-jev v tem območju bo samodejno preiskanih. Program bo dodan, če bo zaznan v nastavljenem času.</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsFilterModel</name>
+    <message>
+        <source>Channels list</source>
+        <translation>Seznam programov</translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation>Vse kategorije</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation>Vsi jeziki</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsImportCSV</name>
+    <message>
+        <source>CSV file structure</source>
+        <translation>Struktura datoteke CSV</translation>
+    </message>
+    <message>
+        <source>Separator:</source>
+        <translation>Ločitelj:</translation>
+    </message>
+    <message>
+        <source>;</source>
+        <translation>;</translation>
+    </message>
+    <message>
+        <source>First line:</source>
+        <translation>Prva vrstica:</translation>
+    </message>
+    <message>
+        <source>First line contains column names</source>
+        <translation>Prva vrstica vsebuje imena stolpcev</translation>
+    </message>
+    <message>
+        <source>First line does not contain column names</source>
+        <translation>Prva vrstica ne vsebuje imen stolpcev</translation>
+    </message>
+    <message>
+        <source>Column list:</source>
+        <translation>Seznam stolpcev:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
+        <translation>&lt;i&gt;Uredite stolpce po vrstnem redu, ki ustreza datoteki.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation>Število</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Program</translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation>URL</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation>Kategorije</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Jezik</translation>
+    </message>
+    <message>
+        <source>EPG ID</source>
+        <translation>EPG ID</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsPrint</name>
+    <message>
+        <source>#</source>
+        <translation>#</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation>Program</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>Tip</translation>
+    </message>
+    <message>
+        <source>Url</source>
+        <translation>Url</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation>Kategorije</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Jezik</translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation>XMLTV ID</translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation>Logo</translation>
+    </message>
+    <message>
+        <source>Exported with %1 on %2.</source>
+        <translation>Izpisano s programom %1 dne %2.</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsPrintDialog</name>
+    <message>
+        <source>Print channels list</source>
+        <translation>Natisni seznam programov</translation>
+    </message>
+    <message>
+        <source>Select information for printing:</source>
+        <translation>Izberite informacije za tisk:</translation>
+    </message>
+    <message>
+        <source>Channel number</source>
+        <translation>Številka programa</translation>
+    </message>
+    <message>
+        <source>Channel name</source>
+        <translation>Ime programa</translation>
+    </message>
+    <message>
+        <source>Channel type</source>
+        <translation>Tip programa</translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation>URL</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation>Kategorije</translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation>Jezik</translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation>XMLTV ID</translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation>Logo</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsScan</name>
+    <message>
+        <source>IP Range:</source>
+        <translation>Območje IP:</translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation>Vrata:</translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation>Čas iskanja:</translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation>ms</translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation>Išči in posodobi</translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
+        <translation>Nov najden program %1</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsTab</name>
+    <message>
+        <source>All</source>
+        <translation>Vse</translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation>TV</translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation>Vse kategorije</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation>Vsi jeziki</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsUpdate</name>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation>Ne morem prebrati %1:
+%2.</translation>
     </message>
 </context>
 <context>
@@ -140,7 +582,7 @@ Vaša različica knjižnice VLC-Qt: %4</translation>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Ne morem prebrati %1:
+        <translation type="vanished">Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
@@ -173,11 +615,11 @@ Vaša različica knjižnice VLC-Qt: %4</translation>
     </message>
     <message>
         <source>&amp;Open channel list</source>
-        <translation>&amp;Odpri seznam programov</translation>
+        <translation type="vanished">&amp;Odpri seznam programov</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Odpri seznam programov</translation>
+        <translation type="vanished">Odpri seznam programov</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
@@ -241,7 +683,7 @@ Vaša različica knjižnice VLC-Qt: %4</translation>
     </message>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>Bližnjice na tipkovnici</translation>
+        <translation type="vanished">Bližnjice na tipkovnici</translation>
     </message>
     <message>
         <source>Instant recording</source>
@@ -273,17 +715,13 @@ Vaša različica knjižnice VLC-Qt: %4</translation>
     </message>
     <message>
         <source>Logout and Exit</source>
-        <translation>Odjava in izhod</translation>
+        <translation type="vanished">Odjava in izhod</translation>
     </message>
     <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
         <translation>Ste prepričani, da želite zapreti aplikacijo?
 To bo ustavilo trenutno snemanje.</translation>
-    </message>
-    <message>
-        <source>An update is available!</source>
-        <translation type="obsolete">Na voljo je posodobitev!</translation>
     </message>
     <message>
         <source>Channels</source>
@@ -295,7 +733,7 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
     <message>
         <source>Edit playlist</source>
-        <translation>Uredi seznam programov</translation>
+        <translation type="vanished">Uredi seznam programov</translation>
     </message>
     <message>
         <source>Instant</source>
@@ -304,6 +742,10 @@ To bo ustavilo trenutno snemanje.</translation>
     <message>
         <source>Check for updates...</source>
         <translation>Preveri za posodobitve...</translation>
+    </message>
+    <message>
+        <source>Edit channels list</source>
+        <translation>Uredi seznam programov</translation>
     </message>
 </context>
 <context>
@@ -480,446 +922,395 @@ To bo ustavilo trenutno snemanje.</translation>
     </message>
 </context>
 <context>
-    <name>PasswordDialog</name>
-    <message>
-        <source>Login required</source>
-        <translation type="vanished">Obvezna prijava</translation>
-    </message>
-    <message>
-        <source>Username:</source>
-        <translation type="vanished">Uporabniško ime:</translation>
-    </message>
-    <message>
-        <source>Password:</source>
-        <translation type="vanished">Geslo:</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;You need to login to use this application.&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;Za uporabo aplikacije se morate prijaviti.&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Remember password</source>
-        <translation type="vanished">Zapomni si geslo</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Your username or password is incorrect.
-Please, try again.&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;Vaše uporabniško ime ali geslo ni pravilno.
-Poskusite znova.&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;An unknown error has occured.
-Please, try again.&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;Zgodila se je neznana napaka.
-Poskusite znova.&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Logging in ...&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;Prijava ...&lt;/b&gt;</translation>
-    </message>
-</context>
-<context>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Play</source>
-        <translation>Predvajaj</translation>
+        <translation type="vanished">Predvajaj</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>Spored</translation>
+        <translation type="vanished">Spored</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditor</name>
     <message>
         <source>Tano Editor</source>
-        <translation>Tano Urejevalnik</translation>
+        <translation type="vanished">Tano Urejevalnik</translation>
     </message>
     <message>
         <source>Playlist name:</source>
-        <translation>Ime seznama programov:</translation>
+        <translation type="vanished">Ime seznama programov:</translation>
     </message>
     <message>
         <source>Number of channels:</source>
-        <translation>Število programov:</translation>
+        <translation type="vanished">Število programov:</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>Pomoč</translation>
+        <translation type="vanished">Pomoč</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>Orodna vrstica</translation>
+        <translation type="vanished">Orodna vrstica</translation>
     </message>
     <message>
         <source>Number:</source>
-        <translation>Število:</translation>
+        <translation type="vanished">Število:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Ime:</translation>
+        <translation type="vanished">Ime:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation>Kategorije:</translation>
+        <translation type="vanished">Kategorije:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Jezik:</translation>
+        <translation type="vanished">Jezik:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Naslov:</translation>
+        <translation type="vanished">Naslov:</translation>
     </message>
     <message>
         <source>Logo:</source>
-        <translation>Logo:</translation>
+        <translation type="vanished">Logo:</translation>
     </message>
     <message>
         <source>Add channel</source>
-        <translation>Dodaj program</translation>
+        <translation type="vanished">Dodaj program</translation>
     </message>
     <message>
         <source>Delete channel</source>
-        <translation>Izbriši program</translation>
+        <translation type="vanished">Izbriši program</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Shrani</translation>
+        <translation type="vanished">Shrani</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Zapri</translation>
+        <translation type="vanished">Zapri</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Premakni navzgor</translation>
+        <translation type="vanished">Premakni navzgor</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Premakni navzdol</translation>
+        <translation type="vanished">Premakni navzdol</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Natisni</translation>
+        <translation type="vanished">Natisni</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Izvozi</translation>
+        <translation type="vanished">Izvozi</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Odpri</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">O urejevalniku</translation>
+        <translation type="vanished">Odpri</translation>
     </message>
     <message>
         <source>New playlist</source>
-        <translation>Nov seznam programov</translation>
+        <translation type="vanished">Nov seznam programov</translation>
     </message>
     <message>
         <source>Tvheadend</source>
-        <translation>Tvheadend</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">Nastavitve</translation>
+        <translation type="vanished">Tvheadend</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
-        <translation>XMLTV oznake</translation>
-    </message>
-    <message>
-        <source>Update Information</source>
-        <translation type="vanished">Informacije o posodobitvah</translation>
+        <translation type="vanished">XMLTV oznake</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Ne morem prebrati %1:
+        <translation type="vanished">Ne morem prebrati %1:
 %2.</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Urejevalnik seznama programov</translation>
+        <translation type="vanished">Urejevalnik seznama programov</translation>
     </message>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
-        <translation>Ali želite ustvariti nov seznam programov?
+        <translation type="vanished">Ali želite ustvariti nov seznam programov?
 Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Ne morem pisati datoteke %1:
+        <translation type="vanished">Ne morem pisati datoteke %1:
 %2.</translation>
     </message>
     <message>
         <source>Export to M3U format with Udpxy URLs</source>
-        <translation>Izvozi v M3U format z Udpxy URLji</translation>
+        <translation type="vanished">Izvozi v M3U format z Udpxy URLji</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation>Nastavljene morajo biti pravilne Udpxy nastavitve ali pa bo izvožen seznam programov vseboval običajne URLje.</translation>
+        <translation type="vanished">Nastavljene morajo biti pravilne Udpxy nastavitve ali pa bo izvožen seznam programov vseboval običajne URLje.</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
-        <translation>Ali želite zapreti urejevalnik?
+        <translation type="vanished">Ali želite zapreti urejevalnik?
 Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation>Program s to številko že obstaja!</translation>
+        <translation type="vanished">Program s to številko že obstaja!</translation>
     </message>
     <message>
         <source>Edit channel</source>
-        <translation>Uredi program</translation>
+        <translation type="vanished">Uredi program</translation>
     </message>
     <message>
         <source>Scan for new channels</source>
-        <translation>Preišči za nove programe</translation>
+        <translation type="vanished">Preišči za nove programe</translation>
     </message>
     <message>
         <source>XMLTV ID:</source>
-        <translation>XMLTV ID:</translation>
+        <translation type="vanished">XMLTV ID:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>Tip:</translation>
+        <translation type="vanished">Tip:</translation>
     </message>
     <message>
         <source>SD</source>
-        <translation>SD</translation>
+        <translation type="vanished">SD</translation>
     </message>
     <message>
         <source>HD</source>
-        <translation>HD</translation>
+        <translation type="vanished">HD</translation>
     </message>
     <message>
         <source>Radio</source>
-        <translation>Radio</translation>
+        <translation type="vanished">Radio</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>Drugo</translation>
+        <translation type="vanished">Drugo</translation>
     </message>
     <message>
         <source>Auto XMLTV map</source>
-        <translation>Samodejno poveži z XMLTV</translation>
+        <translation type="vanished">Samodejno poveži z XMLTV</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>Urejevalnik</translation>
+        <translation type="vanished">Urejevalnik</translation>
     </message>
     <message>
         <source>Please wait for XMLTV file to parse.</source>
-        <translation>Počakajte, da se datoteka XMLTV prebere do konca.</translation>
+        <translation type="vanished">Počakajte, da se datoteka XMLTV prebere do konca.</translation>
     </message>
     <message>
         <source>%1 - %2 Editor</source>
-        <translation>%1 - %2 Urejevalnik</translation>
+        <translation type="vanished">%1 - %2 Urejevalnik</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditorHelp</name>
     <message>
         <source>Tano Editor - Help</source>
-        <translation>Tano Urejevalnik - Pomoč</translation>
+        <translation type="vanished">Tano Urejevalnik - Pomoč</translation>
     </message>
     <message>
         <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Tano Urejevalnik - Pomoč&lt;/h2&gt;</translation>
+        <translation type="vanished">&lt;h2&gt;Tano Urejevalnik - Pomoč&lt;/h2&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;You can edit your IP TV playlist, print it or export it to desired format.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Lahko uredite vaš seznam programov, ga natisnete ali izvozite v želen format.&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;Lahko uredite vaš seznam programov, ga natisnete ali izvozite v želen format.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Urejanje programov&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Urejanje programov&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
-        <translation>Poln URL mora biti nastavljen za logotip programa. Slike bodo pomanjšane, da bodo ustrezale velikosti vmesnika.</translation>
+        <translation type="vanished">Poln URL mora biti nastavljen za logotip programa. Slike bodo pomanjšane, da bodo ustrezale velikosti vmesnika.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Formati in izvoz&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Formati in izvoz&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Iskanje novih programov&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Iskanje novih programov&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
-        <translation>V nastavitvah lahko nastavite svoje ime kategorije za radio (privzeto je Radio), ki bo vidno pri izvažanju v Sagem JS in CSV. Samo prva kategorija bo izvožena v Sagem JS.</translation>
+        <translation type="vanished">V nastavitvah lahko nastavite svoje ime kategorije za radio (privzeto je Radio), ki bo vidno pri izvažanju v Sagem JS in CSV. Samo prva kategorija bo izvožena v Sagem JS.</translation>
     </message>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
-        <translation>Zaporedna številka programa mora biti potrjena. Vse druge vrednosti se samodejno spremenijo. Katerikoli program je lahko nastavljen kot radio. Kategorije se ločijo z vejico (,).</translation>
+        <translation type="vanished">Zaporedna številka programa mora biti potrjena. Vse druge vrednosti se samodejno spremenijo. Katerikoli program je lahko nastavljen kot radio. Kategorije se ločijo z vejico (,).</translation>
     </message>
     <message>
         <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation>Urejevalnik bo samodejno poskušal povezati programe z XMLTV. Še vedno pa priporočamo, da preverite za možne napake.</translation>
+        <translation type="vanished">Urejevalnik bo samodejno poskušal povezati programe z XMLTV. Še vedno pa priporočamo, da preverite za možne napake.</translation>
     </message>
     <message>
         <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation>Urejevalnik podpira svoj lasten, prilagojen format M3U, poleg tega pa še običajen M3U, CSV in datoteke Sagem JS. Seznam programov lahko shranite/izvozite še kot M3U z naslovi Udpxy in kot nastavitvene datoteke za Tvheadend.</translation>
+        <translation type="vanished">Urejevalnik podpira svoj lasten, prilagojen format M3U, poleg tega pa še običajen M3U, CSV in datoteke Sagem JS. Seznam programov lahko shranite/izvozite še kot M3U z naslovi Udpxy in kot nastavitvene datoteke za Tvheadend.</translation>
     </message>
     <message>
         <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
-        <translation>Nove programe lahko poiščete z vgrajenim iskalnikom programov. Nastavite veljavno območje IP (npr. 232.4.1) in vrata (npr. 5000). Vseh 255 IP-jev v tem območju bo samodejno preiskanih. Program bo dodan, če bo zaznan v nastavljenem času.</translation>
+        <translation type="vanished">Nove programe lahko poiščete z vgrajenim iskalnikom programov. Nastavite veljavno območje IP (npr. 232.4.1) in vrata (npr. 5000). Vseh 255 IP-jev v tem območju bo samodejno preiskanih. Program bo dodan, če bo zaznan v nastavljenem času.</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditorScan</name>
     <message>
         <source>IP Range:</source>
-        <translation>Območje IP:</translation>
+        <translation type="vanished">Območje IP:</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>Vrata:</translation>
+        <translation type="vanished">Vrata:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation>Čas iskanja:</translation>
+        <translation type="vanished">Čas iskanja:</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation>ms</translation>
+        <translation type="vanished">ms</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation>Išči in posodobi</translation>
+        <translation type="vanished">Išči in posodobi</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation>Nov najden program %1</translation>
+        <translation type="vanished">Nov najden program %1</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Urejevalnik seznama programov</translation>
+        <translation type="vanished">Urejevalnik seznama programov</translation>
     </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
     <message>
         <source>Export to Tvheadend IP TV services</source>
-        <translation>Izvozi kot Tvheadend IP TV storitve</translation>
+        <translation type="vanished">Izvozi kot Tvheadend IP TV storitve</translation>
     </message>
     <message>
         <source>Output location:</source>
-        <translation>Izhodna lokacija:</translation>
+        <translation type="vanished">Izhodna lokacija:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>Network interface:</source>
-        <translation>Omrežna povezava:</translation>
+        <translation type="vanished">Omrežna povezava:</translation>
     </message>
     <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>&lt;i&gt;&lt;b&gt;Opozorilo: To bo izbrisalo vse obstoječe programe!&lt;/b&gt;&lt;/i&gt;</translation>
+        <translation type="vanished">&lt;i&gt;&lt;b&gt;Opozorilo: To bo izbrisalo vse obstoječe programe!&lt;/b&gt;&lt;/i&gt;</translation>
     </message>
 </context>
 <context>
     <name>PlaylistFilterModel</name>
     <message>
         <source>All categories</source>
-        <translation>Vse kategorije</translation>
+        <translation type="vanished">Vse kategorije</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Vsi jeziki</translation>
+        <translation type="vanished">Vsi jeziki</translation>
     </message>
     <message>
         <source>Playlist</source>
-        <translation>Programi</translation>
+        <translation type="vanished">Programi</translation>
     </message>
 </context>
 <context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
-        <translation>Struktura datoteke CSV</translation>
+        <translation type="vanished">Struktura datoteke CSV</translation>
     </message>
     <message>
         <source>Separator:</source>
-        <translation>Ločitelj:</translation>
+        <translation type="vanished">Ločitelj:</translation>
     </message>
     <message>
         <source>;</source>
-        <translation>;</translation>
+        <translation type="vanished">;</translation>
     </message>
     <message>
         <source>First line:</source>
-        <translation>Prva vrstica:</translation>
+        <translation type="vanished">Prva vrstica:</translation>
     </message>
     <message>
         <source>First line contains column names</source>
-        <translation>Prva vrstica vsebuje imena stolpcev</translation>
+        <translation type="vanished">Prva vrstica vsebuje imena stolpcev</translation>
     </message>
     <message>
         <source>First line does not contain column names</source>
-        <translation>Prva vrstica ne vsebuje imen stolpcev</translation>
+        <translation type="vanished">Prva vrstica ne vsebuje imen stolpcev</translation>
     </message>
     <message>
         <source>Column list:</source>
-        <translation>Seznam stolpcev:</translation>
+        <translation type="vanished">Seznam stolpcev:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Uredite stolpce po vrstnem redu, ki ustreza datoteki.&lt;/i&gt;</translation>
+        <translation type="vanished">&lt;i&gt;Uredite stolpce po vrstnem redu, ki ustreza datoteki.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>Število</translation>
+        <translation type="vanished">Število</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>Program</translation>
+        <translation type="vanished">Program</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Kategorije</translation>
+        <translation type="vanished">Kategorije</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Jezik</translation>
+        <translation type="vanished">Jezik</translation>
     </message>
     <message>
         <source>EPG ID</source>
-        <translation>EPG ID</translation>
+        <translation type="vanished">EPG ID</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>URL</translation>
+        <translation type="vanished">URL</translation>
     </message>
 </context>
 <context>
     <name>PlaylistTab</name>
     <message>
         <source>All</source>
-        <translation>Vse</translation>
+        <translation type="vanished">Vse</translation>
     </message>
     <message>
         <source>TV</source>
-        <translation>TV</translation>
+        <translation type="vanished">TV</translation>
     </message>
     <message>
         <source>All categories</source>
-        <translation>Vse kategorije</translation>
+        <translation type="vanished">Vse kategorije</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Vsi jeziki</translation>
+        <translation type="vanished">Vsi jeziki</translation>
     </message>
 </context>
 <context>
@@ -927,7 +1318,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Ne morem prebrati %1:
+        <translation type="vanished">Ne morem prebrati %1:
 %2.</translation>
     </message>
 </context>
@@ -935,86 +1326,86 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <name>Print</name>
     <message>
         <source>#</source>
-        <translation>#</translation>
+        <translation type="vanished">#</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>Program</translation>
+        <translation type="vanished">Program</translation>
     </message>
     <message>
         <source>Url</source>
-        <translation>Url</translation>
+        <translation type="vanished">Url</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Kategorije</translation>
+        <translation type="vanished">Kategorije</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Jezik</translation>
+        <translation type="vanished">Jezik</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation>XMLTV ID</translation>
+        <translation type="vanished">XMLTV ID</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Tip</translation>
+        <translation type="vanished">Tip</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation>Logo</translation>
+        <translation type="vanished">Logo</translation>
     </message>
     <message>
         <source>Exported with %1 on %2.</source>
-        <translation>Izpisano s programom %1 dne %2.</translation>
+        <translation type="vanished">Izpisano s programom %1 dne %2.</translation>
     </message>
 </context>
 <context>
     <name>PrintDialog</name>
     <message>
         <source>Print</source>
-        <translation>Natisni</translation>
+        <translation type="vanished">Natisni</translation>
     </message>
     <message>
         <source>Select information for printing:</source>
-        <translation>Izberite informacije za tisk:</translation>
+        <translation type="vanished">Izberite informacije za tisk:</translation>
     </message>
     <message>
         <source>Channel number</source>
-        <translation>Številka programa</translation>
+        <translation type="vanished">Številka programa</translation>
     </message>
     <message>
         <source>Channel name</source>
-        <translation>Ime programa</translation>
+        <translation type="vanished">Ime programa</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>URL</translation>
+        <translation type="vanished">URL</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Kategorije</translation>
+        <translation type="vanished">Kategorije</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Jezik</translation>
+        <translation type="vanished">Jezik</translation>
     </message>
     <message>
         <source>Print channel List</source>
-        <translation>Natisni seznam programov</translation>
+        <translation type="vanished">Natisni seznam programov</translation>
     </message>
     <message>
         <source>Channel type</source>
-        <translation>Tip programa</translation>
+        <translation type="vanished">Tip programa</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation>XMLTV ID</translation>
+        <translation type="vanished">XMLTV ID</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation>Logo</translation>
+        <translation type="vanished">Logo</translation>
     </message>
 </context>
 <context>
@@ -1025,7 +1416,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Channel list</source>
-        <translation>Seznam programov</translation>
+        <translation type="vanished">Seznam programov</translation>
     </message>
     <message>
         <source>New channel</source>
@@ -1043,7 +1434,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>The file is not a Tano updates file.</source>
-        <translation>Datoteka ni Tano posodobitvene informacije.</translation>
+        <translation type="vanished">Datoteka ni Tano posodobitvene informacije.</translation>
     </message>
     <message>
         <source>Once</source>
@@ -1084,7 +1475,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Ne morem pisati datoteke %1:
+        <translation type="vanished">Ne morem pisati datoteke %1:
 %2.</translation>
     </message>
     <message>
@@ -1117,7 +1508,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Odpri seznam programov</translation>
+        <translation type="vanished">Odpri seznam programov</translation>
     </message>
     <message>
         <source>Open URL or stream</source>
@@ -1129,7 +1520,7 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Tano M3U channel list files</source>
-        <translation>Tano M3U seznami programov</translation>
+        <translation type="vanished">Tano M3U seznami programov</translation>
     </message>
     <message>
         <source>Comma-separated values files</source>
@@ -1169,15 +1560,15 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Sagem STB channel list files</source>
-        <translation>Sagem STB seznami programov</translation>
+        <translation type="vanished">Sagem STB seznami programov</translation>
     </message>
     <message>
         <source>CSV channel list</source>
-        <translation>CSV seznam programov</translation>
+        <translation type="vanished">CSV seznam programov</translation>
     </message>
     <message>
         <source>Sagem STB channel list</source>
-        <translation>Sagem STB seznam programov</translation>
+        <translation type="vanished">Sagem STB seznam programov</translation>
     </message>
     <message>
         <source>XMLTV file</source>
@@ -1237,35 +1628,35 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
-        <translation>Manjkajoč obvezen argument možnosti &apos;%1&apos;.</translation>
+        <translation type="vanished">Manjkajoč obvezen argument možnosti &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Unknown option &apos;%1&apos;.</source>
-        <translation>Neznana možnost &apos;%1&apos;.</translation>
+        <translation type="vanished">Neznana možnost &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Usage: %1 [options]</source>
-        <translation>Uporaba: %1 [možnosti]</translation>
+        <translation type="vanished">Uporaba: %1 [možnosti]</translation>
     </message>
     <message>
         <source>IP TV playback:</source>
-        <translation>Predvajanje IP TV:</translation>
+        <translation type="vanished">Predvajanje IP TV:</translation>
     </message>
     <message>
         <source>Play channel by number</source>
-        <translation>Predvajaj program pod to številko</translation>
+        <translation type="vanished">Predvajaj program pod to številko</translation>
     </message>
     <message>
         <source>Use playlist file</source>
-        <translation>Uporabi seznam programov</translation>
+        <translation type="vanished">Uporabi seznam programov</translation>
     </message>
     <message>
         <source>Use XMLTV file</source>
-        <translation>Uporabi datoteko XMLTV</translation>
+        <translation type="vanished">Uporabi datoteko XMLTV</translation>
     </message>
     <message>
         <source>Open:</source>
-        <translation>Odpri:</translation>
+        <translation type="vanished">Odpri:</translation>
     </message>
     <message>
         <source>Open URL</source>
@@ -1273,15 +1664,15 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Playback options:</source>
-        <translation>Možnosti predvajanja:</translation>
+        <translation type="vanished">Možnosti predvajanja:</translation>
     </message>
     <message>
         <source>Set audio output</source>
-        <translation>Izberi zvočni izhod</translation>
+        <translation type="vanished">Izberi zvočni izhod</translation>
     </message>
     <message>
         <source>Set video output</source>
-        <translation>Izberi video izhod</translation>
+        <translation type="vanished">Izberi video izhod</translation>
     </message>
     <message>
         <source>Error:</source>
@@ -1565,26 +1956,146 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
     </message>
     <message>
         <source>Try &apos;%1 %2&apos; for more information.</source>
-        <translation>Poskusite &apos;%1 %2&apos; za več informacij.</translation>
+        <translation type="vanished">Poskusite &apos;%1 %2&apos; za več informacij.</translation>
     </message>
     <message>
         <source>GoTV channel list</source>
-        <translation>GoTV seznam programov</translation>
+        <translation type="vanished">GoTV seznam programov</translation>
     </message>
     <message>
         <source>The file is not a GoTV channel list file.</source>
-        <translation>Datoteka ni veljaven GoTV seznam programov.</translation>
+        <translation type="vanished">Datoteka ni veljaven GoTV seznam programov.</translation>
     </message>
     <message>
         <source>Unknown title</source>
-        <translation>Neznan naslov</translation>
+        <translation type="vanished">Neznan naslov</translation>
+    </message>
+    <message>
+        <source>Play / Pause</source>
+        <translation>Predvajaj / Prekini</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation>Ustavi</translation>
+    </message>
+    <message>
+        <source>Next channel</source>
+        <translation>Naslednji program</translation>
+    </message>
+    <message>
+        <source>Previous channel</source>
+        <translation>Prejšnji program</translation>
+    </message>
+    <message>
+        <source>Fullscreen</source>
+        <translation>Celoten zaslon</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation>Tiho</translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation>Teletekst</translation>
+    </message>
+    <message>
+        <source>Volume up</source>
+        <translation>Povečaj glasnost</translation>
+    </message>
+    <message>
+        <source>Volume down</source>
+        <translation>Zmanjšaj glasnost</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation>Snemalnik</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Spored</translation>
+    </message>
+    <message>
+        <source>Current show info</source>
+        <translation>Informacije o trenutni oddaji</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation>Nastavitve</translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation>Vedno na vrhu</translation>
+    </message>
+    <message>
+        <source>Simple mode</source>
+        <translation>Enostaven način</translation>
+    </message>
+    <message>
+        <source>Hide to tray</source>
+        <translation>Skrij v orodno vrstico</translation>
+    </message>
+    <message>
+        <source>Instant recording</source>
+        <translation>Takojšnje snemanje</translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation>Zajemi sliko</translation>
+    </message>
+    <message>
+        <source>Preview channels</source>
+        <translation>Predogled programov</translation>
+    </message>
+    <message>
+        <source>Next audio track</source>
+        <translation>Naslednja zvočna sled</translation>
+    </message>
+    <message>
+        <source>Next video track</source>
+        <translation>Naslednja slikovna sled</translation>
+    </message>
+    <message>
+        <source>Next subtitle track</source>
+        <translation>Naslednji podnapisi</translation>
+    </message>
+    <message>
+        <source>Next aspect ratio mode</source>
+        <translation>Naslednje razmerje slike</translation>
+    </message>
+    <message>
+        <source>Next crop mode</source>
+        <translation>Naslednja obrezava slike</translation>
+    </message>
+    <message>
+        <source>Next scale/zoom mode</source>
+        <translation>Naslednja možnost povečave</translation>
+    </message>
+    <message>
+        <source>Next deinterlacing mode</source>
+        <translation>Naslenje razpletanje</translation>
+    </message>
+    <message>
+        <source>Tano M3U channels list files</source>
+        <translation>Tano M3U seznami programov</translation>
+    </message>
+    <message>
+        <source>Open channels list</source>
+        <translation>Odpri seznam programov</translation>
+    </message>
+    <message>
+        <source>Channels list</source>
+        <translation>Seznam programov</translation>
+    </message>
+    <message>
+        <source>CSV channels list</source>
+        <translation>CSV seznam programov</translation>
     </message>
 </context>
 <context>
     <name>QtKeySequenceEdit</name>
     <message>
         <source>Clear Shortcut</source>
-        <translation>Počisti bližnjico</translation>
+        <translation type="vanished">Počisti bližnjico</translation>
     </message>
 </context>
 <context>
@@ -1598,18 +2109,10 @@ Neshranjene spremembe ne bodo uveljavljene.</translation>
         <translation>Ne morem pisati v %1.</translation>
     </message>
     <message>
-        <source>Recording not valid!</source>
-        <translation type="vanished">Snemanje ni veljavno!</translation>
-    </message>
-    <message>
         <source>File cannot be removed.
 Have you already moved or deleted it?</source>
         <translation>Datoteke ni mogoče odstraniti.
 Ste mogoče datoteko že premaknili ali izbrisali?</translation>
-    </message>
-    <message>
-        <source>Recordings and timers</source>
-        <translation type="vanished">Posnetki in časovniki</translation>
     </message>
     <message>
         <source>Instant %1</source>
@@ -1663,10 +2166,6 @@ Ste mogoče datoteko že premaknili ali izbrisali?</translation>
         <translation>Pretečeno:</translation>
     </message>
     <message>
-        <source>Output:</source>
-        <translation type="vanished">Izhod:</translation>
-    </message>
-    <message>
         <source>Channel:</source>
         <translation>Program:</translation>
     </message>
@@ -1691,10 +2190,6 @@ Ste mogoče datoteko že premaknili ali izbrisali?</translation>
         <translation>Trajanje:</translation>
     </message>
     <message>
-        <source>File:</source>
-        <translation type="vanished">Datoteka:</translation>
-    </message>
-    <message>
         <source>at</source>
         <translation>ob</translation>
     </message>
@@ -1713,10 +2208,6 @@ Te operacije ni mogoče razveljaviti.</translation>
         <translation>Shrani</translation>
     </message>
     <message>
-        <source>Status</source>
-        <translation type="vanished">Status</translation>
-    </message>
-    <message>
         <source>Edit timer</source>
         <translation>Uredi časovnik</translation>
     </message>
@@ -1732,10 +2223,6 @@ Te operacije ni mogoče razveljaviti.</translation>
 <context>
     <name>RecorderNewDialog</name>
     <message>
-        <source>Quick record</source>
-        <translation type="vanished">Hitro snemanje</translation>
-    </message>
-    <message>
         <source>Selected channel:</source>
         <translation>Izbran kanal:</translation>
     </message>
@@ -1748,18 +2235,6 @@ Te operacije ni mogoče razveljaviti.</translation>
         <translation>Snemaj</translation>
     </message>
     <message>
-        <source>Back</source>
-        <translation type="vanished">Nazaj</translation>
-    </message>
-    <message>
-        <source>Add timer</source>
-        <translation type="vanished">Dodaj časovnik</translation>
-    </message>
-    <message>
-        <source>Timer name:</source>
-        <translation type="vanished">Ime časovnika:</translation>
-    </message>
-    <message>
         <source>Add new timer</source>
         <translation>Dodaj nov časovnik</translation>
     </message>
@@ -1768,31 +2243,27 @@ Te operacije ni mogoče razveljaviti.</translation>
         <translation>Snemalnik</translation>
     </message>
     <message>
-        <source>Please, select a channel.</source>
-        <translation type="vanished">Prosim, izberite program.</translation>
-    </message>
-    <message>
         <source>You don&apos;t have this channel in your playlist.</source>
-        <translation>Tega programa nimate v vašem seznamu.</translation>
+        <translation type="vanished">Tega programa nimate v vašem seznamu.</translation>
     </message>
     <message>
         <source>New recording</source>
         <translation>Novo snemanje</translation>
     </message>
     <message>
-        <source>Search and filter</source>
-        <translation type="vanished">Išči in filtriraj</translation>
-    </message>
-    <message>
         <source>Cancel</source>
         <translation>Prekliči</translation>
+    </message>
+    <message>
+        <source>You don&apos;t have this channel in your channels list.</source>
+        <translation>Tega programa nimate v vašem seznamu.</translation>
     </message>
 </context>
 <context>
     <name>RecorderTimersEditor</name>
     <message>
         <source>Timers</source>
-        <translation>Časovniki</translation>
+        <translation type="vanished">Časovniki</translation>
     </message>
     <message>
         <source>Date:</source>
@@ -1905,35 +2376,424 @@ Vaše nastavitve ne bodo shranjene.</translation>
     <name>SettingsBackend</name>
     <message>
         <source>VLC-Qt Backend</source>
-        <translation>VLC-Qt Hrbtenica</translation>
+        <translation type="vanished">VLC-Qt Hrbtenica</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation>Različica:</translation>
+        <translation type="vanished">Različica:</translation>
     </message>
     <message>
         <source>Using Videolan VLC version:</source>
-        <translation>Videolan VLC različice:</translation>
+        <translation type="vanished">Videolan VLC različice:</translation>
+    </message>
+    <message>
+        <source>Playback</source>
+        <translation type="vanished">Predvajanje</translation>
+    </message>
+    <message>
+        <source>Default subtitle language:</source>
+        <translation type="vanished">Privzet jezik podnapisov:</translation>
+    </message>
+    <message>
+        <source>Default audio language:</source>
+        <translation type="vanished">Privzet jezik zvoka:</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="vanished">Onemogočeno</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="vanished">Drugo</translation>
+    </message>
+    <message>
+        <source>Default aspect ratio:</source>
+        <translation type="vanished">Privzeto razmerje slike:</translation>
+    </message>
+    <message>
+        <source>Default crop:</source>
+        <translation type="vanished">Privzeta obrezava slike:</translation>
+    </message>
+    <message>
+        <source>Default deinterlacing:</source>
+        <translation type="vanished">Privzeto razpletanje:</translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="vanished">Originalno</translation>
+    </message>
+    <message>
+        <source>Discard</source>
+        <translation type="vanished">Zavrzi</translation>
+    </message>
+    <message>
+        <source>Blend</source>
+        <translation type="vanished">Prelivanje</translation>
+    </message>
+    <message>
+        <source>Mean</source>
+        <translation type="vanished">Sredina</translation>
+    </message>
+    <message>
+        <source>Bob</source>
+        <translation type="vanished">Bob</translation>
+    </message>
+    <message>
+        <source>Linear</source>
+        <translation type="vanished">Linearno</translation>
+    </message>
+    <message>
+        <source>X</source>
+        <translation type="vanished">X</translation>
+    </message>
+    <message>
+        <source>Enable teletext (requires restart)</source>
+        <translation type="vanished">Vključi teletekst (zahteva ponovni zagon)</translation>
+    </message>
+    <message>
+        <source>Core</source>
+        <translation type="vanished">Jedro</translation>
+    </message>
+    <message>
+        <source>Video output:</source>
+        <translation type="vanished">Video izhod:</translation>
+    </message>
+    <message>
+        <source>Audio output:</source>
+        <translation type="vanished">Zvočni izhod:</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="vanished">Privzeto</translation>
+    </message>
+    <message>
+        <source>Enable YUV-&gt;RGB hardware decoding</source>
+        <translation type="vanished">Omogoči strojno dekodiranje YUV-&gt;RGB</translation>
+    </message>
+    <message>
+        <source>Enable S/PDIF output</source>
+        <translation type="vanished">Omogoči S/PDIF izhod</translation>
+    </message>
+    <message>
+        <source>Misc</source>
+        <translation type="vanished">Razno</translation>
+    </message>
+    <message>
+        <source>Mute on minimize</source>
+        <translation type="vanished">Utišaj ob minimiranju</translation>
+    </message>
+    <message>
+        <source>Remember video settings:</source>
+        <translation type="vanished">Zapomni si nastavitve slike:</translation>
+    </message>
+    <message>
+        <source>For all channels</source>
+        <translation type="vanished">Za vse programe</translation>
+    </message>
+    <message>
+        <source>Per channel</source>
+        <translation type="vanished">Ločeno po programu</translation>
+    </message>
+    <message>
+        <source>Enable</source>
+        <translation type="vanished">Omogoči</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialog</name>
+    <message>
+        <source>Settings</source>
+        <translation type="vanished">Nastavitve</translation>
+    </message>
+    <message>
+        <source>General</source>
+        <translation>Splošno</translation>
+    </message>
+    <message>
+        <source>Playlist</source>
+        <extracomment>Please make manual line breaks if text too long!</extracomment>
+        <translation type="vanished">Programi</translation>
+    </message>
+    <message>
+        <source>Interface</source>
+        <translation>Vmesnik</translation>
     </message>
     <message>
         <source>Playback</source>
         <translation>Predvajanje</translation>
     </message>
     <message>
-        <source>Default subtitle language:</source>
-        <translation>Privzet jezik podnapisov:</translation>
+        <source>Schedule</source>
+        <translation type="vanished">Spored</translation>
     </message>
     <message>
-        <source>Default audio language:</source>
-        <translation>Privzet jezik zvoka:</translation>
+        <source>Recorder</source>
+        <translation type="vanished">Snemalnik</translation>
     </message>
     <message>
-        <source>Disabled</source>
-        <translation>Onemogočeno</translation>
+        <source>Application language:</source>
+        <translation>Jezik aplikacije:</translation>
     </message>
     <message>
-        <source>Other</source>
-        <translation>Drugo</translation>
+        <source>Autoplay last channel</source>
+        <translation>Samodejno predvajaj zadnji program</translation>
+    </message>
+    <message>
+        <source>Mute on minimize</source>
+        <translation>Utišaj ob minimiranju</translation>
+    </message>
+    <message>
+        <source>Snapshots folder:</source>
+        <translation>Mapa zajetih slik:</translation>
+    </message>
+    <message>
+        <source>Recordings folder:</source>
+        <translation>Mapa posnetkov:</translation>
+    </message>
+    <message>
+        <source>Show tray icon</source>
+        <translation>Pokaži ikono v sistemski vrstici</translation>
+    </message>
+    <message>
+        <source>Tray icon:</source>
+        <translation>Ikona v sistemski vrstici:</translation>
+    </message>
+    <message>
+        <source>Minimise to tray</source>
+        <translation>Skrij v sistemsko vrstico</translation>
+    </message>
+    <message>
+        <source>Change channel</source>
+        <translation>Spremeni program</translation>
+    </message>
+    <message>
+        <source>Mouse wheel:</source>
+        <translation>Miškin kolešček:</translation>
+    </message>
+    <message>
+        <source>Change volume</source>
+        <translation>Spremeni glasnost</translation>
+    </message>
+    <message>
+        <source>Double click the keyboard shortcut you want to edit</source>
+        <translation>Dvakrat kliknite zaporedje tipk, ki ga želite urediti</translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation>Bližnjice</translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation>TV</translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation>Sistemsko privzeto</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsDialogShortcuts</name>
+    <message>
+        <source>Keyboard shortcuts</source>
+        <translation type="vanished">Bližnjice na tipkovnici</translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation type="vanished">Ukaz</translation>
+    </message>
+    <message>
+        <source>Key</source>
+        <translation type="vanished">Tipke</translation>
+    </message>
+    <message>
+        <source>Play / Pause</source>
+        <translation type="vanished">Predvajaj / Prekini</translation>
+    </message>
+    <message>
+        <source>Stop</source>
+        <translation type="vanished">Ustavi</translation>
+    </message>
+    <message>
+        <source>Next channel</source>
+        <translation type="vanished">Naslednii kanal</translation>
+    </message>
+    <message>
+        <source>Previous channel</source>
+        <translation type="vanished">Prejšnji kanal</translation>
+    </message>
+    <message>
+        <source>Fullscreen</source>
+        <translation type="vanished">Celoten zaslon</translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation type="vanished">Tiho</translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="vanished">Teletekst</translation>
+    </message>
+    <message>
+        <source>Volume up</source>
+        <translation type="vanished">Povečaj glasnost</translation>
+    </message>
+    <message>
+        <source>Volume down</source>
+        <translation type="vanished">Zmanjšaj glasnost</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="vanished">Snemalnik</translation>
+    </message>
+    <message>
+        <source>Open File</source>
+        <translation type="vanished">Odpri Datoteko</translation>
+    </message>
+    <message>
+        <source>Open URL</source>
+        <translation type="vanished">Odpri URL</translation>
+    </message>
+    <message>
+        <source>Open Channel list</source>
+        <translation type="vanished">Odpri Seznam programov</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="vanished">Nastavitve</translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="vanished">Vedno na vrhu</translation>
+    </message>
+    <message>
+        <source>Simple Mode</source>
+        <translation type="vanished">Enostaven način</translation>
+    </message>
+    <message>
+        <source>Hide to tray</source>
+        <translation type="vanished">Skrij v orodno vrstico</translation>
+    </message>
+    <message>
+        <source>Next audio track</source>
+        <translation type="vanished">Naslednja zvočna sled</translation>
+    </message>
+    <message>
+        <source>Next video track</source>
+        <translation type="vanished">Naslednja slikovna sled</translation>
+    </message>
+    <message>
+        <source>Next subtitle track</source>
+        <translation type="vanished">Naslednji podnapisi</translation>
+    </message>
+    <message>
+        <source>Next aspect ratio mode</source>
+        <translation type="vanished">Naslednje razmerje slike</translation>
+    </message>
+    <message>
+        <source>Next crop mode</source>
+        <translation type="vanished">Naslednja obrezava slike</translation>
+    </message>
+    <message>
+        <source>Next deinterlace mode</source>
+        <translation type="vanished">Naslenje razpletanje</translation>
+    </message>
+    <message>
+        <source>Set</source>
+        <translation type="vanished">Nastavi</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="vanished">Privzeto</translation>
+    </message>
+    <message>
+        <source>Instant recording</source>
+        <translation type="vanished">Takojšnje snemanje</translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation type="vanished">Zajemi sliko</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="vanished">-</translation>
+    </message>
+    <message>
+        <source>Next scale/zoom mode</source>
+        <translation type="vanished">Naslednja možnost povečave</translation>
+    </message>
+    <message>
+        <source>Preview channels</source>
+        <translation type="vanished">Predogled programov</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="vanished">Spored</translation>
+    </message>
+    <message>
+        <source>Current show info</source>
+        <translation type="vanished">Informacije o trenutni oddaji</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsGeneral</name>
+    <message>
+        <source>Language</source>
+        <translation type="vanished">Jezik</translation>
+    </message>
+    <message>
+        <source>System default language</source>
+        <translation type="vanished">Sistemsko privzet jezik</translation>
+    </message>
+    <message>
+        <source>Custom language</source>
+        <translation type="vanished">Poljuben jezik</translation>
+    </message>
+    <message>
+        <source>Session store</source>
+        <translation type="vanished">Shranjevanje sej</translation>
+    </message>
+    <message>
+        <source>Remember volume</source>
+        <translation type="vanished">Zapomni si glasnost</translation>
+    </message>
+    <message>
+        <source>Autoplay last channel</source>
+        <translation type="vanished">Samodejno prični predvajanje zadnjega programa</translation>
+    </message>
+    <message>
+        <source>Defaults</source>
+        <translation type="vanished">Privzeto</translation>
+    </message>
+    <message>
+        <source>Restore defaults</source>
+        <translation type="vanished">Obnovi privzeto</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
+        <translation type="vanished">&lt;i&gt;To bo obnovilo vse vaše nastavitve na privzeto vrednost. Spremembe morajo biti potrjene, preden bodo uveljavljene.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>You are using %1 version:</source>
+        <translation type="vanished">Uporabljate %1 različice:</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsPlayback</name>
+    <message>
+        <source>Remember video settings:</source>
+        <translation>Zapomni si nastavitve slike:</translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation>Nikoli</translation>
+    </message>
+    <message>
+        <source>For all channels</source>
+        <translation>Za vse programe</translation>
+    </message>
+    <message>
+        <source>Per channel</source>
+        <translation>Ločeno po programu</translation>
     </message>
     <message>
         <source>Default aspect ratio:</source>
@@ -1948,52 +2808,28 @@ Vaše nastavitve ne bodo shranjene.</translation>
         <translation>Privzeto razpletanje:</translation>
     </message>
     <message>
-        <source>Original</source>
-        <translation>Originalno</translation>
+        <source>Default audio language:</source>
+        <translation>Privzet jezik zvoka:</translation>
     </message>
     <message>
-        <source>Discard</source>
-        <translation>Zavrzi</translation>
+        <source>Automatic</source>
+        <translation>Samodejno</translation>
     </message>
     <message>
-        <source>Blend</source>
-        <translation>Prelivanje</translation>
+        <source>Other</source>
+        <translation>Drugo</translation>
     </message>
     <message>
-        <source>Mean</source>
-        <translation>Sredina</translation>
+        <source>Default subtitle language:</source>
+        <translation>Privzet jezik podnapisov:</translation>
     </message>
     <message>
-        <source>Bob</source>
-        <translation>Bob</translation>
-    </message>
-    <message>
-        <source>Linear</source>
-        <translation>Linearno</translation>
-    </message>
-    <message>
-        <source>X</source>
-        <translation>X</translation>
+        <source>Disabled</source>
+        <translation>Onemogočeno</translation>
     </message>
     <message>
         <source>Enable teletext (requires restart)</source>
         <translation>Vključi teletekst (zahteva ponovni zagon)</translation>
-    </message>
-    <message>
-        <source>Core</source>
-        <translation>Jedro</translation>
-    </message>
-    <message>
-        <source>Video output:</source>
-        <translation>Video izhod:</translation>
-    </message>
-    <message>
-        <source>Audio output:</source>
-        <translation>Zvočni izhod:</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation>Privzeto</translation>
     </message>
     <message>
         <source>Enable YUV-&gt;RGB hardware decoding</source>
@@ -2004,406 +2840,223 @@ Vaše nastavitve ne bodo shranjene.</translation>
         <translation>Omogoči S/PDIF izhod</translation>
     </message>
     <message>
-        <source>Misc</source>
-        <translation>Razno</translation>
+        <source>Video output (advanced):</source>
+        <translation>Video izhod (napredno):</translation>
     </message>
     <message>
-        <source>Mute on minimize</source>
-        <translation>Utišaj ob minimiranju</translation>
+        <source>Original</source>
+        <translation>Originalno</translation>
     </message>
     <message>
-        <source>Remember video settings:</source>
-        <translation>Zapomni si nastavitve slike:</translation>
-    </message>
-    <message>
-        <source>For all channels</source>
-        <translation>Za vse programe</translation>
-    </message>
-    <message>
-        <source>Per channel</source>
-        <translation>Ločeno po programu</translation>
-    </message>
-    <message>
-        <source>Enable</source>
-        <translation>Omogoči</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialog</name>
-    <message>
-        <source>Settings</source>
-        <translation>Nastavitve</translation>
-    </message>
-    <message>
-        <source>General</source>
-        <translation>Splošno</translation>
-    </message>
-    <message>
-        <source>Playlist</source>
-        <extracomment>Please make manual line breaks if text too long!</extracomment>
-        <translation>Programi</translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation>Vmesnik</translation>
-    </message>
-    <message>
-        <source>Playback</source>
-        <translation>Predvajanje</translation>
-    </message>
-    <message>
-        <source>Schedule</source>
-        <translation>Spored</translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation>Snemalnik</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialogShortcuts</name>
-    <message>
-        <source>Keyboard shortcuts</source>
-        <translation>Bližnjice na tipkovnici</translation>
-    </message>
-    <message>
-        <source>Action</source>
-        <translation>Ukaz</translation>
-    </message>
-    <message>
-        <source>Key</source>
-        <translation>Tipke</translation>
-    </message>
-    <message>
-        <source>Play / Pause</source>
-        <translation>Predvajaj / Prekini</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation>Ustavi</translation>
-    </message>
-    <message>
-        <source>Next channel</source>
-        <translation>Naslednii kanal</translation>
-    </message>
-    <message>
-        <source>Previous channel</source>
-        <translation>Prejšnji kanal</translation>
-    </message>
-    <message>
-        <source>Fullscreen</source>
-        <translation>Celoten zaslon</translation>
-    </message>
-    <message>
-        <source>Toggle Info Widget</source>
-        <translation type="vanished">Preklopi Info pult</translation>
-    </message>
-    <message>
-        <source>Toggle Controls Widget</source>
-        <translation type="vanished">Preklopi upravljalni pult</translation>
-    </message>
-    <message>
-        <source>Mute</source>
-        <translation>Tiho</translation>
-    </message>
-    <message>
-        <source>Teletext</source>
-        <translation>Teletekst</translation>
-    </message>
-    <message>
-        <source>Volume up</source>
-        <translation>Povečaj glasnost</translation>
-    </message>
-    <message>
-        <source>Volume down</source>
-        <translation>Zmanjšaj glasnost</translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation>Snemalnik</translation>
-    </message>
-    <message>
-        <source>Open File</source>
-        <translation>Odpri Datoteko</translation>
-    </message>
-    <message>
-        <source>Open URL</source>
-        <translation>Odpri URL</translation>
-    </message>
-    <message>
-        <source>Open Channel list</source>
-        <translation>Odpri Seznam programov</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation>Nastavitve</translation>
-    </message>
-    <message>
-        <source>Always on top</source>
-        <translation>Vedno na vrhu</translation>
-    </message>
-    <message>
-        <source>Simple Mode</source>
-        <translation>Enostaven način</translation>
-    </message>
-    <message>
-        <source>Hide to tray</source>
-        <translation>Skrij v orodno vrstico</translation>
-    </message>
-    <message>
-        <source>Next audio track</source>
-        <translation>Naslednja zvočna sled</translation>
-    </message>
-    <message>
-        <source>Next video track</source>
-        <translation>Naslednja slikovna sled</translation>
-    </message>
-    <message>
-        <source>Next subtitle track</source>
-        <translation>Naslednji podnapisi</translation>
-    </message>
-    <message>
-        <source>Next aspect ratio mode</source>
-        <translation>Naslednje razmerje slike</translation>
-    </message>
-    <message>
-        <source>Next crop mode</source>
-        <translation>Naslednja obrezava slike</translation>
-    </message>
-    <message>
-        <source>Next deinterlace mode</source>
-        <translation>Naslenje razpletanje</translation>
-    </message>
-    <message>
-        <source>Set</source>
-        <translation>Nastavi</translation>
-    </message>
-    <message>
-        <source>Defaults</source>
+        <source>Default</source>
         <translation>Privzeto</translation>
-    </message>
-    <message>
-        <source>Instant recording</source>
-        <translation>Takojšnje snemanje</translation>
-    </message>
-    <message>
-        <source>Take snapshot</source>
-        <translation>Zajemi sliko</translation>
-    </message>
-    <message>
-        <source>-</source>
-        <translation>-</translation>
-    </message>
-    <message>
-        <source>Next scale/zoom mode</source>
-        <translation>Naslednja možnost povečave</translation>
-    </message>
-    <message>
-        <source>Preview channels</source>
-        <translation>Predogled programov</translation>
-    </message>
-    <message>
-        <source>Schedule</source>
-        <translation>Spored</translation>
-    </message>
-    <message>
-        <source>Current show info</source>
-        <translation>Informacije o trenutni oddaji</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsGeneral</name>
-    <message>
-        <source>Language</source>
-        <translation>Jezik</translation>
-    </message>
-    <message>
-        <source>System default language</source>
-        <translation>Sistemsko privzet jezik</translation>
-    </message>
-    <message>
-        <source>Custom language</source>
-        <translation>Poljuben jezik</translation>
-    </message>
-    <message>
-        <source>Session store</source>
-        <translation>Shranjevanje sej</translation>
-    </message>
-    <message>
-        <source>Remember volume</source>
-        <translation>Zapomni si glasnost</translation>
-    </message>
-    <message>
-        <source>Autoplay last channel</source>
-        <translation>Samodejno prični predvajanje zadnjega programa</translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation>Privzeto</translation>
-    </message>
-    <message>
-        <source>Restore defaults</source>
-        <translation>Obnovi privzeto</translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;To bo obnovilo vse vaše nastavitve na privzeto vrednost. Spremembe morajo biti potrjene, preden bodo uveljavljene.&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <source>You are using %1 version:</source>
-        <translation>Uporabljate %1 različice:</translation>
     </message>
 </context>
 <context>
     <name>SettingsPlaylist</name>
     <message>
         <source>Default playlist</source>
-        <translation>Privzet seznam programov</translation>
+        <translation type="vanished">Privzet seznam programov</translation>
     </message>
     <message>
         <source>Network refresh</source>
-        <translation>Osvežitev s spleta</translation>
+        <translation type="vanished">Osvežitev s spleta</translation>
     </message>
     <message>
         <source>Refresh playlist on startup</source>
-        <translation>Osveži seznam programov ob zagonu</translation>
+        <translation type="vanished">Osveži seznam programov ob zagonu</translation>
     </message>
     <message>
         <source>Playlist URL:</source>
-        <translation>URL seznama:</translation>
+        <translation type="vanished">URL seznama:</translation>
     </message>
     <message>
         <source>Default radio category:</source>
-        <translation>Privzeta kategorija za radio:</translation>
+        <translation type="vanished">Privzeta kategorija za radio:</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation>UDPXY podpora</translation>
+        <translation type="vanished">UDPXY podpora</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation>Vključi podporo UDPXY</translation>
+        <translation type="vanished">Vključi podporo UDPXY</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation>IP ali ime usmerjevalnika:</translation>
+        <translation type="vanished">IP ali ime usmerjevalnika:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation>Vrata usmerjevalnika:</translation>
+        <translation type="vanished">Vrata usmerjevalnika:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Posodobitev ne bo spremenila vašega zaporedja programov.&lt;/i&gt;</translation>
+        <translation type="vanished">&lt;i&gt;Posodobitev ne bo spremenila vašega zaporedja programov.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Channel types categories</source>
-        <translation>Kategorije tipov programov</translation>
+        <translation type="vanished">Kategorije tipov programov</translation>
     </message>
     <message>
         <source>Default HD category:</source>
-        <translation>Privzeta kategorija za HD:</translation>
+        <translation type="vanished">Privzeta kategorija za HD:</translation>
     </message>
 </context>
 <context>
     <name>SettingsRecorder</name>
     <message>
         <source>Default recording directory</source>
-        <translation>Privzet imenik snemanja</translation>
+        <translation type="vanished">Privzet imenik snemanja</translation>
     </message>
     <message>
         <source>Default snapshots directory</source>
-        <translation>Privzet imenik za zajete slike</translation>
+        <translation type="vanished">Privzet imenik za zajete slike</translation>
     </message>
 </context>
 <context>
     <name>SettingsSchedule</name>
     <message>
         <source>XMLTV settings</source>
-        <translation>Nastavitve XMLTV</translation>
+        <translation type="vanished">Nastavitve XMLTV</translation>
     </message>
     <message>
         <source>Refresh XMLTV file on startup</source>
-        <translation>Osveži datoteko XMLTV ob zagonu</translation>
+        <translation type="vanished">Osveži datoteko XMLTV ob zagonu</translation>
     </message>
     <message>
         <source>Download file</source>
-        <translation>Prenesi datoteko</translation>
+        <translation type="vanished">Prenesi datoteko</translation>
+    </message>
+    <message>
+        <source>Local file</source>
+        <translation type="vanished">Krajevna datoteka</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
+        <translation type="vanished">&lt;i&gt;Nastavitve XMLTV zahtevajo ponovni zagon.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source> h</source>
+        <translation type="vanished"> h</translation>
+    </message>
+    <message>
+        <source>Offset:</source>
+        <translation type="vanished">Zamik:</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsTv</name>
+    <message>
+        <source>Channels</source>
+        <translation>Programi</translation>
+    </message>
+    <message>
+        <source>Default channels list:</source>
+        <translation>Privzet seznam programov:</translation>
+    </message>
+    <message>
+        <source>Default HD category:</source>
+        <translation>Privzeta kategorija za HD:</translation>
+    </message>
+    <message>
+        <source>Default radio category:</source>
+        <translation>Privzeta kategorija za radio:</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation>Vključi podporo UDPXY</translation>
+    </message>
+    <message>
+        <source>Server address:</source>
+        <translation>Naslov strežnika:</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation>Spored</translation>
+    </message>
+    <message>
+        <source>Source type:</source>
+        <translation>Tip vira:</translation>
     </message>
     <message>
         <source>Local file</source>
         <translation>Krajevna datoteka</translation>
     </message>
     <message>
-        <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Nastavitve XMLTV zahtevajo ponovni zagon.&lt;/i&gt;</translation>
+        <source>Download file</source>
+        <translation>Prenesi datoteko</translation>
+    </message>
+    <message>
+        <source>Source:</source>
+        <translation>Vir:</translation>
+    </message>
+    <message>
+        <source>Time offset:</source>
+        <translation>Časovni zamik:</translation>
     </message>
     <message>
         <source> h</source>
         <translation> h</translation>
-    </message>
-    <message>
-        <source>Offset:</source>
-        <translation>Zamik:</translation>
     </message>
 </context>
 <context>
     <name>SettingsUi</name>
     <message>
         <source>General Interface Settings</source>
-        <translation>Splošne nastavitve vmesnika</translation>
+        <translation type="vanished">Splošne nastavitve vmesnika</translation>
     </message>
     <message>
         <source>Change channel</source>
-        <translation>Spremeni program</translation>
+        <translation type="vanished">Spremeni program</translation>
     </message>
     <message>
         <source>Change volume</source>
-        <translation>Spremeni glasnost</translation>
+        <translation type="vanished">Spremeni glasnost</translation>
     </message>
     <message>
         <source>Minimise to tray</source>
-        <translation>Skrij v sistemsko vrstico</translation>
+        <translation type="vanished">Skrij v sistemsko vrstico</translation>
     </message>
     <message>
         <source>Show tray icon</source>
-        <translation>Pokaži ikono v sistemski vrstici</translation>
+        <translation type="vanished">Pokaži ikono v sistemski vrstici</translation>
     </message>
     <message>
         <source>Mouse wheel:</source>
-        <translation>Miškin kolešček:</translation>
+        <translation type="vanished">Miškin kolešček:</translation>
     </message>
     <message>
         <source>Tray icon:</source>
-        <translation>Ikona v sistemski vrstici:</translation>
+        <translation type="vanished">Ikona v sistemski vrstici:</translation>
     </message>
     <message>
         <source>Show on mouse move</source>
-        <translation>Prikaži ob premiku miške</translation>
+        <translation type="vanished">Prikaži ob premiku miške</translation>
     </message>
     <message>
         <source>Remember main window size, position and open panels</source>
-        <translation>Zapomno si velikost, položaj in lastnosti glavnega okna</translation>
+        <translation type="vanished">Zapomno si velikost, položaj in lastnosti glavnega okna</translation>
     </message>
     <message>
         <source>Icon theme</source>
-        <translation>Tema ikon</translation>
+        <translation type="vanished">Tema ikon</translation>
     </message>
     <message>
         <source>Desktop theme</source>
-        <translation>Tema namizja</translation>
+        <translation type="vanished">Tema namizja</translation>
     </message>
     <message>
         <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Ta možnost zahteva ponovni zagon.&lt;/i&gt;</translation>
+        <translation type="vanished">&lt;i&gt;Ta možnost zahteva ponovni zagon.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>Privzeto</translation>
+        <translation type="vanished">Privzeto</translation>
     </message>
     <message>
         <source>OSD in fullscreen:</source>
-        <translation>OSD v celozaslonskem načinu:</translation>
+        <translation type="vanished">OSD v celozaslonskem načinu:</translation>
     </message>
 </context>
 <context>
@@ -2434,179 +3087,6 @@ Vaše nastavitve ne bodo shranjene.</translation>
     <message>
         <source>at</source>
         <translation>ob</translation>
-    </message>
-</context>
-<context>
-    <name>TimersDisplayWidget</name>
-    <message>
-        <source>Clear</source>
-        <translation type="vanished">Počisti</translation>
-    </message>
-</context>
-<context>
-    <name>TimersEditorWidget</name>
-    <message>
-        <source>Timers</source>
-        <translation type="vanished">Časovniki</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Ime:</translation>
-    </message>
-    <message>
-        <source>Channel:</source>
-        <translation type="vanished">Program:</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="vanished">Tip:</translation>
-    </message>
-    <message>
-        <source>Once</source>
-        <translation type="vanished">Enkratno</translation>
-    </message>
-    <message>
-        <source>Daily</source>
-        <translation type="vanished">Dnevno</translation>
-    </message>
-    <message>
-        <source>Weekly</source>
-        <translation type="vanished">Tedensko</translation>
-    </message>
-    <message>
-        <source>Weekdays</source>
-        <translation type="vanished">Med tednom</translation>
-    </message>
-    <message>
-        <source>Url:</source>
-        <translation type="vanished">Naslov:</translation>
-    </message>
-    <message>
-        <source>dd. MM. yyyy</source>
-        <translation type="vanished">dd. MM. yyyy</translation>
-    </message>
-    <message>
-        <source>Date:</source>
-        <translation type="vanished">Datum:</translation>
-    </message>
-    <message>
-        <source>Start time:</source>
-        <translation type="vanished">Začetek:</translation>
-    </message>
-    <message>
-        <source>End time:</source>
-        <translation type="vanished">Konec:</translation>
-    </message>
-    <message>
-        <source>Disable:</source>
-        <translation type="vanished">Onemogoči:</translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="vanished">Snemalnik</translation>
-    </message>
-    <message>
-        <source>The recording start date is before today.
-Your changes will not be saved.</source>
-        <translation type="vanished">Datum snemanja je nastavljen pred današnjim dnem.
-Vaše nastavitve ne bodo shranjene.</translation>
-    </message>
-</context>
-<context>
-    <name>TimersModel</name>
-    <message>
-        <source>at</source>
-        <translation type="vanished">ob</translation>
-    </message>
-</context>
-<context>
-    <name>TrayIcon</name>
-    <message>
-        <source>Playing:</source>
-        <translation type="vanished">Predvajam:</translation>
-    </message>
-    <message>
-        <source>Recording:</source>
-        <translation type="vanished">Snemam:</translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="vanished">Snemalnik</translation>
-    </message>
-    <message>
-        <source>Recording stopped.</source>
-        <translation type="vanished">Snemanje zaključeno.</translation>
-    </message>
-    <message>
-        <source>Recording %1 to %2 
-Stop manually!</source>
-        <translation type="vanished">Snemanje %1 v %2 
-Ročno ustavite!</translation>
-    </message>
-    <message>
-        <source>Recording %1 to %2 
-End time: %3</source>
-        <translation type="vanished">Snemanje %1 v %2 
-Končni čas: %3</translation>
-    </message>
-</context>
-<context>
-    <name>UpdateDialog</name>
-    <message>
-        <source>Update Information</source>
-        <translation type="vanished">Informacije o posodobitvah</translation>
-    </message>
-    <message>
-        <source>Current version:</source>
-        <translation type="vanished">Trenutna različica:</translation>
-    </message>
-    <message>
-        <source>Stable version:</source>
-        <translation type="vanished">Stabilna različica:</translation>
-    </message>
-    <message>
-        <source>Date released:</source>
-        <translation type="vanished">Datum izdaje:</translation>
-    </message>
-    <message>
-        <source>Information:</source>
-        <translation type="obsolete">Informacije:</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;You are already using latest version!&lt;/h3&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Uporabljate zadnjo različico!&lt;/h3&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;You are using the development version!&lt;/h3&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Uporabljate razvojno različico!&lt;/h3&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;This application needs to be updated!&lt;/h3&gt;</source>
-        <translation type="obsolete">&lt;h3&gt;Aplikacija mora biti posodobljena!&lt;/h3&gt;</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="vanished">Zapri</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="vanished">Prenesi</translation>
-    </message>
-    <message>
-        <source>Changelog:</source>
-        <translation type="vanished">Spremembe:</translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation type="vanished">Oglej</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Spremembe v %1&lt;/h3&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Na voljo je nova posodobitev!&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>

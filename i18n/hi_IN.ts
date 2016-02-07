@@ -5,45 +5,37 @@
     <name>AboutDialog</name>
     <message>
         <source>About</source>
-        <translation>विषय में</translation>
+        <translation type="vanished">विषय में</translation>
     </message>
     <message>
-        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder. It is based on VLC-Qt.
-</source>
-        <translation type="obsolete">Tano एक खुला स्रोत पार मंच आईपी टीवी प्लेयर है जो पूर्ण EPG और रिकॉर्ड के साथ आईपी टीवी प्लेबैक है. यह वीएलसी क्यूटी पर आधारित है.</translation>
+        <source>About %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Authors</source>
-        <translation type="obsolete">लेखक</translation>
+        <source>Copyright %1 %2 %3&lt;br&gt;All rights reserved.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>License</source>
-        <translation type="obsolete">अनुज्ञा</translation>
+        <source>Using VLC %1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Backend</source>
-        <translation type="obsolete">पीछे के अंत</translation>
-    </message>
-    <message>
-        <source>VLC-Qt is a free library used to connect Qt and libvlc libraries. It contains core classes for main media playback and also some GUI classes for faster media player developement.
-</source>
-        <translation type="obsolete">वीएलसी क्यूटी एक मुफ्त पुस्तकालय हैं क्यूटी और libvlc पुस्तकालयों को कनेक्ट करने के लिए प्रयोग किया जाता है.यह मुख्य मीडिया प्लेबैक और भी तेजी से मीडिया प्लेयर के विकास के लिए कुछ जीयूआई वर्गों के लिए मुख्य वर्ग शामिल हैं.
-</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;You are using VideoLAN VLC %1&lt;/b&gt;</source>
-        <translation type="obsolete">&lt;b&gt;आप उपयोग कर रहे हैं VideoLAN VLC %1&lt;/b&gt;</translation>
-    </message>
-    <message>
-        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Multimedia backend powered by VLC-Qt %1.</source>
+        <source>Icons</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;b&gt;This application is based on Tano %1.&lt;/b&gt;</source>
+        <source>Libraries</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BrowseWidget</name>
+    <message>
+        <source>Browse…</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -60,6 +52,457 @@
     <message>
         <source>Radio</source>
         <translation>रेडियो</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsDisplayWidget</name>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsEditor</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished">Tano संपादक</translation>
+    </message>
+    <message>
+        <source>Channels list name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of channels:</source>
+        <translation type="unfinished">चैनलों की संख्या:</translation>
+    </message>
+    <message>
+        <source>Toolbar</source>
+        <translation type="unfinished">टूलबार</translation>
+    </message>
+    <message>
+        <source>Edit channel</source>
+        <translation type="unfinished">चैनल संपादित करें</translation>
+    </message>
+    <message>
+        <source>Number:</source>
+        <translation type="unfinished">संख्या:</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished">प्रकार:</translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished">SD</translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished">HD</translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished">रेडियो</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">नाम:</translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished">Url:</translation>
+    </message>
+    <message>
+        <source>Categories:</source>
+        <translation type="unfinished">श्रेणियाँ:</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="unfinished">भाषा:</translation>
+    </message>
+    <message>
+        <source>XMLTV ID:</source>
+        <translation type="unfinished">XMLTV ID:</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished">अन्य</translation>
+    </message>
+    <message>
+        <source>Logo:</source>
+        <translation type="unfinished">लोगो:</translation>
+    </message>
+    <message>
+        <source>Scan for new channels</source>
+        <translation type="unfinished">नए चैनलों के लिए स्कैन करें</translation>
+    </message>
+    <message>
+        <source>Add channel</source>
+        <translation type="unfinished">चैनल जोड़ें</translation>
+    </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished">चैनल हटाएँ</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">बंद करें</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation type="unfinished">ऊपर ले जाएँ</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation type="unfinished">नीचे ले जाएँ</translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished">प्रिंट</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished">निर्यात</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">खोलें</translation>
+    </message>
+    <message>
+        <source>New channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV IDs</source>
+        <translation type="unfinished">XMLTV IDs</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished">सहायता</translation>
+    </message>
+    <message>
+        <source>Auto XMLTV map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished">संपादक</translation>
+    </message>
+    <message>
+        <source>%1 - %2 Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">फ़ाइल नहीं पढ़ सकते %1:
+%2.</translation>
+    </message>
+    <message>
+        <source>Channels Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to create new channels list?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to M3U format with Udpxy URLs</source>
+        <translation type="unfinished"> Udpxy URL के साथ M3U प्रारूप निर्यात करें</translation>
+    </message>
+    <message>
+        <source>You need to have valid Udpxy settings or the exported channels list will contain classic URLs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want close the editor?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished">क्या आप संपादक बंद करना चाहते हैं?
+आप किसी भी न सहेजे गए परिवर्तन खो देंगे.</translation>
+    </message>
+    <message>
+        <source>Please wait for XMLTV file to parse.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A channel with this number already exists!</source>
+        <translation type="unfinished">इस नंबर के साथ एक चैनल पहले से ही मौजूद है!</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsEditorHelp</name>
+    <message>
+        <source>Tano Editor - Help</source>
+        <translation type="unfinished">Tano संपादक - सहायता</translation>
+    </message>
+    <message>
+        <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
+        <translation type="unfinished">&lt;h2&gt;Tano संपादक - सहायता&lt;/h2&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You can edit your IP TV channels list, print it or export it to desired format.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
+        <translation type="unfinished">&lt;h3&gt;चैनलों को संपादित करना&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
+        <translation type="unfinished">एक चैनल की संख्या को लागू किया जाना चाहिए. अन्य सभी मान स्वचालित रूप बदल दिए जाते हैं. आप रेडियो के रूप में किसी भी चैनल को निर्धारित कर सकते हैं. श्रेणियाँ अल्पविराम (,) द्वारा अलग हो सकते हैं है.</translation>
+    </message>
+    <message>
+        <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
+        <translation type="unfinished">चैनल लोगो के लिए पूर्ण URL  प्रदान करने की जरूरत है.
+चित्र इंटरफ़ेस फिट करने के लिए बढ़ाया जाएगा.</translation>
+    </message>
+    <message>
+        <source>Editor will automatically try to map current XMLTV IDs to channels in the list. You may still need to check for possible errors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
+        <translation type="unfinished">&lt;h3&gt;प्रारूप और निर्यात&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>Editor supports its own modified M3U as well as unmodified M3U and CSV files. Beside these formats you can also save/export to M3U with Udpxy URLs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can set custom radio category in settings (defaults to Radio).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
+        <translation type="unfinished">&lt;h3&gt;चैनलों के लिए स्कैन&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsFilterModel</name>
+    <message>
+        <source>Channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">सभी श्रेणियाँ</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished"> सभी भाषाएँ</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsImportCSV</name>
+    <message>
+        <source>CSV file structure</source>
+        <translation type="unfinished">CSV फ़ाइल की संरचना</translation>
+    </message>
+    <message>
+        <source>Separator:</source>
+        <translation type="unfinished">विभाजक:</translation>
+    </message>
+    <message>
+        <source>;</source>
+        <translation type="unfinished">;</translation>
+    </message>
+    <message>
+        <source>First line:</source>
+        <translation type="unfinished">पहली पंक्ति:</translation>
+    </message>
+    <message>
+        <source>First line contains column names</source>
+        <translation type="unfinished">पहली पंक्ति में स्तंभ नाम हैं</translation>
+    </message>
+    <message>
+        <source>First line does not contain column names</source>
+        <translation type="unfinished">पहली पंक्ति में स्तंभ नाम नहीं हैं</translation>
+    </message>
+    <message>
+        <source>Column list:</source>
+        <translation type="unfinished">स्तंभ की सूची:</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation type="unfinished">संख्या</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished">URL</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">भाषा</translation>
+    </message>
+    <message>
+        <source>EPG ID</source>
+        <translation type="unfinished">EPG ID</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsPrint</name>
+    <message>
+        <source>#</source>
+        <translation type="unfinished">#</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished">प्रकार</translation>
+    </message>
+    <message>
+        <source>Url</source>
+        <translation type="unfinished">Url</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">भाषा</translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished">XMLTV ID</translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished">लोगो</translation>
+    </message>
+    <message>
+        <source>Exported with %1 on %2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsPrintDialog</name>
+    <message>
+        <source>Print channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select information for printing:</source>
+        <translation type="unfinished">प्रिंटिंग के लिए जानकारी चुनें:</translation>
+    </message>
+    <message>
+        <source>Channel number</source>
+        <translation type="unfinished">चैनल संख्या</translation>
+    </message>
+    <message>
+        <source>Channel name</source>
+        <translation type="unfinished">चैनल नाम</translation>
+    </message>
+    <message>
+        <source>Channel type</source>
+        <translation type="unfinished">चैनल के प्रकार</translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished">URL</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">भाषा</translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished">XMLTV ID</translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished">लोगो</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsScan</name>
+    <message>
+        <source>IP Range:</source>
+        <translation type="unfinished">IP सीमा:</translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation type="unfinished">पोर्ट:</translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation type="unfinished">समय समाप्ति:</translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation type="unfinished"> ms</translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation type="unfinished">स्कैन और अद्यतन</translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
+        <translation type="unfinished">स्कैन %1 से नया चैनल</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsTab</name>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">सभी श्रेणियाँ</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished"> सभी भाषाएँ</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsUpdate</name>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">फ़ाइल नहीं पढ़ सकते %1:
+%2.</translation>
     </message>
 </context>
 <context>
@@ -126,7 +569,7 @@
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>फ़ाइल नहीं पढ़ सकते %1:
+        <translation type="vanished">फ़ाइल नहीं पढ़ सकते %1:
 %2.</translation>
     </message>
     <message>
@@ -159,11 +602,11 @@
     </message>
     <message>
         <source>&amp;Open channel list</source>
-        <translation>&amp;चैनल की सूची खोलें</translation>
+        <translation type="vanished">&amp;चैनल की सूची खोलें</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>चैनल की सूची खोलें</translation>
+        <translation type="vanished">चैनल की सूची खोलें</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
@@ -227,7 +670,7 @@
     </message>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>कीबोर्ड शॉर्टकर्ट</translation>
+        <translation type="vanished">कीबोर्ड शॉर्टकर्ट</translation>
     </message>
     <message>
         <source>Instant recording</source>
@@ -251,15 +694,11 @@
     </message>
     <message>
         <source>Current show info</source>
-        <translation type="unfinished"></translation>
+        <translation>वर्तमान तमाशे की जानकारी</translation>
     </message>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Logout and Exit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">विषय में</translation>
     </message>
     <message>
         <source>Are you sure you want to exit?
@@ -275,15 +714,15 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Instant</source>
         <translation type="unfinished">तत्काल</translation>
     </message>
     <message>
         <source>Check for updates...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit channels list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -464,500 +903,428 @@ This will stop recording in progress.</source>
     <name>PlaylistDisplayWidget</name>
     <message>
         <source>Play</source>
-        <translation>चलाना</translation>
+        <translation type="vanished">चलाना</translation>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>कार्यक्रम</translation>
+        <translation type="vanished">कार्यक्रम</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditor</name>
     <message>
         <source>Tano Editor</source>
-        <translation>Tano संपादक</translation>
+        <translation type="vanished">Tano संपादक</translation>
     </message>
     <message>
         <source>Playlist name:</source>
-        <translation>प्लेलिस्ट का नाम:</translation>
+        <translation type="vanished">प्लेलिस्ट का नाम:</translation>
     </message>
     <message>
         <source>Number of channels:</source>
-        <translation>चैनलों की संख्या:</translation>
+        <translation type="vanished">चैनलों की संख्या:</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>सहायता</translation>
+        <translation type="vanished">सहायता</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>टूलबार</translation>
+        <translation type="vanished">टूलबार</translation>
     </message>
     <message>
         <source>Number:</source>
-        <translation>संख्या:</translation>
+        <translation type="vanished">संख्या:</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>नाम:</translation>
+        <translation type="vanished">नाम:</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation>श्रेणियाँ:</translation>
+        <translation type="vanished">श्रेणियाँ:</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>भाषा:</translation>
+        <translation type="vanished">भाषा:</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Url:</translation>
+        <translation type="vanished">Url:</translation>
     </message>
     <message>
         <source>Logo:</source>
-        <translation>लोगो:</translation>
+        <translation type="vanished">लोगो:</translation>
     </message>
     <message>
         <source>Add channel</source>
-        <translation>चैनल जोड़ें</translation>
+        <translation type="vanished">चैनल जोड़ें</translation>
     </message>
     <message>
         <source>Delete channel</source>
-        <translation>चैनल हटाएँ</translation>
+        <translation type="vanished">चैनल हटाएँ</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>सुरक्षित करें</translation>
+        <translation type="vanished">सुरक्षित करें</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>बंद करें</translation>
+        <translation type="vanished">बंद करें</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>ऊपर ले जाएँ</translation>
+        <translation type="vanished">ऊपर ले जाएँ</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>नीचे ले जाएँ</translation>
+        <translation type="vanished">नीचे ले जाएँ</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>प्रिंट</translation>
+        <translation type="vanished">प्रिंट</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>निर्यात</translation>
+        <translation type="vanished">निर्यात</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>खोलें</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">बारे में</translation>
+        <translation type="vanished">खोलें</translation>
     </message>
     <message>
         <source>New playlist</source>
-        <translation>नई प्लेलिस्ट</translation>
+        <translation type="vanished">नई प्लेलिस्ट</translation>
     </message>
     <message>
         <source>Tvheadend</source>
-        <translation>Tvheadend</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">सेटिंग्स</translation>
+        <translation type="vanished">Tvheadend</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
-        <translation>XMLTV IDs</translation>
-    </message>
-    <message>
-        <source>Update Information</source>
-        <translation type="vanished">जानकारी अपडेट करें</translation>
+        <translation type="vanished">XMLTV IDs</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>फ़ाइल नहीं पढ़ सकते %1:
+        <translation type="vanished">फ़ाइल नहीं पढ़ सकते %1:
 %2.</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>प्लेलिस्ट संपादक</translation>
+        <translation type="vanished">प्लेलिस्ट संपादक</translation>
     </message>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
-        <translation>क्या आप Tano से बाहर निकलना चाहते हैं?
+        <translation type="vanished">क्या आप Tano से बाहर निकलना चाहते हैं?
 इस प्रगति में रिकॉर्डिंग बंद हो जाएगा.</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>फ़ाइल नहीं लिख सकता %1:
+        <translation type="vanished">फ़ाइल नहीं लिख सकता %1:
 %2.</translation>
     </message>
     <message>
         <source>Export to M3U format with Udpxy URLs</source>
-        <translation> Udpxy URL के साथ M3U प्रारूप निर्यात करें</translation>
+        <translation type="vanished"> Udpxy URL के साथ M3U प्रारूप निर्यात करें</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</translation>
+        <translation type="vanished">You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
-        <translation>क्या आप संपादक बंद करना चाहते हैं?
+        <translation type="vanished">क्या आप संपादक बंद करना चाहते हैं?
 आप किसी भी न सहेजे गए परिवर्तन खो देंगे.</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation>इस नंबर के साथ एक चैनल पहले से ही मौजूद है!</translation>
+        <translation type="vanished">इस नंबर के साथ एक चैनल पहले से ही मौजूद है!</translation>
     </message>
     <message>
         <source>Edit channel</source>
-        <translation>चैनल संपादित करें</translation>
+        <translation type="vanished">चैनल संपादित करें</translation>
     </message>
     <message>
         <source>Scan for new channels</source>
-        <translation>नए चैनलों के लिए स्कैन करें</translation>
+        <translation type="vanished">नए चैनलों के लिए स्कैन करें</translation>
     </message>
     <message>
         <source>XMLTV ID:</source>
-        <translation>XMLTV ID:</translation>
+        <translation type="vanished">XMLTV ID:</translation>
     </message>
     <message>
         <source>Type:</source>
-        <translation>प्रकार:</translation>
+        <translation type="vanished">प्रकार:</translation>
     </message>
     <message>
         <source>SD</source>
-        <translation>SD</translation>
+        <translation type="vanished">SD</translation>
     </message>
     <message>
         <source>HD</source>
-        <translation>HD</translation>
+        <translation type="vanished">HD</translation>
     </message>
     <message>
         <source>Radio</source>
-        <translation>रेडियो</translation>
+        <translation type="vanished">रेडियो</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>अन्य</translation>
-    </message>
-    <message>
-        <source>Auto XMLTV map</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">अन्य</translation>
     </message>
     <message>
         <source>Editor</source>
-        <translation>संपादक</translation>
-    </message>
-    <message>
-        <source>Please wait for XMLTV file to parse.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - %2 Editor</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">संपादक</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditorHelp</name>
     <message>
         <source>Tano Editor - Help</source>
-        <translation>Tano संपादक - सहायता</translation>
+        <translation type="vanished">Tano संपादक - सहायता</translation>
     </message>
     <message>
         <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Tano संपादक - सहायता&lt;/h2&gt;</translation>
+        <translation type="vanished">&lt;h2&gt;Tano संपादक - सहायता&lt;/h2&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;You can edit your IP TV playlist, print it or export it to desired format.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;आप अपने IP TV प्लेलिस्ट को संपादित करने के लिए, इसे प्रिंट या इच्छित प्रारूप में निर्यात कर सकते हैं.&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;आप अपने IP TV प्लेलिस्ट को संपादित करने के लिए, इसे प्रिंट या इच्छित प्रारूप में निर्यात कर सकते हैं.&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;चैनलों को संपादित करना&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;चैनलों को संपादित करना&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
-        <translation>चैनल लोगो के लिए पूर्ण URL  प्रदान करने की जरूरत है.
+        <translation type="vanished">चैनल लोगो के लिए पूर्ण URL  प्रदान करने की जरूरत है.
 चित्र इंटरफ़ेस फिट करने के लिए बढ़ाया जाएगा.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;प्रारूप और निर्यात&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;प्रारूप और निर्यात&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;चैनलों के लिए स्कैन&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;चैनलों के लिए स्कैन&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
-        <translation>आप सेटिंग्स (रेडियो के डिफ़ॉल्ट्स) में Sagem JS और CSV निर्यात करने के लिए कस्टम रेडियो श्रेणी निर्धारित कर सकते हैं. केवल प्रथम श्रेणी या रेडियो श्रेणी Sagem JS को निर्यात किया जाएगा.</translation>
+        <translation type="vanished">आप सेटिंग्स (रेडियो के डिफ़ॉल्ट्स) में Sagem JS और CSV निर्यात करने के लिए कस्टम रेडियो श्रेणी निर्धारित कर सकते हैं. केवल प्रथम श्रेणी या रेडियो श्रेणी Sagem JS को निर्यात किया जाएगा.</translation>
     </message>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
-        <translation>एक चैनल की संख्या को लागू किया जाना चाहिए. अन्य सभी मान स्वचालित रूप बदल दिए जाते हैं. आप रेडियो के रूप में किसी भी चैनल को निर्धारित कर सकते हैं. श्रेणियाँ अल्पविराम (,) द्वारा अलग हो सकते हैं है.</translation>
-    </message>
-    <message>
-        <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">एक चैनल की संख्या को लागू किया जाना चाहिए. अन्य सभी मान स्वचालित रूप बदल दिए जाते हैं. आप रेडियो के रूप में किसी भी चैनल को निर्धारित कर सकते हैं. श्रेणियाँ अल्पविराम (,) द्वारा अलग हो सकते हैं है.</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditorScan</name>
     <message>
         <source>IP Range:</source>
-        <translation>IP सीमा:</translation>
+        <translation type="vanished">IP सीमा:</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>पोर्ट:</translation>
+        <translation type="vanished">पोर्ट:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation>समय समाप्ति:</translation>
+        <translation type="vanished">समय समाप्ति:</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation> ms</translation>
+        <translation type="vanished"> ms</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation>स्कैन और अद्यतन</translation>
+        <translation type="vanished">स्कैन और अद्यतन</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation>स्कैन %1 से नया चैनल</translation>
+        <translation type="vanished">स्कैन %1 से नया चैनल</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Playlist संपादक</translation>
+        <translation type="vanished">Playlist संपादक</translation>
     </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
     <message>
         <source>Export to Tvheadend IP TV services</source>
-        <translation>Tvheadend IP TV  सेवाओं के लिए निर्यात</translation>
+        <translation type="vanished">Tvheadend IP TV  सेवाओं के लिए निर्यात</translation>
     </message>
     <message>
         <source>Output location:</source>
-        <translation>उत्पादन स्थान:</translation>
+        <translation type="vanished">उत्पादन स्थान:</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>Network interface:</source>
-        <translation>संजाल अंतरफलक:</translation>
+        <translation type="vanished">संजाल अंतरफलक:</translation>
     </message>
     <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>&lt;i&gt;&lt;b&gt;चेतावनी: यह सभी मौजूदा चैनलों को नष्ट करेगा!&lt;/b&gt;&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;i&gt;&lt;b&gt;चेतावनी: यह सभी मौजूदा चैनलों को नष्ट करेगा!&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
     <name>PlaylistFilterModel</name>
     <message>
         <source>All categories</source>
-        <translation>सभी श्रेणियाँ</translation>
+        <translation type="vanished">सभी श्रेणियाँ</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation> सभी भाषाएँ</translation>
-    </message>
-    <message>
-        <source>Playlist</source>
-        <translation type="unfinished">प्लेलिस्ट</translation>
+        <translation type="vanished"> सभी भाषाएँ</translation>
     </message>
 </context>
 <context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
-        <translation>CSV फ़ाइल की संरचना</translation>
+        <translation type="vanished">CSV फ़ाइल की संरचना</translation>
     </message>
     <message>
         <source>Separator:</source>
-        <translation>विभाजक:</translation>
+        <translation type="vanished">विभाजक:</translation>
     </message>
     <message>
         <source>;</source>
-        <translation>;</translation>
+        <translation type="vanished">;</translation>
     </message>
     <message>
         <source>First line:</source>
-        <translation>पहली पंक्ति:</translation>
+        <translation type="vanished">पहली पंक्ति:</translation>
     </message>
     <message>
         <source>First line contains column names</source>
-        <translation>पहली पंक्ति में स्तंभ नाम हैं</translation>
+        <translation type="vanished">पहली पंक्ति में स्तंभ नाम हैं</translation>
     </message>
     <message>
         <source>First line does not contain column names</source>
-        <translation>पहली पंक्ति में स्तंभ नाम नहीं हैं</translation>
+        <translation type="vanished">पहली पंक्ति में स्तंभ नाम नहीं हैं</translation>
     </message>
     <message>
         <source>Column list:</source>
-        <translation>स्तंभ की सूची:</translation>
+        <translation type="vanished">स्तंभ की सूची:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</translation>
+        <translation type="vanished">&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>संख्या</translation>
+        <translation type="vanished">संख्या</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>चैनल </translation>
+        <translation type="vanished">चैनल </translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation> श्रेणियाँ</translation>
+        <translation type="vanished"> श्रेणियाँ</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>भाषा</translation>
+        <translation type="vanished">भाषा</translation>
     </message>
     <message>
         <source>EPG ID</source>
-        <translation>EPG ID</translation>
+        <translation type="vanished">EPG ID</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>URL</translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistTab</name>
-    <message>
-        <source>All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>TV</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All categories</source>
-        <translation type="unfinished">सभी श्रेणियाँ</translation>
-    </message>
-    <message>
-        <source>All languages</source>
-        <translation type="unfinished"> सभी भाषाएँ</translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistUpdate</name>
-    <message>
-        <source>Cannot read file %1:
-%2.</source>
-        <translation type="unfinished">फ़ाइल नहीं पढ़ सकते %1:
-%2.</translation>
+        <translation type="vanished">URL</translation>
     </message>
 </context>
 <context>
     <name>Print</name>
     <message>
         <source>#</source>
-        <translation>#</translation>
+        <translation type="vanished">#</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>चैनल </translation>
+        <translation type="vanished">चैनल </translation>
     </message>
     <message>
         <source>Url</source>
-        <translation>Url</translation>
+        <translation type="vanished">Url</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>श्रेणियाँ</translation>
+        <translation type="vanished">श्रेणियाँ</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>भाषा</translation>
+        <translation type="vanished">भाषा</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation>XMLTV ID</translation>
+        <translation type="vanished">XMLTV ID</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>प्रकार</translation>
+        <translation type="vanished">प्रकार</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation>लोगो</translation>
-    </message>
-    <message>
-        <source>Exported with %1 on %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">लोगो</translation>
     </message>
 </context>
 <context>
     <name>PrintDialog</name>
     <message>
         <source>Print</source>
-        <translation>प्रिंट</translation>
+        <translation type="vanished">प्रिंट</translation>
     </message>
     <message>
         <source>Select information for printing:</source>
-        <translation>प्रिंटिंग के लिए जानकारी चुनें:</translation>
+        <translation type="vanished">प्रिंटिंग के लिए जानकारी चुनें:</translation>
     </message>
     <message>
         <source>Channel number</source>
-        <translation>चैनल संख्या</translation>
+        <translation type="vanished">चैनल संख्या</translation>
     </message>
     <message>
         <source>Channel name</source>
-        <translation>चैनल नाम</translation>
+        <translation type="vanished">चैनल नाम</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>URL</translation>
+        <translation type="vanished">URL</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>श्रेणियाँ</translation>
+        <translation type="vanished">श्रेणियाँ</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>भाषा</translation>
+        <translation type="vanished">भाषा</translation>
     </message>
     <message>
         <source>Print channel List</source>
-        <translation>चैनल सूची प्रिंट करें</translation>
+        <translation type="vanished">चैनल सूची प्रिंट करें</translation>
     </message>
     <message>
         <source>Channel type</source>
-        <translation>चैनल के प्रकार</translation>
+        <translation type="vanished">चैनल के प्रकार</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation>XMLTV ID</translation>
+        <translation type="vanished">XMLTV ID</translation>
     </message>
     <message>
         <source>Logo</source>
-        <translation>लोगो</translation>
+        <translation type="vanished">लोगो</translation>
     </message>
 </context>
 <context>
@@ -968,7 +1335,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Channel list</source>
-        <translation>चैनल की सूची</translation>
+        <translation type="vanished">चैनल की सूची</translation>
     </message>
     <message>
         <source>New channel</source>
@@ -985,7 +1352,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>The file is not a Tano updates file.</source>
-        <translation>यह फ़ाइल एक Tano अद्यतन फ़ाइल नहीं है.</translation>
+        <translation type="vanished">यह फ़ाइल एक Tano अद्यतन फ़ाइल नहीं है.</translation>
     </message>
     <message>
         <source>Once</source>
@@ -1026,7 +1393,7 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>फ़ाइल नहीं पढ़ सकते %1:⏎ %2.</translation>
+        <translation type="vanished">फ़ाइल नहीं पढ़ सकते %1:⏎ %2.</translation>
     </message>
     <message>
         <source>seconds</source>
@@ -1058,7 +1425,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>खोलें चैनल की सूची</translation>
+        <translation type="vanished">खोलें चैनल की सूची</translation>
     </message>
     <message>
         <source>Open URL or stream</source>
@@ -1070,7 +1437,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Tano M3U channel list files</source>
-        <translation>Tano M3U ​​चैनल सूची फ़ाइलें</translation>
+        <translation type="vanished">Tano M3U ​​चैनल सूची फ़ाइलें</translation>
     </message>
     <message>
         <source>Comma-separated values files</source>
@@ -1110,15 +1477,15 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Sagem STB channel list files</source>
-        <translation>Sagem STB चैनल सूची फ़ाइलें</translation>
+        <translation type="vanished">Sagem STB चैनल सूची फ़ाइलें</translation>
     </message>
     <message>
         <source>CSV channel list</source>
-        <translation>CSV चैनल सूची</translation>
+        <translation type="vanished">CSV चैनल सूची</translation>
     </message>
     <message>
         <source>Sagem STB channel list</source>
-        <translation>Sagem STB चैनल सूची</translation>
+        <translation type="vanished">Sagem STB चैनल सूची</translation>
     </message>
     <message>
         <source>XMLTV file</source>
@@ -1178,35 +1545,35 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Missing mandatory argument for &apos;%1&apos;.</source>
-        <translation>&apos;%1&apos; के लिए अनिवार्य तर्क लापता.</translation>
+        <translation type="vanished">&apos;%1&apos; के लिए अनिवार्य तर्क लापता.</translation>
     </message>
     <message>
         <source>Unknown option &apos;%1&apos;.</source>
-        <translation>अज्ञात विकल्प &apos;%1&apos;.</translation>
+        <translation type="vanished">अज्ञात विकल्प &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Usage: %1 [options]</source>
-        <translation>उपयोग: %1 [विकल्प]</translation>
+        <translation type="vanished">उपयोग: %1 [विकल्प]</translation>
     </message>
     <message>
         <source>IP TV playback:</source>
-        <translation>IP TV का पुनर्चलन:</translation>
+        <translation type="vanished">IP TV का पुनर्चलन:</translation>
     </message>
     <message>
         <source>Play channel by number</source>
-        <translation>संख्या से चैनल चलायें</translation>
+        <translation type="vanished">संख्या से चैनल चलायें</translation>
     </message>
     <message>
         <source>Use playlist file</source>
-        <translation>प्लेलिस्ट फ़ाइल का उपयोग करें</translation>
+        <translation type="vanished">प्लेलिस्ट फ़ाइल का उपयोग करें</translation>
     </message>
     <message>
         <source>Use XMLTV file</source>
-        <translation>XMLTV फ़ाइल का उपयोग करें</translation>
+        <translation type="vanished">XMLTV फ़ाइल का उपयोग करें</translation>
     </message>
     <message>
         <source>Open:</source>
-        <translation>खोलें:</translation>
+        <translation type="vanished">खोलें:</translation>
     </message>
     <message>
         <source>Open URL</source>
@@ -1214,15 +1581,15 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Playback options:</source>
-        <translation>पुनर्चलन के विकल्प:</translation>
+        <translation type="vanished">पुनर्चलन के विकल्प:</translation>
     </message>
     <message>
         <source>Set audio output</source>
-        <translation>ऑडियो आउटपुट निर्धारित करें</translation>
+        <translation type="vanished">ऑडियो आउटपुट निर्धारित करें</translation>
     </message>
     <message>
         <source>Set video output</source>
-        <translation>वीडियो आउटपुट निर्धारित करें</translation>
+        <translation type="vanished">वीडियो आउटपुट निर्धारित करें</translation>
     </message>
     <message>
         <source>Error:</source>
@@ -1234,23 +1601,23 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation>चलचित्र/नाटक</translation>
     </message>
     <message>
         <source>Detective/Thriller</source>
-        <translation type="unfinished"></translation>
+        <translation>जासूसी / रहस्यमयी</translation>
     </message>
     <message>
         <source>Adventure/Western/War</source>
-        <translation type="unfinished"></translation>
+        <translation>साहसिक / पश्चिमी / युद्ध</translation>
     </message>
     <message>
         <source>Science Fiction/Fantasy/Horror</source>
-        <translation type="unfinished"></translation>
+        <translation>विज्ञान कथा/कल्पना/भूतहा</translation>
     </message>
     <message>
         <source>Comedy</source>
-        <translation type="unfinished"></translation>
+        <translation>हंसोड़</translation>
     </message>
     <message>
         <source>Soap/Melodrama/Folkloric</source>
@@ -1262,11 +1629,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Serious/Classical/Religious/Historical Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation>गंभीर/उत्कृष्ट/धार्मिक/ऐतिहासिक चलचित्र/नाटक</translation>
     </message>
     <message>
         <source>Adult Movie/Drama</source>
-        <translation type="unfinished"></translation>
+        <translation>वयस्क चलचित्र/नाटक</translation>
     </message>
     <message>
         <source>News/Current affairs</source>
@@ -1274,11 +1641,11 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>News/Weather report</source>
-        <translation type="unfinished"></translation>
+        <translation>समाचार/मौसम की सूचना</translation>
     </message>
     <message>
         <source>News magazine</source>
-        <translation type="unfinished"></translation>
+        <translation>समाचार पत्रिका</translation>
     </message>
     <message>
         <source>Documentary</source>
@@ -1286,19 +1653,19 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Discussion/Interview/Debate</source>
-        <translation type="unfinished"></translation>
+        <translation>चर्चा/साक्षात्कार/बहस</translation>
     </message>
     <message>
         <source>Show/Game show</source>
-        <translation type="unfinished"></translation>
+        <translation>तमाशा/खेल तमाशा</translation>
     </message>
     <message>
         <source>Game show/Quiz/Contest</source>
-        <translation type="unfinished"></translation>
+        <translation>खेल तमाशा/प्रश्नोत्तरी/प्रतियोगिता</translation>
     </message>
     <message>
         <source>Variety show</source>
-        <translation type="unfinished"></translation>
+        <translation>विविध नाटक</translation>
     </message>
     <message>
         <source>Talk show</source>
@@ -1314,7 +1681,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Sports magazines</source>
-        <translation type="unfinished"></translation>
+        <translation>खेल पत्रिका</translation>
     </message>
     <message>
         <source>Football/Soccer</source>
@@ -1326,7 +1693,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Team sports</source>
-        <translation type="unfinished"></translation>
+        <translation>समूह खेल</translation>
     </message>
     <message>
         <source>Athletics</source>
@@ -1334,7 +1701,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Motor sport</source>
-        <translation type="unfinished"></translation>
+        <translation>मोटर खेल</translation>
     </message>
     <message>
         <source>Water sport</source>
@@ -1478,7 +1845,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Tourism/Travel</source>
-        <translation type="unfinished"></translation>
+        <translation>पर्यटन/यात्रा</translation>
     </message>
     <message>
         <source>Handicraft</source>
@@ -1505,19 +1872,123 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Try &apos;%1 %2&apos; for more information.</source>
+        <source>Play / Pause</source>
+        <translation type="unfinished">चलायें/ रोकें</translation>
+    </message>
+    <message>
+        <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>GoTV channel list</source>
+        <source>Next channel</source>
+        <translation type="unfinished">अगला चैनल</translation>
+    </message>
+    <message>
+        <source>Previous channel</source>
+        <translation type="unfinished">पिछला चैनल</translation>
+    </message>
+    <message>
+        <source>Fullscreen</source>
+        <translation type="unfinished">पूर्णस्क्रीन</translation>
+    </message>
+    <message>
+        <source>Mute</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The file is not a GoTV channel list file.</source>
+        <source>Teletext</source>
+        <translation type="unfinished">टेलीटेक्स्ट</translation>
+    </message>
+    <message>
+        <source>Volume up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown title</source>
+        <source>Volume down</source>
+        <translation type="unfinished">वॉल्यूम नीचे</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">रिकॉर्डर</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current show info</source>
+        <translation type="unfinished">वर्तमान तमाशे की जानकारी</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="unfinished">हमेशा शीर्ष पर</translation>
+    </message>
+    <message>
+        <source>Simple mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide to tray</source>
+        <translation type="unfinished">ट्रे में छुपाएँ</translation>
+    </message>
+    <message>
+        <source>Instant recording</source>
+        <translation type="unfinished">तत्काल रिकॉर्डिंग</translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview channels</source>
+        <translation type="unfinished">चैनलों को पूर्वावलोकन करें </translation>
+    </message>
+    <message>
+        <source>Next audio track</source>
+        <translation type="unfinished">अगला ऑडियो ट्रैक</translation>
+    </message>
+    <message>
+        <source>Next video track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next subtitle track</source>
+        <translation type="unfinished">अगला उपशीर्षक ट्रैक</translation>
+    </message>
+    <message>
+        <source>Next aspect ratio mode</source>
+        <translation type="unfinished">अगला पहलू अनुपात मोड</translation>
+    </message>
+    <message>
+        <source>Next crop mode</source>
+        <translation type="unfinished">अगला  क्रॉप त मोड</translation>
+    </message>
+    <message>
+        <source>Next scale/zoom mode</source>
+        <translation type="unfinished">अगले मापक/ ज़ूम के मोड</translation>
+    </message>
+    <message>
+        <source>Next deinterlacing mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano M3U channels list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV channels list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1525,7 +1996,7 @@ You will lose any unsaved changes.</source>
     <name>QtKeySequenceEdit</name>
     <message>
         <source>Clear Shortcut</source>
-        <translation>स्पष्ट सरल तरीका</translation>
+        <translation type="vanished">स्पष्ट सरल तरीका</translation>
     </message>
 </context>
 <context>
@@ -1539,18 +2010,10 @@ You will lose any unsaved changes.</source>
         <translation> %1 के लिए नहीं लिख सकता.</translation>
     </message>
     <message>
-        <source>Recording not valid!</source>
-        <translation type="vanished">रिकॉर्डिंग वैध नहीं है</translation>
-    </message>
-    <message>
         <source>File cannot be removed.
 Have you already moved or deleted it?</source>
         <translation>फ़ाइल हटाया नहीं जा सकता.
 क्या आप पहले से ही चले गए या इसे नष्ट कर दिया है?</translation>
-    </message>
-    <message>
-        <source>Recordings and timers</source>
-        <translation type="vanished">रिकॉर्डिंग और टाइमर</translation>
     </message>
     <message>
         <source>Instant %1</source>
@@ -1604,10 +2067,6 @@ Have you already moved or deleted it?</source>
         <translation>बीत:</translation>
     </message>
     <message>
-        <source>Output:</source>
-        <translation type="vanished">आउटपुट:</translation>
-    </message>
-    <message>
         <source>Channel:</source>
         <translation>Channel:</translation>
     </message>
@@ -1632,10 +2091,6 @@ Have you already moved or deleted it?</source>
         <translation>अवधि:</translation>
     </message>
     <message>
-        <source>File:</source>
-        <translation type="vanished">फ़ाइल:</translation>
-    </message>
-    <message>
         <source>at</source>
         <translation>में</translation>
     </message>
@@ -1654,10 +2109,6 @@ This operation is ireversible.</source>
         <translation>सुरक्षित करना</translation>
     </message>
     <message>
-        <source>Status</source>
-        <translation type="vanished">स्थिति</translation>
-    </message>
-    <message>
         <source>Edit timer</source>
         <translation>टाइमर संपादित करें</translation>
     </message>
@@ -1673,10 +2124,6 @@ This operation is ireversible.</source>
 <context>
     <name>RecorderNewDialog</name>
     <message>
-        <source>Quick record</source>
-        <translation type="vanished">त्वरित रिकॉर्ड</translation>
-    </message>
-    <message>
         <source>Selected channel:</source>
         <translation>चयनित चैनल:</translation>
     </message>
@@ -1689,18 +2136,6 @@ This operation is ireversible.</source>
         <translation>रिकॉर्ड</translation>
     </message>
     <message>
-        <source>Back</source>
-        <translation type="vanished">वापस</translation>
-    </message>
-    <message>
-        <source>Add timer</source>
-        <translation type="vanished">टाइमर जोड़ें</translation>
-    </message>
-    <message>
-        <source>Timer name:</source>
-        <translation type="vanished">टाइमर का नाम:</translation>
-    </message>
-    <message>
         <source>Add new timer</source>
         <translation>नई टाइमर जोड़ें</translation>
     </message>
@@ -1709,35 +2144,27 @@ This operation is ireversible.</source>
         <translation>रिकॉर्डर</translation>
     </message>
     <message>
-        <source>Please, select a channel.</source>
-        <translation type="vanished">कृपया, एक चैनल का चयन करें.</translation>
-    </message>
-    <message>
         <source>You don&apos;t have this channel in your playlist.</source>
-        <translation>आपकी प्लेलिस्ट में यह चैनल नहीं है.</translation>
+        <translation type="vanished">आपकी प्लेलिस्ट में यह चैनल नहीं है.</translation>
     </message>
     <message>
         <source>New recording</source>
         <translation>नई रिकॉर्डिंग</translation>
     </message>
     <message>
-        <source>Search and filter</source>
-        <translation type="vanished">खोज और साफ़ करना</translation>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cancel</source>
+        <source>You don&apos;t have this channel in your channels list.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>RecorderTimersEditor</name>
     <message>
-        <source>Timers</source>
-        <translation type="unfinished">टाइमर</translation>
-    </message>
-    <message>
         <source>Date:</source>
-        <translation type="unfinished">तिथि:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Once</source>
@@ -1745,7 +2172,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Daily</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">प्रतिदिन</translation>
     </message>
     <message>
         <source>Weekly</source>
@@ -1761,7 +2188,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Channel:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Channel:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -1769,7 +2196,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>dd. MM. yyyy</source>
-        <translation type="unfinished">dd. MM. yyyy</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Enabled:</source>
@@ -1781,7 +2208,7 @@ This operation is ireversible.</source>
     </message>
     <message>
         <source>Start time:</source>
-        <translation type="unfinished">प्रारंभ समय:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Recorder</source>
@@ -1790,8 +2217,7 @@ This operation is ireversible.</source>
     <message>
         <source>The recording start date is before today.
 Your changes will not be saved.</source>
-        <translation type="unfinished">रिकॉर्डिंग शुरू होने की तिथि आज से पहले है.
-आपके परिवर्तनों को सहेजा नहीं किया जाएगा.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>The recording is overlaping with others.
@@ -1826,7 +2252,7 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished">रिकॉर्ड</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Current channel selected doesn&apos;t have any schedule information</source>
@@ -1838,141 +2264,141 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"></translation>
+        <translation>कोई जानकारी नहीं</translation>
     </message>
 </context>
 <context>
     <name>SettingsBackend</name>
     <message>
         <source>VLC-Qt Backend</source>
-        <translation>VLC-Qt बैकेंड</translation>
+        <translation type="vanished">VLC-Qt बैकेंड</translation>
     </message>
     <message>
         <source>Version:</source>
-        <translation>संस्करण:</translation>
+        <translation type="vanished">संस्करण:</translation>
     </message>
     <message>
         <source>Using Videolan VLC version:</source>
-        <translation>VideoLAN VLC संस्करण का उपयोग:</translation>
+        <translation type="vanished">VideoLAN VLC संस्करण का उपयोग:</translation>
     </message>
     <message>
         <source>Playback</source>
-        <translation>पुनर्चलन</translation>
+        <translation type="vanished">पुनर्चलन</translation>
     </message>
     <message>
         <source>Default subtitle language:</source>
-        <translation>डिफ़ॉल्ट उपशीर्षक भाषा:</translation>
+        <translation type="vanished">डिफ़ॉल्ट उपशीर्षक भाषा:</translation>
     </message>
     <message>
         <source>Default audio language:</source>
-        <translation>डिफ़ॉल्ट ऑडियो भाषा:</translation>
+        <translation type="vanished">डिफ़ॉल्ट ऑडियो भाषा:</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>अक्षम</translation>
+        <translation type="vanished">अक्षम</translation>
     </message>
     <message>
         <source>Other</source>
-        <translation>अन्य</translation>
+        <translation type="vanished">अन्य</translation>
     </message>
     <message>
         <source>Default aspect ratio:</source>
-        <translation>डिफ़ॉल्ट पहलू अनुपात:</translation>
+        <translation type="vanished">डिफ़ॉल्ट पहलू अनुपात:</translation>
     </message>
     <message>
         <source>Default crop:</source>
-        <translation>डिफ़ॉल्ट फसल:</translation>
+        <translation type="vanished">डिफ़ॉल्ट फसल:</translation>
     </message>
     <message>
         <source>Default deinterlacing:</source>
-        <translation>डिफ़ॉल्ट deinterlacing:</translation>
+        <translation type="vanished">डिफ़ॉल्ट deinterlacing:</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>वास्तविक</translation>
+        <translation type="vanished">वास्तविक</translation>
     </message>
     <message>
         <source>Discard</source>
-        <translation>छोड़ना</translation>
+        <translation type="vanished">छोड़ना</translation>
     </message>
     <message>
         <source>Blend</source>
-        <translation>मिश्रण</translation>
+        <translation type="vanished">मिश्रण</translation>
     </message>
     <message>
         <source>Mean</source>
-        <translation>माध्य</translation>
+        <translation type="vanished">माध्य</translation>
     </message>
     <message>
         <source>Bob</source>
-        <translation>बॉब</translation>
+        <translation type="vanished">बॉब</translation>
     </message>
     <message>
         <source>Linear</source>
-        <translation>रैखिक</translation>
+        <translation type="vanished">रैखिक</translation>
     </message>
     <message>
         <source>X</source>
-        <translation>X</translation>
+        <translation type="vanished">X</translation>
     </message>
     <message>
         <source>Enable teletext (requires restart)</source>
-        <translation>सक्षम टेलीटेक्स्ट (पुनरारंभ आवश्यक)</translation>
+        <translation type="vanished">सक्षम टेलीटेक्स्ट (पुनरारंभ आवश्यक)</translation>
     </message>
     <message>
         <source>Core</source>
-        <translation>मूल</translation>
+        <translation type="vanished">मूल</translation>
     </message>
     <message>
         <source>Video output:</source>
-        <translation>वीडियो आउटपुट:</translation>
+        <translation type="vanished">वीडियो आउटपुट:</translation>
     </message>
     <message>
         <source>Audio output:</source>
-        <translation>ऑडियो आउटपुट:</translation>
+        <translation type="vanished">ऑडियो आउटपुट:</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation>डिफ़ॉल्ट</translation>
+        <translation type="vanished">डिफ़ॉल्ट</translation>
     </message>
     <message>
         <source>Enable YUV-&gt;RGB hardware decoding</source>
-        <translation> YUV-&gt;RGB हार्डवेयर decoding सक्षम करें</translation>
+        <translation type="vanished"> YUV-&gt;RGB हार्डवेयर decoding सक्षम करें</translation>
     </message>
     <message>
         <source>Enable S/PDIF output</source>
-        <translation>S/PDIF आउटपुट सक्षम करें</translation>
+        <translation type="vanished">S/PDIF आउटपुट सक्षम करें</translation>
     </message>
     <message>
         <source>Misc</source>
-        <translation>Misc</translation>
+        <translation type="vanished">Misc</translation>
     </message>
     <message>
         <source>Mute on minimize</source>
-        <translation>कम से कम पर मौन</translation>
+        <translation type="vanished">कम से कम पर मौन</translation>
     </message>
     <message>
         <source>Remember video settings:</source>
-        <translation>वीडियो सेटिंग्स याद रखें:</translation>
+        <translation type="vanished">वीडियो सेटिंग्स याद रखें:</translation>
     </message>
     <message>
         <source>For all channels</source>
-        <translation>सभी चैनलों के लिए</translation>
+        <translation type="vanished">सभी चैनलों के लिए</translation>
     </message>
     <message>
         <source>Per channel</source>
-        <translation>प्रति चैनल</translation>
+        <translation type="vanished">प्रति चैनल</translation>
     </message>
     <message>
         <source>Enable</source>
-        <translation>सक्षम</translation>
+        <translation type="vanished">सक्षम</translation>
     </message>
 </context>
 <context>
     <name>SettingsDialog</name>
     <message>
         <source>Settings</source>
-        <translation>सेटिंग</translation>
+        <translation type="vanished">सेटिंग</translation>
     </message>
     <message>
         <source>General</source>
@@ -1981,7 +2407,7 @@ Your changes will not be saved.</source>
     <message>
         <source>Playlist</source>
         <extracomment>Please make manual line breaks if text too long!</extracomment>
-        <translation>प्लेलिस्ट</translation>
+        <translation type="vanished">प्लेलिस्ट</translation>
     </message>
     <message>
         <source>Interface</source>
@@ -1993,298 +2419,452 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Schedule</source>
-        <translation>अनुसूची</translation>
+        <translation type="vanished">अनुसूची</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>रिकॉर्डर</translation>
+        <translation type="vanished">रिकॉर्डर</translation>
+    </message>
+    <message>
+        <source>Application language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Autoplay last channel</source>
+        <translation type="unfinished">पिछले चैनल को ऑटोप्ले करो</translation>
+    </message>
+    <message>
+        <source>Mute on minimize</source>
+        <translation type="unfinished">कम से कम पर मौन</translation>
+    </message>
+    <message>
+        <source>Snapshots folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recordings folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show tray icon</source>
+        <translation type="unfinished">ट्रे चिह्न दिखाएँ</translation>
+    </message>
+    <message>
+        <source>Tray icon:</source>
+        <translation type="unfinished">ट्रे चिह्न:</translation>
+    </message>
+    <message>
+        <source>Minimise to tray</source>
+        <translation type="unfinished">ट्रे को छोटा करें</translation>
+    </message>
+    <message>
+        <source>Change channel</source>
+        <translation type="unfinished">चैनल बदलें</translation>
+    </message>
+    <message>
+        <source>Mouse wheel:</source>
+        <translation type="unfinished">माउस व्हील:</translation>
+    </message>
+    <message>
+        <source>Change volume</source>
+        <translation type="unfinished">वॉल्यूम बदलें</translation>
+    </message>
+    <message>
+        <source>Double click the keyboard shortcut you want to edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SettingsDialogShortcuts</name>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>कीबोर्ड शॉर्टकट</translation>
+        <translation type="vanished">कीबोर्ड शॉर्टकट</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation>क्रिया</translation>
+        <translation type="vanished">क्रिया</translation>
     </message>
     <message>
         <source>Key</source>
-        <translation>Key</translation>
+        <translation type="vanished">Key</translation>
     </message>
     <message>
         <source>Play / Pause</source>
-        <translation>चलायें/ रोकें</translation>
+        <translation type="vanished">चलायें/ रोकें</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>रोको</translation>
+        <translation type="vanished">रोको</translation>
     </message>
     <message>
         <source>Next channel</source>
-        <translation>अगला चैनल</translation>
+        <translation type="vanished">अगला चैनल</translation>
     </message>
     <message>
         <source>Previous channel</source>
-        <translation>पिछला चैनल</translation>
+        <translation type="vanished">पिछला चैनल</translation>
     </message>
     <message>
         <source>Fullscreen</source>
-        <translation>पूर्णस्क्रीन</translation>
-    </message>
-    <message>
-        <source>Toggle Info Widget</source>
-        <translation type="vanished">टॉगल इन्फो विजेट</translation>
-    </message>
-    <message>
-        <source>Toggle Controls Widget</source>
-        <translation type="vanished">टॉगल नियंत्रण विजेट</translation>
+        <translation type="vanished">पूर्णस्क्रीन</translation>
     </message>
     <message>
         <source>Mute</source>
-        <translation>मूक</translation>
+        <translation type="vanished">मूक</translation>
     </message>
     <message>
         <source>Teletext</source>
-        <translation>टेलीटेक्स्ट</translation>
+        <translation type="vanished">टेलीटेक्स्ट</translation>
     </message>
     <message>
         <source>Volume up</source>
-        <translation>	
+        <translation type="vanished">	
 वॉल्यूम ऊपर</translation>
     </message>
     <message>
         <source>Volume down</source>
-        <translation>वॉल्यूम नीचे</translation>
+        <translation type="vanished">वॉल्यूम नीचे</translation>
     </message>
     <message>
         <source>Recorder</source>
-        <translation>रिकॉर्डर</translation>
+        <translation type="vanished">रिकॉर्डर</translation>
     </message>
     <message>
         <source>Open File</source>
-        <translation>फ़ाइल खोलें</translation>
+        <translation type="vanished">फ़ाइल खोलें</translation>
     </message>
     <message>
         <source>Open URL</source>
-        <translation>URL खोलें</translation>
+        <translation type="vanished">URL खोलें</translation>
     </message>
     <message>
         <source>Open Channel list</source>
-        <translation>चैनल की सूची खोलें</translation>
+        <translation type="vanished">चैनल की सूची खोलें</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>सेटिंग्स</translation>
+        <translation type="vanished">सेटिंग्स</translation>
     </message>
     <message>
         <source>Always on top</source>
-        <translation>हमेशा शीर्ष पर</translation>
+        <translation type="vanished">हमेशा शीर्ष पर</translation>
     </message>
     <message>
         <source>Simple Mode</source>
-        <translation>सरल मोड</translation>
+        <translation type="vanished">सरल मोड</translation>
     </message>
     <message>
         <source>Hide to tray</source>
-        <translation>ट्रे में छुपाएँ</translation>
+        <translation type="vanished">ट्रे में छुपाएँ</translation>
     </message>
     <message>
         <source>Next audio track</source>
-        <translation>अगला ऑडियो ट्रैक</translation>
+        <translation type="vanished">अगला ऑडियो ट्रैक</translation>
     </message>
     <message>
         <source>Next video track</source>
-        <translation>अगला वीडियो ट्रैक</translation>
+        <translation type="vanished">अगला वीडियो ट्रैक</translation>
     </message>
     <message>
         <source>Next subtitle track</source>
-        <translation>अगला उपशीर्षक ट्रैक</translation>
+        <translation type="vanished">अगला उपशीर्षक ट्रैक</translation>
     </message>
     <message>
         <source>Next aspect ratio mode</source>
-        <translation>अगला पहलू अनुपात मोड</translation>
+        <translation type="vanished">अगला पहलू अनुपात मोड</translation>
     </message>
     <message>
         <source>Next crop mode</source>
-        <translation>अगला  क्रॉप त मोड</translation>
+        <translation type="vanished">अगला  क्रॉप त मोड</translation>
     </message>
     <message>
         <source>Next deinterlace mode</source>
-        <translation>अगला deinterlace मोड</translation>
+        <translation type="vanished">अगला deinterlace मोड</translation>
     </message>
     <message>
         <source>Set</source>
-        <translation>स्थित</translation>
+        <translation type="vanished">स्थित</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>चूक</translation>
+        <translation type="vanished">चूक</translation>
     </message>
     <message>
         <source>Instant recording</source>
-        <translation>तत्काल रिकॉर्डिंग</translation>
+        <translation type="vanished">तत्काल रिकॉर्डिंग</translation>
     </message>
     <message>
         <source>Take snapshot</source>
-        <translation>स्नैपशॉट लें</translation>
+        <translation type="vanished">स्नैपशॉट लें</translation>
     </message>
     <message>
         <source>-</source>
-        <translation>-</translation>
+        <translation type="vanished">-</translation>
     </message>
     <message>
         <source>Next scale/zoom mode</source>
-        <translation>अगले मापक/ ज़ूम के मोड</translation>
+        <translation type="vanished">अगले मापक/ ज़ूम के मोड</translation>
     </message>
     <message>
         <source>Preview channels</source>
-        <translation>चैनलों को पूर्वावलोकन करें </translation>
-    </message>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Current show info</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">चैनलों को पूर्वावलोकन करें </translation>
     </message>
 </context>
 <context>
     <name>SettingsGeneral</name>
     <message>
         <source>Language</source>
-        <translation>भाषा</translation>
+        <translation type="vanished">भाषा</translation>
     </message>
     <message>
         <source>System default language</source>
-        <translation>सिस्टम की डिफ़ॉल्ट भाषा</translation>
+        <translation type="vanished">सिस्टम की डिफ़ॉल्ट भाषा</translation>
     </message>
     <message>
         <source>Custom language</source>
-        <translation>प्रचलन की भाषा</translation>
+        <translation type="vanished">प्रचलन की भाषा</translation>
     </message>
     <message>
         <source>Session store</source>
-        <translation>सेशन संग्रह करना</translation>
+        <translation type="vanished">सेशन संग्रह करना</translation>
     </message>
     <message>
         <source>Remember volume</source>
-        <translation>मात्रा याद रखें</translation>
+        <translation type="vanished">मात्रा याद रखें</translation>
     </message>
     <message>
         <source>Autoplay last channel</source>
-        <translation>पिछले चैनल को ऑटोप्ले करो</translation>
+        <translation type="vanished">पिछले चैनल को ऑटोप्ले करो</translation>
     </message>
     <message>
         <source>Defaults</source>
-        <translation>चूक</translation>
+        <translation type="vanished">चूक</translation>
     </message>
     <message>
         <source>Restore defaults</source>
-        <translation>डिफ़ॉल्ट पुनर्स्थापित करना</translation>
+        <translation type="vanished">डिफ़ॉल्ट पुनर्स्थापित करना</translation>
     </message>
     <message>
         <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation>&lt;i&gt; यह आपके सभी सेटिंग्स डिफ़ॉल्ट को बहाल करेंगे. आपको परिवर्तनों को लागू करने की जरूरत है, इससे पहले कि वे प्रभाव में आये जाए.&lt;/ i&gt;</translation>
+        <translation type="vanished">&lt;i&gt; यह आपके सभी सेटिंग्स डिफ़ॉल्ट को बहाल करेंगे. आपको परिवर्तनों को लागू करने की जरूरत है, इससे पहले कि वे प्रभाव में आये जाए.&lt;/ i&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsPlayback</name>
+    <message>
+        <source>Remember video settings:</source>
+        <translation type="unfinished">वीडियो सेटिंग्स याद रखें:</translation>
     </message>
     <message>
-        <source>You are using %1 version:</source>
+        <source>Never</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For all channels</source>
+        <translation type="unfinished">सभी चैनलों के लिए</translation>
+    </message>
+    <message>
+        <source>Per channel</source>
+        <translation type="unfinished">प्रति चैनल</translation>
+    </message>
+    <message>
+        <source>Default aspect ratio:</source>
+        <translation type="unfinished">डिफ़ॉल्ट पहलू अनुपात:</translation>
+    </message>
+    <message>
+        <source>Default crop:</source>
+        <translation type="unfinished">डिफ़ॉल्ट फसल:</translation>
+    </message>
+    <message>
+        <source>Default deinterlacing:</source>
+        <translation type="unfinished">डिफ़ॉल्ट deinterlacing:</translation>
+    </message>
+    <message>
+        <source>Default audio language:</source>
+        <translation type="unfinished">डिफ़ॉल्ट ऑडियो भाषा:</translation>
+    </message>
+    <message>
+        <source>Automatic</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished">अन्य</translation>
+    </message>
+    <message>
+        <source>Default subtitle language:</source>
+        <translation type="unfinished">डिफ़ॉल्ट उपशीर्षक भाषा:</translation>
+    </message>
+    <message>
+        <source>Disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable teletext (requires restart)</source>
+        <translation type="unfinished">सक्षम टेलीटेक्स्ट (पुनरारंभ आवश्यक)</translation>
+    </message>
+    <message>
+        <source>Enable YUV-&gt;RGB hardware decoding</source>
+        <translation type="unfinished"> YUV-&gt;RGB हार्डवेयर decoding सक्षम करें</translation>
+    </message>
+    <message>
+        <source>Enable S/PDIF output</source>
+        <translation type="unfinished">S/PDIF आउटपुट सक्षम करें</translation>
+    </message>
+    <message>
+        <source>Video output (advanced):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">डिफ़ॉल्ट</translation>
     </message>
 </context>
 <context>
     <name>SettingsPlaylist</name>
     <message>
         <source>Default playlist</source>
-        <translation>डिफ़ॉल्ट प्लेलिस्ट</translation>
+        <translation type="vanished">डिफ़ॉल्ट प्लेलिस्ट</translation>
     </message>
     <message>
         <source>Network refresh</source>
-        <translation>नेटवर्क ताज़ा करे</translation>
+        <translation type="vanished">नेटवर्क ताज़ा करे</translation>
     </message>
     <message>
         <source>Refresh playlist on startup</source>
-        <translation>स्टार्टअप पर ताज़ा प्लेलिस्ट</translation>
+        <translation type="vanished">स्टार्टअप पर ताज़ा प्लेलिस्ट</translation>
     </message>
     <message>
         <source>Playlist URL:</source>
-        <translation>प्लेलिस्ट में URL:</translation>
+        <translation type="vanished">प्लेलिस्ट में URL:</translation>
     </message>
     <message>
         <source>Default radio category:</source>
-        <translation>डिफ़ॉल्ट रेडियो श्रेणी:</translation>
+        <translation type="vanished">डिफ़ॉल्ट रेडियो श्रेणी:</translation>
     </message>
     <message>
         <source>UDPXY support</source>
-        <translation>UDPXY समर्थन</translation>
+        <translation type="vanished">UDPXY समर्थन</translation>
     </message>
     <message>
         <source>Enable UDPXY support</source>
-        <translation>UDPXY समर्थन सक्षम करें</translation>
+        <translation type="vanished">UDPXY समर्थन सक्षम करें</translation>
     </message>
     <message>
         <source>Router IP or name:</source>
-        <translation>रूटर IP या नाम:</translation>
+        <translation type="vanished">रूटर IP या नाम:</translation>
     </message>
     <message>
         <source>Router port:</source>
-        <translation>रूटर बंदरगाह:</translation>
+        <translation type="vanished">रूटर बंदरगाह:</translation>
     </message>
     <message>
         <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;अद्यतन से आपका प्लेलिस्ट क्रम नहीं बदल जाएगा.&lt;/i&gt;</translation>
+        <translation type="vanished">&lt;i&gt;अद्यतन से आपका प्लेलिस्ट क्रम नहीं बदल जाएगा.&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Channel types categories</source>
-        <translation>चैनल के प्रकार की श्रेणियां</translation>
+        <translation type="vanished">चैनल के प्रकार की श्रेणियां</translation>
     </message>
     <message>
         <source>Default HD category:</source>
-        <translation>डिफ़ॉल्ट HD श्रेणी:</translation>
+        <translation type="vanished">डिफ़ॉल्ट HD श्रेणी:</translation>
     </message>
 </context>
 <context>
     <name>SettingsRecorder</name>
     <message>
         <source>Default recording directory</source>
-        <translation>डिफ़ॉल्ट रिकॉर्डिंग निर्देशिका</translation>
+        <translation type="vanished">डिफ़ॉल्ट रिकॉर्डिंग निर्देशिका</translation>
     </message>
     <message>
         <source>Default snapshots directory</source>
-        <translation>डिफ़ॉल्ट फोटो निर्देशिका</translation>
+        <translation type="vanished">डिफ़ॉल्ट फोटो निर्देशिका</translation>
     </message>
 </context>
 <context>
     <name>SettingsSchedule</name>
     <message>
         <source>XMLTV settings</source>
-        <translation>XMLTV सेटिंग्स</translation>
+        <translation type="vanished">XMLTV सेटिंग्स</translation>
     </message>
     <message>
         <source>Refresh XMLTV file on startup</source>
-        <translation>प्रारंभ होने पर XMLTV को ताज़ा करें</translation>
+        <translation type="vanished">प्रारंभ होने पर XMLTV को ताज़ा करें</translation>
     </message>
     <message>
         <source>Download file</source>
-        <translation>फ़ाइल डाउनलोड करें</translation>
+        <translation type="vanished">फ़ाइल डाउनलोड करें</translation>
+    </message>
+</context>
+<context>
+    <name>SettingsTv</name>
+    <message>
+        <source>Channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default channels list:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default HD category:</source>
+        <translation type="unfinished">डिफ़ॉल्ट HD श्रेणी:</translation>
+    </message>
+    <message>
+        <source>Default radio category:</source>
+        <translation type="unfinished">डिफ़ॉल्ट रेडियो श्रेणी:</translation>
+    </message>
+    <message>
+        <source>Enable UDPXY support</source>
+        <translation type="unfinished">UDPXY समर्थन सक्षम करें</translation>
+    </message>
+    <message>
+        <source>Server address:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source type:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Local file</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
+        <source>Download file</source>
+        <translation type="unfinished">फ़ाइल डाउनलोड करें</translation>
+    </message>
+    <message>
+        <source>Source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time offset:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source> h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Offset:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2292,59 +2872,51 @@ Your changes will not be saved.</source>
     <name>SettingsUi</name>
     <message>
         <source>General Interface Settings</source>
-        <translation>सामान्य अंतरफलक सेटिंग्स</translation>
+        <translation type="vanished">सामान्य अंतरफलक सेटिंग्स</translation>
     </message>
     <message>
         <source>Change channel</source>
-        <translation>चैनल बदलें</translation>
+        <translation type="vanished">चैनल बदलें</translation>
     </message>
     <message>
         <source>Change volume</source>
-        <translation>वॉल्यूम बदलें</translation>
+        <translation type="vanished">वॉल्यूम बदलें</translation>
     </message>
     <message>
         <source>Minimise to tray</source>
-        <translation>ट्रे को छोटा करें</translation>
+        <translation type="vanished">ट्रे को छोटा करें</translation>
     </message>
     <message>
         <source>Show tray icon</source>
-        <translation>ट्रे चिह्न दिखाएँ</translation>
+        <translation type="vanished">ट्रे चिह्न दिखाएँ</translation>
     </message>
     <message>
         <source>Mouse wheel:</source>
-        <translation>माउस व्हील:</translation>
+        <translation type="vanished">माउस व्हील:</translation>
     </message>
     <message>
         <source>Tray icon:</source>
-        <translation>ट्रे चिह्न:</translation>
+        <translation type="vanished">ट्रे चिह्न:</translation>
     </message>
     <message>
         <source>Show on mouse move</source>
-        <translation>माउस के चाल पर दिखाएं</translation>
+        <translation type="vanished">माउस के चाल पर दिखाएं</translation>
     </message>
     <message>
         <source>Remember main window size, position and open panels</source>
-        <translation>मुख्य विंडो का आकार,स्थिति, और खुले पैनल याद रखें</translation>
+        <translation type="vanished">मुख्य विंडो का आकार,स्थिति, और खुले पैनल याद रखें</translation>
     </message>
     <message>
         <source>Icon theme</source>
-        <translation>चिह्न प्रसंग</translation>
+        <translation type="vanished">चिह्न प्रसंग</translation>
     </message>
     <message>
         <source>Desktop theme</source>
-        <translation>डेस्कटॉप का विषय</translation>
+        <translation type="vanished">डेस्कटॉप का विषय</translation>
     </message>
     <message>
         <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;यह विकल्प को पुनः आरंभ करने की आवश्यकता है.&lt;/i&gt;</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="unfinished">डिफ़ॉल्ट</translation>
-    </message>
-    <message>
-        <source>OSD in fullscreen:</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">&lt;i&gt;यह विकल्प को पुनः आरंभ करने की आवश्यकता है.&lt;/i&gt;</translation>
     </message>
 </context>
 <context>
@@ -2355,11 +2927,11 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>पिछला</translation>
     </message>
     <message>
         <source>Record</source>
-        <translation type="unfinished">रिकॉर्ड</translation>
+        <translation>अभिलेखन</translation>
     </message>
     <message>
         <source>Next</source>
@@ -2367,7 +2939,7 @@ Your changes will not be saved.</source>
     </message>
     <message>
         <source>No information</source>
-        <translation type="unfinished"></translation>
+        <translation>कोई जानकारी नहीं</translation>
     </message>
 </context>
 <context>
@@ -2375,131 +2947,6 @@ Your changes will not be saved.</source>
     <message>
         <source>at</source>
         <translation>में</translation>
-    </message>
-</context>
-<context>
-    <name>TimersDisplayWidget</name>
-    <message>
-        <source>Clear</source>
-        <translation type="vanished">साफ़</translation>
-    </message>
-</context>
-<context>
-    <name>TimersEditorWidget</name>
-    <message>
-        <source>Timers</source>
-        <translation type="vanished">टाइमर</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">नाम:</translation>
-    </message>
-    <message>
-        <source>Channel:</source>
-        <translation type="vanished">चैनल:</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="vanished">प्रकार:</translation>
-    </message>
-    <message>
-        <source>Once</source>
-        <translation type="vanished">एक बार</translation>
-    </message>
-    <message>
-        <source>Daily</source>
-        <translation type="vanished">दैनिक</translation>
-    </message>
-    <message>
-        <source>Weekly</source>
-        <translation type="vanished">साप्ताहिक</translation>
-    </message>
-    <message>
-        <source>Weekdays</source>
-        <translation type="vanished">कार्यदिवस</translation>
-    </message>
-    <message>
-        <source>Url:</source>
-        <translation type="vanished">Url:</translation>
-    </message>
-    <message>
-        <source>dd. MM. yyyy</source>
-        <translation type="vanished">dd. MM. yyyy</translation>
-    </message>
-    <message>
-        <source>Date:</source>
-        <translation type="vanished">तिथि:</translation>
-    </message>
-    <message>
-        <source>Start time:</source>
-        <translation type="vanished">प्रारंभ समय:</translation>
-    </message>
-    <message>
-        <source>End time:</source>
-        <translation type="vanished">अंत समय:</translation>
-    </message>
-    <message>
-        <source>Disable:</source>
-        <translation type="vanished">अक्षम</translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="vanished">रिकॉर्डर</translation>
-    </message>
-    <message>
-        <source>The recording start date is before today.
-Your changes will not be saved.</source>
-        <translation type="vanished">रिकॉर्डिंग शुरू होने की तिथि आज से पहले है.
-आपके परिवर्तनों को सहेजा नहीं किया जाएगा.</translation>
-    </message>
-</context>
-<context>
-    <name>TimersModel</name>
-    <message>
-        <source>at</source>
-        <translation type="obsolete">में</translation>
-    </message>
-</context>
-<context>
-    <name>TrayIcon</name>
-    <message>
-        <source>Playing:</source>
-        <translation type="vanished">बजाना:</translation>
-    </message>
-    <message>
-        <source>Recording:</source>
-        <translation type="vanished">रिकॉर्डिंग:</translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="vanished">रिकॉर्डर</translation>
-    </message>
-</context>
-<context>
-    <name>UpdateDialog</name>
-    <message>
-        <source>Update Information</source>
-        <translation type="vanished">अद्यतन जानकारी</translation>
-    </message>
-    <message>
-        <source>Current version:</source>
-        <translation type="vanished">वर्तमान संस्करण:</translation>
-    </message>
-    <message>
-        <source>Stable version:</source>
-        <translation type="vanished">स्थिर संस्करण:</translation>
-    </message>
-    <message>
-        <source>Date released:</source>
-        <translation type="vanished">तिथि जारी</translation>
-    </message>
-    <message>
-        <source>Information:</source>
-        <translation type="obsolete">जानकारी:</translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="obsolete">बंद करें</translation>
     </message>
 </context>
 <context>

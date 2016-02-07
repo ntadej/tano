@@ -5,18 +5,37 @@
     <name>AboutDialog</name>
     <message>
         <source>About</source>
-        <translation>Տեղեկություն</translation>
+        <translation type="vanished">Տեղեկություն</translation>
     </message>
     <message>
-        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.</source>
+        <source>About %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Multimedia backend powered by VLC-Qt %1.</source>
+        <source>Copyright %1 %2 %3&lt;br&gt;All rights reserved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;b&gt;This application is based on Tano %1.&lt;/b&gt;</source>
+        <source>Using VLC %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Libraries</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BrowseWidget</name>
+    <message>
+        <source>Browse…</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -32,6 +51,454 @@
     </message>
     <message>
         <source>Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsDisplayWidget</name>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished">Սկսել</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished">Գրաֆիկ</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsEditor</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished">Tano Խմբագրիչ</translation>
+    </message>
+    <message>
+        <source>Channels list name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of channels:</source>
+        <translation type="unfinished">Աղբյուրների քանակը`</translation>
+    </message>
+    <message>
+        <source>Toolbar</source>
+        <translation type="unfinished">Գործիքներ</translation>
+    </message>
+    <message>
+        <source>Edit channel</source>
+        <translation type="unfinished">Խմբագրել աղբյուրը</translation>
+    </message>
+    <message>
+        <source>Number:</source>
+        <translation type="unfinished">Համար`</translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Անվանում`</translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished">Հասցե`</translation>
+    </message>
+    <message>
+        <source>Categories:</source>
+        <translation type="unfinished">Դասեր`</translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="unfinished">Լեզու`</translation>
+    </message>
+    <message>
+        <source>XMLTV ID:</source>
+        <translation type="unfinished">XMLTV ID`</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logo:</source>
+        <translation type="unfinished">Նշան`</translation>
+    </message>
+    <message>
+        <source>Scan for new channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add channel</source>
+        <translation type="unfinished">Ավելացնել աղբյուր</translation>
+    </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished">Ջնջել աղբյուր</translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Պահել</translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Փակել</translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation type="unfinished">Բարձրացնել</translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation type="unfinished">Իջեցնել</translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished">Տպել</translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished">Արտահանել</translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Բացել</translation>
+    </message>
+    <message>
+        <source>New channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV IDs</source>
+        <translation type="unfinished">XMLTV ID-ներ</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished">Օգնություն</translation>
+    </message>
+    <message>
+        <source>Auto XMLTV map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - %2 Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channels Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to create new channels list?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to M3U format with Udpxy URLs</source>
+        <translation type="unfinished">Արտահանել M3U ֆորմատով Udpxy հասցեների օգնությամբ</translation>
+    </message>
+    <message>
+        <source>You need to have valid Udpxy settings or the exported channels list will contain classic URLs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want close the editor?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished">Վստա՞հ եք, որ ցանկանում եք փակել խմբագրիչը:
+Դուք կկորցնեք չպահված փոփոխությունները:</translation>
+    </message>
+    <message>
+        <source>Please wait for XMLTV file to parse.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A channel with this number already exists!</source>
+        <translation type="unfinished">Այս թվով աղբյուր արդեն գոյություն ունի:</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsEditorHelp</name>
+    <message>
+        <source>Tano Editor - Help</source>
+        <translation type="unfinished">Tano Editor - Օգնություն</translation>
+    </message>
+    <message>
+        <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
+        <translation type="unfinished">&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You can edit your IP TV channels list, print it or export it to desired format.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
+        <translation type="unfinished">&lt;h3&gt;Խմբագրվում են աղբյուրները&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
+        <translation type="unfinished">Աղբյուրների թիվը պիտի նշվի: Բոլոր այլ արժեքները ավտոմատ փոխվել են: Դուք կարող եք նշել յուրաքանչյուր աղբյուր, որպես ռադիո: Դասերը կարող են բաժանվել ստորակետներով (,):</translation>
+    </message>
+    <message>
+        <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
+        <translation type="unfinished">Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</translation>
+    </message>
+    <message>
+        <source>Editor will automatically try to map current XMLTV IDs to channels in the list. You may still need to check for possible errors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
+        <translation type="unfinished">&lt;h3&gt;Ձևաչափեր և արտահանում&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>Editor supports its own modified M3U as well as unmodified M3U and CSV files. Beside these formats you can also save/export to M3U with Udpxy URLs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can set custom radio category in settings (defaults to Radio).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
+        <translation type="unfinished">&lt;h3&gt;Փնտրել աղբյուրներ&lt;/h3&gt;</translation>
+    </message>
+    <message>
+        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsFilterModel</name>
+    <message>
+        <source>Channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Բոլոր դասերը</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Բոլոր լեզուները</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsImportCSV</name>
+    <message>
+        <source>CSV file structure</source>
+        <translation type="unfinished">CSV նիշքի կառուցվածքը</translation>
+    </message>
+    <message>
+        <source>Separator:</source>
+        <translation type="unfinished">Բաժանիչ`</translation>
+    </message>
+    <message>
+        <source>;</source>
+        <translation type="unfinished">;</translation>
+    </message>
+    <message>
+        <source>First line:</source>
+        <translation type="unfinished">Առաջին գիծ</translation>
+    </message>
+    <message>
+        <source>First line contains column names</source>
+        <translation type="unfinished">Առաջին տողը պարունակում է սյունակի անվանում</translation>
+    </message>
+    <message>
+        <source>First line does not contain column names</source>
+        <translation type="unfinished">Առաջին տողը չի պարունակում սյունակի անվանում</translation>
+    </message>
+    <message>
+        <source>Column list:</source>
+        <translation type="unfinished">Սյունակի ցանկ`</translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
+        <translation type="unfinished">&lt;i&gt;Խնդրում ենք չդասավորել սյունակները սկզբից վերջ:&lt;/i&gt;</translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation type="unfinished">Թիվ</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished">Աղբյուր</translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished">Հասցե</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Լեզու</translation>
+    </message>
+    <message>
+        <source>EPG ID</source>
+        <translation type="unfinished">EPG ID</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsPrint</name>
+    <message>
+        <source>#</source>
+        <translation type="unfinished">#</translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished">Աղբյուր</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url</source>
+        <translation type="unfinished">Հասցե</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Լեզու</translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished">XMLTV ID</translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exported with %1 on %2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsPrintDialog</name>
+    <message>
+        <source>Print channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select information for printing:</source>
+        <translation type="unfinished">Նշել տեղեկությունը տպելու համար.</translation>
+    </message>
+    <message>
+        <source>Channel number</source>
+        <translation type="unfinished">Աղբյուրի թիվ</translation>
+    </message>
+    <message>
+        <source>Channel name</source>
+        <translation type="unfinished">Աղնյուրի անվանում</translation>
+    </message>
+    <message>
+        <source>Channel type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished">Հասցե</translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished">Լեզու</translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished">XMLTV ID</translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsScan</name>
+    <message>
+        <source>IP Range:</source>
+        <translation type="unfinished">IP հզորություն`</translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation type="unfinished">Port:</translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation type="unfinished">Ժամանակ`</translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation type="unfinished"> ms</translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation type="unfinished">Փնտրել և թարմացնել</translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
+        <translation type="unfinished">Նոր աղբյուր համար %1 ծրումից:</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsTab</name>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished">Բոլոր դասերը</translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished">Բոլոր լեզուները</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsUpdate</name>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -99,7 +566,7 @@
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Չի կարդացվում նիշքը` %1:
+        <translation type="vanished">Չի կարդացվում նիշքը` %1:
 %2.</translation>
     </message>
     <message>
@@ -132,11 +599,11 @@
     </message>
     <message>
         <source>&amp;Open channel list</source>
-        <translation>&amp;Բացել աղբյուրների ցանկը</translation>
+        <translation type="vanished">&amp;Բացել աղբյուրների ցանկը</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Բացել աղբյուրների ցանկը</translation>
+        <translation type="vanished">Բացել աղբյուրների ցանկը</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
@@ -200,7 +667,7 @@
     </message>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>Ստեղնաշարային դյուրանցումներ</translation>
+        <translation type="vanished">Ստեղնաշարային դյուրանցումներ</translation>
     </message>
     <message>
         <source>Instant recording</source>
@@ -231,10 +698,6 @@
         <translation type="unfinished">Տեղեկություն</translation>
     </message>
     <message>
-        <source>Logout and Exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
@@ -248,16 +711,16 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Instant</source>
+        <translation type="unfinished">Ակնթարթ</translation>
+    </message>
+    <message>
         <source>Check for updates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit playlist</source>
+        <source>Edit channels list</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Instant</source>
-        <translation type="unfinished">Ակնթարթ</translation>
     </message>
 </context>
 <context>
@@ -434,501 +897,371 @@ This will stop recording in progress.</source>
     </message>
 </context>
 <context>
-    <name>PlaylistDisplayWidget</name>
-    <message>
-        <source>Play</source>
-        <translation type="unfinished">Սկսել</translation>
-    </message>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished">Գրաֆիկ</translation>
-    </message>
-</context>
-<context>
     <name>PlaylistEditor</name>
     <message>
         <source>Tano Editor</source>
-        <translation>Tano Խմբագրիչ</translation>
+        <translation type="vanished">Tano Խմբագրիչ</translation>
     </message>
     <message>
         <source>Playlist name:</source>
-        <translation>Ցանկի անվանումը`</translation>
+        <translation type="vanished">Ցանկի անվանումը`</translation>
     </message>
     <message>
         <source>Number of channels:</source>
-        <translation>Աղբյուրների քանակը`</translation>
+        <translation type="vanished">Աղբյուրների քանակը`</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>Օգնություն</translation>
+        <translation type="vanished">Օգնություն</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>Գործիքներ</translation>
+        <translation type="vanished">Գործիքներ</translation>
     </message>
     <message>
         <source>Number:</source>
-        <translation>Համար`</translation>
+        <translation type="vanished">Համար`</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation>Անվանում`</translation>
+        <translation type="vanished">Անվանում`</translation>
     </message>
     <message>
         <source>Categories:</source>
-        <translation>Դասեր`</translation>
+        <translation type="vanished">Դասեր`</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation>Լեզու`</translation>
+        <translation type="vanished">Լեզու`</translation>
     </message>
     <message>
         <source>Url:</source>
-        <translation>Հասցե`</translation>
+        <translation type="vanished">Հասցե`</translation>
     </message>
     <message>
         <source>Logo:</source>
-        <translation>Նշան`</translation>
+        <translation type="vanished">Նշան`</translation>
     </message>
     <message>
         <source>Add channel</source>
-        <translation>Ավելացնել աղբյուր</translation>
+        <translation type="vanished">Ավելացնել աղբյուր</translation>
     </message>
     <message>
         <source>Delete channel</source>
-        <translation>Ջնջել աղբյուր</translation>
+        <translation type="vanished">Ջնջել աղբյուր</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>Պահել</translation>
+        <translation type="vanished">Պահել</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Փակել</translation>
+        <translation type="vanished">Փակել</translation>
     </message>
     <message>
         <source>Move up</source>
-        <translation>Բարձրացնել</translation>
+        <translation type="vanished">Բարձրացնել</translation>
     </message>
     <message>
         <source>Move down</source>
-        <translation>Իջեցնել</translation>
+        <translation type="vanished">Իջեցնել</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation>Տպել</translation>
+        <translation type="vanished">Տպել</translation>
     </message>
     <message>
         <source>Export</source>
-        <translation>Արտահանել</translation>
+        <translation type="vanished">Արտահանել</translation>
     </message>
     <message>
         <source>Open</source>
-        <translation>Բացել</translation>
-    </message>
-    <message>
-        <source>About</source>
-        <translation type="vanished">Տեղեկություն</translation>
+        <translation type="vanished">Բացել</translation>
     </message>
     <message>
         <source>New playlist</source>
-        <translation>Նոր ցանկ</translation>
+        <translation type="vanished">Նոր ցանկ</translation>
     </message>
     <message>
         <source>Tvheadend</source>
-        <translation>Tvheadend</translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="vanished">Կարգավորումներ</translation>
+        <translation type="vanished">Tvheadend</translation>
     </message>
     <message>
         <source>XMLTV IDs</source>
-        <translation>XMLTV ID-ներ</translation>
-    </message>
-    <message>
-        <source>Update Information</source>
-        <translation type="vanished">Թարմացնել տեղեկությունը</translation>
+        <translation type="vanished">XMLTV ID-ներ</translation>
     </message>
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>Չի լինում կարդալ նիշքը %1:
+        <translation type="vanished">Չի լինում կարդալ նիշքը %1:
 %2.</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Ցանկի խմբագրիչ</translation>
+        <translation type="vanished">Ցանկի խմբագրիչ</translation>
     </message>
     <message>
         <source>Do you want to create new playlist?
 You will lose any unsaved changes.</source>
-        <translation>Ցանկանո՞ւմ եք ստեղծել նոր ցանկ:
+        <translation type="vanished">Ցանկանո՞ւմ եք ստեղծել նոր ցանկ:
 Դուք կկորցնեք Ձեր արածները</translation>
     </message>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Չի կարողանում գրվել նիշքը %1:
+        <translation type="vanished">Չի կարողանում գրվել նիշքը %1:
 %2.</translation>
     </message>
     <message>
         <source>Export to M3U format with Udpxy URLs</source>
-        <translation>Արտահանել M3U ֆորմատով Udpxy հասցեների օգնությամբ</translation>
+        <translation type="vanished">Արտահանել M3U ֆորմատով Udpxy հասցեների օգնությամբ</translation>
     </message>
     <message>
         <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</translation>
+        <translation type="vanished">You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</translation>
     </message>
     <message>
         <source>Do you want close the editor?
 You will lose any unsaved changes.</source>
-        <translation>Վստա՞հ եք, որ ցանկանում եք փակել խմբագրիչը:
+        <translation type="vanished">Վստա՞հ եք, որ ցանկանում եք փակել խմբագրիչը:
 Դուք կկորցնեք չպահված փոփոխությունները:</translation>
     </message>
     <message>
         <source>A channel with this number already exists!</source>
-        <translation>Այս թվով աղբյուր արդեն գոյություն ունի:</translation>
+        <translation type="vanished">Այս թվով աղբյուր արդեն գոյություն ունի:</translation>
     </message>
     <message>
         <source>Edit channel</source>
-        <translation>Խմբագրել աղբյուրը</translation>
-    </message>
-    <message>
-        <source>Scan for new channels</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Խմբագրել աղբյուրը</translation>
     </message>
     <message>
         <source>XMLTV ID:</source>
-        <translation>XMLTV ID`</translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Auto XMLTV map</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please wait for XMLTV file to parse.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - %2 Editor</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">XMLTV ID`</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditorHelp</name>
     <message>
         <source>Tano Editor - Help</source>
-        <translation>Tano Editor - Օգնություն</translation>
+        <translation type="vanished">Tano Editor - Օգնություն</translation>
     </message>
     <message>
         <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
-        <translation>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</translation>
+        <translation type="vanished">&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</translation>
     </message>
     <message>
         <source>&lt;b&gt;You can edit your IP TV playlist, print it or export it to desired format.&lt;/b&gt;</source>
-        <translation>&lt;b&gt;Դուք կարող եք խմբագրել Ձեր IP TV ցանկը, տպել այն կամ արտահանել ցանկացած ձևաչափով:&lt;/b&gt;</translation>
+        <translation type="vanished">&lt;b&gt;Դուք կարող եք խմբագրել Ձեր IP TV ցանկը, տպել այն կամ արտահանել ցանկացած ձևաչափով:&lt;/b&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Խմբագրվում են աղբյուրները&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Խմբագրվում են աղբյուրները&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
-        <translation>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</translation>
+        <translation type="vanished">Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Ձևաչափեր և արտահանում&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Ձևաչափեր և արտահանում&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
-        <translation>&lt;h3&gt;Փնտրել աղբյուրներ&lt;/h3&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Փնտրել աղբյուրներ&lt;/h3&gt;</translation>
     </message>
     <message>
         <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
-        <translation>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</translation>
+        <translation type="vanished">You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</translation>
     </message>
     <message>
         <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
-        <translation>Աղբյուրների թիվը պիտի նշվի: Բոլոր այլ արժեքները ավտոմատ փոխվել են: Դուք կարող եք նշել յուրաքանչյուր աղբյուր, որպես ռադիո: Դասերը կարող են բաժանվել ստորակետներով (,):</translation>
-    </message>
-    <message>
-        <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Աղբյուրների թիվը պիտի նշվի: Բոլոր այլ արժեքները ավտոմատ փոխվել են: Դուք կարող եք նշել յուրաքանչյուր աղբյուր, որպես ռադիո: Դասերը կարող են բաժանվել ստորակետներով (,):</translation>
     </message>
 </context>
 <context>
     <name>PlaylistEditorScan</name>
     <message>
         <source>IP Range:</source>
-        <translation>IP հզորություն`</translation>
+        <translation type="vanished">IP հզորություն`</translation>
     </message>
     <message>
         <source>Port:</source>
-        <translation>Port:</translation>
+        <translation type="vanished">Port:</translation>
     </message>
     <message>
         <source>Timeout:</source>
-        <translation>Ժամանակ`</translation>
+        <translation type="vanished">Ժամանակ`</translation>
     </message>
     <message>
         <source> ms</source>
-        <translation> ms</translation>
+        <translation type="vanished"> ms</translation>
     </message>
     <message>
         <source>Scan and update</source>
-        <translation>Փնտրել և թարմացնել</translation>
+        <translation type="vanished">Փնտրել և թարմացնել</translation>
     </message>
     <message>
         <source>New channel from scan %1</source>
-        <translation>Նոր աղբյուր համար %1 ծրումից:</translation>
+        <translation type="vanished">Նոր աղբյուր համար %1 ծրումից:</translation>
     </message>
     <message>
         <source>Playlist Editor</source>
-        <translation>Ցանկի խմբագրիչ</translation>
+        <translation type="vanished">Ցանկի խմբագրիչ</translation>
     </message>
 </context>
 <context>
     <name>PlaylistExportTvheadend</name>
     <message>
         <source>Export to Tvheadend IP TV services</source>
-        <translation>Արտահանել Tvheadend IP TV ծառայություններ</translation>
+        <translation type="vanished">Արտահանել Tvheadend IP TV ծառայություններ</translation>
     </message>
     <message>
         <source>Output location:</source>
-        <translation>Արտահանելու վայրը`</translation>
+        <translation type="vanished">Արտահանելու վայրը`</translation>
     </message>
     <message>
         <source>...</source>
-        <translation>...</translation>
+        <translation type="vanished">...</translation>
     </message>
     <message>
         <source>Network interface:</source>
-        <translation>Ցանցի տեսք`</translation>
+        <translation type="vanished">Ցանցի տեսք`</translation>
     </message>
     <message>
         <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
-        <translation>&lt;i&gt;&lt;b&gt;Ուշադրությո՜ւն. Սա կջնջի բոլոր եղած աղբյուրները:&lt;/b&gt;&lt;/a&gt;</translation>
+        <translation type="vanished">&lt;i&gt;&lt;b&gt;Ուշադրությո՜ւն. Սա կջնջի բոլոր եղած աղբյուրները:&lt;/b&gt;&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
     <name>PlaylistFilterModel</name>
     <message>
         <source>All categories</source>
-        <translation>Բոլոր դասերը</translation>
+        <translation type="vanished">Բոլոր դասերը</translation>
     </message>
     <message>
         <source>All languages</source>
-        <translation>Բոլոր լեզուները</translation>
-    </message>
-    <message>
-        <source>Playlist</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Բոլոր լեզուները</translation>
     </message>
 </context>
 <context>
     <name>PlaylistImportCSV</name>
     <message>
         <source>CSV file structure</source>
-        <translation>CSV նիշքի կառուցվածքը</translation>
+        <translation type="vanished">CSV նիշքի կառուցվածքը</translation>
     </message>
     <message>
         <source>Separator:</source>
-        <translation>Բաժանիչ`</translation>
+        <translation type="vanished">Բաժանիչ`</translation>
     </message>
     <message>
         <source>;</source>
-        <translation>;</translation>
+        <translation type="vanished">;</translation>
     </message>
     <message>
         <source>First line:</source>
-        <translation>Առաջին գիծ</translation>
+        <translation type="vanished">Առաջին գիծ</translation>
     </message>
     <message>
         <source>First line contains column names</source>
-        <translation>Առաջին տողը պարունակում է սյունակի անվանում</translation>
+        <translation type="vanished">Առաջին տողը պարունակում է սյունակի անվանում</translation>
     </message>
     <message>
         <source>First line does not contain column names</source>
-        <translation>Առաջին տողը չի պարունակում սյունակի անվանում</translation>
+        <translation type="vanished">Առաջին տողը չի պարունակում սյունակի անվանում</translation>
     </message>
     <message>
         <source>Column list:</source>
-        <translation>Սյունակի ցանկ`</translation>
+        <translation type="vanished">Սյունակի ցանկ`</translation>
     </message>
     <message>
         <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
-        <translation>&lt;i&gt;Խնդրում ենք չդասավորել սյունակները սկզբից վերջ:&lt;/i&gt;</translation>
+        <translation type="vanished">&lt;i&gt;Խնդրում ենք չդասավորել սյունակները սկզբից վերջ:&lt;/i&gt;</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation>Թիվ</translation>
+        <translation type="vanished">Թիվ</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>Աղբյուր</translation>
+        <translation type="vanished">Աղբյուր</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Դասակարգեր</translation>
+        <translation type="vanished">Դասակարգեր</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Լեզու</translation>
+        <translation type="vanished">Լեզու</translation>
     </message>
     <message>
         <source>EPG ID</source>
-        <translation>EPG ID</translation>
+        <translation type="vanished">EPG ID</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>Հասցե</translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistTab</name>
-    <message>
-        <source>All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>TV</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All categories</source>
-        <translation type="unfinished">Բոլոր դասերը</translation>
-    </message>
-    <message>
-        <source>All languages</source>
-        <translation type="unfinished">Բոլոր լեզուները</translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistUpdate</name>
-    <message>
-        <source>Cannot read file %1:
-%2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Հասցե</translation>
     </message>
 </context>
 <context>
     <name>Print</name>
     <message>
         <source>#</source>
-        <translation>#</translation>
+        <translation type="vanished">#</translation>
     </message>
     <message>
         <source>Channel</source>
-        <translation>Աղբյուր</translation>
+        <translation type="vanished">Աղբյուր</translation>
     </message>
     <message>
         <source>Url</source>
-        <translation>Հասցե</translation>
+        <translation type="vanished">Հասցե</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Դասակարգեր</translation>
+        <translation type="vanished">Դասակարգեր</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Լեզու</translation>
+        <translation type="vanished">Լեզու</translation>
     </message>
     <message>
         <source>XMLTV ID</source>
-        <translation>XMLTV ID</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Logo</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Exported with %1 on %2.</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">XMLTV ID</translation>
     </message>
 </context>
 <context>
     <name>PrintDialog</name>
     <message>
         <source>Print</source>
-        <translation>Տպել</translation>
+        <translation type="vanished">Տպել</translation>
     </message>
     <message>
         <source>Select information for printing:</source>
-        <translation>Նշել տեղեկությունը տպելու համար.</translation>
+        <translation type="vanished">Նշել տեղեկությունը տպելու համար.</translation>
     </message>
     <message>
         <source>Channel number</source>
-        <translation>Աղբյուրի թիվ</translation>
+        <translation type="vanished">Աղբյուրի թիվ</translation>
     </message>
     <message>
         <source>Channel name</source>
-        <translation>Աղնյուրի անվանում</translation>
+        <translation type="vanished">Աղնյուրի անվանում</translation>
     </message>
     <message>
         <source>URL</source>
-        <translation>Հասցե</translation>
+        <translation type="vanished">Հասցե</translation>
     </message>
     <message>
         <source>Categories</source>
-        <translation>Դասակարգե</translation>
+        <translation type="vanished">Դասակարգե</translation>
     </message>
     <message>
         <source>Language</source>
-        <translation>Լեզու</translation>
+        <translation type="vanished">Լեզու</translation>
     </message>
     <message>
         <source>Print channel List</source>
-        <translation>պելու աղբյուրների ցանկ</translation>
-    </message>
-    <message>
-        <source>Channel type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>XMLTV ID</source>
-        <translation type="unfinished">XMLTV ID</translation>
-    </message>
-    <message>
-        <source>Logo</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">պելու աղբյուրների ցանկ</translation>
     </message>
 </context>
 <context>
@@ -939,7 +1272,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Channel list</source>
-        <translation>Աղբյուրների ցանկ</translation>
+        <translation type="vanished">Աղբյուրների ցանկ</translation>
     </message>
     <message>
         <source>New channel</source>
@@ -957,7 +1290,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>The file is not a Tano updates file.</source>
-        <translation>Նիշքը Tano թարմացման նիշք չէ՜</translation>
+        <translation type="vanished">Նիշքը Tano թարմացման նիշք չէ՜</translation>
     </message>
     <message>
         <source>Once</source>
@@ -998,7 +1331,7 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>Չի կարողանում գրել նիշք %1:
+        <translation type="vanished">Չի կարողանում գրել նիշք %1:
 %2.</translation>
     </message>
     <message>
@@ -1031,7 +1364,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Բացել աղբյուրների ցանկը</translation>
+        <translation type="vanished">Բացել աղբյուրների ցանկը</translation>
     </message>
     <message>
         <source>Open URL or stream</source>
@@ -1043,7 +1376,7 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Tano M3U channel list files</source>
-        <translation>Tano M3U աղբյուրների ցանկի նիշքեր</translation>
+        <translation type="vanished">Tano M3U աղբյուրների ցանկի նիշքեր</translation>
     </message>
     <message>
         <source>Comma-separated values files</source>
@@ -1083,15 +1416,15 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>Sagem STB channel list files</source>
-        <translation>Sagem STB աղբյուրների ցանկերի նիշքեր</translation>
+        <translation type="vanished">Sagem STB աղբյուրների ցանկերի նիշքեր</translation>
     </message>
     <message>
         <source>CSV channel list</source>
-        <translation>CSV աղբյուրների ցանկ</translation>
+        <translation type="vanished">CSV աղբյուրների ցանկ</translation>
     </message>
     <message>
         <source>Sagem STB channel list</source>
-        <translation>Sagem STB աղբյուրների ցանկ</translation>
+        <translation type="vanished">Sagem STB աղբյուրների ցանկ</translation>
     </message>
     <message>
         <source>XMLTV file</source>
@@ -1150,52 +1483,8 @@ You will lose any unsaved changes.</source>
         <translation>XMLTV ID</translation>
     </message>
     <message>
-        <source>Missing mandatory argument for &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unknown option &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Usage: %1 [options]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>IP TV playback:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Play channel by number</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use playlist file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use XMLTV file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open URL</source>
         <translation type="unfinished">Բացել հասցեն</translation>
-    </message>
-    <message>
-        <source>Playback options:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set audio output</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set video output</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error:</source>
@@ -1478,19 +1767,123 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Try &apos;%1 %2&apos; for more information.</source>
+        <source>Play / Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>GoTV channel list</source>
+        <source>Stop</source>
+        <translation type="unfinished">Դադարեցնել</translation>
+    </message>
+    <message>
+        <source>Next channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The file is not a GoTV channel list file.</source>
+        <source>Previous channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown title</source>
+        <source>Fullscreen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mute</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished">Հեռագիր</translation>
+    </message>
+    <message>
+        <source>Volume up</source>
+        <translation type="unfinished">Ձայնը բարձր</translation>
+    </message>
+    <message>
+        <source>Volume down</source>
+        <translation type="unfinished">Ձայնը ցածր</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Ձայնագրիչ</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished">Գրաֆիկ</translation>
+    </message>
+    <message>
+        <source>Current show info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="unfinished">Միշտ վերևում</translation>
+    </message>
+    <message>
+        <source>Simple mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide to tray</source>
+        <translation type="unfinished">Գցել ներքևը</translation>
+    </message>
+    <message>
+        <source>Instant recording</source>
+        <translation type="unfinished">Ակնթարթային ձայնագրում</translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Preview channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next audio track</source>
+        <translation type="unfinished">Հաջորդ ձայնանշոցը</translation>
+    </message>
+    <message>
+        <source>Next video track</source>
+        <translation type="unfinished">Հաջորդ տեսանյութը</translation>
+    </message>
+    <message>
+        <source>Next subtitle track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next aspect ratio mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next crop mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next scale/zoom mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next deinterlacing mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano M3U channels list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV channels list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1498,7 +1891,7 @@ You will lose any unsaved changes.</source>
     <name>QtKeySequenceEdit</name>
     <message>
         <source>Clear Shortcut</source>
-        <translation>Մաքրել դյուրանցումը</translation>
+        <translation type="vanished">Մաքրել դյուրանցումը</translation>
     </message>
 </context>
 <context>
@@ -1644,10 +2037,6 @@ This operation is ireversible.</source>
         <translation type="unfinished">Ձայնագրիչ</translation>
     </message>
     <message>
-        <source>You don&apos;t have this channel in your playlist.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>New recording</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1655,13 +2044,13 @@ This operation is ireversible.</source>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>You don&apos;t have this channel in your channels list.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RecorderTimersEditor</name>
-    <message>
-        <source>Timers</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Date:</source>
         <translation type="unfinished"></translation>
@@ -1768,17 +2157,13 @@ Your changes will not be saved.</source>
     </message>
 </context>
 <context>
-    <name>SettingsBackend</name>
+    <name>SettingsDialog</name>
     <message>
-        <source>VLC-Qt Backend</source>
+        <source>General</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Using Videolan VLC version:</source>
+        <source>Interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1786,19 +2171,82 @@ Your changes will not be saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Default subtitle language:</source>
+        <source>Application language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Default audio language:</source>
+        <source>Autoplay last channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Disabled</source>
-        <translation type="unfinished">Անջատված է</translation>
+        <source>Mute on minimize</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Other</source>
+        <source>Snapshots folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recordings folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show tray icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tray icon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimise to tray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mouse wheel:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change volume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double click the keyboard shortcut you want to edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsPlayback</name>
+    <message>
+        <source>Remember video settings:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For all channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1814,51 +2262,27 @@ Your changes will not be saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Original</source>
-        <translation type="unfinished">Իսկական</translation>
+        <source>Default audio language:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Discard</source>
-        <translation type="unfinished">Հրաժարվել</translation>
+        <source>Automatic</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Blend</source>
-        <translation type="unfinished">Խառնուրդ</translation>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Mean</source>
-        <translation type="unfinished">Մեջտեղ</translation>
+        <source>Default subtitle language:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Bob</source>
-        <translation type="unfinished">Bob</translation>
-    </message>
-    <message>
-        <source>Linear</source>
-        <translation type="unfinished">Գծային</translation>
-    </message>
-    <message>
-        <source>X</source>
-        <translation type="unfinished">X</translation>
+        <source>Disabled</source>
+        <translation type="unfinished">Անջատված է</translation>
     </message>
     <message>
         <source>Enable teletext (requires restart)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Video output:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Audio output:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1870,264 +2294,30 @@ Your changes will not be saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Misc</source>
+        <source>Video output (advanced):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Mute on minimize</source>
-        <translation type="unfinished"></translation>
+        <source>Original</source>
+        <translation type="unfinished">Իսկական</translation>
     </message>
     <message>
-        <source>Remember video settings:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For all channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Per channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable</source>
+        <source>Default</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>SettingsTv</name>
     <message>
-        <source>Settings</source>
-        <translation type="unfinished">Կարգավորումներ</translation>
-    </message>
-    <message>
-        <source>General</source>
+        <source>Channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Playlist</source>
-        <extracomment>Please make manual line breaks if text too long!</extracomment>
+        <source>Default channels list:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Interface</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Playback</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished">Գրաֆիկ</translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="unfinished">Ձայնագրիչ</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialogShortcuts</name>
-    <message>
-        <source>Keyboard shortcuts</source>
-        <translation type="unfinished">Ստեղնաշարային դյուրանցումներ</translation>
-    </message>
-    <message>
-        <source>Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Play / Pause</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation type="unfinished">Դադարեցնել</translation>
-    </message>
-    <message>
-        <source>Next channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Previous channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fullscreen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mute</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Teletext</source>
-        <translation type="unfinished">Հեռագիր</translation>
-    </message>
-    <message>
-        <source>Volume up</source>
-        <translation type="unfinished">Ձայնը բարձր</translation>
-    </message>
-    <message>
-        <source>Volume down</source>
-        <translation type="unfinished">Ձայնը ցածր</translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="unfinished">Ձայնագրիչ</translation>
-    </message>
-    <message>
-        <source>Open File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open URL</source>
-        <translation type="unfinished">Բացել հասցեն</translation>
-    </message>
-    <message>
-        <source>Open Channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="unfinished">Կարգավորումներ</translation>
-    </message>
-    <message>
-        <source>Always on top</source>
-        <translation type="unfinished">Միշտ վերևում</translation>
-    </message>
-    <message>
-        <source>Simple Mode</source>
-        <translation type="unfinished">Հասարակ ձև</translation>
-    </message>
-    <message>
-        <source>Hide to tray</source>
-        <translation type="unfinished">Գցել ներքևը</translation>
-    </message>
-    <message>
-        <source>Next audio track</source>
-        <translation type="unfinished">Հաջորդ ձայնանշոցը</translation>
-    </message>
-    <message>
-        <source>Next video track</source>
-        <translation type="unfinished">Հաջորդ տեսանյութը</translation>
-    </message>
-    <message>
-        <source>Next subtitle track</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next aspect ratio mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next crop mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next deinterlace mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Instant recording</source>
-        <translation type="unfinished">Ակնթարթային ձայնագրում</translation>
-    </message>
-    <message>
-        <source>Take snapshot</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next scale/zoom mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Preview channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished">Գրաֆիկ</translation>
-    </message>
-    <message>
-        <source>Current show info</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsGeneral</name>
-    <message>
-        <source>Language</source>
-        <translation type="unfinished">Լեզու</translation>
-    </message>
-    <message>
-        <source>System default language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Session store</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remember volume</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Autoplay last channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Restore defaults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You are using %1 version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsPlaylist</name>
-    <message>
-        <source>Default playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Network refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Refresh playlist on startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Playlist URL:</source>
+        <source>Default HD category:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2135,57 +2325,19 @@ Your changes will not be saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>UDPXY support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Enable UDPXY support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Router IP or name:</source>
+        <source>Server address:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Router port:</source>
-        <translation type="unfinished"></translation>
+        <source>Schedule</source>
+        <translation type="unfinished">Գրաֆիկ</translation>
     </message>
     <message>
-        <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Channel types categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default HD category:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsRecorder</name>
-    <message>
-        <source>Default recording directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default snapshots directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsSchedule</name>
-    <message>
-        <source>XMLTV settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Refresh XMLTV file on startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download file</source>
+        <source>Source type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2193,74 +2345,19 @@ Your changes will not be saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
+        <source>Download file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time offset:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source> h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Offset:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsUi</name>
-    <message>
-        <source>General Interface Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Change channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Change volume</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Minimise to tray</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show tray icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mouse wheel:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tray icon:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show on mouse move</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remember main window size, position and open panels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Icon theme</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Desktop theme</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OSD in fullscreen:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

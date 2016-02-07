@@ -5,18 +5,37 @@
     <name>AboutDialog</name>
     <message>
         <source>About</source>
-        <translation>Hakkında</translation>
+        <translation type="vanished">Hakkında</translation>
     </message>
     <message>
-        <source>Tano is an open-source cross-platform IP TV player which features full IP TV playback with EPG and recorder.</source>
+        <source>About %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Multimedia backend powered by VLC-Qt %1.</source>
+        <source>Copyright %1 %2 %3&lt;br&gt;All rights reserved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;b&gt;This application is based on Tano %1.&lt;/b&gt;</source>
+        <source>Using VLC %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backend</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Icons</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Libraries</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>BrowseWidget</name>
+    <message>
+        <source>Browse…</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -33,6 +52,455 @@
     <message>
         <source>Radio</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsDisplayWidget</name>
+    <message>
+        <source>Play</source>
+        <translation type="unfinished">Oynat</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished">Planlama</translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsEditor</name>
+    <message>
+        <source>Tano Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channels list name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of channels:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>HD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radio</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Categories:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language:</source>
+        <translation type="unfinished">Dil:</translation>
+    </message>
+    <message>
+        <source>XMLTV ID:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logo:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan for new channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV IDs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto XMLTV map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 - %2 Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">%1 dosyası okunmadı:
+%2</translation>
+    </message>
+    <message>
+        <source>Channels Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to create new channels list?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot write file %1:
+%2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to M3U format with Udpxy URLs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You need to have valid Udpxy settings or the exported channels list will contain classic URLs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want close the editor?
+You will lose any unsaved changes.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please wait for XMLTV file to parse.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A channel with this number already exists!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsEditorHelp</name>
+    <message>
+        <source>Tano Editor - Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;You can edit your IP TV channels list, print it or export it to desired format.&lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor will automatically try to map current XMLTV IDs to channels in the list. You may still need to check for possible errors.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Editor supports its own modified M3U as well as unmodified M3U and CSV files. Beside these formats you can also save/export to M3U with Udpxy URLs.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can set custom radio category in settings (defaults to Radio).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsFilterModel</name>
+    <message>
+        <source>Channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsImportCSV</name>
+    <message>
+        <source>CSV file structure</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Separator:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First line:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First line contains column names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>First line does not contain column names</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Column list:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>EPG ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsPrint</name>
+    <message>
+        <source>#</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Url</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exported with %1 on %2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsPrintDialog</name>
+    <message>
+        <source>Print channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select information for printing:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channel type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>URL</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>XMLTV ID</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Logo</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsScan</name>
+    <message>
+        <source>IP Range:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Timeout:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> ms</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Scan and update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New channel from scan %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsTab</name>
+    <message>
+        <source>All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All categories</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All languages</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ChannelsUpdate</name>
+    <message>
+        <source>Cannot read file %1:
+%2.</source>
+        <translation type="unfinished">%1 dosyası okunmadı:
+%2</translation>
     </message>
 </context>
 <context>
@@ -99,7 +567,7 @@
     <message>
         <source>Cannot read file %1:
 %2.</source>
-        <translation>%1 dosyası okunmadı:
+        <translation type="vanished">%1 dosyası okunmadı:
 %2</translation>
     </message>
     <message>
@@ -132,11 +600,11 @@
     </message>
     <message>
         <source>&amp;Open channel list</source>
-        <translation>&amp;Kanal listesini aç</translation>
+        <translation type="vanished">&amp;Kanal listesini aç</translation>
     </message>
     <message>
         <source>Open channel list</source>
-        <translation>Kanal listesini aç</translation>
+        <translation type="vanished">Kanal listesini aç</translation>
     </message>
     <message>
         <source>Open &amp;File</source>
@@ -200,7 +668,7 @@
     </message>
     <message>
         <source>Keyboard shortcuts</source>
-        <translation>Klavye kısayolları</translation>
+        <translation type="vanished">Klavye kısayolları</translation>
     </message>
     <message>
         <source>Instant recording</source>
@@ -231,10 +699,6 @@
         <translation type="unfinished">Hakkında</translation>
     </message>
     <message>
-        <source>Logout and Exit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Are you sure you want to exit?
 This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
@@ -248,15 +712,15 @@ This will stop recording in progress.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Instant</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Check for updates...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Edit playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Instant</source>
+        <source>Edit channels list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -433,498 +897,10 @@ This will stop recording in progress.</source>
     </message>
 </context>
 <context>
-    <name>PlaylistDisplayWidget</name>
-    <message>
-        <source>Play</source>
-        <translation type="unfinished">Oynat</translation>
-    </message>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished">Planlama</translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistEditor</name>
-    <message>
-        <source>Tano Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Playlist name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Number of channels:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Toolbar</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Number:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Categories:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Language:</source>
-        <translation type="unfinished">Dil:</translation>
-    </message>
-    <message>
-        <source>Url:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Logo:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Add channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Delete channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="unfinished">Kapat</translation>
-    </message>
-    <message>
-        <source>Move up</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move down</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Print</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tvheadend</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>XMLTV IDs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cannot read file %1:
-%2.</source>
-        <translation type="unfinished">%1 dosyası okunmadı:
-%2</translation>
-    </message>
-    <message>
-        <source>Playlist Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Do you want to create new playlist?
-You will lose any unsaved changes.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cannot write file %1:
-%2.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export to M3U format with Udpxy URLs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You need to have valid Udpxy settings or the exported playlist will contain classic URLs.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Do you want close the editor?
-You will lose any unsaved changes.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>A channel with this number already exists!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Edit channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan for new channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>XMLTV ID:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>SD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>HD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radio</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Other</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Auto XMLTV map</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please wait for XMLTV file to parse.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 - %2 Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistEditorHelp</name>
-    <message>
-        <source>Tano Editor - Help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h2&gt;Tano Editor - Help&lt;/h2&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;You can edit your IP TV playlist, print it or export it to desired format.&lt;/b&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Editing channels&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Full URL needs to be provided for the channel logo. Pictures will be scaled to fit the interface.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Formats and export&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Scan for channels&lt;/h3&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You can set custom radio category in settings (defaults to Radio) for exporting to Sagem JS and CSV. Only the first category or radio category will be exported to Sagem JS.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The number of a channel needs to be applied. All other values are automatically changed. You can set any channel as radio. Categories can be separated by comma (,).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Editor will automatically try to map current XMLTV IDs to channels in playlist. You may still need to check for possible errors.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Editor supports its own modified M3U as well as unmodified M3U, CSV and Sagem JS files. Beside these formats you can also save/export to M3U with Udpxy URLs and Tvheadend configuration files.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You can scan for new channels using built in channels scanner. Please set valid IP range (e.g. 232.4.1) and port (e.g. 5000). All 255 IPs in this range will be scanned. A channel is added if it is detected before timeout.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistEditorScan</name>
-    <message>
-        <source>IP Range:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Port:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Timeout:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> ms</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Scan and update</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New channel from scan %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Playlist Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistExportTvheadend</name>
-    <message>
-        <source>Export to Tvheadend IP TV services</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Output location:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Network interface:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;&lt;b&gt;Warning: This will delete all existing channels!&lt;/b&gt;&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistFilterModel</name>
-    <message>
-        <source>All categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All languages</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistImportCSV</name>
-    <message>
-        <source>CSV file structure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Separator:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First line:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First line contains column names</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First line does not contain column names</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Column list:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;Please sort your columns from first to last.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Number</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>EPG ID</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistTab</name>
-    <message>
-        <source>All</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>TV</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>All languages</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PlaylistUpdate</name>
-    <message>
-        <source>Cannot read file %1:
-%2.</source>
-        <translation type="unfinished">%1 dosyası okunmadı:
-%2</translation>
-    </message>
-</context>
-<context>
-    <name>Print</name>
-    <message>
-        <source>#</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Url</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>XMLTV ID</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Logo</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Exported with %1 on %2.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>PrintDialog</name>
-    <message>
-        <source>Print</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select information for printing:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Channel number</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Channel name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>URL</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Print channel List</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Channel type</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>XMLTV ID</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Logo</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>QObject</name>
     <message>
         <source>Disabled</source>
         <translation type="unfinished">Pasif</translation>
-    </message>
-    <message>
-        <source>Channel list</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New channel</source>
@@ -937,10 +913,6 @@ You will lose any unsaved changes.</source>
     <message>
         <source>Parse error at line %1, column %2:
 %3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The file is not a Tano updates file.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -980,11 +952,6 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Cannot write file %1:
-%2.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>seconds</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1013,19 +980,11 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open channel list</source>
-        <translation type="unfinished">Kanal listesini aç</translation>
-    </message>
-    <message>
         <source>Open URL or stream</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Enter the URL of multimedia file or stream you want to play:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tano M3U channel list files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1062,18 +1021,6 @@ You will lose any unsaved changes.</source>
     </message>
     <message>
         <source>M3U (Udpxy URL) files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sagem STB channel list files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>CSV channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Sagem STB channel list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1133,52 +1080,8 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Missing mandatory argument for &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unknown option &apos;%1&apos;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Usage: %1 [options]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>IP TV playback:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Play channel by number</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use playlist file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use XMLTV file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open URL</source>
         <translation type="unfinished">URL Aç</translation>
-    </message>
-    <message>
-        <source>Playback options:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set audio output</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set video output</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Error:</source>
@@ -1461,26 +1364,123 @@ You will lose any unsaved changes.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Try &apos;%1 %2&apos; for more information.</source>
+        <source>Play / Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>GoTV channel list</source>
+        <source>Stop</source>
+        <translation type="unfinished">Dur</translation>
+    </message>
+    <message>
+        <source>Next channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The file is not a GoTV channel list file.</source>
+        <source>Previous channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown title</source>
+        <source>Fullscreen</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>QtKeySequenceEdit</name>
     <message>
-        <source>Clear Shortcut</source>
+        <source>Mute</source>
+        <translation type="unfinished">Sessiz</translation>
+    </message>
+    <message>
+        <source>Teletext</source>
+        <translation type="unfinished">Teletekst</translation>
+    </message>
+    <message>
+        <source>Volume up</source>
+        <translation type="unfinished">Sesi Aç</translation>
+    </message>
+    <message>
+        <source>Volume down</source>
+        <translation type="unfinished">Sesi Azalt</translation>
+    </message>
+    <message>
+        <source>Recorder</source>
+        <translation type="unfinished">Kaydedeci</translation>
+    </message>
+    <message>
+        <source>Schedule</source>
+        <translation type="unfinished">Planlama</translation>
+    </message>
+    <message>
+        <source>Current show info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Always on top</source>
+        <translation type="unfinished">Her zaman yukarıda</translation>
+    </message>
+    <message>
+        <source>Simple mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide to tray</source>
+        <translation type="unfinished">Tepsiyi gizle</translation>
+    </message>
+    <message>
+        <source>Instant recording</source>
+        <translation type="unfinished">Anlık kayıt</translation>
+    </message>
+    <message>
+        <source>Take snapshot</source>
+        <translation type="unfinished">Görüntüyü yakala</translation>
+    </message>
+    <message>
+        <source>Preview channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next audio track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next video track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next subtitle track</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next aspect ratio mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next crop mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next scale/zoom mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Next deinterlacing mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tano M3U channels list files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Channels list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>CSV channels list</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1627,10 +1627,6 @@ This operation is ireversible.</source>
         <translation type="unfinished">Kaydedeci</translation>
     </message>
     <message>
-        <source>You don&apos;t have this channel in your playlist.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>New recording</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1638,13 +1634,13 @@ This operation is ireversible.</source>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>You don&apos;t have this channel in your channels list.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RecorderTimersEditor</name>
-    <message>
-        <source>Timers</source>
-        <translation type="unfinished"></translation>
-    </message>
     <message>
         <source>Date:</source>
         <translation type="unfinished"></translation>
@@ -1751,17 +1747,13 @@ Your changes will not be saved.</source>
     </message>
 </context>
 <context>
-    <name>SettingsBackend</name>
+    <name>SettingsDialog</name>
     <message>
-        <source>VLC-Qt Backend</source>
+        <source>General</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Using Videolan VLC version:</source>
+        <source>Interface</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1769,19 +1761,82 @@ Your changes will not be saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Default subtitle language:</source>
+        <source>Application language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Default audio language:</source>
+        <source>Autoplay last channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Disabled</source>
-        <translation type="unfinished">Pasif</translation>
+        <source>Mute on minimize</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Other</source>
+        <source>Snapshots folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Recordings folder:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show tray icon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tray icon:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Minimise to tray</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change channel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mouse wheel:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Change volume</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double click the keyboard shortcut you want to edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>TV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>System default</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SettingsPlayback</name>
+    <message>
+        <source>Remember video settings:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Never</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>For all channels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Per channel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1797,51 +1852,27 @@ Your changes will not be saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Original</source>
-        <translation type="unfinished">Orjinal</translation>
-    </message>
-    <message>
-        <source>Discard</source>
+        <source>Default audio language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Blend</source>
+        <source>Automatic</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Mean</source>
+        <source>Other</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Bob</source>
+        <source>Default subtitle language:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Linear</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>X</source>
-        <translation type="unfinished"></translation>
+        <source>Disabled</source>
+        <translation type="unfinished">Pasif</translation>
     </message>
     <message>
         <source>Enable teletext (requires restart)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Video output:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Audio output:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1853,264 +1884,30 @@ Your changes will not be saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Misc</source>
+        <source>Video output (advanced):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Mute on minimize</source>
-        <translation type="unfinished"></translation>
+        <source>Original</source>
+        <translation type="unfinished">Orjinal</translation>
     </message>
     <message>
-        <source>Remember video settings:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>For all channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Per channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enable</source>
+        <source>Default</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>SettingsDialog</name>
+    <name>SettingsTv</name>
     <message>
-        <source>Settings</source>
+        <source>Channels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>General</source>
+        <source>Default channels list:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Playlist</source>
-        <extracomment>Please make manual line breaks if text too long!</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Interface</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Playback</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished">Planlama</translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="unfinished">Kaydedeci</translation>
-    </message>
-</context>
-<context>
-    <name>SettingsDialogShortcuts</name>
-    <message>
-        <source>Keyboard shortcuts</source>
-        <translation type="unfinished">Klavye kısayolları</translation>
-    </message>
-    <message>
-        <source>Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Key</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Play / Pause</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation type="unfinished">Dur</translation>
-    </message>
-    <message>
-        <source>Next channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Previous channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Fullscreen</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mute</source>
-        <translation type="unfinished">Sessiz</translation>
-    </message>
-    <message>
-        <source>Teletext</source>
-        <translation type="unfinished">Teletekst</translation>
-    </message>
-    <message>
-        <source>Volume up</source>
-        <translation type="unfinished">Sesi Aç</translation>
-    </message>
-    <message>
-        <source>Volume down</source>
-        <translation type="unfinished">Sesi Azalt</translation>
-    </message>
-    <message>
-        <source>Recorder</source>
-        <translation type="unfinished">Kaydedeci</translation>
-    </message>
-    <message>
-        <source>Open File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open URL</source>
-        <translation type="unfinished">URL Aç</translation>
-    </message>
-    <message>
-        <source>Open Channel list</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Always on top</source>
-        <translation type="unfinished">Her zaman yukarıda</translation>
-    </message>
-    <message>
-        <source>Simple Mode</source>
-        <translation type="unfinished">Basit Mod</translation>
-    </message>
-    <message>
-        <source>Hide to tray</source>
-        <translation type="unfinished">Tepsiyi gizle</translation>
-    </message>
-    <message>
-        <source>Next audio track</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next video track</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next subtitle track</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next aspect ratio mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next crop mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next deinterlace mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Instant recording</source>
-        <translation type="unfinished">Anlık kayıt</translation>
-    </message>
-    <message>
-        <source>Take snapshot</source>
-        <translation type="unfinished">Görüntüyü yakala</translation>
-    </message>
-    <message>
-        <source>-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Next scale/zoom mode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Preview channels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Schedule</source>
-        <translation type="unfinished">Planlama</translation>
-    </message>
-    <message>
-        <source>Current show info</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsGeneral</name>
-    <message>
-        <source>Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System default language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Session store</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remember volume</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Autoplay last channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Defaults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Restore defaults</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This will restore all your settings to default. You need to apply the changes, before they will take effect.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>You are using %1 version:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsPlaylist</name>
-    <message>
-        <source>Default playlist</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Network refresh</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Refresh playlist on startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Playlist URL:</source>
+        <source>Default HD category:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2118,57 +1915,19 @@ Your changes will not be saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>UDPXY support</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Enable UDPXY support</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Router IP or name:</source>
+        <source>Server address:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Router port:</source>
-        <translation type="unfinished"></translation>
+        <source>Schedule</source>
+        <translation type="unfinished">Planlama</translation>
     </message>
     <message>
-        <source>&lt;i&gt;Updating will not change your playlist order.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Channel types categories</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default HD category:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsRecorder</name>
-    <message>
-        <source>Default recording directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default snapshots directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsSchedule</name>
-    <message>
-        <source>XMLTV settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Refresh XMLTV file on startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Download file</source>
+        <source>Source type:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2176,74 +1935,19 @@ Your changes will not be saved.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;i&gt;XMLTV settings require restart.&lt;/i&gt;</source>
+        <source>Download file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Source:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Time offset:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source> h</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Offset:</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SettingsUi</name>
-    <message>
-        <source>General Interface Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Change channel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Change volume</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Minimise to tray</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show tray icon</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mouse wheel:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Tray icon:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show on mouse move</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remember main window size, position and open panels</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Icon theme</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Desktop theme</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;i&gt;This option requires restart.&lt;/i&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OSD in fullscreen:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2275,29 +1979,6 @@ Your changes will not be saved.</source>
     <message>
         <source>at</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>UpdateDialog</name>
-    <message>
-        <source>Close</source>
-        <translation type="vanished">Kapat</translation>
-    </message>
-    <message>
-        <source>Download</source>
-        <translation type="vanished">İndir</translation>
-    </message>
-    <message>
-        <source>View</source>
-        <translation type="vanished">Görüntü</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Changes in %1&lt;/h3&gt;</source>
-        <translation type="vanished">&lt;h3&gt;%1 içindeki değişiklikler&lt;/h3&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;A new update is available!&lt;/h3&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Yeni güncelleme mevcut&lt;/h3&gt;</translation>
     </message>
 </context>
 <context>
