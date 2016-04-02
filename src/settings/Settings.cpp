@@ -16,13 +16,21 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtCore/QStandardPaths>
+
 #include "Config.h"
 
 #include "application/Common.h"
 #include "settings/Settings.h"
 
 Settings::Settings(QObject *parent)
+#ifdef Q_OS_WIN
+    : QSettings(Settings::fileName(),
+                QSettings::IniFormat,
+                parent)
+#else
     : QSettings(parent)
+#endif
 {
     _map[KEY_LOCALE] = DEFAULT_LOCALE;
     _map[KEY_AUTOPLAY_LAST] = DEFAULT_AUTOPLAY_LAST;
@@ -69,6 +77,17 @@ Settings::Settings(QObject *parent)
 }
 
 Settings::~Settings() { }
+
+#ifdef Q_OS_WIN
+QString Settings::fileName()
+{
+#if QT_VERSION < 0x050400
+    return QStandardPaths::writableLocation(QStandardPaths::DataLocation) + "/Settings.ini";
+#else
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/Settings.ini";
+#endif
+}
+#endif
 
 void Settings::writeSettings()
 {

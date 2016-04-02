@@ -16,6 +16,8 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *****************************************************************************/
 
+#include <QtGui/QStandardItemModel>
+
 #include "application/LocaleManager.h"
 #include "settings/Settings.h"
 #include "settings/SettingsShortcutsDesktop.h"

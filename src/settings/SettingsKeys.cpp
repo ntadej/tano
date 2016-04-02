@@ -56,7 +56,7 @@ const QString Settings::KEY_VOUT = "backend/vout";
 const QString Settings::KEY_YUV_TO_RGB = "backend/yuvToRgb";
 #endif
 const QString Settings::KEY_SPDIF = "backend/spdif";
-#ifdef Q_OS_WIN
+#ifdef Q_OS_LINUX
 const QString Settings::KEY_TELETEXT = "backend/teletext";
 #endif
 

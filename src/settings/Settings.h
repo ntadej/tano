@@ -27,6 +27,10 @@ public:
     Settings(QObject *parent = 0);
     ~Settings();
 
+#ifdef Q_OS_WIN
+    static QString fileName();
+#endif
+
     void readSettings();
     void writeSettings();
 
