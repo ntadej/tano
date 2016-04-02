@@ -26,8 +26,6 @@
 #include "Theme.h"
 #include "Theme_p.h"
 
-//#include "../algorithm.h"
-
 #include <QApplication>
 #include <QFileInfo>
 #include <QMetaEnum>

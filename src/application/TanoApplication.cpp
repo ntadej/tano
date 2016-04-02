@@ -139,7 +139,7 @@ void TanoApplication::setMainStyle()
 
 void TanoApplication::setMainTheme()
 {
-    QSettings themeSettings(Tano::Resources::resource("DefaultTheme.ini"), QSettings::IniFormat);
+    QSettings themeSettings(Tano::Resources::resource("style/DefaultTheme.ini"), QSettings::IniFormat);
     Theme *theme = new Theme("Default", qApp);
     theme->readSettings(themeSettings);
     if (theme->flag(Theme::ApplyThemePaletteGlobally))

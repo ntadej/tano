@@ -34,6 +34,9 @@
 #include <QPaintEngine>
 #include <QWidget>
 
+static const qreal PunchEdgeWidth = 0.5;
+static const qreal PunchEdgeIntensity = 0.6;
+
 static QPixmap maskToColorAndAlpha(const QPixmap &mask, const QColor &color)
 {
     QImage result(mask.toImage().convertToFormat(QImage::Format_ARGB32));
@@ -91,9 +94,9 @@ static QPixmap combinedMask(const MasksAndColors &masks, Icon::IconStyleOptions 
     for (;maskImage != masks.constEnd(); ++maskImage) {
         if (style & Icon::PunchEdges) {
             p.save();
-            p.setOpacity(0.4);
+            p.setOpacity(PunchEdgeIntensity);
             p.setCompositionMode(QPainter::CompositionMode_Lighten);
-            smearPixmap(&p, maskToColorAndAlpha((*maskImage).first, Qt::white), 0.5);
+            smearPixmap(&p, maskToColorAndAlpha((*maskImage).first, Qt::white), PunchEdgeWidth);
             p.restore();
         }
         p.drawPixmap(0, 0, (*maskImage).first);
@@ -114,9 +117,9 @@ static QPixmap masksToIcon(const MasksAndColors &masks, const QPixmap &combinedM
         if (style & Icon::PunchEdges && maskImage != masks.constBegin()) {
             // Punch a transparent outline around an overlay.
             p.save();
-            p.setOpacity(0.4);
+            p.setOpacity(PunchEdgeIntensity);
             p.setCompositionMode(QPainter::CompositionMode_DestinationOut);
-            smearPixmap(&p, maskToColorAndAlpha((*maskImage).first, Qt::white), 0.5);
+            smearPixmap(&p, maskToColorAndAlpha((*maskImage).first, Qt::white), PunchEdgeWidth);
             p.restore();
         }
         p.drawPixmap(0, 0, maskToColorAndAlpha((*maskImage).first, (*maskImage).second));
@@ -176,12 +179,15 @@ QIcon Icon::icon() const
         return QIcon(combinedPlainPixmaps(*this));
     } else {
         QIcon result;
-        const MasksAndColors masks = masksAndColors(*this, qRound(qApp->devicePixelRatio()));
-        const QPixmap combined = combinedMask(masks, m_style);
-        result.addPixmap(masksToIcon(masks, combined, m_style));
+        const int maxDpr = qRound(qApp->devicePixelRatio());
+        for (int dpr = 1; dpr <= maxDpr; dpr++) {
+            const MasksAndColors masks = masksAndColors(*this, dpr);
+            const QPixmap combined = combinedMask(masks, m_style);
+            result.addPixmap(masksToIcon(masks, combined, m_style));
 
-        const QColor disabledColor = Tano::applicationTheme()->color(Theme::IconsDisabledColor);
-        result.addPixmap(maskToColorAndAlpha(combined, disabledColor), QIcon::Disabled);
+            const QColor disabledColor = Tano::applicationTheme()->color(Theme::IconsDisabledColor);
+            result.addPixmap(maskToColorAndAlpha(combined, disabledColor), QIcon::Disabled);
+        }
         return result;
     }
 }

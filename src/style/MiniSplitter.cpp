@@ -60,9 +60,9 @@ void MiniSplitterHandle::resizeEvent(QResizeEvent *event)
 void MiniSplitterHandle::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
-    const QColor color = m_lightColored
-            ? StyleHelper::borderColor(m_lightColored)
-            : Tano::applicationTheme()->color(Theme::SplitterColor);
+    const QColor color = Tano::applicationTheme()->color(
+                m_lightColored ? Theme::FancyToolBarSeparatorColor
+                               : Theme::SplitterColor);
     painter.fillRect(event->rect(), color);
 }
 

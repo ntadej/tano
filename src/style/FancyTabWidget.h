@@ -162,10 +162,13 @@ public:
 
     bool isSelectionWidgetVisible() const;
 
+    static void hoverOverlay(QPainter *painter, const QRect &spanRect);
+
 signals:
     void currentAboutToShow(int index);
     void currentChanged(int index);
     void currentChanged(QWidget *widget);
+    void topAreaClicked(Qt::MouseButton button, Qt::KeyboardModifiers modifiers);
 
 public slots:
     void setCurrentIndex(int index);
@@ -173,10 +176,9 @@ public slots:
     void setLiteMode(bool enabled);
     void setSelectionWidgetVisible(bool visible);
 
-private slots:
+private:
     void showWidget(int index);
 
-private:
     FancyTabBar *m_tabBar;
     QWidget *m_containerWidget;
     QWidget *m_cornerWidgetContainer;

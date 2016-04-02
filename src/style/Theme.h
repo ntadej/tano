@@ -27,8 +27,8 @@
 #include <QBrush> // QGradientStops
 #include <QObject>
 
-class QSettings;
-class QPalette;
+QT_FORWARD_DECLARE_CLASS(QSettings)
+QT_FORWARD_DECLARE_CLASS(QPalette)
 
 class ThemePrivate;
 
@@ -64,7 +64,6 @@ public:
         DetailsButtonBackgroundColorHover,
         DetailsWidgetBackgroundColor,
         DockWidgetResizeHandleColor,
-        DoubleTabWidget1stEmptyAreaBackgroundColor,
         DoubleTabWidget1stSeparatorColor,
         DoubleTabWidget1stTabActiveTextColor,
         DoubleTabWidget1stTabBackgroundColor,
@@ -74,6 +73,7 @@ public:
         DoubleTabWidget2ndTabBackgroundColor,
         DoubleTabWidget2ndTabInactiveTextColor,
         EditorPlaceholderColor,
+        FancyToolBarSeparatorColor,
         FancyTabBarBackgroundColor,
         FancyTabWidgetDisabledSelectedTextColor,
         FancyTabWidgetDisabledUnselectedTextColor,
@@ -108,6 +108,7 @@ public:
         ProgressBarColorFinished,
         ProgressBarColorNormal,
         ProgressBarTitleColor,
+        ProgressBarBackgroundColor,
         SplitterColor,
         TextColorDisabled,
         TextColorError,
@@ -132,8 +133,11 @@ public:
         IconsErrorColor,
         IconsErrorToolBarColor,
         IconsRunColor,
+        IconsRunToolBarColor,
         IconsStopColor,
+        IconsStopToolBarColor,
         IconsInterruptColor,
+        IconsInterruptToolBarColor,
         IconsDebugColor,
         IconsNavigationArrowsColor,
         IconsBuildHammerHandleColor,
@@ -146,6 +150,21 @@ public:
         IconsModeAnalyzeActiveColor,
         IconsModeHelpActiveColor,
 
+        /* Code model Icons */
+
+        IconsCodeModelKeywordColor,
+        IconsCodeModelClassColor,
+        IconsCodeModelStructColor,
+        IconsCodeModelFunctionColor,
+        IconsCodeModelVariableColor,
+        IconsCodeModelEnumColor,
+        IconsCodeModelMacroColor,
+        IconsCodeModelAttributeColor,
+        IconsCodeModelUniformColor,
+        IconsCodeModelVaryingColor,
+        IconsCodeModelOverlayBackgroundColor,
+        IconsCodeModelOverlayForegroundColor,
+
         /* Output panes */
 
         OutputPanes_DebugTextColor,
@@ -155,6 +174,14 @@ public:
         OutputPanes_StdErrTextColor,
         OutputPanes_StdOutTextColor,
         OutputPanes_WarningMessageTextColor,
+        OutputPanes_TestPassTextColor,
+        OutputPanes_TestFailTextColor,
+        OutputPanes_TestXFailTextColor,
+        OutputPanes_TestXPassTextColor,
+        OutputPanes_TestSkipTextColor,
+        OutputPanes_TestWarnTextColor,
+        OutputPanes_TestFatalTextColor,
+        OutputPanes_TestDebugTextColor,
 
         /* Debugger Log Window */
 
@@ -170,27 +197,14 @@ public:
 
         /* Welcome Plugin */
 
-        Welcome_TextColorNormal,
-        Welcome_TextColorHeading,  // #535353 // Sessions, Recent Projects
-        Welcome_BackgroundColorNormal,   // #ffffff
-        Welcome_DividerColor,      // #737373
-        Welcome_Button_BorderColorNormal,
-        Welcome_Button_BorderColorPressed,
-        Welcome_Button_TextColorNormal,
-        Welcome_Button_TextColorPressed,
-        Welcome_Link_TextColorNormal,
-        Welcome_Link_TextColorActive,
-        Welcome_Link_BackgroundColor,
-        Welcome_Caption_TextColorNormal,
-        Welcome_SideBar_BackgroundColor,
-
-        Welcome_ProjectItem_TextColorFilepath,
-        Welcome_ProjectItem_BackgroundColorHover,
-
-        Welcome_SessionItem_BackgroundColorNormal,
-        Welcome_SessionItem_BackgroundColorHover,
-        Welcome_SessionItemExpanded_BackgroundColorNormal,
-        Welcome_SessionItemExpanded_BackgroundColorHover,
+        Welcome_TextColor,
+        Welcome_ForegroundPrimaryColor,
+        Welcome_ForegroundSecondaryColor,
+        Welcome_BackgroundColor,
+        Welcome_ButtonBackgroundColor,
+        Welcome_DividerColor,
+        Welcome_LinkColor,
+        Welcome_HoverColor,
 
         /* VcsBase Plugin */
         VcsBase_FileStatusUnknown_TextColor,
@@ -249,12 +263,14 @@ public:
     enum Flag {
         DrawTargetSelectorBottom,
         DrawSearchResultWidgetFrame,
-        DrawProgressBarSunken,
         DrawIndicatorBranch,
+        DrawToolBarHighlights,
         ComboBoxDrawTextShadow,
         DerivePaletteFromTheme,
         ApplyThemePaletteGlobally,
-        FlatSideBarIcons
+        FlatSideBarIcons,
+        FlatProjectsMode,
+        FlatMenuBar
     };
 
     enum WidgetStyle {

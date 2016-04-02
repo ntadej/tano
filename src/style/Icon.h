@@ -29,7 +29,7 @@
 #include <QPair>
 #include <QVector>
 
-class QColor;
+QT_FORWARD_DECLARE_CLASS(QColor)
 QT_FORWARD_DECLARE_CLASS(QIcon)
 QT_FORWARD_DECLARE_CLASS(QPixmap)
 QT_FORWARD_DECLARE_CLASS(QString)
@@ -47,7 +47,8 @@ public:
         DropShadow = 2,
         PunchEdges = 4,
 
-        ToolBarStyle = Tint | DropShadow | PunchEdges
+        ToolBarStyle = Tint | DropShadow | PunchEdges,
+        MenuTintedStyle = Tint | PunchEdges
     };
 
     Q_DECLARE_FLAGS(IconStyleOptions, IconStyleOption)

@@ -22,6 +22,7 @@
 *****************************************************************************/
 
 #include "StyleHelper.h"
+#include "Theme.h"
 
 #include <QPixmapCache>
 #include <QPainter>
@@ -145,10 +146,20 @@ void StyleHelper::setBaseColor(const QColor &newcolor)
 {
     m_requestedBaseColor = newcolor;
 
+    const QColor themeBaseColor = Tano::applicationTheme()->color(Theme::PanelStatusBarBackgroundColor);
+    const QColor defaultBaseColor = QColor(DEFAULT_BASE_COLOR);
     QColor color;
-    color.setHsv(newcolor.hue(),
-                 newcolor.saturation() * 0.7,
-                 64 + newcolor.value() / 3);
+
+    if (defaultBaseColor == newcolor) {
+        color = themeBaseColor;
+    } else {
+        const int valueDelta = (newcolor.value() - defaultBaseColor.value()) / 3;
+        const int value = qBound(0, themeBaseColor.value() + valueDelta, 255);
+
+        color.setHsv(newcolor.hue(),
+                     newcolor.saturation() * 0.7,
+                     value);
+    }
 
     if (color.isValid() && color != m_baseColor) {
         m_baseColor = color;
@@ -273,20 +284,14 @@ void StyleHelper::drawArrow(QStyle::PrimitiveElement element, QPainter *painter,
         return;
 
     const qreal devicePixelRatio = painter->device()->devicePixelRatio();
+    const bool enabled = option->state & QStyle::State_Enabled;
     QRect r = option->rect;
     int size = qMin(r.height(), r.width());
     QPixmap pixmap;
     QString pixmapName;
-    pixmapName.sprintf("arrow-%s-%d-%d-%d-%lld-%f",
-                       "$qt_ia",
-                       uint(option->state), element,
-                       size, option->palette.cacheKey(),
-                       devicePixelRatio);
+    pixmapName.sprintf("StyleHelper::drawArrow-%d-%d-%d-%f",
+                       element, size, enabled, devicePixelRatio);
     if (!QPixmapCache::find(pixmapName, pixmap)) {
-        const QCommonStyle* const style = qobject_cast<QCommonStyle*>(QApplication::style());
-        if (!style)
-            return;
-
         QImage image(size * devicePixelRatio, size * devicePixelRatio, QImage::Format_ARGB32_Premultiplied);
         image.fill(Qt::transparent);
         QPainter painter(&image);
@@ -294,20 +299,22 @@ void StyleHelper::drawArrow(QStyle::PrimitiveElement element, QPainter *painter,
         QStyleOption tweakedOption(*option);
         tweakedOption.state = QStyle::State_Enabled;
 
-        if (!(option->state & QStyle::State_Enabled)) {
-            tweakedOption.palette.setColor(QPalette::ButtonText, option->palette.mid().color());
-            tweakedOption.rect = image.rect();
+        auto drawCommonStyleArrow = [&tweakedOption, element, &painter](const QRect &rect, const QColor &color) -> void
+        {
+            static const QCommonStyle* const style = qobject_cast<QCommonStyle*>(QApplication::style());
+            if (!style)
+                return;
+            tweakedOption.palette.setColor(QPalette::ButtonText, color.rgb());
+            tweakedOption.rect = rect;
+            painter.setOpacity(color.alphaF());
             style->QCommonStyle::drawPrimitive(element, &tweakedOption, &painter);
-        } else {
-            tweakedOption.palette.setColor(QPalette::ButtonText, Qt::black);
-            painter.setOpacity(0.2);
-            tweakedOption.rect = image.rect().adjusted(0, devicePixelRatio, 0, devicePixelRatio);
-            style->QCommonStyle::drawPrimitive(element, &tweakedOption, &painter);
+        };
 
-            tweakedOption.palette.setColor(QPalette::ButtonText, QColor(220, 220, 220));
-            painter.setOpacity(1);
-            tweakedOption.rect = image.rect();
-            style->QCommonStyle::drawPrimitive(element, &tweakedOption, &painter);
+        if (!enabled) {
+            drawCommonStyleArrow(image.rect(), Tano::applicationTheme()->color(Theme::IconsDisabledColor));
+        } else {
+            drawCommonStyleArrow(image.rect().translated(0, devicePixelRatio), toolBarDropShadowColor());
+            drawCommonStyleArrow(image.rect(), Tano::applicationTheme()->color(Theme::IconsBaseColor));
         }
         painter.end();
         pixmap = QPixmap::fromImage(image);

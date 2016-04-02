@@ -39,12 +39,18 @@ IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
         ${Project_Srcs}
         ../resources/dsa_pub.pem
         ../resources/style/DefaultTheme.ini
+        ../resources/style/FlatTheme.ini
     )
     SET_SOURCE_FILES_PROPERTIES (
         ../resources/dsa_pub.pem
-        ../resources/style/DefaultTheme.ini
         PROPERTIES
         MACOSX_PACKAGE_LOCATION Resources
+    )
+    SET_SOURCE_FILES_PROPERTIES (
+        ../resources/style/DefaultTheme.ini
+        ../resources/style/FlatTheme.ini
+        PROPERTIES
+        MACOSX_PACKAGE_LOCATION Resources/style
     )
 
     SET(Project_Iconset ${CMAKE_SOURCE_DIR}/${PROJECT_NAME_LOWER}/resources/logo/Project.iconset)
@@ -123,3 +129,8 @@ INSTALL(TARGETS ${PROJECT_NAME}
     RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/${PROJECT_INSTALL_BIN_DIR}
     BUNDLE DESTINATION .
 )
+
+IF(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    INSTALL(FILES ../resources/style/DefaultTheme.ini ../resources/style/FlatTheme.ini
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/${PROJECT_INSTALL_DATA_DIR}/style)
+ENDIF()

@@ -112,7 +112,7 @@ void FancyTabBar::paintEvent(QPaintEvent *event)
     if (Tano::applicationTheme()->widgetStyle() == Theme::StyleFlat) {
         // draw background of upper part of left tab widget
         // (Welcome, ... Help)
-        p.fillRect (event->rect(), Tano::applicationTheme()->color(Theme::FancyTabBarBackgroundColor));
+        p.fillRect(event->rect(), StyleHelper::baseColor());
     }
 
     for (int i = 0; i < count(); ++i)
@@ -291,8 +291,7 @@ void FancyTabBar::paintTab(QPainter *painter, int tabIndex) const
     if (selected) {
         if (Tano::applicationTheme()->widgetStyle() == Theme::StyleFlat) {
           // background color of a fancy tab that is active
-          painter->fillRect(rect.adjusted(0, 0, 0, -1),
-                            Tano::applicationTheme()->color(Theme::BackgroundColorSelected));
+          painter->fillRect(rect, Tano::applicationTheme()->color(Theme::FancyToolButtonSelectedColor));
         } else {
             paintSelectedTabBackground(painter, rect);
         }
@@ -314,19 +313,16 @@ void FancyTabBar::paintTab(QPainter *painter, int tabIndex) const
     const float fader = m_tabs[tabIndex]->fader();
     if (fader > 0 && !selected && enabled) {
         painter->save();
-        if (Tano::applicationTheme()->widgetStyle() == Theme::StyleFlat) {
-            QColor c = Tano::applicationTheme()->color(Theme::BackgroundColorHover);
-            c.setAlpha(255 * fader);
-            painter->fillRect(rect, c);
-        } else {
-            painter->setOpacity(fader);
-            FancyToolButton::hoverOverlay(painter, rect);
-        }
+        painter->setOpacity(fader);
+        if (Tano::applicationTheme()->widgetStyle() == Theme::StyleFlat)
+            painter->fillRect(rect, Tano::applicationTheme()->color(Theme::FancyToolButtonHoverColor));
+        else
+            FancyTabWidget::hoverOverlay(painter, rect);
         painter->restore();
     }
 #endif
 
-    if (!enabled)
+    if (!enabled && Tano::applicationTheme()->widgetStyle() == Theme::StyleDefault)
         painter->setOpacity(0.7);
 
     if (drawIcon) {
@@ -390,23 +386,36 @@ bool FancyTabBar::isTabEnabled(int index) const
 
 class FancyColorButton : public QWidget
 {
+    Q_OBJECT
+
 public:
-    FancyColorButton(QWidget *parent)
-      : m_parent(parent)
+    explicit FancyColorButton(QWidget *parent = 0)
+      : QWidget(parent)
     {
         setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Preferred);
     }
 
     void mousePressEvent(QMouseEvent *ev)
     {
-        if (ev->modifiers() & Qt::ShiftModifier) {
-            QColor color = QColorDialog::getColor(StyleHelper::requestedBaseColor(), m_parent);
-            if (color.isValid())
-                StyleHelper::setBaseColor(color);
+        emit clicked(ev->button(), ev->modifiers());
+    }
+
+    void paintEvent(QPaintEvent *event)
+    {
+        QWidget::paintEvent(event);
+
+        // Some Themes do not want highlights and shadows in the toolbars.
+        // But we definitely want a separator between FancyColorButton and FancyTabBar
+        if (!Tano::applicationTheme()->flag(Theme::DrawToolBarHighlights)) {
+            QPainter p(this);
+            p.setPen(StyleHelper::borderColor());
+            const QRectF innerRect = QRectF(rect()).adjusted(0.5, 0.5, -0.5, -0.5);
+            p.drawLine(innerRect.bottomLeft(), innerRect.bottomRight());
         }
     }
-private:
-    QWidget *m_parent;
+
+signals:
+    void clicked(Qt::MouseButton button, Qt::KeyboardModifiers modifiers);
 };
 
 //////
@@ -427,7 +436,9 @@ FancyTabWidget::FancyTabWidget(QWidget *parent)
     QHBoxLayout *layout = new QHBoxLayout(bar);
     layout->setMargin(0);
     layout->setSpacing(0);
-    layout->addWidget(new FancyColorButton(this));
+    auto fancyButton = new FancyColorButton(this);
+    connect(fancyButton, &FancyColorButton::clicked, this, &FancyTabWidget::topAreaClicked);
+    layout->addWidget(fancyButton);
     selectionLayout->addWidget(bar);
 
     selectionLayout->addWidget(m_tabBar, 1);
@@ -468,7 +479,7 @@ FancyTabWidget::FancyTabWidget(QWidget *parent)
     mainLayout->addLayout(vlayout);
     setLayout(mainLayout);
 
-    connect(m_tabBar, SIGNAL(currentChanged(int)), this, SLOT(showWidget(int)));
+    connect(m_tabBar, &FancyTabBar::currentChanged, this, &FancyTabWidget::showWidget);
 }
 
 void FancyTabWidget::addStaticWidget(QWidget *widget)
@@ -619,3 +630,37 @@ bool FancyTabWidget::isTabEnabled(int index) const
 {
     return m_tabBar->isTabEnabled(index);
 }
+
+void FancyTabWidget::hoverOverlay(QPainter *painter, const QRect &spanRect)
+{
+    const QSize logicalSize = spanRect.size();
+    const QString cacheKey = QLatin1String(Q_FUNC_INFO) + QString::number(logicalSize.width())
+            + QLatin1Char('x') + QString::number(logicalSize.height());
+    QPixmap overlay;
+    if (!QPixmapCache::find(cacheKey, &overlay)) {
+        const int dpr = painter->device()->devicePixelRatio();
+        overlay = QPixmap(logicalSize * dpr);
+        overlay.fill(Qt::transparent);
+        overlay.setDevicePixelRatio(dpr);
+
+        const QColor hoverColor = Tano::applicationTheme()->color(Theme::FancyToolButtonHoverColor);
+        const QRect rect(QPoint(), logicalSize);
+        const QRectF borderRect = QRectF(rect).adjusted(0.5, 0.5, -0.5, -0.5);
+
+        QLinearGradient grad(rect.topLeft(), rect.topRight());
+        grad.setColorAt(0, Qt::transparent);
+        grad.setColorAt(0.5, hoverColor);
+        grad.setColorAt(1, Qt::transparent);
+
+        QPainter p(&overlay);
+        p.fillRect(rect, grad);
+        p.setPen(QPen(grad, 1.0));
+        p.drawLine(borderRect.topLeft(), borderRect.topRight());
+        p.drawLine(borderRect.bottomLeft(), borderRect.bottomRight());
+
+        QPixmapCache::insert(cacheKey, overlay);
+    }
+    painter->drawPixmap(spanRect.topLeft(), overlay);
+}
+
+#include "FancyTabWidget.moc"
